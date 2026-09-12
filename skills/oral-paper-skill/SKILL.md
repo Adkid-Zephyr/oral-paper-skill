@@ -1,21 +1,23 @@
 ---
 name: oral-paper-skill
-description: Calibrate and improve ML/AI papers using cross-venue patterns from recent ICLR, ICML, and NeurIPS Oral and award papers. Use when shaping a research story, title, abstract, Introduction, Figure 1, theorem presentation, experiment architecture, or submission-level audit. Do not use for routine grammar edits, citation formatting, or literature summaries with no paper to improve.
+description: Help authors learn from exemplary ICLR, ICML, and NeurIPS papers through source-linked comparisons, concrete writing and experiment improvements, and guided reflection. Use for paper comparison, research storytelling, contribution framing, figure planning, or research retrospectives. Do not treat this as an acceptance predictor or use it for routine grammar or citation formatting.
 ---
 
 # Oral Paper Skill
 
-Adjust a paper toward the standards repeatedly visible in strong ICLR, ICML, and NeurIPS papers: one irreducible contribution, reader-visible proof, adversarial evidence, and a lasting lesson. Do not imitate fashionable wording, topic choice, or figure styling. Oral and award papers are precedents for research compression and evidence quality, not an acceptance recipe.
+Help authors understand useful research and writing practices in exemplary papers and apply them to their own work. Provide two services: comparison-based improvement and guided learning/reflection. Oral status selects examples to study; it does not make every practice in a paper desirable or establish why it was selected.
 
-## Preserve the author's research decision
+The current ORAL framework is an authored set of learning prompts. It has not been validated as a set of traits shared by all 884 historical entries. Consult [references/oral-patterns.md](references/oral-patterns.md) before describing the corpus, a precedent, or what this skill's development established.
 
-Start from the author's intended contribution. Strengthen or challenge it using the actual evidence, but do not silently replace the direction. If evidence defeats the intended centerpiece, say so and propose the smallest meaningful choice.
+## Start with the author's purpose
+
+Start from the intended contribution and the requested improvement. Identify a specific contradiction in the evidence when one exists; distinguish it from missing evidence or a different presentation preference. A missing experiment in an early idea is not by itself a reason to abandon the idea.
 
 When the author has settled the story and asks to execute, directly edit the paper, figure plan, experiment protocol, or repository. Do not respond with another literature review or strategy memo unless proceeding would fabricate a result or conceal a fatal evidence gap.
 
 ## Select the paper archetype first
 
-Classify the intended centerpiece as one primary archetype:
+Identify the closest paper archetype, allowing hybrids and exceptions:
 
 - method or algorithm;
 - theory or guarantee;
@@ -24,18 +26,30 @@ Classify the intended centerpiece as one primary archetype:
 - benchmark or dataset;
 - position paper.
 
-Read [references/archetypes.md](references/archetypes.md) when selecting the proof carrier, decisive experiment, or paper structure. A paper may contain several contribution types, but its main story needs one center of gravity.
+Read [references/archetypes.md](references/archetypes.md) when matching examples or suggesting evidence. These are comparison guides, not universal admission requirements. A paper can make several coherent contributions; do not force it into one result or one decisive experiment.
 
-Read [references/oral-patterns.md](references/oral-patterns.md) only when explaining the evidence base, choosing precedents, or rebuilding a story. Do not reload the conference corpus for ordinary application work.
+For a structured review or retrospective, use [references/review-scorecard.md](references/review-scorecard.md). Do not reload an entire conference corpus for a single edit.
 
-## ORAL calibration
+## Match sources to the advice
+
+Choose a small number of examples close to the user's problem, contribution type, and resource constraints. A famous paper from an unrelated setting is not automatically a useful comparator.
+
+- For each attributed practice, give the paper title, source link, and section/figure or abstract sentence that was actually inspected.
+- Abstracts support observations about framing, stated contributions, and author-reported results. They do not establish experimental rigor, figure design, proof correctness, or reproducibility.
+- To give figure or experimental-design advice attributed to a paper, inspect the relevant full-text section or figure. Mark unavailable material as unavailable.
+- Separate what the original authors did, your interpretation of why it may help, and your proposed application to the user's work.
+- If no appropriate source is accessible, provide general advice labeled as such. Never invent a paper, citation, locator, reviewer comment, or comparison to satisfy the format.
+
+For each material suggestion, connect: **source practice → purpose → current manuscript observation → concrete change → when the comparison does not apply**. Explain jargon in the user's language when needed.
+
+## ORAL learning prompts
 
 ### O — One irreducible claim
 
 - Identify the important assumption, bottleneck, open question, or empirical pattern the paper changes.
-- State one central claim that can be false.
+- State the central research question or claim and how evidence could support or challenge it.
 - Explain why the claim matters beyond the paper's immediate benchmark or subcommunity.
-- Let secondary contributions support the claim instead of competing with it.
+- Explain how multiple contributions fit together. Use one central claim when that improves clarity, not as a hard limit.
 
 ### R — Reader-visible proof
 
@@ -50,13 +64,13 @@ Read [references/oral-patterns.md](references/oral-patterns.md) only when explai
 - Match information, budget, compute, data, tool access, and evaluation conditions where they can confound the claim.
 - Use the negative control, tightness result, ablation, real-world comparison, or held-out axis that directly attacks the central claim.
 - Validate the oracle, theorem assumptions, measurement construct, or system boundary instead of merely naming it.
-- Preserve negative results that define the regime where the contribution fails.
+- Preserve negative results that define the regime where the contribution fails. An inconclusive or underpowered experiment is not a scientific refutation.
 
 ### L — Lasting lesson
 
 - Extract the mechanism, principle, trade-off, impossibility boundary, practical rule, or societal consequence that remains useful after model rankings change.
 - Prefer a finding that changes how the field thinks, builds, measures, or allocates resources.
-- For benchmark/data papers, the lasting lesson must exceed “we release a large dataset.”
+- For benchmark/data papers, consider what the resource enables, whom it serves, and what its evaluation teaches; these can be useful contributions even before a new mechanism is discovered.
 - For method papers, a small metric gain can still matter when the principle is broad, simple, or durable; do not require SOTA theater.
 
 ## Evidence integrity
@@ -69,13 +83,12 @@ Keep `OBSERVED`, `SUPPORTED`, `INFERRED`, `PLANNED`, and `INVALIDATED` distinct 
 - Treat `ABSTAIN`, `UNKNOWN`, unsupported, and out-of-scope as valid outcomes.
 - Separate reproducibility of the computation from scientific correctness, external replication, and future impact.
 
-## Working modes
+## Two uses
 
-- **Calibrate:** Give a fast `GO`, `WAIT`, or `KILL` verdict on a proposed story.
-- **Build:** Turn an evidence package into a title, claim, narrative spine, proof carrier, and survival test.
-- **Experiment adjust:** Redesign experiments around the strongest alternative explanation and the paper's actual estimand.
-- **Apply:** Edit the supplied paper or repository and align all main sections with the chosen claim.
-- **Audit:** Use [references/review-scorecard.md](references/review-scorecard.md) for a submission-level review.
+- **Compare and improve:** Inspect the manuscript and suitable examples, identify the most useful differences, and propose or apply concrete changes to framing, figures, or experiments. State why the examples fit.
+- **Learn and reflect:** Explain an exemplary paper's practice, its purpose and limits, then help the author apply it to a paragraph, figure plan, or experiment in their own work. Include one focused reflection question or exercise.
+
+If the user requests both, prioritize the requested artifact and explain only the lessons that affected it. If they request an explicit go/no-go decision, scope the judgment to the claim and available evidence; do not imply an acceptance probability.
 
 ## Workflow
 
@@ -91,16 +104,16 @@ Inspect the current draft, repository, results, failed paths, and experiment sta
 
 Do not make the author review the full inventory unless requested.
 
-### 2. Write the spine before polishing prose
+### 2. Connect examples to the requested improvement
 
-Produce:
+When rebuilding a story, develop:
 
 1. a working title containing the research wager;
 2. one sentence for the field's current belief or bottleneck;
 3. one sentence for the paper's central claim;
 4. a three-beat story: accepted view → decisive tension → new result/principle;
 5. the appropriate reader-visible proof carrier;
-6. the one test, theorem condition, or comparison that can kill the paper.
+6. the experiment, theorem condition, or comparison that would most clarify the claim, including what an inconclusive result would mean.
 
 If results do not yet exist, write an experiment-facing hypothesis rather than a result claim.
 
@@ -116,7 +129,7 @@ Specify only the evidence needed for the central claim. Depending on archetype, 
 - end-to-end wall-clock or resource measurement;
 - construct/oracle validation;
 - held-out, out-of-distribution, temporal, or real-world transfer;
-- primary estimand and kill condition.
+- primary estimand and how positive, negative, and inconclusive outcomes would change the interpretation.
 
 Put implementation codes and exhaustive baseline catalogs in the experiment protocol, not the interactive decision brief.
 
@@ -130,32 +143,20 @@ When authorized to edit:
 4. preserve necessary limitations without turning the paper into an attack on itself;
 5. report the material changes and next scientific gate.
 
-## Silent three-pass loop
+## Review the suggestions before delivery
 
-For substantial work, run up to three internal passes and stop early when no material decision changes:
+For substantial work, inspect:
 
-1. **Compression:** Remove details that do not change O, R, A, L, the verdict, or the next action.
+1. **Compression:** Remove details that do not change the learning point, requested artifact, or next action.
 2. **Falsification:** Replace weak comparisons with the strongest simple alternative; check confounders, assumptions, oracle validity, and closest work.
 3. **Alignment:** Verify that every main section and figure makes the same claim at the same evidence level.
 
-Do not expose intermediate drafts or narrate the loop unless the user asks.
+Self-review improves a draft but is not an independent test of this skill's effectiveness. Do not report hypothetical outputs, adherence to this checklist, or file-format validation as measured user benefit.
 
 ## Default output contract
 
-Lead with the adjusted story or verdict. Default to one screen:
+Lead with the most useful improvement or learning point. Default to no more than three priority suggestions, each with an inspected source (or an explicit general-advice label), the current issue, a concrete change, and its applicability.
 
-1. **Story** — at most three short paragraphs;
-2. **Proof carrier** — Figure 1, theorem, table, counterexample, or demo;
-3. **Survival test** — the single experiment or condition that decides the claim;
-4. **Verdict** — `GO`, `WAIT`, or `KILL` with one sentence of evidence;
-5. **Next action** — what to edit or build now.
+For reflection, end with one question the user can answer using their own paper. For editing, deliver the actual changes and a short explanation. Do not force every reply into a scorecard or a verdict.
 
-Mention at most three blocking gaps. Do not output a paper-by-paper survey, long rubric, or baseline taxonomy unless explicitly requested. The edited artifact may be long; the handoff stays concise.
-
-## Verdicts
-
-- **GO:** The claim is important and falsifiable, the proof carrier is legible, and no observed simple alternative already defeats it.
-- **WAIT:** The story is coherent, but one named evidence, assumption, baseline, validity, or transfer gate is missing.
-- **KILL:** The centerpiece is unfalsifiable, occupied, contradicted, or dominated. Preserve useful negative evidence; do not rescue it with rhetoric.
-
-Never convert an ORAL assessment into an acceptance probability. Venue decisions are heterogeneous and partly subjective.
+Keep the handoff concise. The edited artifact may be long when the task requires it. Do not predict Oral selection, promise acceptance, or treat the examples as a conference's official rubric.

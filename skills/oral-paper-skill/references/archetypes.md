@@ -1,6 +1,6 @@
-# Paper archetypes and their proof carriers
+# Paper archetypes for choosing useful comparisons
 
-Choose one primary archetype for the paper's center of gravity. Use secondary contributions only to support it.
+Use these guides to choose relevant examples, not to predict acceptance. Hybrids and several coherent contributions are allowed. Suggest only evidence relevant to the actual claim; do not require every item for every paper.
 
 ## Method or algorithm
 

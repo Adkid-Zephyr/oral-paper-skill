@@ -1,127 +1,100 @@
-# Oral Paper Skill · Top-Paper Calibration
+# Oral Paper Skill · Learn from Exemplary Papers
 
-**Stop copying A+B from Oral papers. Distill the research standards behind 884 official ICLR, ICML, and NeurIPS Oral entries into an AI skill for calibrating ideas, claims, Figure 1, and experiments.**
+**Starting from 884 top-conference Oral entries, develop reusable research and writing lessons for comparing, improving, and reflecting on your own paper.**
 
-[中文 README](README.md) · [Full Skill](skills/oral-paper-skill/SKILL.md) · [Quick Prompt](prompts/quick-prompt-en.txt)
+[中文 README](README.md) · [Full Skill](skills/oral-paper-skill/SKILL.md) · [Quick prompt](prompts/quick-prompt-en.txt) · [Research progress](docs/ABSTRACT_DISTILLATION.md)
 
-[![Corpus: 884 Orals](https://img.shields.io/badge/corpus-884%20official%20Orals-blue)](skills/oral-paper-skill/references/oral-patterns.md)
-[![Dependencies: Zero](https://img.shields.io/badge/dependencies-zero-brightgreen)](skills/oral-paper-skill/SKILL.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/Adkid-Zephyr/oral-paper-skill/pulls)
+[![Starting index: 884 entries](https://img.shields.io/badge/starting%20index-884%20entries-blue)](skills/oral-paper-skill/references/oral-patterns.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Adkid-Zephyr/oral-paper-skill/pulls)
 
----
+This is a learning-tool prototype informed by a historical abstract scan, selected full-text passages and figures, and official award commentary. Per-abstract semantic extraction is not complete; 884 describes the historical index size.
 
-## What is this?
+## Why I am building this
 
-A traditional first step in research training is to read exemplary papers. If you want to publish at ICLR, you study past ICLR Orals; for ICML or NeurIPS, you do the same. You learn the topics, methods, experiments, and presentation, then look for an A+B combination or a local improvement.
+I believe that papers selected for Oral presentation contain research decisions worth studying. Exemplary papers are a practical starting point for learning how to do and communicate good research.
 
-This can produce papers. It can also teach only the surface: **swap a module, add a setting, run more benchmarks—yet never explain why the paper deserves to exist.**
+Research training often begins with classic papers. If you want to submit to ICLR, ICML, or NeurIPS, a traditional approach is to study past papers from that venue, find inspiration, combine method A with setting B, or improve one part of an existing approach.
 
-This is **surface imitation**.
+That path has produced publications. But if all we learn is how to combine components, what have we understood about why the problem matters, what makes the contribution useful, or how the evidence supports it? Combinations and incremental advances can be valuable; understanding that value is the point.
 
-The alternative is not to ask AI for another A+B. It is to learn the research judgment behind strong papers:
+AI can help us organize and compare these examples more systematically, extract useful patterns, and apply them to our own ideas and writing.
 
-> **Do not copy what an Oral paper did.**
-> **Learn why its central wager matters and how the paper makes that wager believable.**
+After my anti-defensive-writing video brought in a few hundred followers, I kept thinking about what to share next. I have accumulated useful personal Skills; Oral Paper Skill is the second public project in this series.
 
-`Oral Paper Skill` first identifies the paper's center of gravity—method, theory, empirical mechanism, systems, benchmark/data, or position paper—then aligns the title, abstract, Introduction, Figure 1 or main theorem, experiments, and conclusion around one claim.
+**The goal is to study Oral entries and other exemplary papers from the latest two completed cycles of ICLR, ICML, and NeurIPS, then turn their useful practices into reusable learning guidance.**
 
-## Surface imitation vs. Oral calibration
+Here, “distillation” means extracting and synthesizing knowledge into instructions and examples. We start at the abstract level and supplement it with passages and figures actually inspected.
 
-| | Surface imitation | Oral Paper Skill |
-|---|---|---|
-| Finding an idea | Move method A into setting B | Find an important, falsifiable claim worth betting the paper on |
-| Contributions | List Contributions 1, 2, 3, and 4 evenly | Make every contribution support one central claim |
-| Figure 1 | Display a complicated pipeline | Show early why the claim should be believed: result, theorem, counterexample, or demo |
-| Experiments | Choose a baseline that is easy to beat | Confront the strongest explanation that would make the paper unnecessary |
-| What remains | A leaderboard number that soon expires | A mechanism, principle, trade-off, bound, or new scientific object |
+## Two uses
 
-## ORAL
+### 1. Compare and improve
 
-- **O — One irreducible claim:** What important, falsifiable claim does the whole paper bet on?
-- **R — Reader-visible proof:** Can readers see early why they should believe it?
-- **A — Adversarial evidence:** Does the evidence confront the strongest alternative rather than the weakest baseline?
-- **L — Lasting lesson:** What remains worth remembering after leaderboards change?
+Choose examples relevant to your problem and contribution type. Explain what they do, why the comparison fits, and which changes could improve your manuscript.
 
-By default, the skill returns only five things: **Story, Proof carrier, Survival test, GO / WAIT / KILL, and Next action.**
+A substantial suggestion should connect: **source practice and locator → relevance → observation about your draft → concrete change.**
+
+For example, a draft claiming lower compute cost may need a comparison of end-to-end cost at matched quality. This illustrates the form of advice; attributing it to a particular paper requires reading that source.
+
+### 2. Learn and reflect
+
+Explain how exemplary papers develop their introduction, distinguish their contribution, present the central figure, and use experiments to address alternative explanations. Include applicability and exceptions, then help authors reflect on their own work.
+
+## ORAL: four reflection questions
+
+- **O — One irreducible claim:** What is the central research question, and how do the contributions connect?
+- **R — Reader-visible proof:** Where does the reader encounter the main evidence?
+- **A — Adversarial evidence:** Which alternative explanation deserves testing, and are comparisons fair?
+- **L — Lasting lesson:** What finding, method, or resource value does the work offer?
+
+These are editorial learning prompts, not empirically established requirements for all Oral papers. The default output is a few supported improvements or a reflection exercise, not an Oral score or an automatic decision to abandon research.
 
 ## Quick start
 
-### Option 1: Copy the prompt (works with any AI)
+Copy the [English prompt](prompts/quick-prompt-en.txt) or [中文提示词](prompts/精简版提示词.txt), then provide an idea, draft, or experiment plan. The prompt has no additional dependencies; accessing reference papers depends on your AI tool.
 
-Copy [`prompts/quick-prompt-en.txt`](prompts/quick-prompt-en.txt) ([中文](prompts/精简版提示词.txt)), paste it at the start of a conversation, then provide your idea, paper, or experiment plan. Zero dependencies.
-
-### Option 2: Install the Skill
+To install the Skill:
 
 ```bash
 git clone https://github.com/Adkid-Zephyr/oral-paper-skill.git
-
-# Codex
-cp -R oral-paper-skill/skills/oral-paper-skill ~/.codex/skills/
-
-# Claude Code / other tools with Skills support
-cp -R oral-paper-skill/skills/oral-paper-skill ~/.claude/skills/
 ```
 
-Then ask:
+Place `skills/oral-paper-skill` in your tool's skills directory, such as `~/.codex/skills/` or `~/.claude/skills/`. Compare an existing version before replacing local modifications.
 
 ```text
-Use $oral-paper-skill to inspect this idea.
-Tell me what the whole paper should bet on, why the claim should be believed,
-and which experiment decides whether it survives. Do not begin with copyediting.
+Use $oral-paper-skill to compare my manuscript with relevant exemplary papers.
+Give three useful improvements with source locations, applicability, and concrete edits.
 ```
-
-## Evidence base
-
-The initial version covers the latest completed cycles available on 2026-09-02:
-
-- ICLR 2025–2026: 436 official Oral events;
-- ICML 2025–2026: 289;
-- NeurIPS 2024–2025: 159.
-
-It structurally analyzed **884 official Oral entries and 883 available abstracts**, then deep-read a stratified set of representative Oral, Best, and Outstanding papers across methods, theory, empirical mechanisms, systems, benchmark/data, and position work, together with official award-committee explanations.
-
-This is not a claim of reading all 884 full papers. It is a full abstract-level scan plus cross-archetype deep reading. See [`oral-patterns.md`](skills/oral-paper-skill/references/oral-patterns.md) for the corpus boundary and primary sources.
-
-One result matters for how the skill is designed: strong papers do not share a universal “large benchmark + SOTA number” template. Theory can win through a tight result and conceptual consequence; mechanism papers through controlled interventions; systems through end-to-end frontiers; position papers through an evidence-backed thesis and actionable direction.
-
-## What it will not do
-
-- convert an ORAL assessment into an acceptance probability;
-- invent successful-looking curves before results exist;
-- use rhetoric to revive a direction defeated by a simple baseline;
-- inflate pilots, synthetic cases, or mechanical checks into generalization;
-- force every paper archetype into the same template.
-
-## Use cases
-
-- build a paper spine from an idea;
-- rewrite a title, abstract, or Introduction;
-- design Figure 1, a main theorem presentation, or a core demo;
-- restructure experiments around clear argumentative duties;
-- run a pre-submission `GO / WAIT / KILL` audit;
-- decide whether to add evidence, change the story, or stop a direction.
-
-## Repository structure
 
 ```text
-oral-paper-skill/
-├── skills/oral-paper-skill/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   └── references/
-│       ├── archetypes.md
-│       ├── oral-patterns.md
-│       └── review-scorecard.md
-├── prompts/
-│   ├── 精简版提示词.txt
-│   └── quick-prompt-en.txt
-└── README.md / README_EN.md
+Use $oral-paper-skill to explain what I can learn from these papers'
+storytelling and experimental design, then guide a retrospective on my draft.
 ```
+
+## What 884 means
+
+The extraction log from September 2, 2026 reported:
+
+| Conference cycles | Oral entries |
+|---|---:|
+| ICLR 2025–2026 | 436 |
+| ICML 2025–2026 | 289 |
+| NeurIPS 2024–2025 | 159 |
+| Total | 884 |
+
+It reported 883 available abstracts. The original index was not archived in this repository; rebuilding and validating the entry-to-paper mapping remains necessary.
+
+Completed work consists of lexical abstract scans, selected full-text passages and figure inspection, and award-commentary notes. A semantic record for every abstract and full-paper distillation of all 884 entries have not been completed.
+
+[Sources and reading levels](skills/oral-paper-skill/references/oral-patterns.md) · [Abstract-distillation plan](docs/ABSTRACT_DISTILLATION.md)
+
+## Interpreting the advice
+
+Oral status identifies examples to learn from; this tool does not represent conference criteria or guarantee acceptance. Abstracts support analysis of framing and author-reported contributions; figure design, experiment details, and proofs require the relevant full text.
+
+User benefit has not been established by an independent comparison. Source-linked examples, corrections, and actual manuscript feedback are welcome.
 
 ## Paper Skill series
 
-Part 1: [`Anti-Defensive Writing`](https://github.com/Adkid-Zephyr/anti-defensive-writing-Skill) prevents a paper from rhetorically weakening itself.
+[Anti-Defensive Writing](https://github.com/Adkid-Zephyr/anti-defensive-writing-Skill): improve academic expression.
 
-Part 2: `Oral Paper Skill` checks whether the paper has a central claim worth betting on and evidence capable of supporting it.
-
-PRs and labmate sharing are welcome.
+Oral Paper Skill: learn from exemplary papers through comparison and reflection.

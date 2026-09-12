@@ -1,129 +1,110 @@
-# Oral Paper Skill · 顶会论文校准
+# Oral Paper Skill · 向优秀论文学习
 
-**别再只从 Oral 里抄 A+B —— 把 884 篇 ICLR、ICML、NeurIPS 官方 Oral 蒸馏成一个 AI 科研 Skill，校准你的 idea、claim、Figure 1 和实验。**
+**从 884 条顶会 Oral 记录出发，提炼可学习的研究与写作方法，帮助你对照、改进和复盘自己的论文。**
 
-[English README](README_EN.md) · [完整 Skill](skills/oral-paper-skill/SKILL.md) · [精简版提示词](prompts/精简版提示词.txt)
+[English README](README_EN.md) · [完整 Skill](skills/oral-paper-skill/SKILL.md) · [中文提示词](prompts/精简版提示词.txt) · [研究进度](docs/ABSTRACT_DISTILLATION.md)
 
-[![Corpus: 884 Orals](https://img.shields.io/badge/corpus-884%20official%20Orals-blue)](skills/oral-paper-skill/references/oral-patterns.md)
-[![Dependencies: Zero](https://img.shields.io/badge/dependencies-zero-brightgreen)](skills/oral-paper-skill/SKILL.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/Adkid-Zephyr/oral-paper-skill/pulls)
+[![Starting index: 884 entries](https://img.shields.io/badge/starting%20index-884%20entries-blue)](skills/oral-paper-skill/references/oral-patterns.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Adkid-Zephyr/oral-paper-skill/pulls)
 
----
+当前是学习工具原型：已有历史摘要扫描、少量正文与图表阅读，以及官方评奖说明整理。逐篇摘要提炼尚未完成，884 表示历史索引规模。
 
-## 这是什么
+## 为什么做这个 Skill
 
-很多人接受科研训练的第一步，是读经典论文。
+我认为，Oral paper 能成为 Oral paper，肯定有值得研究和学习的原因。如果想更快地理解怎样做出、写出一篇好论文，优秀论文就是很直接的学习材料。
 
-想投 ICLR，就看 ICLR 往届 Oral；想投 ICML、NeurIPS，也做同样的事。学选题、学方法、学实验，再寻找一个 A+B 或局部优化的机会。
+接受系统科研训练的第一步，往往是看经典文章。会议往届的 Oral，以及其他有质量、有含金量的论文，也是常用的范例。
 
-这套方法能发论文，但也很容易只学到优秀论文的表面：**换一个模块、加一个场景、多跑几个 benchmark，却始终说不清这篇论文为什么值得存在。**
+想投 ICLR，就看 ICLR 往届的优秀论文；想投 ICML、NeurIPS，也做同样的事。从中找灵感，把 A 的方法接到 B 的场景里，或者做局部优化，再写成一篇新的 paper。
 
-这叫**表面模仿（Surface Imitation）**。
+很多人通过这条路发出了论文。但如果最后只学会了 A+B 和局部加点，这样的学习到底留下了什么？组合与改进当然可以有价值，关键是我们有没有理解问题为什么重要、创新为什么成立、证据又如何支持结论。
 
-解法不是让 AI 再拼一篇 A+B，而是让它学习 Oral paper 背后的研究判断：
+有了 AI，我觉得这个过程可以更系统：快速整理和比较优秀论文，提炼有用的共性，再把这些做法 apply 到自己的 idea 里，帮助自己学习科研和论文写作。
 
-> **学 Oral，不是抄它做了什么。**
-> **是学它为什么值得整篇论文押注，以及它如何让这个主张成立。**
+上次分享 `anti-defensive-writing` Skill 的视频给我涨了几百粉，之后我一直在想该分享什么。我自己积累、私藏了不少好用的 Skill，这次把 Oral Paper Skill 作为这个系列的第二个项目公开。
 
-`Oral Paper Skill` 会先判断你的工作属于方法、理论、机制研究、系统、Benchmark/Data，还是 Position Paper；然后校准标题、Abstract、Introduction、Figure 1 / 主定理、实验和结论是否在证明同一件事。
+**我的目标是，把 ICLR、ICML、NeurIPS 近两个已完成周期的官方 Oral 条目及相关优秀论文作为学习材料，经过提取、比较和融会贯通，形成一套可以反复使用的方法。**
 
-## 传统模仿 vs. Oral 校准
+这里的“蒸馏”指知识提炼：从论文中整理具体做法、适用条件和例子，写成 Skill。我们先从摘要层开始，再用实际阅读的正文和图表补充。
 
-| | 传统模仿 Oral | Oral Paper Skill |
-|---|---|---|
-| 找 idea | 从论文 A 搬方法，接到论文 B 的场景 | 找到一个重要、可证伪、值得整篇论文押注的主张 |
-| 写贡献 | Contributions 1、2、3、4 平均陈列 | 所有贡献共同服务一个中心 claim |
-| Figure 1 | 画复杂 pipeline，展示做了多少模块 | 尽早展示主张凭什么成立：结果、定理、反例或 Demo |
-| 做实验 | 找容易赢的 baseline，继续堆表 | 正面面对最可能让论文失去必要性的解释 |
-| 留下什么 | 一个很快过期的 leaderboard 数字 | 一个机制、原则、权衡、边界或新研究对象 |
+## 它帮你做两件事
 
-## ORAL 四条原则
+### 1. 对照优秀论文，找到可改进的地方
 
-- **O — One irreducible claim**：整篇论文到底在押哪一个重要、可证伪的主张？
-- **R — Reader-visible proof**：读者能否很早看到它凭什么成立？
-- **A — Adversarial evidence**：证据是否面对最强的替代解释，而不是最弱的 baseline？
-- **L — Lasting lesson**：榜单过期后，还剩下什么值得领域记住？
+根据你的问题和论文类型，选择合适的范例，解释它怎样表达贡献、组织证据，再指出你的稿件可以怎样修改。
 
-Skill 默认只给出五样东西：**Story、Proof carrier、Survival test、GO / WAIT / KILL、Next action。**
+每条重要建议尽量包含：**原论文做法与出处 → 为什么与你相关 → 你的稿件现状 → 具体改法。**
+
+例如，面对一篇主张降低计算成本的稿件，可以检查它是否给出了相同质量下的端到端成本比较。这是建议形式的示意；实际归因给某篇论文时，需要读取对应原文。
+
+### 2. 学习优秀做法，指导自己的复盘
+
+把值得学习的做法讲清楚：引言怎样推进、创新点怎样与前作区分、主图怎样呈现贡献、关键实验怎样排除其他解释。
+
+同时解释适用条件，帮助你判断自己的工作是否需要采用，而不是把每篇论文改成同一模板。
+
+## ORAL：四个复盘问题
+
+- **O — One irreducible claim：** 你的核心问题或主张是什么？多个贡献如何连起来？
+- **R — Reader-visible proof：** 读者在哪里看见主要证据？主图、定理或关键表格是否清楚？
+- **A — Adversarial evidence：** 哪个替代解释最值得检验？现有比较是否公平？
+- **L — Lasting lesson：** 这项工作留下了什么可学习的发现、方法或资源价值？
+
+这四个问题是当前的编辑性框架，后续可以随逐篇分析调整。默认输出是少量有依据的改进建议或复盘练习，不给论文打“Oral 分”，也不自动判定研究方向的生死。
 
 ## 快速开始
 
-### 方式一：复制提示词（任何 AI 都能用）
+### 复制提示词
 
-直接复制 [`prompts/精简版提示词.txt`](prompts/精简版提示词.txt)（[English](prompts/quick-prompt-en.txt)），粘贴到对话开头，然后发送你的 idea、论文或实验计划。复制即用，零依赖。
+复制[中文提示词](prompts/精简版提示词.txt)或[English prompt](prompts/quick-prompt-en.txt)，然后提供你的 idea、稿件或实验计划。提示词本身无需额外依赖；检索和读取参考论文取决于所用 AI 工具的能力。
 
-### 方式二：安装 Skill
+### 安装 Skill
 
 ```bash
 git clone https://github.com/Adkid-Zephyr/oral-paper-skill.git
-
-# Codex
-cp -R oral-paper-skill/skills/oral-paper-skill ~/.codex/skills/
-
-# Claude Code / 其他支持 Skills 的工具
-cp -R oral-paper-skill/skills/oral-paper-skill ~/.claude/skills/
 ```
 
-之后直接说：
+将仓库里的 `skills/oral-paper-skill` 目录放入工具的 skills 目录，例如 `~/.codex/skills/` 或 `~/.claude/skills/`。已有同名版本时先比较内容，避免覆盖自己的修改。
+
+对照改进：
 
 ```text
-使用 $oral-paper-skill 检查这个 idea。
-先告诉我整篇论文应该押什么、凭什么成立，以及哪个实验会决定它的生死。
-不要先润色语言。
+使用 $oral-paper-skill 对照适合我这篇工作的优秀论文，
+指出最值得改进的三处。给出出处、适用原因和具体修改建议。
 ```
 
-## 为什么不是拍脑袋总结
-
-初始版本覆盖 2026-09-02 时最新完成的六个会议周期：
-
-- ICLR 2025–2026：436 个官方 Oral events；
-- ICML 2025–2026：289 个；
-- NeurIPS 2024–2025：159 个。
-
-合计结构化扫描 **884 个官方 Oral 条目、883 份可用摘要**，再分层深读方法、理论、机制、系统、Benchmark/Data 和 Position Paper 中的代表性 Oral / Best / Outstanding papers，以及官方评奖委员会公开写下的选择理由。
-
-这不是“读完 884 篇全文”。它是一次全量摘要层扫描 + 跨类型深读。完整语料边界、会议链接和委员会标准见 [`oral-patterns.md`](skills/oral-paper-skill/references/oral-patterns.md)。
-
-一个重要发现是：强论文不等于统一的“大 benchmark + SOTA 数字”模板。理论论文可以靠紧致结果与概念意义，机制论文靠控制实验，系统论文靠端到端 frontier，Position Paper 靠证据化立场和可行动的方向。
-
-## 它不会做什么
-
-- 不把 ORAL 评分包装成录取概率；
-- 不为尚未得到的结果画成功曲线；
-- 不用写作技巧救活已被简单 baseline 击败的方向；
-- 不把 pilot、synthetic cases 或机械检查写成泛化结论；
-- 不强迫所有论文使用同一种模板。
-
-## 适用场景
-
-- 从一个 idea 建立 paper spine；
-- 重写标题、Abstract 和 Introduction；
-- 设计 Figure 1、主定理或核心 Demo；
-- 重构实验，让每个实验承担明确的论证责任；
-- 投稿前做 `GO / WAIT / KILL` 审查；
-- 判断应该补实验、换故事，还是停止一个方向。
-
-## 仓库结构
+学习复盘：
 
 ```text
-oral-paper-skill/
-├── skills/oral-paper-skill/
-│   ├── SKILL.md
-│   ├── agents/openai.yaml
-│   └── references/
-│       ├── archetypes.md
-│       ├── oral-patterns.md
-│       └── review-scorecard.md
-├── prompts/
-│   ├── 精简版提示词.txt
-│   └── quick-prompt-en.txt
-└── README.md / README_EN.md
+使用 $oral-paper-skill，讲解这些参考论文在叙事和实验设计上
+值得学习的做法，并帮助我用自己的论文做一次复盘。
 ```
+
+## 884 到底指什么
+
+2026-09-02 的抓取记录报告：
+
+| 会议周期 | Oral 条目数 |
+|---|---:|
+| ICLR 2025–2026 | 436 |
+| ICML 2025–2026 | 289 |
+| NeurIPS 2024–2025 | 159 |
+| 合计 | 884 |
+
+其中报告提取了 883 份可用摘要。原始索引未随初版仓库归档，后续需要重建并核对条目与论文的映射。
+
+当前实际完成的是摘要关键词扫描、少量论文正文/图表案例阅读及评奖说明整理，尚未形成覆盖全部摘要的逐篇语义记录，也没有完成 884 篇全文蒸馏。“884”不是全文精读数量。
+
+[来源与阅读层级](skills/oral-paper-skill/references/oral-patterns.md) · [下一步摘要层提炼方案](docs/ABSTRACT_DISTILLATION.md)
+
+## 怎么理解它的建议
+
+Oral 身份用于选择学习范例；本工具不代表会议官方标准，也不保证录取。摘要只能支持问题表达和作者声称的贡献分析；图表设计、实验细节和证明需要对应全文。
+
+使用效果尚未经过独立对照评测。欢迎提交有原文出处的案例、纠错和真实改稿反馈。
 
 ## 论文 Skill 系列
 
-第一篇：[`Anti-Defensive Writing`](https://github.com/Adkid-Zephyr/anti-defensive-writing-Skill) —— 防止论文把自己写弱。
+[Anti-Defensive Writing](https://github.com/Adkid-Zephyr/anti-defensive-writing-Skill)：改进论文表达。
 
-第二篇：`Oral Paper Skill` —— 判断论文是否有一个值得押注的中心主张，以及证据是否真的能让它成立。
-
-欢迎 PR，也欢迎转发给你的同门。
+Oral Paper Skill：借助优秀论文，获得对照建议并学习复盘。

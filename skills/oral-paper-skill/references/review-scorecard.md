@@ -1,93 +1,37 @@
-# ORAL reviewer scorecard
+# Comparison and reflection guide
 
-Use for a substantial draft, paper spine, or experiment plan. This diagnoses argument quality; it does not estimate acceptance probability.
+Use this when a user requests a structured review or learning retrospective. Match the advice to the user's stage and actual claim. Do not apply this as a conference admission test.
 
-Rate each dimension `PASS`, `WEAK`, or `MISSING` and cite the exact section, theorem, figure, table, result, or evidence artifact.
+## Inspect the learning target
 
-## O — One irreducible claim
+- What is the author trying to improve: framing, contribution, argument order, figures, experiments, or interpretation?
+- What is already supported, and what is still an idea or missing from the supplied material?
+- Which exemplar is comparable in problem, contribution type, and resources?
 
-`PASS` when a reader can state the important problem and one falsifiable contribution after the title, abstract, and first Introduction page.
+## Produce source-linked suggestions
 
-Ask:
+For each high-priority suggestion, provide:
 
-- Is this a consequential problem, open question, bottleneck, or assumption—not just an unused feature?
-- Is there one center of gravity?
-- Does the claim matter beyond a single benchmark or niche configuration?
-- Does it survive the closest primary work?
+1. **Practice:** what the exemplar actually does.
+2. **Source:** paper title, link, inspected reading level, and section/figure or abstract sentence.
+3. **Relevance:** why the practice might help this manuscript; state important differences.
+4. **Observation:** where the current draft succeeds or could improve.
+5. **Action:** a concrete rewrite, figure change, comparison, or analysis.
+6. **Reflection:** a focused question that helps the author understand the reasoning.
 
-## R — Reader-visible proof
+Use at most three suggestions unless the user requests more. It is acceptable to find no useful difference. When sources are unavailable, label a suggestion as general research advice rather than inventing a comparison.
 
-`PASS` when the appropriate proof carrier makes the central claim legible early.
+## Optional ORAL prompts
 
-Ask:
+- **O:** Can the author explain the central question and how multiple contributions connect?
+- **R:** Does the main figure, theorem, table, or demonstration make the evidence understandable?
+- **A:** Are there relevant alternatives or confounders that the evidence does not yet distinguish?
+- **L:** What can another researcher learn or use from the result or resource?
 
-- Does Figure 1, theorem, table, counterexample, or demo show the actual wager?
-- Can the reader see the incumbent, change, and consequence?
-- Is the main result hidden in an appendix or diluted across many figures?
-- For pre-result work, is the outcome marked `PLANNED` without mock numbers or success-shaped curves?
+A missing or inapplicable dimension does not imply rejection. Treat early-stage uncertainty differently from a claim contradicted by evidence. A resource paper need not also establish a new mechanism.
 
-## A — Adversarial evidence
+## Editing and learning
 
-`PASS` when the strongest simple alternative is tested under fair conditions and the evidence can genuinely kill the claim.
+If asked to edit, provide the actual revised artifact and briefly explain the source-informed changes. If asked to learn, use one or two examples and end with a short exercise on the author's own work.
 
-Ask:
-
-- Could more compute, data, calls, context, tools, tuning, or a stronger model explain the result?
-- Is the baseline optimized and matched on the relevant resource?
-- Is there a negative control, tightness argument, intervention, or held-out axis aimed at the central claim?
-- Are the oracle, assumptions, construct, and system boundary validated?
-- Are repeated runs being mistaken for independent tasks?
-
-## L — Lasting lesson
-
-`PASS` when the paper leaves a mechanism, principle, bound, trade-off, practical rule, new scientific object, or societal consequence that remains useful after rankings change.
-
-Ask:
-
-- What sentence from this paper should still matter in three years?
-- Does the work change how the field thinks, builds, measures, or allocates resources?
-- Are negative and heterogeneous results used to define the regime rather than hidden?
-
-## Alignment and integrity
-
-`PASS` when title, abstract, Introduction, proof carrier, primary result, and conclusion state the same claim at the same evidence level.
-
-Ask:
-
-- Are pilots, synthetic cases, or mechanical checks being inflated into prevalence or transfer?
-- Has a killed direction returned through rhetoric?
-- Are retrospective, prospective, held-out, and independently replicated evidence separated?
-- Can ambiguity produce `ABSTAIN`, `UNKNOWN`, or out-of-scope?
-- Are limitations necessary and scoped, or is the paper arguing against itself?
-
-## Verdict
-
-- `GO`: O, R, A, L and integrity pass; remaining work does not change the centerpiece.
-- `WAIT`: the centerpiece is coherent, but one named evidence, assumption, baseline, validity, or transfer gate is missing.
-- `KILL`: the centerpiece is occupied, unfalsifiable, contradicted, or dominated by a simple alternative.
-
-## Concise audit output
-
-```markdown
-Verdict: GO | WAIT | KILL
-
-Story: <one-sentence problem and central claim>
-
-ORAL:
-- O: PASS | WEAK | MISSING — <evidence>
-- R: PASS | WEAK | MISSING — <evidence>
-- A: PASS | WEAK | MISSING — <evidence>
-- L: PASS | WEAK | MISSING — <evidence>
-- Alignment/integrity: PASS | WEAK | MISSING — <evidence>
-
-Proof carrier:
-<Figure 1, theorem, table, counterexample, or demo>
-
-The survival test:
-<single comparison or theorem condition + kill criterion>
-
-Next action:
-<what to edit or build now>
-```
-
-Do not append a broad literature survey or implementation catalog unless requested.
+Present evidence, inference, and recommendation distinctly. Avoid acceptance probabilities, Oral-level scores, or automatic GO/WAIT/KILL verdicts. A reviewer-style risk analysis may be given when expressly requested, with its uncertainty and scope stated.
