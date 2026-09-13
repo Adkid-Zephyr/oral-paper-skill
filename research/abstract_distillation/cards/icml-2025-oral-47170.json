@@ -1,0 +1,159 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47170",
+    "title": "Addressing Misspecification in Simulation-based Inference through Data-driven Calibration",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47170"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8ea36f1082943fe0da267fb6829a99e40487ea4a628e579cb373514d6758b3f6",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "f1a81a72eb51241bac41d88496b2b7166b437e0c1ae2667c3bbcdc42eddbb0f0",
+    "extracted_at": "2026-09-13T00:07:18.619060+00:00",
+    "session_id": "01a09816-b86d-7973-a397-1bd0367117d9",
+    "usage": {
+      "input_tokens": 12652,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 721,
+      "reasoning_output_tokens": 78
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "53380784d99418bdf9220d02db8c1eb01bd5e4f39c48e7fdf6ffe7a28acd499e"
+    },
+    {
+      "id": "S2",
+      "sha256": "edec4fde2478a7902468c5d9e046e899c9902a99411b12fcb8f17b464d60b2b7"
+    },
+    {
+      "id": "S3",
+      "sha256": "05259d82064e0080d90ec653816639a6f093780f6f45e9c5d640e4d02ac9332c"
+    },
+    {
+      "id": "S4",
+      "sha256": "09bf1aee6ec52db65633842702d6a1ee721af48583b9702d3ec21b0dc731e7a9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47170",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Make simulation-based inference reliable when the available simulator is misspecified.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Misspecification can harm SBI reliability, while existing approaches do not provide a stated way to learn the misspecification without additional assumptions on its nature.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces robust posterior estimation (RoPE), using a small real-world calibration set of ground-truth parameter measurements.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory/framework",
+        "claim": "Formulates the misspecification gap as an optimal-transport problem between learned representations of real and simulated observations.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "RoPE learns a model of misspecification without placing additional assumptions on its nature.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that combining the calibration set with optimal transport provides a controllable balance between calibrated uncertainty and informative inference, even with severely misspecified simulators.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "Across four synthetic tasks and two real-world problems with ground-truth labels, the authors report that RoPE outperforms baselines and consistently produces informative, calibrated credible intervals.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "SBI is presented as a workhorse for inferring parameters of stochastic simulators.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "Simulator misspecification is identified as a reliability barrier to SBI adoption.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "RoPE uses real-world calibration measurements and optimal transport between learned real and simulated representations to model misspecification.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "claimed behavior",
+        "summary": "The calibration set and optimal transport are reported to balance uncertainty calibration with informative inference under severe misspecification.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Reported tests cover four synthetic tasks and two labeled real-world problems, with comparisons against baselines.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a controllable inference trade-off to two explicit ingredients: a real-world calibration set and optimal transport.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "Naming which components control a desired trade-off can make a method claim more mechanistically interpretable.",
+        "application": "When proposing a robustness method, state which data or algorithmic components govern each target property and how they are intended to interact.",
+        "exception": "This framing is unsuitable when the abstract cannot support a component-to-property link or when the interaction is purely conjectural."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify calibration-set size, baseline identities, quantitative gains, or how the controllable balance is tuned.",
+      "The reported real-world tasks, misspecification severity, and credible-interval evaluation details are unspecified."
+    ]
+  }
+}

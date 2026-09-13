@@ -1,0 +1,197 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-116347",
+    "title": "Superposition Yields Robust Neural Scaling",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/116347"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "925ce8c5bdeeaca4fcd6d23b39f68ef6e5758f69713a2cad611d2570b2ddf878",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "9aaf9a935a645ab3d2a8fb6295f6caa0341087a40aaed6548ccb20ab2a303f93",
+    "extracted_at": "2026-09-13T00:21:04.712914+00:00",
+    "session_id": "01a09823-5818-76d1-9492-646024f4d322",
+    "usage": {
+      "input_tokens": 12728,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 677,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0788c7e79c2482fa05733db442bf4c79caed693dd4e9aea8678f8164bdd59800"
+    },
+    {
+      "id": "S2",
+      "sha256": "d4499ac554ea2d7a56e7c55591844782f1f477c44426e4f7766fd9dd848cb838"
+    },
+    {
+      "id": "S3",
+      "sha256": "d3ecae2f1d26ec73ffe296e53bc6c8bff2bf9e7e621d7e37abbf07bc11c77f49"
+    },
+    {
+      "id": "S4",
+      "sha256": "5f11f6667f69086decc6bbe893c15764fd9fbb063ebc1fe25bc7e2f6e03e8945"
+    },
+    {
+      "id": "S5",
+      "sha256": "cd727de2c54641645ab98d451642a9c44751685b6c246150ae9ce5f97eab2730"
+    },
+    {
+      "id": "S6",
+      "sha256": "c90733168e8d7f28c04ef3da5c68dd49513f83ffc668755e589c34956e998398"
+    },
+    {
+      "id": "S7",
+      "sha256": "55fedd8ff2c3c12a1b2091793a14e68515b459de1975fcbb612bfda127daee18"
+    },
+    {
+      "id": "S8",
+      "sha256": "fba3396f18220996368aac71914e838a879cef2f33f1089a8891d118794a4d57"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-116347",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain the origin of neural scaling, in which loss decreases as a power law with model size.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The origin of this scaling law remains unclear.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Proposes representation superposition as a contributor to loss and a cause of neural scaling.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses weight decay in an Anthropic-based toy model to control superposition and systematically study loss scaling with model size.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theoretical finding",
+        "claim": "Characterizes distinct scaling regimes: weak superposition requires power-law feature frequencies, whereas strong superposition generically yields inverse scaling with model dimension across a broad class of frequency distributions.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors identify representation superposition as a central driver of neural scaling laws.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that open-sourced LLMs operate in the strong-superposition regime and exhibit loss scaling inversely with model dimension.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that the Chinchilla scaling laws are consistent with strong-superposition behavior.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Larger models perform better, but the origin of power-law loss scaling is unclear.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "hypothesis",
+        "summary": "Representation superposition is proposed as a mechanism contributing to loss and neural scaling.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "analysis setup",
+        "summary": "A toy model uses weight decay to vary superposition and study scaling systematically.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "regime analysis",
+        "summary": "Weak superposition has conditional power-law scaling; strong superposition produces generic inverse-dimension scaling through geometric overlaps.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "empirical alignment",
+        "summary": "The authors report alignment between this strong-superposition account, open-sourced LLM behavior, and Chinchilla scaling laws.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates scaling behavior by superposition strength and states the distributional condition required in the weak regime.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Conditioning a claimed law on mechanism strength and data-distribution assumptions can make its scope more precise.",
+        "application": "Present a scaling claim as a regime map, explicitly listing the assumptions under which each regime holds.",
+        "exception": "This framing is unsuitable when the work has not identified meaningful regime variables or cannot support their boundaries."
+      }
+    ],
+    "unknowns": [
+      "The abstract states inverse-model-dimension scaling but does not provide fitted exponent estimates or uncertainties, model dimensions, datasets, or details of the reported confirmation in open-sourced LLMs.",
+      "The abstract states that geometric overlaps cause inverse scaling, but does not give the derivation or conditions defining the broad class of frequency distributions.",
+      "The abstract does not specify how Chinchilla-law consistency was assessed."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "unknowns[0]",
+      "before": "The abstract does not provide quantitative scaling exponents, model dimensions, datasets, or details of the reported confirmation in open-sourced LLMs.",
+      "after": "The abstract states inverse-model-dimension scaling but does not provide fitted exponent estimates or uncertainties, model dimensions, datasets, or details of the reported confirmation in open-sourced LLMs.",
+      "review_file": "reviews/flagged-batch-15.json",
+      "review_sha256": "f1eaeba916feff5cb775cc2af0cb450a65216607f4ecabdc228052b8db188965",
+      "applied_at": "2026-09-13T00:42:27.409471+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

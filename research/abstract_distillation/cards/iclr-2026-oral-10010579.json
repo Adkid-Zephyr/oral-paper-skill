@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010579",
+    "title": "Softmax Transformers are Turing-Complete",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010579"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "35a9ef1c966c15246514ca791ed93c3ba7f32c1aec0fae981b9892b4e253cd3b",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "b6c19d1442eb5d0e9ed71195e12d711d87ccd6a7e6aee06b4d913083165c0d5b",
+    "extracted_at": "2026-09-13T00:04:41.482137+00:00",
+    "session_id": "01a09814-4e9c-7960-a546-8ac045a46a2e",
+    "usage": {
+      "input_tokens": 12676,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 813,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "da1c5a38dd6726abd4cca4e2f81fffebf96b220b6b1808771832b902a87c8f53"
+    },
+    {
+      "id": "S2",
+      "sha256": "f0a713a0514aafda3c403a652ac3914200e462f5e917b70038edd05d67505a6a"
+    },
+    {
+      "id": "S3",
+      "sha256": "33c730ac7aec4e5b7416d83a80c35a2c5833b2838337aa8dd8e17bfc22a715a7"
+    },
+    {
+      "id": "S4",
+      "sha256": "756c25952401b5851e8d4a76e7d48e4d59b1fb1c8d193c8f4209a6d3609369d4"
+    },
+    {
+      "id": "S5",
+      "sha256": "06f161eb1fa8610ac2c63679ebe0fc4f0c2cc15c9d0e62e8e1760d2bdcab7abd"
+    },
+    {
+      "id": "S6",
+      "sha256": "5bcdc360d835d3039f5d11f37d970054610c20ee0621a061c90086b74be34a4f"
+    },
+    {
+      "id": "S7",
+      "sha256": "2aa816cc12a2a8b3b6d01e89201a5364e51f5178a81874ec83b4abfa73a06229"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010579",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Whether softmax-attention Chain-of-Thought transformers are Turing-complete.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Turing-completeness was known for hard-attention CoT transformers, but remained open for softmax-attention CoT transformers.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Proves that length-generalizable softmax CoT transformers are Turing-complete via the CoT extension of Counting RASP.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Establishes Turing-completeness for CoT C-RASP with causal masking over unary and, more generally, letter-bounded languages.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Shows that relative positional encoding extends the construction to arbitrary languages, whereas the unextended system is not Turing-complete there.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize length-generalizable softmax CoT transformers as Turing-complete, presenting this as a stronger result.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report proving Turing-completeness for the specified CoT C-RASP settings and for the relative-position extension on arbitrary languages.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report empirical validation by training transformers on various languages requiring complex, non-linear arithmetic reasoning.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Hard-attention CoT transformers are described as already known to be Turing-complete.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "open_question",
+        "summary": "The abstract identifies softmax-attention CoT transformers as an unresolved case.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "main_result",
+        "summary": "The paper claims a stronger result for length-generalizable softmax CoT transformers, using CoT C-RASP as the proof route.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "scope_and_extension",
+        "summary": "The result is established first for causal masking on unary or letter-bounded languages, then extended to arbitrary languages with relative positional encoding; the unextended arbitrary-language case is reported as not Turing-complete.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "empirical_check",
+        "summary": "Training experiments on languages requiring complex non-linear arithmetic reasoning are reported as empirical validation.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract states the main theorem through an intermediate formalism and explicitly separates language-scope restrictions from the relative-position extension.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact theorem claim becomes more informative when its proof vehicle, domain of validity, and boundary cases are named together.",
+        "application": "State a theoretical result with the intermediate representation used, the exact input-language scope, and any extension needed to reach the broader claim.",
+        "exception": "This structure is less useful when the paper has no formal intermediary or when scope distinctions are immaterial to the result."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no proof details, construction, theorem conditions beyond the stated masking and language scopes, or formal definition of length generalization.",
+      "The empirical report omits datasets, baselines, training procedures, metrics, and quantitative results."
+    ]
+  }
+}

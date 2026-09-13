@@ -1,0 +1,162 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008745",
+    "title": "Uncover Underlying Correspondence for Robust Multi-view Clustering",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008745"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b3139013d6c3011f77d20b8d460c38c11c26ebe81b53e477ca63456b3b0c4590",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "b0849a59db5fb60d56408c1facf099b86471fd6b0edc23d93144c8db49c27a37",
+    "extracted_at": "2026-09-13T00:01:41.906310+00:00",
+    "session_id": "01a09811-9a15-7201-acf2-f48561fba453",
+    "usage": {
+      "input_tokens": 12767,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 671,
+      "reasoning_output_tokens": 99
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bff0f0489448b6341a631a3f1e6f861848b3a11ae9f63ec2bf40bda42134ca2e"
+    },
+    {
+      "id": "S2",
+      "sha256": "374c0ecd4a459a35164043ae45a2d95435c38add511f28f6d27d2d2d847e9db1"
+    },
+    {
+      "id": "S3",
+      "sha256": "22920f83385105b90202cdd3695d14e37a572b8b59d559d3fc61202ec114fb28"
+    },
+    {
+      "id": "S4",
+      "sha256": "369e6f14fe14767d3058df628aa25a44f115c7f7662e086b9768d7e69eb0d613"
+    },
+    {
+      "id": "S5",
+      "sha256": "0e208bb1f1809dba38fe26647a77e562854cc32c6cdf00330a903cd3601ed320"
+    },
+    {
+      "id": "S6",
+      "sha256": "9413281b0ae4e909123c4075d2f35600060b7941bd96fd2a3e4598ac5c645804"
+    },
+    {
+      "id": "S7",
+      "sha256": "15be957be096d90fcedb29fe7dfdcdd90e1477d43bbdf70eae9616957fbf1b9e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008745",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Robust multi-view clustering when cross-view data contain noisy correspondence.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies unreliable alignments caused by category-level and sample-level correspondence mismatches, including samples with no valid counterpart.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "CorreGen formulates noisy-correspondence learning as maximum-likelihood estimation over latent cross-view correspondences.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "An EM procedure infers soft correspondences and updates embeddings; GMM-guided marginals down-weight noisy or unalignable samples.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present CorreGen as a generative framework for uncovering underlying correspondence in noisy multi-view clustering.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments on synthetic and real-world noisy datasets show significantly improved clustering robustness.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task_context",
+        "summary": "Multi-view clustering relies on cross-view consistency to group unlabeled data.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "failure_modes",
+        "summary": "Web-collected data can violate this prior through category-level and sample-level correspondence mismatch.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed_solution",
+        "summary": "CorreGen models latent correspondences with maximum likelihood and solves the objective using EM with soft relations and adaptive down-weighting.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_evaluation",
+        "summary": "The authors report improved robustness on synthetic and real-world noisy datasets.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates correspondence noise into category-level mismatch and sample-level misalignment, including absent counterparts, before mapping them to soft inference and adaptive weighting.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "A useful methodological pattern is to decompose a broad data-quality problem into distinct failure modes and align each with an explicit modeling response.",
+        "application": "When presenting a robustness method, name the concrete corruption types, then state which mechanism addresses each type.",
+        "exception": "This framing may be unsuitable when the failure modes cannot be distinguished from available data or when the method has only one undifferentiated remedy."
+      }
+    ],
+    "unknowns": [
+      "No metrics, baselines, dataset sizes, or quantitative results are provided.",
+      "The abstract does not establish which component drives the reported improvement or whether the method handles correspondence noise beyond the described mismatch types."
+    ]
+  }
+}

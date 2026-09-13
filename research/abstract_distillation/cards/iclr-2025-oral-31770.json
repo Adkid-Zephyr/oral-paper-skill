@@ -1,0 +1,152 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31770",
+    "title": "MaestroMotif: Skill Design from Artificial Intelligence Feedback",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31770"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b5cc890b55a0d68c0d43ea301577b83b8f1ebf3ca84d5a9ebd47c680631c3886",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "30778959a7609af417377e7ad3c254029f2f927e83a900256d5406147debf66e",
+    "extracted_at": "2026-09-12T23:51:13.153735+00:00",
+    "session_id": "01a09808-0691-7eb2-b17d-8525e5518db6",
+    "usage": {
+      "input_tokens": 12628,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 627,
+      "reasoning_output_tokens": 89
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5ec8d61f9aa0a16c5b5abbf5b310705df7386e5eee3be1ffe3c1f80025576867"
+    },
+    {
+      "id": "S2",
+      "sha256": "f8bc353b9eec1eb3714bc9809e7bdab10d3102b5c1bfb83593533d5c6a8148b0"
+    },
+    {
+      "id": "S3",
+      "sha256": "aebc02919f65aba1a5ba39e517e74061287e645e30389cee9f23f482faf9fa0a"
+    },
+    {
+      "id": "S4",
+      "sha256": "5091c24bb7c95cf51b082ddcec4c2daab5f6007fbf5bc604bdb81c08b6f1729a"
+    },
+    {
+      "id": "S5",
+      "sha256": "bf08d10732094821acbb3152b80844c6642bc2b5ea168c94cc2f35351feb81e6"
+    },
+    {
+      "id": "S6",
+      "sha256": "967771ac59a523016ee642516b729c8841b1e74b667fa37854be8bf675220b05"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31770",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design reusable skills from natural-language decision-making descriptions and combine them into complex language-specified behaviors.",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "MaestroMotif uses LLM feedback to automatically design rewards from natural-language skill descriptions.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It combines LLM code generation with reinforcement learning to train and compose skills for complex behaviors.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present MaestroMotif as an AI-assisted approach to skill design that creates and reuses skills through LLM capabilities.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report evaluation on a suite of complex tasks in the NetHack Learning Environment, with MaestroMotif surpassing existing approaches in performance and usability.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Natural-language skill descriptions are presented as an accessible way to inject human decision-making knowledge into AI systems.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "MaestroMotif converts descriptions into rewards using LLM feedback, then trains skills with LLM-generated code and reinforcement learning.",
+        "source_ids": [
+          "S2",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The method is evaluated on complex NetHack Learning Environment tasks and is reported to outperform existing approaches in performance and usability.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The method aligns natural-language descriptions, automatically designed rewards, generated training code, and skill composition into one pipeline.",
+          "source_ids": [
+            "S1",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A staged mapping from high-level intent to trainable objectives can make a complex method easier to explain and operationalize.",
+        "application": "When presenting a language-conditioned agent, explicitly map each language artifact to its reward, executable component, and composition role.",
+        "exception": "This framing may be unsuitable when the task has no reliable language-to-objective mapping or when generated code cannot be safely constrained."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative performance or usability results, task count, baselines, or evaluation protocol.",
+      "It does not specify how LLM feedback, generated code, or skill adaptability are validated or constrained."
+    ]
+  }
+}

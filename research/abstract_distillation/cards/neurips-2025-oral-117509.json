@@ -1,0 +1,216 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-117509",
+    "title": "TransferTraj: A Vehicle Trajectory Learning Model for Region and Task Transferability",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/117509"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a87f8f20189231c80470a7622a630cffdf647293dd09d45b6ee8398b04fa4820",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "eff8038f1f3f423a683a1de3eb1925b92cd7ae53dc7b6d75f801699e2e2301db",
+    "extracted_at": "2026-09-13T00:21:57.434095+00:00",
+    "session_id": "01a09824-1b44-74d0-8d11-c7eafe026f64",
+    "usage": {
+      "input_tokens": 12937,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 817,
+      "reasoning_output_tokens": 59
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bfedf1c4ee4430db0927b11e6265b418959f371b0bfb259b16f66c709b8ee9e8"
+    },
+    {
+      "id": "S2",
+      "sha256": "7b032f3056c5f970376f458e71a8657b921f1cc360c66d689abd4f9c39a1634f"
+    },
+    {
+      "id": "S3",
+      "sha256": "c9adc1f458d1d3ac499310ba9272ba89c8f6258b2d64557d2cdaace16d8f152f"
+    },
+    {
+      "id": "S4",
+      "sha256": "f88bcf6a4d603c6ece4ae611c01407755c8fb46ea9fe39495fdef5c689571985"
+    },
+    {
+      "id": "S5",
+      "sha256": "6d3256487e48ea06ceec7149f5e27cad459189ad6ca00644f762e8c85c876552"
+    },
+    {
+      "id": "S6",
+      "sha256": "7174eb60a53634732089f7e2cd463fccf74086ed63334a472c73e09f920ab5d4"
+    },
+    {
+      "id": "S7",
+      "sha256": "02da9a0eddabccc6e206bd5768ac11f48c89d0a3dddb3e98ccbf3b6b194596df"
+    },
+    {
+      "id": "S8",
+      "sha256": "8f8caf18172a5072139e861cdf37f1f6942a795718e3ee49cf32c850457a91bd"
+    },
+    {
+      "id": "S9",
+      "sha256": "05c2ccc99ad79c555be009da2e831364da34eaf4a2e7e54b67d85f88ad40391e"
+    },
+    {
+      "id": "S10",
+      "sha256": "55c9ab3f50e8c7f40b1b55b91a3ff1985b213f5814512eb4fba9a4427d86d172"
+    },
+    {
+      "id": "S11",
+      "sha256": "71d2b5053e80ff1a8115b5e66dcb881e7f14bc3daf22e5fd8314c94b440f017e"
+    },
+    {
+      "id": "S12",
+      "sha256": "56ac6e0012530c822648f1bca738423a1671f4a818288550e6be1b4553df0e62"
+    },
+    {
+      "id": "S13",
+      "sha256": "7fa70e541a8232b47ff4236bfc536b558bbd21e9384e442d957ffc82b183601e"
+    },
+    {
+      "id": "S14",
+      "sha256": "d407808eebe56b7ffc06cd2e6be68edf1911be2aea38451c2fde802a8902fa18"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-117509",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop a vehicle GPS trajectory model that transfers across regions and downstream tasks without retraining.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing transfer approaches mainly learn trajectory embeddings, which reportedly perform poorly for region transfer and require prediction-module retraining for task transfer.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "TransferTraj uses RTTE to integrate spatial, temporal, POI, and road-network modalities for region transfer; TRIE captures relative spatial information, while a spatial-context MoE handles diverse movement contexts.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A task-transferable input-output scheme unifies different tasks as masking and recovery of modalities and trajectory points, enabling one-time pretraining followed by task transfer without retraining.",
+        "source_ids": [
+          "S10",
+          "S11"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors evaluate TransferTraj across task transfer, zero-shot region transfer, and few-shot region transfer settings on three real-world vehicle trajectory datasets.",
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a model designed to jointly support region and task transferability, combining RTTE-based region adaptation with a unified task-transferable input-output scheme.",
+      "source_ids": [
+        "S6",
+        "S7",
+        "S10"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report extensive experiments on three real-world datasets spanning task, zero-shot region, and few-shot region transfer.",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "claim": "The authors report that TransferTraj significantly outperforms state-of-the-art baselines across different scenarios.",
+        "source_ids": [
+          "S13"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Trajectory data supports downstream applications, motivating a model transferable across regions and tasks without maintaining specialized models or retraining.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "Regional spatial contexts are difficult to generalize, while task transfer involves differing input-output structures.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "TransferTraj addresses regional variation with multimodal RTTE, TRIE, and spatial-context MoE components, and addresses task variation through masking-and-recovery unification.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors test the model under multiple transfer settings on three real-world datasets and report superiority over state-of-the-art baselines.",
+        "source_ids": [
+          "S12",
+          "S13"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract maps two distinct transfer challenges to separate mechanisms: multimodal/context modeling for regions and input-output unification for tasks.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S7",
+            "S8",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "Separating challenge-specific mechanisms can make a broad transferability claim more explanatory and traceable.",
+        "application": "For a multi-axis generalization paper, explicitly pair each identified axis with its corresponding architectural or training mechanism before presenting aggregate results.",
+        "exception": "This framing is less suitable when the axes are inseparable or when the paper lacks evidence isolating the proposed mechanisms."
+      }
+    ],
+    "unknowns": [
+      "No quantitative performance values, dataset identities, task list, baseline names, or transfer-cost details are supplied.",
+      "The abstract does not report ablations or separate evidence for RTTE, TRIE, the MoE module, and the task-transferable scheme."
+    ]
+  }
+}

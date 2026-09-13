@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71069",
+    "title": "Rex: A Family of Reversible Exponential (Stochastic) Runge-Kutta Solvers",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71069"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ef72cdd9259f84beb84e529f37bcc0bae51519e00f293e1765e090cf9d84cd25",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "b70b910ddad8e6d430d10f20becfc332fa2fc70ae066533abcc0a81c0b77d5fd",
+    "extracted_at": "2026-09-13T00:12:43.640639+00:00",
+    "session_id": "01a0981b-ab2f-7d10-baf3-51f06e2b695b",
+    "usage": {
+      "input_tokens": 12700,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 776,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b991ce6d00c60f5fce73cbe428f4b5223ca3feab1dc89430a1c202766b56aa5e"
+    },
+    {
+      "id": "S2",
+      "sha256": "b67e2b1231b62bdadafd2b2b9d0d4d2c6a76714cda0071f55d7f4ea46bc28044"
+    },
+    {
+      "id": "S3",
+      "sha256": "0c78205dfbc07f210e993691212b580f19276e14a361af8f7c8aeb757f5fd4a0"
+    },
+    {
+      "id": "S4",
+      "sha256": "8ac718f30179d12112cffb0597daff9cda13c8cf2145c29c64ce556c89210098"
+    },
+    {
+      "id": "S5",
+      "sha256": "cfb7277e43b80810dd6b1178d9ee3a98c74ba25394cfe3393554ce60f8001b5b"
+    },
+    {
+      "id": "S6",
+      "sha256": "2ae6df64b43ad6947da63d720b9faabafc5c3b65fe52f6946048d0bcc23125f7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71069",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable accurate inverse integration for neural differential-equation generative models, including ODE and SDE settings.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Standard solvers accumulate discretization error that prevents exact inversion; existing inversion methods are reported to have poor stability, low convergence order, and ODE-only scope.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Rex is a family of reversible exponential stochastic Runge–Kutta solvers that applies Lawson methods to convert any explicit stochastic Runge–Kutta scheme into an algebraically reversible solver for diffusion ODEs and SDEs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The authors provide a theoretical analysis establishing arbitrary-order convergence and a non-zero region of linear stability.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report near-machine-precision reconstruction and improvements in Boltzmann sampling with flow models, plus image generation and editing with diffusion models.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated distinction is an algebraically reversible Lawson-based conversion applicable to both diffusion ODEs and SDEs.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical results of arbitrary-order convergence and a non-zero region of linear stability.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report near-machine-precision reconstruction.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report improved Boltzmann sampling, image generation, and image editing in the named model settings.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Neural differential-equation generative models are described as state-of-the-art for many generation tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "task",
+        "summary": "These models integrate between prior and data distributions, making inverse-direction integration desirable in some applications.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Discretization errors obstruct exact inversion, while existing inversion methods are described as unstable, low-order, and limited to ODEs.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "Rex applies Lawson methods to explicit stochastic Runge–Kutta schemes to obtain algebraically reversible solvers for diffusion ODEs and SDEs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "support",
+        "summary": "The abstract reports arbitrary-order convergence, non-zero linear-stability regions, near-machine-precision reconstruction, and improvements in several sampling and image tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a concrete failure mode—discretization error blocking inversion—to a method whose reversibility is stated algebraically, then reports both theoretical properties and task-level outcomes.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact claim-to-evidence chain can make a solver contribution legible across mechanism, formal guarantees, and applications.",
+        "application": "Frame a numerical-method abstract by pairing the target failure mode with the structural property intended to address it, followed by separately labeled theory and application results.",
+        "exception": "This framing is unsuitable when the work lacks a precise failure mode or when theoretical and empirical claims cannot be clearly distinguished."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baselines, datasets, numerical settings, or quantitative comparisons behind the reported improvements.",
+      "The meaning and scope of “exact inversion,” “arbitrary-order,” and “near-machine-precision” are not operationally detailed in the supplied units."
+    ]
+  }
+}

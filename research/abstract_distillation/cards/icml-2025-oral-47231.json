@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47231",
+    "title": "MGD$^3$ : Mode-Guided Dataset Distillation using Diffusion Models",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47231"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ffcefb050e11690d82fafeae1653fb72f9abecb0537570665239aeb417800bdf",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "c9eefb2bf83f0d57e4f9e516c5e7efbbddcb8729f4751955eebd758e8d75c06b",
+    "extracted_at": "2026-09-13T00:09:40.040325+00:00",
+    "session_id": "01a09818-d975-7ba2-996f-03cb331bd318",
+    "usage": {
+      "input_tokens": 12677,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 767,
+      "reasoning_output_tokens": 99
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e7237f5cecad373ff4a2406ca7ecd4b651f7fc37eedbec43aea14e3504fdcd74"
+    },
+    {
+      "id": "S2",
+      "sha256": "1899a1aaa7a5cd0461346d064d7421fe7d84d58b9b6eb46471a0f4d1096feaf6"
+    },
+    {
+      "id": "S3",
+      "sha256": "7609a6d8461dbb73c1330fb61afcd7553e46c80704b84b944e01eff2bb736e6d"
+    },
+    {
+      "id": "S4",
+      "sha256": "7aff6065e745ab0bab0b8443e79a893fff6a02be96d404a4cacb7cb57b0fd3fd"
+    },
+    {
+      "id": "S5",
+      "sha256": "4d88f284b4542a1dddee5138ebe98d8b8f454a52434a13cd8e83116a162f61bb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47231",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reduce training and deployment costs through dataset distillation while preserving useful data diversity.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing generative distillation methods require fine-tuning with distillation losses, yet do not guarantee sample diversity, limiting performance.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A mode-guided diffusion approach that uses a pre-trained diffusion model without fine-tuning with distillation losses.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A three-stage process—Mode Discovery, Mode Guidance, and Stop Guidance—to address mode coverage, intra-class diversity, and synthetic artifacts.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reported accuracy improvements over state-of-the-art methods on four image benchmarks.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by avoiding diffusion-model fine-tuning with distillation losses while explicitly guiding modes and stopping guidance to reduce artifacts.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report accuracy gains of 4.4%, 2.9%, 1.6%, and 1.6% on ImageNette, ImageIDC, ImageNet-100, and ImageNet-1K, respectively, over state-of-the-art methods.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that eliminating distillation-loss fine-tuning significantly reduces computational costs.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Dataset distillation is presented as a way to reduce training costs and support efficient deployment by capturing data distributions with generative models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Prior methods rely on fine-tuning and still lack guaranteed sample diversity.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "The paper proposes mode-guided diffusion with three stages targeting mode discovery, intra-class diversity, and artifact mitigation.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report accuracy gains across four image benchmarks and lower computational costs from avoiding fine-tuning.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract maps three named procedural stages to distinct diversity or quality problems: mode discovery, intra-class diversity, and artifacts.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "This links each method component to a concrete failure mode, making the claimed mechanism easier to inspect.",
+        "application": "When presenting a multi-stage method, pair every stage with the specific data or model failure it is intended to address.",
+        "exception": "This framing is less suitable when stages are tightly coupled and cannot be meaningfully assigned separate roles."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dataset-distillation budgets, evaluation protocols, baseline identities, statistical variation, or whether the reported accuracy gains are absolute or relative.",
+      "The computational-cost reduction is described qualitatively without measurements or hardware conditions."
+    ]
+  }
+}

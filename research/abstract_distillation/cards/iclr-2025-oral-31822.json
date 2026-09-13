@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31822",
+    "title": "ReGenesis: LLMs can Grow into Reasoning Generalists via Self-Improvement",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31822"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d841cb633f4de4e6b413fcc25c5ee6991f11ff12f8bfa488c47f67234087c7a4",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "89e34e0461861352c18984151418f37c703e4a6bc9474bd441f2845867f9542a",
+    "extracted_at": "2026-09-12T23:53:26.853340+00:00",
+    "session_id": "01a09809-ffb4-77e1-a999-c842d8bb61c7",
+    "usage": {
+      "input_tokens": 12833,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 837,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d66dd22dae9c06a80345b599d427eae1b7b7037c003885b10ddc1b22df13925a"
+    },
+    {
+      "id": "S2",
+      "sha256": "d4ea66c03fdf751ec09915ef62fb304342e9611eef694333482062b2a44c46f8"
+    },
+    {
+      "id": "S3",
+      "sha256": "5de968cb4758d8e67944600db37c36d8e723dcf9d13533d75a7111c617635d94"
+    },
+    {
+      "id": "S4",
+      "sha256": "df3c3f1f287e569970173a4c6c06959e375a3cc582aee8552311be6e36145210"
+    },
+    {
+      "id": "S5",
+      "sha256": "eb93c5426e6ce4d45c75a475db53ae678ed845f180d68776af1f845c863ffe94"
+    },
+    {
+      "id": "S6",
+      "sha256": "48676d770f87060b3a897c56bd2d49b52f7190885ab38c98084d6f9aaca836f0"
+    },
+    {
+      "id": "S7",
+      "sha256": "0a6f37f4738c3077b38a4bd9eff725ace62b164b4181b7033fe05b1377475bc5"
+    },
+    {
+      "id": "S8",
+      "sha256": "fd96bcd433b2da5e0b6429eeb9077703954ae2528bc48b212f6b2d6ec9e923de"
+    },
+    {
+      "id": "S9",
+      "sha256": "6f3528f779a7dfe492a975d36bd274a0f26d6f2a02cfb44540e38f93c8b95209"
+    },
+    {
+      "id": "S10",
+      "sha256": "5bd0577be5a04be5242d313d9ba21028c7cbfdd0a1691e258722842ee2867fb2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31822",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper examines whether an LLM can improve reasoning by self-synthesizing reasoning paths for post-training without additional supervision.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing self-synthesizing methods reportedly generalize poorly to out-of-domain reasoning tasks, which the authors hypothesize results from task-specific paths lacking task-agnostic guidance.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "ReGenesis self-synthesizes post-training reasoning paths by progressing from abstract reasoning guidance to concrete task-specific paths.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report that ReGenesis outperforms existing methods across all tested in-domain and out-of-domain settings, with analysis across language models and design choices.",
+        "source_ids": [
+          "S8",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish ReGenesis by converting general reasoning guidelines into task-specific ones, generating reasoning structures, and then transforming them into reasoning paths without human-designed task-specific examples used by existing methods.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report superior performance over existing methods in every tested in-domain and out-of-domain setting.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "Across six out-of-domain tasks, previous methods reportedly decreased by about 4.6% on average after post-training, whereas ReGenesis improved performance by about 6.1%.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report effectiveness across various language models and design choices.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Reasoning trajectories can improve LLM reasoning, but obtaining high-quality trajectories may require costly or license-constrained supervision.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "The paper explores unsupervised self-synthesis and identifies poor out-of-domain generalization in existing methods.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "hypothesis",
+        "summary": "The authors attribute this limitation to task-specific self-synthesized paths that lack general reasoning guidance.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "approach_and_results",
+        "summary": "ReGenesis moves from general guidelines to structures and concrete paths; the authors report gains over existing methods, including on six out-of-domain tasks.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links out-of-domain generalization to a pipeline that moves from task-agnostic guidelines through reasoning structures to task-specific paths, and reports positive results on six out-of-domain tasks.",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S9"
+          ]
+        },
+        "interpretation": "Separating general reasoning guidance from task-specific realization can make a self-improvement procedure more explicitly target transfer.",
+        "application": "When proposing self-generated training data, describe intermediate abstractions and test whether they support transfer beyond the source task.",
+        "exception": "This framing may be unsuitable when the target domain depends primarily on highly specialized procedures that cannot be captured by general guidance."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the six out-of-domain tasks, evaluation metrics, model identities, datasets, or statistical uncertainty behind the reported percentages.",
+      "The reported causal explanation for prior methods' poor generalization is presented as a hypothesis, not as independently established evidence.",
+      "The abstract does not provide implementation details sufficient to assess reproducibility or determine which design choices drive the gains."
+    ]
+  }
+}

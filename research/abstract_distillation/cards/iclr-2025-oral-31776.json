@@ -1,0 +1,156 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31776",
+    "title": "Artificial Kuramoto Oscillatory Neurons",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31776"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "329bf7df3a3c38dee08a61d04ff8f58d91b7bc234c0ea1f9d8073b03ea8defbc",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "983b586d79fed3d02ef8863d4ec484d532766215552fa946276dbbaa1f8f0b33",
+    "extracted_at": "2026-09-12T23:39:28.643453+00:00",
+    "session_id": "01a097fd-4280-7f63-8f8c-ec28b434863a",
+    "usage": {
+      "input_tokens": 14197,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 687,
+      "reasoning_output_tokens": 99
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "74df6039fafaec1996e2c66093dafc5991408639c6d00aae95663755595507ae"
+    },
+    {
+      "id": "S2",
+      "sha256": "429cd08a5f86731f4c08aba11c48c586ed27c2bac2c2d38348fc6edda727ec43"
+    },
+    {
+      "id": "S3",
+      "sha256": "434a1443527163b649808323d37ad564680b682f49e10bfe644e81c4379ce6c6"
+    },
+    {
+      "id": "S4",
+      "sha256": "51720adcd5c0162a3987088207224913a1e1cc7d2287f4bf04e6f568326ba39f"
+    },
+    {
+      "id": "S5",
+      "sha256": "e8c6331698d59d3fd1c63a5f0cf9ac4d4d801dfea576b7cf3d369267ba62d254"
+    },
+    {
+      "id": "S6",
+      "sha256": "92880e53adbecc0160da9f4a2058dcd4f60969917e6a60aa583df7e909d3dfdd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31776",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper explores dynamical neural representations and a neuronal alternative to threshold units that can support varied connectivity designs.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Artificial Kuramoto Oscillatory Neurons (AKOrN), whose generalized Kuramoto updates bind neurons through synchronization dynamics.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports performance improvements across unsupervised object discovery, adversarial robustness, calibrated uncertainty quantification, and reasoning tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present AKOrN as a dynamical alternative to threshold units, compatible with fully connected, convolutional, and attentive connectivity.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report performance improvements across a broad set of task categories, including object discovery, robustness, uncertainty quantification, and reasoning.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Neural binding is described as supporting competitive learning and increasingly abstract representations.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "The paper highlights a hypothesis that dynamic spatiotemporal representations matter in neuroscience and AI.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "AKOrN is introduced as a synchronization-based dynamical alternative to threshold units that works with several connectivity patterns.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report improvements across diverse tasks and use them to argue for reconsidering basic assumptions about neuronal representations.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a proposed change at the neuronal update level to a broad set of task outcomes, while explicitly framing the results as evidence for dynamical representations.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A paper can make a mechanistic proposal more legible by linking the local design change to a cross-task representational hypothesis.",
+        "application": "When proposing a new neural unit, state the underlying representation hypothesis and test it across task families that exercise distinct capabilities.",
+        "exception": "This framing is less suitable when the contribution is narrowly optimized for one task or lacks evidence across meaningfully different settings."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, numerical gains, experimental conditions, or ablations, so the reported improvements cannot be compared or independently assessed here.",
+      "It does not provide formal details about the generalized Kuramoto updates or define how synchronization produces the claimed binding behavior."
+    ]
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-32124",
+    "title": "Navigating the Digital World as Humans Do: Universal Visual Grounding for GUI Agents",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/32124"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f93e70ee1d9a58961cfaa3d5e2286c026839e95c754cb07fa1a7798386316ca7",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "c563d23845ed3df5facbe6da98db1228e2b4a59bdec3f2e8602e3ccc54b24acf",
+    "extracted_at": "2026-09-12T23:57:58.505622+00:00",
+    "session_id": "01a0980e-23ac-7b31-8971-fecf848ae151",
+    "usage": {
+      "input_tokens": 12837,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 778,
+      "reasoning_output_tokens": 57
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2964d4bbe8405495d4397fe0e182e9d95d3a152289747ac19a621ab524a2ef35"
+    },
+    {
+      "id": "S2",
+      "sha256": "9915d9629213759db1bb8e05ca8b026190c2c40bd2fb9104a442f2375cb9ab24"
+    },
+    {
+      "id": "S3",
+      "sha256": "6829b4a4ec196f62918008487a2f558b202a463c761b7c067a44b7796d325c24"
+    },
+    {
+      "id": "S4",
+      "sha256": "7afa127422c75c997cbcdbb795c0e83e0f09a1be20f0a734713fb1a1867b0846"
+    },
+    {
+      "id": "S5",
+      "sha256": "e56a66b47cb35a32cb5a2eacc57838cb266ea0c01ecccaca7a60d9036da6da86"
+    },
+    {
+      "id": "S6",
+      "sha256": "191c894fc390c4032bc915c041624201cc723694ee40521e915c6ed9764a4207"
+    },
+    {
+      "id": "S7",
+      "sha256": "ede743a645c326c0dc9cf1175f82cbe68e2416081a936b8365852e1e9ed1048e"
+    },
+    {
+      "id": "S8",
+      "sha256": "a2b372d0c4c79904810e051a69b9ed5d4f6422f879fd6de06feef0834c27411f"
+    },
+    {
+      "id": "S9",
+      "sha256": "931f861d4dd9626074c5424f80a7aa50592748391cf7967a7992f1fbe28319ea"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-32124",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Build GUI agents that visually ground referring expressions to GUI coordinates and act directly at the pixel level across platforms.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Existing GUI agents mainly rely on HTML or accessibility-tree representations that can be noisy, incomplete, and computationally costly, while robust grounding remains necessary.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A visual-only GUI-agent approach using visual grounding models for cross-platform coordinate prediction and pixel-level interaction.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "resource and system",
+        "claim": "A dataset with 10M GUI elements and referring expressions across 1.3M screenshots, used to train UGround.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "training recipe",
+        "claim": "Web-based synthetic data combined with slight LLaVA adaptation for training visual grounding models.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present UGround as a universal visual grounding model trained from the described large-scale dataset and simple recipe, supporting human-like visual GUI navigation.",
+      "source_ids": [
+        "S6",
+        "S7",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that UGround outperforms existing GUI-agent visual grounding models by up to 20% absolute across six benchmarks in three categories.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that agents using UGround outperform state-of-the-art agents, even though those agents use additional text-based input and UGround-based agents use only visual perception.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "MLLMs are enabling GUI agents to move from controlled simulations toward complex real-world, cross-platform applications.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "The paper identifies robust grounding as essential and highlights limitations of text-based GUI representations.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "It advocates visual-only perception with pixel-level actions and coordinate grounding, trained using synthetic web data and slight LLaVA adaptation.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "resource and results",
+        "summary": "The authors introduce the large GUI-grounding dataset and UGround, then report gains across grounding and agent benchmarks.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a concrete representation choice—visual-only input and pixel-level actions—with the stated shortcomings of HTML and accessibility-tree inputs, then reports comparisons against agents using those inputs.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S8"
+          ]
+        },
+        "interpretation": "A paper can make its design rationale easier to assess by connecting the proposed representation directly to a diagnosed limitation and testing the resulting system against stronger-input baselines.",
+        "application": "When proposing a new agent interface, explicitly map each representation choice to a specific failure mode of existing inputs and include comparisons where baselines retain their extra modalities.",
+        "exception": "This framing is unsuitable when the task fundamentally requires structured or hidden interface state that pixels cannot reveal."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark names, dataset composition beyond the reported counts, training details, or statistical uncertainty.",
+      "The reported improvements do not establish independent validity, reproducibility, or generalization beyond the six benchmarks."
+    ]
+  }
+}

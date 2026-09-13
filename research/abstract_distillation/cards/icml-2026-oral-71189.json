@@ -1,0 +1,210 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71189",
+    "title": "Orthogonal Concept Erasure for Diffusion Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71189"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ba7a455280abe5558c4743e862013f236c19799c92357c3c63a9b8a6ed91373e",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "4e7f30566f989308ad192104d91b489e2c007e09c644695991b2e613df7c8430",
+    "extracted_at": "2026-09-13T00:17:39.830904+00:00",
+    "session_id": "01a09820-2a10-78d0-a8ea-fbc7fb0c9fe9",
+    "usage": {
+      "input_tokens": 14372,
+      "cached_input_tokens": 9984,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 906,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "723284a7c146f7a126c23fefe57312df8fa125af38b50bd3be809ebf2d1256c0"
+    },
+    {
+      "id": "S2",
+      "sha256": "0e6564ae4ce6459dfae837cd81ec83f281beae491f9a15fc86c375807270e04a"
+    },
+    {
+      "id": "S3",
+      "sha256": "70eabbc66eba7a4ba7212c908720cbb135b13ea8c6d95795e9b59975d58fd184"
+    },
+    {
+      "id": "S4",
+      "sha256": "eb38cd4dc61f62dd83a3f0b56ffcbae1935f0db877bde6f0640db86941b383b6"
+    },
+    {
+      "id": "S5",
+      "sha256": "c51478a131d2f8e426bdda8f5ac1520fec011c21c7cb24e4930ddb01421f2113"
+    },
+    {
+      "id": "S6",
+      "sha256": "606f4407351f351d85de9558187587d7b87aae87ff6352152dc08af0e84dd24d"
+    },
+    {
+      "id": "S7",
+      "sha256": "54bf182a385821dd389679aad40d20c087ebe4030e790f2435789d3a6252a9dd"
+    },
+    {
+      "id": "S8",
+      "sha256": "5c32749754b9e66892f0fe882a4a02eae9d909aa43d427106790ca4e1e480283"
+    },
+    {
+      "id": "S9",
+      "sha256": "7c27e3661bd924fc8eaf886c2951d31778cb24368d456b4a2e4f96cecb9be7c6"
+    },
+    {
+      "id": "S10",
+      "sha256": "29b5bce7108881bcb622ae7f3d2a135ba7a90ae4ea892cf05256558063a728fd"
+    },
+    {
+      "id": "S11",
+      "sha256": "d13012bcaba110e5c13e94e542bde05586303e7f66aff85f55ec86f41a345261"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71189",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Diffusion-model concept erasure must remove targeted concepts while preserving broader generative capacity, including in multi-concept settings.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S9"
+        ]
+      },
+      "gap": {
+        "claim": "Existing training-based methods are costly, while editing-based methods struggle to jointly achieve precise erasure and non-target preservation because additive updates entangle relevant parameter properties.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Orthogonal Concept Erasure (OCE), reframing editing-based erasure as multiplicative parameter updates using layer-wise orthogonal transformations from a closed-form solution.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "geometric analysis",
+        "claim": "Reports that concept semantics primarily depend on neuron direction, whereas overall generative capacity relies on neuron angular geometry; neuron magnitude is preserved by the proposed transformation.",
+        "source_ids": [
+          "S5",
+          "S8"
+        ]
+      },
+      {
+        "type": "multi-concept method",
+        "claim": "Introduces a subspace-level objective with structured subspace manipulation for conflicting multi-concept erasure constraints.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish OCE through its geometric, multiplicative, orthogonal-update formulation and its structured subspace treatment of multi-concept erasure.",
+      "source_ids": [
+        "S7",
+        "S8",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments on single- and multi-concept erasure show OCE outperforming existing methods in concept erasure and non-target preservation.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report erasing up to 100 concepts in 4.3 seconds.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Concept erasure is presented as a way to mitigate undesired or unsafe diffusion-model content, but existing approaches have important limitations.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Training-based approaches are computationally expensive; editing-based approaches are efficient but struggle with precise erasure and preservation, attributed to additive parameter updates.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "The authors report a geometric account separating concept semantics from neuron direction and generative capacity from angular geometry, with additive updates causing interference.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "OCE applies multiplicative, layer-wise orthogonal transformations and adds structured subspace manipulation for multi-concept conflicts.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "Reported experiments cover single- and multi-concept erasure, with claimed gains in erasure and non-target preservation and throughput up to 100 concepts in 4.3 seconds.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the failure mode of additive editing to entanglement among direction, magnitude, and angular geometry, then maps the proposed update rule to the properties it aims to preserve.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "A mechanism-level limitation can make a method design and its preservation claim easier to evaluate.",
+        "application": "When proposing a parameter-editing method, explicitly identify which parameter geometry encodes the target and which geometry must remain invariant, then align the update rule with those roles.",
+        "exception": "This framing may not transfer when the model behavior is not meaningfully represented by the proposed geometric quantities."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide quantitative baselines, metric values, datasets, hardware details, or statistical uncertainty for the reported comparisons.",
+      "The stated closed-form solution, orthogonal transformations, and subspace objective are not detailed enough here to assess their derivation or implementation.",
+      "The abstract does not specify whether the 4.3-second figure includes all preprocessing and evaluation overhead."
+    ]
+  }
+}

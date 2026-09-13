@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71031",
+    "title": "Benchmarking at the Edge of Comprehension",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71031"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "499969801b38d97e21a516e7c5eb2947f24e188e47d876710330e1505b65aaf1",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "401878401af6cd2c2aedb3205c64fa1333c3ba4fd5432291fae16097c773589f",
+    "extracted_at": "2026-09-13T00:11:27.925363+00:00",
+    "session_id": "01a0981a-7c0e-7862-a4a9-9a408d796415",
+    "usage": {
+      "input_tokens": 12770,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 850,
+      "reasoning_output_tokens": 126
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "40316f9617461d97c56e3c5abc9f4e4e22bcbdb1f0756448fcd9ba4e543bc62b"
+    },
+    {
+      "id": "S2",
+      "sha256": "7a59b1ceb42ff28ed6972d54f841c863cc0750e2235e2a74844cdf9a3b157619"
+    },
+    {
+      "id": "S3",
+      "sha256": "cdc5bd0fc64857c88b03e78b1c58331fd4d31651dfb7a71808c4834f1efb2bf9"
+    },
+    {
+      "id": "S4",
+      "sha256": "e8c5a20c0141a4065536b890cd1c51fcc1ed551faa238210d68e4addacc13f87"
+    },
+    {
+      "id": "S5",
+      "sha256": "3459f9400f09a8c242375c3aa9d26a99c8c584aeb0540d10685e140811f4c5ba"
+    },
+    {
+      "id": "S6",
+      "sha256": "3d097d006b66c50c5f9a75940042480da8093e9c5d47542bec8b81dd6ca80bb7"
+    },
+    {
+      "id": "S7",
+      "sha256": "32faee833f04b3451c34bf74c1b9762f2d4f917123db23f76cb67bc859fc86c3"
+    },
+    {
+      "id": "S8",
+      "sha256": "ef9300bb5406eb985ccfb744d2d5240d2b0987eb54e53449b6ee84d7f92b31e1"
+    },
+    {
+      "id": "S9",
+      "sha256": "24ef3e8b18f3dccdfbb427c5bdf3df26791f60f019780af8c1b8ec2f934e18fa"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71031",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "As frontier LLMs rapidly saturate benchmarks, humans may struggle to create discriminative tasks, supply ground truth, and evaluate complex answers, threatening AI progress measurement.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Standard benchmarking depends on levels of human understanding that may become infeasible in a post-comprehension regime.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Proposes Critique-Resilient Benchmarking, an adversarial framework for comparing models when full human understanding is infeasible.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "evaluation principle",
+        "claim": "Defines critique-resilient correctness: an answer counts as correct when no adversary has convincingly disproved it, with humans acting as bounded verifiers of localized claims.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "ranking method",
+        "claim": "Uses an itemized bipartite Bradley-Terry model to jointly rank models on solving difficult tasks and generating difficult yet solvable questions.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their framework from standard benchmarking by recasting evaluation as adversarial generation-evaluation with bounded human verification and final adjudication.",
+      "source_ids": [
+        "S4",
+        "S6",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a mathematical-domain demonstration across eight frontier LLMs in which resulting scores were stable and correlated with external capability measures.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Rapid benchmark saturation creates a potential crisis for human task construction, ground-truth provision, and complex-solution evaluation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "regime definition",
+        "summary": "The abstract names this challenge the post-comprehension regime.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The proposed framework uses adversarial critique-resilient correctness and localized human verification.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "ranking and demonstration",
+        "summary": "A bipartite Bradley-Terry model jointly ranks solving and question-generation abilities; the method is demonstrated on eight frontier LLMs in mathematics.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reframing",
+        "summary": "Benchmarking is presented as an adversarial generation-evaluation game with humans as final adjudicators.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The framework decomposes evaluation into localized claims checked by bounded verifiers rather than requiring complete human comprehension of each task.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This suggests a way to align an ambitious evaluation claim with a narrower, inspectable verification unit.",
+        "application": "When proposing evaluation beyond human expertise, define correctness through adversarially contestable subclaims and specify who adjudicates unresolved disputes.",
+        "exception": "This move may be unsuitable when localized claims cannot represent the target capability or when adversarial proof is itself too difficult to assess."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the external capability measures, stability statistics, baselines, task construction procedure, or adjudication protocol.",
+      "It does not establish that critique-resilient scores are valid, reproducible, or causally related to capability; only author-reported stability and correlation are given."
+    ]
+  }
+}

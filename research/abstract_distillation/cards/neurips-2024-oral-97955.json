@@ -1,0 +1,206 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97955",
+    "title": "Unlocking the Capabilities of Thought: A Reasoning Boundary Framework to Quantify and Optimize Chain-of-Thought",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97955"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "51d784d89e77c62a3a115013ea06fe189bb0bc6f55b54445c3a6e2102ebaf368",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "e7c4014128367e194b7a434bf5658e5fdfddc17c3c064f7e28d68fb3f66dcd8d",
+    "extracted_at": "2026-09-13T00:18:07.812126+00:00",
+    "session_id": "01a09820-9325-7ca0-9229-c081bb4145f4",
+    "usage": {
+      "input_tokens": 12829,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 805,
+      "reasoning_output_tokens": 85
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9baa0dd1af5d3176630d1b6f94cb6b7172a7648bf200d01d3812c54a3806fce6"
+    },
+    {
+      "id": "S2",
+      "sha256": "3e2019f08e89e10426b6440398e1e63b646ee4f030c8b49be5d997a7398002f8"
+    },
+    {
+      "id": "S3",
+      "sha256": "541d00de290c32333f61fa20a778ebce3682576361f7ac4f052f1e2ad28ea049"
+    },
+    {
+      "id": "S4",
+      "sha256": "dd5f7c90c6e42846c777575c7da9109c2709dc0078e6a043242b151410af83ec"
+    },
+    {
+      "id": "S5",
+      "sha256": "a6a18f700d12f276f88fb80b0ed14b548679973d0cf1fcdc27836b981acbd496"
+    },
+    {
+      "id": "S6",
+      "sha256": "b39a5f379ed003cfd41e6bc19e3804ac58f6ecb3d2756b721b40ade99c03c0e2"
+    },
+    {
+      "id": "S7",
+      "sha256": "f251b449f155f48a98c5ad2e8347c875904ee26e943c1a63527f1d73652b5e33"
+    },
+    {
+      "id": "S8",
+      "sha256": "26eb21f6ba4ceaa2a1df205f51b8d2e280fea63527412ae219c48154dab20318"
+    },
+    {
+      "id": "S9",
+      "sha256": "70209b1d265e096775bcb0b1164638a346fc467d9df0043c1bc9b5496cddb0bb"
+    },
+    {
+      "id": "S10",
+      "sha256": "edf960f1bfbc10ace4b21d7af477602e96e7ee3e7d1c04b0ab4bfc438509b8ae"
+    },
+    {
+      "id": "S11",
+      "sha256": "9d888247abef51b0995a78d230b3f5a5ea80fd959ee95d8ac59756130875adfd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97955",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses how to quantify and optimize chain-of-thought (CoT) reasoning capabilities in large language models on complex reasoning tasks.",
+        "source_ids": [
+          "S1",
+          "S5",
+          "S7"
+        ]
+      },
+      "gap": {
+        "claim": "Existing research lacks quantitative metrics for CoT capabilities and guidance for improving CoT performance.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Introduces a reasoning boundary framework (RBF) for quantifying and optimizing CoT.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory and method",
+        "claim": "Defines a reasoning boundary as a CoT upper bound, establishes a combination law, and proposes three RB categories with laws for RB promotion and reasoning-path optimization.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Makes the code and data publicly available.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe RBF as a novel framework intended to address the identified quantification and optimization challenges.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments across 27 models and 5 tasks that validate the existence and rationality of the proposed framework.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that the framework explains the effectiveness of 10 CoT strategies and guides optimization from two perspectives.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "CoT is presented as a promising approach for improving LLM performance on complex reasoning tasks, while prior work studies its mechanisms.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The paper identifies missing quantitative capability metrics and insufficient optimization guidance.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "RBF is introduced, with reasoning boundaries and a combination law for quantification, plus three RB categories for optimization.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "optimization",
+        "summary": "The categories are further developed through RB-promotion and reasoning-path optimization laws.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "reported study",
+        "summary": "The authors report multi-model, multi-task experiments, explanations of 10 CoT strategies, and optimization guidance.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns separate gaps with separate framework components: reasoning boundaries and combination laws target quantification, while RB categories and optimization laws target improvement.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "Explicitly mapping each claimed limitation to a method component can make a technical contribution easier to evaluate conceptually.",
+        "application": "When framing a new method, pair each stated gap with a named mechanism and indicate how the mechanism addresses it.",
+        "exception": "This framing is unsuitable when the task has one inseparable bottleneck or when the proposed components do not correspond to independently stated needs."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define the reasoning-boundary formalism or the three RB categories.",
+      "Experimental datasets, baselines, metrics, and the meanings of “existence,” “rationality,” and “two perspectives” are unspecified.",
+      "The abstract does not provide quantitative results for the 27 models, 5 tasks, or 10 strategies."
+    ]
+  }
+}

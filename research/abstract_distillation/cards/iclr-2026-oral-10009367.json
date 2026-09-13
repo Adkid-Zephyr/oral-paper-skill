@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009367",
+    "title": "TD-JEPA: Latent-predictive Representations for Zero-Shot Reinforcement Learning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009367"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "cee7d344daa4ba25adbe4eb173ce68baf31d5a76bfa5146a59a06ed960f1baeb",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "9901fd3891aca14fe5679b645ec9510308be6589e0c31a6f8c69e30e6cf029c0",
+    "extracted_at": "2026-09-13T00:02:51.337289+00:00",
+    "session_id": "01a09812-8f0d-7872-a41b-6703d00837cd",
+    "usage": {
+      "input_tokens": 12786,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 924,
+      "reasoning_output_tokens": 123
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "47f0d952b8ffabad62897c17396443bf8ac15b55cf46f9534a3e56a97e074f32"
+    },
+    {
+      "id": "S2",
+      "sha256": "bc5556a84198165a30cdc63731a3b8044f727c1bfc3e88851fc1ccbe8914119f"
+    },
+    {
+      "id": "S3",
+      "sha256": "701ed5fce1d2df6d48f4cc884ecb0099b92af271a8f06bcc214a63c4865bce7f"
+    },
+    {
+      "id": "S4",
+      "sha256": "30c33008e1943b19b5d49b80c93e065e77db1fd2224321ff1f82e1bab5fd0153"
+    },
+    {
+      "id": "S5",
+      "sha256": "7f16ed86408b0a8422a3be8d4e9d9268a4207dd7d49afd46bec97db95af69ee6"
+    },
+    {
+      "id": "S6",
+      "sha256": "390547adea7aee881738d2bd83e42aedfd08f82e17e11d6767c9add6eca782a6"
+    },
+    {
+      "id": "S7",
+      "sha256": "9acbb0c35866d3aed685452589ec08527ec66a2d8d94e8e4c662b2d6dd332438"
+    },
+    {
+      "id": "S8",
+      "sha256": "8d56caa2dfc1d04ea57e8f4bb28bb5fee0a4a6ae24e616307bf80f33bb402284"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009367",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Learn representations that support unsupervised, zero-shot reinforcement learning across tasks and policies.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches are typically restricted to single-task learning, one-step prediction, or on-policy trajectories, leaving long-term multi-policy prediction from offline, reward-free transitions insufficiently addressed.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces TD-JEPA, combining TD-based latent-predictive representations with unsupervised RL.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Trains explicit state and task encoders, a policy-conditioned multi-step latent predictor, and parameterized policies to enable test-time zero-shot optimization of arbitrary reward functions.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "theory and empirical finding",
+        "claim": "Reports theoretical results on non-collapse, low-rank long-term policy dynamics, and latent successor features, alongside benchmark results across 13 datasets.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish TD-JEPA by using TD learning to obtain long-term, multi-policy latent predictions from offline, reward-free transitions for unsupervised RL.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that an idealized TD-JEPA variant avoids collapse with proper initialization and learns encoders capturing a low-rank factorization of long-term policy dynamics, while its predictor recovers latent successor features.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that TD-JEPA matches or outperforms state-of-the-art baselines on locomotion, navigation, and manipulation across 13 ExoRL and OGBench datasets, especially for zero-shot pixel-based RL.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Latent prediction is presented as a paradigm for learning general representations, with RL applications spanning auxiliary losses, reward-based and unsupervised RL, behavior cloning, and world modeling.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap and insight",
+        "summary": "The paper identifies common scope limits in existing methods and argues that TD learning enables long-term latent-dynamics prediction across policies using offline, reward-free transitions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "TD-JEPA applies this idea to unsupervised RL through state/task encoders, a policy-conditioned multi-step predictor, and latent-space parameterized policies.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "capability and results",
+        "summary": "The resulting system is described as supporting test-time zero-shot reward optimization, with theoretical analysis and benchmark comparisons across 13 datasets.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a precise limitation of prior methods with a mechanism—TD learning—that addresses long-term, multi-policy prediction from offline reward-free data.",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "interpretation": "A strong abstract can make its motivation legible by linking a narrowly stated gap directly to the proposed technical principle.",
+        "application": "Frame a new method by naming the exact data, horizon, or task restriction it targets, then state which design choice is intended to relax that restriction.",
+        "exception": "Avoid this framing when the work is primarily exploratory and no single mechanism is clearly tied to a defined limitation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide quantitative scores, baseline identities, dataset-level breakdowns, or experimental protocols.",
+      "The theoretical claims are qualified to an idealized variant and proper initialization; the abstract does not specify how these conditions relate to the evaluated system."
+    ]
+  }
+}

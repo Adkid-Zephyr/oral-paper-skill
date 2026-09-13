@@ -1,0 +1,200 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31753",
+    "title": "Cybench: A Framework for Evaluating Cybersecurity Capabilities and Risks of Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31753"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3b453696996e219bae39b20027b5b482936d856669b7ea9d81f5a71614d275da",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "459845f154d65da93120f322535c021cc419b949338befdd796b7c081e295602",
+    "extracted_at": "2026-09-12T23:50:33.321520+00:00",
+    "session_id": "01a09807-5a52-7592-994b-d166b5bde45a",
+    "usage": {
+      "input_tokens": 12984,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 824,
+      "reasoning_output_tokens": 136
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f4ee96d2a81e302ea0444099430b3e8678244f200dc566349d11142c24410372"
+    },
+    {
+      "id": "S2",
+      "sha256": "0540dac9a3bdb3d33dee442a7733b26a13c454f19b901b4916b75f181f95173b"
+    },
+    {
+      "id": "S3",
+      "sha256": "83c0a512d51c7f0d999aab6693d433114128a9359efcbdbb5ac1d71b33069439"
+    },
+    {
+      "id": "S4",
+      "sha256": "426197340188afc9823f433dd1319c9aa23313b230c0d0fa02f5cdcb269b4a11"
+    },
+    {
+      "id": "S5",
+      "sha256": "46ba0bc0718826fd13e24aa4deeaea0c385f2dab669767d37a610d47394d2d68"
+    },
+    {
+      "id": "S6",
+      "sha256": "ad41c5f804a1190bf7008eaa74ac16c8f149860ce6312ee608f4e9883a88b4e1"
+    },
+    {
+      "id": "S7",
+      "sha256": "1ee3fcc3b6a380d91b8d160a5c71a61dd345dfb50173e1ebbb8c0dd9078dea33"
+    },
+    {
+      "id": "S8",
+      "sha256": "7c01c0f1694b9a82d979e598ae62286611d1257085741b281bc453f9245810f6"
+    },
+    {
+      "id": "S9",
+      "sha256": "e68658ecd55763949a6a53bfe053dde3dbf8a30412836f52e536f5ff8273219f"
+    },
+    {
+      "id": "S10",
+      "sha256": "2a49ccea37045e4de73a46cb039f00e11cb978f560de05f0bf596ac3c7e0b89d"
+    },
+    {
+      "id": "S11",
+      "sha256": "4a39a9b9092f2869fdd5506fed8280e37e45843adf50d8f93f981633ce252232"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31753",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Quantify the capabilities of autonomous cybersecurity language-model agents to support cyber-risk mitigation and investigate penetration-testing opportunities.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Cybench specifies cybersecurity tasks and evaluates agents on them.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "A benchmark of 40 professional-level CTF tasks from four competitions, spanning varied difficulty, with task descriptions, starter files, executable environments, and intermediary subtasks.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical study",
+        "claim": "An evaluation of eight language models and, for GPT-4o and Claude 3.5 Sonnet, four agent scaffolds.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce Cybench as a framework for specifying and evaluating cybersecurity tasks, including subtasks for more detailed assessment.",
+      "source_ids": [
+        "S3",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, without subtask guidance, agents using Claude 3.5 Sonnet, GPT-4o, OpenAI o1-preview, and Claude 3 Opus solved complete tasks that human teams took up to 11 minutes to solve.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that the most difficult task took human teams 24 hours and 54 minutes to solve.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Autonomous agents that identify vulnerabilities and execute exploits may have real-world impact, motivating capability measurement.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark design",
+        "summary": "Cybench introduces a task-evaluation framework with 40 varied professional-level CTF tasks and executable environments.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "granular evaluation",
+        "summary": "Subtasks decompose tasks into intermediary steps because many tasks exceed current agents' capabilities.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "model and scaffold evaluation",
+        "summary": "The study evaluates eight models and compares four scaffolds for the two top-performing models.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Several models reportedly solved some complete tasks without subtask guidance, alongside a large human-time range across tasks.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The framework adds intermediary subtasks when complete tasks are beyond existing agents, enabling more detailed evaluation.",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        "interpretation": "Decomposing an end-to-end challenge can expose partial capability that aggregate task success hides.",
+        "application": "For a complex benchmark, report both whole-task outcomes and progress on predefined intermediate steps.",
+        "exception": "This is unsuitable when intermediate steps are ambiguous, overly scaffolded, or fail to represent the real end-to-end objective."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no per-model scores, task-level results, subtask outcomes, or scaffold comparison results.",
+      "It does not specify how success, human solve times, or task difficulty were measured or compared."
+    ]
+  }
+}

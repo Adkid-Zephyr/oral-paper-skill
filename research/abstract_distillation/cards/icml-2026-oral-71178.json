@@ -1,0 +1,172 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71178",
+    "title": "Towards Long-Horizon Interpretability: Efficient and Faithful Multi-Token Attribution for Reasoning LLMs",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71178"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1ae317ca44b6949c760e8c8564117dec8021c95060c647043da946246c4c1737",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "e8a03c12d187c622d049553a6071b546e80ba6ece01b5e49f0332fa00e396324",
+    "extracted_at": "2026-09-13T00:17:05.341290+00:00",
+    "session_id": "01a0981f-abfc-7841-8fb8-e6c8e50c5197",
+    "usage": {
+      "input_tokens": 12725,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 736,
+      "reasoning_output_tokens": 82
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "04562fbd8cd8659def9fa7834e7fa64acd33e8c66452e736b4287a4d1f1a2445"
+    },
+    {
+      "id": "S2",
+      "sha256": "8fb3c3f589c2ae3a43a6eef0ede57e9933ea6e763579008a7087e731c4f7c8c1"
+    },
+    {
+      "id": "S3",
+      "sha256": "7c2cd2372804996660fbbd82271db8bf2aeda347076abdfa2b0ff2ca01979b3d"
+    },
+    {
+      "id": "S4",
+      "sha256": "d90555bedb51dd71dfcd486a3ca5113ab4d13fd7d756b0e2fadddb61d4facc13"
+    },
+    {
+      "id": "S5",
+      "sha256": "77428d290527175818f5bdac827d644ee48dbcf055a15bc2583c3ade257da02b"
+    },
+    {
+      "id": "S6",
+      "sha256": "8d26f5f4a3a242b1dfda0b908488258bb40159a377efa220f70700ad1b484c71"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71178",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Efficiently and faithfully attribute importance for multi-token outputs in long-context, reasoning-based LLMs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing attribution schemes reportedly require O(M·N) operations for an M-token target in an N-token context and can lose faithfulness when intermediate reasoning tokens absorb attribution mass.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "FlashTrace uses span-wise aggregation to compute multi-token attribution in a single pass.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A recursive attribution mechanism traces importance through intermediate reasoning chains back to source inputs.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "The paper analyzes how recursive attribution affects faithfulness across reasoning chains.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish FlashTrace by combining single-pass span-wise multi-token attribution with recursive tracing through intermediate reasoning chains.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report over 130× speedup versus existing baselines on RULER, MATH, and MorehopQA tasks, while maintaining superior faithfulness.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Authors report that even one recursive hop improves faithfulness by tracing importance through the reasoning chain.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Token attribution is presented as a way to identify causally important input tokens for model outputs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "Extended reasoning chains create efficiency costs and prevent attribution from propagating reliably to original inputs.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "FlashTrace applies single-pass span-wise aggregation and recursive attribution through intermediate reasoning.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "Experiments on long-context retrieval and multi-step reasoning tasks report substantial speedup and stronger faithfulness, with gains from one recursive hop.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a computational bottleneck with a faithfulness failure, then maps them to span-wise aggregation and recursive tracing, respectively.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Separating failure modes can make a method’s design rationale and evidence alignment more explicit.",
+        "application": "For a multi-component attribution method, state each diagnosed limitation separately and identify the mechanism intended to address it before presenting aggregate results.",
+        "exception": "This framing is less suitable when components cannot be linked to distinct failure modes or are evaluated only jointly."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the faithfulness metric, baseline identities, hardware or implementation conditions, or exact speedup measurement.",
+      "The reported meaning of “superior faithfulness” and the quantitative effect of a single recursive hop are not detailed.",
+      "The abstract does not establish independent verification of the reported results or priority over prior methods."
+    ]
+  }
+}

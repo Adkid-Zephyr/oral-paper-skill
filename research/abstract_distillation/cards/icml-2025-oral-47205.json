@@ -1,0 +1,186 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47205",
+    "title": "General framework for online-to-nonconvex conversion: Schedule-free SGD is also effective for nonconvex optimization",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47205"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "898cb3cc460f8b0bcbbf20f60909c78a1af9d367d0c8b22773405adfc2050101",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "88ea0be8418f753d760c95add4f5d316960b69dfe9a7a857a7be516c9a4fe1ca",
+    "extracted_at": "2026-09-13T00:08:37.533638+00:00",
+    "session_id": "01a09817-ed6d-79f1-9b30-a5d630e2c0ca",
+    "usage": {
+      "input_tokens": 12674,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 752,
+      "reasoning_output_tokens": 103
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "86a42f920c7f32e9f3a19176551495e1e34e39b0098ac372d558f53bbde0b46e"
+    },
+    {
+      "id": "S2",
+      "sha256": "0b6288b927e34f7849990cf7b19442da60dc8c836e6ceb2dbf56bcafc5ca28f8"
+    },
+    {
+      "id": "S3",
+      "sha256": "133c24fd9049aae3b7de4cdebadabded6e50e36fc40d8007d9c6a0defbf6b856"
+    },
+    {
+      "id": "S4",
+      "sha256": "b442edf9b4d7942b8076d9d53105735e5e766b12b517d12c43cda4410789171e"
+    },
+    {
+      "id": "S5",
+      "sha256": "cefb815c8d27c15e6a70fb20c23aab71588e8544e459d3bf4c4ff61066f1b25d"
+    },
+    {
+      "id": "S6",
+      "sha256": "363ec05dfc85a49d00335fad4073f75bae75f1422d8742914afefa0807a4466c"
+    },
+    {
+      "id": "S7",
+      "sha256": "9e68f919293915b6d780a23c54608f2dbe271d5d229c88a87d934fe86b833c93"
+    },
+    {
+      "id": "S8",
+      "sha256": "b04c0454431ab8712e2f996d8ec434fc6028ebf9c9d5d9ac8566019e164f5544"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47205",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess whether schedule-free methods, motivated by neural-network training results, are effective for nonconvex optimization.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Convex theory does not explain parameter choices for schedule-free SGD, leaving a theoretical gap.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "A general online-to-nonconvex conversion framework that turns an online learning algorithm into an optimization algorithm for nonconvex losses.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Two novel conversion schemes, including one that directly yields schedule-free SGD.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "An analysis establishing schedule-free SGD’s optimal iteration complexity for nonsmooth, non-convex optimization.",
+        "source_ids": [
+          "S4",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The framework recovers existing conversions and introduces two new schemes; one directly corresponds to schedule-free SGD.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that schedule-free SGD achieves optimal iteration complexity for nonsmooth, non-convex optimization problems.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that their framework recovers existing conversions and produces two novel conversion schemes.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that their analysis provides insight into schedule-free SGD parameter choices beyond what convex theory explains.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The work examines schedule-free methods in nonconvex optimization, motivated by their reported empirical success in neural-network training.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The proof develops a general conversion from online learning algorithms to nonconvex optimization algorithms.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "new constructions",
+        "summary": "The framework recovers prior conversions and yields two new schemes.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "main result",
+        "summary": "One new scheme is schedule-free SGD, enabling the authors’ claimed optimality result and parameter-choice insights.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the algorithmic result to a general conversion framework and separately identifies the parameter-choice gap left by convex theory.",
+          "source_ids": [
+            "S5",
+            "S8"
+          ]
+        },
+        "interpretation": "This pairing makes the methodological mechanism and the specific explanatory payoff visible together.",
+        "application": "When presenting a theory result, state both the reusable transformation that generates it and the concrete limitation in prior theory that the analysis addresses.",
+        "exception": "This framing is less suitable when a paper’s contribution is primarily empirical or lacks a generalizable mechanism."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the iteration-complexity rate, optimization assumptions, oracle model, or meaning of optimality.",
+      "The parameter recommendations and the two conversion schemes are not described in enough detail to assess their scope or applicability."
+    ]
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71105",
+    "title": "Robust Harmful Features Under Jailbreak Attacks: Mechanistic Evidence from Attention Head Specialization in Large Language Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71105"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "61ad2c9434bc65264b58b2149111ae5a1b85219739ff594e071ec7867b877e49",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "06be7865b19e53457a36e15833074a0bcff873b6e55e8b7d6ae5bad33f9900f2",
+    "extracted_at": "2026-09-13T00:14:15.334654+00:00",
+    "session_id": "01a0981d-0e9d-7ca1-bddf-cde4bd174dbc",
+    "usage": {
+      "input_tokens": 12716,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 789,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "33ea85db1bd77d99c6237ee4b6733c866b17a8ad5285cd4a87ca15ed578ceea5"
+    },
+    {
+      "id": "S2",
+      "sha256": "01f495baab260d645e6e63b0956b8a8e44b07c944b9b08bd67d8c4755ea012bc"
+    },
+    {
+      "id": "S3",
+      "sha256": "22f8610d13afc3dd95237254242cbfe7db06e47b762f2ea01ee8308142fa4b80"
+    },
+    {
+      "id": "S4",
+      "sha256": "000fbbe1042a48f9759cf6fc1788f817ec73bd127154b2608391fb1ba2ba6708"
+    },
+    {
+      "id": "S5",
+      "sha256": "d4981611cf4bad8c5b3425fee32370835bcc48fe949e050e5e7d927eb7bd23be"
+    },
+    {
+      "id": "S6",
+      "sha256": "92f42f917fd47292abf5918b433dc7000f7195e756fa0b0d81862deb71fa44c4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71105",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain how jailbreak attacks bypass safety alignment in large language models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The mechanisms underlying jailbreak attacks remain poorly understood.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "mechanistic analysis",
+        "claim": "Identifies early-layer Adversarially Compromised Heads (ACHs), which attacks suppress, and mid-layer Safety-Aligned Heads (SAHs), whose activations remain robust.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "causal evidence",
+        "claim": "Uses ablations and token-level attribution to characterize the roles and attack-template dependence of ACH suppression and SAH activity.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "detection method",
+        "claim": "Shows that reading persistent safety activations without training can provide aggregate detection performance with adversarial robustness.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "Terms the persistence of internal safety signals alongside attack-suppressed harmful-feature pathways “Robust Harmful Features.”",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that suppressing a small number of ACHs induces jailbreak-like behavior on inputs normally refused, while removing SAHs substantially weakens mid-layer safety activations.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that ACH suppression is specifically driven by attack-template tokens.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report competitive aggregate detection performance and strong adversarial robustness from simply reading persistent activations, without training.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Jailbreak mechanisms are described as poorly understood.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "core finding",
+        "summary": "Attacks are reported to selectively suppress specific attention heads rather than eliminate safety features comprehensively.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "functional decomposition",
+        "summary": "ACHs are associated with early-layer suppression, whereas mid-layer SAHs retain robust activations during successful attacks.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanistic and causal support",
+        "summary": "Ablations support differentiated ACH and SAH roles, and attribution links ACH suppression to attack-template tokens.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "practical demonstration",
+        "summary": "Reading persistent activations without training is reported to yield competitive detection with adversarial robustness.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a named mechanistic phenomenon with differentiated components, intervention evidence, token-level attribution, and a practical readout.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact mechanism claim becomes more informative when structural, intervention-based, explanatory, and application-level evidence are connected.",
+        "application": "For a mechanistic paper, define component roles first, then pair each role with an intervention and an interpretable signal before presenting downstream utility.",
+        "exception": "This structure may be unsuitable when the study has no meaningful internal decomposition or when interventions cannot distinguish competing explanations."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide model identities, datasets, sample sizes, quantitative detection metrics, or baseline definitions for “competitive” performance.",
+      "The reported causal support and robustness conditions cannot be assessed beyond the abstract-level descriptions."
+    ]
+  }
+}

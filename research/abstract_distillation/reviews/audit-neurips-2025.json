@@ -1,0 +1,75 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "records": [
+    {"paper_id":"neurips-2025-oral-117276","first_pass_status":"pass","findings":[],"final_disposition":"pass"},
+    {"paper_id":"neurips-2025-oral-115787","first_pass_status":"pass","findings":[],"final_disposition":"pass"},
+    {"paper_id":"neurips-2025-oral-117604","first_pass_status":"pass","findings":[],"final_disposition":"pass"},
+    {
+      "paper_id":"neurips-2025-oral-118143",
+      "first_pass_status":"material_error",
+      "findings":[
+        {
+          "field":"lessons[1].source_observation.claim",
+          "source_ids":["S5"],
+          "issue":"The source uses the dataset to define the set of best-fit networks and checks whether they all perform an identical computation. The lesson instead restricts identical computation to 'on the dataset', turning a functional-identifiability property relevant to out-of-distribution behavior into mere agreement on observed inputs. This changes the source basis and meaning of the lesson.",
+          "severity":"material",
+          "correction":"Place the dataset restriction on which networks are best-fit, not on where their computations agree.",
+          "replacement_value":"Given a dataset, the abstract describes a polynomial-time check of whether all best-fit multi-head linear-attention networks perform an identical computation, and connects this property to out-of-distribution generalization."
+        },
+        {
+          "field":"lessons[1].exception",
+          "source_ids":["S5"],
+          "issue":"The exception inherits the same mistaken premise of mere identical computation on supplied data. A proposed applicability caveat should instead address whether the analyzed model class and solution-set property apply to the new task.",
+          "severity":"minor",
+          "correction":"Replace the exception with a caveat about model-class applicability and availability of the solution-set check.",
+          "replacement_value":"This approach may be unsuitable when the relevant model class is misspecified or when its best-fit solution set cannot be characterized by a tractable check."
+        }
+      ],
+      "final_disposition":"requires_correction"
+    },
+    {
+      "paper_id":"neurips-2025-oral-119623",
+      "first_pass_status":"minor",
+      "findings":[
+        {
+          "field":"unknowns[1]",
+          "source_ids":["S4","S7"],
+          "issue":"The abstract specifies that the evaluation protocol explicitly quantifies online tuning budgets. An unqualified claim that the protocol is unspecified denies this known central feature, although full implementation and statistical details are absent.",
+          "severity":"minor",
+          "correction":"Acknowledge the tuning-budget feature and limit the unknown to detailed protocol and statistical treatment.",
+          "replacement_value":"The abstract specifies that the evaluation protocol quantifies online tuning budgets, but does not give the detailed protocol, statistical treatment, or conditions underlying the reported performance gains."
+        }
+      ],
+      "final_disposition":"requires_correction"
+    },
+    {
+      "paper_id":"neurips-2025-oral-116897",
+      "first_pass_status":"minor",
+      "findings":[
+        {
+          "field":"unknowns[0]",
+          "source_ids":["S7","S9"],
+          "issue":"The abstract explicitly identifies Label Smoothing as the comparison target. Saying no baselines are provided is too broad; numerical evaluation and other comparator identities remain unspecified.",
+          "severity":"minor",
+          "correction":"Qualify the missing baselines as those beyond LS.",
+          "replacement_value":"No quantitative metrics, dataset names, baselines beyond Label Smoothing, or experimental conditions are provided."
+        }
+      ],
+      "final_disposition":"requires_correction"
+    }
+  ],
+  "summary": {
+    "reviewed":6,
+    "full_original_abstracts_read":6,
+    "first_pass_pass":3,
+    "first_pass_minor":2,
+    "first_pass_material_error":1,
+    "material_findings":1,
+    "minor_findings":3,
+    "requires_correction":3,
+    "scope":"Read all six original abstracts and full extraction fields in runs/audit-source-review-neurips-2025/packet-01.json. Checked source entailment, theorem and empirical scope, numeric units, qualifiers, narrative, unknowns and lesson observation/inference separation. ASBS retains arbitrary source distributions through relaxation of the memoryless condition and author-reported global convergence without inventing assumptions. FuXi-Ocean retains six-hourly, 1/12-degree and 1500-meter scope. The linear-attention card preserves single-layer strong agnostic PAC scope in its main claims, but its second lesson materially misreads functional agreement as dataset-only agreement. Offline RL and MaxSup have local unknowns overstatements. ControlFusion's automatic-perception lesson remains visibly distinct from proposed application.",
+    "limitations":"AI source checking only, not scientific validation, proof verification, or evidence of lesson effectiveness. First-pass audit outcomes are retained. No cards were edited and no additional model calls were made."
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31847",
+    "title": "Brain Bandit: A Biologically Grounded Neural Network for Efficient Control of Exploration",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31847"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "833fcae7ce3432ba3796271daeed56dfcb4a26cc8568d0b417c4206ebd31743e",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "046072cb3a323ed2b330e4de028c0c6784fd379ab72400bdb35917c0d4b6e535",
+    "extracted_at": "2026-09-12T23:54:24.064699+00:00",
+    "session_id": "01a0980a-db3d-7ee1-96b5-ee2252a5e9a0",
+    "usage": {
+      "input_tokens": 12717,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 803,
+      "reasoning_output_tokens": 95
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3a9fa3a4fde4b988b1294f0f966b693a0df8931668a53e62d019b9bb44ca812f"
+    },
+    {
+      "id": "S2",
+      "sha256": "e354e96844e685cee7806fee5af585e87492b39248b67d53f8c420ba79c3d18b"
+    },
+    {
+      "id": "S3",
+      "sha256": "76c8fdcf8472dd67692e5f5bdccbf9a95ba2024a5d49944c330c7611556760fe"
+    },
+    {
+      "id": "S4",
+      "sha256": "3064c66cf4bb3960bc70f88365276c847b85d7e4b4ba1cd6e163051b57b460dd"
+    },
+    {
+      "id": "S5",
+      "sha256": "211da99e36b1bc25959e333a7ab65b51ada6e79f6bb885b42033e36d9ad7564c"
+    },
+    {
+      "id": "S6",
+      "sha256": "3916d1cc9b3759ba42b7457ee77eb347bb5daf732473066e633d0e89f2bd8067"
+    },
+    {
+      "id": "S7",
+      "sha256": "2e9c733d6bd9b8d0856646742052739febdea4e99b2a1ef2dce23695f8eae026"
+    },
+    {
+      "id": "S8",
+      "sha256": "3fa10fd905965f281c94d39c560e611065175c1fbd8df577074be8da8c5d5aa8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31847",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Balancing exploration and exploitation in uncertain environments is a central reinforcement-learning challenge.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "model",
+        "claim": "Introduces Brain Bandit Net (BBN), a stochastic continuous Hopfield network modeling biological explore–exploit control during foraging.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory and simulation",
+        "claim": "Shows that BBN can perform posterior sampling of action values with tunable bias toward or against uncertain options.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "Proposes embedding BBN with reinforcement-learning algorithms to enhance exploration and accelerate learning in MDP tasks.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present BBN as a general brain-inspired algorithm for enhancing exploration in reinforcement learning.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report, through theory and simulation, posterior sampling with tunable uncertainty bias.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report flexible uncertainty-biased probabilistic choices in multi-armed bandit tasks, resembling human and animal choice patterns.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report high efficiency in multi-armed bandit tasks and accelerated learning when BBN is embedded in reinforcement-learning algorithms for MDP tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Frames exploration–exploitation balancing under uncertainty as a central reinforcement-learning challenge and contrasts it with reported human and animal exploration efficiency.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "biological modeling",
+        "summary": "Analyzes a biological neural-network dynamical system controlling explore–exploit foraging decisions and identifies its mathematical form as BBN, a stochastic continuous Hopfield network.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "mechanistic result",
+        "summary": "Reports theoretical and simulation evidence that BBN performs posterior sampling with tunable uncertainty bias.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "task demonstrations",
+        "summary": "Reports human- and animal-like probabilistic choices in bandit tasks, plus integration with reinforcement learning for faster MDP learning.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a biologically motivated mechanism to a precise computational operation—posterior sampling with tunable uncertainty bias—and then to bandit and MDP demonstrations.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A mechanism-to-operation-to-task sequence can make a cross-disciplinary algorithmic claim easier to evaluate.",
+        "application": "When presenting a biologically inspired method, explicitly map the biological mechanism to a computational primitive before reporting task-level behavior.",
+        "exception": "This framing may be unsuitable when the biological analogy is only metaphorical or no computational correspondence can be specified."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative efficiency gains, baselines, task settings, or conditions for the reported bandit and MDP results.",
+      "It does not specify the theoretical assumptions, simulation design, or details of how BBN is embedded with reinforcement-learning algorithms.",
+      "The abstract does not state a literature-comparison basis establishing priority or novelty."
+    ]
+  }
+}

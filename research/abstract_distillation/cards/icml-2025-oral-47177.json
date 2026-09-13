@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47177",
+    "title": "Outlier Gradient Analysis: Efficiently Identifying Detrimental Training Samples for Deep Learning Models",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47177"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f11eac0b667e9a0b2f2b068134e9f2d5fa3dbb0688a45f2fd5374c69b17cdb2b",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "dc54d18e4479bc3500effac7b03b50c913095edd2877e3989fb94e5a18d557e9",
+    "extracted_at": "2026-09-13T00:07:33.017443+00:00",
+    "session_id": "01a09816-eebb-7431-9c95-5fc921e02536",
+    "usage": {
+      "input_tokens": 12686,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 749,
+      "reasoning_output_tokens": 63
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b60b181d581ff140c2c47e60f333c9459288b83f3891ea839128ae9bb66a40bb"
+    },
+    {
+      "id": "S2",
+      "sha256": "6fd885e48eda37a3249febccf3d207fb0755dd05d3d5f4cfee891a439806ef00"
+    },
+    {
+      "id": "S3",
+      "sha256": "a5199c9c070a50057b7032a6bbf5472d755510fb107fb9ef5b344dca8ff64906"
+    },
+    {
+      "id": "S4",
+      "sha256": "63545f22e3b1318722afc9c560a43829f8740a328e43a65525534d3505da064a"
+    },
+    {
+      "id": "S5",
+      "sha256": "ce3b20ca973738e4b510bb0dbe9060359c1a55f05a5021a5c5ea427e612b57e7"
+    },
+    {
+      "id": "S6",
+      "sha256": "6c7819c098742fe259475cc5902b86367d5e7290e45bac86762cc4186723d74b"
+    },
+    {
+      "id": "S7",
+      "sha256": "5c23b1a87c8b69d3671a9e3a261fafaefbd44c57f508c75bd14bb37896f35fc3"
+    },
+    {
+      "id": "S8",
+      "sha256": "c3b48327e0b5d41a32e735fc415d7c4f18e012db2d4419077ffef4e32b812148"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47177",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Identify training samples that harm model performance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Influence-function analysis is constrained for large deep models by the computational cost of inverting the Hessian.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Establishes a connection between influence-function-based detrimental-sample identification and outlier gradient detection.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Provides a straightforward Hessian-free formulation and interprets the gradient’s role in sample impact.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "Applies outlier gradient analysis to mislabeled-sample detection, data selection for NLP transformers, and influential-sample identification for LLM fine-tuning.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by transforming influence-based sample identification into outlier gradient analysis, yielding a Hessian-free formulation.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report systematic empirical validation of the approach’s hypothesis on synthetic datasets.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report detecting mislabeled samples in vision models and selecting samples to improve NLP transformer performance.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report extending the approach to influential-sample identification for LLM fine-tuning.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Frames detrimental training-sample identification as a core data-centric learning challenge.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Positions influence functions as a useful framework but notes their Hessian-inversion cost for large deep models.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "Bridges influence-based identification and outlier gradient detection through a Hessian-free formulation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation_and_scope",
+        "summary": "Reports synthetic validation, vision mislabeled-sample detection, NLP data selection, and LLM fine-tuning applications.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a computational bottleneck with a reformulation that removes Hessian dependence, then traces the approach across several sample-selection tasks.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A compact paper narrative can make a method’s motivation and transferability visible by linking one specific bottleneck, one mechanism-level reformulation, and bounded application settings.",
+        "application": "Frame a proposed method by stating the limiting computation, the exact representation or approximation that replaces it, and the tasks used to test that reformulation.",
+        "exception": "This framing is unsuitable when the work has no clear bottleneck-replacement relationship or when application settings do not test the proposed mechanism."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report quantitative results, baselines, dataset details, model scales, or evaluation conditions.",
+      "The claimed performance improvements and effectiveness are author-reported; the abstract does not provide enough detail to assess their magnitude or robustness."
+    ]
+  }
+}

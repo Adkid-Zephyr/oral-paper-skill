@@ -1,0 +1,162 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47184",
+    "title": "ReferSplat: Referring Segmentation in 3D Gaussian Splatting",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47184"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4999392bc25b2a029f80402051e9d616fb9117f99b4e56b09fa2ffc9d5b1b8cb",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "88cf6f3af931195c18558ba17ceca3e514ea3c3f8770a1ff8e1a3b8ac464c5c7",
+    "extracted_at": "2026-09-13T00:07:48.205628+00:00",
+    "session_id": "01a09817-2ca1-78b2-9dc6-33b883d99586",
+    "usage": {
+      "input_tokens": 12666,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 747,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2cb699673b5e34079684e27f9adda626e83724edf41978bab83f54063d9360cf"
+    },
+    {
+      "id": "S2",
+      "sha256": "2deabf1c77aac4d492967821881914743e164ef1f44f76b37957b6983a344bee"
+    },
+    {
+      "id": "S3",
+      "sha256": "fdbd9c61cd06cc63a7c50270bde82dba1e265fa59bcb0c5ea91fde979836f6d9"
+    },
+    {
+      "id": "S4",
+      "sha256": "e1c5656c9ea824688ad07be74252e30e2c429376f87a1339c48ac7f9473a8145"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47184",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper introduces referring 3D Gaussian Splatting Segmentation (R3DGS): segmenting target objects in a 3D Gaussian scene from natural-language descriptions involving spatial relationships or object attributes, including when targets may be occluded or absent from a novel view.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies 3D multimodal understanding and spatial-relationship modeling as key challenges for R3DGS, and presents the first dataset for this task.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "task",
+        "claim": "Introduces the R3DGS task for language-guided object segmentation in 3D Gaussian scenes.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Constructs Ref-LERF, described as the first R3DGS dataset, to support research on the task.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes ReferSplat, which explicitly models 3D Gaussian points with natural-language expressions in a spatially aware paradigm.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work by introducing the R3DGS task, constructing the first stated R3DGS dataset, and proposing a spatially aware framework for the task.",
+      "source_ids": [
+        "S1",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that ReferSplat achieves state-of-the-art performance on the newly proposed R3DGS task and on 3D open-vocabulary segmentation benchmarks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that the dataset and code are publicly available through the linked repository.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task definition",
+        "summary": "Defines R3DGS as language-conditioned segmentation of target objects in 3D Gaussian scenes, including descriptions with spatial or attribute-based cues.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "Highlights the need to identify described objects that may be occluded or not directly visible in a novel view.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "resource and diagnosis",
+        "summary": "Introduces Ref-LERF and identifies 3D multimodal understanding and spatial-relationship modeling as key challenges.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach and reported outcome",
+        "summary": "Presents the spatially aware ReferSplat framework and reports state-of-the-art performance on R3DGS and 3D open-vocabulary segmentation benchmarks.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a newly defined task with a dataset, an explicit challenge analysis, a method designed around those challenges, and benchmark results.",
+          "source_ids": [
+            "S1",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This creates a traceable alignment between problem formulation, diagnosis, method design, and evaluation claims.",
+        "application": "When proposing a new task, map each stated challenge to a concrete modeling choice and report results on both the new task and relevant established benchmarks.",
+        "exception": "This structure may be unsuitable when the work is primarily theoretical, or when no meaningful established benchmark matches the proposed setting."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no metrics, baselines, dataset scale, evaluation protocol, or details of the reported state-of-the-art comparisons.",
+      "It does not specify how Ref-LERF was constructed or how ReferSplat performs its spatially aware modeling."
+    ]
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009094",
+    "title": "Reasoning with Sampling: Your Base Model is Smarter Than You Think",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009094"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8371b4bcdbe7a4a7c8b8ce3402f92b4911325cde0222360fe194c21d9adc2879",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "f8b3cad5f7d1ab0fce3b41d347ccb00fe45c83ca12b5d4ce01238aa1b7ca7dcb",
+    "extracted_at": "2026-09-13T00:02:20.142105+00:00",
+    "session_id": "01a09812-26a1-7c23-8abf-3f6d43bebdd4",
+    "usage": {
+      "input_tokens": 12718,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 768,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "79c76158f0c1c35381bb4fd1a32ab7f8b4f0131c4f183811e410ef5a8cd27f50"
+    },
+    {
+      "id": "S2",
+      "sha256": "79175238e6694e1ef86960d67ba0278c3ac1f1ffb828f92f92202db80c1abd5e"
+    },
+    {
+      "id": "S3",
+      "sha256": "33635a604d596cc22f3aa255c67795f00855a2f2611657f2ecf6918884ac27a9"
+    },
+    {
+      "id": "S4",
+      "sha256": "93fa965146e444d06683abb4d50e0abc21ca20ff5a6a6a7dc485d64252ed893b"
+    },
+    {
+      "id": "S5",
+      "sha256": "3a2ac9c8bfe6bb973f959bd67b2914aaf968e647c4e9533867348e066a58dc32"
+    },
+    {
+      "id": "S6",
+      "sha256": "59188f6cdb2fc7a9db9aad9431410aeebeeb8bcd229ab6c248a3e9340f91d8cf"
+    },
+    {
+      "id": "S7",
+      "sha256": "f5688a0b7b6368b3eacd210623c2948c6cd1c7e4c9740e0d48625341885b4b94"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009094",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Whether base models can yield reasoning capabilities comparable to RL-posttrained models at inference time through pure sampling, without additional training.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract frames prior work as focused largely on separating genuinely novel RL-emergent behaviors from capabilities already present in base models, leaving inference-time elicitation via sampling as an alternative question.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "An iterative sampling algorithm inspired by MCMC that uses base-model likelihoods to elicit reasoning at inference time without additional training.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Across different base models, the authors report reasoning boosts nearly matching or outperforming RL on single-shot MATH500, HumanEval, and GPQA tasks, while avoiding RL-associated multi-sample diversity collapse.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "scope claim",
+        "claim": "The method requires no training, curated datasets, or verifier, which the authors suggest may support application beyond easily verifiable domains.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by eliciting reasoning from base models through pure inference-time sampling rather than additional RL training.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, across different base models, the sampler substantially boosts reasoning and nearly matches or exceeds RL on single-shot MATH500, HumanEval, and GPQA.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that the sampler avoids the multi-sample diversity collapse they characterize as typical of RL posttraining.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "RL-posttrained frontier reasoning models are described as highly capable across disciplines.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior-focus",
+        "summary": "The literature is described as investigating which behaviors emerge during RL rather than already existing in base models.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "research-question",
+        "summary": "The paper asks whether base-model reasoning comparable to RL can be elicited at inference time by pure sampling without training.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The authors propose an MCMC-inspired iterative sampler based on the base model’s likelihoods.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported-results-and-scope",
+        "summary": "They report near-parity or gains over RL on three single-shot tasks, preserved diversity across samples, and no need for training, curated data, or a verifier.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a capability comparison with explicit operating constraints: no training, curated datasets, or verifier, plus behavior across multiple base models and tasks.",
+          "source_ids": [
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "This makes the claim easier to assess as both a performance question and a deployment-scope question.",
+        "application": "Frame a method contribution with named benchmarks or settings alongside the resources and assumptions it does not require.",
+        "exception": "Avoid broad scope claims when the abstract does not identify the tested domains, model coverage, or conditions behind them."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify base models, RL baselines, numerical results, sampling budgets, statistical uncertainty, or exact diversity metrics.",
+      "The stated applicability beyond easily verifiable domains is a suggestion, not a demonstrated result in the supplied units.",
+      "The abstract does not establish priority or independently verify the claimed comparisons."
+    ]
+  }
+}

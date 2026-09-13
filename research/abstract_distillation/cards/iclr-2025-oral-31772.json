@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31772",
+    "title": "On the Benefits of Memory for Modeling Time-Dependent PDEs",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31772"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7288788218035b2fea5e044a7f7baf640b82b4bacbc7df1a7e1905dcbc0954ab",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "ab1d54eedbcdb29f211935d782e4f065ebe2efad4283637d429e82c269b19434",
+    "extracted_at": "2026-09-12T23:51:29.519104+00:00",
+    "session_id": "01a09808-32a9-75b1-b740-56399db920ab",
+    "usage": {
+      "input_tokens": 12743,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 865,
+      "reasoning_output_tokens": 90
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0246085284f48dc0842bc9a85d0e8c50c56b577f0761be876c521af57f28129d"
+    },
+    {
+      "id": "S2",
+      "sha256": "d8997202cc737572a14072232c651cc222d6890e5d92602293905b64d1e0755d"
+    },
+    {
+      "id": "S3",
+      "sha256": "b45ea4abc03ea3d46f249ef16407b068c12671ad4e8feb2f089ec49a2e61df10"
+    },
+    {
+      "id": "S4",
+      "sha256": "3106632956b90d2d6d923e576a7da0b6e185bad853cbff98fa4b1bdda036b3ef"
+    },
+    {
+      "id": "S5",
+      "sha256": "8b5e1ec0029f63a06fc9200d6f78a8c34eaf7ddc0de4bbe909a09fca2d2c08fb"
+    },
+    {
+      "id": "S6",
+      "sha256": "8f95ec8ad715b9842593f0f6c3a48adce4f695dceaa46385e600b5a53e3a923e"
+    },
+    {
+      "id": "S7",
+      "sha256": "dd0d985a699a06cff38c6e2af9b8cf085fd4438cb7479b8a6e49ebad895b045c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31772",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Model time-dependent PDEs using past states, or memory, to predict future states.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Many existing data-driven approaches are Markovian and use only the current state, leaving the benefits of explicitly using history insufficiently addressed in the abstract.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "The authors theoretically exhibit simple, including linear, PDEs where a memory-based solution is arbitrarily better than a Markovian solution.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "They introduce Memory Neural Operator (MemNO), combining S4 state space models with Fourier Neural Operators to model memory.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "benchmark",
+        "claim": "They construct a challenging benchmark dataset of PDEs with significant high-frequency Fourier modes.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work distinguishes itself by combining a memory-based theoretical analysis with MemNO, an architecture integrating S4 and FNOs for time-dependent PDE modeling.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, when PDE inputs are low-resolution or contain observation noise at both training and test time, MemNO significantly outperforms baselines without memory, with up to a 6× reduction in test error.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that the benefit is particularly pronounced for PDE solutions with substantial high-frequency Fourier modes, such as low-viscosity fluid dynamics.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors theoretically report examples in which memory yields an arbitrarily better solution than a Markovian approach, including for simple linear PDEs.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Data-driven methods are presented as an alternative for solving PDEs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem_setup",
+        "summary": "The abstract identifies the prevalence of Markovian modeling for time-dependent PDEs, which ignores past states.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "Motivated by Mori–Zwanzig model-reduction theory, the authors give PDE examples where memory can be arbitrarily better.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method_and_evidence",
+        "summary": "They propose MemNO and report stronger performance under low resolution or train/test observation noise, with gains especially large for high-frequency solutions.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the value of memory to specific information-loss conditions—low resolution, observation noise, and substantial high-frequency modes—rather than presenting memory as uniformly beneficial.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A method claim becomes more informative when its expected advantage is tied to identifiable data or signal conditions.",
+        "application": "State the conditions under which an architectural component should help, then design evaluations that isolate those conditions and report the corresponding performance change.",
+        "exception": "This framing is less suitable when the proposed method is intended for broad deployment and the abstract does not yet identify any condition-dependent behavior."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the PDEs, baselines, resolutions, noise levels, evaluation protocol, or whether the reported 6× reduction is typical or a best case.",
+      "Details of the theoretical examples and the meaning of “solution” and “arbitrarily better” are not provided.",
+      "The benchmark’s size, splits, and accessibility are unspecified."
+    ]
+  }
+}

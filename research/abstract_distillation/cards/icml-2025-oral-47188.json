@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47188",
+    "title": "Inductive Moment Matching",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47188"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c664135f7712bae289caab417cf06d180f6657ede9f8b9eb5bdf6239b8c4b640",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "46cf526f0a09f0a829e10875d574fff35ce8c8df576e0cdc069a601671abb1c3",
+    "extracted_at": "2026-09-13T00:08:00.931881+00:00",
+    "session_id": "01a09817-4c56-75a2-8579-9c634fc7b73e",
+    "usage": {
+      "input_tokens": 12605,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 909,
+      "reasoning_output_tokens": 102
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5b50ea3dd2f65de83938c5d249fcd84ce7d046897dbc1ce88762484fb805cca9"
+    },
+    {
+      "id": "S2",
+      "sha256": "45a309605ef3fe9d86495b28488b8a9a86d9f5c9e08146c7c6bb61499325cc47"
+    },
+    {
+      "id": "S3",
+      "sha256": "d18678d5ab855ccc339bbb99ae032aa84a0b97a705a8baf4990a78985d8bec87"
+    },
+    {
+      "id": "S4",
+      "sha256": "f38214e075f1e6e892c8d259ac501cc4410e31ff07e1a6c62f628578db959a8c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47188",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable one- or few-step generative sampling while retaining sample quality and improving inference speed.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing distillation approaches are described as prone to instability and extensive tuning; they may also require pre-training initialization and optimization of two networks.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Moment Matching Self-Distillation (MMSD), a generative-model class using single-stage training for one- or few-step sampling.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theoretical distinction",
+        "claim": "The authors state that MMSD does not require pre-training initialization or two-network optimization, and guarantees distribution-level convergence while remaining stable across various hyperparameters and standard architectures.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports strong ImageNet-256x256 and CIFAR-10 few-step sampling results, including an 8-step ImageNet result and a 2-step CIFAR-10 result.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present MMSD as a new class of single-stage, self-distilled generative models distinguished from conventional distillation and Consistency Models by its stated training requirements, convergence guarantee, and stability properties.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report 2.13 FID on ImageNet-256x256 using 8 inference steps, surpassing diffusion models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report a state-of-the-art 2-step FID of 2.05 on CIFAR-10 for a model trained from scratch.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors state that MMSD guarantees distribution-level convergence and remains stable under various hyperparameters and standard model architectures.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Diffusion and Flow Matching models provide high-quality samples but are slow during inference.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Distilling these models into few-step samplers is described as unstable and tuning-intensive.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "The paper proposes MMSD, a single-stage approach for one- or few-step sampling.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "distinction",
+        "summary": "MMSD is presented as avoiding pre-training initialization and two-network optimization, with stated convergence and stability properties.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "Reported results include 2.13 FID on ImageNet-256x256 in 8 steps and 2.05 FID on CIFAR-10 in 2 steps from scratch.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the method's design distinctions with the motivating limitations, then gives dataset-, resolution-, step-, and FID-specific results.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This creates a compact claim-to-evidence chain linking practical constraints, method choices, and measurable outcomes.",
+        "application": "When presenting a new efficient-generation method, explicitly map each claimed advantage to the stated bottleneck and report benchmark, sampling steps, and metric values together.",
+        "exception": "This framing is insufficient when the central contribution depends on detailed proofs, ablations, or comparisons not summarized in the abstract."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the diffusion-model baselines, evaluation protocols, sample counts, or statistical variability behind the reported FID comparisons.",
+      "Details supporting the convergence guarantee and stability claim, including assumptions and hyperparameter ranges, are not provided."
+    ]
+  }
+}

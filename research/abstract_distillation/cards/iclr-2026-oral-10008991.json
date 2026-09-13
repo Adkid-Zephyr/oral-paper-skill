@@ -1,0 +1,207 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008991",
+    "title": "Optimal Sparsity of Mixture-of-Experts Language Models for Reasoning Tasks",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008991"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3081ef44468f519322fe7bfb82d67691db78d541929f54ddfe66f9b59a5f50bc",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "8b54c7857b688ae92d3724dbf54ea59156e09d441a264e3687fdc8e67317afb8",
+    "extracted_at": "2026-09-13T00:02:09.971019+00:00",
+    "session_id": "01a09811-fc4a-7433-8404-64413491e19e",
+    "usage": {
+      "input_tokens": 12774,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 832,
+      "reasoning_output_tokens": 58
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "90006cf993d057ff4814c4601d5a5a55ca25ac2299f0e11fd8e16e0028784bce"
+    },
+    {
+      "id": "S2",
+      "sha256": "1f672fd28f8754879c3895ef4d7aab1c6ab0d747c42d054fd3c2686082547a6c"
+    },
+    {
+      "id": "S3",
+      "sha256": "628171155908275d5e8a409dc3610bb353148b85d956f274a95a6497dda41c24"
+    },
+    {
+      "id": "S4",
+      "sha256": "2fb3913ab239f5edd429f01f5587d56e2ce7afbec4e01a244825b8a56519e9c7"
+    },
+    {
+      "id": "S5",
+      "sha256": "d8a21da833ea866bdc781649f91bc6c02fba3cab8d6efd5c4f0bbada07d6fd8a"
+    },
+    {
+      "id": "S6",
+      "sha256": "f825c03964a9c9dfc753d5cbc19b98711c67a71e074a9a30928613769e640328"
+    },
+    {
+      "id": "S7",
+      "sha256": "10146e76f8f3e6d44bd4a69c6ad224dea65a6e7da1c6939186c9da66d23fa031"
+    },
+    {
+      "id": "S8",
+      "sha256": "e1e0a00faccfb9e9b106c39ec06b251082bdbf62ea5b66866250f3588f2023e1"
+    },
+    {
+      "id": "S9",
+      "sha256": "d64f1cc044c80e3d0b8180dbd7449c5b2c8e785fb7b358bf1df42a7105c903c6"
+    },
+    {
+      "id": "S10",
+      "sha256": "7d51186a77710d2d1fe88f00e0c816367d9293b267949e77e1ace955e98c0d98"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008991",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How MoE sparsity, including total parameters, active parameters, and routing, affects memorization and reasoning under fixed compute budgets.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Dense-model scaling frontiers overlook MoE sparsity, and scaling-law coefficients can shift with architecture or data-pipeline changes.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical study",
+        "claim": "Trains MoE families varying total parameters, active parameters, and top-k routing under fixed compute to separate pre-training loss from downstream accuracy.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "principles",
+        "claim": "Identifies active FLOPs and total tokens per parameter as joint determinants of optimal MoE sparsity, with different implications for memorization and reasoning.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S9"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Releases code, data sources, and logs for reproducibility and future work.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present active FLOPs and TPP as principles that revise the classical compute-optimal scaling picture for MoE sparsity.",
+      "source_ids": [
+        "S5",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, among models with identical training loss, greater active compute corresponds to higher reasoning accuracy.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that memorization improves with more parameters, whereas reasoning benefits from an optimal TPP, indicating greater data demand for reasoning.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that neither GRPO post-training nor increased test-time compute changes these trends.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Architecture and data-pipeline changes can shift scaling-law coefficients, while dense frontiers omit MoE sparsity.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "question",
+        "summary": "The study examines sparsity effects across memorization and reasoning regimes.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "MoE families vary total and active parameters plus top-k routing under fixed compute budgets.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "Reasoning tracks active FLOPs and optimal TPP differently from memorization; post-training and test-time compute do not alter the reported trends.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The authors argue that MoE sparsity should be optimized jointly using active FLOPs and TPP.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates capability regimes and reports distinct scaling relationships for memorization versus reasoning, while explicitly controlling compute and disentangling loss from downstream accuracy.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "A claim becomes more informative when the capability regime, control variables, and proxy-to-outcome distinction are made explicit.",
+        "application": "Frame a scaling study around regime-specific outcomes, state the main controls, and distinguish training-objective changes from downstream capability changes.",
+        "exception": "This framing is unsuitable when the task has no meaningful regime distinction or when the design cannot support the proposed controls."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative effect sizes, model scales, task identities, or details of the fixed-compute protocols.",
+      "It does not specify how the reported optimal TPP is selected or whether the trends hold across all tested regimes and scales.",
+      "The reproducibility release is reported but not independently verified here."
+    ]
+  }
+}

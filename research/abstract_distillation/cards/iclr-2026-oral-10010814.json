@@ -1,0 +1,199 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010814",
+    "title": "Verifying Chain-of-Thought Reasoning via Its Computational Graph",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010814"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "cbf9aea4ff84fcef2fba3c3848e3a5df0893897a418e04d84e0c10587ef50f7a",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "766cbb68b15eb738d046ea29cf6937807c86eb8c3ea727e6dba503e5ee970773",
+    "extracted_at": "2026-09-13T00:04:58.853483+00:00",
+    "session_id": "01a09814-9a46-7013-885a-eff9378a53ee",
+    "usage": {
+      "input_tokens": 12767,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 667,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e2922c70953be1a2826bd3b1ff313486d16ed498f799aece8d13ae948de5ce5f"
+    },
+    {
+      "id": "S2",
+      "sha256": "a763b49237f93013849c2ca8a75bba6481bc09a43a84b0db2606bb04bad897a5"
+    },
+    {
+      "id": "S3",
+      "sha256": "9f2e3b3402e16a89866c6bbbf1ea8755431a18bc0f65aaf7a3d0b64525163a0b"
+    },
+    {
+      "id": "S4",
+      "sha256": "132ac5a93d39084e3b62bf4b010d59dbb60eccbf5be335ea6ff61bac86b4deec"
+    },
+    {
+      "id": "S5",
+      "sha256": "0d3b4ebf561d73fd7b4c74abfcc6ad0eda3c5b0cebfa3b01666846cedfbcac5e"
+    },
+    {
+      "id": "S6",
+      "sha256": "914651fe98d226910b35fec968871e851f6b7c95113e30be647014ecba308cb8"
+    },
+    {
+      "id": "S7",
+      "sha256": "c7185556a5d1c921edefab9ae2ec1bfe95cd906ba19d1b681a76725726a6f490"
+    },
+    {
+      "id": "S8",
+      "sha256": "64027284024900a2eedc198b61587cd15ddb7e233ba8a7d0e12f0684763c8600"
+    },
+    {
+      "id": "S9",
+      "sha256": "7731792a3fe332191eb994166bf52a6e7521d03056d06708866c0d259462e05d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010814",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to verify Chain-of-Thought reasoning by examining the model’s computational process.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing black-box and gray-box verification methods provide limited insight into why a computation fails.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Circuit-based Reasoning Verification (CRV), a white-box method that analyzes attribution graphs as execution traces of latent reasoning circuits.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that structural error signatures are highly predictive and domain-specific across reasoning tasks.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "intervention",
+        "claim": "Reports using graph-based analysis to guide targeted interventions on individual transcoder features that corrected faulty reasoning.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish CRV as a white-box approach intended to provide scientific insights unavailable through other verification methods, moving beyond error detection toward causal understanding.",
+      "source_ids": [
+        "S2",
+        "S5",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that a classifier trained on structural graph features detects a strong signal of reasoning errors.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that error signatures differ by reasoning domain, indicating distinct computational patterns for different tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report successful correction of faulty reasoning through targeted transcoder-feature interventions guided by their analysis.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "limitation",
+        "summary": "Existing output- and activation-based verification methods are described as offering limited explanation of computational failures.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "The paper introduces CRV, a white-box verification method based on computational-graph analysis.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "hypothesis",
+        "summary": "Attribution graphs for correct and incorrect CoT steps are hypothesized to have different structural fingerprints.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "The authors report predictive, domain-specific signatures and intervention-based correction of faulty reasoning.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The authors frame computational-process analysis as a route from detecting errors toward causal understanding.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper links a proposed structural representation to both predictive error detection and targeted interventions on individual features.",
+          "source_ids": [
+            "S4",
+            "S8"
+          ]
+        },
+        "interpretation": "Pairing diagnosis with an intervention test can make a mechanistic claim more informative than prediction alone.",
+        "application": "When proposing an internal representation, report whether it supports a targeted manipulation that changes the diagnosed behavior.",
+        "exception": "This is unsuitable when the representation lacks identifiable intervention targets or the study only permits observational analysis."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, model details, classifier performance, intervention setup, or quantitative correction rates.",
+      "The reported intervention success is not independently verifiable from the abstract alone."
+    ]
+  }
+}

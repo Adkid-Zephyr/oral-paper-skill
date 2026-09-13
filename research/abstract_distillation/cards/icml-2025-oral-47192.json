@@ -1,0 +1,162 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47192",
+    "title": "An Improved Clique-Picking Algorithm for Counting Markov Equivalent DAGs via Super Cliques Transfer",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47192"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "82fd37f42e67051529ed6f321aecaab04dc57f7ffe4443de04ca2d1e20f28244",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "1d2848109789d1af30fbd8544cc454ca722b4688bbab2718f774de57bf8ca6a6",
+    "extracted_at": "2026-09-13T00:08:05.563656+00:00",
+    "session_id": "01a09817-710a-7e80-9636-c562bfd90c08",
+    "usage": {
+      "input_tokens": 12674,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 700,
+      "reasoning_output_tokens": 118
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a49785f5332214eb6e694e505d49ec76ea8ce4f125c3328651aee1cf20455056"
+    },
+    {
+      "id": "S2",
+      "sha256": "392a45adec9a7cbc5bb4dcdcd6bd4988ff4b46b9e52e28de8fcf3b252505ea5b"
+    },
+    {
+      "id": "S3",
+      "sha256": "21d3ac72118d6421559ff685fc55b4da0c8ac2e9efd6b0691115b0f49b4ca0fe"
+    },
+    {
+      "id": "S4",
+      "sha256": "b1254df03f4c591575f2ca9d69aa6c76bc90f1d18401ddbd37cee756540c17f6"
+    },
+    {
+      "id": "S5",
+      "sha256": "b4d20dfdfacc2943a07e9882c537a7b3408d4aaf3b8d38c3508af6a132c6312e"
+    },
+    {
+      "id": "S6",
+      "sha256": "efb9f7d9ec52850643c39fc3d6c724f28a3920bd8e4fb3f7702f3fb4fb53041c"
+    },
+    {
+      "id": "S7",
+      "sha256": "d1b509b71cc707bec3c16c7d8fd761e75402b28e385ff5dca194d1dd7ec79987"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47192",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Efficiently count Markov equivalent DAGs from a given CPDAG.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The work targets more efficient generation of unresolved undirected connected components within the existing Clique-Picking procedure.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A UCCG-generation approach that reuses results computed for different root cliques.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory-informed algorithmic concept",
+        "claim": "Super cliques within rooted clique trees, transferable between trees with different root cliques.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "Introducing super cliques to enable efficient transfer across differently rooted clique trees.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the proposed algorithm reduces the computational complexity of Clique-Picking, especially when the number of cliques is substantially smaller than the number of vertices and edges.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Counting Markov equivalent DAGs is presented as important for graphical causal analysis.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior method",
+        "summary": "The prior polynomial-time Clique-Picking algorithm counts DAGs from a CPDAG by iteratively selecting root cliques, fixing orientations, and generating unresolved components.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "The paper reuses computations across root cliques and introduces transferable super cliques in rooted clique trees.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report reduced computational complexity under a specified relative-size condition on cliques, vertices, and edges.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links reuse of results across root choices with a complexity reduction, while identifying the regime where the reduction is particularly relevant.",
+          "source_ids": [
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A method contribution can be made more informative by connecting an optimization mechanism to the structural regime in which it is expected to matter.",
+        "application": "When proposing an algorithmic optimization, state both the reused intermediate structure and the input-size condition associated with the reported benefit.",
+        "exception": "This framing is less suitable when the optimization has uniform guarantees or when no meaningful input regime distinguishes its impact."
+      }
+    ],
+    "unknowns": [
+      "No quantitative runtime, complexity bound, dataset, baseline measurement, or proof details are supplied.",
+      "The abstract does not specify the exact super-clique transfer procedure or the meaning of “effectively” reducing complexity."
+    ]
+  }
+}

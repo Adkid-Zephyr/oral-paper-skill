@@ -1,0 +1,162 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31733",
+    "title": "Can a MISL Fly? Analysis and Ingredients for Mutual Information Skill Learning",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31733"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ee5bc1857a3580541035406c1a24173c42b20dcbf30bc437088ae907f8400858",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "e68f7c32cd0d6e0dcbd8554702b40cde31dcce6b7bb8c36fd58ff8683941cb20",
+    "extracted_at": "2026-09-12T23:49:52.262893+00:00",
+    "session_id": "01a09806-bae5-72a2-b344-d36886583aaf",
+    "usage": {
+      "input_tokens": 14138,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 827,
+      "reasoning_output_tokens": 161
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a6913b8423f4e0011aa41207661672df46bdec08d89d91998fe87d6fce9e1a83"
+    },
+    {
+      "id": "S2",
+      "sha256": "d1b3b50b7de7d7cb52108c62998bc5a46c8ce52d92ce65cca4603d3d5af677b3"
+    },
+    {
+      "id": "S3",
+      "sha256": "ece79087a5e7c594814884777dd1da16ac62e546ac8524e246dfc54f680b5f84"
+    },
+    {
+      "id": "S4",
+      "sha256": "17c005eed97149238bad39fc41e0700965e9e7f0ad13cfe7ea7dc6b2b3610b59"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31733",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Whether strong skill-learning performance requires replacing mutual information with Wasserstein-distance optimization.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies a need to explain METRA’s observed benefits within the existing mutual information skill-learning framework and clarify the key ingredients behind both approaches.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "analysis",
+        "claim": "Reinterprets METRA’s benefits within the mutual information skill-learning framework.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes contrastive successor features, a MISL method connecting skill learning, contrastive representation learning, and successor features.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "ablation analysis",
+        "claim": "Studies key ingredients of the proposed method and METRA through ablations.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present contrastive successor features as a new MISL method with fewer moving parts than METRA while retaining its reported performance.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that contrastive successor features retain METRA’s excellent performance with fewer moving parts.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report careful ablation studies providing insight into key ingredients for their method and METRA.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Self-supervised learning is positioned as a potential way to address exploration, representation learning, and reward-design challenges in reinforcement learning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior tension",
+        "summary": "Recent METRA work is described as arguing that moving away from mutual information toward Wasserstein-distance optimization matters for performance.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "reinterpretation and method",
+        "summary": "The paper argues that METRA’s benefits can largely be explained by MISL and proposes contrastive successor features as a simpler method.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "diagnostic analysis",
+        "summary": "Ablation studies examine the ingredients underlying both the proposed method and METRA.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a reinterpretation of a prior method’s benefits with a simpler proposed method and ablations targeting both methods.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This aligns conceptual claims, method design, and diagnostic evidence around the same disputed mechanism.",
+        "application": "When challenging a prior explanation, state the alternative mechanism, implement it in a reduced-complexity method, and design ablations that cover both the new and prior approaches.",
+        "exception": "This pattern may be unsuitable when the research question is descriptive or when comparable implementations and targeted ablations are unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report datasets, benchmarks, quantitative results, or the precise meaning of “excellent performance.”",
+      "It does not specify which components constitute METRA’s or the proposed method’s “moving parts.”",
+      "The abstract does not provide detailed ablation outcomes or establish independently verified correctness, effectiveness, or novelty."
+    ]
+  }
+}

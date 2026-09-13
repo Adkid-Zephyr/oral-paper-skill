@@ -1,0 +1,160 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97977",
+    "title": "Identification and Estimation of the Bi-Directional MR with Some Invalid Instruments",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97977"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f255624052fde23f578ba1804c2550b0fea52d0e04b5415a295715e22103dd0c",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "fb7489326076436960aad050eb0fa937166645ec7a28757cc5298e1a26640dcf",
+    "extracted_at": "2026-09-13T00:18:59.535163+00:00",
+    "session_id": "01a09821-69a1-76a1-80f7-1364623df783",
+    "usage": {
+      "input_tokens": 12661,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 741,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2ab4592b7542473a10fb4cf6d97b45d50af81703f6ee5421d5cee9abf9748212"
+    },
+    {
+      "id": "S2",
+      "sha256": "ccc3ad4b552e9538965b1fe6d584522c28ace4304252551af6d179449b6c4693"
+    },
+    {
+      "id": "S3",
+      "sha256": "8baf8e9ee699ba40b7ed3fd39b419729ef2933f817c68e3f47c4b315427fa83b"
+    },
+    {
+      "id": "S4",
+      "sha256": "244e5fefe4bd017f5c42807d412d5a4dc2f0f9f94b4252afe4abd7f4db4c6e1d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97977",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Estimate causal effects from observational data in bi-directional Mendelian randomization when invalid instruments and unmeasured confounding may be present.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods commonly rely on expert identification of valid instruments or assume a one-directional MR model, leaving the bi-directional setting theoretically and methodologically under-addressed.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Provides necessary and sufficient conditions for correctly identifying valid IV sets and the causal directions between two phenotypes in an identifiable bi-directional MR model.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Develops a cluster-fusion-like method to discover valid IV sets and estimate causal effects based on the identification theory.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "Gives a proposed algorithm whose correctness is theoretically demonstrated.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper first theoretically investigates identification of bi-directional MR from observational data and builds a method from that identification theory.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors theoretically demonstrate the correctness of the proposed algorithm.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report experimental effectiveness for causal-effect estimation in both one-directional and bi-directional MR models.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Frames causal-effect estimation under bi-directional MR with invalid instruments and unmeasured confounding.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior-approach limitation",
+        "summary": "Notes that existing approaches seek valid IVs through expert knowledge or one-directional-model assumptions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "Introduces identification analysis and conditions covering valid IV sets and causal directions.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method-and-evidence",
+        "summary": "Uses the theory to construct a cluster-fusion-like estimator, with author-reported correctness and experiments spanning both MR directions.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links identification conditions to a concrete valid-IV discovery and effect-estimation procedure, then separately reports theoretical and experimental support.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "A compact research narrative can align a formal identifiability result, an algorithmic consequence, and evidence for the resulting procedure.",
+        "application": "When presenting a causal-method contribution, explicitly map each identification condition to the algorithmic step it enables and report theory and empirical evidence as distinct claims.",
+        "exception": "This framing is less suitable when the work is exploratory, lacks a formal identification component, or does not provide corresponding evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact identification conditions, algorithm details, experimental data, baselines, metrics, or numerical results.",
+      "The scope and assumptions under which the correctness demonstration and reported effectiveness hold are not given."
+    ]
+  }
+}

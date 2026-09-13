@@ -1,0 +1,180 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31760",
+    "title": "Do as We Do, Not as You Think: the Conformity of Large Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31760"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "78172b77883a55e03285db7237c6c3dbb32a9f05c9eb825244a258d153952cdd",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "5105b531ed4a0a4dd818d3d72a4f9898bff1e04879a3fe0404c72ff35f16d48b",
+    "extracted_at": "2026-09-12T23:50:53.204489+00:00",
+    "session_id": "01a09807-a400-7ac3-90a0-335b857c0881",
+    "usage": {
+      "input_tokens": 12794,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 737,
+      "reasoning_output_tokens": 113
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "517a922bbbb9cd4aeb919bf8e751fa94edc176fcb507d6fcc6624c665c2e921d"
+    },
+    {
+      "id": "S2",
+      "sha256": "303ad9535c6323d6eeb3a5f0e0582d55acf1ab82565d8c316ac0bf2b7f83d8cb"
+    },
+    {
+      "id": "S3",
+      "sha256": "e793fd1eed67fe7531804e0d5bb4baac17f4a3f3ece9609da97daa2e09cd1303"
+    },
+    {
+      "id": "S4",
+      "sha256": "fcff7039ef557282ff43990adf246df8b38efeca10a2d82a6aeef04db2a9acb4"
+    },
+    {
+      "id": "S5",
+      "sha256": "a798710d453754381493cf3244338d9477a4c91ccc8d591f000b67ecc8e1347d"
+    },
+    {
+      "id": "S6",
+      "sha256": "cf929c66ddb96f2c8aac9e603f91b8b7930fa12b4d0f590aedd12ccc97e4bcd1"
+    },
+    {
+      "id": "S7",
+      "sha256": "8351490a29f0ea224a8c7b1dd4c15b7fd71db9d73c66ea8988f3eb92fd322312"
+    },
+    {
+      "id": "S8",
+      "sha256": "5e95e6b6ff72a76f5b871b8f09360ae92484afb413854ed9fa7d45426f41020f"
+    },
+    {
+      "id": "S9",
+      "sha256": "30b8a29bba94c9de434d98fea535b2a1fcc9fdcd7b3c6f6edcec3e784b0e9f7c"
+    },
+    {
+      "id": "S10",
+      "sha256": "ada94abcf7a6f13e203645371ae6b0119a9b72d9a6b55b2deb7b70b18fe1c883"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31760",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies conformity in LLM-driven multi-agent collaboration, including its existence, influencing factors, and mitigation strategies.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Conformity in LLM multi-agent systems remains largely unexplored, creating concerns about collective problem solving and ethical implications.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces BenchForm, a conformity-oriented benchmark with reasoning-intensive tasks and five interaction protocols for probing collaborative behavior.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical study",
+        "claim": "Evaluates representative LLMs with conformity rate and independence rate, and analyzes interaction time, majority size, and rationalizations of conforming behavior.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "mitigation strategies",
+        "claim": "Explores enhanced personas and a reflection mechanism as approaches to mitigate conformity effects.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "BenchForm is presented as a new benchmark specifically oriented toward conformity in collaborative LLM scenarios.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLMs enable collaborative multi-agent systems, but conformity analogous to human conformity bias and group-think is largely unexplored.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "study scope",
+        "summary": "The study examines conformity’s existence, influencing factors, and possible mitigation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "measurement",
+        "summary": "BenchForm combines reasoning-intensive tasks with five interaction protocols; representative LLMs are evaluated using conformity and independence rates.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "analysis and mitigation",
+        "summary": "The paper examines interaction time, majority size, and conforming rationalizations, then explores enhanced personas and reflection.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "availability",
+        "summary": "The benchmark and code are reported as available at BenchForm.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The study pairs a purpose-built benchmark and multiple interaction protocols with explicit conformity and independence metrics.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This links the measurement design to the behavioral phenomenon under study and exposes protocol-dependent collaboration effects.",
+        "application": "For a behavioral claim, define task conditions, interaction variants, and metrics that directly operationalize both the target behavior and its complement.",
+        "exception": "This design may be unsuitable when the behavior cannot be isolated with reliable operational metrics or when protocol variation is not part of the research question."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report the direction or magnitude of conformity findings, effects of interaction time or majority size, mitigation outcomes, or case-study details.",
+      "The abstract does not specify BenchForm’s task contents, evaluated model identities, metric definitions, or the location/access details behind “BenchForm.”"
+    ]
+  }
+}

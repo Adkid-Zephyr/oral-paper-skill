@@ -1,0 +1,169 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31860",
+    "title": "One Step Diffusion via Shortcut Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31860"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "016e9f2747a4c44785b52efd38a28a7186ee93b3706e132b65a4e5a54ab8985a",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "c4dbc9ca66712cd47335ff9b222c4422d8f70df1a9c852952e153a14840f0b52",
+    "extracted_at": "2026-09-12T23:54:45.236861+00:00",
+    "session_id": "01a0980b-3f45-7331-9d4a-9b9ce29e8bd8",
+    "usage": {
+      "input_tokens": 12661,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 692,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b0528aa21e899cd25162fee559414baa9121071fea7b61d27def1b8fed2a879e"
+    },
+    {
+      "id": "S2",
+      "sha256": "b4ad861ade269010d2eabc5808f11916c80e7d9cfb081131aa66d8e1e0433e48"
+    },
+    {
+      "id": "S3",
+      "sha256": "b0d75464aae4320683ee9d2c6ee7c04d13c850101667f79f9e55c452adbd55f8"
+    },
+    {
+      "id": "S4",
+      "sha256": "278ac221a4da3e138caae9868d4ed8c7393d843938d677cdebae52f1c87c7ec7"
+    },
+    {
+      "id": "S5",
+      "sha256": "20db02a7606faf0387d567b4590e11937e1379d61072344dc419d9c4f6831b14"
+    },
+    {
+      "id": "S6",
+      "sha256": "25a923e7387904e7c12507da1445a01d86eac1db95306c69283091772ba3859b"
+    },
+    {
+      "id": "S7",
+      "sha256": "90906f720dd533aae9b0e05f07812d250ec6c5ade100ae78283fea09152ee238"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31860",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Accelerate diffusion and flow-matching image generation, which otherwise requires many iterative denoising passes.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing acceleration methods rely on complex training setups involving multiple phases, networks, or fragile scheduling.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Shortcut Models, using one network and one training phase to generate samples in one or multiple steps.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Conditions generation on both noise level and desired step size, enabling inference-time step skipping and variable step budgets.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Shortcut Models by combining single-network, single-phase training with variable inference-time step budgets.",
+      "source_ids": [
+        "S4",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report consistently higher-quality samples than consistency models and reflow across a wide range of sampling step budgets.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report lower complexity than distillation—one network and one training phase—while retaining variable step budgets at inference.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Diffusion and flow-matching models generate realistic, diverse images by transferring noise to data.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "Their iterative denoising makes sampling slow and expensive, while prior acceleration methods use complex training regimes.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "Shortcut Models use a single network and training phase; conditioning on desired step size lets the model skip ahead.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported comparison",
+        "summary": "The authors report stronger sample quality across step budgets than consistency models and reflow, plus lower complexity and flexible budgets relative to distillation.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a model's step-size conditioning directly to both skipping generation steps and varying inference budgets.",
+          "source_ids": [
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A design feature is more persuasive when its mechanism is connected to the operational flexibility it enables.",
+        "application": "When presenting an acceleration method, map each architectural or conditioning choice to a concrete inference-time control and state the comparison baseline.",
+        "exception": "This framing is unsuitable when the method's main contribution is theoretical or resource-based rather than an inference mechanism."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, quality metrics, numerical gains, compute costs, or the precise comparison protocols.",
+      "It does not establish whether the reported quality advantage holds uniformly for every step budget or setting."
+    ]
+  }
+}

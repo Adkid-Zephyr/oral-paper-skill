@@ -1,0 +1,126 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-40160",
+    "title": "Position: Certified Robustness Does Not (Yet) Imply Model Security",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/40160"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "48480f7c0b991c207ec911d94c5f75ac4f664ef9cc7fe845d72295fc83230733",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "2ae49a4fdab02608534e1b0f871fb9093abd883470d701a145bc48c2c76a42c7",
+    "extracted_at": "2026-09-13T00:06:50.457592+00:00",
+    "session_id": "01a09816-5329-7683-b975-16c41b1a574f",
+    "usage": {
+      "input_tokens": 12545,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 591,
+      "reasoning_output_tokens": 113
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "717d17951bb3db3e54f113e1dee957a1bbf1a41bc8f12d98841fffa0f547c032"
+    },
+    {
+      "id": "S2",
+      "sha256": "b7762367cee409d00b2a035a4c223de4e45aee5ee412970c4e3706af4eaa072d"
+    },
+    {
+      "id": "S3",
+      "sha256": "af90e840050f25f6afe456c43d48bdcd15ce4abd713171f8b73b28975bf6b35d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-40160",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses how certified robustness against adversarial examples can become meaningfully deployable in real-world AI applications.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "It identifies unresolved gaps: detection may not distinguish relevant cases, practitioners lack clear criteria for evaluating certification schemes, and users’ expectations of guaranteed robustness may create security risks.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "position",
+        "claim": "It identifies three critical deployment and security gaps in current certified-robustness research.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "research agenda",
+        "claim": "It proposes concrete steps for the certification research community to address these challenges and move toward practical applicability.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": null,
+      "source_ids": []
+    },
+    "author_reported_evidence": [],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Certified robustness is promoted against adversarial examples, but substantial challenges remain for real-world deployment.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The paper highlights detection without distinction, missing evaluation criteria, and security risks linked to expectations of guaranteed robustness.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "response",
+        "summary": "It calls for concrete research steps aimed at addressing these challenges and improving practical applicability.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a broad deployment goal with distinct technical, evaluation, and expectation-related obstacles.",
+          "source_ids": [
+            "S1",
+            "S2"
+          ]
+        },
+        "interpretation": "Separating obstacle types can make a position paper’s diagnosis more actionable than treating deployment difficulty as one undifferentiated problem.",
+        "application": "Frame a research agenda by mapping each deployment goal to separately named failure modes, practitioner decision criteria, and user-facing security risks.",
+        "exception": "This framing is less suitable when the work studies a narrowly defined mechanism with a single well-specified failure mode."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the concrete steps proposed in detail.",
+      "No empirical results, formal proofs, certification schemes, or comparisons are reported.",
+      "The scope and operational meaning of “detection without distinction” are not defined in the abstract."
+    ]
+  }
+}

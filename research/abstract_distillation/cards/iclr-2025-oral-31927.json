@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31927",
+    "title": "On the Identification of Temporal Causal Representation with Instantaneous Dependence",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31927"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "af7cbcfb33d5cc5572d18e1860c72e590da3887c95018ab77ad8142d127b1d31",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "ecbcbd33c79b79858cf27d235ddac075dc970a3af69d2df59e1222676fa922f9",
+    "extracted_at": "2026-09-12T23:57:26.340944+00:00",
+    "session_id": "01a0980d-ab67-78e1-b48d-f7041144b0fb",
+    "usage": {
+      "input_tokens": 12726,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 764,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "762cccd19113a16b5db48d3d0209f7d68a7a022ceb9c49fdd88df3058743cc38"
+    },
+    {
+      "id": "S2",
+      "sha256": "07464523514f84c9dd847c7d1932849a48c6e24d650657e18a522be7b3dd7204"
+    },
+    {
+      "id": "S3",
+      "sha256": "2631cad0143090b63b8feb846029bc0f81af0a42dd15cc671676419404b9c6fb"
+    },
+    {
+      "id": "S4",
+      "sha256": "6548ec3dc72d6c6d731956c7eff97216ab6efde6f489bb9369db750d60c79f44"
+    },
+    {
+      "id": "S5",
+      "sha256": "a49ee506605eef01623b373f8f12962e0ae450bcbb16414ab726e8bce1123942"
+    },
+    {
+      "id": "S6",
+      "sha256": "8603addd6228a6b5d7629189e9a7f818bd7f17c6ccc8811ecad16a1de2f57c26"
+    },
+    {
+      "id": "S7",
+      "sha256": "803910e687417349257c58142086536562ea2a67f0142573005b1fb986121535"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31927",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Identify latent causal processes from time-series observations when latent variables have both time-delayed and instantaneous relations.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods generally exclude instantaneous relations; methods addressing them require latent interventions or grouped observations, which are difficult to obtain in real-world settings.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes IDOL, an identification framework imposing sparse time-delayed and instantaneous latent influences.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Establishes identifiability results using sufficient variability, sparse influence, and contextual time-series information.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "inference architecture",
+        "claim": "Combines temporally variational inference with gradient-based sparsity regularization to estimate latent variables and identify the latent causal process.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The framework targets instantaneous latent dynamics without the interventions or observation grouping required by some recent approaches, using sparse influence and contextual information.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that simulation experiments illustrate identification of the latent causal process.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that evaluations on multiple human-motion forecasting benchmarks with instantaneous dependencies indicate effectiveness in real-world settings.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Temporal causal representation learning is introduced, with instantaneous latent relations identified as a limitation of most methods.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Some methods handle instantaneous causality but depend on difficult-to-obtain latent interventions or grouped observations.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "IDOL addresses the setting through sparse instantaneous and delayed influences, with identifiability based on variability and contextual information.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "implementation",
+        "summary": "The theory is operationalized with temporally variational inference and gradient-based sparsity regularization.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Reported results cover simulations and human-motion forecasting benchmarks.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the identifiability assumptions with corresponding modeling mechanisms: sparse influence is used in both the theoretical framework and the sparsity regularizer.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Making assumptions visibly operative can connect a theoretical claim to an implementable method.",
+        "application": "When presenting a structured latent-variable method, map each identifiability assumption to an explicit architectural component or optimization term.",
+        "exception": "This mapping may be unsuitable when an assumption is only analytical and has no faithful computational surrogate."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact sufficient-variability condition, sparsity levels, or identifiability scope.",
+      "The reported experiments do not provide quantitative metrics, baselines, sample sizes, or ablations.",
+      "The real-world benchmark results are described as indicating effectiveness, but the decisive comparative conditions are not stated."
+    ]
+  }
+}

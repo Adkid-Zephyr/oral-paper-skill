@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97995",
+    "title": "VASA-1: Lifelike Audio-Driven Talking Faces Generated in Real Time",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97995"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "979c63139d5d5d5e7813e7f0760a798dca3db95e6b11cdeaf032286b19e3657f",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "3196b6ff82813a249481f26980da49f6f285d1f496595959abc0844a4845927a",
+    "extracted_at": "2026-09-13T00:19:43.139177+00:00",
+    "session_id": "01a09822-0e9e-72b3-9ce7-9b0af558e8a0",
+    "usage": {
+      "input_tokens": 12658,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 734,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3102f8ef90ed5efe84d26dad3a804945c4d72c40e947f842d6da62d3964282f4"
+    },
+    {
+      "id": "S2",
+      "sha256": "3f93dc8908cf5d52579fb199e5e072620e36cd88be31c9f10dd26a830dd62e92"
+    },
+    {
+      "id": "S3",
+      "sha256": "76dc00ba6ad805c3ca14c5fa89625355e005bad10aeb8c4126c8a10a6b7ae5d7"
+    },
+    {
+      "id": "S4",
+      "sha256": "0dc87aa0534587d7ea761fdce56b75f222dd647f7906d0bb2d8a4a383a787a09"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97995",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate lifelike, affectively expressive talking-face videos from one static image and a speech-audio clip.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A diffusion-based model generates holistic facial dynamics and head movements in a face latent space.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "representation",
+        "claim": "An expressive, disentangled face latent space is developed from videos.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "VASA-1 supports real-time generation of 512×512 talking-face videos at up to 40 FPS with negligible starting latency.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish VASA through combined holistic diffusion modeling in face latent space and a video-derived expressive, disentangled latent representation.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report lip movements exquisitely synchronized with audio, alongside diverse facial nuances and natural head motions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "Across extensive experiments and new metrics, the authors report significant comprehensive outperformance over previous methods across various dimensions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report high video quality with realistic facial and head dynamics, plus online 512×512 generation up to 40 FPS and negligible starting latency.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "VASA is introduced for generating affectively appealing talking faces from a static image and speech clip.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "capabilities",
+        "summary": "VASA-1 is described as synchronizing lip motion while producing facial nuances and natural head motion.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "technical approach",
+        "summary": "The core design combines diffusion-based holistic dynamics generation with a video-developed expressive, disentangled face latent space.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation and deployment",
+        "summary": "The authors report broad gains under new metrics and real-time 512×512 generation at up to 40 FPS.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract names audio synchronization, facial nuances, and natural head motions as capabilities contributing to perceived authenticity and liveliness, and separately reports experiments using unspecified new metrics and improvements across unspecified dimensions.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A paper can make a multidimensional claim more assessable by naming the observable components and corresponding evaluation axes.",
+        "application": "When presenting a generative system, map each claimed perceptual or functional benefit to an explicit metric or evaluation dimension.",
+        "exception": "This framing is unsuitable when the work genuinely has only one meaningful outcome or when no defensible metric exists for a claimed quality."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the new metrics, datasets, baselines, numerical scores, or experimental conditions behind the reported comparisons.",
+      "It does not explain how the face latent space is trained or how real-time performance is measured."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "lessons[0].source_observation.claim",
+      "before": "The abstract links distinct perceptual qualities—audio synchronization, facial nuance, head motion, and authenticity—to both capabilities and evaluation dimensions.",
+      "after": "The abstract names audio synchronization, facial nuances, and natural head motions as capabilities contributing to perceived authenticity and liveliness, and separately reports experiments using unspecified new metrics and improvements across unspecified dimensions.",
+      "review_file": "reviews/flagged-batch-14.json",
+      "review_sha256": "ff9c3edd278c3f414d5a8ebc4a74177286b64d696386f76cb1a334980eb249a7",
+      "applied_at": "2026-09-13T00:42:27.403215+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

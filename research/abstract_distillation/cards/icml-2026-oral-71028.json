@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71028",
+    "title": "Learning Unmasking Policies for Diffusion Language Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71028"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7b8ab4b1467ffdb64266d3f4c91ffa01aea1e453eb62e5c5bd4cdc79d1a89ab9",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "3205a1e1acff29eaf34e9c743bc21b0283a5502b90b0b86136f060de265afba2",
+    "extracted_at": "2026-09-13T00:11:21.517372+00:00",
+    "session_id": "01a0981a-6bd5-7883-ab6c-39c101a469ea",
+    "usage": {
+      "input_tokens": 12748,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 772,
+      "reasoning_output_tokens": 47
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "87e6f42513cbaf6bc80954eae5494ea60724ce478a0462e26ce603534005bf3a"
+    },
+    {
+      "id": "S2",
+      "sha256": "1c84f2c067b976208571a194c42e81793c64f8b4c3589ffa62bb486c90df9723"
+    },
+    {
+      "id": "S3",
+      "sha256": "bd2d58955e2f5d9c43781d2242898146ab1f839340be701aba3241bd5bf02809"
+    },
+    {
+      "id": "S4",
+      "sha256": "62c67b36e175179a16ab5adc8a6232d2cd0d2ececc462bae775ab962bccdb5bd"
+    },
+    {
+      "id": "S5",
+      "sha256": "0bc8dce1e1972418e303daf9c4c01d696c45a47b18913743b6fdd176e2557528"
+    },
+    {
+      "id": "S6",
+      "sha256": "8a3c084a604102e93c8b6de9bb47fcbf71928abebbf492f33d058564e2abd596"
+    },
+    {
+      "id": "S7",
+      "sha256": "224910814dcc97effaaa3ce8122796e0be0e58a3afc84b1cb5b5746d30da177c"
+    },
+    {
+      "id": "S8",
+      "sha256": "f6107bf00aafbe72087914d62260300260c980a805a82780cb8ddee31e1f5f32"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71028",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design a sampling procedure that selects which tokens to unmask at each diffusion step in diffusion language models.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Heuristic unmasking strategies require manual tuning and their performance degrades with larger block sizes.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Formalizes masked diffusion sampling as a Markov decision process and trains unmasking procedures with reinforcement learning.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces a lightweight single-layer-transformer policy that maps dLLM token confidences to unmasking decisions.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Releases implementation code for the proposed approach.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work replaces manually tuned heuristic sampling procedures with reinforcement-learned policies for masked diffusion sampling.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that trained policies match state-of-the-art heuristics when used with semi-autoregressive block generation.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that trained policies outperform the heuristics in the full-diffusion setting.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that prior confidence-thresholding heuristics improve sample quality and token throughput over random unmasking, but require manual tuning and degrade with larger block sizes.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Diffusion language models are described as matching autoregressive downstream performance on many tasks while potentially improving inference efficiency.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "design challenge",
+        "summary": "Sampling must determine which tokens to unmask at each diffusion step; confidence-based heuristics help but have tuning and block-size limitations.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "The authors formulate masked diffusion sampling as an MDP and learn a lightweight confidence-to-decision policy with reinforcement learning.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported comparison",
+        "summary": "The learned policies match heuristic performance for block generation and outperform heuristics under full diffusion.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "availability",
+        "summary": "Code is reported as publicly available.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a concrete heuristic failure mode—manual tuning and degradation with larger blocks—to an MDP formulation and a policy whose inputs and outputs are explicitly specified.",
+          "source_ids": [
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A focused problem-to-method mapping can make a proposed learning-based replacement easy to evaluate conceptually.",
+        "application": "When replacing a heuristic, state its operational limitation, formalize the decision process, and name the policy inputs and decisions before presenting comparisons.",
+        "exception": "This framing may be unsuitable when the method does not make sequential decisions or when the heuristic limitation is not directly addressed by the proposed model."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the datasets, metrics, block sizes, reinforcement-learning setup, or quantitative margins behind the reported comparisons.",
+      "It does not identify which state-of-the-art heuristics were used as baselines or whether the reported results cover all stated task settings."
+    ]
+  }
+}

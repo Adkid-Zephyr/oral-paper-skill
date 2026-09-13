@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97947",
+    "title": "Learning Formal Mathematics From Intrinsic Motivation",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97947"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e1658d83fc9907cebf57f2ebeab107db030a01197cfeebb21cecb98466c3c3b8",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "23b1d95ad34dec23320422d0b8be0d46efed71164a341e7e238981afc9708502",
+    "extracted_at": "2026-09-13T00:17:56.985322+00:00",
+    "session_id": "01a09820-7132-7113-8cda-ede844f4507e",
+    "usage": {
+      "input_tokens": 12730,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 805,
+      "reasoning_output_tokens": 109
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "981809a7e2a34e9de0563f26ef112f9707ab960ec94020db6a7bc8421ff57496"
+    },
+    {
+      "id": "S2",
+      "sha256": "c2d4c2ca336e9eab94ef3f21a3e85170670ede43d47d525f9f5fe9dd123f7287"
+    },
+    {
+      "id": "S3",
+      "sha256": "7f3a4bc0c517f284d8d3f467ed60f83e48d01975279fe19e71233c133618b795"
+    },
+    {
+      "id": "S4",
+      "sha256": "3c9fd08e5cdec11be63224aa5b88e145fd389d8162f8a74561fb7809b89632e6"
+    },
+    {
+      "id": "S5",
+      "sha256": "340b90cdf4cf67895517f231b0a96817456d64c611a6129b723fd801f4807686"
+    },
+    {
+      "id": "S6",
+      "sha256": "054c8c93406fce1c7dde071f1b0eb5ce5659aebeeb84ca98d1ca389a2bf18fa9"
+    },
+    {
+      "id": "S7",
+      "sha256": "c643e131b3deed717d32a92641838d364ed0a51e76263ef04ff2396c64738b76"
+    },
+    {
+      "id": "S8",
+      "sha256": "69f4d5de685ec73e151405b25158260c952003795d4fa16440f7eb8e47cd4c93"
+    },
+    {
+      "id": "S9",
+      "sha256": "08e937be98c50d4c32e0f6f31f26eebaff2cc3d383d7d7f15c97b56501862253"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97947",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper explores whether an agent can discover mathematics from axioms by jointly conjecturing problems and proving theorems.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "agent",
+        "claim": "An agent that jointly learns to pose challenging conjectures and solve them.",
+        "source_ids": [
+          "S3",
+          "S7"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A constrained-decoding and type-directed-synthesis approach for sampling valid conjectures in dependent type theory, with well-formedness guaranteed by construction.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Novel hindsight relabeling methods for proof-search trees intended to improve sample efficiency in conjecturing and proving.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors identify their hindsight-relabeling methods on proof-search trees as novel.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The method guarantees well-formed conjectures by construction, including when initialized randomly.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Authors report experiments across propositional logic, arithmetic, and group theory showing bootstrap from axioms and self-improvement in generating true, challenging conjectures and finding proofs.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames mathematics as discovery from axioms through conjecture and proof.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "agent",
+        "summary": "It introduces an agent that learns conjecturing and theorem proving jointly, with proof ability changing the difficulty target.",
+        "source_ids": [
+          "S3",
+          "S7"
+        ]
+      },
+      {
+        "role": "conjecture generation",
+        "summary": "For dependent-type-theory domains, constrained decoding and type-directed synthesis generate valid conjectures, guaranteed well formed by construction.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "proof search and training",
+        "summary": "The same model supplies policy and value functions, while hindsight relabeling is used to improve sample efficiency in both tasks.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported demonstration",
+        "summary": "Experiments in three axiomatic domains are reported to show bootstrapping and self-improvement.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns its central self-improvement claim with a concrete mechanism: well-formed conjecture generation, proof-search guidance, and experiments across three axiomatic domains.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S9"
+          ]
+        },
+        "interpretation": "A learning system's story is more informative when the claimed capability is connected to enforceable structural constraints and a defined evaluation setting.",
+        "application": "When presenting an autonomous reasoning system, pair the capability claim with the mechanism that enforces valid outputs and name the domains used to demonstrate it.",
+        "exception": "This framing is unsuitable when validity cannot be structurally enforced or when the work is purely theoretical without an evaluation setting."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide quantitative results, baselines, training details, or definitions of “hard,” “true,” and “challenging.”",
+      "It does not specify the exact form or comparative effect of the hindsight-relabeling methods."
+    ]
+  }
+}

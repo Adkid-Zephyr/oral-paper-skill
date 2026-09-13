@@ -1,0 +1,137 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31823",
+    "title": "LaMPlace: Learning to Optimize Cross-Stage Metrics in Macro Placement",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31823"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0ad3a93870821589567e174c9a1970934a3f8dd6e5beabf7ecd5f0948421bc16",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "120c818afbfdb2b05086556ba30e61af2dfbd99b90c6b628408df4cb4b92ee2e",
+    "extracted_at": "2026-09-12T23:53:24.929118+00:00",
+    "session_id": "01a0980a-001f-7c23-8b4c-85dc05d3750e",
+    "usage": {
+      "input_tokens": 12728,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 692,
+      "reasoning_output_tokens": 64
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0ad3a93870821589567e174c9a1970934a3f8dd6e5beabf7ecd5f0948421bc16"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31823",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Macro placement optimization should target final chip-quality metrics, including timing, rather than only metrics available during placement.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods mainly optimize intermediate surrogate metrics because post-placement evaluation of cross-stage metrics is computationally expensive, limiting practical online optimization and alignment with final performance.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "LaMPlace trains an offline predictor for cross-stage metrics and uses it to generate a pixel-level placement mask that estimates each grid location’s impact on design metrics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report improved chip quality across several key design metrics, with an average improvement of 9.6%.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present learning a mask for fast cross-stage-metric optimization during macro placement, replacing reliance on intermediate surrogate metrics.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a 43.0% improvement in WNS on commonly used benchmarks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report a 30.4% improvement in TNS on commonly used benchmarks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report an average 9.6% improvement across several key design metrics.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background and limitation",
+        "summary": "Machine learning is described as promising for macro placement, but existing approaches mainly optimize intermediate surrogate metrics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "LaMPlace learns an offline predictor and converts its estimates into a pixel-level mask used as a fast evaluator for placement decisions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Experiments on commonly used benchmarks are reported to improve chip quality, particularly timing metrics WNS and TNS.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly connects the optimization target, computational bottleneck, proposed proxy mechanism, and final metrics: offline prediction enables fast decisions based on cross-stage metrics.",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        "interpretation": "A strong abstract can explain a method as a direct response to a specific evaluation-cost and objective-misalignment problem.",
+        "application": "Frame a proposed proxy or learned evaluator by stating which expensive downstream objective it estimates, how it enables decisions, and which final metric tests alignment.",
+        "exception": "This framing is unsuitable when the downstream metric is cheap to evaluate or when proxy error and calibration are central but unreported."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark identities, baselines, experimental protocol, statistical variation, or whether improvements are relative to a particular reference.",
+      "The reported manufacturing issues and metric improvements are author-reported; the abstract does not provide supporting details or verification conditions."
+    ]
+  }
+}

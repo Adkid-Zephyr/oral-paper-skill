@@ -1,0 +1,213 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-32126",
+    "title": "TANGO: Co-Speech Gesture Video Reenactment with Hierarchical Audio Motion Embedding and Diffusion Interpolation",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/32126"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8be2f5b2abfcb8698c825b72524f9d3fd1b440c604f39ac636f6e442456de575",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "a1624eb7ae6b29c5ad6d27d57b808c93e32d3ade02b6c3d0cb26e802df814d48",
+    "extracted_at": "2026-09-12T23:58:00.246764+00:00",
+    "session_id": "01a0980e-2c8a-7ac2-bbee-522398f6e41d",
+    "usage": {
+      "input_tokens": 12779,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 802,
+      "reasoning_output_tokens": 116
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7fb3bc6bddbe5588e46bc243c2ca34a9b97976d130067f4cf1dbc35e986e4f03"
+    },
+    {
+      "id": "S2",
+      "sha256": "c55bf042509c8f2bef11a05b830164894421e512520057dbe2a2ab1e46767bfc"
+    },
+    {
+      "id": "S3",
+      "sha256": "43bf8db0be1f9a2cde745edbd8029c2bfb253b5e72a562524dd4cc5490a0cb15"
+    },
+    {
+      "id": "S4",
+      "sha256": "792d9de734b232261ffd9f568cf92b7ea470324d0a771bf63a42ede9c55a1aef"
+    },
+    {
+      "id": "S5",
+      "sha256": "8351a2e5390c076c81de802c3b7506330e8ae3d2c708e8ca7a495930c131482e"
+    },
+    {
+      "id": "S6",
+      "sha256": "7c0a90aaaa6ea9388659d6d2764e81b8944d70337af41c0fa8858ac9e43cb231"
+    },
+    {
+      "id": "S7",
+      "sha256": "4643b8090530add1579837cbac013cb7ec94b36bcff44a82ffa3f76d469ac0ca"
+    },
+    {
+      "id": "S8",
+      "sha256": "f0bd6bd1284e5bdb273b9e85e9917c4604fa1cccb1bc7f1809761532663e198e"
+    },
+    {
+      "id": "S9",
+      "sha256": "437570ace8f5e2ee54806bc63aca08b98c1fa97de3a04efe6074688cb27908de"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-32126",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate co-speech body-gesture videos from a short single-speaker reference video and target speech audio, with synchronized gestures.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing GVR is limited by audio–motion misalignment and visual artifacts in GAN-generated transition frames.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "TANGO integrates latent-distance gesture retrieval and the hierarchical AuMoClip audio–motion embedding into a graph-based reenactment framework.",
+        "source_ids": [
+          "S3",
+          "S5",
+          "S6",
+          "S8"
+        ]
+      },
+      {
+        "type": "model",
+        "claim": "ACInterp is a diffusion-based transition-frame generator using a reference motion module and homography background flow for appearance consistency.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors report publicly releasing code, pretrained models, and datasets.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish TANGO through hierarchical audio–motion embedding for gesture retrieval and diffusion-based interpolation for transition frames.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that TANGO produces realistic, audio-synchronized videos and outperforms existing generative and retrieval methods.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "TANGO targets co-speech body-gesture video generation from reference video and speech audio.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "baseline_and_gap",
+        "summary": "The framework builds on graph-based GVR and addresses its reported alignment and transition-frame artifact limitations.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "retrieval_solution",
+        "summary": "Gesture retrieval uses latent feature distance supported by the hierarchical AuMoClip joint embedding space.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "interpolation_solution",
+        "summary": "ACInterp uses diffusion generation plus motion and background-flow modules to maintain appearance consistency.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported_outcome",
+        "summary": "The authors report realistic synchronized output and superiority to existing generative and retrieval methods, alongside public release of resources.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract maps each reported GVR limitation to a named component: AuMoClip addresses audio–motion alignment, while ACInterp addresses transition-frame artifacts and appearance consistency.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "Explicit limitation-to-component mapping makes a multimodule contribution easier to evaluate conceptually.",
+        "application": "For a system paper, state each motivating failure mode beside the specific design component intended to address it.",
+        "exception": "This framing is less suitable when components are exploratory or their targets cannot be separated."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative metrics, datasets, baselines, or experimental conditions supporting the reported performance comparison.",
+      "It does not specify how many reference videos, speakers, or target utterances are used beyond describing a few-minute single-speaker reference video.",
+      "The abstract does not provide ablations isolating AuMoClip, latent-distance retrieval, or ACInterp."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "contributions[0].source_ids",
+      "before": [
+        "S5",
+        "S6"
+      ],
+      "after": [
+        "S3",
+        "S5",
+        "S6",
+        "S8"
+      ],
+      "review_file": "reviews/audit-iclr-2025.json",
+      "review_sha256": "d4904729924df90bdac59649dfddc019d2cec0d72b6d91c391649d23295d1f06",
+      "applied_at": "2026-09-13T00:00:49.791099+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

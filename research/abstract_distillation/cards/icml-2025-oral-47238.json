@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47238",
+    "title": "DeFoG: Discrete Flow Matching for Graph Generation",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47238"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "75abda48d89ec86301da27c8ecd9c46ea397fe80f90500313390afe57a9a13fb",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "b7afa562ebd1ffb830405409f0bbade5cd1bde84b0a6c7092480f970f9d7ab3f",
+    "extracted_at": "2026-09-13T00:09:57.595263+00:00",
+    "session_id": "01a09819-1eef-7950-b45b-05dc82e7b488",
+    "usage": {
+      "input_tokens": 12701,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 809,
+      "reasoning_output_tokens": 83
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7cc3d1c4e348678444f85a8b8adc544fccdb4c3ccd8a98c6affd42ccb304a2c6"
+    },
+    {
+      "id": "S2",
+      "sha256": "c3d04a0bd49a006d3e7f69ca7c633f220571054826ce58d9a12ca6882a90b12b"
+    },
+    {
+      "id": "S3",
+      "sha256": "58c16768cbf30c8c831d2b60ca04b21bb3ceb073285096da4ba3c8f972ad7f05"
+    },
+    {
+      "id": "S4",
+      "sha256": "457e7c494dadc2868c9e51999fe533eeba6699f1fff44801bf79684201925e75"
+    },
+    {
+      "id": "S5",
+      "sha256": "945781e7cc2f5aa2a842b88b8ccda5f6cfa204dbdfe9fa3f5c3053c1c040a991"
+    },
+    {
+      "id": "S6",
+      "sha256": "66e383512439dbe5cee8d2286e31fc010c8e4b8126f865632b374ab061b2f28d"
+    },
+    {
+      "id": "S7",
+      "sha256": "b846fe180f695b0eef633ae0fff0da1847efdcc5cbe4e8dcc79cc28eca162479"
+    },
+    {
+      "id": "S8",
+      "sha256": "3a4b711ddc7ef1e4d0541f86a2e313571e90770718e792966cbb76a90ae88dde"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47238",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop graph generative models that optimize sampling efficiency and flexibility while handling graph symmetries.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing graph diffusion models are reported to have inefficient sampling and limited flexibility because training and sampling are tightly coupled.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Introduces DeFoG, a graph generative framework that disentangles sampling from training to expand the design space for model optimization.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses discrete flow matching formulated to respect inherent graph symmetries.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "sampling and theory",
+        "claim": "Relates the training loss to the sampling algorithm theoretically and proposes sampling methods intended to improve performance while reducing refinement steps.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe DeFoG as a novel framework distinguished by disentangling sampling from training in graph generation.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art performance on synthetic, molecular, and digital pathology datasets for both unconditional and conditional generation.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that DeFoG outperforms most diffusion-based models using only 5–10% of their sampling steps.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors state that their theoretical analysis shows DeFoG faithfully replicates the ground-truth graph distribution.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context and limitation",
+        "summary": "Graph generative models target relational-data distributions, while diffusion models are reported to trade strong performance for inefficient sampling and limited flexibility.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework introduction",
+        "summary": "DeFoG is introduced to separate sampling from training and thereby broaden optimization choices.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "formulation and grounding",
+        "summary": "The framework uses symmetry-respecting discrete flow matching and connects its training loss explicitly to sampling, with a stated ground-truth distribution result.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "design and empirical results",
+        "summary": "The authors investigate sampling choices, propose fewer-step refinement methods, and report strong results across three dataset domains and two generation settings.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a structural design choice—disentangling training and sampling—with both a theoretical connection to the sampler and a step-count comparison against diffusion models.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5",
+            "S8"
+          ]
+        },
+        "interpretation": "This pairing makes the claimed efficiency benefit easier to trace from motivation through mechanism to a measurable resource constraint.",
+        "application": "When proposing a generative-model redesign, map the motivating bottleneck to an explicit architectural or algorithmic separation, then report a directly corresponding cost metric such as sampling steps.",
+        "exception": "Step count alone may be unsuitable when per-step computation, sample quality targets, or hardware costs differ substantially."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical performance metrics, dataset sizes, evaluation protocols, or complete baseline list.",
+      "The conditions and scope of the stated ground-truth distribution result are unspecified.",
+      "The basis for comparing sampling steps and the computational cost per step is not provided."
+    ]
+  }
+}

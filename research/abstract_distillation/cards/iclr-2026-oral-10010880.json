@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010880",
+    "title": "WebDevJudge: Evaluating (M)LLMs as Critiques for Web Development Quality",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010880"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1f392978930b4008ccc6f991515b02b76f47019ea320989ce3664ec139a5cbc7",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "8d06948d9910594fbf68b1bc5110b0fd340f4a800bd4a2af3a4435f7f7089777",
+    "extracted_at": "2026-09-13T00:05:09.208768+00:00",
+    "session_id": "01a09814-bb35-7e00-ab18-e5fc35067ad3",
+    "usage": {
+      "input_tokens": 12753,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 815,
+      "reasoning_output_tokens": 141
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ca9960736eb73eaa4e0da3045e07ea44a2edca947450fd4b4c44ce96b6f4d2b7"
+    },
+    {
+      "id": "S2",
+      "sha256": "c87864c48ecb6a6ddbc4e84bb368137f3151e1a0db7cd7e59e600b8365490dce"
+    },
+    {
+      "id": "S3",
+      "sha256": "387831adc26eb0f944d8af0d1ee55a3d5ce6fca99dfffe505a3ff80de269ba23"
+    },
+    {
+      "id": "S4",
+      "sha256": "74fa3b7310a0ab907220c88fc7f1dba4c126ff5e87055657a9833d78981aa9aa"
+    },
+    {
+      "id": "S5",
+      "sha256": "8294da3530ce6544ad1f7d47975d4b2e38ccc6c5f433d2e3ab2bc826f0f2d647"
+    },
+    {
+      "id": "S6",
+      "sha256": "5c8fbb868faa52ba8efbced36176726860cc839cf17d8462b31544e1f8e439f1"
+    },
+    {
+      "id": "S7",
+      "sha256": "872ff37736f217b567ccdcecead7fbf5d5f3146fac48e19365bc20a4815bfcef"
+    },
+    {
+      "id": "S8",
+      "sha256": "9c0016af56eabb8402a99f9dea0c707e0033db9b2699dfa136db84ab2df4587e"
+    },
+    {
+      "id": "S9",
+      "sha256": "898c4d535cb881bc3f77e7fd2b053e72aa748959eda8262cdc57d7d1d262a179"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010880",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess whether LLMs and related evaluators can reliably judge web-development quality.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Reliability of LLM-as-a-judge for open-ended tasks involving dynamic environments and complex interactions remains unexplored.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces WebDevJudge, a systematic benchmark supporting static, non-interactive and dynamic, continuous interactive evaluation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Provides human preferences over paired web implementations with structured, query-grounded rubrics.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical analysis",
+        "claim": "Evaluates LLMs, MLLMs, and agentic workflows across evaluation paradigms and guidance mechanisms.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish WebDevJudge by combining static-observation and continuous interactive evaluation for web development.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a significant gap between LLM judges and human experts.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors attribute this gap to failures in recognizing functional equivalence, verifying task feasibility, and mitigating bias.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "LLM-as-a-judge is presented as a scalable alternative to human evaluation for well-defined tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The abstract identifies uncertainty about reliability in open-ended, dynamic, interactive settings.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark",
+        "summary": "WebDevJudge combines static and interactive web-environment evaluation with rubric-grounded human preference labels.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The benchmark is used to compare LLMs, MLLMs, and agentic workflows under different paradigms and guidance mechanisms.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "The authors report a substantial human–model judging gap and connect it to specific capability and bias failures.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates static observation from continuous interaction and links the reported judging gap to concrete failure modes.",
+          "source_ids": [
+            "S3",
+            "S8"
+          ]
+        },
+        "interpretation": "A benchmark can make difficult evaluation settings and hypothesized failure mechanisms explicit rather than treating quality judgment as a single capability.",
+        "application": "When proposing an evaluator study, define distinct environment-interaction modes and map aggregate results to diagnostic error categories.",
+        "exception": "This structure may be unsuitable when the target task has no meaningful dynamic state or when failure modes cannot be operationalized from available observations."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no benchmark size, task distribution, evaluator identities, metrics, guidance details, or magnitude of the reported gap.",
+      "The claim that rubrics ensure high-quality ground truth is author-reported; annotator procedures and agreement are unspecified.",
+      "The abstract does not report whether any evaluator or guidance mechanism improved performance."
+    ]
+  }
+}

@@ -1,0 +1,155 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97949",
+    "title": "Improved Distribution Matching Distillation for Fast Image Synthesis",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97949"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8ac448d0689f29ee4f616a395de0f6cf6bfc578279398ec1768fc7845f5f22c0",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "243e7739782996f9e61fd347c6da5e1dc000102372f4d3798c9bb5ce5faff500",
+    "extracted_at": "2026-09-13T00:17:59.915891+00:00",
+    "session_id": "01a09820-781b-74b1-b163-9a657cc2fe35",
+    "usage": {
+      "input_tokens": 12824,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 830,
+      "reasoning_output_tokens": 76
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b8dc2eb6ebd4f5e4cbaa82a68e68d682a0bf01f1c5a416979776386946ef594f"
+    },
+    {
+      "id": "S2",
+      "sha256": "79ab66a2597e53f6fc368a5edcc4ee15d11a1cd6e4bbe9b13a2eef85a67e9914"
+    },
+    {
+      "id": "S3",
+      "sha256": "1ba3ec017695d3540212023096eff20be6a64ee4989dea5ea27ba1caf342e1fb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97949",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Distill expensive diffusion models into efficient one-step or few-step image generators while preserving or improving image quality.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing DMD training relies on an expensive teacher-generated noise–image dataset and regression loss, which can destabilize training and tie student quality to the teacher’s sampling paths.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DMD2 removes DMD’s regression loss and dataset-construction requirement, using a two time-scale update rule to address inaccurate fake-critic distribution estimates.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "DMD2 integrates a GAN loss so the student can train on real images, mitigating imperfect teacher-based real-score estimation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "DMD2 introduces multi-step student training that simulates inference-time generator samples to reduce training–inference input mismatch.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present DMD2 as a set of techniques that lifts DMD’s regression-loss and sampling-path limitations while supporting multi-step student sampling.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report FID scores of 1.28 on ImageNet-64×64 and 8.35 on zero-shot COCO 2014, surpassing the original teacher with a reported 500× lower inference cost.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report megapixel image generation by distilling SDXL, with claimed exceptional visual quality among few-step methods and performance surpassing the teacher.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report releasing code and pretrained models.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background and limitation",
+        "summary": "DMD enables distribution matching without one-to-one trajectory correspondence, but its stabilizing regression loss requires costly teacher-generated data and constrains quality.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "DMD2 removes that loss, adds a two time-scale update rule and GAN training on real images, and introduces inference-sample simulation for multi-step training.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "reported outcomes and release",
+        "summary": "The authors report benchmark FIDs, lower inference cost, megapixel SDXL distillation, and released code and pretrained models.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links specific training problems to targeted mechanisms: critic-estimation error to a two time-scale update rule, teacher-score imperfection to real-image GAN training, and input mismatch to inference-sample simulation.",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        "interpretation": "A useful paper-design pattern is to state the diagnosed failure mode alongside the intervention intended to address it.",
+        "application": "For a distillation paper, organize the method around an explicit mapping from each observed training or inference mismatch to one corresponding algorithmic component.",
+        "exception": "This framing is unsuitable when failure mechanisms have not been isolated or when multiple components cannot be meaningfully attributed to distinct issues."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify evaluation protocols, baselines beyond the original teacher, or the conditions behind the reported 500× inference-cost reduction.",
+      "It does not provide quantitative details for the megapixel SDXL comparison or clarify how visual quality was assessed.",
+      "The abstract reports code and model release but gives no repository or reproducibility details."
+    ]
+  }
+}

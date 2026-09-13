@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31766",
+    "title": "Consistency Checks for Language Model Forecasters",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31766"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1807b6c4ee4d8f069d73c413417ac78c2a7e999645b55b4603fd9dea1433e21d",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "fddc7c8a197f7e1cd03b4f79831f97ad5ca2edf3547cc5e23afe195c46335ddd",
+    "extracted_at": "2026-09-12T23:51:12.513854+00:00",
+    "session_id": "01a09807-f14a-77e1-b505-ff8575f4ba47",
+    "usage": {
+      "input_tokens": 12726,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 719,
+      "reasoning_output_tokens": 123
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "672e8f5f506ca722c705f11ed7c2b50595399f65ac16e1aca7b02138a3f33598"
+    },
+    {
+      "id": "S2",
+      "sha256": "86c73054bbbc1ba2bf7cad66ce9f0413974588b9becf9f6688ed084863b2b64c"
+    },
+    {
+      "id": "S3",
+      "sha256": "2cb5f823c6a33e646bfe658357fb6d21fb8c3a6e4a5dc80877ff29010c0e8097"
+    },
+    {
+      "id": "S4",
+      "sha256": "c62acd18e6630a564c927eeec069654a1b2a18e1718ce83399dff5a425b2d983"
+    },
+    {
+      "id": "S5",
+      "sha256": "4b24c17b9b38de091151391c34e0af925adf00970ca631d359476485910dd714"
+    },
+    {
+      "id": "S6",
+      "sha256": "45deb770b528c6ba60107d7366a1be0086d5b41384d7774150d648d4f8664fe6"
+    },
+    {
+      "id": "S7",
+      "sha256": "fd400e3e3faa9f2229a5dd8e20be45ff4804ffe0f4b9876cb7cadc7e85e4ed78"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31766",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Forecasting systems need evaluation before future ground truth is available.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies a need for instantaneous benchmarking of LLM forecasters, whose eventual ground-truth performance cannot yet be observed.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "metric",
+        "claim": "A general arbitrage-based consistency metric for logically related forecasts.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "An automated pipeline that generates base questions, instantiates consistency checks, elicits predictions, and measures consistency.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "A standard proper-scoring-rule benchmark and a consistency benchmark resolving in 2028.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors propose a new general consistency metric based on arbitrage.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that instantaneous consistency metrics correlate strongly with LLM forecasters' eventual ground-truth Brier scores.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report releasing a consistency benchmark designed for long-term evaluation through 2028.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Forecasting is difficult to evaluate immediately because ground truth arrives only in the future.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper evaluates forecasters through consistency across logically related questions and proposes an arbitrage-based metric.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "implementation",
+        "summary": "An automated system generates questions and checks, collects forecasts, and scores their consistency.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "validation_and_resource",
+        "summary": "The authors compare consistency with eventual Brier scores and release a benchmark resolving in 2028.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns an instantaneous proxy metric with a delayed proper-scoring-rule outcome.",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        "interpretation": "A proxy is more interpretable when its relationship to a recognized eventual measure is stated explicitly.",
+        "application": "When proposing an early evaluation signal, define the delayed target and report the proxy–target relationship in the same study.",
+        "exception": "This move is unsuitable when no credible delayed target exists or when the proxy and target measure materially different tasks."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the strength or statistical details of the reported correlation.",
+      "It does not describe the question-generation procedure, benchmark composition, or how arbitrage profit is calculated.",
+      "The 2028 benchmark's current size and evaluation protocol are unspecified."
+    ]
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009945",
+    "title": "Q-RAG: Long Context Multi‑Step Retrieval via Value‑Based Embedder Training",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009945"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "aa0fd005d3b4fc5069c7bb6b3a11607120565c37b1645e658298023b7a79eb1d",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "3c076f0122e11652ee16214dd590ec06146cc6bf73797600686e540d43eed4d2",
+    "extracted_at": "2026-09-13T00:03:48.513997+00:00",
+    "session_id": "01a09813-801f-78f0-8e63-2a0795d23c4c",
+    "usage": {
+      "input_tokens": 12689,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 764,
+      "reasoning_output_tokens": 101
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "46875c4292c9043d530900be714df96f969ce52a2d9cf893e2c1760f566db34b"
+    },
+    {
+      "id": "S2",
+      "sha256": "8e701418d81aa44c2a366ffae495e9128539643ef7f40d501b65b0f3213f9245"
+    },
+    {
+      "id": "S3",
+      "sha256": "5cc91c840b4cead474d4c8c02b82ad8c32f86468cc92987293bfc80f0bee0853"
+    },
+    {
+      "id": "S4",
+      "sha256": "9a0a3060534e95939981107486e7e2c42189441e6fa30c8b77a711bfafa7bc0e"
+    },
+    {
+      "id": "S5",
+      "sha256": "03e27997c3f773cfdb1b82ad2d2e6431b44cfe56fa344a4b4115af5a85c511b3"
+    },
+    {
+      "id": "S6",
+      "sha256": "964ad7a31ec34fff37abc311d235fa671af84a50878e7aa15231b3ea2477037c"
+    },
+    {
+      "id": "S7",
+      "sha256": "068c2c06b41e57dad5a56529ae47c1dcc68162be56b2faf793f8316789182bea"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009945",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable efficient multi-step retrieval for complex, long-context open-domain question answering.",
+        "source_ids": [
+          "S2",
+          "S5",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches commonly rely on resource-intensive fine-tuning of small LLMs, which does not support using larger LLMs.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Q-RAG fine-tunes an Embedder model with reinforcement learning for multi-step retrieval.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report competitive, resource-efficient performance on open-domain question answering, including long-context settings up to 10M tokens.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe Q-RAG as a novel approach that applies reinforcement learning to Embedder fine-tuning for multi-step retrieval.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art results on BabiLong and RULER for contexts up to 10M tokens.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors characterize Q-RAG as a competitive, resource-efficient alternative to existing multi-step retrieval methods.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "RAG filters relevant context to improve LLM performance while reducing hallucinations and inference cost.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "Single-step retrieval is often insufficient for complex questions requiring multi-step search.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Emerging multi-step methods typically fine-tune small LLMs, a resource-intensive strategy that does not enable larger LLMs.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposal_and_result",
+        "summary": "Q-RAG instead uses reinforcement learning to fine-tune an Embedder; the authors report competitive efficiency and state-of-the-art benchmark results through 10M-token contexts.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific bottleneck—resource-intensive small-LLM fine-tuning—to a design choice: RL-based Embedder fine-tuning, followed by benchmark and efficiency claims.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A persuasive abstract can align each proposed component with a stated limitation and then report evidence against both task and resource concerns.",
+        "application": "Frame a method contribution by explicitly mapping its architectural or training choice to the limitation it is intended to address, then report task results together with the relevant efficiency dimension.",
+        "exception": "This framing is unsuitable when the abstract lacks measurements for the claimed efficiency or when the proposed component is not actually tied to the stated bottleneck."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify RL objectives, training resources, evaluation metrics, baseline results, or how resource efficiency was measured.",
+      "The scope and exact meaning of the state-of-the-art claims are not detailed beyond the named benchmarks and context length."
+    ]
+  }
+}

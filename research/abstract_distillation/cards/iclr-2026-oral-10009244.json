@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009244",
+    "title": "LLM DNA: Tracing Model Evolution via Functional Representations",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009244"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0ebfdc446c1764cea4faec05101af343a659bbdff8942ce3942134154b314ddf",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "8e9e2dedae1e3ce261537f3e2d1a22dc74ef5c684e3402f03156d87a51e6c2e6",
+    "extracted_at": "2026-09-13T00:02:31.430421+00:00",
+    "session_id": "01a09812-4e4b-7d92-afd6-7dde45a3471a",
+    "usage": {
+      "input_tokens": 12725,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 857,
+      "reasoning_output_tokens": 109
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "58bf5494936575775abf09734c48dd276e258cbd6becf1b2ebf8ca24f996b159"
+    },
+    {
+      "id": "S2",
+      "sha256": "96f14bb1db4d30a3da356f5a829257929b71a9cbf2fb94aba98dc169036d9efc"
+    },
+    {
+      "id": "S3",
+      "sha256": "6ae491fe333d3278cc3fefed657f2a8b0daee7123baa6726ef649472d7173184"
+    },
+    {
+      "id": "S4",
+      "sha256": "62d89d032f2112f80af5eb34dd926b375a3af0e69318e9019f9e952bae2246a7"
+    },
+    {
+      "id": "S5",
+      "sha256": "b8e4073ef0098b17a14fc64cc94348c55b43d9887900816041dbdb85ee69240d"
+    },
+    {
+      "id": "S6",
+      "sha256": "c346afc24127d38ca3115008b342e396b845e377a76089bf741a309a396b080b"
+    },
+    {
+      "id": "S7",
+      "sha256": "47c673c720b54f5687ca777058d79b5dfbdab820e6941ea6385998521b81cbbb"
+    },
+    {
+      "id": "S8",
+      "sha256": "e2921e6dd8b1a2903b54d498116d3f2e0a0460ae23749c53fbdb6471f48723fb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009244",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "LLM evolutionary relationships through fine-tuning, distillation, and adaptation are often undocumented or unclear, complicating model management.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches are constrained by task specificity, fixed model sets, or strict tokenizer and architecture assumptions.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Defines LLM DNA as a low-dimensional, bi-Lipschitz representation of functional behavior, and establishes its existence together with inheritance and genetic determinism properties.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Derives a general, scalable, training-free pipeline for extracting LLM DNA.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Uses DNA comparisons and phylogenetic algorithms to analyze relationships and evolutionary structure across LLMs.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by mathematically grounding model comparison in a low-dimensional functional representation designed to avoid the stated task, model-set, tokenizer, and architecture limitations.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments across 305 LLMs in which DNA aligns with prior studies on limited subsets and performs superiorly or competitively across various tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that DNA comparisons uncover previously undocumented relationships among LLMs.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that an evolutionary tree aligns with encoder-decoder to decoder-only shifts, reflects temporal progression, and reveals distinct evolutionary speeds across LLM families.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames the undocumented evolutionary landscape of millions of LLMs as a model-management problem.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "It identifies task-, model-set-, tokenizer-, and architecture-dependent constraints in existing methods.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "theoretical proposal",
+        "summary": "It defines LLM DNA as a low-dimensional bi-Lipschitz functional representation and states inheritance, genetic determinism, and existence results.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method and evaluation",
+        "summary": "It derives a scalable training-free extraction pipeline, then reports results across 305 LLMs and uses DNA for relationship discovery and phylogenetic analysis.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a formal representation, a training-free extraction pipeline, and downstream phylogenetic analysis in one progression.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S8"
+          ]
+        },
+        "interpretation": "A representation becomes more persuasive when its formal properties are linked to a concrete, scalable procedure and a management-relevant use.",
+        "application": "When proposing a model-comparison representation, pair its definition and guarantees with an explicit extraction workflow and a downstream structural analysis.",
+        "exception": "This framing may be unsuitable when the representation is intended only for a narrowly defined task or lacks a meaningful downstream use."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the various tasks, baselines, metrics, or conditions behind the superior or competitive performance claim.",
+      "Details supporting the stated proofs, existence result, and alignment with prior studies are not provided.",
+      "The validation basis for previously undocumented relationships and the phylogenetic tree is unspecified."
+    ]
+  }
+}

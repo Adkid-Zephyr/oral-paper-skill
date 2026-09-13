@@ -10,6 +10,8 @@ Use this when a user requests a structured review or learning retrospective. Mat
 
 ## Produce source-linked suggestions
 
+Choose a relevant move from [the seven source-linked practices](abstract-derived-practices.md), not a full checklist for every paper.
+
 For each high-priority suggestion, provide:
 
 1. **Practice:** what the exemplar actually does.
@@ -29,6 +31,8 @@ Use at most three suggestions unless the user requests more. It is acceptable to
 - **L:** What can another researcher learn or use from the result or resource?
 
 A missing or inapplicable dimension does not imply rejection. Treat early-stage uncertainty differently from a claim contradicted by evidence. A resource paper need not also establish a new mechanism.
+
+The mnemonic is optional; the actual distilled reference is the seven practices and their bounded examples. Do not describe ORAL as a measured common law of all 883 abstracts.
 
 ## Editing and learning
 

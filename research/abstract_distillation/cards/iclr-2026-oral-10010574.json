@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010574",
+    "title": "VibeVoice: Expressive Podcast Generation with Next-Token Diffusion",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010574"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2ecc256be58bf79972d4311eda6cd82da6a037626e4e23eaff7633e5d49de069",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "e983c0446c71834823aede69873c8a94e86283229c3aadd309b473b8546f5a6b",
+    "extracted_at": "2026-09-13T00:04:42.152201+00:00",
+    "session_id": "01a09814-48e0-77e1-a353-d5ec1c4ebb89",
+    "usage": {
+      "input_tokens": 12732,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 919,
+      "reasoning_output_tokens": 145
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "07da5f439b06ab671c282a4c8277fbc0bf28c597f55cf1d18ce21eeb7a0b8372"
+    },
+    {
+      "id": "S2",
+      "sha256": "755d89911379474bb58955d1b37e7eac77787223007b8f44afefb3234bb3bd2e"
+    },
+    {
+      "id": "S3",
+      "sha256": "7526004dacca499b977ec49520c48f6166d826f4728718d5cddc9ebb2e84d235"
+    },
+    {
+      "id": "S4",
+      "sha256": "7ab4524197b72e539e8e0d9e1e67f44b4954539b2bc4af48276a5b2496fbe98c"
+    },
+    {
+      "id": "S5",
+      "sha256": "e32a1b776b91fa718045f54f558a076088a930e596d3317cb7c1cebdcdf6b8f1"
+    },
+    {
+      "id": "S6",
+      "sha256": "72fa715180ab60c42e8682ff9f4b3376fa2e18efebc5a5c762bf3b77c0a402c1"
+    },
+    {
+      "id": "S7",
+      "sha256": "3c9cf00d79864e3a170c29f09a7831921c6bda6d5c0432b1b48b1e9c20722dcd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010574",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Long-form, multi-speaker conversational audio generation challenges traditional TTS in scalability, speaker consistency, and natural turn-taking.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Many prior models typically support only 1–2 speakers, limiting multi-speaker podcast synthesis.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "VibeVoice, a zero-shot model for expressive, long-form, multi-speaker speech synthesis.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A continuous speech tokenizer operating at an ultra-low frame rate of 7.5, paired with next-token diffusion.",
+        "source_ids": [
+          "S3",
+          "S6"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "An annotation pipeline producing pseudo-transcriptions and turn-taking labels from extensive podcast data.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present VibeVoice as a novel model combining efficient continuous speech tokenization, podcast-derived conversational annotations, and next-token diffusion for expressive multi-speaker generation.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the tokenizer preserves audio fidelity while substantially improving computational efficiency for long sequences.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report synthesis of up to 30 minutes of speech with up to 4 speakers, exceeding the stated typical 1–2-speaker limit of many prior models.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report natural turn-taking and pacing, including subtle non-lexical cues such as breaths and lip smacks.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Long-form multi-speaker podcast generation exposes scalability, speaker-consistency, and turn-taking challenges in traditional TTS.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "model",
+        "summary": "The authors introduce VibeVoice for zero-shot expressive, long-form speech synthesis with multiple speakers.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "efficiency mechanism",
+        "summary": "The approach uses a 7.5-frame-rate continuous speech tokenizer intended to retain fidelity while reducing long-sequence computation.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "data and generation",
+        "summary": "Podcast annotations provide pseudo-transcriptions and turn-taking labels, which support next-token diffusion training.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported capabilities",
+        "summary": "The system is reported to generate up to 30 minutes with up to 4 speakers and to capture conversational timing and non-lexical cues.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a low-rate tokenizer and podcast-specific turn-taking annotations directly to long-form, multi-speaker generation goals.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A strong abstract can connect each major design choice to a named bottleneck and target capability.",
+        "application": "When presenting a new system, map each component to a specific scalability, data, or interaction constraint before stating the resulting capability.",
+        "exception": "This framing is less suitable when component-to-outcome links are not supported by reported evidence or when the work is primarily theoretical."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide evaluation protocols, baselines, sample counts, or quantitative measures for fidelity, efficiency, naturalness, or turn-taking.",
+      "The conditions and meaning of zero-shot synthesis are unspecified.",
+      "The comparison with prior models is qualitative; the basis and exact scope of the 1–2-speaker characterization are not detailed."
+    ]
+  }
+}

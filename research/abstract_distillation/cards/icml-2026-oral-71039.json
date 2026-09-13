@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71039",
+    "title": "DiScoFormer: Plug-In Density and Score Estimation with Transformers",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71039"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0207838c0c0ccfc51bae47cfd23e79c8e46f204a632b3fb5bf2f9e92f00f618d",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "d1646225b56bd6bae0f86fc3ec4443facba9cb07cc1d63769ade0be3e6cb6665",
+    "extracted_at": "2026-09-13T00:11:45.653089+00:00",
+    "session_id": "01a0981a-b8eb-7fa1-82f1-f12c004eaf18",
+    "usage": {
+      "input_tokens": 12662,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 969,
+      "reasoning_output_tokens": 67
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cf6e1bac295d16664583baaa4203f6cb7a69c4c8956c05acc795501261110192"
+    },
+    {
+      "id": "S2",
+      "sha256": "57d3519e42de79bca3a3c5016014f498d3ff29d2a8736730b84987b2853f8a05"
+    },
+    {
+      "id": "S3",
+      "sha256": "803a8a7065ff160be3e68f3ed3369ba4d8c2d8b37f56dc664e0f984220ee133b"
+    },
+    {
+      "id": "S4",
+      "sha256": "70f824dc43c02fce04ac2f6fdb943ac4470aa8dc897fba49d71b30883fb6db01"
+    },
+    {
+      "id": "S5",
+      "sha256": "d7b26863b6c752f25a0d2acacab1775e0ce7b768cf146f7e5fc84b8f933095aa"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71039",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Estimate probability densities and score vectors from samples for generative modeling, Bayesian inference, and kinetic-theory applications.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches trade off broad distributional generalization with dimensional scalability or precision without retraining: KDE suffers from the curse of dimensionality, while neural score models require retraining for each target distribution.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces DiScoFormer, an equivariant Transformer that maps i.i.d. samples to density values and score vectors across distributions and sample sizes.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Proves that self-attention can recover normalized KDE, characterizing attention as a functional generalization of kernel methods.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Provides a plug-in score oracle for score-debiased KDE, Fisher information computation, and Fokker–Planck-type PDEs.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish DiScoFormer as a “train-once, infer-anywhere” model that jointly estimates densities and scores while generalizing across distributions and sample sizes.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the model converges faster and reaches higher precision than KDE for density estimation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that individual attention heads learn multi-scale, kernel-like behaviors.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report high-fidelity plug-in score-oracle performance for score-debiased KDE, Fisher information computation, and Fokker–Planck-type PDEs.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Density and score estimation from samples is framed as a core problem across several fields.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The abstract contrasts KDE’s distributional generality but dimensionality curse with neural score models’ precision but per-distribution retraining requirement.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "DiScoFormer is introduced as an equivariant Transformer jointly mapping samples to densities and scores across distributions and sample sizes.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "theory_and_mechanism",
+        "summary": "The authors connect self-attention analytically to normalized KDE and report multi-scale kernel-like attention behavior.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_outcomes",
+        "summary": "The abstract reports faster convergence and higher precision than KDE, plus plug-in use as a score oracle in three downstream settings.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the proposed model’s design directly with the stated trade-off: cross-distribution inference without per-target retraining, while jointly producing densities and scores.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A problem-driven design claim is easier to assess when each requested capability is explicitly mapped to a limitation introduced earlier.",
+        "application": "Structure a method abstract by first naming the incumbent trade-off, then state the model’s capabilities using the same dimensions and terminology.",
+        "exception": "This framing is unsuitable when the paper addresses a narrowly defined task with no meaningful incumbent trade-off."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract pairs an analytical attention–KDE equivalence with an empirical observation about multi-scale, kernel-like attention heads.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "Combining a formal connection with an interpretable mechanism can explain why a learned component resembles a classical baseline.",
+        "application": "When introducing a learned replacement for a familiar method, add a formal limiting or equivalence result and a concrete mechanism-level observation if available.",
+        "exception": "Do not use this pattern when the proposed model has no defensible analytical relationship to the baseline."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dimensional ranges, distributions, sample sizes, convergence metrics, precision metrics, baselines beyond KDE, or quantitative results.",
+      "The conditions and scope of the analytical proof, the meaning of “high-fidelity,” and the details of downstream demonstrations are not given.",
+      "The abstract does not establish independent verification, reproducibility, or priority over prior work."
+    ]
+  }
+}

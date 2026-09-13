@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006696",
+    "title": "Visual Planning: Let's Think Only with Images",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006696"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "70345b763054e09fc8c6e2e16b97ed9d18f42542fcea145503633efce5c96f57",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "d8b750808331c67be34648e73764eaa266dcab41b297395ee8343faf37abba88",
+    "extracted_at": "2026-09-12T23:58:21.540697+00:00",
+    "session_id": "01a0980e-8ba6-71a1-b664-7fbf94e25759",
+    "usage": {
+      "input_tokens": 12752,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 680,
+      "reasoning_output_tokens": 45
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "af48fef603740a17a9fb3c89867e09090bacd75518b6b4a0f0b769ea500d7398"
+    },
+    {
+      "id": "S2",
+      "sha256": "75f1aed683d9ac7a5886a9d644efc4314f285fb1a788fb12f5531991383a37d5"
+    },
+    {
+      "id": "S3",
+      "sha256": "c56f489d978c9946f31f5b057bca443a1c4e4881870a16bb6246e6b28940e678"
+    },
+    {
+      "id": "S4",
+      "sha256": "f326e82a38312a43ddefc87fae14c01e49e743c315606e43cafe3732a067f2d8"
+    },
+    {
+      "id": "S5",
+      "sha256": "dbdd4cd2ca0b34ce8f7c73ed775557687bcb6d275a3faecc03b2ec3f8ea2b6b8"
+    },
+    {
+      "id": "S6",
+      "sha256": "72cc8e3736e6d4c2c8805131970f6c80a9503889c591297d000086579af42bec"
+    },
+    {
+      "id": "S7",
+      "sha256": "be7160310aee8a037f961c98ddedb54db276254afc18409bf7d218dc491ea3d6"
+    },
+    {
+      "id": "S8",
+      "sha256": "b2494717bde3d9c8656fb4fcf67837c32bf9c5f8f989cb9685130f3012dd5dfe"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006696",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reasoning and planning for tasks involving spatial or geometrical information may be better supported by visual representations than by language alone.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing multimodal models predominantly express and structure reasoning in text, even when visual information is present.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "paradigm",
+        "claim": "Visual Planning performs planning through image sequences that encode step-by-step visual inference, supplementing language-based reasoning.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "reinforcement-learning framework",
+        "claim": "VPRL uses GRPO to post-train large vision models for visual planning.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce Visual Planning as a purely visual planning paradigm for vision-first tasks.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report substantial planning improvements from VPRL on FrozenLake, Maze, and MiniBehavior.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that Visual Planning outperforms other planning variants that reason only in text.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Recent LLM and MLLM advances have improved machine reasoning, but reasoning remains predominantly text-based.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "The authors argue that language is not always the natural or effective modality for spatial and geometrical reasoning.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "They propose Visual Planning: image sequences encode step-by-step planning in the visual domain as a supplementary reasoning channel.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "method_and_results",
+        "summary": "They introduce VPRL with GRPO and report improvements across three visual navigation tasks, plus an advantage over text-only planning variants.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a modality-specific limitation with a modality-specific intervention: text-dominant reasoning is followed by image-sequence planning for spatial tasks.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A paper can make its motivation more concrete by matching the representation used by the method to the structure of the target task.",
+        "application": "For a task with explicit spatial structure, define an intermediate representation that preserves that structure and describe how it supports stepwise inference.",
+        "exception": "This move may be unsuitable when the task’s essential information is primarily linguistic or when visual representations cannot compactly encode the needed reasoning."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report dataset sizes, baselines beyond the broad text-only comparison, numerical gains, statistical uncertainty, or task-specific conditions.",
+      "It does not clarify whether Visual Planning is evaluated alone, jointly with language reasoning, or under comparable computational budgets."
+    ]
+  }
+}

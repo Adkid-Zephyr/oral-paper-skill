@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008175",
+    "title": "Diffusion Language Model Knows the Answer Before It Decodes",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008175"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "89b19017dbe8f4382dc5bd2586012084f054262ee1cd4fb9b03199a63a987ef2",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "ef1345c4f681955deda9b4a4a8f68e18f50a667e24111ee21e2f3b469dc86f60",
+    "extracted_at": "2026-09-13T00:00:48.981308+00:00",
+    "session_id": "01a09810-c5b5-7031-af1e-7973e2c82304",
+    "usage": {
+      "input_tokens": 12888,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 772,
+      "reasoning_output_tokens": 48
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bd3a1a96ba4dea4357e7f0fb164c88832c21d27244d157a6500562b5eb0c8a69"
+    },
+    {
+      "id": "S2",
+      "sha256": "b086c1707582ae69909cf6179446148a831835bbaa785350ed1901dc0233581f"
+    },
+    {
+      "id": "S3",
+      "sha256": "bd4e0d626d45edbf27558b326d6d1ffb002867e8e21bb88d701971d7bc87a6d2"
+    },
+    {
+      "id": "S4",
+      "sha256": "c05e206b8a8538b5bc33c423d83d9dd8daec92388245ac7f10f24d200a45996c"
+    },
+    {
+      "id": "S5",
+      "sha256": "2d6b31f5c6df468bcae9cb1ba0b99b152afc9c1e6ea4b9388d97c1ea0ea4e38c"
+    },
+    {
+      "id": "S6",
+      "sha256": "54e7e3a746f031ea9bac56aaf5d8b2a1d955fce325237725d02aa6a768fb100f"
+    },
+    {
+      "id": "S7",
+      "sha256": "01552e88dbdde3645fad0165dbde4ac0b1fe4dbd061902ca04e89cd3987c9eb3"
+    },
+    {
+      "id": "S8",
+      "sha256": "8e47dbf54175887e11d9a250333d40700f42516f46369ef718abcf90976f36fe"
+    },
+    {
+      "id": "S9",
+      "sha256": "f7ae327061a821ef143a58851ef7dfb376b679242ef147e1cab83592884c26d5"
+    },
+    {
+      "id": "S10",
+      "sha256": "aaf075fc1498dbf23ffc1c99f4eac577f4903e49260fae35bc13de30af315ead"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008175",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "DLM inference is slowed by bidirectional-attention costs and many refinement steps needed for high-quality outputs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify early answer convergence as an overlooked property that existing DLM decoding does not exploit.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Prophet is a training-free early-commit decoding paradigm that dynamically stops refinement or decodes all remaining tokens in one step using the top-2 confidence gap.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Prophet integrates with existing DLM implementations with negligible overhead and no additional training.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "framing",
+        "claim": "The work reframes DLM decoding as deciding when to stop sampling, based on early answer convergence.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present exploiting early answer convergence through Prophet's early-commit decoding as their new contribution.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that up to 97% of GSM8K instances and 99% of MMLU instances can be decoded correctly using half the refinement steps.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "Across tasks on LLaDA-8B and Dream-7B, the authors report up to 3.4× fewer decoding steps while preserving high generation quality.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report additional speedups when Prophet is combined with existing acceleration methods.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context and limitation",
+        "summary": "DLMs offer parallel generation and flexible token orders, but inference remains slower because of attention costs and many refinement steps.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "observation",
+        "summary": "The authors report that correct answers often converge internally by halfway through refinement under semi-autoregressive and random-remasking schedules.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Prophet uses a top-2 confidence gap to decide between continued refinement and committing all remaining tokens at once.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "On LLaDA-8B and Dream-7B, the authors report substantial step reductions while maintaining high generation quality and gaining further speedups with other accelerators.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a measurable intermediate-state behavior—early answer convergence—to a stopping rule based on the top-2 confidence gap.",
+          "source_ids": [
+            "S3",
+            "S6"
+          ]
+        },
+        "interpretation": "A useful acceleration idea can emerge by measuring when the target-relevant state stabilizes, rather than optimizing every generation step uniformly.",
+        "application": "For an iterative generator, track answer stability and define an explicit confidence-based early-exit criterion.",
+        "exception": "This may be unsuitable when answers lack identifiable regions or when confidence gaps are poorly calibrated during refinement."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify how the confidence-gap threshold is selected or calibrated.",
+      "The reported speedup conditions, quality metrics, task counts, and comparison baselines are not given.",
+      "The abstract does not quantify the additional speedups from combining Prophet with other acceleration methods."
+    ]
+  }
+}

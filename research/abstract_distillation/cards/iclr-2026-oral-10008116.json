@@ -1,0 +1,199 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008116",
+    "title": "Global Resolution: Optimal Multi-Draft Speculative Sampling via Convex Optimization",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008116"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b77914ead971bb75406b380cae8eb9fccb39a7af1845e67f7ffbdb44ff711224",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "cdc3dad74ac2da9dbcd5b63eeb2eb3ab480a2f6717a6cabc8a33ca879836189f",
+    "extracted_at": "2026-09-13T00:00:48.337714+00:00",
+    "session_id": "01a09810-b3ec-7ea3-9645-204eca561f45",
+    "usage": {
+      "input_tokens": 12871,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 856,
+      "reasoning_output_tokens": 87
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "59b1f486980dc3b9500d1441e11a5676f9fce7adfb0603562c56d48b5a1c8111"
+    },
+    {
+      "id": "S2",
+      "sha256": "f3b5e5fa463b5a6457d017564255fe3ca56cbb9648068a195e6418b5b68bdbf7"
+    },
+    {
+      "id": "S3",
+      "sha256": "a364d0e088e315dbb0fdfaea2b8cc5c080b75eba5ffc22512db64e2b8fe62342"
+    },
+    {
+      "id": "S4",
+      "sha256": "c658e8e256b34b0e56cf1a478277841ddb8fd37c1216b6ab90ba95b1cfb3f857"
+    },
+    {
+      "id": "S5",
+      "sha256": "69e950e9c9979153d5207104c2fb426adb8ec70511c8a1af6bf9d8f72329aef5"
+    },
+    {
+      "id": "S6",
+      "sha256": "f680f18bf7bdf9d24667eab472774abc5c3b422af198b95bca7733e20d107563"
+    },
+    {
+      "id": "S7",
+      "sha256": "0bec2c4697b42d2fe555ecce22b477db75032c108fc505167c6037ee4dfd528d"
+    },
+    {
+      "id": "S8",
+      "sha256": "f8dbb0515685df015437e6cf74a3b7293791cb577e977c231ccccc67f5de2008"
+    },
+    {
+      "id": "S9",
+      "sha256": "569efc41119c3979debd79e16fe6fbedd22cb1b82e81f79e1461ea02147c949c"
+    },
+    {
+      "id": "S10",
+      "sha256": "a28ba6d76dab45018f583ebf9371430168531fe5ca7165a5f7e18c54562eddf3"
+    },
+    {
+      "id": "S11",
+      "sha256": "8eefb96e4f2cde4090dc7e83f2c6a7c09217655c5465bf8e3612f907973ca777"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008116",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Efficiently compute the acceptance-maximizing verification criterion for multi-draft speculative sampling.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing formulations remain infeasible because they correspond to exponentially large optimization problems.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Reformulates the optimal multi-draft transport problem as a max-flow problem and then reduces it to convex optimization with at most V variables using polymatroid theory.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "Provides an algorithm for optimal n-draft speculative sampling when draft tokens are sampled i.i.d. from one draft model, tunable to arbitrary accuracy.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe their polymatroid-theoretic reduction as novel and their result as the first multi-draft algorithm reporting 90% acceptance with under 100 ms overhead per generated token and negligible target-distribution deviation.",
+      "source_ids": [
+        "S8",
+        "S11"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report measuring acceptance rates and algorithm runtimes across various n and top-k draft-sampling settings.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report 90% acceptance, under 100 ms overhead per generated token, and negligible deviation from the target model distribution.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Speculative sampling uses a cheap draft model and verification to reduce autoregressive decoding latency without sacrificing inference quality, as described by the authors.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "extension",
+        "summary": "Multi-draft sampling generates n draft tokens per step, with verification conditioned on them; the acceptance-maximizing criterion is called optimal transport.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The direct optimal-transport linear program is difficult because it has V^n variables, and prior reformulations remain exponentially large.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "resolution",
+        "summary": "The authors reverse-engineer subset selection into max-flow and apply polymatroid theory to obtain a convex problem with at most V variables and an arbitrarily accurate algorithm.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "They measure acceptance and runtime under varied draft counts and top-k settings, reporting high acceptance and low overhead with negligible distribution deviation.",
+        "source_ids": [
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects an infeasible exponential formulation to a max-flow formulation and then to a convex problem with at most V variables.",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A strong algorithmic narrative can make each reformulation serve as an explicit bridge from computational obstacle to tractable implementation.",
+        "application": "When presenting a new optimization method, state the size of the original problem, identify the intermediate structural reformulation, and quantify the final reduction in dimensionality.",
+        "exception": "This framing is less suitable when the main contribution is empirical, conceptual, or not based on successive equivalent reformulations."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not quantify “arbitrary accuracy,” “negligible deviation,” or the exact acceptance/runtime measurement protocol.",
+      "The reported 90% acceptance and under-100-ms overhead are not tied to specific n, vocabulary size, hardware, or top-k settings.",
+      "The abstract does not provide baselines or detailed comparisons against prior algorithms."
+    ]
+  }
+}

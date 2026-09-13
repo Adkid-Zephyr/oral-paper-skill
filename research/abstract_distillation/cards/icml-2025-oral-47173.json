@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47173",
+    "title": "From Weight-Based to State-Based Fine-Tuning: Further Memory Reduction on LoRA with Parallel Control",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47173"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f5f0ae0006063f4d6381d2f98731ad024d0696349a8dad4e406fb304a8aa5051",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "b544da464f6ef47f486561f7affdfd340e83e5ea2326ce1a8b48e1a65fa6439b",
+    "extracted_at": "2026-09-13T00:07:26.971389+00:00",
+    "session_id": "01a09816-cbc6-78f2-a688-b793a88ca37e",
+    "usage": {
+      "input_tokens": 12769,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 810,
+      "reasoning_output_tokens": 102
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "413fbf669315dec0a6dfb0183d62c1af59259b4ad21c21e34f663e721631dfd7"
+    },
+    {
+      "id": "S2",
+      "sha256": "c1153dfad74d48497234c25fb07281bd3972a75dad0fa0252daa887220febb7d"
+    },
+    {
+      "id": "S3",
+      "sha256": "6d5158e19c490a94b6a5208263e4aa037d1aaeb2f1c7baae5d8fdd353d3100aa"
+    },
+    {
+      "id": "S4",
+      "sha256": "33ddeeba70d3c2d26c611a7b221aca2abf8c5387bb9a6af9705733781a8db5f7"
+    },
+    {
+      "id": "S5",
+      "sha256": "26df9f7288189521ba17dd86866b92c8e397fc1a7236ddacf7438e1eba8861e4"
+    },
+    {
+      "id": "S6",
+      "sha256": "6c3042d52dc23e0fcf28b25f07b0b2eda4441b05f359c21946e126a3c4e3c6a3"
+    },
+    {
+      "id": "S7",
+      "sha256": "3c93a84ef5a476d1fe9f50c5cfdaf1d71f85fdd945a179e5db6fe6c79338a7f7"
+    },
+    {
+      "id": "S8",
+      "sha256": "75aab4268c62a78f31e37603bc7c673d7b7be999ed78b6bfa1cd7dd4bfa6a5e5"
+    },
+    {
+      "id": "S9",
+      "sha256": "767038c285ce280c520b159eaf9d1fd78a85a18189ba2159f141e5d3b67df2b2"
+    },
+    {
+      "id": "S10",
+      "sha256": "b446e1ebb05a6bd879f25fb7420eebefc3b2a282392693698e9ea11df59e194a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47173",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks whether LoRA’s memory reduction can be pushed further while also improving performance and reducing computation time.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The authors frame progress as requiring a shift beyond conventional weight-centric adaptation.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A state-based fine-tuning framework optimizes forward states, with LoRA presented as a special case.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The approach introduces parameterized perturbations within the computational graph to control states across an entire residual block.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The paper explores training 7B/8B models on consumer-level Nvidia 3090 GPUs without quantization.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated distinction is shifting fine-tuning from weight adaptation toward optimizing forward states and controlling residual-block states.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report results across ViT, RoBERTa, LLaMA2-7B, and LLaMA3-8B showing reduced memory consumption and computation time alongside improved performance.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report exploring the feasibility of training 7B/8B models on consumer-level Nvidia 3090 GPUs without model quantization, attributed to memory reduction.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "LoRA is described as reducing GPU memory through low-rank weight updates.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "question",
+        "summary": "The paper asks whether memory savings can be increased while improving performance and reducing computation time.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "It proposes state-based tuning that perturbs and controls forward states across residual blocks.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The authors report simultaneous memory, computation-time, and performance improvements across four architectures, then discuss consumer-GPU training feasibility.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a change in optimization target—forward states rather than weights—to a specific systems benefit: potentially avoiding storage of large intermediate states.",
+          "source_ids": [
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A method claim is made more informative by linking the abstraction change to the memory bottleneck it is intended to address.",
+        "application": "When proposing a new fine-tuning parameterization, explicitly map its control variable to the concrete memory or computation object it is meant to eliminate or reduce.",
+        "exception": "This framing is unsuitable when the proposed parameterization has no clearly identified resource bottleneck or when the claimed benefit depends on unreported implementation details."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baselines, metric values, statistical conditions, or the exact computation-time and performance tradeoffs behind the reported improvements.",
+      "The feasibility claim does not state training configurations, batch sizes, sequence or image sizes, or whether training completed end to end.",
+      "The abstract does not establish independently verified correctness, reproducibility, or priority of the stated novelty."
+    ]
+  }
+}

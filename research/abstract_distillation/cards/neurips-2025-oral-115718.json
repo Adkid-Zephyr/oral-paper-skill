@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-115718",
+    "title": "Learning to Learn with Contrastive Meta-Objective",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/115718"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "74726d8da391492135ed8bbceb9bc2b8e6d1ee7635dd5ac5aacfec596f48a91a",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "c4dbbf842f5b646ada5f9fbce6b88bbcfbacebe2f54ffc0ff3d56cc52cc5069f",
+    "extracted_at": "2026-09-13T00:20:45.050499+00:00",
+    "session_id": "01a09823-0252-7822-bb32-dde477ab722c",
+    "usage": {
+      "input_tokens": 12645,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 758,
+      "reasoning_output_tokens": 119
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b69dc72a4de1774ce33b51d3586a19e0817500511a0a9c2c98a9141c9a0f11a9"
+    },
+    {
+      "id": "S2",
+      "sha256": "3fd90a7e65c3ce46653ba7f3e27649cbab71f15452a0af87fa062ba1b87adacc"
+    },
+    {
+      "id": "S3",
+      "sha256": "edc3d3a4e6dc5e679a96d87d5c1f98cb2bf879549b8398a2c66d89f8569942d1"
+    },
+    {
+      "id": "S4",
+      "sha256": "1d6ffc062066031987ed9d7112fd2b5b32454cea78e7e125f4820c6812859879"
+    },
+    {
+      "id": "S5",
+      "sha256": "16ac009fdde53f655714dee8830f2de1ecf151e472de9e0f3ddea6d9cee08ce6"
+    },
+    {
+      "id": "S6",
+      "sha256": "c8253609c1e5d9d9e1f82235aafddd07806663b3f5b171ab95f234807183b689"
+    },
+    {
+      "id": "S7",
+      "sha256": "187d1c6d85da0b4a0b5740e9f69ff09dd5b6c38fb0a57d3dea66ba59a45db353"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-115718",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable learning systems to adapt quickly to new tasks through meta-learning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes using task identity as additional supervision by contrasting the representations learned by meta-learners.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "Introduces ConML, a problem- and learner-agnostic framework for evaluating and optimizing a contrastive meta-objective.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "integration",
+        "claim": "Reports integration with existing meta-learners and in-context learning models at small implementation cost.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated distinction is to exploit task identity within episodic meta-training as contrastive supervision for learned representations.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that ConML integrates seamlessly with existing meta-learners and in-context learning models.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report a significant performance boost with small implementation cost.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Meta-learning is framed as a way for systems to adapt quickly to new tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "observation",
+        "summary": "Mini-batch episodic training is described as common across meta-learning approaches and as naturally exposing task identity.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The proposal uses task identity as supervision and contrasts learned representations, yielding the ConML framework.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report compatibility with existing meta-learners and in-context learning models, plus improved performance at low implementation cost.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects an existing training signal—task identity—to a contrastive objective over representations, then states compatibility across learner types.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A useful design pattern is to reuse information already present in a training protocol as structured supervision, while separating the added objective from the base learner.",
+        "application": "When proposing a meta-learning method, identify metadata already exposed by episodes and formulate an auxiliary representation-level objective that can be attached across learners.",
+        "exception": "This move is unsuitable when the metadata is unreliable, unavailable at deployment, or risks encouraging representations that encode task labels instead of transferable structure."
+      }
+    ],
+    "unknowns": [
+      "No quantitative performance values, datasets, baselines, or evaluation conditions are provided.",
+      "The abstract does not specify how task identity is represented or how the contrastive objective is optimized.",
+      "The basis and scope of the claimed generalizability, seamless integration, and small implementation cost are unspecified."
+    ]
+  }
+}

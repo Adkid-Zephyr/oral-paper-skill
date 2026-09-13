@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47175",
+    "title": "ABKD: Pursuing a Proper Allocation of the Probability Mass in Knowledge Distillation via $\\alpha$-$\\beta$-Divergence",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47175"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "061821e45a9bb6f3b3d4b243e91a26e37e32b5a1cc40f99b1ac71014b4714606",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "c6a7bbd4b51e2fa390c1d6332efb9f73ce0369869ed887bf9ae8c8bac06f5ae1",
+    "extracted_at": "2026-09-13T00:07:28.911933+00:00",
+    "session_id": "01a09816-d646-7790-ab6e-efc4b8e00b61",
+    "usage": {
+      "input_tokens": 12827,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 767,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "140dffe74e5c734b513460bc959264d41f2f0beb02ba43a4d0625c5f059b5c36"
+    },
+    {
+      "id": "S2",
+      "sha256": "b3b2f077a7d2df7cc550e69aa031ba94a2b9c2257b65eae6737b6aef420e15be"
+    },
+    {
+      "id": "S3",
+      "sha256": "d1063790fb7eab6b4d3e816d6fe1b3a5e0747fb00b25758c6733df618a3b8f6b"
+    },
+    {
+      "id": "S4",
+      "sha256": "8fa67025cf54dc800ec30b98854dbad6694cbc0e301f4f5f5b95549978b0ee52"
+    },
+    {
+      "id": "S5",
+      "sha256": "2539cfa8f1d206f06f5d8027b0d7bda857ce985cca3e2f80ee44a934de5c83f4"
+    },
+    {
+      "id": "S6",
+      "sha256": "ae9382b1f20ffcf5bce545e2e27ee92294dcd2d12ce9ba1823ccefb42e46328e"
+    },
+    {
+      "id": "S7",
+      "sha256": "6d24d7038896b1144b4cc8edd014483f8b8e1db5dea7a9097147a59b4cf3896e"
+    },
+    {
+      "id": "S8",
+      "sha256": "6a75005a9e763adc08c359311a1caa9b6e31026ef835af2955d8e57d35c76a90"
+    },
+    {
+      "id": "S9",
+      "sha256": "12e79a1dcc32bd756d9a0f742bd5c4c9a33fa0c218f2d60cc69f7bd59487f754"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47175",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Knowledge distillation must balance hardness-concentration and confidence-concentration effects when reallocating probability mass.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract reports that FKLD and RKLD entangle these effects in opposite extreme forms: both are too weak in FKLD and too strong in RKLD.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes ABKD, a generic knowledge-distillation framework based on α-β-divergence.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Provides theoretical results characterizing ABKD as a smooth interpolation between FKLD and RKLD with a better trade-off between the two concentration effects.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish ABKD by using α-β-divergence to interpolate smoothly between forward and reverse KLD for balancing the identified effects.",
+      "source_ids": [
+        "S7",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report extensive experiments across 17 language and vision datasets and 12 teacher-student settings, confirming ABKD's efficacy.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "KD transfers a teacher's output-distribution knowledge to a smaller student, commonly through FKLD or RKLD.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors frame the core challenge as balancing hardness- and confidence-concentration effects and analyze their probability reassignment during gradient updates.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "comparison",
+        "summary": "They report that FKLD under-emphasizes both effects and can fail to concentrate on the target class, whereas RKLD over-emphasizes both and can ignore broader teacher-distribution information.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "method_and_results",
+        "summary": "ABKD is introduced as an α-β-divergence framework; theory describes interpolation between FKLD and RKLD, followed by experiments on 17 datasets and 12 settings.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract names two competing concentration effects, traces their entanglement to probability reassignment during updates, and contrasts their extreme behavior under FKLD and RKLD.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A useful research pattern is to diagnose an optimization method through the specific behaviors its update reallocates, rather than only reporting aggregate performance.",
+        "application": "For a new distillation objective, explicitly define the competing probability-allocation effects, analyze update-level reassignment, and position the method by the trade-off it targets.",
+        "exception": "This framing may be unsuitable when the task has no meaningful output-distribution allocation or when update-level analysis cannot distinguish the relevant mechanisms."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, baselines, statistical details, or dataset/task breakdown for the reported experiments.",
+      "The theoretical claim's assumptions and the precise meaning of a better trade-off are unspecified."
+    ]
+  }
+}

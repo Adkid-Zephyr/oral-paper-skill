@@ -1,0 +1,213 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31918",
+    "title": "SD-LoRA: Scalable Decoupled Low-Rank Adaptation for Class Incremental Learning",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31918"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d4a69d6a53e80b7513f572fd393eb8f615975837ac2f97ab6c9ebe07c686ee0c",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "d7f34afbcf73605b5446ecacca0ff8d9371c7630da34754e73d50172568fde15",
+    "extracted_at": "2026-09-12T23:57:07.792013+00:00",
+    "session_id": "01a0980d-5805-7a90-abd4-cdd5204a551f",
+    "usage": {
+      "input_tokens": 12771,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 934,
+      "reasoning_output_tokens": 75
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "52273bdd90d95fce1997ddb70f7193f060e1add55eee99c41ce8e7996b8ccb71"
+    },
+    {
+      "id": "S2",
+      "sha256": "a867da5590fa68fcea864bd640ec6c673370aa5253d4a65f9fad77d4731f8967"
+    },
+    {
+      "id": "S3",
+      "sha256": "c88ef34ba759c40c5b23cfc6972599d9703851c70fc08843a4736e0c03db6320"
+    },
+    {
+      "id": "S4",
+      "sha256": "404b81b662d5b172794a7325b6ab14f1ee8ab929fd482bfcd30f5ae3897d1c1d"
+    },
+    {
+      "id": "S5",
+      "sha256": "dab2413f46962543a1ecbefe73de43e4ac7230d00456affc91fff685f0c61663"
+    },
+    {
+      "id": "S6",
+      "sha256": "a7fd642667a2c38f34bf98250389ca5223ac1cab999476f56a26226ef49682e0"
+    },
+    {
+      "id": "S7",
+      "sha256": "2cf5eebafe51fcf883dc8049151202016652e64b1c3e8741176984283f469498"
+    },
+    {
+      "id": "S8",
+      "sha256": "8cbd9e941949fa6882e40436a9237a2b244ac4813f697210880aae4f861be84c"
+    },
+    {
+      "id": "S9",
+      "sha256": "70d202aff656881a3d87ae47e1033728da27ed1e7c0fca7d397e9d89b3e06515"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31918",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Class-incremental learning with foundation models must handle sequential tasks while retaining prior knowledge.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing prompt- and LoRA-based approaches may require growing component pools or retaining prior-task samples, creating scalability challenges as task counts increase.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Scalable Decoupled LoRA (SD-LoRA), which continually separates learning of LoRA component magnitude and direction without rehearsal.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory and empirical finding",
+        "claim": "Reports that SD-LoRA tends to follow a low-loss trajectory and converge to an overlapping low-loss region across learned tasks, supporting a stability–plasticity trade-off.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system variants",
+        "claim": "Introduces two more parameter-efficient SD-LoRA variants and enables end-to-end optimization plus direct inference with the final model, without component selection.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated distinction is decoupling LoRA magnitude and direction learning for scalable, rehearsal-free class-incremental learning, with two parameter-efficiency variants.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report empirical and theoretical analysis indicating a low-loss trajectory and convergence to an overlapping low-loss region for all learned tasks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report extensive experiments across multiple continual-learning benchmarks and foundation models that consistently validate SD-LoRA's effectiveness.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that the final trained model supports efficient direct evaluation without selecting among components.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Positions continual learning with foundation models as a way to use pretrained knowledge for sequential tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "Identifies scalability issues caused by expanding prompt or LoRA pools and retaining previous-task samples.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "Introduces rehearsal-free SD-LoRA by decoupling LoRA magnitude and direction learning.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "analysis and extension",
+        "summary": "Reports low-loss behavior and adds two more parameter-efficient variants.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "deployment and evaluation",
+        "summary": "Describes end-to-end optimization, direct final-model inference, and benchmark experiments.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects the decoupled parameterization to a low-loss trajectory, an overlapping low-loss region, and a stability–plasticity trade-off.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A method claim is made more informative when its structural design is paired with a proposed optimization or retention mechanism.",
+        "application": "When presenting a continual-learning method, explicitly map each architectural change to the training-dynamics or forgetting behavior it is intended to influence.",
+        "exception": "This framing is unsuitable when the work has no analysis or evidence linking the design to training dynamics."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract separately states scalability, parameter efficiency, end-to-end optimization, and inference without component selection.",
+          "source_ids": [
+            "S2",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "Operational constraints can be presented as distinct, checkable system properties rather than collapsed into a single efficiency claim.",
+        "application": "State training, memory, parameter, and inference implications as separate claims, each with its own condition or comparison.",
+        "exception": "Avoid this decomposition when those properties are not independently defined or measured."
+      }
+    ],
+    "unknowns": [
+      "No quantitative benchmark results, baselines, task counts, memory costs, or ablation details are provided.",
+      "The abstract does not specify the theoretical assumptions or what convergence guarantee, if any, is established.",
+      "The meaning of “without rehearsal” and the exact differences among the two variants are unspecified."
+    ]
+  }
+}

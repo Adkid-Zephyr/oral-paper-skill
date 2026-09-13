@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31794",
+    "title": "AI as Humanity’s Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31794"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c399ebac5895adbdb63055f2e297ca382fcbad597d15f5c735b3a89d0e60f46a",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "8f5dbfe81ac3c367e55f11d3db1527689399b754a1c743f212e446738cdc8a6e",
+    "extracted_at": "2026-09-12T23:52:14.818712+00:00",
+    "session_id": "01a09808-e696-7c11-99d6-7453e67d9474",
+    "usage": {
+      "input_tokens": 12802,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 849,
+      "reasoning_output_tokens": 107
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1539e996cba1c8505e126393b7e478242b9b23a3100dee1d8153e1f97d434bbb"
+    },
+    {
+      "id": "S2",
+      "sha256": "ebae45399b72f1747284eae9276d60fed64b2c534a3826c6650a48d4ed9150cc"
+    },
+    {
+      "id": "S3",
+      "sha256": "0a8965725cb648d441e650502bea2d0ccf0c8b935d0327822e1792b943069623"
+    },
+    {
+      "id": "S4",
+      "sha256": "87ca87939f2466cade8827971efeb61fa55554ac89e310959b47718233ce3421"
+    },
+    {
+      "id": "S5",
+      "sha256": "73801c6269092e56a823c8f988769270e4e4922c5cf62bc353a644201647165d"
+    },
+    {
+      "id": "S6",
+      "sha256": "7b5835952422115bfe4539a2cf794230390c488d16fcfc579797b60b483f9f93"
+    },
+    {
+      "id": "S7",
+      "sha256": "40b5d934e67b1659a9d241b083a2c614f4de5bf382fc09e4db52a8c0e7d492ec"
+    },
+    {
+      "id": "S8",
+      "sha256": "06eed35e2c28519e67f860a3948050c05119bc63add76d10cf6c685d3d4d17c3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31794",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks how to quantify linguistic creativity in text and whether LLM creativity matches or exceeds human creativity.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces CREATIVITY INDEX, which quantifies textual creativity by reconstructing text from existing web snippets.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "Introduces DJ SEARCH, a dynamic-programming algorithm for efficiently finding verbatim and near-verbatim web matches.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "Demonstrates CREATIVITY INDEX as a zero-shot machine-text detection criterion.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe CREATIVITY INDEX as a first step toward quantifying linguistic creativity and DJ SEARCH as novel.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that professional human authors have an average CREATIVITY INDEX 66.2% higher than LLMs, while alignment lowers LLM scores by 30.1% on average.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that distinguished authors such as Hemingway have measurably higher CREATIVITY INDEX than other human writers.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that their detector surpasses DetectGPT by 30.2% and outperforms GhostBuster in five of six domains.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Human creativity is difficult for AI to mimic, and LLMs raise questions about matching or surpassing it.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "measurement proposal",
+        "summary": "The paper proposes reconstructing text from web snippets as the basis for CREATIVITY INDEX, motivated by possible human-text attribution of LLM creativity.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "computational method",
+        "summary": "DJ SEARCH enables efficient verbatim and near-verbatim matching against the web.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "Reported experiments compare creativity scores across professional authors, LLMs, aligned LLMs, and distinguished writers.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "downstream demonstration",
+        "summary": "The index is applied to zero-shot machine-text detection and compared with DetectGPT and GhostBuster.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract ties its creativity measure to a concrete operational mechanism—reconstruction from web snippets—and separately reports comparisons and downstream detection results.",
+          "source_ids": [
+            "S3",
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "A difficult construct becomes more assessable when the paper explicitly connects it to a measurable proxy and tests that proxy in a related application.",
+        "application": "For another abstract, define the proposed construct through an observable computation, then state both direct construct comparisons and a concrete use case.",
+        "exception": "This framing is unsuitable when the proxy depends on external corpora whose coverage or attribution properties are not established."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, sample sizes, evaluation metrics, statistical uncertainty, or the exact meaning of the reported percentage margins.",
+      "It does not establish whether web-snippet reconstruction captures all dimensions of linguistic creativity or whether reported differences generalize beyond the tested domains."
+    ]
+  }
+}

@@ -1,0 +1,197 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71184",
+    "title": "Equilibrium Pricing in Oligopolistic Data Markets",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71184"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3920b228ed32966ee83be53ccb1924abdf7e9879f239252c195cf2847a41d394",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "f35722c3e9a8cd24fcd07294ed93f2211b66a66702f06fb2dd82d9533662e773",
+    "extracted_at": "2026-09-13T00:17:25.228019+00:00",
+    "session_id": "01a0981f-ef4c-70b3-ac6f-181fdb4bad90",
+    "usage": {
+      "input_tokens": 12670,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 789,
+      "reasoning_output_tokens": 85
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "32ada80059af78e96604b9f94b50b1623e8bc4675ae916015309607138536d7b"
+    },
+    {
+      "id": "S2",
+      "sha256": "99e982a31743f6c29444431b23e7c59aa33fd17354af79afdc62f468b586d81f"
+    },
+    {
+      "id": "S3",
+      "sha256": "8296662b6e25c09bd3113acf0bbeaf68a2bbba8b96c949216e84ac0ae567a0ee"
+    },
+    {
+      "id": "S4",
+      "sha256": "0e4bd8c994704cefb2cce7bf762ecfa900ead50809f8d395d31a5872bedca8ba"
+    },
+    {
+      "id": "S5",
+      "sha256": "9f1e275c7ac81ce263805ac15c673294d9e8b78914f4edd934bec947d748dee6"
+    },
+    {
+      "id": "S6",
+      "sha256": "8c73aee15e336dcb8dd2fce2dc693e2b1008b33b9df8cae67955c58c3693726a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71184",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies equilibrium pricing when strategic data sellers compete for budget-constrained buyers in oligopolistic data markets.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Unlike rivalrous goods, data’s non-rivalry can prevent exact Nash equilibrium and even a 1.364-approximate equilibrium under uniform pricing.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Shows that uniform pricing may lack exact and 1.364-approximate Nash equilibria in non-rivalrous data markets.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces piecewise-linear convex pricing and reports existence of a pricing profile in which no seller can improve revenue by a factor of two by deviating to any uniform price.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports simulations with fast convergence and empirical approximation guarantees better than the worst-case factor of 2.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish equilibrium pricing for non-rivalrous data from competitive-equilibrium intuition for rivalrous goods and propose beyond-uniform pricing to recover approximate stability.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that no 1.364-approximate equilibrium exists under uniform pricing.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report existence of a pricing profile where no seller can improve revenue by a factor of two by deviating to any uniform price.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report fast simulation convergence and empirical guarantees outperforming the factor-2 worst-case bound.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setup",
+        "summary": "Defines oligopolistic data-market pricing with budget-constrained buyers and strategic sellers.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "barrier",
+        "summary": "Argues that data’s non-rivalry fundamentally changes equilibrium existence: uniform pricing may have neither exact nor 1.364-approximate equilibrium.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "relaxation",
+        "summary": "Investigates relaxed equilibrium notions and beyond-uniform piecewise-linear convex pricing.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "empirical follow-up",
+        "summary": "Simulations reportedly converge quickly and achieve empirical approximation guarantees better than the worst-case factor of 2.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a negative result for a restricted pricing class with a constructive guarantee after expanding the allowed pricing form.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "This pairing makes the motivation for the proposed relaxation directly traceable to the identified obstruction.",
+        "application": "When presenting a new mechanism, first state the failure boundary of the baseline and then specify which added flexibility enables the claimed guarantee.",
+        "exception": "This framing is less suitable when the baseline does not have a clearly stated failure mode or the proposed flexibility is not tied to a formal guarantee."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the market model, buyer budget assumptions, or conditions underlying the 1.364 impossibility result.",
+      "Details of the existence argument, simulations, convergence metric, and empirical approximation procedure are not provided."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "contributions[1].claim",
+      "before": "Introduces piecewise-linear convex pricing as a beyond-uniform pricing approach that guarantees a 2-approximate Nash equilibrium.",
+      "after": "Introduces piecewise-linear convex pricing and reports existence of a pricing profile in which no seller can improve revenue by a factor of two by deviating to any uniform price.",
+      "review_file": "reviews/flagged-batch-13.json",
+      "review_sha256": "3abcd28c7d9cb76d6ddb30e86464f912a2fe3b250e3563cbc8d8841465a8664d",
+      "applied_at": "2026-09-13T00:42:27.391108+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "narrative_sequence[3].summary",
+      "before": "Uses simulations to report fast convergence and approximation guarantees exceeding the worst-case factor of 2.",
+      "after": "Simulations reportedly converge quickly and achieve empirical approximation guarantees better than the worst-case factor of 2.",
+      "review_file": "reviews/flagged-batch-13.json",
+      "review_sha256": "3abcd28c7d9cb76d6ddb30e86464f912a2fe3b250e3563cbc8d8841465a8664d",
+      "applied_at": "2026-09-13T00:42:27.392545+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

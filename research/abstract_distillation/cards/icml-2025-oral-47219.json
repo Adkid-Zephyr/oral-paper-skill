@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47219",
+    "title": "One-Step Generalization Ratio Guided Optimization for Domain Generalization",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47219"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e06fa386cfa1301ef714c490053e2397120afed12f8a77b2456ced8dc7683e59",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "b119fbccc601161c96bb11680e0943cc99627f0513921ddf59a30127bdf12cf8",
+    "extracted_at": "2026-09-13T00:09:09.038680+00:00",
+    "session_id": "01a09818-6b8d-7921-bd8c-9dd228ed250e",
+    "usage": {
+      "input_tokens": 12687,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 721,
+      "reasoning_output_tokens": 59
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "be66f4a1e2d8e1314aca859e83345d7dcc48278a979da6b55e50e3df328ef5f0"
+    },
+    {
+      "id": "S2",
+      "sha256": "1d93c53bd5b0e4f923dfd6f850f8a3065a914f3fe884fa9cd8f8ddc62b79cae4"
+    },
+    {
+      "id": "S3",
+      "sha256": "db0dd971aafd7a35ad9d09021a5df4e758bdfb4ac6b19618bdb4b84352c9981c"
+    },
+    {
+      "id": "S4",
+      "sha256": "cae57d035e34a3ecf41d1bdef2630057759bbf752be421146cdb91abb5d92ec5"
+    },
+    {
+      "id": "S5",
+      "sha256": "50876e09d26ed247ffc6cba2e30179231787151a0aad3a4dbb6aae41b6b4af17"
+    },
+    {
+      "id": "S6",
+      "sha256": "337f970d33bf019e7cf9a5fe39cbfb96a5bbb849ae7f21047f1db2d553052e0b"
+    },
+    {
+      "id": "S7",
+      "sha256": "3071c113bbeda4e656b10992ad345463b0bb9e332bec47779272117b21ee1b68"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47219",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Domain Generalization seeks models that generalize to unseen domains without overfitting to domain-specific features.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing gradient-based methods may reinforce spurious correlations, while dropout-based regularization does not explicitly balance gradient alignment or parameter updates.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "GENIE is an optimizer using the One-Step Generalization Ratio to measure each parameter’s loss-reduction contribution and gradient alignment.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "GENIE dynamically equalizes these ratios through a preconditioning factor to limit domination by a small parameter subset and promote domain-invariant feature learning.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory and empirical finding",
+        "claim": "The authors report theoretical balance of convergence contribution and gradient alignment, retention of SGD’s convergence rate, and empirical gains over existing optimizers across DG integrations.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe GENIE and its OSGR-based dynamic equalization as novel.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that GENIE retains SGD’s convergence rate while achieving higher OSGR under its theoretical analysis.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that GENIE outperforms existing optimizers and improves performance when integrated with multiple DG and single-DG methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "DG targets generalization to unseen domains but can overfit domain-specific features.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Gradient-based methods may reinforce spurious correlations, and dropout does not explicitly balance gradient alignment or parameter updates.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "GENIE uses OSGR to quantify parameter contributions and gradient alignment, then equalizes OSGR with preconditioning.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The authors report theoretical SGD-rate retention and empirical improvements over existing optimizers across DG-related integrations.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a parameter-level diagnostic, OSGR, to an optimization intervention that dynamically equalizes parameter influence.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A measurable optimization imbalance can provide a direct bridge between the stated failure mode and the proposed mechanism.",
+        "application": "When proposing an optimizer, define a parameter-level imbalance metric and explicitly show how the update rule targets it.",
+        "exception": "This framing may be unsuitable when parameter-level contributions are unavailable, unstable, or too costly to estimate."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify theoretical assumptions, benchmark datasets, metrics, numerical gains, or ablation details.",
+      "The reported empirical comparison conditions and the meaning of “various” DG and single-DG methods are unspecified."
+    ]
+  }
+}

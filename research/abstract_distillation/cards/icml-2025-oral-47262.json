@@ -1,0 +1,169 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47262",
+    "title": "Long-Form Speech Generation with Spoken Language Models",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47262"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "85ab9653774bb7afad7086cb45e9366f7b1a2745c8a2b60ceda3b29064a24ff1",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "f8700da206510a8162af5c9c1089c4dc8612ddf1b44c43ea7420b8cf3dfc1f9d",
+    "extracted_at": "2026-09-13T00:10:53.445450+00:00",
+    "session_id": "01a09819-f85a-7f02-9dd7-085dc7c9492b",
+    "usage": {
+      "input_tokens": 12707,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 834,
+      "reasoning_output_tokens": 70
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ad6bf1e52cf2962c1f3e954fddbb403d8e527678231dae15eaa6e18a4a6d9095"
+    },
+    {
+      "id": "S2",
+      "sha256": "df620f9c00883b4d55b17918e1a658e0d064de691aa9a898016e0314214dff45"
+    },
+    {
+      "id": "S3",
+      "sha256": "72142ebad42cc92773032913cb4b93fff9a73db008d2c540ed991d77e7a922b8"
+    },
+    {
+      "id": "S4",
+      "sha256": "574a6deba78a00ee5dd5fd87fdd0b2128736a8b71bbfa14c8ced7ed2302b5813"
+    },
+    {
+      "id": "S5",
+      "sha256": "c911bb3f6a3a8ec4d06f8e63da89d5e24197c3fc4c6bcadab8d1a784d45a239b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47262",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate coherent speech lasting multiple minutes for multimedia generation and audio-native voice assistants.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing textless spoken language models struggle beyond tens of seconds because of speech-token temporal resolution, long-sequence modeling or extrapolation issues, and inference memory costs.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "SpeechSSM, a family of spoken language models for learning from and sampling long-form spoken audio without text intermediates.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "benchmark_and_metrics",
+        "claim": "LibriSpeech-Long, embedding-based and LLM-judged metrics, and quality measurements over generation length and time for long-form speech evaluation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors provide speech samples and the LibriSpeech-Long dataset, with code or model releases described as future possibilities.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe SpeechSSM as the first speech language model family to learn from and sample long-form spoken audio in a single decoding session without text intermediates.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that SpeechSSM can sample examples such as 16 minutes of read or extemporaneous speech in one decoding session without text intermediates.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that SpeechSSMs greatly surpass current Transformer spoken language models in coherence and efficiency on multi-minute generations while matching them at the utterance level.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that existing spoken-language evaluations were uninformative for the new long-form setting, motivating their benchmark and metric additions.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The paper targets generative speech modeling over multiple minutes for long-form multimedia and audio-native assistants.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "It identifies coherence, long-sequence architecture, extrapolation, and inference-memory obstacles that limit existing textless spoken models beyond tens of seconds.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "It introduces SpeechSSM for long-form spoken-audio learning and single-session sampling without text intermediates.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation_and_resources",
+        "summary": "It reports comparisons with Transformer spoken LMs, adds long-form evaluation resources, and points to released samples and dataset access.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The authors state that current evaluations were uninformative in the long-form setting and therefore introduce a dedicated benchmark, multiple metric types, and measurements across length and time.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "Evaluation design may need to change when the target capability introduces a new failure dimension, such as degradation over duration.",
+        "application": "When proposing a long-horizon generator, pair standard local-quality metrics with a task-specific benchmark and explicitly track quality as sequence length increases.",
+        "exception": "This move may be unnecessary when the application has no meaningful horizon-dependent behavior or when validated task-specific evaluations already exist."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative scores, sample-selection details, or precise definitions for coherence, efficiency, or utterance-level matching.",
+      "It does not specify the SpeechSSM architecture, training setup, dataset scale, metric implementation, or comparison conditions.",
+      "Code and model releases are described as future possibilities, so their availability is not established by the abstract."
+    ]
+  }
+}

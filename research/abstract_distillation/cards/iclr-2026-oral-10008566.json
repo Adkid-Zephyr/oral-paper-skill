@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008566",
+    "title": "Conformal Robustness Control: A New Strategy for Robust Decision",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008566"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "fd3ac4395f7f1ab0ea83532dad7baacde6685856cc8e0c8d0173c430318901fd",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "f832b37e7caa57aa6d62e3383cec0913595bd2c5e2621732f7f656bc43e7ed80",
+    "extracted_at": "2026-09-13T00:01:25.498995+00:00",
+    "session_id": "01a09811-5614-7ef3-8701-638a963ef161",
+    "usage": {
+      "input_tokens": 12670,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 673,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fdfee7feabd219a9e31dddeedcfaab8549ab948b16092eaf47c2194ddbed306f"
+    },
+    {
+      "id": "S2",
+      "sha256": "65caba716b03be51d2b8c6a8cec47f26fd22248f82229659faa32c388610d3d3"
+    },
+    {
+      "id": "S3",
+      "sha256": "48a420e38e592a23e3f4dfc7ae401b715d75d2f627bc8d44cefd13e63adee286"
+    },
+    {
+      "id": "S4",
+      "sha256": "e681f7cdb2a8b29e6cb3cedc5b8f83999d07c6187da0f3fc3bd142d0f323a40c"
+    },
+    {
+      "id": "S5",
+      "sha256": "7792bdff27f4a1319ea93d5ec559e7131abe492d5635d002a40e50fa6266f11c"
+    },
+    {
+      "id": "S6",
+      "sha256": "3a7da0ea43b19810ff6aeabb69e678a4b4ed2ab18dbdc54cf9a3fb958fed44e0"
+    },
+    {
+      "id": "S7",
+      "sha256": "15222c98bce1c605e0251e047839e7f4c9aef6512a5ecd2d4642848764d83655"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008566",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Risk-sensitive decision-making under uncertain outcomes, addressed through Conditional Robust Optimization (CRO) using prediction sets and coverage requirements.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Coverage is sufficient but not necessary for robustness, so coverage-constrained approaches can produce overly conservative decisions.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Conformal Robustness Control (CRC), which directly optimizes prediction-set construction under explicit robustness constraints.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "Develops efficient algorithms for the CRC optimization problem.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Provides theoretical guarantees concerning robustness and optimality.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish CRC from existing conformal approaches by directly optimizing prediction sets under robustness constraints rather than enforcing coverage constraints alone.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that CRC consistently produces more effective decisions than existing baselines while meeting the target robustness level.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Risk-sensitive applications require decisions under uncertainty with high failure costs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "existing_approach",
+        "summary": "CRO constructs outcome prediction sets with predefined coverage, and conformal prediction is commonly used to obtain them.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Coverage can be stronger than necessary for robustness, leading to conservative decisions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "proposal_and_support",
+        "summary": "CRC directly optimizes prediction sets under robustness constraints; the paper reports algorithms, theoretical guarantees, and stronger decisions than baselines at the target robustness level.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract identifies a mismatch between a commonly enforced sufficient condition (coverage) and the actual target property (robustness), then aligns optimization with the target property.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This framing can expose avoidable conservatism in constrained decision pipelines.",
+        "application": "When a surrogate constraint is only sufficient, explicitly test whether the method can optimize the target property directly while retaining the required guarantee.",
+        "exception": "This move may be unsuitable when the target property is difficult to formalize or lacks tractable guarantees."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the robustness definition, optimization formulation, algorithmic assumptions, or the precise theoretical guarantees.",
+      "The empirical comparison lacks dataset, metric, baseline, and target-robustness details, so the reported effectiveness cannot be independently assessed from the abstract."
+    ]
+  }
+}

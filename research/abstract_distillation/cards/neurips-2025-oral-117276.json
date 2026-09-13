@@ -1,0 +1,171 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-117276",
+    "title": "ControlFusion: A Controllable Image Fusion Network with Language-Vision Degradation Prompts",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/117276"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2b0dfbe3f15311bcc6e8ad92d2e588033a0edd53018a30943efd8e726f9f867b",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "defb26bda4a84096ab2b1d3d07328315f957ab20dec9b8ad0e46b2d66f37d0ea",
+    "extracted_at": "2026-09-13T00:21:45.854408+00:00",
+    "session_id": "01a09823-f25b-7551-afed-d40b7c3a831d",
+    "usage": {
+      "input_tokens": 12695,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 717,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "81f859f704f3db1b0e173c395c512be465fe3c8fa853ab231b8cdc9b342e98b2"
+    },
+    {
+      "id": "S2",
+      "sha256": "2727f0242a44057719966aff0ed7dc0c9d9536add8717d9abf67be46c1ee20f3"
+    },
+    {
+      "id": "S3",
+      "sha256": "4fd97e39876d37509f54dceb185679540ec8effad4a32b3cee400f25aea99147"
+    },
+    {
+      "id": "S4",
+      "sha256": "00ea656785b977ae0fffaf600d2f040409ecb0857625677baacbfae081f74167"
+    },
+    {
+      "id": "S5",
+      "sha256": "48b25d853ed9e6c55c0311419ab462e692e45cd0fe64a3cd732d7db5c74f00ab"
+    },
+    {
+      "id": "S6",
+      "sha256": "f4ea25afc3c8eee2cce92bbb0a74ca375f0ec71bf835ae2ae47f978bafa2c788"
+    },
+    {
+      "id": "S7",
+      "sha256": "a921ae28f2b43779d14943682a68ccfe7ea8dc12d980f0481846d6013708bd77"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-117276",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Image fusion under real-world composite degradations must also accommodate user-specific visual preferences.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing image fusion methods are described as lacking flexibility for composite degradations and user-specific needs.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "ControlFusion uses language-vision degradation prompts to adaptively mitigate composite degradations.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "A physics-based degraded imaging model simulates composite degradations using mechanisms including Retinex theory and atmospheric scattering.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The system combines prompt-modulated restoration and fusion, text-encoded user preferences, and a spatial-frequency visual adapter that perceives degradation from source images.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed distinction is jointly controlling fusion through user-defined language prompts while supplementing them with source-image degradation perception.",
+      "source_ids": [
+        "S2",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive experiments show ControlFusion outperforming state-of-the-art fusion methods in fusion quality and degradation handling, particularly for real-world and compound degradations.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies composite real-world degradations and inflexible user control as limitations of current fusion methods.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "It introduces ControlFusion, guided by language-vision degradation prompts.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "data_and_model",
+        "summary": "The approach builds a physics-based degradation simulator and a prompt-modulated restoration-fusion network, with text prompts encoding user-defined degradation types and levels.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "adaptive_completion_and_result",
+        "summary": "A spatial-frequency adapter infers degradation from source images, and the authors report gains over state-of-the-art methods, especially under real-world and compound degradations.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs explicit user prompts with an image-driven adapter intended to reduce complete reliance on user instructions.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Combining controllable inputs with automatic perception can address both preference specification and incomplete or inaccurate instructions.",
+        "application": "For a controllable vision system, add an observation-based fallback or correction module alongside user controls, and state clearly how the two information sources interact.",
+        "exception": "This pattern may be unsuitable when automatic inference is unreliable or when user control must remain strictly authoritative."
+      }
+    ],
+    "unknowns": [
+      "No quantitative metrics, datasets, baselines, ablations, or experimental conditions are provided for the reported superiority.",
+      "The abstract does not specify how user prompts and automatically perceived degradations are reconciled when they disagree."
+    ]
+  }
+}

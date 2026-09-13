@@ -1,0 +1,145 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31872",
+    "title": "Accelerated training through iterative gradient propagation along the residual path",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31872"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8aa24601efc2aae5b4dc87b39451a41f4df0bf1be244b4b8ac708707bad89605",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "fa2853b8fece87f5f4147f411ef09cfc7aea8b5f1b4dfdc623c9b6ff2465efd8",
+    "extracted_at": "2026-09-12T23:55:19.492545+00:00",
+    "session_id": "01a0980b-c423-7012-8f4f-a2aba9d12cb8",
+    "usage": {
+      "input_tokens": 12641,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 707,
+      "reasoning_output_tokens": 100
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "db241b333bea3d924d00690e8d90274707ece69617447aefdbf1aaa04e452852"
+    },
+    {
+      "id": "S2",
+      "sha256": "75d176df8b00f63287fae613708930ab5145817c1a704f1df3be48c8c8c50308"
+    },
+    {
+      "id": "S3",
+      "sha256": "2b3415a2da2b842e9643131e044fcdc4ed186473136e363d47cca98437821912"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31872",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Backpropagation’s sequentiality and computational cost constrain training scalability, especially for very deep models.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Although residual-like designs address vanishing-gradient convergence issues, backpropagation remains a major training-time burden.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Highway backpropagation, a parallelizable iterative approximation that alternates residual-path gradient accumulation with parallel layerwise backpropagation.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory and architecture adaptation",
+        "claim": "Derives the algorithm by decomposing gradients over paths and describes applicability to ResNets, Transformers, and recurrent neural networks.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports an extensive evaluation across many tasks and models, with major speedups and minimal performance degradation.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Highway backpropagation as a residual-path-based, parallelizable iterative approximation to standard backpropagation.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report major speedups with minimal performance degradation across a large selection of tasks and models.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Backpropagation is presented as sequential and costly, limiting scalability in deep models.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper introduces Highway backpropagation, alternating residual-path accumulation and parallel layer updates.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "scope and evaluation",
+        "summary": "The method is motivated by pathwise gradient decomposition, extended to several architecture families, and empirically evaluated broadly.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the proposed algorithm’s operations to a decomposition of gradients over all paths and separately states its architectural scope and empirical outcome.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A method claim becomes easier to assess when its computational mechanism, derivational rationale, applicability, and reported tradeoff are aligned.",
+        "application": "When presenting an efficient training method, pair the algorithmic procedure with the structural decomposition that motivates it, then state architecture coverage and the speed–quality tradeoff together.",
+        "exception": "This framing is less suitable when the method’s rationale is not structurally tied to the model architecture or when those evaluations are unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not quantify the reported speedups or performance degradation.",
+      "It does not specify baselines, hardware, training settings, task/model counts, or the conditions under which the approximation preserves performance.",
+      "The abstract does not provide theoretical error or convergence guarantees for Highway backpropagation."
+    ]
+  }
+}

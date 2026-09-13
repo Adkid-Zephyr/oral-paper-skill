@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97976",
+    "title": "GIC: Gaussian-Informed Continuum for Physical Property Identification and Simulation",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97976"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "76dd91da908e2113a6236010d2134d94c1bff52d93c777d95936a449a63ad38b",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "72104996ca0dd6e32dcf35c8ea4ae52eda61aef79f57cf220d840a3a0ddb4a8b",
+    "extracted_at": "2026-09-13T00:18:58.657256+00:00",
+    "session_id": "01a09821-6764-7820-b74c-8e4cc380e99f",
+    "usage": {
+      "input_tokens": 12731,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 723,
+      "reasoning_output_tokens": 103
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "afe21c3e6a5408329c788483f2163286037a741340b07156f789b9b3915fc1c9"
+    },
+    {
+      "id": "S2",
+      "sha256": "f8e741ecf0830f5abecf65045ada0737ab93a1df12d76006face735c1e6ffcae"
+    },
+    {
+      "id": "S3",
+      "sha256": "4308d262fed99206abd317a1a8ee36a7264fe2b78425651ac59188ccf43adb0b"
+    },
+    {
+      "id": "S4",
+      "sha256": "677fda633034fa890ca670558d1dc9461ab108c205a6d6b187ed641cc5b50d3c"
+    },
+    {
+      "id": "S5",
+      "sha256": "960c617acf8ef974f4b43f43d91e43b700c80b1de51b7ad2b8d1906a4b6ce615"
+    },
+    {
+      "id": "S6",
+      "sha256": "610841d0a052dc487e02e69b305df6da2b41b73b09216e161ac0ff329e42dd87"
+    },
+    {
+      "id": "S7",
+      "sha256": "b13054f6d52de7f8b064b9cb38c53a0c5d3c4b6be299f2795cefdfdca05b1ccf"
+    },
+    {
+      "id": "S8",
+      "sha256": "ef657a9db81850b867ef605146bd1c25b142387d64560245eef3304b7d4cae16"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97976",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Estimating physical properties from visual observations (system identification).",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "hybrid framework",
+        "claim": "A Gaussian-informed continuum framework uses 3D Gaussians for explicit shapes and renders object masks as 2D shape surrogates during training.",
+        "source_ids": [
+          "S2",
+          "S5"
+        ]
+      },
+      {
+        "type": "dynamic representation",
+        "claim": "A motion-factorized dynamic 3D Gaussian framework reconstructs objects as Gaussian point sets across time states.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "continuum reconstruction",
+        "claim": "A coarse-to-fine filling strategy generates density fields, extracts continuums and surfaces, and integrates Gaussian attributes into the continuums.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize their geometry-aware approach as a novel hybrid framework combining 3D Gaussian representation with simulated-continuum mask rendering for physical-property estimation.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art performance across multiple benchmarks and metrics.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report real-world demonstrations intended to showcase practical utility.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The paper frames physical-property estimation from visual observations as system identification.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "representation",
+        "summary": "It introduces dynamic, motion-factorized 3D Gaussian reconstruction across time states.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "continuum construction",
+        "summary": "It converts Gaussian reconstructions into density fields, surfaces, continuums, and integrated Gaussian attributes.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "guidance and evaluation",
+        "summary": "The resulting continuum renders simulation masks for 2D shape guidance; the authors report benchmark and real-world evaluations.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links explicit 3D shape representation and simulation-rendered 2D masks to geometry-aware physical-property estimation.",
+          "source_ids": [
+            "S2",
+            "S5"
+          ]
+        },
+        "interpretation": "A representation can be more persuasive when its intermediate outputs directly support the target estimation process.",
+        "application": "When presenting a learned physical model, expose an interpretable intermediate representation and state how it supplies task-specific guidance.",
+        "exception": "This move may be unsuitable when intermediate geometry is unavailable, unreliable, or adds substantial computational cost."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the benchmarks, metrics, numerical results, baselines, or evaluation conditions behind the state-of-the-art claim.",
+      "The real-world demonstrations and their tasks, data, and quantitative outcomes are unspecified.",
+      "The abstract does not report ablations separating the contributions of Gaussian reconstruction, continuum filling, and mask rendering."
+    ]
+  }
+}

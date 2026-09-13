@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97988",
+    "title": "MDAgents: An Adaptive Collaboration of LLMs for Medical Decision-Making",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97988"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c3caf4d37c0d64ac0668c57a74bded0057619a4d6bbba9cd0cc29330f0310285",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "51122ca516845b0b7e78fa1d86e2d11f5dd3414bf5b386b1f42705e8e4ca7427",
+    "extracted_at": "2026-09-13T00:19:25.993726+00:00",
+    "session_id": "01a09821-ced7-71a0-ad16-19ea69c31adb",
+    "usage": {
+      "input_tokens": 12813,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 789,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "801bc2002e3f3c01f30a269c1bd36ba401858257a7cc4a1c82fc90fc9a800a1a"
+    },
+    {
+      "id": "S2",
+      "sha256": "3ac3e450960cb50885116e5666236ad7fd5bb536b411a48dff93ddb25b901733"
+    },
+    {
+      "id": "S3",
+      "sha256": "d75b7db160dbc5219fca48183954ac42eb5715eede8092d0731cdbb0b0bc1ebd"
+    },
+    {
+      "id": "S4",
+      "sha256": "dd945f11b90f8a96388de8be460ae3e62ace924e974a2a2d36753478910d4a76"
+    },
+    {
+      "id": "S5",
+      "sha256": "3f82fd2624c96c84ff7a20ae1f9b39349e62b867e663a7e0296d7fb3621cd5a1"
+    },
+    {
+      "id": "S6",
+      "sha256": "48f6d027a44a3f9219e18bfcd1c9da48a9d1cc71fec92b7b133b5b5a8d64ff66"
+    },
+    {
+      "id": "S7",
+      "sha256": "33cc7ee3ebb29ad7bc5382e31f9832a5e3d4c0cdf6f94434aef8aa6c31ca9f2c"
+    },
+    {
+      "id": "S8",
+      "sha256": "ff23e61b75139fa66e1b7c19b2efdd46f78ec21a854fb27e9d39422fdf342538"
+    },
+    {
+      "id": "S9",
+      "sha256": "3d1f2e8b7c2ccb78aa1ac206c896d3ace81492eba5de0203ade2ce706ef5f079"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97988",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to leverage LLMs effectively for complex medical decision-making tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The best approach for using LLMs in complex medical tasks remains unresolved.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "MDAgents, a multi-agent framework that automatically assigns solo or group collaboration structures to LLM teams.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "evaluation",
+        "claim": "Evaluation across real-world medical knowledge and clinical diagnosis benchmarks, including comparison of medical-complexity classification with human physicians.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The framework uses medical-complexity assessment to adapt collaboration for efficiency and accuracy.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish MDAgents by automatically tailoring LLM collaboration structure to the medical task, inspired by task-adaptive real-world medical decision-making.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that MDAgents achieved the best performance on seven of ten benchmarks, with improvements of up to 4.2% (p < 0.05) over previous methods’ best performances.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that moderator review combined with external medical knowledge in group collaboration improved average accuracy by 11.8%.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "Ablation studies reportedly indicate that medical-complexity determination supports efficiency and accuracy across diverse medical tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLMs are promising in medicine, but their use in complex medical tasks remains an open question.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "MDAgents automatically assigns solo or group collaboration structures tailored to task complexity.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The framework and baselines are evaluated with state-of-the-art LLMs on medical knowledge and clinical diagnosis benchmarks, with physician comparison for complexity classification.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The authors report leading results on seven of ten benchmarks, up to 4.2% improvement, and an 11.8% average accuracy gain from moderator review plus external knowledge.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly connects collaboration structure to medical-task complexity and reports ablation evidence for this adaptive choice.",
+          "source_ids": [
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "A claim about multi-agent performance can be made more informative by exposing the routing or task-characterization mechanism behind it.",
+        "application": "When presenting a collaborative system, specify which task property determines the collaboration mode and include an ablation isolating that adaptive decision.",
+        "exception": "This framing may be unsuitable when tasks are homogeneous or when routing overhead cannot be measured."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the ten benchmarks, datasets, models, or exact baseline configurations.",
+      "The reported gains do not specify confidence intervals, per-benchmark results, or the conditions under which external knowledge and moderator review were applied."
+    ]
+  }
+}

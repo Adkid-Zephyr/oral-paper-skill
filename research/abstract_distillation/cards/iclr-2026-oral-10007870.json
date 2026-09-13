@@ -1,0 +1,197 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007870",
+    "title": "Benchmarking Empirical Privacy Protection for Adaptations of Large Language Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007870"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "cd61393f674f79c1a8f5c8a856167d7037feef6d980fc862a6343d5381c105ba",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "339e3867706c059b65e308f9f89316ca2f3398b7e7b83e1d729ad1f9ec76df71",
+    "extracted_at": "2026-09-13T00:00:30.237208+00:00",
+    "session_id": "01a09810-7822-7260-abb8-bf58147e70ee",
+    "usage": {
+      "input_tokens": 12782,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 804,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "38b1bd2e2731f8a7885b1c3d0c4ceabe7cf38171581adcbf6cc3a76605beabe1"
+    },
+    {
+      "id": "S2",
+      "sha256": "7d0c459e8fe46ebaaf2518d41a954652f060166ebb3e2983b8cfb126a77b0d4d"
+    },
+    {
+      "id": "S3",
+      "sha256": "004a5886eee5e3cda76ecd3832d24b23e5409ce2540781eb5b6b53b978655408"
+    },
+    {
+      "id": "S4",
+      "sha256": "ad17064242a7de31e6cf48c2206da2484d5820c212a0a86501c64cbe3cc18a83"
+    },
+    {
+      "id": "S5",
+      "sha256": "ec1482c4094cd76c092e9d168244166d966e419ca2d7497fa43078ac6a855b36"
+    },
+    {
+      "id": "S6",
+      "sha256": "24695056aebc68a8fb25e551ac74f62e81bd0e6fb05c60e80ce962aa0403b5ed"
+    },
+    {
+      "id": "S7",
+      "sha256": "9c50d32c55a818c7ef1502546517fdfc301df55accd0f9781befc8daf6747caf"
+    },
+    {
+      "id": "S8",
+      "sha256": "619cfa3dabc39f41b96fbd13e56011a0fc77fc0339d815d8c1cc4e8d20f41c85"
+    },
+    {
+      "id": "S9",
+      "sha256": "cf00aba8d8fb2b8ae3aa90ddfd91aa4a7d86245b543618595ecf709fadb73f62"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007870",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess practical privacy risks when adapting LLMs with differential privacy, across data distributions, adaptation methods, and privacy regimes.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "The practical effectiveness of DP adaptation remains unclear because pretraining overlaps and interdependencies with adaptation data may undermine privacy despite theoretical guarantees.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "A systematic benchmark of empirical privacy risks under DP LLM adaptation, varying adaptation-data distribution, methods, and privacy regimes.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "An analysis of how distribution proximity to pretraining and parameter-efficient fine-tuning relate to practical privacy vulnerability.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "A proposed framework for holistic privacy assessment across the full LLM pretrain–adapt pipeline.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work extends privacy assessment beyond adaptation privacy toward structured evaluation across the full pretrain–adapt pipeline.",
+      "source_ids": [
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, at the same theoretical guarantee, practical privacy risk is higher when adaptation data is closer to the pretraining distribution, even without direct overlap.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that parameter-efficient methods such as LoRA provide the highest empirical privacy protection for OOD adaptation data.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report evaluating privacy vulnerability with robust membership inference and canary data extraction across exact-overlap, IID, and OOD settings.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "DP offers theoretical guarantees for sensitive LLM adaptation, but practical protection may be weakened by pretraining–adaptation relationships.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark design",
+        "summary": "The study evaluates robust membership inference and canary extraction while varying data distribution, adaptation method, and privacy regime.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "main result",
+        "summary": "Privacy risk increases as adaptation data approaches the pretraining distribution, including without direct overlap.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "method-specific result and outlook",
+        "summary": "LoRA performs best empirically for OOD data, and the authors propose broader pretrain–adapt privacy assessment.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract compares practical privacy at a fixed theoretical guarantee across adaptation-data distributions and distinguishes direct overlap from distributional proximity.",
+          "source_ids": [
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "Separating theoretical guarantees from distribution-sensitive empirical risk makes hidden privacy conditions explicit.",
+        "application": "When presenting a privacy method, report matched-guarantee evaluations across overlap, IID, and OOD data, explicitly distinguishing direct overlap from distribution shift.",
+        "exception": "This framing may be unsuitable when the deployment distribution is fixed and cannot be meaningfully varied or characterized."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide attack success rates, sample sizes, numerical privacy budgets, or details of the evaluated adaptation methods and regimes.",
+      "The proposed holistic framework’s structure and evaluation procedure are not specified.",
+      "The basis for the reported comparison of LoRA with other methods is not detailed."
+    ]
+  }
+}

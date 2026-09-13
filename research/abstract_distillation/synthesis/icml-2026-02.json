@@ -1,0 +1,619 @@
+{
+  "batch_id": "icml-2026-02",
+  "covered_ids": [
+    "icml-2026-oral-71075",
+    "icml-2026-oral-71076",
+    "icml-2026-oral-71077",
+    "icml-2026-oral-71078",
+    "icml-2026-oral-71079",
+    "icml-2026-oral-71080",
+    "icml-2026-oral-71081",
+    "icml-2026-oral-71082",
+    "icml-2026-oral-71083",
+    "icml-2026-oral-71084",
+    "icml-2026-oral-71085",
+    "icml-2026-oral-71086",
+    "icml-2026-oral-71087",
+    "icml-2026-oral-71088",
+    "icml-2026-oral-71089",
+    "icml-2026-oral-71090",
+    "icml-2026-oral-71091",
+    "icml-2026-oral-71092",
+    "icml-2026-oral-71093",
+    "icml-2026-oral-71094",
+    "icml-2026-oral-71095",
+    "icml-2026-oral-71096",
+    "icml-2026-oral-71097",
+    "icml-2026-oral-71098",
+    "icml-2026-oral-71099",
+    "icml-2026-oral-71100",
+    "icml-2026-oral-71101",
+    "icml-2026-oral-71102",
+    "icml-2026-oral-71103",
+    "icml-2026-oral-71104",
+    "icml-2026-oral-71105",
+    "icml-2026-oral-71106",
+    "icml-2026-oral-71107",
+    "icml-2026-oral-71108",
+    "icml-2026-oral-71109",
+    "icml-2026-oral-71110",
+    "icml-2026-oral-71111",
+    "icml-2026-oral-71112",
+    "icml-2026-oral-71113",
+    "icml-2026-oral-71114",
+    "icml-2026-oral-71115",
+    "icml-2026-oral-71116",
+    "icml-2026-oral-71117",
+    "icml-2026-oral-71118",
+    "icml-2026-oral-71119",
+    "icml-2026-oral-71120",
+    "icml-2026-oral-71121",
+    "icml-2026-oral-71122"
+  ],
+  "candidate_practices": [
+    {
+      "name": "Name the changed assumption and surviving dependency",
+      "source_observation": "These abstracts specify the target, arithmetic, resource, or complexity qualification behind their advance.",
+      "why_it_may_help": "Interpretation: this makes novelty assessable without relying on priority language.",
+      "application": "Rewrite the advance as a change from a specified prior condition, immediately naming remaining requirements.",
+      "when_not_to_use": "Do not invent a removed assumption when the contribution improves behavior within unchanged conditions.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71075",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "specific_example": "HALO certifies policy-learning stability, distinct from trajectory safety."
+        },
+        {
+          "paper_id": "icml-2026-oral-71081",
+          "source_ids": [
+            "S2",
+            "S5",
+            "S7"
+          ],
+          "specific_example": "Floating-point arithmetic changes expressivity results; restricted domains change bounds."
+        },
+        {
+          "paper_id": "icml-2026-oral-71085",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Approximate-score sampling has polylogarithmic inverse-accuracy dependence, with dimension entering through effective radius."
+        },
+        {
+          "paper_id": "icml-2026-oral-71089",
+          "source_ids": [
+            "S3",
+            "S5"
+          ],
+          "specific_example": "Word-level alignment is removed, but sentence-level alignment remains."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71078",
+          "source_ids": [
+            "S3"
+          ],
+          "contrast": "Joint partner-environment selection adds capability conditional on a procedural generator."
+        },
+        {
+          "paper_id": "icml-2026-oral-71122",
+          "source_ids": [
+            "S6"
+          ],
+          "contrast": "The clipping-rate improvement is specifically two-objective; Pareto-critical convergence is a different guarantee."
+        }
+      ],
+      "full_text_needed_for": "Exact assumptions, definitions, and whether guarantees cover reported operating settings."
+    },
+    {
+      "name": "Explain component responsibilities before listing modules",
+      "source_observation": "Architectural summaries assign different components distinct representational, verification, routing, or temporal roles.",
+      "why_it_may_help": "Interpretation: role assignments can explain why multiple contributions belong together.",
+      "application": "Replace an acronym list with component → operation → intended responsibility sentences.",
+      "when_not_to_use": "Do not imply independently established component effects from design intentions alone.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71087",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Instance latents, sparse global factors, and amortized inference serve different roles."
+        },
+        {
+          "paper_id": "icml-2026-oral-71095",
+          "source_ids": [
+            "S10",
+            "S11",
+            "S12"
+          ],
+          "specific_example": "Perception verification, scalable verbal verification, and credit routing address separate tasks."
+        },
+        {
+          "paper_id": "icml-2026-oral-71096",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Shared, task-specific, and dynamic experts accompany task-discriminability training."
+        },
+        {
+          "paper_id": "icml-2026-oral-71115",
+          "source_ids": [
+            "S4"
+          ],
+          "specific_example": "Long-horizon encoding complements phase-conditioned execution alignment."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71098",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "contrast": "Structural polarity handling and Fourier extraction need operational explanation, not an invented one-to-one causal diagnosis."
+        },
+        {
+          "paper_id": "icml-2026-oral-71110",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "contrast": "Fairness components become constraints rather than architectural modules."
+        },
+        {
+          "paper_id": "icml-2026-oral-71118",
+          "source_ids": [
+            "S5",
+            "S7"
+          ],
+          "contrast": "Unified vision-motion codes organize three training stages; a stage-based account may fit better."
+        }
+      ],
+      "full_text_needed_for": "Component interactions, operational definitions, and evidence separating individual contributions."
+    },
+    {
+      "name": "Connect a diagnostic finding to a targeted change",
+      "source_observation": "These abstracts move from localized structure or failure patterns to selective interventions and outcomes.",
+      "why_it_may_help": "Interpretation: the sequence makes the proposed explanation testable without treating diagnosis as causation.",
+      "application": "State what was measured, what was selectively changed, and which outcome followed; preserve evidential distinctions.",
+      "when_not_to_use": "Descriptive findings need not include interventions unavailable within the study.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71079",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Spectral analysis accompanies importance-based head-update removal and rewinding."
+        },
+        {
+          "paper_id": "icml-2026-oral-71094",
+          "source_ids": [
+            "S2",
+            "S3"
+          ],
+          "specific_example": "Influence attribution leads to targeted data changes compared with random interventions."
+        },
+        {
+          "paper_id": "icml-2026-oral-71105",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6"
+          ],
+          "specific_example": "Differentiated head roles are accompanied by ablations and persistent-activation detection."
+        },
+        {
+          "paper_id": "icml-2026-oral-71113",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Low-entropy symbolic errors motivate targeted reasoning-preservation training."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71086",
+          "source_ids": [
+            "S4",
+            "S6"
+          ],
+          "contrast": "The response to exploration collapse removes order flexibility rather than adding a component."
+        },
+        {
+          "paper_id": "icml-2026-oral-71097",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "contrast": "Compression regularization receives a formal error-bound account, not the same intervention narrative."
+        }
+      ],
+      "full_text_needed_for": "Alternative explanations, intervention comparability, and whether diagnostic signals causally explain outcomes."
+    },
+    {
+      "name": "Bound rankings by the comparison design",
+      "source_observation": "Study abstracts specify shared frameworks, capability categories, or distribution shifts before comparative conclusions.",
+      "why_it_may_help": "Interpretation: readers can distinguish a conditional design recommendation from a universal winner.",
+      "application": "Place the common setting and varied factor before the ranking; retain task-dependent findings.",
+      "when_not_to_use": "Complete deployment systems may require comparisons with different architectures and budgets.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71077",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "Four memory categories and 14 backbone-based variants accompany task-dependent findings."
+        },
+        {
+          "paper_id": "icml-2026-oral-71083",
+          "source_ids": [
+            "S2",
+            "S3"
+          ],
+          "specific_example": "Decoder-only diffusion addresses architecture confounding in paradigm comparisons."
+        },
+        {
+          "paper_id": "icml-2026-oral-71116",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Four strategies share a VLA baseline; formulation advantages differ by capability."
+        },
+        {
+          "paper_id": "icml-2026-oral-71092",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S8"
+          ],
+          "specific_example": "Generalist claims specify unseen fine-tuned activations and training-diversity variation."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71111",
+          "source_ids": [
+            "S6"
+          ],
+          "contrast": "CAT-Q compares different model sizes and training regimes; its resource comparison does not establish factor isolation."
+        },
+        {
+          "paper_id": "icml-2026-oral-71106",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "contrast": "A newly defined visual threat motivates a dedicated benchmark and model-specific rates."
+        }
+      ],
+      "full_text_needed_for": "Controlled factors, benchmark validity, task coverage, and comparability of reported rankings."
+    },
+    {
+      "name": "Give each formal transformation its own consequence",
+      "source_observation": "Theory abstracts connect representations to computational properties, inherited cases, or derived variants.",
+      "why_it_may_help": "Interpretation: readers can identify which result supports which part of a broader framework.",
+      "application": "Write transformation → consequence pairs; distinguish recovery, extension, relaxation, and final output.",
+      "when_not_to_use": "A single theorem need not be split into artificial intermediate contributions.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71076",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S6"
+          ],
+          "specific_example": "MMOT yields a polynomial LP; fractional bridge output templates a reduced integral LP."
+        },
+        {
+          "paper_id": "icml-2026-oral-71080",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S7"
+          ],
+          "specific_example": "OENN generalization accompanies map characterization and approximation results covering graph and sheaf models."
+        },
+        {
+          "paper_id": "icml-2026-oral-71107",
+          "source_ids": [
+            "S7",
+            "S8"
+          ],
+          "specific_example": "Dependent categorical ANOVA recovers independence and supports a SHAP generalization."
+        },
+        {
+          "paper_id": "icml-2026-oral-71109",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Isotropic posteriors recover SVRG; broader choices yield algorithmic variants."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71108",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "contrast": "Information-exponent convergence, negative initialization, and RKHS implementation are distinct results, not necessarily a derivation chain."
+        }
+      ],
+      "full_text_needed_for": "Exact inclusion relations, derivations, theorem conditions, and implementation correspondence."
+    },
+    {
+      "name": "Report efficiency with its preserved outcome and denominator",
+      "source_observation": "Systems abstracts pair resource claims with quality, feasibility, or comparator conditions.",
+      "why_it_may_help": "Interpretation: paired reporting identifies the practical trade-off being claimed.",
+      "application": "Attach hardware, comparator, budget, and preserved outcome to each efficiency statement when available.",
+      "when_not_to_use": "Do not translate proxy counts into runtime or omit unavailable measurement qualifications.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71084",
+          "source_ids": [
+            "S7"
+          ],
+          "specific_example": "SDXL W4A4 gains 1.2 PSNR over SVDQuant with under 0.5% added time."
+        },
+        {
+          "paper_id": "icml-2026-oral-71088",
+          "source_ids": [
+            "S6"
+          ],
+          "specific_example": "Long-form benchmark comparisons accompany a per-query cost claim."
+        },
+        {
+          "paper_id": "icml-2026-oral-71112",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Single-H100 training feasibility accompanies retained properties and AdamW memory failure."
+        },
+        {
+          "paper_id": "icml-2026-oral-71114",
+          "source_ids": [
+            "S3",
+            "S6"
+          ],
+          "specific_example": "Alternative execution programs pair accuracy with executed-layer counts."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71090",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "contrast": "Limited-feedback performance is stated without label budgets; no numerical efficiency ratio follows."
+        },
+        {
+          "paper_id": "icml-2026-oral-71121",
+          "source_ids": [
+            "S8"
+          ],
+          "contrast": "Fewer steering interventions measure intervention frequency, not necessarily wall-clock savings."
+        }
+      ],
+      "full_text_needed_for": "Accounting boundaries, runtime protocols, aggregate definitions, and retained-quality measurements."
+    },
+    {
+      "name": "Separate a position's thesis, evidence, and requested action",
+      "source_observation": "Position abstracts connect arguments or empirical diagnoses to community responses with different scopes.",
+      "why_it_may_help": "Interpretation: separating these elements exposes where evidence ends and prescription begins.",
+      "application": "State the proposed action, identify its supporting evidence type, and name remaining prerequisites.",
+      "when_not_to_use": "A narrow technical result need not become a deployment recommendation.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71091",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S8"
+          ],
+          "specific_example": "Institutional-influence arguments and impact review precede collective-action proposals."
+        },
+        {
+          "paper_id": "icml-2026-oral-71099",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Review comparisons and rewriting tests support evaluation demands; necessary criteria remain insufficient."
+        },
+        {
+          "paper_id": "icml-2026-oral-71100",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Human collaboration, process-data requirements, and illustrative studies define an assistance agenda."
+        },
+        {
+          "paper_id": "icml-2026-oral-71119",
+          "source_ids": [
+            "S2",
+            "S4"
+          ],
+          "specific_example": "Possible and reported alignment misuse are mapped before mitigation proposals."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71102",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S8",
+            "S9"
+          ],
+          "contrast": "Pricing prescriptions combine formal incentives and a heuristic demonstration; this differs from an unvalidated ecosystem agenda."
+        }
+      ],
+      "full_text_needed_for": "Argument sources, causal support, proposal feasibility, and the scope of apparent disagreement."
+    }
+  ],
+  "unusual_but_useful": [
+    {
+      "paper_id": "icml-2026-oral-71082",
+      "source_ids": [
+        "S2",
+        "S4",
+        "S5"
+      ],
+      "practice": "Pair a bound with empirical tightness and a surprising scope condition.",
+      "application": "Separate scaling law, observed bound gap, and unbounded-resource claim.",
+      "limit": "Accessibility and the reported factor require definitions."
+    },
+    {
+      "paper_id": "icml-2026-oral-71093",
+      "source_ids": [
+        "S3",
+        "S5",
+        "S7"
+      ],
+      "practice": "Distinguish acquired bias from inherited bias.",
+      "application": "Explain why artificial equal-status groups probe experience-based stratification.",
+      "limit": "Do not generalize the mechanism beyond the studied setting."
+    },
+    {
+      "paper_id": "icml-2026-oral-71101",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "practice": "Expose cross-component incentive dependencies.",
+      "application": "Place the additional coalition condition beside fairness and truthfulness claims.",
+      "limit": "Relaxations need not preserve every guarantee."
+    },
+    {
+      "paper_id": "icml-2026-oral-71103",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "practice": "Treat reproducibility infrastructure as a measured contribution.",
+      "application": "Separate signed result deviation, code reuse, and standardized coverage.",
+      "limit": "Mean signed deviation can hide offsetting errors."
+    },
+    {
+      "paper_id": "icml-2026-oral-71104",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "practice": "Define benchmark capability through adversary access and boundary conditions.",
+      "application": "Distinguish shell access, nested layers, and added vulnerabilities.",
+      "limit": "No-known-vulnerability wording establishes neither invulnerability nor unrestricted escape."
+    },
+    {
+      "paper_id": "icml-2026-oral-71117",
+      "source_ids": [
+        "S6",
+        "S7"
+      ],
+      "practice": "Separate immediate forgetting from recoverability.",
+      "application": "Report recovery after finetuning alongside initial performance loss.",
+      "limit": "Recovery alone does not establish retained internal knowledge."
+    },
+    {
+      "paper_id": "icml-2026-oral-71120",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S9"
+      ],
+      "practice": "Name the measurable proxy behind a broad trust claim.",
+      "application": "Connect token-flow measures to the actual AUROC target.",
+      "limit": "Grounding and discrimination do not establish universal reliability or calibration."
+    }
+  ],
+  "discarded_generalizations": [
+    {
+      "generalization": "Every abstract needs an ORAL-shaped method-and-experiment story.",
+      "reason": "Formal derivations, resources, empirical findings, and positions support different contribution structures.",
+      "paper_ids": [
+        "icml-2026-oral-71109",
+        "icml-2026-oral-71077",
+        "icml-2026-oral-71100"
+      ]
+    },
+    {
+      "generalization": "More flexibility or larger models necessarily improve outcomes.",
+      "reason": "Order flexibility, adaptive layer execution, and model-scale stratification have different reported consequences.",
+      "paper_ids": [
+        "icml-2026-oral-71086",
+        "icml-2026-oral-71114",
+        "icml-2026-oral-71093"
+      ]
+    }
+  ],
+  "source_checks_needed": [
+    {
+      "paper_id": "icml-2026-oral-71118",
+      "field": "S9 baseline name",
+      "issue": "Extraction contains a null character before pi_0; verify original spelling."
+    },
+    {
+      "paper_id": "icml-2026-oral-71089",
+      "field": "lesson / S5",
+      "issue": "High-latency first-stage wording is stronger than the contribution summary; verify."
+    },
+    {
+      "paper_id": "icml-2026-oral-71094",
+      "field": "lesson application / S3",
+      "issue": "Matched random controls are an inferred recommendation; extraction only states random interventions."
+    },
+    {
+      "paper_id": "icml-2026-oral-71077",
+      "field": "lesson application / S6–S7",
+      "issue": "A controlled factorial crossing is not established by taxonomy and variant counts."
+    },
+    {
+      "paper_id": "icml-2026-oral-71088",
+      "field": "S6 percentages and cost",
+      "issue": "Verify percentage versus percentage-point meaning and cost-accounting basis."
+    },
+    {
+      "paper_id": "icml-2026-oral-71111",
+      "field": "S6 token reduction",
+      "issue": "Verify calibration-token denominator and whether pretrained-model training costs are excluded."
+    },
+    {
+      "paper_id": "icml-2026-oral-71104",
+      "field": "S4–S6 containment",
+      "issue": "Clarify flag location, vulnerable layer, and outer-layer protection."
+    },
+    {
+      "paper_id": "icml-2026-oral-71110",
+      "field": "S6 O(1)",
+      "issue": "Identify the asymptotic variable and hidden dimension dependence."
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97987",
+    "title": "Neural Pfaffians: Solving Many Many-Electron Schrödinger Equations",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97987"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a1cf41fe937f6b26b696b09db0bd4c1864fe180af79c83ff2be0173dde3a1ce6",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "4d9a406f784de3402c2e33225cf9c55b916543d82c753a62c0a9ee0265a46994",
+    "extracted_at": "2026-09-13T00:19:23.906397+00:00",
+    "session_id": "01a09821-be54-74e3-b836-f5823e84adbc",
+    "usage": {
+      "input_tokens": 12724,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 911,
+      "reasoning_output_tokens": 166
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "153484906b8ec6e6b9ba7f2690501ffff4039cf075cca2f4ee1b55bf7ed75ce3"
+    },
+    {
+      "id": "S2",
+      "sha256": "8ffce87d619992955c85840cad1ed38335244214af6f134ec248f00c753330ba"
+    },
+    {
+      "id": "S3",
+      "sha256": "5752575e28c7bbedee58c38506d7cd5d2a801644ebe36098af9ef3d8c881b332"
+    },
+    {
+      "id": "S4",
+      "sha256": "b897f491cf12cbf9a7581887968e38a0308d267d430662862dc08ee6238eab3b"
+    },
+    {
+      "id": "S5",
+      "sha256": "95346d4be43cda9f861a6c6ffd607af9b3e31fa7117f1497556e3f06037f1ab8"
+    },
+    {
+      "id": "S6",
+      "sha256": "e538f7a6b83f44423393f0efcf80216411238a39c6bdbf52468d57918d53b3c0"
+    },
+    {
+      "id": "S7",
+      "sha256": "c62b37710287071955ac851b89228f19fcdb671717aab34d14faf9ced1f3fa2a"
+    },
+    {
+      "id": "S8",
+      "sha256": "ee932ef18fd639e9a8234d91f9ae9bed36ceb5aa1be71a20c258024bcda9ac65"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97987",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop generalized neural wave functions that can solve many-electron Schrödinger problems across molecules while preserving electron permutation antisymmetry.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing generalized approaches require discrete orbital selection through non-learnable hand-crafted algorithms, making antisymmetry difficult to enforce.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Defines overparameterized, fully learnable neural wave functions for generalization across molecules.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "representation",
+        "claim": "Uses Pfaffians instead of Slater determinants to enforce antisymmetry for arbitrary electronic systems without constraints on spin configurations or molecular structure.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that one neural Pfaffian achieves chemical-accuracy calculations of ground-state and ionization energies across varied systems.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by combining fully learnable generalized neural wave functions with Pfaffian-based antisymmetry enforcement unconstrained by spin configuration or molecular structure.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report chemical-accuracy ground-state and ionization-energy calculations from a single neural Pfaffian across various systems.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "On TinyMol, the authors report outperforming the stated CCSD(T) CBS reference energies by 1.9 mE_h and reducing errors relative to prior generalized neural wave functions by up to an order of magnitude.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Neural wave functions reach unprecedented ground-state accuracy but incur high computational cost.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior direction",
+        "summary": "Recent work amortized computation by learning generalized wave functions across structures and compounds.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "bottleneck",
+        "summary": "Generalized models still faced difficult antisymmetry enforcement because orbital selection depended on non-learnable hand-crafted procedures.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach and reports",
+        "summary": "The work introduces fully learnable neural wave functions based on Pfaffians and reports chemical-accuracy energies plus improved TinyMol error metrics.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the choice of Pfaffians to antisymmetry enforcement without spin- or structure-specific constraints, and connects this design to generalized molecular wave functions.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A representation choice can be framed as the mechanism that removes a specific scalability or generalization bottleneck.",
+        "application": "When proposing a generalized scientific model, explicitly map the core representation to the prior constraint it is intended to eliminate, then report whether the resulting scope covers the claimed system variations.",
+        "exception": "This framing is unsuitable when the representation change is not tied to a clearly stated prior limitation or when scope expansion is only hypothetical."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define chemical accuracy, enumerate the evaluated systems, or provide evaluation protocols and uncertainty details.",
+      "The meaning and direction of “outperform” the CCSD(T) CBS reference energies by 1.9 mE_h is not specified.",
+      "The abstract does not establish independent verification, reproducibility, or priority over prior methods."
+    ]
+  }
+}

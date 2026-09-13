@@ -1,0 +1,180 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007752",
+    "title": "From Markov to Laplace: How Mamba In-Context Learns Markov Chains",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007752"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "909fb45b6e6ae3d834d0c874e9a51ffe51bdf98155d97e65b8f7943473d6bf13",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "386790864943ea6982a1c98c38cd9ca787290b125ae77fd595e5e1435db4462f",
+    "extracted_at": "2026-09-13T00:00:12.238954+00:00",
+    "session_id": "01a09810-3682-7fc0-89f2-1f0b0bebb967",
+    "usage": {
+      "input_tokens": 12718,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 688,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2bda046588545eb32102c92687ddcaf755d7025f0ff4744143136db9936efb62"
+    },
+    {
+      "id": "S2",
+      "sha256": "3e05c8e3f6e9eb55b4c02d96acadc7575f1cd2610825b7941b631eb59017853d"
+    },
+    {
+      "id": "S3",
+      "sha256": "0cc9962cdf725cf74b1239738db0e18622b0e771f0a433858f09339e7bb1d783"
+    },
+    {
+      "id": "S4",
+      "sha256": "6fc35ebb8360f6a82bc5d8570209ccf86d5fc3a2e2b4b06567a193f2ee479efa"
+    },
+    {
+      "id": "S5",
+      "sha256": "a22ed43f1d6079ba25aa625f3dcc1897fad71af32174323d0a2604af60c35d73"
+    },
+    {
+      "id": "S6",
+      "sha256": "7b9b7abb4fa1650097e97141290fa23dad299961f949eb2a12dea7335ced7d0a"
+    },
+    {
+      "id": "S7",
+      "sha256": "906666767404159b4d6c309ba06947de864fb916b1eca7c425f04de5e0f0866c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007752",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies in-context learning on Markov chains with Mamba.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Mamba’s fundamental learning capabilities remain poorly understood despite architectural innovations and empirical successes.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theoretical and empirical finding",
+        "claim": "Shows that a single-layer Mamba efficiently learns the in-context Laplacian smoothing estimator for Markov chains, described as Bayes- and minimax-optimal.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Characterizes Mamba’s representation capacity and identifies convolution as fundamental to representing optimal Laplacian smoothing.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "connection",
+        "claim": "Reports a formal connection between Mamba and optimal statistical estimators, described by the authors as the first to their knowledge.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work as, to their knowledge, the first formal connection between Mamba and optimal statistical estimators.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that a single-layer Mamba efficiently learns the in-context Laplacian smoothing estimator, which they describe as both Bayes and minimax optimal.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that their theoretical insights align strongly with empirical results.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Transformer complexity motivates interest in SSMs and Selective SSMs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "context",
+        "summary": "Mamba and Mamba-2 are described as faster at inference than transformers while matching or exceeding performance on complex language-modeling tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The fundamental learning capabilities of Mamba are presented as poorly understood.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "core finding",
+        "summary": "The paper studies Markov-chain ICL, reports optimal Laplacian-smoothing learning by single-layer Mamba, and explains it through representation capacity and convolution.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The authors connect Mamba to optimal statistical estimators and outline research directions.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a concrete learning setting and estimator with a representation-capacity analysis, then relates the theory to empirical results.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A focused task–estimator–mechanism chain can make an architectural learning claim easier to assess.",
+        "application": "Frame another sequence-model study around one statistical task, its target estimator, the architectural mechanism enabling it, and matching theory or measurements.",
+        "exception": "This framing is unsuitable when the work has no explicit estimator, mechanism, or theory–evidence correspondence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the Markov-chain setup, data distributions, efficiency metric, empirical protocol, or quantitative results.",
+      "The claimed Bayes/minimax optimality and “first” connection are author-reported; the abstract provides no proof details or literature comparison."
+    ]
+  }
+}

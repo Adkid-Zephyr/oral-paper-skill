@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47212",
+    "title": "Equivalence is All: A Unified View for Self-supervised Graph Learning",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47212"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d53a4019c01fc4ae1786964a5edcdc4818a055ca7ad335a016d1d772671a7e7f",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "ecad121bca48bb77733c824c5412c67cf5ec87558d014eba577bcf0bfdc06a93",
+    "extracted_at": "2026-09-13T00:08:53.536352+00:00",
+    "session_id": "01a09818-27ac-7fd2-8489-e91883eee88a",
+    "usage": {
+      "input_tokens": 12664,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 760,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "71103405d84b007e80a600f9897ec7401c2e63a78b162e5246278444bdbaadb0"
+    },
+    {
+      "id": "S2",
+      "sha256": "1564cfbdeeaa651331002ce769be6c3ca09324e4a81efd0d57c3a6541c14f653"
+    },
+    {
+      "id": "S3",
+      "sha256": "bf80e99acca637e6e01a057033fa30decd32aad06a6c65f6c4319543e11af95f"
+    },
+    {
+      "id": "S4",
+      "sha256": "1346a22894b3a7576b3e4cd185b325a8b33b01d348a8c2ee6402a8124e3944c5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47212",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses learning node representations while accounting for common graph node equivalences, including automorphic and attribute equivalence.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that existing graph models largely ignore these equivalences despite their importance for node representation learning.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Proposes GALE, a graph self-supervised learning framework with equivalence, and analyzes its connections to existing techniques.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Unifies automorphic and attribute equivalence into one equivalence class, enforces within-class similarity and across-class separation, and introduces approximate classes with linear-time complexity to address exact automorphism detection’s NP-hardness and node-feature variation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "Analyzes equivalence constraints in graph encoders, characterizes graph contrastive learning as a degenerate form of equivalence constraint, and reports superior performance over baselines for GALE.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present GALE as a unified framework centered on equivalence classes that combines automorphic and attribute equivalence and supports approximate classes.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that approximate equivalence classes have linear time complexity and address the NP-hardness of exact automorphism detection and node-feature variation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that graph contrastive learning is a degenerate form of equivalence constraint.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that GALE achieves superior performance over baselines.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Node equivalence, including automorphic and attribute equivalence, is common in graphs and relevant to node representations.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Existing graph models are stated to largely ignore these equivalences.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "GALE is introduced to bridge this gap and connect equivalence-based learning with existing techniques.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism_and_analysis",
+        "summary": "The framework unifies equivalence classes, applies similarity and separation constraints, uses approximate classes, and analyzes encoder limitations and contrastive learning.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "The authors report superior performance over baselines.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a representation-learning principle to both a concrete class construction and an analysis of how existing methods relate to that principle.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A learning objective can be made more persuasive when its conceptual principle, computational approximation, and relation to prior techniques are presented together.",
+        "application": "When proposing a representation-learning objective, explicitly define the target equivalence or invariance, describe a scalable approximation, and map established methods onto the same principle.",
+        "exception": "This framing is unsuitable when the task has no meaningful equivalence or invariance structure, or when the approximation changes the target property substantially."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, metrics, baseline identities, performance magnitudes, or evaluation conditions for the reported superiority.",
+      "It does not provide details of the approximate equivalence construction or the exact scope of the encoder limitations.",
+      "The abstract does not state an explicit priority claim establishing novelty against prior literature."
+    ]
+  }
+}

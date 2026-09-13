@@ -1,0 +1,180 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97985",
+    "title": "RL-GPT: Integrating Reinforcement Learning and Code-as-policy",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97985"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "95e87a0910930186f172f05be089244dac6fcbfe31466dd6d748b28879ea4681",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "f66371d5a91516380189ec6362afed8fccb2da7efded60ed4ab9fb35bcc38e6d",
+    "extracted_at": "2026-09-13T00:19:19.807947+00:00",
+    "session_id": "01a09821-b263-7c01-b807-9ef559e20325",
+    "usage": {
+      "input_tokens": 14202,
+      "cached_input_tokens": 9984,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 776,
+      "reasoning_output_tokens": 141
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ee13353572d03c560e2fef59e0105b9059d78953bbd9249583b0860a2b522e31"
+    },
+    {
+      "id": "S2",
+      "sha256": "009363c4d3574e4404e836792a39429c69b37c4b60ebbe5b6dae26c50900706e"
+    },
+    {
+      "id": "S3",
+      "sha256": "d86923b550af7658db9b108c66d42bf3ca08201cd747203e3d7cb33fd919a2db"
+    },
+    {
+      "id": "S4",
+      "sha256": "7daa2b0b3a8052f4e31bc01e30e678f8fec3fe550d362814bf0f6b70d686bcf7"
+    },
+    {
+      "id": "S5",
+      "sha256": "f311546f2bd416f9a39e21be0c3bd0b1cb9b05c4f25ab94557425b3d237f9c93"
+    },
+    {
+      "id": "S6",
+      "sha256": "a1c85b27af63d98e84bfd8b8cbddae52c690e3dcef4097f48e105b818fbe785a"
+    },
+    {
+      "id": "S7",
+      "sha256": "a00a844adc3c4c6292b5ce62bd36c8353a0c79b09c58cc89271078e2cdb0cf06"
+    },
+    {
+      "id": "S8",
+      "sha256": "9104a923a4134dd7d97fcb7b6ca33f15d912edb1f133326f06ae96da66d6198d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97985",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses embodied tasks requiring both code-based high-level planning and task-specific low-level refinement.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify limitations of LLM tool use for intricate logic and precise control, motivating integration with reinforcement learning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces RL-GPT, a two-level hierarchical framework with slow and fast agents integrating coding and reinforcement learning.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Assigns the slow agent to analyze which actions suit coding and the fast agent to execute coding tasks.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present RL-GPT as a seamless integration of code-as-policy and reinforcement learning through a two-agent hierarchy.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that RL-GPT outperforms traditional RL methods and existing GPT agents, with superior efficiency.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that RL-GPT rapidly obtains diamonds in Minecraft within one day on an RTX3090.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report SOTA performance across all designated MineDojo tasks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLMs can use tools by coding but are limited in intricate logic and precise control.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "task decomposition",
+        "summary": "The abstract distinguishes code-suitable high-level planning from RL-suited low-level action refinement in embodied tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "RL-GPT integrates the modalities through slow and fast agents with separate analysis and execution roles.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The authors report efficiency advantages, stronger comparisons, rapid Minecraft diamond acquisition, and SOTA results on designated MineDojo tasks.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract maps distinct task levels to distinct mechanisms and then assigns separate agents corresponding analytical and execution roles.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This offers a precise way to explain why a hybrid system is structured as it is.",
+        "application": "For a hybrid-method paper, explicitly align each task level with the mechanism and component responsible for it.",
+        "exception": "This framing is unsuitable when the task does not have a meaningful hierarchical split or when components cannot be assigned distinct roles."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative efficiency metrics, task counts, baseline configurations, or statistical details.",
+      "The scope and evaluation criteria of the designated MineDojo tasks and the meaning of SOTA are unspecified.",
+      "The reported one-day Minecraft result does not state the full experimental protocol or success criteria."
+    ]
+  }
+}

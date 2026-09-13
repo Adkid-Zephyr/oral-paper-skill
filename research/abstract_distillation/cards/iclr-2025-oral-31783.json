@@ -1,0 +1,197 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31783",
+    "title": "Learning and aligning single-neuron invariance manifolds in visual cortex",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31783"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "53fb5474a5743108cff31bb646e3fd412f15fc6ca8536aa45c25009d5af0baff",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "0e27d0530d7662a211caa51b80ffed54a189c4475c5aa77842e50b5851bb8c46",
+    "extracted_at": "2026-09-12T23:51:49.861065+00:00",
+    "session_id": "01a09808-87ff-7972-ad00-fb23fa35c999",
+    "usage": {
+      "input_tokens": 12830,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 769,
+      "reasoning_output_tokens": 72
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "903273fb8dc24fe841e97d73b98b2885981a5c1018535f66282380c292e9ad3d"
+    },
+    {
+      "id": "S2",
+      "sha256": "8a02528beb9da27bd0367f6bed9c441a35c1e40ff54ec177f3a0453848f7c35e"
+    },
+    {
+      "id": "S3",
+      "sha256": "59d2e750e66dad943a812fed23d1d38482eb5317abe3743987568dc391ce23cc"
+    },
+    {
+      "id": "S4",
+      "sha256": "362297210ed839746f8f0c860e195475c957fa7f608004fd32f5e33e537ef668"
+    },
+    {
+      "id": "S5",
+      "sha256": "b38b4ef94131801ed8e2d8b79e522dbbdd5e72d2f8e5bceddcc35bab8c88dec8"
+    },
+    {
+      "id": "S6",
+      "sha256": "54ec56fdce202e4f9037f53cbb3d69b0214edcab2d3ec946171ffb0f32a6e382"
+    },
+    {
+      "id": "S7",
+      "sha256": "b94a3aadfc83bafdd1da043cb614da3dc774c0fdb0b0618e5ac2350aababca69"
+    },
+    {
+      "id": "S8",
+      "sha256": "56b869f7b2d5d738a90875d9da26c48e7501faba8b84331159fe1026b7ccadb3"
+    },
+    {
+      "id": "S9",
+      "sha256": "e82b19e34bfe762c6a687a00792fba604239c4930da3613f80f180ad2e90c105"
+    },
+    {
+      "id": "S10",
+      "sha256": "684bc705f43f34e96dd8679e374a3f26807010ec57247889a360d216644fb2f0"
+    },
+    {
+      "id": "S11",
+      "sha256": "962bfa2d9c5b1755c70b4ebdf688072782422d550acb90d072d0748cb654be83"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31783",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize sensory-neuron selectivity and invariance, and compare invariance across neurons with differing receptive-field properties.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods mainly use isolated single or finite stimulus sets, making continuous-manifold characterization and population-level analysis challenging and under-explored.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A method learns continuous stimulus invariance manifolds for modeled visual neurons and aligns them using affine pixel-coordinate transformations.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "The alignment offers a principled way to quantify and compare neuronal invariances despite receptive-field differences.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The approach identifies functional neuronal clusters in simulations and in macaque V1, including simple and complex cells.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce a method to identify and spatially align visual sensory-neuron invariance manifolds, described as overcoming the stated characterization and comparison challenges.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that simulated-neuron experiments accurately learned and aligned known invariance manifolds and robustly identified functional clusters.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that applying the method to macaque V1 neurons revealed functional clusters including simple and complex cells.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames neuronal selectivity and invariance as central to understanding robustness and generalization in visual perception.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "It notes that discrete stimulus measurements provide isolated samples from continuous manifolds, complicating accurate characterization and cross-neuron comparison.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The method learns each neuron's continuous maximally exciting stimulus manifold, then learns an affine pixel transformation to spatially align it with another neuron's manifold.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "demonstration",
+        "summary": "Reported results show recovery and alignment of known simulated manifolds, followed by functional clustering in simulations and macaque V1.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a continuous representation with an explicit alignment operation before making cross-neuron comparison claims.",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "This pairing makes the comparison target and the source of invariance differences more explicit than comparing isolated stimuli directly.",
+        "application": "For another representation-learning paper, define the continuous object being compared and state the transformation or normalization used to place instances in a common coordinate frame.",
+        "exception": "This move may be unsuitable when alignment would erase task-relevant differences or when no meaningful transformation class is available."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative accuracy, clustering metrics, baselines, neuron counts, or experimental conditions.",
+      "It does not specify how manifolds or affine transformations are parameterized, optimized, or validated beyond the reported demonstrations."
+    ]
+  }
+}

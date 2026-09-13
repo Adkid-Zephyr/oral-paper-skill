@@ -1,0 +1,180 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71087",
+    "title": "Mitigating Reward Hacking in RLHF via Bayesian Non-negative Reward Modeling",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71087"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b4a222ccb7a0c0af5da0114d16615335b0a71a880ca13975e70c62bb471ccf3b",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "3c2a8bde2a53a4bbe909e675e495c3890fb1fb5948ac8cb6408e1483bc14191a",
+    "extracted_at": "2026-09-13T00:13:36.060534+00:00",
+    "session_id": "01a0981c-71ad-7293-92b9-e06989318383",
+    "usage": {
+      "input_tokens": 12683,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 847,
+      "reasoning_output_tokens": 110
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ef7278176c360ed2d814b9a3dafc033a3cedc8354d9882499313eaabfd8a9c5a"
+    },
+    {
+      "id": "S2",
+      "sha256": "ec3ca875b5e0aade862ee0a2de004ab2faa94f5f60486d060bd92b249c5b1127"
+    },
+    {
+      "id": "S3",
+      "sha256": "f4af50b466099634a79320b592e2362de7648980314796f26bb6b310b5f18f9f"
+    },
+    {
+      "id": "S4",
+      "sha256": "37b4dc7920c823f332dc5abb51492eac5b42357cd9b4b0e4c5ff6ce570890023"
+    },
+    {
+      "id": "S5",
+      "sha256": "de8f3fb6bf7348af96574d5ce1db52599aae03651eff00940c7d972c14c1e5a4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71087",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Human-preference reward models used for RLHF can be exploited through reward hacking driven by noisy annotations and systematic biases such as response length or style.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing reward-modeling approaches remain vulnerable to these sources of reward hacking.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes BNRM, integrating non-negative factor analysis into a Bradley–Terry preference model with sparse, non-negative latent factors.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "mechanism",
+        "claim": "Uses instance-specific latent variables for disentangled reward representations and sparse global factors as an implicit debiasing mechanism.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "scaling method",
+        "claim": "Develops an amortized variational-inference network conditioned on deep model representations for efficient end-to-end training with modern LLMs.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish BNRM through a disentanglement-then-debiasing latent-factor structure combined with uncertainty-aware reward learning and scalable amortized inference.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive empirical results show BNRM substantially mitigates reward over-optimization.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report improved robustness under distribution shifts compared with strong baselines.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report more interpretable reward decompositions than strong baselines.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Identifies reward hacking in human-preference reward models as linked to noisy annotations and response-length or style biases.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "Introduces BNRM, combining a Bradley–Terry preference model with sparse non-negative latent factors.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "Combines instance-level disentanglement with global-factor sparsity to suppress spurious correlations and support uncertainty-aware learning.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "scaling",
+        "summary": "Adds amortized variational inference conditioned on deep representations for efficient LLM training.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "Reports reduced reward over-optimization, stronger shift robustness, and more interpretable decompositions relative to strong baselines.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper explicitly maps separate latent-factor roles to disentanglement and debiasing, then connects that structure to uncertainty-aware learning.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "Assigning distinct mechanisms to distinct failure modes can make a method's design rationale easier to evaluate.",
+        "application": "When proposing a robustness method, explicitly pair each component with the specific failure mode it is intended to address and state the resulting interaction.",
+        "exception": "This framing is unsuitable when component roles cannot be meaningfully isolated or the evidence does not distinguish their effects."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, datasets, shift settings, baseline identities, or definitions of reward over-optimization.",
+      "It does not report ablations separating the effects of disentanglement, sparsity, uncertainty modeling, and amortized inference.",
+      "The abstract does not specify the precise uncertainty procedure or the scope of interpretability gains."
+    ]
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-121509",
+    "title": "CoralVQA: A Large-Scale Visual Question Answering Dataset for Coral Reef Image Understanding",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/121509"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "44e2c82a6a272ad1c34f06ea16fa2d959d1e7703cd5bf37a6e3cc0b075753a66",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "9a5ae9975ce48530e66702dc7a963a7f7ef38d17ae226e409caefbfe26444e79",
+    "extracted_at": "2026-09-13T00:23:32.361228+00:00",
+    "session_id": "01a09825-8753-72d3-a5ea-9c4f13b239d4",
+    "usage": {
+      "input_tokens": 12778,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 795,
+      "reasoning_output_tokens": 90
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c9fab1833c7ea9f64d2ab40ae538788230c1f3eba7bf81f52fd786f0a86feaca"
+    },
+    {
+      "id": "S2",
+      "sha256": "d85c870a80be2eb735a62c68ca7c264e59dd8614c84a97d9bea66c1012dfdbed"
+    },
+    {
+      "id": "S3",
+      "sha256": "ba39c5a407bb79febd71078fbdc35fb03a3ccb735b9a92b3bf176c0fd9e39cd6"
+    },
+    {
+      "id": "S4",
+      "sha256": "5788288191402e74604ef9232e5db48d562ed078cf4ad6ebdb2cc43bee778f65"
+    },
+    {
+      "id": "S5",
+      "sha256": "0860fb52e7343b34e7201039aed6f980f33b8a13e0b282a3f73fedcc8438e9d8"
+    },
+    {
+      "id": "S6",
+      "sha256": "20e9382530882337999d8102c60ae1b824670f113f5b785179d2bd2498c3b92c"
+    },
+    {
+      "id": "S7",
+      "sha256": "01fd1d3e4478d174107937b06c52745b735a883f8d91d6371271392fbf5eeb2e"
+    },
+    {
+      "id": "S8",
+      "sha256": "c8ab6b614b83aa1add10c115b2b927ed08047fe3e124be99f7731c38c383a6ba"
+    },
+    {
+      "id": "S9",
+      "sha256": "f52a06ce807eca8c3f5c2dc7082a417fe59320af5f217d15d961aba5a670ff4a"
+    },
+    {
+      "id": "S10",
+      "sha256": "db13c13eabc3504a194008caf26bf8c5f79440c17393acbe5c14974e62d446ad"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-121509",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable more accessible analysis and conservation monitoring of coral reef images through visual question answering.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing VQA applications lack a dedicated coral-imagery dataset covering domain-specific annotations and multidimensional questions.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "dataset",
+        "claim": "Introduces CoralVQA, described as the first large-scale VQA dataset for coral reef analysis, with real-world images and ecological and health-related question-answer pairs.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "resource construction method",
+        "claim": "Develops a semi-automatic construction pipeline with marine-biologist collaboration, targeting scalability and professional-grade data quality.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "benchmark",
+        "claim": "Provides a benchmark for vision-language reasoning on coral reef images and identifies challenges for LVLMs.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize CoralVQA as the first large-scale VQA dataset for coral reef analysis.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that CoralVQA contains 12,805 images spanning 67 coral genera and 3 oceans, paired with 277,653 questions and answers.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report evaluations of several state-of-the-art LVLMs that reveal key limitations and opportunities in coral-imagery reasoning.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Coral reefs need continuous monitoring, but image interpretation requires specialized expertise.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "opportunity and gap",
+        "summary": "LVLM-powered VQA could make image interaction more user-friendly, yet dedicated coral-specific data are needed for specialized annotations and multidimensional questions.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "dataset and construction",
+        "summary": "The work introduces CoralVQA and builds it through a semi-automatic pipeline involving marine biologists.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      },
+      {
+        "role": "benchmark findings and outlook",
+        "summary": "The dataset establishes a coral-reef vision-language reasoning benchmark; LVLM evaluations expose limitations and opportunities relevant to future conservation-oriented development.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links dataset design directly to two application-specific challenges—domain-specific annotations and multidimensional questions—and then reports benchmark evaluation of LVLMs.",
+          "source_ids": [
+            "S4",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "A compelling resource paper can align the data schema, benchmark purpose, and reported findings around explicit domain constraints.",
+        "application": "When introducing a specialized dataset, define the target domain challenges first, encode each in the annotations or task dimensions, and evaluate models against those dimensions.",
+        "exception": "This framing is unsuitable when the dataset is exploratory and its task dimensions or domain requirements are not yet stable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the question categories, annotation protocol, data splits, evaluation metrics, or the concrete LVLM limitations and opportunities reported.",
+      "The claimed first-of-its-kind status and data quality are author statements; independent verification is unavailable here."
+    ]
+  }
+}

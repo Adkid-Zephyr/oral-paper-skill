@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-118167",
+    "title": "Rethinking Multimodal Learning from the Perspective of Mitigating Classification Ability Disproportion",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/118167"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "a7a96bcdbab5eaf5eaee587d70b090606854280c598aeac1bbed5e22f0416ea7",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "e4a004980f0a7ed39b7bc6c846922ef189f9a3b1acde5bc03299beabdc505529",
+    "extracted_at": "2026-09-12T23:41:20.939424+00:00",
+    "session_id": "01a097fe-f63e-7530-9c98-b2409da655cb",
+    "usage": {
+      "input_tokens": 12750,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 744,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "799d2de38f7346dea9c899b67ddb874b37e078fda8e698eb304e30d768a78c24"
+    },
+    {
+      "id": "S2",
+      "sha256": "63947b2ba4e53a38dbedcc264895aedfce43e7fa769d0a49c2e2bd8433c2be10"
+    },
+    {
+      "id": "S3",
+      "sha256": "a337f0f2917c491095a7653b5ebdd4bdfbca4fa8d980793c32ba9670d9cb9046"
+    },
+    {
+      "id": "S4",
+      "sha256": "8c01493f2d08a5e04e5d69d3051d0cf0f4afcbdd20a89b70957638301453ac83"
+    },
+    {
+      "id": "S5",
+      "sha256": "3a58c8d39ae45003ffbee76d396305b0f3f761307dd8e9b51319a2df0bf225ff"
+    },
+    {
+      "id": "S6",
+      "sha256": "3a5b7f27ee4596cc59d20a6fab3943ba91da772881a6d76fe980e8ba97cf4f04"
+    },
+    {
+      "id": "S7",
+      "sha256": "10a3783ad230b1a9be6ff3945a11fb49091c9fa51c589ca5c47c28d84789bbf8"
+    },
+    {
+      "id": "S8",
+      "sha256": "e6eda176eec020dae8e2f9c6a8c4b93409d14c7b55a4702dcf85f8ef593e4dce"
+    },
+    {
+      "id": "S9",
+      "sha256": "4c2f8e68b9684cb2587f94d205b5bbd2873d1d38576c5020b46fe513256b6052"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-118167",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Multimodal learning is constrained by modality imbalance, causing suboptimal practical performance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing balancing methods focus on modality learning balance but, according to the authors, overlook disproportion in inherent classification ability between modalities.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A multimodal approach that dynamically balances weak and strong modalities’ classification ability using boosting.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "A sustained boosting algorithm jointly optimizing classification and residual errors, plus adaptive classifier assignment to support the weak modality.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "A theoretical analysis of the cross-modal gap function’s convergence for the proposed boosting scheme.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present dynamically balancing modality classification ability through boosting, including sustained boosting and adaptive classifier assignment, as their new approach.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments on widely used datasets show superiority over various state-of-the-art multimodal learning baselines.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report a convergence analysis for the cross-modal gap function intended to support the boosting scheme’s effectiveness.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames modality imbalance as a practical limitation of multimodal learning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "It attributes the issue primarily to disproportion in modalities’ classification abilities, which prior approaches allegedly overlook.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It introduces boosting-based dynamic balancing, sustained joint optimization of classification and residual errors, and adaptive classifier assignment for the weak modality.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "theory_and_evidence",
+        "summary": "It analyzes convergence of the cross-modal gap function and reports favorable comparisons with SOTA baselines on widely used datasets.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract distinguishes balancing how modalities learn from balancing their resulting classification abilities, and aligns the proposed mechanism with the latter diagnosis.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A paper can sharpen its intervention by naming the latent capability gap it believes drives the observed failure mode.",
+        "application": "Frame a multimodal method around an explicitly defined capability-gap quantity, then map each algorithmic component to reducing that quantity.",
+        "exception": "This framing may be unsuitable when the task’s imbalance is demonstrably caused by data access, optimization dynamics, or inference constraints rather than modality capability."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dataset names, metrics, baseline results, or numerical gains.",
+      "The convergence conditions, exact cross-modal gap definition, and scope of the theoretical guarantee are unspecified.",
+      "The reported experimental comparison lacks details needed to assess robustness or reproducibility from the abstract alone."
+    ]
+  }
+}

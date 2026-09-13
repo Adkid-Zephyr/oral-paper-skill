@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31896",
+    "title": "Representation Alignment for Generation: Training Diffusion Transformers Is Easier Than You Think",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31896"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7d03aba10b2ceb35a7113df502a0fe3e9003800063f2d59fa465c3d20a5de8b1",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "74d6f046fde238d86b901791bd978326e1710473571fdf1b5b6cc9514914962c",
+    "extracted_at": "2026-09-12T23:56:25.064152+00:00",
+    "session_id": "01a0980c-9b00-7223-b4bd-34d05dea7896",
+    "usage": {
+      "input_tokens": 12745,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 746,
+      "reasoning_output_tokens": 74
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8578d9b58e158da81d899bc398bb4004fdd291b4b94251864d07708b04be221f"
+    },
+    {
+      "id": "S2",
+      "sha256": "d200c9ab419b5ca9326ffd260ffb6939f4e88852fd9189c5607c10302447940d"
+    },
+    {
+      "id": "S3",
+      "sha256": "cdb4464c82e71c4a86bc5a86b871220be88ebb4bb651111db0d4d85d6af071de"
+    },
+    {
+      "id": "S4",
+      "sha256": "15f63015f5ffb0f60a925b646c502298be8e78d7cfb956d0e20c04b0bf0b3e58"
+    },
+    {
+      "id": "S5",
+      "sha256": "b1b7478b45ed46722cb21b827944d30132ad70ee30d1efdb62c3f72a82004e74"
+    },
+    {
+      "id": "S6",
+      "sha256": "38c30b1244bb1463c39b196a054da498e89f13a2c85438d67cc04682cd027fff"
+    },
+    {
+      "id": "S7",
+      "sha256": "bd6c7b0daaa4715892136f3afcca8857f39f5cdf90fd7a00f589e774e43619e0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31896",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Large-scale diffusion generation may bottleneck on effectively learning useful visual representations.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Diffusion-induced representations are meaningful but lag behind those learned by recent self-supervised methods.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces REPA, a regularizer aligning projections of noisy hidden states with clean-image representations from pretrained visual encoders.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports improved training efficiency and generation quality for diffusion and flow-based transformers, including DiTs and SiTs.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present external-representation alignment as a straightforward way to make diffusion-transformer training easier.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report over 17.5× faster SiT training, reaching the performance of a 7M-step SiT-XL trained in under 400K steps, without classifier-free guidance.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report FID=1.42 with classifier-free guidance using the guidance interval.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report significant efficiency and generation-quality gains across popular diffusion and flow-based transformers.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Diffusion denoising can produce meaningful representations, but they trail recent self-supervised representations.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors identify representation learning as a main bottleneck for large-scale diffusion generation.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "intervention",
+        "summary": "They propose using high-quality external visual representations through the REPA alignment regularizer.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "Applied to DiTs and SiTs, REPA is reported to improve efficiency and generation quality, including a 17.5× SiT speedup and FID 1.42.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper connects a training bottleneck to a specific representational mismatch and regularizes noisy hidden states toward clean pretrained features.",
+          "source_ids": [
+            "S2",
+            "S4"
+          ]
+        },
+        "interpretation": "A concrete bottleneck-to-alignment framing can make a proposed training intervention easier to motivate and evaluate.",
+        "application": "For another generative model, identify an internal representation gap, define an explicit target from a suitable pretrained encoder, and state which hidden states are aligned.",
+        "exception": "This move may be unsuitable when external representations are unavailable, mismatched to the target domain, or impose unacceptable computational or dependency costs."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, statistical variation, or the exact evaluation protocol for the reported gains.",
+      "The benchmark context and guidance-interval details for FID=1.42 are not provided.",
+      "It is unclear whether the reported SiT comparison controls all architecture, data, and compute differences."
+    ]
+  }
+}

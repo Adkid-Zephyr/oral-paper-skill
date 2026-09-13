@@ -1,63 +1,27 @@
-# Paper archetypes for choosing useful comparisons
+# Choose comparisons for the actual contribution
 
-Use these guides to choose relevant examples, not to predict acceptance. Hybrids and several coherent contributions are allowed. Suggest only evidence relevant to the actual claim; do not require every item for every paper.
+These guides select useful evidence and examples; they are not acceptance tests. Hybrids and several coherent contributions are allowed. See [source-linked practices](abstract-derived-practices.md) for concrete abstract examples.
 
 ## Method or algorithm
 
-**Core claim:** A new method changes a meaningful quality, capability, or resource frontier.
+Identify the changed operation, representation or capability, its intended role, and evidence for the claimed difference. A component rationale is not an isolated causal result. Suggest a component comparison only when that attribution matters. Do not require a theorem, bespoke benchmark, or independently beneficial role for every coupled component.
 
-**Reader-visible proof:** a simple method contrast plus the main quality/resource curve or a minimal case that explains the gain.
+## Theory
 
-**Adversarial evidence:** strongest simple baseline; matched data/compute; component necessity; cross-task or cross-model transfer; failure regime.
+Specify mathematical objects, assumptions, quantifiers, guarantees and the exact comparison with prior results. Distinguish sufficient from necessary conditions, upper from matching bounds, and the particular regime supporting optimality. A focused characterization can be useful without resolving a long-standing question, winning an empirical benchmark, or supplying an operational prescription.
 
-**Common failure:** a large implementation whose gain disappears against a tuned baseline or equal budget.
+## Empirical finding or explanation
 
-## Theory or guarantee
+Make the observation, protocol, relevant conditions and uncertainty understandable. Distinguish a descriptive finding, an explanatory hypothesis, model-based evidence and an intervention. Request causal controls when the claim is causal—not merely because the paper is empirical. A useful finding need not come with a new method or universal mechanism.
 
-**Core claim:** A long-standing question, qualitative distinction, or quantitative bound is resolved under explicit assumptions.
+## System or efficiency
 
-**Reader-visible proof:** theorem statement with an intuitive consequence, a tight diagram, or a counterexample that makes the result surprising.
+Explain interfaces and component relationships, the workload, and the measured resource boundary. Distinguish local speedups from end-to-end savings and quality changes from efficiency gains. Match conditions relevant to the intended comparison; a comparison of delivered systems need not be a component attribution study. Not every component must itself be novel.
 
-**Adversarial evidence:** tightness; necessity of assumptions; comparison with prior bound; non-vacuous regime; empirical illustration only when it adds understanding.
+## Dataset, benchmark or other resource
 
-**Common failure:** technical difficulty without a conceptual message or a theorem whose assumptions pre-decide the conclusion.
+Explain the units, construction, coverage, access conditions and research activities enabled. Intended uses and demonstrated uses are different. When the claim concerns measurement validity, examine the relevant construct, labels, oracle or shortcuts; an open-ended conjecture resource need not have fixed-answer scoring. A resource contribution does not require a superior accompanying model or a newly discovered mechanism. Preserve the release status of each artifact.
 
-## Empirical science or mechanism
+## Position
 
-**Core claim:** A widely assumed explanation is incomplete, and controlled evidence identifies a more accurate mechanism.
-
-**Reader-visible proof:** the anomaly and the intervention that changes it; a phase diagram or paired mechanism plot.
-
-**Adversarial evidence:** interventions rather than correlations; alternative hypotheses; controlled toy setting connected back to realistic models; replication across regimes.
-
-**Common failure:** many correlations described as a mechanism.
-
-## Systems or efficiency
-
-**Core claim:** A real bottleneck can be removed while preserving the property users actually require.
-
-**Reader-visible proof:** end-to-end quality–latency–memory–cost frontier on realistic workloads.
-
-**Adversarial evidence:** same hardware/software stack; quality matched before speed claims; strong optimized baseline; scaling behavior; overhead and failure cases.
-
-**Common failure:** reporting kernel speedup while hiding end-to-end overhead or quality loss.
-
-## Benchmark or dataset
-
-**Core claim:** Existing evaluations miss a consequential construct, and the new resource measures it validly enough to change scientific understanding.
-
-**Reader-visible proof:** task unit → system behavior → truth/annotation mechanism → new scientific finding.
-
-**Adversarial evidence:** construct and oracle validation; contamination/shortcut checks; human or external criterion; broad baseline coverage; subgroup/transfer analysis; sustainable update path.
-
-**Common failure:** scale and leaderboard without validity or a finding beyond ranking.
-
-## Position paper
-
-**Core claim:** The field is optimizing the wrong objective, neglecting an important issue, or adopting a harmful assumption.
-
-**Reader-visible proof:** a crisp mismatch between current practice and consequence, supported by representative evidence.
-
-**Adversarial evidence:** strongest counterpositions considered fairly; scope clear; practical research or policy actions follow from the thesis.
-
-**Common failure:** opinion without evidence, or criticism without an actionable alternative.
+Separate the thesis, value premises, supporting arguments or evidence, analogies, transfer limits and any proposed action. Consider relevant counterpositions fairly. A recommendation is not an achieved policy outcome. Do not demand a benchmark victory, a methodological novelty claim, or a complete actionable solution when a bounded reframing is the contribution.

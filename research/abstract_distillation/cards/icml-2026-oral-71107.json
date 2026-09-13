@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71107",
+    "title": "Exact Functional ANOVA Decomposition for Categorical Inputs Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71107"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "375ca5921d07ae58a8ffae22408b62ff2f82a775042ac3b215655f52becc53ff",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "be2862fa2f5bb8cb228b9490677172801e675031d75f74f00a70e437eb364ee7",
+    "extracted_at": "2026-09-13T00:14:18.140725+00:00",
+    "session_id": "01a0981d-1ee5-77d1-a7e9-8e34c5d45ae3",
+    "usage": {
+      "input_tokens": 12665,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 718,
+      "reasoning_output_tokens": 63
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ed7a75990c575a86cf1eb23f5bae68e97a8d23f0659d3b1549630956fcd6c79e"
+    },
+    {
+      "id": "S2",
+      "sha256": "204c8bcf5b65ffe494fb9a05febd736533fadd8b5ce127921abe947034b3f895"
+    },
+    {
+      "id": "S3",
+      "sha256": "e065b43541240336fbd7ee3fa99b5aa99a0206173b32885a3292ab039ba9084c"
+    },
+    {
+      "id": "S4",
+      "sha256": "5a1be35da0a917366ea15a2cc4bdae0e759d56b20af16e0ed296bc07f4d7af44"
+    },
+    {
+      "id": "S5",
+      "sha256": "98653b9063951fe29481380ff1d8a9c847e7899021f445a164f5850274f76260"
+    },
+    {
+      "id": "S6",
+      "sha256": "475c804cd050f6558880e9a3c92fe205fb8ae1baf2bf69e5df55f994e6ded76d"
+    },
+    {
+      "id": "S7",
+      "sha256": "2190eedccab4736d2a8d3604a5c71b72ba2e3cbd31944f6082b3ed4cb612caa5"
+    },
+    {
+      "id": "S8",
+      "sha256": "2d585aff3abef36c0e8655adb399248a7350acd0e360efa7628d76c1eec8265d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71107",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Define an exact Functional ANOVA decomposition for categorical inputs under arbitrary feature dependence.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S7"
+        ]
+      },
+      "gap": {
+        "claim": "General dependent distributions lacked explicit closed-form decompositions, leading practitioners to use costly sampling-based approximations.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Derives a closed-form categorical-input decomposition by combining functional analysis with an extension of discrete Fourier analysis, without distributional assumptions.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Extends the decomposition to arbitrary dependence structures, including non-rectangular support, while recovering the classical independent case.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Provides a natural generalization of SHAP values to the general categorical setting via the SHAP–ANOVA link under independence.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their framework completely resolves the closed-form limitation for categorical inputs.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the formulation is computationally very efficient.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that the formulation recovers the classical independent case and handles arbitrary dependence, including non-rectangular support.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "framework",
+        "summary": "Functional ANOVA is presented as a decomposition of predictions into main effects and higher-order interactions, with strong connections to SHAP for independent features.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "For general dependent distributions, the absence of a closed form has led to costly sampling-based approximations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "resolution",
+        "summary": "The paper derives a closed-form decomposition for categorical inputs using functional analysis and discrete Fourier analysis.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "The formulation is reported as efficient, compatible with the independent case, applicable to arbitrary dependence, and useful for generalizing SHAP values.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects the proposed general formulation to a familiar special case and to a related interpretability quantity, SHAP.",
+          "source_ids": [
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "Anchoring a generalization in established limiting cases and related concepts can make its scope easier to assess.",
+        "application": "When presenting a new decomposition, explicitly state which classical case it recovers and how it relates to existing attribution measures.",
+        "exception": "This framing is unsuitable when no meaningful special case or well-defined relation to prior quantities exists."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide the decomposition formula, computational complexity, categorical-domain assumptions, or details supporting the efficiency claim.",
+      "No concrete runtime comparison, sampling baseline, or empirical evaluation is reported in the supplied units.",
+      "The abstract does not specify the theorem or proof conditions underlying the stated generality."
+    ]
+  }
+}

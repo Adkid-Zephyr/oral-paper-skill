@@ -1,0 +1,210 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007661",
+    "title": "Online Learning and Equilibrium Computation with Ranking Feedback",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007661"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e0cf79413d323eecc43e16080aa70fa77e5fb6a71ebc7395a1b57ceb53b13d56",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "27b8a103ab410863bdfc58101516a429f23897614520e090abce5286b7033a24",
+    "extracted_at": "2026-09-13T00:00:01.726346+00:00",
+    "session_id": "01a09810-0cb3-7f51-b86d-50d71a8be562",
+    "usage": {
+      "input_tokens": 12837,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 776,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "60b748772c5b628745201e08135ba575db8a526d89f13491103a4fd34393ba5d"
+    },
+    {
+      "id": "S2",
+      "sha256": "80f5f997f127475972a5938a762b511ddb796b5d513d9e1c238f3427edf95e03"
+    },
+    {
+      "id": "S3",
+      "sha256": "3258cb899eb36719b64d3600b42ee4463680c0ae0fb58a82a1e1ca0684a9620a"
+    },
+    {
+      "id": "S4",
+      "sha256": "a4aca6331b405603d4721430b1fe0d26c8d233edee71b89c19eade48ec006013"
+    },
+    {
+      "id": "S5",
+      "sha256": "b0e949176f5f8fda06b26c3b16147bad9d464d171dfcf200850a62baff2d0585"
+    },
+    {
+      "id": "S6",
+      "sha256": "458e5c7de8e684f788b22743d0bf40aa5b2ca04243e7b9a1361f2d54d709f517"
+    },
+    {
+      "id": "S7",
+      "sha256": "626807ad1ec95010541ab9257363abe9befbf3e48752ec576d9e3f2f083d9906"
+    },
+    {
+      "id": "S8",
+      "sha256": "c40f76732f31928898d5d1ddff6dc59ddc342138208ba8ada308a7de87528c41"
+    },
+    {
+      "id": "S9",
+      "sha256": "3ace24f30eeb22359f3aabdec1735449cb7eda6b384be60c3651c7495c152049"
+    },
+    {
+      "id": "S10",
+      "sha256": "fa2395e97bb2f1b43bb1989323abf1f286c91f7e68706f164b3a846d91d3de78"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007661",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies online learning when the learner observes only rankings over proposed actions, including instantaneous-utility and time-average-utility rankings under full-information and bandit feedback.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing online learning algorithms generally depend on numeric utility feedback, which may be unavailable or privacy-restricted in human-in-the-loop settings.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "impossibility result",
+        "claim": "Shows that sublinear external regret is generally impossible with instantaneous-utility ranking feedback, and also impossible for time-average ranking feedback under sufficiently low-temperature Plackett–Luce rankings.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Develops algorithms achieving sublinear regret when the utility sequence has sublinear total variation; for full-information time-average rankings, the extra variation assumption can be removed.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "game-theoretic and applied consequence",
+        "claim": "Shows that using the algorithms by all players yields an approximate coarse correlated equilibrium, and demonstrates them in an online large-language-model routing task.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present an online learning model based solely on ranking feedback and develop algorithms with the stated regret guarantees under ranking-specific conditions.",
+      "source_ids": [
+        "S3",
+        "S7",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report impossibility of sublinear external regret for instantaneous-utility rankings in general.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report sublinear-regret algorithms under sublinear total variation, with the variation requirement removable in the full-information time-average setting.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report an approximate coarse correlated equilibrium consequence and an online LLM-routing demonstration.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Numeric utility feedback can be unavailable or privacy-sensitive, motivating ranking-only feedback.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "model",
+        "summary": "The study defines instantaneous and time-average ranking mechanisms under full-information and bandit feedback.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "limits",
+        "summary": "It reports impossibility results for instantaneous rankings and, under sufficiently deterministic Plackett–Luce rankings, time-average rankings.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "algorithms",
+        "summary": "It introduces sublinear-regret algorithms under sublinear utility variation, with a stronger full-information time-average result.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "consequences",
+        "summary": "The abstract reports equilibrium and LLM-routing applications.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract places impossibility results before algorithmic guarantees and states the additional assumptions under which guarantees hold.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "Separating information-theoretic limits from conditional positive results makes the scope of a method easier to assess.",
+        "application": "Frame a learning paper by first identifying feedback regimes where the target guarantee is impossible, then state each sufficient assumption alongside its guarantee.",
+        "exception": "This structure is less suitable when the work is primarily descriptive or has no meaningful impossibility or boundary result."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify regret rates, action-space assumptions, variation bounds, temperature threshold, algorithm details, or the quantitative routing results.",
+      "The equilibrium approximation and routing demonstration lack quantitative conditions and outcomes in the abstract."
+    ]
+  }
+}

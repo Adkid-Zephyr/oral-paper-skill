@@ -1,0 +1,168 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47169",
+    "title": "Learning with Expected Signatures: Theory and Applications",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47169"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ee1d62645dfb2a3d8942e9af1fb2d3cdcd6398f5c4b0ac2f7e1d7ffe22b483e1",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "c8c575de41d0ade336ba74b16c9087328bb612faa36a1cba7c6dd4f2e2c42801",
+    "extracted_at": "2026-09-13T00:07:14.851837+00:00",
+    "session_id": "01a09816-af0e-7551-aef4-12dc30055643",
+    "usage": {
+      "input_tokens": 12588,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 699,
+      "reasoning_output_tokens": 66
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c876d20638f4b4844aef3961c4222719f20a1f85b6585883bcc0948a860d95da"
+    },
+    {
+      "id": "S2",
+      "sha256": "d271a39826cbcd10006fdd6fa8f58360173eb4f44f98bf3b9847cc127a5c7be0"
+    },
+    {
+      "id": "S3",
+      "sha256": "5fc278ef9175742b4a175050d58327c7b78a29bf63f99050c17e8db1e2adb95b"
+    },
+    {
+      "id": "S4",
+      "sha256": "dd4f6725f818c4b9bd4c35d4a8aca1bfcdd1e93361c4ebad210ad6b5a5157e94"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47169",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how expected-signature representations and estimators can support model-free learning for time series and sequential data.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "It addresses the gap between the empirical discrete-time expected-signature estimator and its theoretical continuous-time value.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "It proves convergence results connecting the empirical discrete-time estimator to the theoretical continuous-time expected signature.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "For martingale data-generating processes, it suggests a modified expected-signature estimator intended to reduce mean squared error.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "It demonstrates applications of expected-signature methods to predictive performance in sequential-data learning.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated new elements are convergence results for the estimator and a lower-error modification for martingale processes.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report convergence results that enable a more complete probabilistic interpretation of expected-signature-based ML methods.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "For martingale processes, the authors report significantly lower mean squared error for their modified estimator.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "They empirically report that the modification can be effectively applied to improve predictive performance.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "representation",
+        "summary": "Expected signatures map collections of data streams to lower-dimensional feature tensors that can fully characterize the generating distribution.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "context",
+        "summary": "The model-free embedding has been used for domain-agnostic algorithms on time series and sequential data.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "The paper develops convergence results linking empirical discrete-time estimation with the continuous-time theoretical quantity.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "application",
+        "summary": "For martingale processes, it proposes an estimator modification and reports lower error together with improved predictive performance.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs an estimator-level theoretical interpretation with a process-specific modification and empirical predictive application.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This alignment makes clear which claims concern general interpretation and which depend on martingale structure.",
+        "application": "Separate broad estimator theory from structure-dependent methods and report evidence under the exact condition enabling the latter.",
+        "exception": "This framing is less suitable when the method has no meaningful regime-specific assumptions or when the abstract lacks corresponding evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the convergence mode, estimator assumptions, datasets, baselines, or numerical mean-squared-error values.",
+      "The scope and definition of “fully characterize” and the conditions behind predictive improvements are not detailed."
+    ]
+  }
+}

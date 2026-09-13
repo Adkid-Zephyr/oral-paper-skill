@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71120",
+    "title": "Information Flow Reveals When to Trust Language Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71120"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b258bc3b201bc08c50700239148ea15fbde68a11c25051b76cf18cb9f189d212",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "0f0160943e0b05e34695f193a824f8a711edce99089a086adffcd8a60ccf3ae9",
+    "extracted_at": "2026-09-13T00:14:53.314829+00:00",
+    "session_id": "01a0981d-a9fb-74e1-a64b-4da1f5527e0d",
+    "usage": {
+      "input_tokens": 12749,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 699,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9e0e6168fa42ae7f1e274b2ebad326564db9d6eb4efb5dbfdf4e0fc99c1a8a38"
+    },
+    {
+      "id": "S2",
+      "sha256": "05b035046027f87a9ea9b256da0b5b152a28a27f03276f7f3989eaab8da6cc33"
+    },
+    {
+      "id": "S3",
+      "sha256": "0c3110a966911851035c9f19dee157ee68b1766b2ebb09f0b6de7b2489cc792c"
+    },
+    {
+      "id": "S4",
+      "sha256": "4e58c8d10ed6a69094de529b776908117de61d444e835718d7da51e472058438"
+    },
+    {
+      "id": "S5",
+      "sha256": "7bd70ff918a85423f1b1a6fbd9165e04102f2c818e3f53c1e1a547a54ebf6211"
+    },
+    {
+      "id": "S6",
+      "sha256": "775d77c8875b15ca0d158ff6ba0274a354465835b6c08239b83cdc72dd84c725"
+    },
+    {
+      "id": "S7",
+      "sha256": "4e98166b1a11a6c9a55e81aa3a4375f57d7b6144b9aa04bdeeab4f9f7222fec8"
+    },
+    {
+      "id": "S8",
+      "sha256": "d83051e5d7bd4ac3f0372c6fbba97bc9b811d5cb746ec116ec4159a37ef42e07"
+    },
+    {
+      "id": "S9",
+      "sha256": "a55ad264a4dcb523eb5a243f3d3b9cd8f9c81bf82425d3edfaa7d6702ce02041"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71120",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess whether retrieval-augmented language-model predictions are contextually grounded and therefore reliable.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing uncertainty-quantification methods examine only a few layers and miss progressive information propagation, limiting their capture of grounding dynamics.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Uses information flow to construct a layer-wise trace of each context token’s contribution to the output.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "measures",
+        "claim": "Introduces simulatability and concentration to calibrate prediction confidence from token-level contribution patterns.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The approach provides an interpretable, whole-propagation trace for grounding assessment and derives two confidence measures from it.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report an average AUROC of 0.709, compared with 0.676 for the runner-up, at moderate computational cost.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Retrieval-augmented models may answer incorrectly when they fail to use query-relevant retrieved content.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "reframing",
+        "summary": "The abstract shifts uncertainty quantification toward measuring contextual grounding in query-relevant tokens.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Prior methods are described as overlooking progressive information propagation across the model.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "Information flow yields a layer-wise token-contribution trace, followed by simulatability and concentration measures.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "result",
+        "summary": "Experiments are reported to achieve 0.709 average AUROC versus 0.676 for the runner-up, with moderate computational cost.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links specific contribution patterns—alignment with true relevance and concentration on a focused token subset—to prediction correctness.",
+          "source_ids": [
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A method’s interpretability signals can be turned into explicit, testable confidence criteria.",
+        "application": "Define confidence features from interpretable internal signals and state the behavioral condition each feature is intended to represent.",
+        "exception": "This move is unsuitable when the proposed internal signal lacks an observable relevance target or cannot be evaluated against outcomes."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines beyond the runner-up, uncertainty-calibration protocol, or how computational cost is measured.",
+      "It does not report separate results for simulatability and concentration or establish which signal drives the aggregate AUROC."
+    ]
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-98002",
+    "title": "Bayesian-guided Label Mapping for Visual Reprogramming",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/98002"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e239111b51ceeb8fa532bed71db90ba37d5db22f0020ecdc63c62d482bd447ad",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "370513c84c1c573a8bf2a4f2336023ebc7b0d4b0dcf8acf2ec01942684880187",
+    "extracted_at": "2026-09-13T00:19:58.256779+00:00",
+    "session_id": "01a09822-51fb-75f0-8f77-d065c673a559",
+    "usage": {
+      "input_tokens": 12754,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 703,
+      "reasoning_output_tokens": 65
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "776bc36a768e46a19eeda0168b1e0764bb397626a3e01a871b778507ed13f700"
+    },
+    {
+      "id": "S2",
+      "sha256": "8ed2742f69f7cca88ec44cdecf44b6b9eabd4c84fdb75f8332fb9081bd6cdca1"
+    },
+    {
+      "id": "S3",
+      "sha256": "ad01d5ad4d26aade856672537c4cf18155007d7f793e196ec0ab4111a4ecc9ef"
+    },
+    {
+      "id": "S4",
+      "sha256": "37f81453a9205da71630aa305945c3f8313a57175da20d0279b25ea12552912b"
+    },
+    {
+      "id": "S5",
+      "sha256": "0bacfa738496cacf258a080bcf78ae3ac835123ae00b06e0be6ca33641d61895"
+    },
+    {
+      "id": "S6",
+      "sha256": "928954a82ee98e57ce04729b99cd16c3c7264103d8216f1263008245dd975322"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-98002",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Visual reprogramming must adapt pretrained-model interfaces when pretrained and downstream label sets differ.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing gradient-free one-to-one label mappings may miss complex relationships between pretrained and downstream labels.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "BLM builds an iteratively updated probabilistic label-mapping matrix whose entries quantify pairwise pretrained–downstream label relationships.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "interpretive framework",
+        "claim": "BLM provides a probabilistic lens for understanding and analyzing visual reprogramming effectiveness.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce Bayesian-guided label mapping that uses conditional probabilities and joint label distributions instead of restricting mappings to one-to-one correspondences.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments with pretrained vision models such as ResNeXt and vision-language models such as CLIP show BLM outperforming existing label-mapping methods.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that BLM's success supports a probabilistic analysis of visual reprogramming effectiveness.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Visual reprogramming adapts pretrained vision-model interfaces for downstream tasks with potentially different labels.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "One-to-one output label mappings are described as potentially overlooking complex pretrained–downstream label relationships.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "BLM estimates an iteratively updated probabilistic mapping matrix using Bayesian conditional probabilities and joint distributions over downstream samples.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Experiments across vision and vision-language models are reported to show BLM outperforming existing mapping methods, while also motivating a probabilistic interpretation of VR.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper connects a limitation in the assumed mapping structure directly to a probabilistic matrix design and describes how the matrix is updated from joint label distributions.",
+          "source_ids": [
+            "S2",
+            "S4"
+          ]
+        },
+        "interpretation": "A precise failure mode can motivate both the representation and the evidence-generating mechanism of a proposed method.",
+        "application": "When a baseline imposes a restrictive structural assumption, state the missed relationship explicitly and align the new representation and update rule with that relationship.",
+        "exception": "This framing is unsuitable when the restrictive assumption is required by the task or when the abstract provides no concrete basis for replacing it."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no datasets, task details, quantitative results, statistical conditions, or definition of the compared existing methods.",
+      "It does not specify the exact Bayesian update procedure, computational cost, or whether the reported superiority holds uniformly across evaluated settings."
+    ]
+  }
+}

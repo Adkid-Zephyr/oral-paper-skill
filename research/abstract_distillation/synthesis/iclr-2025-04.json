@@ -1,0 +1,636 @@
+{
+  "batch_id": "iclr-2025-04",
+  "covered_ids": [
+    "iclr-2025-oral-31872",
+    "iclr-2025-oral-31873",
+    "iclr-2025-oral-31874",
+    "iclr-2025-oral-31875",
+    "iclr-2025-oral-31876",
+    "iclr-2025-oral-31877",
+    "iclr-2025-oral-31878",
+    "iclr-2025-oral-31879",
+    "iclr-2025-oral-31880",
+    "iclr-2025-oral-31881",
+    "iclr-2025-oral-31882",
+    "iclr-2025-oral-31883",
+    "iclr-2025-oral-31884",
+    "iclr-2025-oral-31885",
+    "iclr-2025-oral-31886",
+    "iclr-2025-oral-31887",
+    "iclr-2025-oral-31888",
+    "iclr-2025-oral-31889",
+    "iclr-2025-oral-31890",
+    "iclr-2025-oral-31891",
+    "iclr-2025-oral-31892",
+    "iclr-2025-oral-31893",
+    "iclr-2025-oral-31894",
+    "iclr-2025-oral-31895",
+    "iclr-2025-oral-31896",
+    "iclr-2025-oral-31897",
+    "iclr-2025-oral-31898",
+    "iclr-2025-oral-31899",
+    "iclr-2025-oral-31900",
+    "iclr-2025-oral-31901",
+    "iclr-2025-oral-31902",
+    "iclr-2025-oral-31903",
+    "iclr-2025-oral-31904",
+    "iclr-2025-oral-31905",
+    "iclr-2025-oral-31906",
+    "iclr-2025-oral-31907",
+    "iclr-2025-oral-31908",
+    "iclr-2025-oral-31909",
+    "iclr-2025-oral-31910",
+    "iclr-2025-oral-31911",
+    "iclr-2025-oral-31912",
+    "iclr-2025-oral-31913",
+    "iclr-2025-oral-31914",
+    "iclr-2025-oral-31915",
+    "iclr-2025-oral-31916",
+    "iclr-2025-oral-31917",
+    "iclr-2025-oral-31918",
+    "iclr-2025-oral-31919"
+  ],
+  "candidate_practices": [
+    {
+      "name": "Name the changed target",
+      "source_observation": "These abstracts change the attribution unit, inference target, recovery capability, or interpretation convention.",
+      "why_it_may_help": "Interpretation: specifying the changed question can distinguish a contribution without claiming priority.",
+      "application": "Replace 'a novel approach' with the previous target, new target, and operation enabling the change.",
+      "when_not_to_use": "When the contribution improves performance on an unchanged task.",
+      "support": [
+        {
+          "paper_id": "iclr-2025-oral-31879",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Attributes data to one training run by accumulating iteration-level values."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31892",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Replaces binary dataset-use decisions with proportion estimation."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31902",
+          "source_ids": [
+            "S1"
+          ],
+          "specific_example": "Adds recovery from unsafe partial generation through a RESET token."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31912",
+          "source_ids": [
+            "S1",
+            "S3",
+            "S5"
+          ],
+          "specific_example": "Evaluates ambiguous spatial expressions across reference frames and language conventions."
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "Exact target definitions and whether comparisons preserve the intended distinction."
+    },
+    {
+      "name": "Give each component a distinct job",
+      "source_observation": "The abstracts assign different mechanisms to different modeling or training obstacles.",
+      "why_it_may_help": "Interpretation: explicit jobs can make multiple contributions coherent without asserting independent causal effects.",
+      "application": "Rewrite component lists as 'obstacle → operation → intended consequence'; attach separate evidence only where available.",
+      "when_not_to_use": "When component roles cannot be separated meaningfully.",
+      "support": [
+        {
+          "paper_id": "iclr-2025-oral-31883",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Grid mixtures address global/local modeling; spatial augmentation addresses domain variation."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31887",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "Proxy correction, confidence modeling, and mutual distillation receive distinct roles."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31898",
+          "source_ids": [
+            "S4",
+            "S7",
+            "S10"
+          ],
+          "specific_example": "STC-GS represents radar sequences; GauMamba forecasts their evolution, with different reported comparisons."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31899",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "On-policy traces and regularization respond to mismatch and ineffective correction modes."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2025-oral-31916",
+          "source_ids": [
+            "S5"
+          ],
+          "contrast": "Transition decomposition redistributes complexity between coupled terms; independent component benefits would misdescribe this trade-off."
+        }
+      ],
+      "full_text_needed_for": "Whether component-specific evidence supports the assigned roles."
+    },
+    {
+      "name": "Attach formal results to their conditions",
+      "source_observation": "These abstracts connect mathematical claims to a projection, parameter restriction, activation requirement, or game regime.",
+      "why_it_may_help": "Interpretation: condition–consequence pairs reveal what a result actually licenses.",
+      "application": "State the mathematical object, qualifying condition, and consequence together; distinguish guarantees from experiments.",
+      "when_not_to_use": "When only an empirical tendency is established.",
+      "support": [
+        {
+          "paper_id": "iclr-2025-oral-31875",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Null-space projection is paired with a preserved-output claim."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31880",
+          "source_ids": [
+            "S4",
+            "S7"
+          ],
+          "specific_example": "Stability uses a nonnegative diagonal state matrix; reversibility concerns a particular discretization."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31904",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Smoothness and nonlinearity play different roles before overparameterized convergence is stated."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31908",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Two-team CLS-hardness is distinguished from tightness under independent adversaries."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2025-oral-31918",
+          "source_ids": [
+            "S4"
+          ],
+          "contrast": "Reported low-loss trajectory behavior does not specify an unconditional convergence guarantee."
+        }
+      ],
+      "full_text_needed_for": "Formal assumptions, definitions, proof scope, and necessity versus sufficiency."
+    },
+    {
+      "name": "Report efficiency at a defined quality point",
+      "source_observation": "The abstracts pair resource claims with quality outcomes and named settings, with varying specificity.",
+      "why_it_may_help": "Interpretation: paired quantities help readers identify what was saved and what performance was retained.",
+      "application": "State resource, reference, setting, and accompanying quality result; preserve maximum and range qualifiers.",
+      "when_not_to_use": "When measurements use incompatible budgets or resource definitions.",
+      "support": [
+        {
+          "paper_id": "iclr-2025-oral-31894",
+          "source_ids": [
+            "S3"
+          ],
+          "specific_example": "Gemma 2 loss memory changes from 24 GB to 1 MB, with reported speed and convergence preservation."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31896",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Step-to-performance comparison without guidance is separate from guided FID."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31911",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Compression compute, retained zero-shot performance, and inference throughput are separate quantities."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31900",
+          "source_ids": [
+            "S9"
+          ],
+          "specific_example": "ScanNet200 validation performance is paired as 24.7% mAP and 22 seconds per scene."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2025-oral-31872",
+          "source_ids": [
+            "S3"
+          ],
+          "contrast": "Speedup and degradation are qualitative; the extraction cannot support a numerical operating point."
+        }
+      ],
+      "full_text_needed_for": "Hardware, accounting boundaries, matched conditions, and total costs."
+    },
+    {
+      "name": "Make a benchmark's capability expansion explicit",
+      "source_observation": "Resource contributions specify task dimensions or external reference points rather than merely announcing datasets.",
+      "why_it_may_help": "Interpretation: this explains what newly becomes measurable.",
+      "application": "Describe added task structure and the comparison it enables before listing benchmark size.",
+      "when_not_to_use": "When added dimensions are irrelevant to the target capability.",
+      "support": [
+        {
+          "paper_id": "iclr-2025-oral-31877",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "MMIE combines domain coverage, interleaved inputs/outputs, response formats, and an automated scorer."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31882",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "MMQA includes connected tables and evaluates retrieval, SQL, QA, and key selection."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31914",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Kaggle competitions provide human leaderboard references and a bronze-level outcome threshold."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31913",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S8"
+          ],
+          "specific_example": "Manipulation tasks span rigid and deformable objects, with unseen-object generalization reported."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2025-oral-31878",
+          "source_ids": [
+            "S2",
+            "S8"
+          ],
+          "contrast": "SAM 2's dataset belongs to an interaction-driven data engine and release bundle; resources need not be benchmarks."
+        }
+      ],
+      "full_text_needed_for": "Construction, coverage, scoring validity, and reference comparability."
+    },
+    {
+      "name": "Separate mechanism identification from behavioral influence",
+      "source_observation": "These abstracts connect internal descriptions to edits, interventions, or mitigation studies.",
+      "why_it_may_help": "Interpretation: readers can distinguish discovering a representation from testing its behavioral relevance.",
+      "application": "State what was identified, what was changed, and which behavior changed; name controls only if documented.",
+      "when_not_to_use": "When the contribution is descriptive and interventions are unavailable.",
+      "support": [
+        {
+          "paper_id": "iclr-2025-oral-31874",
+          "source_ids": [
+            "S2",
+            "S5"
+          ],
+          "specific_example": "Interpretable feature circuits support SHIFT edits using human task-relevance judgments."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31890",
+          "source_ids": [
+            "S9",
+            "S10",
+            "S11"
+          ],
+          "specific_example": "Retrieval-head pruning is contrasted with random non-retrieval pruning and different answering behaviors."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31895",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Concept and plan analysis is followed by interventions on represented plans."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31915",
+          "source_ids": [
+            "S5",
+            "S7"
+          ],
+          "specific_example": "Shallow alignment connects attack case studies to deeper-alignment mitigation."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2025-oral-31885",
+          "source_ids": [
+            "S7"
+          ],
+          "contrast": "PopT reports neuroscience interpretation without specifying intervention evidence in the abstract."
+        }
+      ],
+      "full_text_needed_for": "Identification procedures, intervention controls, and causal scope."
+    },
+    {
+      "name": "State what an aggregate improvement leaves unresolved",
+      "source_observation": "These abstracts distinguish dimensions, downstream objectives, or allocation conditions behind performance claims.",
+      "why_it_may_help": "Interpretation: this can prevent a scalar gain from implying an unsupported decision rule.",
+      "application": "Name the competing dimensions or conditioning variable in the result sentence.",
+      "when_not_to_use": "When one validated objective fully captures the study's decision.",
+      "support": [
+        {
+          "paper_id": "iclr-2025-oral-31884",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Preference alignment is examined across five trust dimensions and can have reverse effects."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31906",
+          "source_ids": [
+            "S7",
+            "S8",
+            "S9"
+          ],
+          "specific_example": "Improved prediction accuracy can accompany worse ranking loss, with inequality implicated."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31886",
+          "source_ids": [
+            "S8",
+            "S9",
+            "S10"
+          ],
+          "specific_example": "Near-linear RAG gains are conditional on optimized compute allocation."
+        },
+        {
+          "paper_id": "iclr-2025-oral-31876",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "specific_example": "STAR reports a quality, parameter-size, and inference-cache frontier."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2025-oral-31873",
+          "source_ids": [
+            "S3",
+            "S8"
+          ],
+          "contrast": "Trust-Score supplies an aggregate measure while refusal and citation quality remain separately named."
+        }
+      ],
+      "full_text_needed_for": "Metric definitions, trade-off magnitudes, and conditions behind reversals or frontiers."
+    }
+  ],
+  "unusual_but_useful": [
+    {
+      "paper_id": "iclr-2025-oral-31881",
+      "source_ids": [
+        "S5",
+        "S6"
+      ],
+      "practice": "Describe information carried by the changed gradient.",
+      "application": "Name magnitude and angle, not just the transformation.",
+      "limit": "Does not establish why each metric improves."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31888",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "practice": "Separate benchmark, human-preference, and adoption evidence.",
+      "application": "Give each evidence type its own claim.",
+      "limit": "Adoption does not establish effectiveness."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31889",
+      "source_ids": [
+        "S7",
+        "S8"
+      ],
+      "practice": "Distinguish expressive and scalable variants.",
+      "application": "Specify which properties the scalable variant retains.",
+      "limit": "Full expressivity is not automatically inherited."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31891",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "practice": "Name the resource allocation mismatch.",
+      "application": "Explain why equal-sized inputs require different computation.",
+      "limit": "Parameter count alone does not measure dynamic compute."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31893",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "practice": "Assign theory distinct design roles.",
+      "application": "Separate forward shuffle, reverse expressivity, and schedule rationale.",
+      "limit": "Empirical guidance is not a universal optimum."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31897",
+      "source_ids": [
+        "S4",
+        "S5"
+      ],
+      "practice": "Connect objective to coding cost.",
+      "application": "Explain the negative-ELBO correspondence before bitrate results.",
+      "limit": "Correspondence assumptions require full text."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31901",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "practice": "Make objective weights semantically interpretable.",
+      "application": "Identify unique, redundant, and synergistic information roles.",
+      "limit": "PID estimation details are absent."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31903",
+      "source_ids": [
+        "S2",
+        "S3"
+      ],
+      "practice": "Pair reduced supervision with noise handling.",
+      "application": "State the seed-label budget and generated-label correction mechanism.",
+      "limit": "Label savings do not establish total-cost savings."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31905",
+      "source_ids": [
+        "S6",
+        "S8",
+        "S9"
+      ],
+      "practice": "Separate structural corroboration from architectural application.",
+      "application": "Present dimensionality checks before the manifold-learning layer.",
+      "limit": "Control gains alone cannot validate the bound."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31907",
+      "source_ids": [
+        "S5",
+        "S6"
+      ],
+      "practice": "Connect formal semantics to policy inputs.",
+      "application": "Explain truth-assignment conditioning before satisfaction results.",
+      "limit": "Reported zero-shot coverage is not arbitrary-specification certification."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31909",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S6"
+      ],
+      "practice": "Separate conditioned dynamics, approximation, and implementation.",
+      "application": "Assign Doob conditioning, variational control, and parallel assimilation distinct roles.",
+      "limit": "ELBO tightness is unassessed."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31910",
+      "source_ids": [
+        "S4"
+      ],
+      "practice": "Distinguish improved artifact quality from competitive accuracy.",
+      "application": "Retain both comparison qualifiers.",
+      "limit": "Neither implies superiority on every dimension."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31917",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "practice": "Distinguish generated observations from prior annotations.",
+      "application": "Explain monocular cues before claiming annotation independence.",
+      "limit": "No plane annotations does not mean no external dependencies."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31919",
+      "source_ids": [
+        "S5",
+        "S6"
+      ],
+      "practice": "Describe signal flow across organizational levels.",
+      "application": "Trace client energy signals into server aggregation changes.",
+      "limit": "Placement alone does not validate defense effectiveness."
+    }
+  ],
+  "discarded_generalizations": [
+    {
+      "generalization": "Every abstract needs a prior-method failure opening or ORAL sequence.",
+      "reason": "Proposal-led and resource-led accounts remain useful; several extractions state no explicit prior-work gap.",
+      "paper_ids": [
+        "iclr-2025-oral-31878",
+        "iclr-2025-oral-31910",
+        "iclr-2025-oral-31914"
+      ]
+    },
+    {
+      "generalization": "Every contribution needs an empirical performance win.",
+      "reason": "A precise complexity classification or counterintuitive modeled relationship can carry the contribution.",
+      "paper_ids": [
+        "iclr-2025-oral-31908",
+        "iclr-2025-oral-31906"
+      ]
+    },
+    {
+      "generalization": "These practices explain Oral selection.",
+      "reason": "Selected abstracts contain no selection evidence or comparison population.",
+      "paper_ids": [
+        "iclr-2025-oral-31872",
+        "iclr-2025-oral-31919"
+      ]
+    }
+  ],
+  "source_checks_needed": [
+    {
+      "paper_id": "iclr-2025-oral-31894",
+      "field": "kernel description, S1/S3",
+      "issue": "Verify 'flash memory'; extraction may confuse a kernel name with memory technology."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31891",
+      "field": "ImageNet result, S6",
+      "issue": "Check 96.62%, accuracy type, and meaning of three layers."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31892",
+      "field": "error claim, S5",
+      "issue": "Maximum observed error is not necessarily a formal error bound."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31899",
+      "field": "result mapping, S8",
+      "issue": "Verify how models, datasets, and 15.6%/9.1% correspond; relative versus absolute is unspecified."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31873",
+      "field": "Trust-Score comparisons, S6/S7",
+      "issue": "Verify score units and what the 26-of-27 count denotes."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31880",
+      "field": "50k comparison, S10",
+      "issue": "Nearly 2× lacks a defined performance quantity."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31916",
+      "field": "clinical wording, S6",
+      "issue": "Check whether accurate diagnosis is evaluated or only motivates ECG reconstruction."
+    },
+    {
+      "paper_id": "iclr-2025-oral-31890",
+      "field": "intervention interpretation, S9",
+      "issue": "Extraction supports random non-retrieval controls, not the lesson's stronger 'matched control' description."
+    }
+  ]
+}

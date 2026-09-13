@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47223",
+    "title": "Blink of an eye: a simple theory for feature localization in generative models",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47223"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ad2898549d1ac95663ea89437bb84bfb1690c2d5c8243905707508835b5e45b7",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "04580c4420e234064b8d193ba6ff453187deb52ef00dc52e0abac2393646db24",
+    "extracted_at": "2026-09-13T00:09:20.415570+00:00",
+    "session_id": "01a09818-9525-70e3-bb79-f31e73ee2818",
+    "usage": {
+      "input_tokens": 12742,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 698,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f54bc57a9f0b47e9a86c0b034e5bd3900bc49ecbad282580a503bdeb06a2e9e8"
+    },
+    {
+      "id": "S2",
+      "sha256": "aa15fefee99bf1b556c713c94558c3c55ba4ee9ef083bc1890fe9396378108c0"
+    },
+    {
+      "id": "S3",
+      "sha256": "84c0c8f97133cd485ac29fd52c321358b155a656dd6e07c971163b6e678ff465"
+    },
+    {
+      "id": "S4",
+      "sha256": "b3c3e2ecbf9de850a7527a0467e0d3aee1862ba0a042a29c6948924ca1cdbd1b"
+    },
+    {
+      "id": "S5",
+      "sha256": "5631d31afc9400a1269ed2ee2e34c03d5bbcd231c4ae3350849a813ba3f937f4"
+    },
+    {
+      "id": "S6",
+      "sha256": "97b5e47e97b086a4b48c91ef51db74872e05fc5975203eaeca513b18602db11c"
+    },
+    {
+      "id": "S7",
+      "sha256": "983f21bafa8921341d2553f667f6b3228caf885e52ed35b1bbd6fdaa2338793e"
+    },
+    {
+      "id": "S8",
+      "sha256": "f8b79e6369ccdb7f8948cc7c67cb31799c3329d3ddd6c9781e83d62547e295d8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47223",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks why generative models can undergo abrupt behavioral or feature changes during generation, including critical windows in diffusion models.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing critical-window theory for diffusion models relies heavily on strong distributional assumptions and Gaussian-diffusion specifics.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Develops a unifying theory based on stochastic localization, attributing abrupt localization to generation concentrating on a sub-population of the modeled distribution.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Reports a framework applying to both autoregressive and diffusion models with few distributional assumptions, basic mathematical tools, and quantitatively improved diffusion-specialized bounds.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Tests the theory’s predictions on LLMs and reports that critical windows often coincide with problem-solving failures on various mathematics and reasoning benchmarks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their theory from prior work by its cross-paradigm scope, weaker distributional assumptions, improved specialized bounds, and simpler mathematical requirements.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report quantitative improvement over previous bounds when their theory is specialized to diffusion models.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report empirical validation on LLMs, where critical windows often coincide with failures across various math and reasoning benchmarks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "phenomenon",
+        "summary": "Abrupt behavioral shifts are described in language models, while diffusion models show narrow generation windows deciding key output features.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "The work introduces a unifying stochastic-localization account: generation generically localizes to a modeled-distribution sub-population.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "contrast",
+        "summary": "The theory is presented as broader and less assumption-heavy than existing diffusion-focused analyses, with improved bounds and elementary mathematical requirements.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "validation",
+        "summary": "LLM experiments are reported to align critical windows with failures on multiple math and reasoning benchmarks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links one theoretical mechanism to both autoregressive and diffusion models, then connects its predicted critical windows to LLM problem-solving failures.",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A cross-model mechanism paired with a concrete behavioral consequence can make an abstract theory easier to assess and transfer.",
+        "application": "When presenting a generative-model theory, state its shared mechanism, model classes, assumption burden, and one observable prediction before reporting validation.",
+        "exception": "This framing is unsuitable when the proposed mechanism has not been defined across the claimed model classes or when no observable prediction is available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the quantitative bounds, distributional assumptions, benchmark identities, failure metrics, or experimental protocols.",
+      "The reported coincidence between critical windows and failures does not establish that the windows cause the failures."
+    ]
+  }
+}

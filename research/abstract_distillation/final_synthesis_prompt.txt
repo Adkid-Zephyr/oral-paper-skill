@@ -1,0 +1,38 @@
+You are doing the final editorial synthesis for Oral Paper Skill. The user wants two useful services: (1) compare a manuscript with relevant exemplary papers and suggest concrete improvements; (2) teach worthwhile practices and guide reflection. Preserve the author's motivation for learning from Orals. Do not promise Oral-level papers, predict acceptance, invent selection causes, or turn the Skill into a research kill gate.
+
+INPUT: actual batch syntheses covering883 eligible abstracts from884 official event records, plus source-review resolutions/corrections and current reviewed cards. The excluded record is a workshop/session event. This is abstract-level knowledge distillation, not full-paper reading or model-weight training. ORAL was an initial authored heuristic, NOT an empirically established answer. Let the evidence change the framework.
+
+Important: batch syntheses are earlier snapshots. Source review resolutions and corrected current cards OVERRIDE any contradictory batch wording. A card's interpretation or proposed application is not an observed action by the original authors. Do not infer figure design, experimental rigor, proof correctness, true novelty, or resource availability beyond what the sources support. Claims remain author-reported. Some source ambiguities must stay unknown.
+
+Select 6–8 genuinely useful practices, not a long checklist. Each must tell an author what to change, why the change may help, and when not to use it. Prefer specific moves around research tension, novelty delta, claim/evidence matching, meaningful comparison, condition/scope handling, resource contributions, and extracting an informative lesson. Remove generic slogans and avoid converting rare interesting practices into universal rules. A method, theory result, empirical finding, system, resource and position paper can require different evidence. Several coherent contributions are allowed.
+
+Return only JSON without Markdown fences:
+{
+ "title":"...",
+ "scope_statement":"accurate completed work and limits",
+ "core_practices":[{
+   "id":"P1",
+   "name":"short English name",
+   "name_zh":"short Chinese name",
+   "source_observation":"a defensible pattern visible in the analyzed material, without unsupported prevalence",
+   "why_it_may_help":"explicit editorial inference, not demonstrated efficacy",
+   "author_action":"a specific rewrite, comparison or design move",
+   "use_when":"applicability",
+   "exception":"when this is not helpful or not supported",
+   "examples":[{"paper_id":"exact existing ID","source_ids":["S1"],"observed_practice":"brief specific paraphrase"}],
+   "reflection_question":"a concrete question the author can apply to their draft"
+ }],
+ "archetype_differences":[{"archetype":"...","priority":"...","avoid_forcing":"..."}],
+ "framework_decision":{"keep_from_ORAL":"...","change_or_demote":"...","reason":"..."},
+ "discarded_generalizations":[{"claim":"...","why_discarded":"..."}],
+ "suggested_skill_workflow":["compact actionable steps"],
+ "readme_takeaways_zh":["3–5 concise substantive takeaways, no new personal-story claims"],
+ "unresolved_limits":["..."],
+ "case_selection_notes":"explain selection and any limited support"
+}
+
+For each core practice choose TWO concrete example papers, ideally spanning relevant different contribution types or conference cycles where supported. Do not force cross-venue coverage per rule; aim for a useful overall mix. Prefer source-checked examples from the supplied current reviewed cards, especially when correcting a subtle qualification matters. Exact paper IDs and source IDs must come from the data. Examples will be checked against original abstracts before publication; do not fabricate a locator to meet the count.
+
+The final Skill must remain lean, support author judgment, and offer at most three useful improvements by default. For learning mode, a small example and a focused reflection exercise are more useful than another literature survey. Unknown facts do not automatically invalidate an early research idea. Bibliographic Orals are examples, not conference rules. No invented paper figures or measured improvements.
+
+Use English for reusable rules and preserve the requested Chinese fields. Target under3000 words overall. Your job is to choose and compress worthwhile knowledge, not to maximize the number of rules, cautions, or citations.

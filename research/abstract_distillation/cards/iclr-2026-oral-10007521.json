@@ -1,0 +1,199 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007521",
+    "title": "SANA-Video: Efficient Video Generation with Block Linear Diffusion Transformer",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007521"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "396d70cc6bb4cd5e7f54e018b7b38f8370d0195947895a49eacf3c785252f75d",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "39a697a9c291e00a3260a1697f05023ce388cb53fd09c18d3a47ba87e939fc61",
+    "extracted_at": "2026-09-12T23:59:43.767319+00:00",
+    "session_id": "01a0980f-bcc6-7f50-97fb-648611d9bf1a",
+    "usage": {
+      "input_tokens": 12879,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 894,
+      "reasoning_output_tokens": 135
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "80f599b7d16f363199605568bb8892abc0e6956af31557f9be285c922eec49bb"
+    },
+    {
+      "id": "S2",
+      "sha256": "aed4230e2c477cc0e61d0b8d21018f96fd7b37a9a7c9513e006350046bba0033"
+    },
+    {
+      "id": "S3",
+      "sha256": "ee9aca38df0430c3b86c9b5312b89175e5535c9dbc4c85760dd0842b4307af0d"
+    },
+    {
+      "id": "S4",
+      "sha256": "6db6b53ef6c34c265cac40189ded60db100f5107095848904e4cc5f63b216734"
+    },
+    {
+      "id": "S5",
+      "sha256": "2d99a02810d25c86f824879a1539ccc9cfe7bc0e591516a91c5c94f9edede39d"
+    },
+    {
+      "id": "S6",
+      "sha256": "e24feab6e207c750fffd0dc39f07058db684aeb9fbd0173fb883910c1094f8d1"
+    },
+    {
+      "id": "S7",
+      "sha256": "e8fdd29fd25c5c93a9ad60bf921fc72a2b3b32fecbfd27c03f26d67060335546"
+    },
+    {
+      "id": "S8",
+      "sha256": "71402609b0445f0d840e68f79a833b1d99a058c47b8b3194d27c8c517c68e5f5"
+    },
+    {
+      "id": "S9",
+      "sha256": "b9c555aa9112b4f3a4a62fc0b61dd0201330b8aa1285240a89ed470b82e816d9"
+    },
+    {
+      "id": "S10",
+      "sha256": "8c1867652c00a5cea769c7386331595738832e1dd3cdc57c976054237cb40ceb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007521",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Efficiently generating high-resolution, high-quality, text-aligned videos with minute-long duration on practical hardware.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces SANA-Video, a small diffusion model using Linear DiT with linear attention for more efficient video-token processing.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces a constant-memory KV cache for block-wise autoregressive generation, providing global context at fixed memory cost for long videos.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "training and deployment",
+        "claim": "Reports data-filtering and training strategies plus RTX 5090 deployment, targeting lower-cost and faster video generation.",
+        "source_ids": [
+          "S6",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish SANA-Video through the combination of Linear DiT and a constant-memory KV cache for block linear attention.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report 12 days of training on 64 H100 GPUs, described as 1% of MovieGen's cost.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report competitive performance against Wan 2.1-1.3B and SkyReel-V2-1.3B, with 16× faster measured latency.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report reducing RTX 5090 NVFP4 inference time for a 5-second 720p video from 71 seconds to 29 seconds, a stated 2.4× speedup.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "capability target",
+        "summary": "The paper frames SANA-Video as a small diffusion model for up to 720×1280 resolution and minute-long videos.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "architectural design",
+        "summary": "It uses linear attention in Linear DiT to reduce the cost of processing video tokens.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "long-context mechanism",
+        "summary": "A block-wise autoregressive design uses a constant-memory state as a KV cache, retaining global context at fixed memory cost.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "training and performance reports",
+        "summary": "The authors report reduced training cost, competitive small-model performance, faster measured latency, and an RTX 5090 NVFP4 speedup.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs architectural mechanisms with concrete resource and latency figures, including training budget, comparison latency, and a specified hardware/precision setup.",
+          "source_ids": [
+            "S3",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "This makes efficiency claims more interpretable by linking them to mechanisms and explicit operating conditions.",
+        "application": "For a systems paper, map each efficiency claim to its mechanism and report hardware, precision, workload, and baseline conditions alongside the number.",
+        "exception": "This format is insufficient when the central claim depends primarily on quality, alignment, or safety evaluations that require their own metrics and protocols."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide quality, text-video alignment, or evaluation metrics and protocols.",
+      "The comparison conditions behind the 16× latency claim and the MovieGen cost estimate are unspecified.",
+      "The abstract does not state whether the promised code and model release has occurred."
+    ]
+  }
+}

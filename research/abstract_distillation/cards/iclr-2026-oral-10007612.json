@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007612",
+    "title": "Discount Model Search for Quality Diversity Optimization in High-Dimensional Measure Spaces",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007612"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0650d6a6866fa08c8ec50f70edca968a3d431ef16714664f90e80ac52c0ff1dc",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "9cd54268cffdc6b9202e2d075495f1e88fbcb5aa8142864469012bd8d0e563af",
+    "extracted_at": "2026-09-12T23:59:54.470723+00:00",
+    "session_id": "01a0980f-ec9c-7d31-a0ab-f8b943fabda8",
+    "usage": {
+      "input_tokens": 12758,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 804,
+      "reasoning_output_tokens": 71
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "66689e37997cd2755dfa0d75992327ebfb5b72981bd3981159eb596561f92672"
+    },
+    {
+      "id": "S2",
+      "sha256": "37a6f3b2e68d25cc09b65e24dcbb252133ec7b03ae7206552d5c7862824982cd"
+    },
+    {
+      "id": "S3",
+      "sha256": "ae9387d7336ed971e3e37996120c6079322a98f4abe8cd325713750d435d9c34"
+    },
+    {
+      "id": "S4",
+      "sha256": "d9097bdc1b105b5c5db70c7592300420d91cb842c5a4f28c4dc2121fdb121a2c"
+    },
+    {
+      "id": "S5",
+      "sha256": "4afc21eb53dbc0aae0df3a08511d317794418a7ad484b38f261016e5da8effbc"
+    },
+    {
+      "id": "S6",
+      "sha256": "dfdb3227990b04b49d4f1ae46c3a5a25274b90923583027a4c6991b77484874e"
+    },
+    {
+      "id": "S7",
+      "sha256": "ed6c7bcee9d43fb80c1f0d6221bc05b74f81ea57dbe87d1ad7e7676ab7ca41a2"
+    },
+    {
+      "id": "S8",
+      "sha256": "81368b1bb78bccb8892300d76518bb9df63719354fb961d4724b906bea8fb975"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007612",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Quality-diversity optimization seeks solutions that jointly optimize an objective and cover diverse outputs under a user-specified vector-valued measure.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing QD methods are generally limited in high-dimensional measure spaces, where measure distortion causes many solutions to map to similar measures; CMA-MAE can stagnate because such solutions share histogram cells and discount values.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Discount Model Search (DMS), using a smooth, continuous model of discount values to guide exploration.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "capability and domains",
+        "claim": "Introduces two QD domains whose measures are high-dimensional image spaces, allowing desired measures to be specified through image datasets rather than hand-designed measure functions.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that DMS outperforms CMA-MAE and other existing black-box QD algorithms on the introduced domains and high-dimensional benchmarks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish DMS through continuous discount modeling and report new image-measure QD domains enabled by dataset-specified measures.",
+      "source_ids": [
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, in high-dimensional measure spaces, DMS distinguishes solutions with similar measures and thereby continues exploration.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report superior performance for DMS versus CMA-MAE and other existing black-box QD algorithms across the introduced domains and high-dimensional benchmarks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Defines QD optimization as balancing objective quality with diversity in a user-specified vector-valued measure space.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Explains that high-dimensional measures induce distortion and that CMA-MAE may stagnate when similar measures share histogram cells and discounts.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "Introduces DMS, which replaces discrete histogram discount guidance with a smooth, continuous discount-value model.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "States that DMS enables continued exploration, supports two image-dataset-defined domains, and outperforms established black-box QD methods in reported evaluations.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific failure mechanism—shared histogram cells and discount values—to a corresponding design change: continuous discount representation.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This is a useful pattern for making a method rationale traceable from diagnosed failure to mechanism-level intervention.",
+        "application": "When presenting a new algorithm, explicitly connect each central design choice to the concrete bottleneck it is intended to remove.",
+        "exception": "This framing is unsuitable when the abstract lacks a clearly evidenced failure mechanism or when the intervention addresses a different bottleneck."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, benchmark identities, evaluation protocol, or computational-cost comparison.",
+      "It does not specify the two introduced domains or how image-space measures and discount models are constructed.",
+      "The reported performance and exploration claims are author-reported and cannot be independently assessed from the abstract alone."
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71190",
+    "title": "Privacy-Aware Video Anomaly Detection through Orthogonal Subspace Projection",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71190"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "937238dd988c319a151836326f469bceed81d6f5d3d1f05996a294c740dc8581",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "2a969f007fba9643a7b7133270e9c74b890250c86e5b1821e90751d2b4fd2b5d",
+    "extracted_at": "2026-09-13T00:17:36.274453+00:00",
+    "session_id": "01a09820-2abd-7322-8645-57a35b7cdee1",
+    "usage": {
+      "input_tokens": 12652,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 698,
+      "reasoning_output_tokens": 85
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2b8287fd805e242e7c986f527c064c2a4f7bf688aae237a8b8171cb466e2ad7e"
+    },
+    {
+      "id": "S2",
+      "sha256": "7db2162414810f1863cb34bc469b0d4134c550dd967a3f2d0e535e7480ea35c5"
+    },
+    {
+      "id": "S3",
+      "sha256": "a079442cde67140ff43039e739c3a299a6aa26f130b319b63dc9a01780538b62"
+    },
+    {
+      "id": "S4",
+      "sha256": "de072b4d337ff4ce7c228281a3fdc8e465cc9b48fbd6eb79c36ecfc2b0f16bdd"
+    },
+    {
+      "id": "S5",
+      "sha256": "506503bbd86017a56fee64eda75ff7f9c750f19a487949aeafb2d8a63cb66dd8"
+    },
+    {
+      "id": "S6",
+      "sha256": "2d1082ee1338f7926f373033bb4b17a22eaa494529b127698ca29c77b5e30a21"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71190",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Video anomaly detection must identify anomalies while addressing privacy risks in human-centered scenarios.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing VAD systems often prioritize accuracy over privacy, limiting real-world suitability.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The Orthogonal Projection Layer removes task-irrelevant variations to emphasize anomaly-relevant cues.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Guided OPL uses weak face-presence supervision to suppress facial attributes while retaining non-identifying pose and motion information, without identity labels or adversarial training.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "evaluation framework",
+        "claim": "A privacy-aware framework jointly assesses detection performance and privacy preservation and analyzes filtering of sensitive information.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce projection-based modules and a joint privacy-aware evaluation framework for video anomaly detection.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that embedding privacy constraints reduces sensitive information while maintaining or improving detection accuracy.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "VAD accuracy-focused systems may inadequately address privacy, limiting deployment suitability.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "base method",
+        "summary": "The paper proposes OPL to filter task-irrelevant variation and focus representations on anomaly cues.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "privacy extension",
+        "summary": "G-OPL suppresses facial attributes using weak face-presence supervision while preserving pose and motion; cosine alignment supports this without identity labels or adversarial training.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation and reported outcome",
+        "summary": "A joint privacy-detection evaluation framework is presented, and experiments are reported to show reduced sensitive information with maintained or improved detection accuracy.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper couples a representation-filtering mechanism with an evaluation framework that jointly measures task performance and privacy preservation.",
+          "source_ids": [
+            "S2",
+            "S5"
+          ]
+        },
+        "interpretation": "Separating the intervention from a matching multi-objective assessment makes the privacy–utility tradeoff explicit.",
+        "application": "For another sensitive-data task, pair a targeted representation constraint with an evaluation protocol that reports both utility and leakage of the protected attribute.",
+        "exception": "This may be unsuitable when the protected information cannot be operationalized or when privacy risk requires guarantees beyond representation-level filtering."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no datasets, metrics, quantitative results, baselines, or details about the strength and scope of privacy preservation.",
+      "The reported accuracy and privacy findings are stated without conditions sufficient to assess generality or causal attribution."
+    ]
+  }
+}

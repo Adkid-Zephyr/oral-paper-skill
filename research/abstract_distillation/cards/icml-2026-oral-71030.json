@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71030",
+    "title": "OPUS: Towards Efficient and Principled Data Selection in Large Language Model Pre-training in Every Iteration",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71030"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "449325247e85b18303184cd2a31ef873386e3575bd9c0e0acb8e96ff480f26ed",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "74ef2cbaf244357cb406252f8309054b92d116dc9ce7880c52dec7225ef9d767",
+    "extracted_at": "2026-09-13T00:11:26.268098+00:00",
+    "session_id": "01a0981a-7762-7841-b8aa-46536eb9b4ef",
+    "usage": {
+      "input_tokens": 12727,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 841,
+      "reasoning_output_tokens": 109
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "73f0ae2fbfddfac799fd76f64be4b4796b6382245b1279e97d1135fb28a6fc80"
+    },
+    {
+      "id": "S2",
+      "sha256": "57f0123a63e15b21d0a5f7542072e0fe11449a06c42b3946578c041a1f27b0ea"
+    },
+    {
+      "id": "S3",
+      "sha256": "44a039ad07894b7c9374a5d65f0cdad36888a4dde42673b3562e7356aa1eaf6e"
+    },
+    {
+      "id": "S4",
+      "sha256": "914ae7b0254c193c96da23e08636a040114f3b77ab43d84cba3e53e57e925e8b"
+    },
+    {
+      "id": "S5",
+      "sha256": "0dfc4113dac2b4839b350e7493a7d9d12ce9c41df3dbbe216cd6f98379f11c94"
+    },
+    {
+      "id": "S6",
+      "sha256": "8c6d7e06deef98abf6604382240fdfc184b7aa54b7d4b349241bc7c2f85c7be9"
+    },
+    {
+      "id": "S7",
+      "sha256": "df56ff1901628eb83f33e883533128ada6bcda58a930b1ceed6b1904dbdc7626"
+    },
+    {
+      "id": "S8",
+      "sha256": "be06139c625f93daad8fad2ceefae11580806e788e4aea7d2505f5f99dbdc853"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71030",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve data selection for LLM pre-training as high-quality public text becomes scarce and training shifts toward better tokens.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches are described as either static heuristic filters that ignore training dynamics or dynamic criteria based on raw gradients without optimizer awareness.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "OPUS defines dynamic data utility in the optimizer-induced update space and scores candidates by projecting effective updates onto a target direction from a stable in-distribution proxy.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "scalability mechanism",
+        "claim": "The framework combines Ghost with CountSketch for efficiency and Boltzmann sampling for diversity.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "The utility score is presented as potentially usable as a static filter for identifying and removing toxic documents before training.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors propose optimizer-induced projected utility selection, distinguishing utility in optimizer-shaped update space rather than raw-gradient space.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the scalability design incurs 4.7% additional compute overhead.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report strong results across corpora, quality tiers, optimizers, and model scales.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that OPUS outperforms previous data-selection methods across training stages, including from-scratch pre-training and mid-training.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "High-quality public text is approaching exhaustion, motivating selection of better training tokens.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Prior methods are characterized as static and dynamics-insensitive, or dynamic but optimizer-agnostic.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "OPUS evaluates optimizer-shaped effective updates against a proxy-derived target direction.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "efficiency",
+        "summary": "Ghost with CountSketch and Boltzmann sampling address computational cost and diversity, with 4.7% reported overhead.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report broad results, cross-stage comparisons, and potential toxic-document filtering use.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract defines utility in the optimizer-induced update space and contrasts this with raw-gradient criteria.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "When optimization transforms parameter updates, aligning selection with the effective update geometry may make the claimed mechanism more precise.",
+        "application": "Frame a data-selection objective in the representation actually used by the training update, then state the proxy direction and projection explicitly.",
+        "exception": "This framing may be unsuitable when the optimizer or its state is unavailable, unstable, or too costly to model."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide quantitative quality gains, baselines, datasets, model sizes, or statistical details for the reported results.",
+      "The toxic-document result is described as potential rather than a quantified demonstrated outcome; its detection criteria and validation are unspecified.",
+      "The abstract does not clarify how the proxy target direction is constructed or how optimizer state is handled across training stages."
+    ]
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71169",
+    "title": "Prescriptive Scaling Reveals the Evolution of Language Model Capabilities",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71169"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4d4d8fda1e8d097fb33ed7f23ae341737ba15f41e59e645a1e4ec0351b8823ec",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "1e5a9d31787278064bedef2a0906de8a9f398422c5a0e96dbb81f120025169a9",
+    "extracted_at": "2026-09-13T00:16:47.586308+00:00",
+    "session_id": "01a0981f-60b9-7eb3-8237-13108f6daf7a",
+    "usage": {
+      "input_tokens": 12730,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 791,
+      "reasoning_output_tokens": 97
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0e4e7f37c4880222686c6e52cc338e0f1ad2861e798151d1ce2c94134c22396b"
+    },
+    {
+      "id": "S2",
+      "sha256": "2a1ac8008f68ff84275b352e146cb69fd29b59d476606746575bc4c8d0dc4e2c"
+    },
+    {
+      "id": "S3",
+      "sha256": "5e5ceed3480511de26a7a5baa05460815d846a023b6f1e31e854ade350c983f3"
+    },
+    {
+      "id": "S4",
+      "sha256": "da6a60623fd40bd1069f78c97a9f9fe607df3b06fcb5b3f1683d484ea742731a"
+    },
+    {
+      "id": "S5",
+      "sha256": "8582ba582b78f457ceb30e8182426f3fc8f5aa056ebc0d3e87fc7cf4a22f4e80"
+    },
+    {
+      "id": "S6",
+      "sha256": "719b682b0b8156db21f384964a3857c88c42bfed7643e22394946ce7b5656ca8"
+    },
+    {
+      "id": "S7",
+      "sha256": "7a86593b5b3bc4c1d0f67d4639ecea9f80decd35674c1a1ae1ce77216da41ef6"
+    },
+    {
+      "id": "S8",
+      "sha256": "11f793bbbeb4135cbb35af857c7d0cb522b66d9c3cf19c0584b43d6a3831d32e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71169",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine attainable downstream accuracy from a pre-training compute budget under contemporary post-training, and assess whether this mapping remains stable as the field evolves.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Estimates capability boundaries with smoothed quantile regression using a monotone, saturating sigmoid parameterization.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "Analyzes temporal stability, task-dependent saturation, and contamination-related shifts, including math reasoning.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "resource and algorithm",
+        "claim": "Releases the Proteus-2k evaluation dataset and introduces an algorithm that recovers near-full-data frontiers using roughly 20% of the evaluation budget.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that they introduce a practical methodology for translating compute budgets into performance expectations and monitoring moving capability boundaries, alongside the Proteus-2k dataset.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report fitting on earlier model generations and evaluating on later releases to validate temporal reliability.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that estimated boundaries are mostly stable across tasks, except for a consistently advancing math-reasoning boundary.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report using 5k observational and 2k newly sampled performance data, and recovering near-full-data frontiers with roughly 20% of evaluation budget.",
+        "source_ids": [
+          "S3",
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "research question",
+        "summary": "Frames prescriptive scaling as the attainable downstream accuracy and temporal stability associated with a pre-training compute budget.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "estimation approach",
+        "summary": "Uses large-scale observational evaluations and quantile regression to estimate high-score capability boundaries as a function of log pre-training FLOPs.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "temporal and task analysis",
+        "summary": "Tests earlier-to-later generalization, reports mostly stable boundaries with advancing math reasoning, and examines saturation and contamination-related shifts.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "resource and efficiency outcome",
+        "summary": "Introduces Proteus-2k and an evaluation-budget-efficient frontier-recovery algorithm.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates attainable performance under current practice from whether the compute-to-performance mapping remains stable, then tests temporal reliability explicitly.",
+          "source_ids": [
+            "S2",
+            "S4"
+          ]
+        },
+        "interpretation": "This separation helps distinguish a scaling estimate from an assumption that its boundary will persist.",
+        "application": "When presenting a predictive scaling relationship, state its deployment conditions and add an out-of-time evaluation to test boundary drift.",
+        "exception": "This move may be unsuitable when later releases or comparable time-indexed data are unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark identities, model-generation counts, regression details, uncertainty estimates, or the metric used for temporal reliability.",
+      "The contamination-related analysis and the precise meaning of near-full-data frontier recovery are not reported in detail."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "contributions[2].claim",
+      "before": "Releases the Proteus-2k evaluation dataset and an algorithm that recovers near-full-data frontiers using roughly 20% of the evaluation budget.",
+      "after": "Releases the Proteus-2k evaluation dataset and introduces an algorithm that recovers near-full-data frontiers using roughly 20% of the evaluation budget.",
+      "review_file": "reviews/audit-icml-2026.json",
+      "review_sha256": "2c724561fe80e956c191114320b9c01b2a2474bd8ecec0af311473a21fdb94f3",
+      "applied_at": "2026-09-13T00:20:52.598217+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

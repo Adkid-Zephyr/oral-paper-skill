@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008921",
+    "title": "High-dimensional Analysis of Synthetic Data Selection",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008921"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2ec84dd711f8167055e8ba72d0cba78466c3cd9db496c9ade4c4fc851d8746a0",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "9c4e04faa88197d207629e62774088e29b2d45206bc59c8f6bae027c9494cd08",
+    "extracted_at": "2026-09-13T00:02:07.062492+00:00",
+    "session_id": "01a09811-ecc9-77e0-91a1-bc20ce07c36d",
+    "usage": {
+      "input_tokens": 12691,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 847,
+      "reasoning_output_tokens": 94
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5137634baa381df91be97e14a12a58e80b4b290cad9325a3be204f91963764ad"
+    },
+    {
+      "id": "S2",
+      "sha256": "c02af1b2e90aae9c3785d1c0795972f1adb2f910b623ed83134eca00de426c0a"
+    },
+    {
+      "id": "S3",
+      "sha256": "32163be97de9a9e6c853b6b633b2ee85aed7aea8cbb056241b7f2ed34d3d00f2"
+    },
+    {
+      "id": "S4",
+      "sha256": "f9dd02abbdc96912370f98952b7e3cf332aa241e13dd7c13552910d22023faeb"
+    },
+    {
+      "id": "S5",
+      "sha256": "5c8cb653365193a99ece41e8d76d7578b54307e33e24da2b4a2d43ba1182efad"
+    },
+    {
+      "id": "S6",
+      "sha256": "7f96a3e1188d7a2901cdf8a40a4a4617d18477111c766c8bb522c62f81425d28"
+    },
+    {
+      "id": "S7",
+      "sha256": "a3a01d43b015f04dfd7ab68371470f330ba79857c22e76fdf8060872d3869d87"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008921",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine which properties of synthetic data influence classifier generalization error, studied through high-dimensional regression.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Beyond heuristics such as similarity to the real-data distribution, the specific properties affecting generalization error are unclear.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "For linear models, the authors characterize covariance shift as affecting generalization error, while mean shift does not.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "They prove that covariance matching is optimal in some regimes and report that the linear-model insights carry over to deep neural networks and generative models.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "They evaluate covariance matching against several recent synthetic-data selection approaches across training paradigms, datasets, and augmentation generative models.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors' stated distinction is the finding that covariance shift matters for linear-model generalization whereas mean shift does not, together with its reported carryover to deep neural networks and generative models.",
+      "source_ids": [
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical results separating the effects of covariance and mean shift on linear-model generalization error.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report a proof that matching the target covariance is optimal in some regimes.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that covariance matching performs well against several recent selection approaches across varied paradigms, datasets, and generative models.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Synthetic data have uncertain value for improving classifier prediction performance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "research gap",
+        "summary": "Existing guidance emphasizes distributional closeness but does not identify which data properties control generalization error.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "theoretical analysis",
+        "summary": "The paper studies the question using high-dimensional regression and finds distinct roles for covariance and mean shift in linear models.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "optimality and scope",
+        "summary": "Covariance matching is proved optimal in some regimes, and the authors state that the insights extend to deep neural networks and generative models.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "empirical comparison",
+        "summary": "Covariance matching is reported to perform well against recent selection methods under varied augmentation settings.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract isolates covariance shift and mean shift separately, then connects the theoretical distinction to a concrete covariance-matching procedure.",
+          "source_ids": [
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "Separating distributional factors can turn a broad data-quality heuristic into a testable selection rule.",
+        "application": "When proposing a synthetic-data criterion, decompose distribution mismatch into explicit components and align each theoretical claim with a corresponding selection procedure.",
+        "exception": "This framing may be unsuitable when the relevant mismatch cannot be represented by the chosen moments or when the target task is outside the analyzed model regimes."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the regimes in which covariance matching is optimal.",
+      "It does not report quantitative performance, baselines, datasets, training paradigms, or statistical uncertainty for the empirical comparisons.",
+      "The extent and conditions of the claimed carryover to deep neural networks and generative models are unspecified."
+    ]
+  }
+}

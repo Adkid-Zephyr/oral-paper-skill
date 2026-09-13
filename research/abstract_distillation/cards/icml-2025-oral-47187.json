@@ -1,0 +1,166 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47187",
+    "title": "Rényi Neural Processes",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47187"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "450345a2ed26d17d666fdd79f001c5f90ea16aacfd268ed37846a3afc6c325df",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "68a98d7537e1e097a125264aa5d6e85d3cc95b763058c0378457c5107dd6c5a5",
+    "extracted_at": "2026-09-13T00:07:54.849639+00:00",
+    "session_id": "01a09817-4abf-7c12-9208-1e6bc4565bcd",
+    "usage": {
+      "input_tokens": 12622,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 677,
+      "reasoning_output_tokens": 52
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "de56c12913384820eed6f202986d15d826e6a9182226682a4dcaed4ceac3d816"
+    },
+    {
+      "id": "S2",
+      "sha256": "e3287d9b3a29a7f5afcabb0214f896783db2b9ce56a8865157532bfa824e971e"
+    },
+    {
+      "id": "S3",
+      "sha256": "5a5556faf97c534e02d3041ede3c6d68a0f4b173e80f46d5474517a15ab32c3a"
+    },
+    {
+      "id": "S4",
+      "sha256": "8c6ad9a0a9310a8527ba95adb4caf53ea42955c9458ba592ed506ae9e9ef2e9c"
+    },
+    {
+      "id": "S5",
+      "sha256": "063cca95f0b011d59ad93c23b9188553821a090d62b8f9642e4c00aba2455349"
+    },
+    {
+      "id": "S6",
+      "sha256": "10c81e630e173d95bab9565f9108399ce94cfb967f1ad537dde9c02c1f91b1d0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47187",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Neural Processes model stochastic processes by conditioning prior distributions on context points while providing uncertainty estimation for complex distributions.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify parameterization coupling between conditional prior and posterior models as prior misspecification in standard Neural Processes.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Rényi Neural Processes, replacing the standard KL divergence with Rényi divergence to dampen misspecified-prior effects during posterior updates.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports improved performance for RNPs across regression and image-inpainting benchmarks, including consistently better log-likelihoods than state-of-the-art NP models.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors' stated new contribution is revisiting the Neural Process objective and introducing RNPs through a Rényi-divergence replacement.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report significant performance improvements across multiple regression and image-inpainting benchmarks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report consistently better log-likelihoods than state-of-the-art Neural Process models in extensive experiments.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Neural Processes are introduced as context-conditioned probabilistic models for stochastic processes.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The abstract highlights coupling between the conditional prior and posterior as a limitation, characterized as prior misspecification.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "RNPs address the issue by replacing KL divergence with Rényi divergence and dampening prior effects during posterior updates.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report benchmark improvements and consistently higher log-likelihoods over state-of-the-art NP models.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific modeling limitation—prior misspecification from parameterization coupling—to a targeted objective change using Rényi divergence.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A limitation-to-mechanism link can make a method proposal's rationale easier to evaluate.",
+        "application": "When presenting a new objective, explicitly identify the failure mode it targets and explain which term or operation is changed to address it.",
+        "exception": "This framing is less suitable when the proposed objective is exploratory or its motivating failure mode has not been characterized."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark datasets, numerical gains, uncertainty intervals, or statistical testing details.",
+      "It does not provide the Rényi-divergence order, implementation details, or conditions under which the reported improvements hold."
+    ]
+  }
+}

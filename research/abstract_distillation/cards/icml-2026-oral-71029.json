@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71029",
+    "title": "Less is Enough: Synthesizing Diverse Data in LLM Feature Space with Sparse Autoencoders",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71029"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "74e7d0c7f5331a9e32d8a46600262b213da5da882977537724e459019fb641cf",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "7ea6ab607f0aac3d417240127565b748e6551db3fa76c77d38b9566018ceeea6",
+    "extracted_at": "2026-09-13T00:11:23.215680+00:00",
+    "session_id": "01a0981a-7532-7f22-9eba-65a1926a00bd",
+    "usage": {
+      "input_tokens": 12703,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 696,
+      "reasoning_output_tokens": 58
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "706ba55646e08fb82bb28f83de9ca9a40dfc5188a837eb3a380587dc69bc467c"
+    },
+    {
+      "id": "S2",
+      "sha256": "c9da507a395607cc735362733b571f635ebf94132ec372e8329b04e9c29b1211"
+    },
+    {
+      "id": "S3",
+      "sha256": "293cc3b8325013b309c186c9b67002a13c7eb7ef2b5aad7822ea7519faa39d64"
+    },
+    {
+      "id": "S4",
+      "sha256": "59f5a733b64215cdccadb9ced644eb520af99f6a4e01a367aeb61071fdaf292a"
+    },
+    {
+      "id": "S5",
+      "sha256": "7c263c3ba967a305956ae6753c6946369ca868fb193d94a5b201eb168d928028"
+    },
+    {
+      "id": "S6",
+      "sha256": "adcb1faa2f13a6c306cf98f208bcb60667bec135c9ff3951355c8c6588de8ac6"
+    },
+    {
+      "id": "S7",
+      "sha256": "5498e706f11dc6dd80fe36ca5032f4944cfbe82ad2c1af167daf4427dd76703e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71029",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to construct diverse post-training data whose diversity reflects task-relevant LLM features.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Text-based diversity metrics capture linguistic variation but provide weak signals for task-relevant features linked to downstream performance.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "metric",
+        "claim": "Feature Activation Coverage (FAC), a diversity measure defined in an interpretable feature space.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "FAC Synthesis, which uses a sparse autoencoder to identify missing seed-data features and generates synthetic samples reflecting them.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "finding",
+        "claim": "The authors report a shared interpretable feature space across LLaMA, Mistral, and Qwen that enables cross-model knowledge transfer.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work introduces FAC and the FAC Synthesis framework for feature-space-guided diversity measurement and data synthesis.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report consistent improvements in data diversity and downstream performance across instruction following, toxicity detection, reward modeling, and behavior steering tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that the shared interpretable feature space across LLaMA, Mistral, and Qwen enables cross-model knowledge transfer.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Post-training data diversity is presented as important for downstream LLM performance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing text-based diversity metrics are described as weak indicators of task-relevant features.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper introduces FAC and uses it in FAC Synthesis, combining sparse-autoencoder feature discovery with feature-targeted sample generation.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The authors report gains in diversity and downstream performance across four task categories, plus cross-model feature-space transfer.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper aligns its diversity metric with an interpretable feature space and then uses the same feature representation to guide synthesis.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A metric can become more actionable when it directly specifies what the generation procedure should cover.",
+        "application": "Define a measurable coverage target in the representation used to diagnose missing data, then condition synthesis on that target.",
+        "exception": "This move may be unsuitable when the representation is not interpretable, task-relevant, or reliable across the intended models."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, quantitative effect sizes, statistical uncertainty, or synthesis cost.",
+      "It does not detail how FAC is computed, how missing features are selected, or how cross-model transfer is evaluated."
+    ]
+  }
+}

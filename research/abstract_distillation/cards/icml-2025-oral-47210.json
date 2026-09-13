@@ -1,0 +1,208 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47210",
+    "title": "STAIR: Improving Safety Alignment with Introspective Reasoning",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47210"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "384f53611a52d039835102ca853f897a66ac38da1b8117a949f23c63fcad6871",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "ce74484ddae3360f1399291f17c00b1f75b1889331f4bbffa09859869cbaa6dd",
+    "extracted_at": "2026-09-13T00:08:51.187293+00:00",
+    "session_id": "01a09818-17ef-73b1-b2b8-9afac3e5d829",
+    "usage": {
+      "input_tokens": 12801,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 868,
+      "reasoning_output_tokens": 87
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "472791b71f856426324a0c51180277454aa10f0718ebe7c89b31b9b2991235bc"
+    },
+    {
+      "id": "S2",
+      "sha256": "90264bc15d5c594b6c959f68e4988cf4a80fca9d7d32db547330afbbc4e8ef3e"
+    },
+    {
+      "id": "S3",
+      "sha256": "dd6cc993e5c608f3f4ec1a24e1186f0d904dc7ce612a7db869c527f4adeacf4e"
+    },
+    {
+      "id": "S4",
+      "sha256": "8bb6c43e74a2f824ddc3748b328abaef99cb6ca33cc66e5f2ca77efdcbb19806"
+    },
+    {
+      "id": "S5",
+      "sha256": "b99aeafce72e97d54fdb3cc7d1594f665984e4d7a0296ebba3815e6958f768c7"
+    },
+    {
+      "id": "S6",
+      "sha256": "80034910bba447b1b8589a0a2052b9b056b7888ee6cb7a27bf0682c4644c0c3d"
+    },
+    {
+      "id": "S7",
+      "sha256": "a3bd4a27d3b08670c610c3f24532e80dbab5809a9040ef8920c602e1a816c2ab"
+    },
+    {
+      "id": "S8",
+      "sha256": "a0d474c95eb8814a50c208be7360fda8eabece1c863b0dd533fb5385c677299b"
+    },
+    {
+      "id": "S9",
+      "sha256": "034a0dc04fc61186dde83db7eb243b064b9a9016874a40767b1e705dac1e5962"
+    },
+    {
+      "id": "S10",
+      "sha256": "a09a70603f22afba2241dbf390628b793a47fe6ace4a21f5d2573b1f704c432f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47210",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve LLM safety alignment while preserving helpfulness and resisting jailbreak attacks.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors report that existing methods commonly face safety–performance trade-offs and jailbreak susceptibility, which they primarily attribute to direct refusals for malicious queries.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "STAIR integrates safety alignment with introspective, step-by-step safety-aware reasoning.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It combines structured reasoning, iterative preference optimization on step-level data from SI-MCTS, a theoretically grounded helpfulness–safety reward, and a process reward model for test-time search.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors open-source STAIR’s code, datasets, and models.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe STAIR and Safety-Informed Monte Carlo Tree Search (SI-MCTS) as newly proposed components of their safety-alignment framework.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive experiments show reduced harmful outputs with better preservation of helpfulness than instinctive alignment strategies.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that, with test-time scaling, STAIR reaches safety performance comparable to Claude-3.5 against popular jailbreak attacks.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report publicly releasing code, datasets, and models.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Safety and harmlessness are framed as critical alongside LLM application performance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing direct-refusal alignment methods are described as trading off safety against performance and remaining vulnerable to jailbreaks.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "STAIR develops safety-aware introspective reasoning, SI-MCTS-generated step-level preference data, a balanced outcome reward, and a process reward model for test-time search.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The authors report improved harmful-output mitigation and helpfulness retention, plus Claude-3.5-comparable safety under test-time scaling.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "release",
+        "summary": "The implementation artifacts are reported as open-sourced.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the proposed reasoning and reward components with the stated helpfulness–safety trade-off, then reports both harmful-output mitigation and helpfulness preservation.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "A paper can make its design rationale easier to assess by explicitly connecting each mechanism to a named failure mode and reporting the corresponding outcome dimensions.",
+        "application": "For a multi-objective alignment method, map each component to a target failure mode and report separate safety and helpfulness outcomes rather than a single aggregate score.",
+        "exception": "This framing is unsuitable when the task has only one defensible objective or when the abstract lacks measurements for the claimed outcome dimensions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide experiment datasets, baselines, metrics, numerical results, or statistical uncertainty.",
+      "The scope of “popular jailbreak attacks,” the meaning of comparable safety, and the conditions for test-time scaling are unspecified.",
+      "The abstract states that the reward is theoretically grounded but gives no theorem, assumptions, or proof details."
+    ]
+  }
+}

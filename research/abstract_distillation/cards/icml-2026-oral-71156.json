@@ -1,0 +1,173 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71156",
+    "title": "Non-Euclidean Gradient Descent Operates at the Edge of Stability",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71156"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "44eb7d67047307d3ff462b759e0af4860314ecd262ed8e5334e6f2e1ae259e60",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "42650dcbb8a79b25ac0155225736fab992325c3b69be45a403ed1bf4ead9a857",
+    "extracted_at": "2026-09-13T00:16:21.661228+00:00",
+    "session_id": "01a0981e-fdb5-7e92-876a-eb57d63ac06e",
+    "usage": {
+      "input_tokens": 12741,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 721,
+      "reasoning_output_tokens": 58
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "39e4ef4eaf3697a72b9c2824c43d39f388f4fff9716a462f897de421009d8eea"
+    },
+    {
+      "id": "S2",
+      "sha256": "fae4a6bcf1d6950473353ed0f05a4e4b028e5b09259ae64976cb501d27a0c875"
+    },
+    {
+      "id": "S3",
+      "sha256": "192d1b0a8ab79b1c00fa87589c5065b1522d058ba7e6a46bff84acbeafa51682"
+    },
+    {
+      "id": "S4",
+      "sha256": "049b2423a439a78000f68bd47b6bc7afceeb322473f1879156bc6d1276f3fcf2"
+    },
+    {
+      "id": "S5",
+      "sha256": "9963e6c5161f0a0874f06aa98f534564fd85a584f0839accd1d37e79476e28d3"
+    },
+    {
+      "id": "S6",
+      "sha256": "574fd2c6692fc33fbb254953227730cfc84fb7fa62478c9cb469933bfd4dd815"
+    },
+    {
+      "id": "S7",
+      "sha256": "e3d7918e2702a43bb6d2df319a2606640eedeb7aa248c11d067603de973a8b46"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71156",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain the Edge of Stability phenomenon for gradient methods beyond the standard Euclidean setting.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Theoretical foundations for the widely observed EoS behavior remain incomplete despite its apparent conflict with classical smoothness assumptions.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "interpretation",
+        "claim": "Interprets EoS through Directional Smoothness and extends this interpretation to arbitrary non-Euclidean norms.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Defines generalized sharpness under an arbitrary norm, covering vanilla and preconditioned GD as special cases and including several less-studied methods.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "diagnostic",
+        "claim": "Provides a geometry-aware spectral diagnostic applicable across a broad class of non-Euclidean gradient methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their generalized sharpness framework by unifying Euclidean, preconditioned, and multiple non-Euclidean gradient methods under one arbitrary-norm formulation.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that neural-network experiments show progressive sharpening followed by oscillations around or above the threshold 2/η for non-Euclidean GD using their generalized sharpness.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "phenomenon",
+        "summary": "Defines EoS as Hessian sharpness approaching and hovering near the stability threshold 2/η during GD.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "Notes that EoS is widely observed in deep learning while its theoretical basis remains incomplete.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "Interprets EoS via Directional Smoothness and generalizes sharpness to arbitrary norms.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "scope_and_evidence",
+        "summary": "Shows that the framework covers several gradient methods and reports analogous sharpening and oscillations in neural-network experiments.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a unifying arbitrary-norm definition with explicit special cases and a diagnostic application across methods.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A framework claim becomes more transferable when its abstraction is tied to recognizable existing cases and an operational use.",
+        "application": "When proposing a generalized optimization concept, state its reduction to established methods and identify a concrete diagnostic or analysis workflow it enables.",
+        "exception": "This framing is unsuitable when the proposed abstraction has no meaningful special cases or practical use described by the work."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the neural-network architectures, datasets, optimization settings, or quantitative experiment results.",
+      "It does not state formal theorems, guarantees, or proof details establishing the interpretation.",
+      "The scope of “broad class” and the behavior of each named method are not individually detailed."
+    ]
+  }
+}

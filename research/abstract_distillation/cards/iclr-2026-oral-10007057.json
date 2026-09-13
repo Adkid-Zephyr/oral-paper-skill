@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007057",
+    "title": "To Infinity and Beyond: Tool-Use Unlocks Length Generalization in State Space Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007057"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a79e20a89dab93d067aa742db57aa1371daeaec4e4e4f36fb420765b2bf77fab",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "d42b06e789b6c6983743638fd4699087b2fd852410e3afd908b2d7718627232f",
+    "extracted_at": "2026-09-12T23:59:05.673830+00:00",
+    "session_id": "01a0980f-2434-73b3-bdd5-fbd6b9f03337",
+    "usage": {
+      "input_tokens": 12698,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 924,
+      "reasoning_output_tokens": 95
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "280e47b9b0958ce303fa7e25bc83186b620024c1523018c6b690f65eab5ce7e3"
+    },
+    {
+      "id": "S2",
+      "sha256": "7af002bdf4016822d3e58743ec9d6e00f26552295e4be36e24ab63e16e6691e1"
+    },
+    {
+      "id": "S3",
+      "sha256": "8fc2bdfd4558315148a84088a18466ee001a70bd56cb398c7070d16b040f9e0a"
+    },
+    {
+      "id": "S4",
+      "sha256": "6fc10a5806751c7b8716ddebc8b3ee46f6416c84f560b9d10f31c599aa2b4033"
+    },
+    {
+      "id": "S5",
+      "sha256": "cd5311ceb727b6821454d45108bef3c5f9f72468f5bf3b5e20d20b6245c6eff7"
+    },
+    {
+      "id": "S6",
+      "sha256": "53c748d3b652c6245374aac45a365c63e0f8ef6d3def15776f4e601ca21bc4f2"
+    },
+    {
+      "id": "S7",
+      "sha256": "a82d7ebeca9179b1842ef26b5a232680dc25f1adfed2735201b29b6206bd99f7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007057",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper examines whether State Space Models can accurately handle truly long-form generation and generalize to problems of increasing length or complexity.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify a theoretical limitation: SSMs cannot accurately solve any formally defined truly long-form generation problem, despite their claimed long-context efficiency advantage.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A theoretical result characterizing a class of truly long-form generation problems that SSMs cannot accurately solve.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A tool-augmented SSM framework in which interactive external-tool access, together with problem-dependent training data, is proposed to mitigate this limitation and support arbitrary length/complexity generalization for tractable problems.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "An empirical demonstration of tool-augmented SSMs on arithmetic, reasoning, and coding tasks with reported length generalization.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by combining SSMs with interactive external tools and problem-dependent training data to target arbitrary problem-length and complexity generalization.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a theoretical result that SSMs cannot accurately solve any problem in their formally defined class of truly long-form generation problems.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that, with suitable tool access and problem-dependent training data, SSMs can learn to solve any tractable problem and generalize to arbitrary problem length and complexity.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report remarkable length generalization by tool-augmented SSMs across arithmetic, reasoning, and coding tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "SSMs are presented as efficient Transformer alternatives for long-context and long-form generation because they use fixed-size memory and linear computational scaling.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The paper introduces a theoretical impossibility result for accurately solving truly long-form generation problems.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mitigation",
+        "summary": "Interactive access to external tools is proposed as a way to mitigate the limitation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "generalization claim",
+        "summary": "With appropriate tools and problem-dependent training data, the authors report arbitrary length/complexity generalization for tractable problems.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "demonstration",
+        "summary": "Tool-augmented SSMs are reported to generalize in arithmetic, reasoning, and coding tasks, motivating their potential use in interactive and agentic settings.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a limitation result with a conditional remedy: suitable tool access and problem-dependent training data are specified before the broad generalization claim.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This links the scope of a capability claim to explicit enabling conditions rather than presenting the method as universally sufficient.",
+        "application": "When proposing a capability extension, state the limiting result, then name the required interface and data conditions before claiming broader generalization.",
+        "exception": "This framing is unsuitable when the proposed conditions are not yet defined well enough to be tested or reproduced."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide the formal definition of “truly long-form,” the exact tools or training data, or the meaning of “accurately.”",
+      "Task datasets, evaluation metrics, comparison baselines, and quantitative results for the reported demonstrations are unspecified.",
+      "The scope of “any tractable problem” and the conditions for arbitrary generalization are not detailed."
+    ]
+  }
+}

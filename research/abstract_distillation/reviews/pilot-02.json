@@ -1,0 +1,92 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "records": [
+    {
+      "paper_id": "icml-2025-oral-40109",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-40118",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-40120",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-40140",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "problem_and_gap.problem.claim",
+          "source_ids": ["S2"],
+          "issue": "The summary calls the input/output spaces unbounded, whereas the source says models typically have nearly unbounded spaces. This is a small literal strengthening in a broad motivation summary, not a change to the central position or its evidence.",
+          "severity": "minor",
+          "correction": "Use 'typically nearly unbounded input/output spaces' instead of 'unbounded input/output spaces'."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "icml-2026-oral-71032",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71038",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71049",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "problem_and_gap.gap.claim",
+          "source_ids": ["S1", "S4"],
+          "issue": "The phrase 'especially relative to static visual appearance' turns the method's motion/appearance separation into a comparative claim about prior understanding. S1 states the motion gap, while S4 describes the separation mechanism; neither explicitly compares how well the two were understood. The central motion-attribution gap remains accurately represented.",
+          "severity": "minor",
+          "correction": "Use 'The role of data in influencing motion was poorly understood.' with S1 as support; keep the appearance separation in the method contribution."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "icml-2026-oral-71052",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "stated_novelty.claim",
+          "source_ids": ["S4"],
+          "issue": "'A non-finite ... parameter set' is slightly narrower than the source's 'not assumed to be finite': the latter removes a restriction without excluding finite parameter sets. The main extension and compact basic semi-algebraic condition are preserved elsewhere in the card.",
+          "severity": "minor",
+          "correction": "Use 'The framework handles a compact basic semi-algebraic parameter set without assuming it is finite, unlike many existing approaches described by the authors.'"
+        }
+      ],
+      "final_disposition": "requires_correction"
+    }
+  ],
+  "summary": {
+    "reviewed_records": 8,
+    "full_original_abstracts_read": 8,
+    "first_pass_pass_records": 5,
+    "first_pass_minor_records": 3,
+    "first_pass_material_error_records": 0,
+    "material_error_findings": 0,
+    "minor_findings": 3,
+    "requires_correction_records": 3,
+    "cards_modified": false,
+    "review_scope": "Read all supplied original source units and every extraction field in packet-02. Checked attribution, entailment, contribution scope, numeric values and comparators, conditions, narrative, lesson observation/inference separation, and abstract-only unknowns. daVinci-Dev retains matched base/scaffold conditions, token count, model sizes and restricted state-of-the-art scope; Motive retains the 74.1% comparator and qualified priority claim; the protein card explicitly leaves the CATH transfer outcome unknown; the mixture card retains conditional finite convergence. Position proposals are not represented as completed empirical evaluations. The lessons' applications and exceptions remain separate from source observations.",
+    "limitations": "AI source checking only, not independent scientific validation, experiment verification, or a pilot gate decision. The three minor wording corrections are proposed and have not been applied to cards."
+  }
+}

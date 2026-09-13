@@ -1,0 +1,198 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31738",
+    "title": "Progressive distillation induces an implicit curriculum",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31738"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2935ad1968c5178b7ae279ced74f881b4498fa3145d705e8017d48e25508e5ab",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "db81b5983e7b42ac2edf2d2c41727832af56f4d2f9f66193fbb560688cb82770",
+    "extracted_at": "2026-09-12T23:50:08.254486+00:00",
+    "session_id": "01a09806-fa0c-73e3-a4d1-117f9e29c6e2",
+    "usage": {
+      "input_tokens": 12710,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 874,
+      "reasoning_output_tokens": 121
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0d4e3009b1abcfdd8e81a5affd3c867c760abcb096a2ca78a8ba047c1c4e35e9"
+    },
+    {
+      "id": "S2",
+      "sha256": "78f3278280d4b6345e9b799aaca9597e1136802213543937ff8f1e0fb08778be"
+    },
+    {
+      "id": "S3",
+      "sha256": "ca114bb01686358ada8fd4ea989c20a78a992ad04f180525db56cf0a29a2ded5"
+    },
+    {
+      "id": "S4",
+      "sha256": "699bb20af44328c99643c683d118ce9d038fe58a35cf5f5f504a98f7f21d99f6"
+    },
+    {
+      "id": "S5",
+      "sha256": "b4516d4c41f1e206089fec70ccdb7f7948f027c6fd4537bd7af050f45c0b1b4d"
+    },
+    {
+      "id": "S6",
+      "sha256": "cc82cb471bfca92ccd463910d49d0854d966bf20fbbbb16d328df92c18bb47c3"
+    },
+    {
+      "id": "S7",
+      "sha256": "c54f0149db326e8f1359535c2020a86272296fdaef71749e441efb00218e964b"
+    },
+    {
+      "id": "S8",
+      "sha256": "ae3d99c1d449fbcee3703c092d6753b04aecdb87d88983f7ed739981a0a95d54"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31738",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "A better teacher does not consistently produce a better student in knowledge distillation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "mechanism",
+        "claim": "Identifies an implicit curriculum as a mechanism by which progressive distillation accelerates student learning in sparse parity.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Reports that the curriculum is present in intermediate teacher checkpoints but absent from the final converged checkpoint, with an associated provable sample-complexity benefit.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Extends the investigation to PCFG Transformers and Wikipedia and Books pre-training data, identifying progressive learning of longer-context features.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish progressive distillation by an implicit curriculum available through intermediate, but not final converged, checkpoints.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report empirical acceleration and a provable sample-complexity benefit for students receiving the intermediate-checkpoint curriculum in sparse parity.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report an analogous curriculum in Transformers trained on PCFGs, characterized by progressively learned longer-context features.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report empirical observations on Wikipedia and Books pre-training datasets consistent with benefits across setups.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background and challenge",
+        "summary": "Knowledge distillation uses a teacher to improve a student, but teacher quality does not reliably translate into student quality.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "existing approach",
+        "summary": "Progressive distillation addresses this challenge by training from successive intermediate teacher checkpoints.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "sandbox mechanism",
+        "summary": "Sparse-parity analysis identifies an implicit curriculum that accelerates learning and provides a claimed sample-complexity benefit; it is unavailable from the final checkpoint alone.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "broader investigation",
+        "summary": "Experiments on PCFG Transformers and Wikipedia and Books data probe a related curriculum in which longer-context features emerge progressively.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "synthesis",
+        "summary": "The authors present theoretical and empirical findings supporting benefits of progressive distillation via implicit curriculum across the studied setups.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a training procedure, the stage at which supervision is taken, and a specific mechanism—progressive acquisition of longer-context features—to reported learning benefits.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A compact mechanism-centered framing can make a method claim more explanatory than reporting the procedure and outcome alone.",
+        "application": "When presenting a staged training method, explicitly state which intermediate state supplies the signal, what representation or capability is acquired progressively, and which outcome is attributed to that mechanism.",
+        "exception": "Do not use this framing when the mechanism is only hypothesized or when the abstract provides no evidence distinguishing it from alternative explanations."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative acceleration, sample-complexity bound, or baseline comparison.",
+      "Conditions and proof assumptions for the theoretical benefit are unspecified.",
+      "The scope and quantitative strength of the PCFG, Wikipedia, and Books observations are not reported."
+    ]
+  }
+}

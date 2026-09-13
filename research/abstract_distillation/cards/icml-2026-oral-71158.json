@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71158",
+    "title": "Robust Contextual Optimization with Missing Covariates",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71158"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d3d0c4ce7ed2e749d24b32ad5bcdf1061434e6aa7e13a21e6589c05ec9a8959e",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "daa529eaee32966ae6bb9ec001a103c94ef1800fdd78a6baa215680f970e2f71",
+    "extracted_at": "2026-09-13T00:16:25.781838+00:00",
+    "session_id": "01a0981f-067e-7cf3-a255-8d895b376b37",
+    "usage": {
+      "input_tokens": 12684,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 771,
+      "reasoning_output_tokens": 79
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "54638dc7c8cf8b93888d4ba7bd307de3d89a89abcc4af4ed2448d2e5516fcfd8"
+    },
+    {
+      "id": "S2",
+      "sha256": "705078035394c4944290fff8f90e200a8d564e01901cd4df65f82d53e6ba07a7"
+    },
+    {
+      "id": "S3",
+      "sha256": "844a4c481960ebdac71406e3a4316556761702e0cdb403246b3802227f663a39"
+    },
+    {
+      "id": "S4",
+      "sha256": "b61223e7e515b024baca2587bdd956cbe41e0590d792b686711f6b52765b3155"
+    },
+    {
+      "id": "S5",
+      "sha256": "cce35a5c42da646c8afbceefacff74ab2240b4714ba584745b7c38a892829dc2"
+    },
+    {
+      "id": "S6",
+      "sha256": "94515407eb5b5d54fbda0abf85face10dd0393d24e4ab45cf06ab4c3aa6fc216"
+    },
+    {
+      "id": "S7",
+      "sha256": "ab8168c02337ae113113bfe91b74fe5eca3dfa6147d74f3e0a2b5184d758f8f3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71158",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Contextual optimization must make decisions when covariates are only partially observed.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods commonly assume fully observed historical data and may become unreliable when covariates are missing.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A distributionally robust optimization approach uses incomplete covariates directly, avoiding imputation of a complete dataset.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The method constructs ambiguity sets from partial observations while incorporating structure of the missingness mechanism.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The authors derive tractable reformulations and finite-sample out-of-sample performance guarantees for discrete and continuous covariates and outcomes.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated distinction is an integrated distributionally robust treatment of incomplete covariates that preserves consistency with observed data without complete-data imputation.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report tractable reformulations and finite-sample out-of-sample guarantees across discrete and continuous covariate and outcome settings.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "Across contextual decision-making tasks, the authors report that the approach consistently outperforms state-of-the-art baselines, including impute-then-optimize pipelines, in out-of-sample performance and reliability.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Contextual features are used to improve optimization under uncertainty.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "practical challenge",
+        "summary": "Covariates may be only partially observed because of heterogeneous data sources or costly collection.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Fully observed-data assumptions can make existing methods unreliable under missing covariates.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "The paper proposes distributionally robust decisions from partial data, using structured ambiguity sets rather than complete-data imputation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "theory and evidence",
+        "summary": "It reports tractable reformulations, finite-sample guarantees, and empirical gains over stated baselines across task settings.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns its method with the data limitation by building ambiguity sets from observed partial data and modeling missingness structure.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This is a useful claim-design pattern: connect the proposed mechanism directly to the failure mode of the baseline assumption.",
+        "application": "When a method targets incomplete data, state exactly which observed information and missingness structure enter the decision procedure.",
+        "exception": "This framing is unsuitable when missingness is irrelevant to the task or when the required missingness structure cannot be justified."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the missingness assumptions, ambiguity-set construction, guarantee conditions, metrics, datasets, or numerical performance differences.",
+      "The reported consistency and performance guarantees are author claims; their formal scope and proof details are not available here."
+    ]
+  }
+}

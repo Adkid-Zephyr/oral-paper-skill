@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31904",
+    "title": "Global Convergence in Neural ODEs: Impact of Activation Functions",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31904"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4b345eba87eda36a0de5c7638c77252a0a4c93c7351705b26eaf2640f58b4ef4",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "214ded5709d5a38f1aa59a83dfc902a33a4ca2ffa430e7eb666c71838c547a3e",
+    "extracted_at": "2026-09-12T23:56:35.584590+00:00",
+    "session_id": "01a0980c-e839-7b20-8e9b-9089aa8ddf0e",
+    "usage": {
+      "input_tokens": 12481,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 755,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a79c8170ef76185e9c67f10b2bbf8cbf86b27dcdcecea3918fa4e3b7511b8eee"
+    },
+    {
+      "id": "S2",
+      "sha256": "897bc4214fdf1dc5b10172af761d56839275fef660f78645f91e5e6b23ea0e73"
+    },
+    {
+      "id": "S3",
+      "sha256": "4f94e4d07ed5d97637fb9e36970ea0b01bc3924a05827a474e5fb47e99c8c9dd"
+    },
+    {
+      "id": "S4",
+      "sha256": "b15a1447d626c65d48e9f098a8a9ec224568d8a74e1aa9dea62768a507f0a9eb"
+    },
+    {
+      "id": "S5",
+      "sha256": "bb14adeb8847edc8e041726b5af4636d2c12f28e8ab35d44391103f894bd4fc2"
+    },
+    {
+      "id": "S6",
+      "sha256": "b90cc76f3ea1b515fc3df781c43238c5848d0944d29c54101d61ab0739c46f61"
+    },
+    {
+      "id": "S7",
+      "sha256": "d8df94ce7827aabb77e9a6da789abe131d5619c657ec41263b4be07c6e7f7af5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31904",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper investigates how activation-function properties affect Neural ODE training dynamics and convergence.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "It addresses challenges in accurate gradient computation and convergence analysis arising from Neural ODEs' continuous dynamics and parameter sharing.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "It links activation smoothness to globally unique forward and backward ODE solutions, and sufficient nonlinearity to preservation of Neural Tangent Kernel spectral properties during training.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "convergence result",
+        "claim": "It establishes global convergence of Neural ODEs under gradient descent in overparameterized regimes when these activation-function properties hold.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "It reports numerical experiments supporting the theoretical analysis and offering practical scaling guidelines.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated contribution is an activation-function-based analysis connecting smoothness and nonlinearity to Neural ODE training dynamics and global convergence.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that smooth activations guarantee globally unique solutions for both forward and backward ODEs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that sufficient nonlinearity is essential for maintaining NTK spectral properties during training.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report numerical experiments that support their analysis and provide scaling guidelines, with potential—not established—benefits for training speed and real-world performance.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Neural ODEs are motivated by continuous dynamics and parameter-sharing efficiency.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "These characteristics create difficulties for gradient-computation accuracy and convergence analysis.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The paper investigates activation functions as the relevant source of training-dynamics behavior.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "theoretical result",
+        "summary": "Smoothness supports global uniqueness of forward and backward solutions, while nonlinearity supports NTK spectral preservation and enables a global-convergence result in overparameterized settings.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported validation",
+        "summary": "Numerical experiments are presented as support for the analysis and as a basis for scaling guidance.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract decomposes convergence into distinct activation requirements: smoothness for ODE solution uniqueness and nonlinearity for NTK spectral behavior.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Separating mechanisms can make a theory claim more diagnostically useful than treating architecture performance as a single undifferentiated effect.",
+        "application": "When presenting a convergence theory, map each assumption to the specific mathematical or optimization property it is intended to preserve.",
+        "exception": "This framing may be unsuitable when the assumptions interact inseparably or when the abstract cannot support mechanism-level attribution."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact smoothness and nonlinearity conditions, model or data assumptions, meaning of sufficient nonlinearity, or convergence metric.",
+      "The numerical experiments' scale, baselines, quantitative results, and conditions are not reported, so the practical guidelines and potential performance benefits cannot be assessed here."
+    ]
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47183",
+    "title": "VideoRoPE: What Makes for Good Video Rotary Position Embedding?",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47183"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "22f4ef30b5c8a32820551718451a522b83396872b1c18a6fdf7b5d6a271dd748",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "d4266dc9e55882f884b4ee8d8d5fdb4fae9253a406c0addfc0cac4d4d147b31d",
+    "extracted_at": "2026-09-13T00:07:45.600661+00:00",
+    "session_id": "01a09817-25a8-7f52-85b6-1e27cf219faf",
+    "usage": {
+      "input_tokens": 12650,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 682,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "22f4ef30b5c8a32820551718451a522b83396872b1c18a6fdf7b5d6a271dd748"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47183",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Adapting 1D Rotary Position Embedding to videos with complex spatio-temporal structure.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Prior work had not fully considered four characteristics identified as essential for effective video RoPE adaptation; existing variants could be misled by periodic distractors when temporal dimension allocation was inappropriate.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "analysis",
+        "claim": "A comprehensive analysis identifying four characteristics considered essential for adapting RoPE to video.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "benchmark task",
+        "claim": "V-NIAH-D, a Visual Needle-In-A-Haystack task augmented with periodic distractors.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "VideoRoPE, a 3D RoPE design using low-frequency temporal allocation, diagonal spatial layout, and adjustable temporal spacing.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work presents an analysis centered on four previously underconsidered characteristics, introduces V-NIAH-D, and derives the VideoRoPE design from that analysis.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that V-NIAH-D shows previous RoPE variants are easily misled by periodic distractors when temporal dimension allocation is inappropriate.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report that VideoRoPE consistently surpasses previous RoPE variants on long video retrieval, video understanding, and video hallucination tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "challenge",
+        "summary": "The paper frames video adaptation of 1D RoPE as difficult because video has complex spatio-temporal structure.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnostic analysis",
+        "summary": "It identifies four key characteristics and introduces V-NIAH-D with periodic distractors to expose temporal-allocation weaknesses.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It proposes VideoRoPE, combining 3D structure, low-frequency temporal allocation, diagonal spatial layout, and adjustable temporal spacing.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "reported comparison",
+        "summary": "The authors report consistent superiority over prior RoPE variants across several video tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a targeted distractor-based task to a specific design weakness—temporal dimension allocation—and then describes method components addressing temporal oscillation, spatial symmetry, and index coupling.",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        "interpretation": "A focused stress test can make architectural design choices diagnostically interpretable.",
+        "application": "When proposing a structured positional encoding, design an evaluation perturbation that isolates the suspected failure mode and map each component to a measured or described issue.",
+        "exception": "This move is unsuitable when the perturbation does not represent the deployment setting or cannot distinguish among competing design explanations."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the four characteristics individually.",
+      "It provides no dataset names, quantitative margins, baselines beyond unspecified prior RoPE variants, or experimental conditions for the reported comparisons.",
+      "The abstract does not state whether the code and model weights were actually released."
+    ]
+  }
+}

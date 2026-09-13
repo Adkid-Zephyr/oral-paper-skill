@@ -1,0 +1,163 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31834",
+    "title": "Reasoning Elicitation in Language Models via Counterfactual Feedback",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31834"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "706b0ba9aa073de8182f20e9724857c032dfcbb46fa5f293a58d72efec9c5d18",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "cc5324d1cf52ed3af73c7db5e84658c6bf4414d5aabb76d50830a0ad1f865175",
+    "extracted_at": "2026-09-12T23:53:46.767821+00:00",
+    "session_id": "01a0980a-545a-7140-b4f3-d7dd57400775",
+    "usage": {
+      "input_tokens": 12642,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 699,
+      "reasoning_output_tokens": 141
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7d9105c309c23030fad126b4dbe4076e7f7649d4ce5b067cdf450d61d3528e71"
+    },
+    {
+      "id": "S2",
+      "sha256": "5c7552f43d7aa9f6ac4a9e471f2f758dd2a70ac8e6e980647a6ae844468d26e2"
+    },
+    {
+      "id": "S3",
+      "sha256": "a23b9c6668bc0a7598f529255240322cbec277b3e0d1d0bb9f1690b1a01685a9"
+    },
+    {
+      "id": "S4",
+      "sha256": "db28688666e44f9fe4c20046be7adbac2ef2c98cfa2a21cb81e0a5648caf53a9"
+    },
+    {
+      "id": "S5",
+      "sha256": "f6b91b4d998e296b7a93611aca5d27889ac6e02945c5516a011e00209ec21dc7"
+    },
+    {
+      "id": "S6",
+      "sha256": "a64a6aafa6aca1dca6b9de24c672f734b07194c128a1a3d7ed90ecea739fb07e"
+    },
+    {
+      "id": "S7",
+      "sha256": "e0b502e193d6381c509976a95fa8d86f797856b1dd14fcbe8163b533c98fa17d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31834",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Language models lack causal reasoning in counterfactual question answering.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Traditional metrics based only on factual accuracy provide a less complete view of language-model reasoning than metrics that also balance counterfactual accuracy.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "metric",
+        "claim": "The authors derive metrics balancing accuracy on factual and counterfactual questions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The authors propose several fine-tuning approaches intended to elicit better reasoning mechanisms under the proposed metrics.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical evaluation",
+        "claim": "The authors evaluate fine-tuned models across realistic scenarios and problems involving inductive and deductive reasoning.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their metrics offer a more complete reasoning assessment than traditional factual-only metrics.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames language-model reasoning as underdeveloped, especially for counterfactual causal question answering.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "aim",
+        "summary": "It states that the work aims to address this gap.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "measurement",
+        "summary": "It introduces metrics combining factual and counterfactual accuracy.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "intervention_and_evaluation",
+        "summary": "It proposes fine-tuning approaches and evaluates them in realistic, generalization-oriented reasoning scenarios.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the proposed fine-tuning approaches with explicitly defined metrics that combine factual and counterfactual performance.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Defining the target measurement before describing the intervention can make the intended claim-evidence relationship explicit.",
+        "application": "For a reasoning-method paper, introduce an evaluation metric that reflects the target capability, then state that training changes are assessed against it.",
+        "exception": "This is unsuitable when the target capability already has a well-established metric or when combining dimensions obscures important failure modes."
+      }
+    ],
+    "unknowns": [
+      "The abstract reports no numerical results, baselines, scenario details, or observed generalization outcomes.",
+      "It does not specify the exact metric formulas, fine-tuning procedures, model families, or evaluation problems.",
+      "The stated metric distinction is author-reported and does not independently establish priority or superiority."
+    ]
+  }
+}

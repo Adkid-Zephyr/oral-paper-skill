@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47179",
+    "title": "Fully Dynamic Euclidean Bi-Chromatic Matching in Sublinear Update Time",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47179"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "bb3327c887833acf7f1d7ddea3c5a8320676f68b2587de55a15104a5982fe188",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "97d2e33db0a7a9010ecd42f60fda4607d6b1b6908561d2558a1def1b6eec2533",
+    "extracted_at": "2026-09-13T00:07:38.405948+00:00",
+    "session_id": "01a09817-0491-7772-a889-8767d70f9b51",
+    "usage": {
+      "input_tokens": 12633,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 765,
+      "reasoning_output_tokens": 99
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e90c286059b0e0fd0b9a9e584c090221e4e88756ed7518a7883b01d39e69664b"
+    },
+    {
+      "id": "S2",
+      "sha256": "6cbf186df647b1d18fe958fdc61d503028e4f462bda068c89f3d25a80d33ab97"
+    },
+    {
+      "id": "S3",
+      "sha256": "733dd04db9e3c87f91d758f60dfec691b079c7519d21579a5990856cb0dec244"
+    },
+    {
+      "id": "S4",
+      "sha256": "63f5a51ce64beec25bae0c06da20699ecd9604e755308fc77125738c74ce36a0"
+    },
+    {
+      "id": "S5",
+      "sha256": "53ea9186e39ba05ae84bde90164bde367c5445103e2cef2a321a339edb266784"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47179",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Maintain a high-quality Euclidean bi-chromatic matching under point insertions and deletions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that no fully dynamic algorithm with sublinear update time was previously available.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A fully dynamic algorithm for Euclidean bi-chromatic matching with sublinear update time.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theoretical guarantee",
+        "claim": "For fixed ε>0, the algorithm provides an O(1/ε)-approximation with O(n^ε) update time.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Experiments apply the algorithm to monitoring Wasserstein distributional drift on real and synthetic datasets.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors identify their algorithm as the first fully dynamic algorithm for Euclidean bi-chromatic matching with sublinear update time.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report effective monitoring of Wasserstein distributional drift on real and synthetic datasets.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report runtime outperforming baseline approximations by orders of magnitude.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors state the approximation and update-time guarantee O(1/ε) and O(n^ε), respectively, for fixed ε>0.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Frames dynamic Euclidean bi-chromatic matching as maintaining a high-quality solution through insertions and deletions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "context",
+        "summary": "Places minimum-cost bi-chromatic matching in geometric optimization and notes its application to Wasserstein distance estimation.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method_and_guarantee",
+        "summary": "Introduces the claimed first fully dynamic sublinear-update algorithm and states its approximation and update-time bounds.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Reports drift-monitoring experiments on real and synthetic data, with runtime faster than baseline approximations by orders of magnitude.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a formal approximation/update-time guarantee with a concrete monitoring use case and a runtime comparison.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This pairing makes the algorithm's computational trade-off and practical relevance legible at abstract level.",
+        "application": "State the main resource guarantee alongside one task-specific use case and a directly relevant baseline comparison.",
+        "exception": "Avoid this compact pairing when the application, baseline, or evaluation conditions are not specified enough to interpret the comparison."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define n, detail constants or update-model assumptions, or characterize approximation cost precisely.",
+      "The datasets, baseline implementations, workload sizes, and quantitative meaning of “effective” and “orders of magnitude” are unspecified.",
+      "The abstract alone does not establish correctness, reproducibility, or priority beyond the authors' stated claims."
+    ]
+  }
+}

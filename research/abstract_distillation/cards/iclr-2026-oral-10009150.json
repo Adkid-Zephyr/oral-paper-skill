@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009150",
+    "title": "DiffusionNFT: Online Diffusion Reinforcement with Forward Process",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009150"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "00ab8bd9f4d68acaca50bd09448719ec1587aeb7c501bb9d3406d6c0ec98626c",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "9fca798cf5e7c7e23c69f2422b0a2697cca00281b5aa1069f7632d2c7f1cc4e4",
+    "extracted_at": "2026-09-13T00:02:26.695113+00:00",
+    "session_id": "01a09812-3c6d-7b81-813d-24bee32285b5",
+    "usage": {
+      "input_tokens": 12756,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 790,
+      "reasoning_output_tokens": 56
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e61477d6f0863cce10eb4d7936cf8b25f4254c586fcc426327715ba50a91cd8b"
+    },
+    {
+      "id": "S2",
+      "sha256": "4b4caca4b19c1b295544768ee5bcfcd546911ea4a991464f051220c381bb491a"
+    },
+    {
+      "id": "S3",
+      "sha256": "89ff4695ac4293d06f659bcd512038d65ac90e757a53fd74315f3e82ec60c9b3"
+    },
+    {
+      "id": "S4",
+      "sha256": "22e4ef8597e7d492fea7ca9e982f5b1dad327bf915d287c7c2cc77a46794f382"
+    },
+    {
+      "id": "S5",
+      "sha256": "dd0130bc9001abd040fa94a9e911909938a6b15f0e921bf4c1ba769ea26756ec"
+    },
+    {
+      "id": "S6",
+      "sha256": "4a9812b53860adebfb9392d95d3e6b4a74e0c3b964c89e0998695b3e71d0afea"
+    },
+    {
+      "id": "S7",
+      "sha256": "f810b3c7ae68e37845524702797a2f8bc190d30bea0d3d758c015ca2cd861c1f"
+    },
+    {
+      "id": "S8",
+      "sha256": "49690a96115cdb47db195ea14d81846e977bc496329ca281cd7b8f64ea525fe5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009150",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Online RL for diffusion models is difficult because their likelihoods are intractable.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing reverse-process approaches face solver restrictions, forward–reverse inconsistency, and complicated CFG integration.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DiffusionNFT performs online RL directly on the forward process using flow matching.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It contrasts positive and negative generations to derive an implicit policy-improvement direction within a supervised-learning objective.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "capability",
+        "claim": "The formulation supports arbitrary black-box solvers, avoids likelihood estimation, and uses clean images instead of sampling trajectories for policy optimization.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce Diffusion Negative-aware FineTuning as a new online RL paradigm for diffusion models based on forward-process optimization.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that DiffusionNFT is up to 25× more efficient than FlowGRPO in head-to-head comparisons and is CFG-free.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "On GenEval, the authors report an increase from 0.24 to 0.98 within 1k steps, whereas FlowGRPO reaches 0.95 after over 5k steps with additional CFG.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "Using multiple reward models, the authors report significant performance gains for SD3.5-Medium on every tested benchmark.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies intractable diffusion likelihoods as a barrier to online RL.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior-approach limitation",
+        "summary": "It describes reverse-process discretization methods as constrained by solver, consistency, and CFG issues.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "DiffusionNFT applies flow-matching-based RL on the forward process and uses positive–negative generation contrasts.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported advantages",
+        "summary": "The method is reported to work with black-box solvers, clean images, and no CFG or likelihood estimation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The abstract reports faster GenEval improvement and gains across benchmarks with multiple reward models.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links each design choice—forward-process training and positive–negative contrasts—to specific operational benefits such as solver flexibility and trajectory-free optimization.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact abstract can make a method’s rationale testable by mapping mechanisms to claimed benefits.",
+        "application": "When presenting a new training method, state the mechanism and the concrete constraint or cost it is intended to remove.",
+        "exception": "This framing is less suitable when the mechanism-to-benefit relationship is not directly stated or supported by reported evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide experimental protocols, datasets, reward-model details, compute budgets, or statistical uncertainty for the efficiency and benchmark claims.",
+      "The scope of the arbitrary-solver and clean-image requirements, and the exact meaning of CFG-free operation, is not specified."
+    ]
+  }
+}

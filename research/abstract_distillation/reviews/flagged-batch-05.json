@@ -1,0 +1,101 @@
+{
+  "reviewer_model":"gpt-6-astra",
+  "effort":"medium",
+  "review_type":"AI source checking: targeted synthesis-source flags",
+  "records":[
+    {
+      "paper_id":"iclr-2026-oral-10007429","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"S2 and S6 explicitly state equal total parameters, training compute and data resources; S8 separately attributes the additional-data trade-off resolution to reuse. The card reproduces both and leaves the reuse mechanism unknown.",
+      "synthesis_boundary":"Keep resource matching as author-reported. The abstract does not define whether data budget means distinct data or processed tokens, nor give the repeat schedule or complete compute accounting. Do not supply those definitions or declare an internally verified equal-resource experiment."
+    },
+    {
+      "paper_id":"iclr-2026-oral-10007312","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"S5 itself uses universally applicable to visual reasoning; the evidence field attributes this to the authors, and unknowns explicitly preserve missing meaning and measurement. This is not extraction strengthening.",
+      "synthesis_boundary":"Treat universality as author positioning over visual reasoning. S9 reports five model scales and varied data/adaptation setups, not a proof covering every visual task or model."
+    },
+    {
+      "paper_id":"iclr-2026-oral-10007185","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"S6 explicitly concerns predicted functions; S7 and S8 report function/property and synthetic-accessibility comparisons. The card retains prediction and compatibility in its method claims and does not assert that generated molecules were physically synthesized or clinically successful.",
+      "synthesis_boundary":"Retain 430 FDA-approved drugs, 122 out-of-distribution medicines, automated-modular-synthesis-compatible blocks, and the 3B-versus-seven-method comparison as reported scope. Neither property-score gains nor the authors' fallen-angels language establishes laboratory synthesis, measured biological efficacy, or successful clinical rescue."
+    },
+    {
+      "paper_id":"iclr-2026-oral-10006584","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"The card preserves +26.6 and +10.7 without adding percent or percentage-point units, matching S5. Its separate absolute benchmark percentages also match S5.",
+      "synthesis_boundary":"Do not convert the two gains into relative percentages or percentage points, infer baseline scores, or equate the benchmark-specific gains. Baseline identities and exact metric definitions are unspecified."
+    },
+    {
+      "paper_id":"iclr-2026-oral-10007574","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"The shared-common-randomness reduction to a deterministic transport plan is stated directly in S3 and faithfully attributed in the card; its surprising wording is not evidence of an extraction mistake.",
+      "synthesis_boundary":"Preserve the shared-randomness and one-shot setting for the Bernoulli/Hamming statement, and the separate asymptotic Gaussian/MSE setting. Do not infer that shared randomness is unnecessary or that arbitrary stochastic coding reduces to deterministic transport without conditions."
+    },
+    {
+      "paper_id":"iclr-2026-oral-10007661","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"The card retains S6's low-temperature Plackett-Luce impossibility and S7-S8's positive statements. The supplied abstract does not explain all conditions reconciling these claims; the reviewer cannot invent the missing restriction.",
+      "synthesis_boundary":"State the negative and positive regimes separately. In particular, removing the total-variation assumption in full-information time-average feedback must not be generalized to every ranking temperature or mechanism. The precise reconciliation remains unknown pending the full theorem."
+    },
+    {
+      "paper_id":"iclr-2026-oral-10007677","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"S3 explicitly states both video-only end-to-end training and support for action/language/image-goal conditioning. The card tracks those statements without adding a training-label source or adaptation procedure.",
+      "synthesis_boundary":"Keep training input and supported conditioning interfaces as distinct claims. The abstract does not say how each conditioning interface is learned or connected, and does not establish that every conditional downstream setup uses no additional data."
+    },
+    {
+      "paper_id":"iclr-2026-oral-10007724","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"The card's concrete geometric mechanisms are supported by S6 and S7; it explicitly leaves the source of geometric priors and the unclear S5 mechanism unknown. The malformed S5 sentence is not silently repaired into a new technical claim.",
+      "synthesis_boundary":"Describe CTA alignment and metric-depth recovery only at the stated level. Do not infer where priors come from, an independently isolated scene-perception gain, or absence of all geometric supervision from the no-external-3D-input claim."
+    },
+    {
+      "paper_id":"iclr-2026-oral-10008050","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"S7 directly links the design to noise mitigation and unseen-user generalization through prototype transfer. It supports the lesson even without a separate evidence-list entry. S3/S5 support the rubric-diversity motivation. The card's unknowns explicitly say component-isolating ablations are not reported.",
+      "synthesis_boundary":"Use this as an author-stated design rationale, not an ablation-established one-to-one causal decomposition. Preserve the unspecified metric/relative-versus-absolute basis of the approximately 2.31% and additional 3% results."
+    },
+    {
+      "paper_id":"iclr-2026-oral-10008516","first_pass_status":"minor",
+      "findings":[
+        {
+          "field":"lessons[0].source_observation.claim","source_ids":["S2","S3","S4","S5","S6"],
+          "issue":"The abstract identifies noise sensitivity and differential token importance, but describes its two innovations as synergistic. It does not map those two limitations one-to-one to the two components. The component roles in the card are otherwise accurate, so removing 'each ... corresponding' resolves a local overstatement rather than replacing the whole lesson.",
+          "severity":"minor",
+          "correction":"Report the joint motivation and the two stated component roles without asserting an exclusive one-to-one match.",
+          "replacement_value":"The abstract motivates TI-DPO with noise sensitivity and inadequate token-importance modeling, then assigns complementary roles to hybrid weighting for accurate, robust importance scores and triplet loss for preferred-versus-non-preferred output guidance."
+        }
+      ],"final_disposition":"requires_correction",
+      "synthesis_boundary":"Components have stated roles but are described as synergistic; do not present their effects as independently isolated by ablations."
+    },
+    {
+      "paper_id":"iclr-2026-oral-10008175","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"The card reproduces S4's stated up-to-97% GSM8K and 99% MMLU instance claim and half-step qualifier. It does not replace the denominator with final-correct instances or add another evaluation denominator.",
+      "synthesis_boundary":"The exact sampled-instance denominator and conditions are absent. Attribute the statement to the authors and do not turn it into verified overall benchmark accuracy, final-answer agreement, or a claim about all instances. Preserve decoding-step reduction separately from wall-clock speedup."
+    },
+    {
+      "paper_id":"iclr-2026-oral-10007895","first_pass_status":"material_error",
+      "findings":[
+        {
+          "field":"stated_novelty.claim","source_ids":["S5","S6"],
+          "issue":"The card makes the training environment itself a cost-effective, privacy-preserving alternative competitive with proprietary LLMs. S5 distinguishes MedAgentGym as the training ground from Med-Copilot, the trained agent with reported gains and the relevant LLM comparator. Transferring these attributes to the environment changes the subject of the main comparison.",
+          "severity":"material",
+          "correction":"Limit the environment's distinction to the integrated execution, benchmarking and training resources supported by S6; retain model competitiveness separately.",
+          "replacement_value":"The authors present MedAgentGym as an integrated platform with a unified execution environment, a comprehensive benchmark, and accessible, extensible training resources for biomedical coding assistants."
+        },
+        {
+          "field":"author_reported_evidence[2].claim","source_ids":["S5"],
+          "issue":"'The resulting system' is ambiguous beside the mistaken environment-level comparison. Name the trained agent to preserve the subject of S5 and keep cost/privacy language as positioning.",
+          "severity":"minor",
+          "correction":"Name Med-Copilot as the compared model.",
+          "replacement_value":"The authors position Med-Copilot, trained using MedAgentGym, as a cost-effective, privacy-preserving alternative competitive with gpt-4o."
+        }
+      ],"final_disposition":"requires_correction",
+      "synthesis_boundary":"Keep +43.02% offline and +45.28% online gains paired with Med-Copilot; relative versus absolute units and baseline remain unspecified. Do not infer a formal privacy guarantee or independently measured cost advantage from positioning language."
+    }
+  ],
+  "summary":{
+    "targeted_records_checked":12,
+    "first_pass_pass":10,
+    "first_pass_minor":1,
+    "first_pass_material_error":1,
+    "material_findings":1,
+    "minor_findings":2,
+    "requires_correction":2,
+    "scope":"Targeted resolution of supplied synthesis flags against all original units and current card fields in flagged-source-review-batch-05/packet-01.json. Suspicions were not automatically accepted: ten flagged cards faithfully report source claims or preserve ambiguity. Each pass records the boundary synthesis must retain. TI-DPO has a local overstatement of component correspondence; MedAgentGym materially misattributes a model comparison to its training environment. No inspected synthesis text beyond the supplied flags was assumed to contain an error, so no speculative synthesis-only correction is issued.",
+    "limitations":"These are targeted first-check outcomes, not random-sample counts or complete semantic-validation coverage. Reading all fields to resolve the flags does not convert this packet into an independent full-card audit. No full papers, live experiments, or repository availability were verified. No cards were edited and no additional model calls were made."
+  }
+}

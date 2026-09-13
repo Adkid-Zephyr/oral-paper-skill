@@ -1,0 +1,214 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-119280",
+    "title": "Exploring Diffusion Transformer Designs via Grafting",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/119280"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "46868c6998367420f4fa9dd21494492e73404fd3382fa59afbfc4a66201ccc10",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "e0b743c5e2315294d4d3e91ff2d9750a0bd4f20e0c8d523905c48d05ae2b5817",
+    "extracted_at": "2026-09-13T00:23:02.292047+00:00",
+    "session_id": "01a09825-1853-7961-95f3-aa44569d6c01",
+    "usage": {
+      "input_tokens": 12926,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 826,
+      "reasoning_output_tokens": 71
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9301c32950cd5c348451ed7f53c375a54bbe581e487d98d4bc69a77348ad86ec"
+    },
+    {
+      "id": "S2",
+      "sha256": "7a669b3c8c59139196ed21ce7c51f007bb5f4d556e9d7f23331b2646b3a497d5"
+    },
+    {
+      "id": "S3",
+      "sha256": "a6207119ee3991c0417325b4eeb7da62f42d7101bf969137b4800fa3da79b522"
+    },
+    {
+      "id": "S4",
+      "sha256": "45e4647257bfec28538adcf33c3b27a0eae9e30bbb0e8765a922ce717f9dba86"
+    },
+    {
+      "id": "S5",
+      "sha256": "40b45a0b04b823f08ae8aaf047bf2f37023e57ec80037d8314fa68cb2fb85903"
+    },
+    {
+      "id": "S6",
+      "sha256": "00936cd4146e092b0a5ff8dd461e77ede85dac363a947941f18152de5f05fba8"
+    },
+    {
+      "id": "S7",
+      "sha256": "ebb4fa7e33f133a1ca65a352c291b0ebce179e7361112ad88e9eecb15dfdbccc"
+    },
+    {
+      "id": "S8",
+      "sha256": "6808d2f6cc4b23a66e7da8ff61fa2e141c96aa5ed67cbec9894aca328448bdcf"
+    },
+    {
+      "id": "S9",
+      "sha256": "7135e45e5e8d081702575d94ae51332346ca7ad585f2f30f8ee2e66245769cf3"
+    },
+    {
+      "id": "S10",
+      "sha256": "8f88f1543c351f15a95503c6141c29d37235e958ba59bd8e091c40e04773c959"
+    },
+    {
+      "id": "S11",
+      "sha256": "6302c0a9a66286950d4be0e6477209177a2c2a14d12e10eabc8eb8bb254312a9"
+    },
+    {
+      "id": "S12",
+      "sha256": "7a99a58bf3428815fbe86c06c2d89d7fe580244f04925c16fc5a7c4bcba47113"
+    },
+    {
+      "id": "S13",
+      "sha256": "34ae25e3c640c621e938a3463ce982eb38869250244795cfd6400a201da37cb0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-119280",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how choices of operators and configurations affect diffusion-model architecture quality.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Architectural investigation is constrained because assessing these choices requires costly pretraining.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces grafting, an approach for editing pretrained diffusion transformers to materialize new architectures under small compute budgets.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "testbed and designs",
+        "claim": "Builds a DiT-XL/2-based testbed and develops hybrid designs by replacing attention and MLP components with alternative operators or configurations.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "architecture restructuring",
+        "claim": "Demonstrates grafting for restructuring sequential transformer blocks into parallel blocks.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present grafting as a way to explore new diffusion-model designs using pretrained DiTs, spanning operator replacement through architecture restructuring.",
+      "source_ids": [
+        "S4",
+        "S12"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that many hybrid designs reach FID 2.38–2.64 versus 2.27 for DiT-XL/2, using less than 2% of pretraining compute.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that grafting PixArt-Σ produces a 1.43× speedup with less than a 2% drop in GenEval score.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that parallel-block restructuring halves model depth and achieves FID 2.77, better than other models of comparable depth.",
+        "source_ids": [
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Architecture choices matter, but evaluating them through pretraining is expensive.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "research question and method",
+        "summary": "The paper asks whether pretrained models can support architecture study and proposes grafting to edit pretrained DiTs.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "design exploration",
+        "summary": "Using activation and attention-locality analysis, it constructs a DiT-XL/2 testbed and explores hybrid operator and MLP variants.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "applications and case study",
+        "summary": "It applies grafting to PixArt-Σ for speed and restructures DiT-XL/2 into parallel blocks for reduced depth.",
+        "source_ids": [
+          "S9",
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a broad design-space method with concrete edits, compute budgets, quality metrics, and a speed result.",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "A method claim becomes more actionable when the abstract specifies the editable units, resource cost, and measured trade-offs.",
+        "application": "When presenting an architecture-exploration technique, enumerate representative edits and report quality alongside compute or latency changes.",
+        "exception": "This framing is less suitable when the work is purely theoretical or when comparable resource and evaluation measures are unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, training protocols, evaluation settings, statistical variation, or the exact grafting procedure.",
+      "The conditions behind the reported FID, GenEval, speedup, and comparable-depth comparisons are not given.",
+      "The abstract does not identify which hybrid designs correspond to each reported FID value."
+    ]
+  }
+}

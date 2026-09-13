@@ -1,0 +1,77 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "records": [
+    {
+      "paper_id": "iclr-2025-oral-31754",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31891",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31932",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31780",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "narrative_sequence[4].summary",
+          "source_ids": ["S9"],
+          "issue": "The source promises future code/model availability; the card changes this into current public availability. Abstract-only extraction cannot establish that the promised release occurred.",
+          "severity": "material_error",
+          "correction": "The authors state that code and models will be publicly available."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31791",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "narrative_sequence[3].summary",
+          "source_ids": ["S6", "S7", "S8"],
+          "issue": "The summary drops the source's instances-of qualifier for disappearing emergent behavior. The evidence field retains it, so this is a local scope precision error rather than a uniformly overstated card.",
+          "severity": "minor",
+          "correction": "It proposes matched task-relevant fine-tuning before evaluation and reports that instances of emergent behavior disappear gradually as models train on the test task."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2025-oral-32126",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "contributions[0].source_ids",
+          "source_ids": ["S3", "S5", "S6", "S8"],
+          "issue": "The cited S5/S6 support retrieval and embedding but do not identify the graph-based framework or state integration into it. Those clauses are supported elsewhere in this abstract.",
+          "severity": "minor",
+          "correction": "Replace source_ids with [\"S3\", \"S5\", \"S6\", \"S8\"]."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    }
+  ],
+  "summary": {
+    "reviewed": 6,
+    "first_pass_pass": 3,
+    "first_pass_minor": 2,
+    "first_pass_material_error": 1,
+    "material_findings": 1,
+    "minor_findings": 2,
+    "requires_correction": 3,
+    "scope": "Read all six supplied originals and all extraction fields from the ICLR 2025 random audit stratum, selected before outputs with seed 20260913 and excluding pilot records. Counts are first-pass results. One future-release promise was converted into current availability; other findings are local scope and locator precision. No card or gate edits. This AI source audit does not validate scientific results, lesson effectiveness, or unaudited cards."
+  }
+}

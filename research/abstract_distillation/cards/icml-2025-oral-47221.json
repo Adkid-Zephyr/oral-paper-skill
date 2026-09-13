@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47221",
+    "title": "ConceptAttention: Diffusion Transformers Learn Highly Interpretable Features",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47221"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e0166b27fe0365f91426186c95b33d277ac590573e4872a850c4504088549d7d",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "4097b0070f14d2b51cf0eb9486eebc0b5edfe2721f219bd74b2bce49b27863b5",
+    "extracted_at": "2026-09-13T00:09:16.513837+00:00",
+    "session_id": "01a09818-77ba-79d0-b096-54a2cea75192",
+    "usage": {
+      "input_tokens": 12656,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 839,
+      "reasoning_output_tokens": 135
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "74f63254f30b75f80718a47be727efb233a9d28a37e8159bbd15b98398a79f7c"
+    },
+    {
+      "id": "S2",
+      "sha256": "d0987e7191a53f7e4097b2ffbc155a85107f759dc068ec4440aa4b038112b5a9"
+    },
+    {
+      "id": "S3",
+      "sha256": "abf65cab41fe7fd8189216678232586ca4cbad7e04f486dd014d6eca5ad806ae"
+    },
+    {
+      "id": "S4",
+      "sha256": "18848679c293bed1c2c5d065740e62314e0f0944c34ddb4b855c25d3b81abe07"
+    },
+    {
+      "id": "S5",
+      "sha256": "a7baadd7b089dfa510ef4f211ca1468ccfbf31000ec80bdb69ce8d863a2132d8"
+    },
+    {
+      "id": "S6",
+      "sha256": "b23a374328039d8e8a72b83935ee235ed72df3d20cd2820b38515eb9cea35d99"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47221",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks whether multimodal diffusion transformers exhibit representation properties that improve interpretability.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "ConceptAttention repurposes diffusion-transformer attention layers, without additional training, to produce contextualized concept embeddings and saliency maps locating textual concepts in images.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report evidence that multimodal diffusion-transformer representations transfer to vision tasks such as segmentation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "generalization",
+        "claim": "The method is reported to work with popular image models and to generalize to video generation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish ConceptAttention by performing linear projections in the output space of diffusion-transformer attention layers and describe their work as the first evidence of strong transferability from multimodal DiTs to segmentation.",
+      "source_ids": [
+        "S3",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report significantly sharper saliency maps from output-space linear projections than from commonly used cross-attention maps.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report state-of-the-art zero-shot image-segmentation performance, outperforming 15 other zero-shot interpretability methods on ImageNet-Segmentation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that ConceptAttention generalizes seamlessly to video generation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "research question",
+        "summary": "The paper investigates whether multimodal diffusion-transformer representations have distinctive properties that enhance interpretability.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "ConceptAttention uses existing diffusion-transformer attention parameters to create contextualized concept embeddings and textual-concept saliency maps without additional training.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "key distinction",
+        "summary": "Output-space linear projections are reported to yield sharper maps than standard cross-attention maps.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "results and scope",
+        "summary": "The method is reported to achieve strong zero-shot segmentation results and extend across image models and video generation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "broader claim",
+        "summary": "The authors frame the findings as first evidence of transfer from multimodal DiT representations to segmentation.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific architectural operation—linear projection in the attention output space—to sharper saliency maps, and contrasts it with cross-attention maps.",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "interpretation": "A concrete mechanism-to-observation contrast can make an interpretability contribution more informative than naming a method alone.",
+        "application": "When proposing an interpretability technique, identify the exact representation or transformation used and compare its output with a clearly named baseline visualization.",
+        "exception": "This framing is unsuitable when no meaningful baseline or observable difference can be defined."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide segmentation metrics, statistical details, or experimental conditions supporting the reported performance claims.",
+      "The scope and evidence for generalization to video generation are not specified.",
+      "The abstract does not identify which popular image models were tested."
+    ]
+  }
+}

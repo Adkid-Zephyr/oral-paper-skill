@@ -1,0 +1,163 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008999",
+    "title": "TROLL: Trust Regions Improve Reinforcement Learning for Large Language Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008999"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3c63814bbd68c718be25962b65c6fb44ae56b4af95ce305769360d65c594bcbf",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "8b80bda37011074d0f0365a955a69b18daeaa49fc7af9c792f14f5e3dc244246",
+    "extracted_at": "2026-09-13T00:02:11.633194+00:00",
+    "session_id": "01a09812-096b-7f80-97bb-38167d173699",
+    "usage": {
+      "input_tokens": 12686,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 702,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "303d7c5e07cd027d099d2fafa37b83babb729aa9bfbf6b3b88c8761eb2eb938a"
+    },
+    {
+      "id": "S2",
+      "sha256": "a61c84b6e379b47eb3650a8aed4d67bedf357d88f7f05ef9d0271fa8e1788c8c"
+    },
+    {
+      "id": "S3",
+      "sha256": "4eced830e6341408561a82babc41e8d172d3b318f18ed16c29fb3b8c4387ff13"
+    },
+    {
+      "id": "S4",
+      "sha256": "5ddb13170f31a8e1437dab041d2d5bef205ce2f385795c201200721168f34693"
+    },
+    {
+      "id": "S5",
+      "sha256": "7a64b1fe9cd0663b7f938737e469cba2bcc339010d1eb7dd6407a645505997a9"
+    },
+    {
+      "id": "S6",
+      "sha256": "28a2e8a4093c4fa519708eee0245067fc908b29c7ce7e6e25ff32f3defb5cb7f"
+    },
+    {
+      "id": "S7",
+      "sha256": "e067adce904c71fe5cbed196bf054f45566f2a4244f2fe1bb1e359abedbae1da"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008999",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reward-based LLM fine-tuning commonly relies on PPO-like clipping, whose approximation of KL trust regions can produce unstable updates and suboptimal performance.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The clipping mechanism itself had remained largely unchanged despite work on advantage estimation and normalization.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces a discrete differentiable trust-region projection that imposes token-level KL constraints and replaces PPO-like clipping during training.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "type": "system design",
+        "claim": "Applies the projection to a sparse subset of important token logits to balance computational cost and projection effectiveness, without changing inference behavior.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present the discrete differentiable trust-region projection as a novel replacement for the clip objective.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that TROLL consistently outperforms PPO-like clipping in training speed, stability, and final success rates across mathematical reasoning and code generation, multiple model families, and advantage-estimation methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "PPO-like clipping is described as the standard approach for reward-based LLM fine-tuning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Prior improvements targeted advantage estimation and normalization, while clipping remained unchanged.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "The abstract characterizes clipping as a crude trust-region approximation associated with unstable updates and suboptimal performance.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method_and_result",
+        "summary": "TROLL replaces clipping with sparse token-logit trust-region projection and is reported to improve speed, stability, and final success rates across stated settings.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a training-objective change with explicit computational and deployment constraints: sparse projection controls cost, while inference behavior is unchanged.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A method claim becomes more informative when its mechanism is connected to practical constraints and boundary conditions.",
+        "application": "When presenting a training intervention, state which computation is modified, how its cost is controlled, and whether deployment-time behavior changes.",
+        "exception": "This framing is less useful when inference behavior or computational overhead is itself the central evaluation target and requires detailed quantitative analysis."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative improvements, dataset or model counts, variance measures, or definitions of training speed, stability, and success rates.",
+      "The stated cross-setting comparison lacks details about baselines, budgets, statistical testing, and whether all claims hold uniformly across each setting."
+    ]
+  }
+}

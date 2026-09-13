@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71150",
+    "title": "Stabilizing the Q-Gradient Field for Policy Smoothness in Actor-Critic Methods",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71150"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8d5e001e1f63d526a70ed38f6cbea4e9aa199067299c5d6055afc0ce12536c34",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "2726fb28bbb0a011e95f7f6b6b13f8b8ef55c2d651ee4c64787b14c508996c4b",
+    "extracted_at": "2026-09-13T00:16:05.224754+00:00",
+    "session_id": "01a0981e-bbc5-7d42-8120-145752f23c56",
+    "usage": {
+      "input_tokens": 12715,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 800,
+      "reasoning_output_tokens": 65
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "68beb6310e26ae9befe4b049fcaebe95b16cd3dcbf14e078e8a556dabf2c17c5"
+    },
+    {
+      "id": "S2",
+      "sha256": "c4d2f42825a195eca4210dfecd03c0949ca26ee7262d2057c2e6201dab7a61d8"
+    },
+    {
+      "id": "S3",
+      "sha256": "c05754f2c559dad35c13c2f15e37fbbb2b3d52c28ddc9876e82d1b6efb4f2ff1"
+    },
+    {
+      "id": "S4",
+      "sha256": "07eab71a9e1a63c60a4f65926efaf9b3500b9b37fb84c6b8e089fadaea671b9e"
+    },
+    {
+      "id": "S5",
+      "sha256": "3d923848385b83f95fb7818a95b19ab7f206d1b955c118b77e0ea4b70f4424f9"
+    },
+    {
+      "id": "S6",
+      "sha256": "20d5052465c2e0b086e98fc6434ab774e8bc5f4f79efe55fddf2523aa1c50906"
+    },
+    {
+      "id": "S7",
+      "sha256": "ba0815e391ef2328745ec1362e89290b03d13501c93110b4d6d0e5ee170962c6"
+    },
+    {
+      "id": "S8",
+      "sha256": "3bb0bc36491344177a247ef11ca030550103c6ad12ed6220ec92071c4c39da1a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71150",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Continuous actor-critic methods can learn oscillatory, high-frequency policies unsuitable for physical deployment.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing smoothness approaches regularize policy outputs, which the authors argue addresses the symptom rather than the underlying cause.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "The authors establish that policy non-smoothness is governed by the critic’s differential geometry and bound optimal-policy sensitivity by a ratio of Q-function mixed-partial derivative to action-space curvature.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "They introduce PAVE, a critic-centric regularizer that stabilizes the critic-induced action-gradient field by reducing Q-gradient volatility while preserving local curvature.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "They report policy smoothness comparable to policy-side regularization with competitive task performance, without modifying the actor.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work’s stated distinction is to address policy smoothness through critic geometry and Q-gradient-field stabilization rather than direct actor-output regularization.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that PAVE achieves smoothness comparable to policy-side smoothness regularization methods.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that PAVE maintains competitive task performance without modifying the actor.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Continuous actor-critic policies may oscillate too rapidly for physical deployment.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "existing approach and critique",
+        "summary": "Prior approaches directly regularize policy outputs; the authors characterize this as treating the symptom rather than the cause.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "theoretical account",
+        "summary": "The authors link non-smoothness to critic differential geometry and derive a sensitivity bound based on Q-gradient noise sensitivity versus action-space curvature.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "proposed method",
+        "summary": "PAVE stabilizes the critic’s induced action-gradient field by minimizing Q-gradient volatility while preserving local curvature.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "PAVE is reported to match policy-side smoothness comparably while retaining competitive task performance and leaving the actor unchanged.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The authors bound optimal-policy sensitivity by the ratio of the Q-function's mixed-partial derivative (described as noise sensitivity) to its action-space curvature (described as signal distinctness), and describe PAVE as minimizing Q-gradient volatility while preserving local curvature.",
+          "source_ids": [
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A mechanism-linked decomposition can make a proposed intervention more diagnostically motivated than directly regularizing the final symptom.",
+        "application": "For a related learning problem, define an interpretable sensitivity-to-signal ratio and regularize the upstream field responsible for it.",
+        "exception": "This move may be unsuitable when the proposed mechanism cannot be estimated reliably or when preserving curvature conflicts with the task objective."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not state the assumptions, domain, or exact conditions of the sensitivity bound.",
+      "Experimental environments, baselines, metrics, quantitative results, and statistical details are unspecified.",
+      "The abstract does not establish priority or independently verify the claimed smoothness or performance comparisons."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "lessons[0].source_observation.claim",
+      "before": "The abstract connects the target behavior to a ratio of measurable quantities—Q-gradient noise sensitivity and action-space curvature—then designs regularization around those quantities.",
+      "after": "The authors bound optimal-policy sensitivity by the ratio of the Q-function's mixed-partial derivative (described as noise sensitivity) to its action-space curvature (described as signal distinctness), and describe PAVE as minimizing Q-gradient volatility while preserving local curvature.",
+      "review_file": "reviews/flagged-batch-12.json",
+      "review_sha256": "718c9a79d0fb5cb065df6f7a77df0d9188b9e0f6d894983afde0d0a26345722b",
+      "applied_at": "2026-09-13T00:42:27.388231+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

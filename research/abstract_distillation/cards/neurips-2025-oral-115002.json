@@ -1,0 +1,164 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-115002",
+    "title": "SAVVY: Spatial Awareness via Audio-Visual LLMs through Seeing and Hearing",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/115002"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "075c1221aef601ce48ecd5ae17b6c5f469016ec24a379adff5ed8356bb88fc01",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "8e270788d5ec2efc975cc08ce1614fdcb4654d8b8df68d77c11845a0f4dec328",
+    "extracted_at": "2026-09-13T00:20:29.460158+00:00",
+    "session_id": "01a09822-c0dc-7ff1-8356-f446f5c260dd",
+    "usage": {
+      "input_tokens": 12758,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 784,
+      "reasoning_output_tokens": 109
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "54fca6343d66c7b8a527ac50c99489062b41ca2cce6e8b02e6a9e8976481ce41"
+    },
+    {
+      "id": "S2",
+      "sha256": "0ba8275e0656496899dff18f5bb68f7204557d3ea34d459e8418e80f123b885b"
+    },
+    {
+      "id": "S3",
+      "sha256": "e480f84389b8ff8e1ae8063a9e10464f63ca400e1902f04fd00b570143a5477d"
+    },
+    {
+      "id": "S4",
+      "sha256": "f67ed5bdacd4ea1179ceff371d62120055a8afa7c9fdc106df94edf56c1c4ff7"
+    },
+    {
+      "id": "S5",
+      "sha256": "3bac5130bdded7a4155698ebd70e439dff98c3f7bcdf0342723357073dd29613"
+    },
+    {
+      "id": "S6",
+      "sha256": "74617772ea9eac85e1815e87cd4fb67cb03e2c53514b6c27cb1fafb191451d98"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-115002",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable 3D spatial reasoning in dynamic audio-visual environments.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing AV-LLMs and benchmarks largely focus on static or 2D scenes, leaving dynamic 3D spatial reasoning largely unexplored.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "Introduces SAVVY-Bench, described as the first benchmark for dynamic-scene 3D spatial reasoning with synchronized spatial audio.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes SAVVY, a training-free two-stage pipeline that estimates egocentric spatial tracks and builds a unified dynamic global map.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Obtains final answers by transforming coordinates to align the global map with the queried viewpoint.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish SAVVY-Bench as the first benchmark of its stated type and SAVVY as a novel training-free reasoning pipeline.",
+      "source_ids": [
+        "S2",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that empirical evaluation shows SAVVY substantially enhances the performance of state-of-the-art AV-LLMs.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation_and_gap",
+        "summary": "Dynamic 3D spatial reasoning with audio-visual input is presented as important but underexplored by current AV-LLMs and benchmarks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "benchmark",
+        "summary": "SAVVY-Bench introduces thousands of curated QA pairs covering directional and distance relations for static and moving objects, with temporal grounding, 3D localization, and multimodal annotation requirements.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "reasoning_pipeline",
+        "summary": "SAVVY first tracks query-relevant object trajectories from visual and spatial-audio cues, then aggregates them into a unified dynamic global map.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "answering_and_result",
+        "summary": "A viewpoint-aligned coordinate transformation produces the final answer; the authors report substantial gains over state-of-the-art AV-LLMs.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper aligns benchmark demands with its proposed reasoning stages: fine-grained temporal and 3D relational questions are addressed through trajectory estimation, map construction, and viewpoint transformation.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This suggests a useful claim–evidence pattern: make intermediate representations correspond explicitly to the task’s hardest requirements.",
+        "application": "For a multimodal reasoning paper, define evaluation questions around the required relations and expose intermediate representations that encode those relations.",
+        "exception": "This move may be unsuitable when intermediate representations are unavailable, too costly, or irrelevant to the target task."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no benchmark name-level statistics, train/test protocol, metric values, baseline breakdown, or ablation results.",
+      "The reported improvement and claims about a new standard are not quantified in the supplied units."
+    ]
+  }
+}

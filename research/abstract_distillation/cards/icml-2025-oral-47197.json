@@ -1,0 +1,153 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47197",
+    "title": "A Generalization Theory for Zero-Shot Prediction",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47197"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "61a7b05abce3d7cc939868bee823f1f935a98ffcb3315f94973fb418b80f3c52",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "6c956629822419d8cf830b0d1e274b81a09d0641c83033b97ca6411aebd74b39",
+    "extracted_at": "2026-09-13T00:08:19.193292+00:00",
+    "session_id": "01a09817-aa25-75c3-8b8c-f27f2d8b6feb",
+    "usage": {
+      "input_tokens": 12544,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 678,
+      "reasoning_output_tokens": 139
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4cbfdcd680823b54dd831462207e3939b1fdbbbc2993ea08b48875166a29536f"
+    },
+    {
+      "id": "S2",
+      "sha256": "be02f3dde6e131f097a15bb851171197dbf4476c8c00b0d59f1706adb956610b"
+    },
+    {
+      "id": "S3",
+      "sha256": "6c4118f9d79b01019b014b78bf4f7e4fad91b58cb99140bd9684de3d89e43381"
+    },
+    {
+      "id": "S4",
+      "sha256": "8f8e4edc08df827dae00ec9f4fdee355057ffd554f290fd997aee220c6387df7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47197",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Understand zero-shot prediction: using pretrained representations to predict on downstream tasks without labeled data.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract states that this approach requires a theoretical framework for better understanding.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Presents a theoretical framework for zero-shot prediction.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theoretical analysis",
+        "claim": "Identifies the target quantities learned directly or incidentally, and the conditional-independence relationships enabling generalization.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their framework by jointly characterizing zero-shot prediction targets and the conditional independences linked to its generalization ability.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report identifying the target quantities that zero-shot prediction aims to learn or learns in passing.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report identifying key conditional-independence relationships that enable zero-shot prediction's generalization ability.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Modern generalization uses task-agnostic foundation models, often pretrained with self-supervised and multimodal contrastive learning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "setting",
+        "summary": "The resulting representations support downstream prediction when no labeled data are available.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper presents a theoretical framework for understanding this zero-shot prediction paradigm.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "The framework characterizes learned target quantities and conditional-independence relationships associated with generalization.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a proposed theoretical framework to explicit target quantities and conditional-independence relationships.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A compact theory claim becomes more informative when it names both what is learned and the structural conditions supporting generalization.",
+        "application": "When presenting a theory, state the modeled target quantities alongside the assumptions or dependencies that connect them to the claimed behavior.",
+        "exception": "This framing may be unsuitable for work whose contribution is primarily algorithmic or empirical and does not posit identifiable structural quantities or assumptions."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no formal definitions, theorem statements, proof conditions, or quantitative evaluation details."
+    ]
+  }
+}

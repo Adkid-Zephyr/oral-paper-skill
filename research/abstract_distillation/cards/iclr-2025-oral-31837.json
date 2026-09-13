@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31837",
+    "title": "Learning Randomized Algorithms with Transformers",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31837"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "01e7d0d08951bc8cd18b952682d86d0e1ea836e565212af4f6246b907184cec0",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "b4c24deb6d33c6f5a8bbf60eff60f540c98d1ad200a1972182c9664d74c5e843",
+    "extracted_at": "2026-09-12T23:53:55.665170+00:00",
+    "session_id": "01a0980a-73bf-7c11-a39c-df1ecdab80dc",
+    "usage": {
+      "input_tokens": 12723,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 794,
+      "reasoning_output_tokens": 99
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "489f782866145bcaa131c5e1e508921796059d0047eda42ff6c7aef718cfd6c6"
+    },
+    {
+      "id": "S2",
+      "sha256": "fb6ceb568d4d224da2968faee3f81183552bff9f0616d5c4621edf08649a6d53"
+    },
+    {
+      "id": "S3",
+      "sha256": "7119576493a809c57e824cbcffe16efb64be5e70e896a40f35e80b9a7e3cb01f"
+    },
+    {
+      "id": "S4",
+      "sha256": "5873e61bff39e7c00908ecef9faa5014444e692cdbe1d90469328f67c69b89d7"
+    },
+    {
+      "id": "S5",
+      "sha256": "275b4d9b2d955652609506817ad520ac218280f76ea4381279bee339c43a06be"
+    },
+    {
+      "id": "S6",
+      "sha256": "994e102d8e3d0d746d5a091eeaa0c14f5ce270d1772b55b874cb6b3663aca25d"
+    },
+    {
+      "id": "S7",
+      "sha256": "6d6b429d36b660b7c03c351d55e51afb33c0234325d3053742523bb4c4cc4599"
+    },
+    {
+      "id": "S8",
+      "sha256": "7df8f754fdf3249e05a295d2159c9667c5945b393a791537f74291c580a8fbf7"
+    },
+    {
+      "id": "S9",
+      "sha256": "aea1f1eb240039d42ee2e63c8a71477d6b874b3c1c260f5db2c4911199e461f5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31837",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how to endow transformer models with useful algorithmic randomization through learning.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that it had not previously been demonstrated that randomized algorithms could be instilled in transformers in a purely data- and objective-driven way.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A learning-based approach for transformer parameters to exploit model-provided randomness, using standard optimization methods such as gradient descent and evolutionary strategies.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      },
+      {
+        "type": "theory/analysis",
+        "claim": "An analysis of adversarial objectives where randomized algorithms offer a distinct advantage over deterministic algorithms.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical study",
+        "claim": "An investigation across associative recall, graph coloring, and grid-world exploration tasks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present their work as the first demonstration that transformers can learn randomized algorithms in a purely data- and objective-driven manner.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report increased robustness against oblivious adversaries after learning randomization.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "Across the studied tasks, the authors report performance improvements attributed to the inherently random computation and predictions of the neural networks.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that gradient descent and evolutionary strategies can learn transformer parameters that use the model's randomness.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Randomization is introduced as useful for adversarial performance and success-probability amplification.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "The paper enhances transformers with learned randomization through data and objectives.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "analysis and optimization",
+        "summary": "It analyzes advantageous adversarial objectives and applies common optimization techniques to learn randomized behavior.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "demonstration",
+        "summary": "It evaluates the idea on associative recall, graph coloring, and grid-world exploration, reporting robustness and performance gains.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects one mechanism—learned randomization—to both an analyzed adversarial setting and three conceptually different tasks.",
+          "source_ids": [
+            "S6",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "A mechanism-centered framing can make cross-task evidence easier to interpret while preserving task diversity.",
+        "application": "When proposing a broadly applicable technique, organize the abstract around the mechanism, its theoretically motivated setting, and a small set of distinct demonstrations.",
+        "exception": "This framing is unsuitable when task-specific assumptions or metrics are central and cannot be summarized without obscuring important differences."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative improvements, task settings, model sizes, training details, or baseline comparisons.",
+      "The scope of the claimed first demonstration and the precise meaning of purely data- and objective-driven learning are not further specified.",
+      "The adversary model is identified as oblivious, but its construction and the robustness evaluation protocol are absent."
+    ]
+  }
+}

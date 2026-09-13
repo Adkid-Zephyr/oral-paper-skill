@@ -1,0 +1,629 @@
+{
+  "batch_id": "neurips-2024-01",
+  "covered_ids": [
+    "neurips-2024-oral-97944",
+    "neurips-2024-oral-97945",
+    "neurips-2024-oral-97946",
+    "neurips-2024-oral-97947",
+    "neurips-2024-oral-97948",
+    "neurips-2024-oral-97949",
+    "neurips-2024-oral-97950",
+    "neurips-2024-oral-97951",
+    "neurips-2024-oral-97952",
+    "neurips-2024-oral-97953",
+    "neurips-2024-oral-97954",
+    "neurips-2024-oral-97955",
+    "neurips-2024-oral-97956",
+    "neurips-2024-oral-97957",
+    "neurips-2024-oral-97958",
+    "neurips-2024-oral-97959",
+    "neurips-2024-oral-97960",
+    "neurips-2024-oral-97961",
+    "neurips-2024-oral-97962",
+    "neurips-2024-oral-97963",
+    "neurips-2024-oral-97964",
+    "neurips-2024-oral-97965",
+    "neurips-2024-oral-97966",
+    "neurips-2024-oral-97967",
+    "neurips-2024-oral-97968",
+    "neurips-2024-oral-97969",
+    "neurips-2024-oral-97970",
+    "neurips-2024-oral-97971",
+    "neurips-2024-oral-97972",
+    "neurips-2024-oral-97973",
+    "neurips-2024-oral-97974",
+    "neurips-2024-oral-97975",
+    "neurips-2024-oral-97976",
+    "neurips-2024-oral-97977",
+    "neurips-2024-oral-97978",
+    "neurips-2024-oral-97979",
+    "neurips-2024-oral-97980",
+    "neurips-2024-oral-97981",
+    "neurips-2024-oral-97982",
+    "neurips-2024-oral-97983",
+    "neurips-2024-oral-97984",
+    "neurips-2024-oral-97985",
+    "neurips-2024-oral-97986",
+    "neurips-2024-oral-97987",
+    "neurips-2024-oral-97988",
+    "neurips-2024-oral-97989",
+    "neurips-2024-oral-97990",
+    "neurips-2024-oral-97991"
+  ],
+  "candidate_practices": [
+    {
+      "name": "Describe operations behind component names",
+      "source_observation": "These abstracts specify representation changes, training interventions, or state updates alongside named components.",
+      "why_it_may_help": "Interpretation: operational descriptions let readers assess the proposed rationale without treating names as explanations.",
+      "application": "Replace a module inventory with what each component changes and the problem it targets; distinguish intended mechanism from demonstrated attribution.",
+      "when_not_to_use": "Do not invent separate causal roles for inseparable components.",
+      "support": [
+        {
+          "paper_id": "neurips-2024-oral-97945",
+          "source_ids": [
+            "S4",
+            "S7"
+          ],
+          "specific_example": "Sparse voxels encode 3D structure; SDF supervision and rendering support direct mesh generation."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97949",
+          "source_ids": [
+            "S1"
+          ],
+          "specific_example": "Two time-scale updates address critic estimation; inference-sample simulation addresses input mismatch."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97956",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Rotation redistributes outliers, permutation balances blocks, and another rotation smooths activations."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97984",
+          "source_ids": [
+            "S3"
+          ],
+          "specific_example": "Decompose adds nodes; Analyze checks rationales; Rethink revises parents using child feedback."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "neurips-2024-oral-97953",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "contrast": "HydraLoRA mentions two inefficiency insights without describing them; this supports a diagnosis-to-proposal sequence, not a recoverable mechanism mapping."
+        }
+      ],
+      "full_text_needed_for": "Component interactions and evidence attributing outcomes to the stated mechanisms."
+    },
+    {
+      "name": "Specify the information a new signal supplies",
+      "source_observation": "These abstracts identify an information deficit and introduce a signal or representation addressing it.",
+      "why_it_may_help": "Interpretation: this makes novelty an information change rather than an auxiliary-input inventory.",
+      "application": "Write what existing inputs omit, what the added signal represents, and its operating condition.",
+      "when_not_to_use": "Do not assert that a proxy captures missing information without supporting analysis.",
+      "support": [
+        {
+          "paper_id": "neurips-2024-oral-97946",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Indistinguishable inputs motivate testing for expert information absent from algorithmic data."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97963",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Generated self-supervised representations supply semantic conditioning without labels."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97969",
+          "source_ids": [
+            "S2",
+            "S5"
+          ],
+          "specific_example": "Response time complements binary choices particularly for strong preferences."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97974",
+          "source_ids": [
+            "S7",
+            "S9"
+          ],
+          "specific_example": "Student coverage history measures novelty as a complement to regret."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "neurips-2024-oral-97990",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "contrast": "FlipClass changes feedback direction by updating the teacher from student attention; the change need not introduce an external signal."
+        }
+      ],
+      "full_text_needed_for": "Signal validity, measurement assumptions, and whether the proposed information explains gains."
+    },
+    {
+      "name": "Attach optimality to its exact comparison domain",
+      "source_observation": "Theoretical abstracts attach guarantees to parameter ranges, metrics, structural settings, or identification conditions.",
+      "why_it_may_help": "Interpretation: readers can distinguish a scoped resolution from unrestricted superiority.",
+      "application": "Place the regime and qualification in the same sentence as the guarantee; pair bounds only where their domains match.",
+      "when_not_to_use": "A qualitative result need not be rewritten as a rate or matching-bound claim.",
+      "support": [
+        {
+          "paper_id": "neurips-2024-oral-97950",
+          "source_ids": [
+            "S1"
+          ],
+          "specific_example": "A construction matches lower bounds across rounds versus parallel work, up to logarithmic factors."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97954",
+          "source_ids": [
+            "S2",
+            "S5"
+          ],
+          "specific_example": "General MDP bounds add transient time B to bias span H."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97962",
+          "source_ids": [
+            "S1"
+          ],
+          "specific_example": "The p-Wasserstein rate is distinguished from minimax optimality specifically at p=1."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97977",
+          "source_ids": [
+            "S4"
+          ],
+          "specific_example": "Identification conditions precede valid-instrument discovery and causal-effect estimation."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "neurips-2024-oral-97952",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "contrast": "Hardness, a tractability condition, and reductions are presented as an initial step rather than a complete resolution."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97961",
+          "source_ids": [
+            "S2",
+            "S5"
+          ],
+          "contrast": "Homogeneous and heterogeneous covariance settings organize the clustering guarantee; abstract-level optimality does not expose initialization conditions."
+        }
+      ],
+      "full_text_needed_for": "Formal assumptions, matching domains, hidden dependencies, and proof validity."
+    },
+    {
+      "name": "Choose evidence axes from the promised capability",
+      "source_observation": "These abstracts report distinct evidence for quality, control, scalability, or computational cost.",
+      "why_it_may_help": "Interpretation: aligned evidence makes separate promises independently assessable.",
+      "application": "For each headline property, select its corresponding result and preserve the comparator, workload, and resource qualifier.",
+      "when_not_to_use": "Do not expand a narrowly scoped contribution into unsupported evaluation dimensions.",
+      "support": [
+        {
+          "paper_id": "neurips-2024-oral-97960",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "VAR reports image metrics, scaling correlations, and zero-shot editing demonstrations."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97964",
+          "source_ids": [
+            "S7",
+            "S8"
+          ],
+          "specific_example": "Graph DiT separates distribution learning, property control, and an expert-informed application."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97980",
+          "source_ids": [
+            "S8"
+          ],
+          "specific_example": "SDF-Sim reports hundreds of objects and 1.1 million nodes where mesh approaches exhaust memory."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97986",
+          "source_ids": [
+            "S5"
+          ],
+          "specific_example": "STDE reports speed, memory, and a million-dimensional PDE workload on one A100."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "neurips-2024-oral-97966",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "contrast": "The quality–variation disentanglement claim accompanies FID results, but supplied evidence lacks variation measurements."
+        }
+      ],
+      "full_text_needed_for": "Comparable budgets, configurations, metric definitions, and application outcomes."
+    },
+    {
+      "name": "Make the result depend on the revealing condition",
+      "source_observation": "These abstracts foreground conditional, transient, or intervention-sensitive findings.",
+      "why_it_may_help": "Interpretation: the condition can be the lasting insight rather than a caveat to an average.",
+      "application": "Rewrite a universal improvement claim as a relationship between a named condition and the observed outcome.",
+      "when_not_to_use": "Do not manufacture subgroup explanations from aggregate results.",
+      "support": [
+        {
+          "paper_id": "neurips-2024-oral-97968",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S9"
+          ],
+          "specific_example": "Generalization changes with task coverage, depth, training duration, and context-example count."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97983",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Label/order bias is separated from reported uniform responses after order randomization."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97978",
+          "source_ids": [
+            "S9",
+            "S10"
+          ],
+          "specific_example": "Place-cell width mediates a positional-resolution versus contextual-capacity tradeoff."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97988",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Task complexity determines collaboration mode; leading performance is limited to seven of ten benchmarks."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "neurips-2024-oral-97957",
+          "source_ids": [
+            "S7",
+            "S8"
+          ],
+          "contrast": "A prediction-error assumption qualifies theoretical efficiency separately from application-based comparisons."
+        }
+      ],
+      "full_text_needed_for": "Condition definitions, transition thresholds, subgroup construction, and statistical support."
+    },
+    {
+      "name": "Trace an intermediate representation to its consequence",
+      "source_observation": "These abstracts connect intermediate representations to validity constraints or downstream computation.",
+      "why_it_may_help": "Interpretation: this explains why the representation matters beyond its name.",
+      "application": "State the representation, the invariant or interface it supplies, and the resulting operation.",
+      "when_not_to_use": "Do not describe structural validity as empirical correctness or downstream success.",
+      "support": [
+        {
+          "paper_id": "neurips-2024-oral-97947",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Type-directed conjecture generation guarantees well-formedness, distinct from finding true conjectures."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97975",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Generated consistent views feed reconstruction and then arbitrary-view rendering."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97976",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Dynamic Gaussians become continuums whose rendered masks guide physical-property estimation."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97987",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Pfaffians enforce antisymmetry across stated spin and structural variations."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "neurips-2024-oral-97985",
+          "source_ids": [
+            "S2",
+            "S4"
+          ],
+          "contrast": "RL-GPT explains a division of planning and execution responsibilities rather than a representation invariant."
+        }
+      ],
+      "full_text_needed_for": "Interface assumptions, failure propagation, and actual scope of structural guarantees."
+    },
+    {
+      "name": "Define what a resource makes investigable",
+      "source_observation": "These abstracts introduce task sets, measurement frameworks, or reusable development materials as contributions.",
+      "why_it_may_help": "Interpretation: the resource's research role can stand independently of a new algorithm.",
+      "application": "Specify the question enabled, the organizing dimensions, and the supplied artifact; separate construction from validation.",
+      "when_not_to_use": "A code-release sentence alone does not establish a benchmark or measurement contribution.",
+      "support": [
+        {
+          "paper_id": "neurips-2024-oral-97967",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "YesBut distinguishes literal comic comprehension from deeper narrative reasoning."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97972",
+          "source_ids": [
+            "S4",
+            "S7",
+            "S9"
+          ],
+          "specific_example": "Vision-model comparisons accompany data guidance and an open collection of models, tools, datasets, and recipes."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97955",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S8",
+            "S9"
+          ],
+          "specific_example": "Reasoning boundaries organize quantification and optimization, with studies across models, tasks, and strategies."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97989",
+          "source_ids": [
+            "S4",
+            "S7"
+          ],
+          "specific_example": "A book-based policy-learning formulation is accompanied by Tic-Tac-Toe and Football benchmarks."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "neurips-2024-oral-97948",
+          "source_ids": [
+            "S7",
+            "S8"
+          ],
+          "contrast": "The three-city benchmark accompanies an adaptation framework; the extraction does not establish independent benchmark validation."
+        }
+      ],
+      "full_text_needed_for": "Construction protocols, construct validity, coverage, accessibility, and reuse conditions."
+    }
+  ],
+  "unusual_but_useful": [
+    {
+      "paper_id": "neurips-2024-oral-97944",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "practice": "Pair simplification with expanded recoverable quantities.",
+      "application": "Name the quadratic objective and recovered diffusion components.",
+      "limit": "Closed form is restricted to linear parametrization."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97951",
+      "source_ids": [
+        "S7"
+      ],
+      "practice": "State exactly which objects have supervision.",
+      "application": "Explain dependency-tree guidance under target-only positional labels.",
+      "limit": "Rule reliability is unspecified."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97958",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "practice": "Translate decomposition into design variables.",
+      "application": "Connect stage errors to branching and distribution alignment.",
+      "limit": "Exact decomposition is unavailable."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97959",
+      "source_ids": [
+        "S4",
+        "S7"
+      ],
+      "practice": "Distinguish reuse from repeated adaptation.",
+      "application": "State that the same correction module serves 11 LLMs.",
+      "limit": "Shared setup details are absent."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97965",
+      "source_ids": [
+        "S3",
+        "S7",
+        "S10"
+      ],
+      "practice": "Compare the replacement at its intended function.",
+      "application": "Present behavioral consensus against self-testing for correctness selection.",
+      "limit": "Consensus does not itself guarantee correctness."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97970",
+      "source_ids": [
+        "S4"
+      ],
+      "practice": "Separate framework breadth from guarantee breadth.",
+      "application": "Keep representation-agnostic design and restricted convergence claims distinct.",
+      "limit": "Restricted cases are unspecified."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97971",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "practice": "State design criteria before the construction.",
+      "application": "Explain MetaLA through its three proposed conditions.",
+      "limit": "Their meaning of optimality needs checking."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97973",
+      "source_ids": [
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "practice": "Keep coherent outcomes from joint training.",
+      "application": "Report diffusion sampling and MCMC-free EBM outcomes separately.",
+      "limit": "Equilibrium is not evidence of training convergence."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97979",
+      "source_ids": [
+        "S6",
+        "S7"
+      ],
+      "practice": "Pair a mechanism with a control against excess.",
+      "application": "Explain scattering alongside its topology constraint.",
+      "limit": "Causal attribution is not established here."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97981",
+      "source_ids": [
+        "S10"
+      ],
+      "practice": "Preserve resource ranges and best-case qualifiers.",
+      "application": "Retain up to 2.28% and 20%–80% compression.",
+      "limit": "Do not imply all extrema occur together."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97982",
+      "source_ids": [
+        "S3",
+        "S5"
+      ],
+      "practice": "Give a reinterpretation a computational consequence.",
+      "application": "Connect recursive denoising to parameter-fusion equivalence.",
+      "limit": "Computation-free scope is unspecified."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97991",
+      "source_ids": [
+        "S1",
+        "S2"
+      ],
+      "practice": "Replace stronger expressivity with countable targets.",
+      "application": "Name cycles through length r+2 and cactus homomorphisms.",
+      "limit": "Hierarchy comparisons require source correction."
+    }
+  ],
+  "discarded_generalizations": [
+    {
+      "generalization": "Every abstract needs a prior-method deficit and one remedy.",
+      "reason": "Some lead with a capability, experimental question, or critical examination; no uniform ORAL sequence is warranted.",
+      "paper_ids": [
+        "neurips-2024-oral-97960",
+        "neurips-2024-oral-97968",
+        "neurips-2024-oral-97983"
+      ]
+    },
+    {
+      "generalization": "Named stages demonstrate human-like cognition.",
+      "reason": "Computational operations support a method description, not cognitive equivalence.",
+      "paper_ids": [
+        "neurips-2024-oral-97984",
+        "neurips-2024-oral-97989"
+      ]
+    },
+    {
+      "generalization": "A benchmark gain establishes practical user benefit.",
+      "reason": "Medical benchmarks and expert-informed molecular applications do not establish clinical or deployment outcomes.",
+      "paper_ids": [
+        "neurips-2024-oral-97988",
+        "neurips-2024-oral-97964"
+      ]
+    }
+  ],
+  "source_checks_needed": [
+    {
+      "paper_id": "neurips-2024-oral-97991",
+      "field": "S3 hierarchy comparison",
+      "issue": "Extraction alternates between 1-WL and r-loopy WL as the subject of incomparability to fixed-order k-WL; verify the original subject."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97972",
+      "field": "S5 benchmark interpretation",
+      "issue": "Benchmark critique appears only in the lesson and unknowns; verify original support before retaining it."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97953",
+      "field": "S7–S8 code availability",
+      "issue": "Future release and current availability coexist; check version and wording."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97954",
+      "field": "S7–S8 lower-bound comparison",
+      "issue": "Verify fixed-instance qualifiers before describing quadratic scaling as circumventing a cubic minimax bound."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97959",
+      "field": "S8–S9 metrics and provenance",
+      "issue": "Check percentage denominators; preserve community attribution for the leaderboard comparison."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97987",
+      "field": "S8 reference-energy comparison",
+      "issue": "Clarify whether 1.9 mE_h denotes lower energy or improved error against another reference."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97982",
+      "field": "S7 architecture list",
+      "issue": "Verify the extracted spelling Vmamda and its architectural classification."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97989",
+      "field": "S8 win-rate terminology",
+      "issue": "Preserve net win rate versus win rate and verify what without real data excludes."
+    },
+    {
+      "paper_id": "neurips-2024-oral-97983",
+      "field": "S7 uniform randomness",
+      "issue": "Check whether the original states exact uniformity, approximation, or a tendency; retain tested-model scope."
+    }
+  ]
+}

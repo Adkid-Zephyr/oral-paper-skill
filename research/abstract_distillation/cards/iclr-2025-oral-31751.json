@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31751",
+    "title": "Flow Matching with General Discrete Paths: A Kinetic-Optimal Perspective",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31751"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "647f0915809a2367b13a2354106a87ac8daa32e9a0d9b4577cc757df614b3e60",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "bfbbf01bee92f6af8af785739da57c72e08cc3315ff779d16c70aaf7496435e0",
+    "extracted_at": "2026-09-12T23:50:30.945957+00:00",
+    "session_id": "01a09807-5768-7f83-96cc-a2bed7f01b0b",
+    "usage": {
+      "input_tokens": 12670,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 722,
+      "reasoning_output_tokens": 88
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "581209cacf5d7126bf7dd30bb57da8d277fa23cefc1aa2589185327589d479ae"
+    },
+    {
+      "id": "S2",
+      "sha256": "77154764e855b19f0381b3a4906c9330658ee3ba48f4ff12eef73f79e4a4a2f6"
+    },
+    {
+      "id": "S3",
+      "sha256": "8dd3a75f51c05495c97f73fcebb0c2a695fda80700ef2cb8d309e3a1e20464c5"
+    },
+    {
+      "id": "S4",
+      "sha256": "2f8193b517d8a9f69504ccb260c82bb6c60036f4bed43b7a791db005068c359b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31751",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design discrete-space generative models based on continuous-time Markov chains while choosing suitable probability paths.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Discrete diffusion and flow model design is described as less understood than the continuous-space case, with much prior work centered on simple masking.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "A construction framework for discrete generative models that permits arbitrary discrete probability paths.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Velocity formulas based on symmetric kinetic-energy optimization that decouple probability paths from velocities.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory and design",
+        "claim": "A mixture probability-path construction reported to optimize symmetric kinetic energy in the discrete case.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their approach is the first to allow arbitrary discrete probability paths, or corruption processes, in this setting.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report empirical validation across text generation, inorganic material generation, and image generation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "In text generation, the authors report that kinetic-optimal mixture paths outperform the mask construction.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "For visual data, the authors report using domain-specific probability-path constructions.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper identifies limited understanding of discrete-space generative-model design and the dominance of masking.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "It introduces arbitrary discrete probability paths within continuous-time Markov-chain models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "optimization",
+        "summary": "It derives path-independent velocity formulas through symmetric kinetic-energy optimization and identifies a kinetic-optimal mixture construction.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "reported validation",
+        "summary": "It reports multimodal validation, text gains over masking, and domain-specific visual paths.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates the probability path from the velocity and allows path choice using domain knowledge.",
+          "source_ids": [
+            "S2"
+          ]
+        },
+        "interpretation": "A model description can expose design choices as modular components, making domain assumptions explicit.",
+        "application": "When presenting a generative-model variant, define the data-dependent path separately from the dynamics or parameterization, then state which component is optimized or selected.",
+        "exception": "This framing may be unsuitable when the path and dynamics are intrinsically coupled by the method or when no meaningful domain-specific path is available."
+      }
+    ],
+    "unknowns": [
+      "No quantitative metrics, baselines beyond masking, dataset details, or statistical conditions are provided.",
+      "The abstract does not state the formal assumptions or proof details behind the kinetic-optimality claim.",
+      "The scope and comparative effect of the domain-specific visual constructions are not quantified."
+    ]
+  }
+}

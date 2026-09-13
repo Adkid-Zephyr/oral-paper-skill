@@ -1,0 +1,186 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71081",
+    "title": "On Minimum Depth and Width of Floating-Point Neural Networks for Representing Floating-Point Functions",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71081"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b1294236b0d336a380e9fa2d112ff443707e2646f07f923db97afdd12d4aae34",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "a951d6699ffa84d3123a139f21ce3def345ad3178b403ec60b8c2052e2354ab0",
+    "extracted_at": "2026-09-13T00:13:20.139347+00:00",
+    "session_id": "01a0981c-31fd-7022-bec7-9bc59be3c107",
+    "usage": {
+      "input_tokens": 12778,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 793,
+      "reasoning_output_tokens": 52
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c1350fba2269b056e5c899de082f81b353b17adaf3c83ece385040c04715d837"
+    },
+    {
+      "id": "S2",
+      "sha256": "683c4ff5872f79a0d93a229ba2daac6cfc42d634baa6e763018a548c7db447de"
+    },
+    {
+      "id": "S3",
+      "sha256": "0e8b2927c9167e3a1561cd31236a7a43298a378790f320eb72be4d39a658f9a9"
+    },
+    {
+      "id": "S4",
+      "sha256": "b7289f67bb6758f17c91b2f5a3fd79df9bb1c6cffaeea950bff1aafb81227bde"
+    },
+    {
+      "id": "S5",
+      "sha256": "b0454f5400569833b4eaf7312949eed1c812a498319f7dfb69ac2066b5adf935"
+    },
+    {
+      "id": "S6",
+      "sha256": "c27d4e75caa68a51b0ac9f18f29dc2014bb581605950b751d822bdddefc8979d"
+    },
+    {
+      "id": "S7",
+      "sha256": "654f86225784f05a7896af80c03ea3bb99d85e96fac101321f266f0b629d277a"
+    },
+    {
+      "id": "S8",
+      "sha256": "4c3376f25932860a735965e8185ea2b122be4d18ff3f04d1bed805df40efb56e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71081",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine the minimum depth and width needed for floating-point ReLU networks to represent every function from floating-point vectors to floating-point scalars.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Exact-arithmetic expressivity results cannot be directly applied to computer implementations using finite-precision numbers and inexact operations with round-off error.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Characterizes minimum depth and width for representing all functions from \\mathbb F^d to \\mathbb F with floating-point ReLU networks.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theoretical bounds",
+        "claim": "Shows exact minimum depth three, and bounds the minimum width between 2d and 2d+4; for non-negative-float domains, the width lies between d and d+4.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work analyzes expressivity directly in the floating-point setting, where prior cited results were derived under exact arithmetic.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that representing all functions on \\mathbb F^d requires exactly three layers, although two layers may suffice for a smaller domain and/or codomain.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report width bounds of 2d to 2d+4 for the full floating-point domain, narrowing to d to d+4 for non-negative floats; smaller domains can require still less width.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that exact-arithmetic results do not extend to the floating-point setup.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Prior expressivity work identified minimum depth and width for universal approximation and memorization.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Those results assume exact arithmetic, unlike finite-precision computer implementations with round-off errors.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "setup",
+        "summary": "The paper studies ReLU networks with floating-point parameters and operations, targeting all maps from \\mathbb F^d to \\mathbb F.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "It reports exact depth three and width bounds, with reduced bounds for non-negative or smaller domains, and concludes that exact-arithmetic results do not carry over.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates the full-domain characterization from restricted-domain cases, reporting different depth and width bounds for smaller or non-negative domains.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "Expressivity claims can depend materially on arithmetic model and domain/codomain restrictions.",
+        "application": "State the computational arithmetic model and domain restrictions alongside any expressivity bound, then report how the bound changes under meaningful restrictions.",
+        "exception": "This framing is less useful when the work genuinely concerns idealized exact arithmetic or a fixed unrestricted domain."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the precise layer convention, width definition, floating-point format, or whether the bounds are tight beyond the stated depth result.",
+      "No proof details, constructions, datasets, empirical evaluations, or comparisons beyond the stated theoretical claims are provided."
+    ]
+  }
+}

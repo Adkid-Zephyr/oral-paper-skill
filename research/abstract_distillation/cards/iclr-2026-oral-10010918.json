@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010918",
+    "title": "InfoNCE Induces Gaussian Distribution",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010918"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1818082ff5f03b0f537599f2c86859c6656dd3d53eaa1b836cc09b1dac4a140c",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "259847ba1e799766150d07879167eade6bec97ff9028cf8b46b5b849a5fa5014",
+    "extracted_at": "2026-09-13T00:05:09.047278+00:00",
+    "session_id": "01a09814-bbbb-7431-b864-a4cf07c12300",
+    "usage": {
+      "input_tokens": 12719,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 796,
+      "reasoning_output_tokens": 115
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e780c700cbd623df5112a7746637afc45c0d963a6e8f97ae82b105bd52277d4c"
+    },
+    {
+      "id": "S2",
+      "sha256": "c3b078527b364f99ff4000b4175d80cee1f850af09d5b18e2d656469de7edabc"
+    },
+    {
+      "id": "S3",
+      "sha256": "8c9e2e80d7a7f267cc9c1cc1facc5fe89686ae177b1e0c5e05ec8de1432a26ea"
+    },
+    {
+      "id": "S4",
+      "sha256": "a8c7a443a857116bc361f79a915382bea41e0398e78bad136c2b253385c3ece8"
+    },
+    {
+      "id": "S5",
+      "sha256": "d8f0214d4ccf5d623a405de8fd0a5d5e52254bc7e985a41f776e5fc3ce560cc5"
+    },
+    {
+      "id": "S6",
+      "sha256": "060a26296886c39500735f04d1fb20c717981be2069f0407df52e10842231bea"
+    },
+    {
+      "id": "S7",
+      "sha256": "94b94104b075dfb2c18340ef7479a86311bf51fd76f31a4f5296e0888c25912e"
+    },
+    {
+      "id": "S8",
+      "sha256": "e0e14ea32b5257941dee94539cfeadba5954ce30957d691baba84f9fb3ef3d63"
+    },
+    {
+      "id": "S9",
+      "sha256": "77d573d95b3da2658655aa9c281b3b4abb1e84959cbf910c6bc6f40998a6094f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010918",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Analyze the representation structure induced by the InfoNCE objective in contrastive training.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Characterizes asymptotically Gaussian projections under alignment and concentration assumptions.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Shows that, under less strict assumptions, a small vanishing regularizer promoting low feature norm and high feature entropy yields similar asymptotic results.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports consistent Gaussian behavior across synthetic and CIFAR-10 experiments using multiple encoder architectures and sizes.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The analysis establishes Gaussian structure for InfoNCE representations through two complementary asymptotic regimes.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments on synthetic and CIFAR-10 datasets showing consistent Gaussian behavior across encoder architectures and sizes.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that projections asymptotically approach a multivariate Gaussian under alignment and concentration assumptions.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report similar asymptotic results under less strict assumptions when the specified vanishing regularization term is added.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Positions contrastive learning as a major approach for using massive unlabeled datasets in representation learning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "setup",
+        "summary": "Identifies InfoNCE and its variants as prototypical contrastive objectives.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "main result",
+        "summary": "States that InfoNCE induces Gaussian structure and develops this claim in two complementary regimes: assumption-driven and regularization-assisted.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "support and implication",
+        "summary": "Reports consistent Gaussian behavior in synthetic and CIFAR-10 experiments and frames the result as an explanation and analytical model for observed Gaussianity.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs each asymptotic Gaussianity claim with its operative conditions, distinguishing strict alignment/concentration assumptions from a weaker-assumption regularized regime.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This makes theoretical scope easier to track and separates what follows from assumptions from what requires modifying the objective.",
+        "application": "When presenting a theory result, state the main conclusion together with the exact assumption regime or intervention that enables it, and separate alternative regimes explicitly.",
+        "exception": "This framing is less suitable when regimes are not genuinely distinct or when the abstract cannot state the conditions compactly."
+      }
+    ],
+    "unknowns": [
+      "The specific alignment and concentration assumptions, asymptotic rates, projection regime, and regularizer form are not given.",
+      "The experiments do not specify metrics, baselines, sample sizes, or quantitative results.",
+      "The claimed analytical applications are described as expected benefits rather than demonstrated applications."
+    ]
+  }
+}

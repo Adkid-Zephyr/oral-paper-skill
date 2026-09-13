@@ -1,0 +1,102 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "scope": "Targeted resolution of synthesis flags, not random or full semantic audit",
+  "records": [
+    {
+      "paper_id": "iclr-2025-oral-31925",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S6 says grounding information can be obtained freely through noun extraction and available grounding models. The card says annotation costs are not separately described, not that they are zero, and explicitly leaves the freely claim unquantified. Synthesis may describe reuse of existing models but cannot claim zero annotation, compute, or licensing cost.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31930",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S4 itself states that prior DFKD methods depend on BatchNorm and that those layers are unusable in CLIP. The card explicitly attributes this diagnosis to the authors. The supplied abstract does not identify CLIP variants or the precise architectural limitation; synthesis must not generalize this into an independently verified statement that every CLIP backbone lacks BatchNorm.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31926",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S5 gives 26 Atari games and a 131.58% improvement in mean human-normalized score. The card preserves the mean metric and its unknown aggregation/comparison details; its narrative explicitly reports improved mean performance. Across 26 games is the evaluation scope, not evidence of a win on every game. Synthesis must not convert the percentage into percentage points or universal per-game superiority.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-32125",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S3 genuinely contains benchmark scale, 75-model results, the 18.4% GPT-4o improvement, and the qualitative MOKA benefit. The card preserves those reports and leaves evaluation metrics and MOKA details unknown. Relative versus absolute improvement and the exact GPT-4o aggregation are not recoverable; synthesis must not assign a quantified MOKA effect or interpret 18.4% as a fully specified metric.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-32122",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S3 calls Loopy audio-only conditioned, in the S2/S6 context of removing auxiliary spatial movement signals and manual movement constraints. The card does not say there is no portrait reference or identity input. Synthesis must scope audio-only to the stated motion-conditioning contrast; the complete input interface is not specified here.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31934",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S1 is the entire supplied abstract and contains all attributed EntiGraph statements. Repeated use is valid block-level provenance. A finer locator would require a separately versioned source segmentation, not invented sentence IDs; current cross-batch reuse can cite this inspected block without pretending it is a single grammatical sentence.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10007338",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S7 explicitly contrasts globally comprehensive but locally indiscriminate non-autoregressive modeling with locally refined but globally deficient autoregressive modeling; S9 reports synergy as best. The lesson's global/local roles are directly supported. The application proposes a controlled comparison, which the abstract does not independently establish as matched-budget evidence.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006600",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S4/S6 support paired measurements and simulations; S8 explicitly supports nine data-oriented and physics-oriented metrics, and the observation cites it correctly. Paired splits appears only in a proposed application, not in the source observation. Synthesis must not claim the authors used matched train/test partitions or controlled paired evaluation protocols based on paired datasets alone.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006563",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "The source observation correctly limits the paper's capability to selecting token counts with information organized by granularity (S6/S7). Prefixes or subsets are a suggested representation-training design, with an exception for components that fail to preserve granularity. The card does not attribute arbitrary-subset correctness to MetaEmbed; synthesis must not do so or infer a specific prefix-selection rule from the abstract.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006847",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S8 says geometric analysis complements linear interpretability. The source observation preserves that relationship; pairing with linear probes appears only as application advice. No joint probe experiment is attributed to the paper, and synthesis must not claim one was conducted or that joint diagnostics were measured to improve effectiveness.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006696",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S4/S5 describe visual planning through image sequences as a supplementary channel. The card retains supplementary planning in contributions and narrative and explicitly leaves joint-versus-standalone evaluation unknown. Purely visual modifies the planning representation, not a proven absence of language throughout the complete system. No card correction is required.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10007523",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S8 explicitly uses guaranteeing more accurate entity identification. The card's unknown refers to this author wording and does not invent a formal theorem. The abstract supplies no formal statement, assumptions, or proof for that phrasing; synthesis must treat it as an unverified author claim, not a mathematical guarantee.",
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "first_pass_pass": 12,
+    "first_pass_minor": 0,
+    "first_pass_material_error": 0,
+    "material_findings": 0,
+    "minor_findings": 0,
+    "requires_correction": 0,
+    "scope": "Resolved all 12 specific flags against supplied originals and current cards. No new card corrections are warranted by these flags: disputed details are either directly stated, valid source-block citations, unresolved source ambiguity, or explicitly proposed applications. Per-record resolutions preserve necessary synthesis boundaries. Pass is limited to the targeted checks and does not imply complete semantic review, scientific validity, actual resource availability, or measured usefulness. No cards or other files were edited."
+  }
+}

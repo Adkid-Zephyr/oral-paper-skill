@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010996",
+    "title": "Task-free Adaptive Meta Black-box Optimization",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010996"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "086171f311d215fcf794f4a266a0f01789c0c5bcf3f9f2a21fb27bdd08b026d5",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "4b9fa0a79badcc18533d7ea248b11fbf7645a9bdf9f413c8776cddc43c6b22b4",
+    "extracted_at": "2026-09-13T00:05:15.972810+00:00",
+    "session_id": "01a09814-db7f-7bb3-b99b-818577f3f270",
+    "usage": {
+      "input_tokens": 12696,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 712,
+      "reasoning_output_tokens": 57
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5047a3efc95aaf3dc2f34fac83e6d96995a46a024493aa4048153032435e4810"
+    },
+    {
+      "id": "S2",
+      "sha256": "441c53aae1da056b57a61a732193613a40f30c721015b09d092784d798b97a98"
+    },
+    {
+      "id": "S3",
+      "sha256": "b32cfa8b2211ab40b7a2d9dc9aeec43994622bc8d42dcb2ef2bd7bbd6ba33090"
+    },
+    {
+      "id": "S4",
+      "sha256": "4f741735b8128cff24e69badd0c5a78d3e8188206c8064d5517d878c6fa86205"
+    },
+    {
+      "id": "S5",
+      "sha256": "3a601776865c6c2d2bb708fd33798cb30603c9d106719b79448b265c8767ae3f"
+    },
+    {
+      "id": "S6",
+      "sha256": "d39f48b82f8502af14744f6fed055e0149147aa3a8a31121bde7109f666dc25b"
+    },
+    {
+      "id": "S7",
+      "sha256": "f93ba26b999be4d2a64bc2e3adbc66481061ab19c806c6ed0656d31903f8348b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010996",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Complex black-box optimization can make handcrafted optimizers prohibitively inefficient.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing MetaBBO methods generally depend on extensive handcrafted training tasks and task distributions, limiting use when target-task distributions are unknown.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "ABOM performs online parameter adaptation using only optimization data from the target task, without predefined task distributions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "mechanism",
+        "claim": "ABOM uses a closed-loop learning mechanism in which parameterized evolutionary operators continuously update from populations generated during optimization.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report zero-shot optimization on synthetic BBO benchmarks and realistic UAV path-planning problems without handcrafted training tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish ABOM from conventional frameworks by integrating parameter learning and optimization in a closed loop rather than decoupling meta-training from optimization.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report competitive performance on synthetic BBO benchmarks and realistic unmanned aerial vehicle path-planning problems without handcrafted training tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report visualization evidence of statistically significant search patterns in parameterized evolutionary operators, including natural selection and genetic recombination.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Handcrafted optimizers are described as inefficient for complex BBO tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "existing-approach limitation",
+        "summary": "MetaBBO reduces heuristic dependence but typically requires handcrafted training tasks and assumed task distributions.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "ABOM adapts optimizer parameters online from target-task optimization data through continuously self-updating evolutionary operators.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report competitive zero-shot results and structured search patterns in visualization studies.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the method's task-free objective to a specific mechanism: online, closed-loop adaptation from populations generated during optimization.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A strong abstract can make a claimed capability concrete by tying it to an identifiable change in the learning loop.",
+        "application": "When presenting a method intended to remove an external requirement, state the exact feedback source and when adaptation occurs in the pipeline.",
+        "exception": "This framing is unsuitable when the method's key contribution is primarily theoretical, architectural, or unrelated to online feedback."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical results, benchmark sizes, baselines, statistical procedures, or definition of “competitive performance.”",
+      "The conditions and effect sizes underlying the reported statistically significant search patterns are unspecified.",
+      "The abstract does not establish independently verified correctness, reproducibility, or priority of the claimed novelty."
+    ]
+  }
+}

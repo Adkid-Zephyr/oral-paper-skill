@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71116",
+    "title": "From Pixels to Tokens: A Systematic Study of Latent Action Supervision for Vision-Language-Action Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71116"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "fb664a6ac27856d43b80594da2dc33a0001832b745fec1483733a5d3c12cb843",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "6c672925c4218ac35e3089eed54b7188455dcf99e105acf7ee1847589d567869",
+    "extracted_at": "2026-09-13T00:14:43.980260+00:00",
+    "session_id": "01a0981d-7320-7913-9797-41ba82617f13",
+    "usage": {
+      "input_tokens": 12667,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 901,
+      "reasoning_output_tokens": 131
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9a318377710ef0058a1ddf088f9d4a3d058e4f3ec6667fd2bc2dea4bd2d738ef"
+    },
+    {
+      "id": "S2",
+      "sha256": "4b92eb0ab17f1aac3e932bd07761798f73abd0f63f43ea8e6940143f2288c498"
+    },
+    {
+      "id": "S3",
+      "sha256": "77a6f09baef9ee9b638424464aa5c359a7bf21ce079b1338d3d142e7814aaa34"
+    },
+    {
+      "id": "S4",
+      "sha256": "aa2bb695a79bb18ddcba99e28d9f62d916c3c76d9dd81295d669a2dca622997a"
+    },
+    {
+      "id": "S5",
+      "sha256": "9ab8a91195dc038f89357c33573ba594bd940ddd58131de73d075aa1faf97b3e"
+    },
+    {
+      "id": "S6",
+      "sha256": "b94da0026d8f9e49dc7ecf5af2e36a23e588c64d1ed71dd604b7449e5b7bb192"
+    },
+    {
+      "id": "S7",
+      "sha256": "e320663295250b79872f061fad0d1a61879bcfc48a56ac6a1ffcd3b0fab5b816"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71116",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how to supervise vision-language-action models with latent actions across heterogeneous datasets.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing latent-action supervision approaches are fragmented and lack systematic comparison.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Structures latent-action supervision around image-based trajectory regularization and action-based target-space unification.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "comparison",
+        "claim": "Instantiates and compares four representative integration strategies under a unified VLA baseline.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports a formulation-task correspondence and identifies discrete latent action-token supervision as the strongest-performing formulation in its comparison.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work presents a two-perspective systematic study of latent action supervision and compares four integration strategies within one unified baseline.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that image-based latent actions benefit long-horizon reasoning, while action-based latent actions excel at complex motor coordination.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that directly supervising the vision-language model with discrete latent action tokens yields the most effective performance.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report initial insights into latent-action benefits in mixed-data settings and characterize this as a promising direction for VLA training.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation and gap",
+        "summary": "Latent actions are positioned as an intermediate representation for consistent VLA modeling, but existing supervision approaches are fragmented.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "study design",
+        "summary": "The study organizes supervision into image-based trajectory regularization and action-based target-space unification, then compares four strategies under a shared baseline.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "main findings",
+        "summary": "The reported results associate image-based formulations with long-horizon reasoning, action-based formulations with complex motor coordination, and discrete-token supervision with the most effective performance.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "Experiments provide initial mixed-data insights and motivate further VLA-training research using latent action supervision.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly maps two latent-action formulations to different capabilities: long-horizon reasoning versus complex motor coordination.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "Separating representation choices by task demands can make empirical findings more actionable than reporting one aggregate ranking.",
+        "application": "Frame a study around a capability-to-formulation matrix and report which representation is associated with each capability.",
+        "exception": "Avoid this framing when the evaluation does not distinguish capabilities or when the abstract provides no task-level comparison."
+      },
+      {
+        "source_observation": {
+          "claim": "The paper compares multiple strategies under a unified VLA baseline before stating its performance conclusion.",
+          "source_ids": [
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A shared baseline can align comparative claims with a clearly bounded experimental setup.",
+        "application": "State the common baseline and comparison set immediately before a ranking or best-performing claim.",
+        "exception": "This is unsuitable when methods require materially different architectures or training conditions that cannot be fairly unified."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, tasks, metrics, numerical results, or the conditions behind the reported performance differences.",
+      "The scope and precise evidence for the mixed-data insights are unspecified.",
+      "The comparison does not establish general effectiveness or priority beyond the authors' reported experiments."
+    ]
+  }
+}

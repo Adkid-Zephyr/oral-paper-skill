@@ -1,0 +1,164 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31914",
+    "title": "MLE-bench: Evaluating Machine Learning Agents on Machine Learning Engineering",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31914"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6603a418605ec4310937d08be20dba597c11edef5bce45263db975d5cc4cb954",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "941c30c3e21eb465b9747ab258560dad1977352f0479c24c1060d104a2a6d843",
+    "extracted_at": "2026-09-12T23:57:00.475043+00:00",
+    "session_id": "01a0980d-4a60-7813-9715-ba31441c7fb0",
+    "usage": {
+      "input_tokens": 12662,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 732,
+      "reasoning_output_tokens": 111
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "20bacf31ab9e3fc7f96b5ac76c47f178c617dc19029d6627f0ec7f4825813683"
+    },
+    {
+      "id": "S2",
+      "sha256": "f02b7c8b52cb3bda1e0c46c0a07f87f59b05e02b491cba2cad854c6c78ef4e93"
+    },
+    {
+      "id": "S3",
+      "sha256": "9a1bd0b2e47dddf1b8b3cd0384ce1e0d15049804b5db927507a87c0454e9de4f"
+    },
+    {
+      "id": "S4",
+      "sha256": "87311ed673cd2c9c0497b44a9f1b3d29f663c41b89a4b58a04503c3597c11cdd"
+    },
+    {
+      "id": "S5",
+      "sha256": "e2f7a22c75c2822f18938fd28dd1681c4a71564dd9750b275449560eebae2fed"
+    },
+    {
+      "id": "S6",
+      "sha256": "770f6b29375637d57f63021843fe8b3404d7f4d52e57efd838172f41ec9d0a88"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31914",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Measure how well AI agents perform machine learning engineering.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces MLE-bench, built from 75 Kaggle ML engineering competitions covering tasks such as model training, dataset preparation, and experiment execution.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "evaluation",
+        "claim": "Establishes human baselines from publicly available Kaggle leaderboards and evaluates several frontier language models using open-source agent scaffolds.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Open-sources the benchmark code to support future research on AI agents’ ML engineering capabilities.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present MLE-bench as a benchmark specifically for measuring AI-agent performance on machine learning engineering, using a diverse collection of real-world competition tasks.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the best-performing setup, OpenAI’s o1-preview with AIDE scaffolding, reaches at least Kaggle bronze-medal level in 16.9% of competitions.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "benchmark purpose",
+        "summary": "The paper introduces MLE-bench for measuring AI agents’ machine learning engineering performance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "benchmark construction",
+        "summary": "It curates 75 Kaggle competitions spanning practical ML engineering activities and establishes leaderboard-based human baselines.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "agent evaluation",
+        "summary": "Open-source agent scaffolds are used to evaluate several frontier language models; the strongest reported setup reaches bronze-medal level in 16.9% of competitions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "additional analysis and release",
+        "summary": "The authors investigate resource scaling and pre-training contamination, then release the benchmark code for future research.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The benchmark combines a diverse task suite, human leaderboard baselines, and a thresholded competition outcome.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This aligns evaluation scope, reference points, and an interpretable performance criterion.",
+        "application": "For an agent benchmark, define varied real-world tasks, establish an external human reference, and report performance against a concrete threshold.",
+        "exception": "This approach may be unsuitable when public leaderboard baselines or task outcomes are unavailable or incomparable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the full model set, resource-scaling findings, contamination results, or detailed evaluation protocol.",
+      "The abstract does not report whether the 16.9% result is statistically estimated, replicated, or directly comparable across competitions."
+    ]
+  }
+}

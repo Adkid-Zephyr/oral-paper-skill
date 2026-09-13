@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-119904",
+    "title": "PRIMT: Preference-based Reinforcement Learning with Multimodal Feedback and Trajectory Synthesis from Foundation Models",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/119904"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4815a96093e9a0f095a5b6124e9dfd39594eb29731e76a158c8d348af01b0882",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "e815d93d60c3c0db8991e1bbeb56d8292eb96f0a03dde7baf3eea56c314a1268",
+    "extracted_at": "2026-09-13T00:23:19.265255+00:00",
+    "session_id": "01a09825-544b-7053-811a-528976d96ad1",
+    "usage": {
+      "input_tokens": 12726,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 739,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c5d636668b9ed396ac78c40f9684363ae899ec268bdf288b5e52a15183804c71"
+    },
+    {
+      "id": "S2",
+      "sha256": "a9b5eba9cc8c1cd828f578e0f1312a152ecf977843287fd40d2ec6d14224c54e"
+    },
+    {
+      "id": "S3",
+      "sha256": "2335f3a26a5061d1bb17662d29e13ba56f2d66c81a420f7a4be9c7c3706ec14e"
+    },
+    {
+      "id": "S4",
+      "sha256": "14fb39a4474782c5bc46494f7a564a83364f688ea77c12e8d99378165e3d83ef"
+    },
+    {
+      "id": "S5",
+      "sha256": "6f6664b50b38dc5f70cb45ce96758b34315fc3d3e6ac3d2b25a54febf82514e3"
+    },
+    {
+      "id": "S6",
+      "sha256": "bdd58c12fc4cfc3de11aa3a4ac4eaa613ff16e35354ca19be2d33e55f279fe03"
+    },
+    {
+      "id": "S7",
+      "sha256": "c034dd73abb4165ba675147100fc1a6badc44f39f52a06284ea6898a058fdda5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-119904",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses preference-based reinforcement learning for teaching robots complex behaviors without hand-engineered rewards.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify dependence on extensive human input and difficulties with query ambiguity and credit assignment during reward learning as limiting PbRL effectiveness.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "PRIMT uses foundation models to provide multimodal synthetic feedback and synthesize trajectories for PbRL.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It hierarchically fuses vision-language and large language model evaluations through a neuro-symbolic strategy, combining complementary modalities for feedback.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It combines foresight trajectory generation for bootstrapped buffer initialization with hindsight augmentation and a causal auxiliary loss for credit assignment.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish PRIMT from prior single-modality foundation-model evaluation approaches through hierarchical neuro-symbolic multimodal fusion, alongside foresight and hindsight trajectory synthesis.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report evaluating PRIMT on 2 locomotion and 6 manipulation tasks across various benchmarks, with superior performance over foundation-model-based and scripted baselines.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "PbRL is presented as a way to teach robots complex behaviors without reward engineering, but its effectiveness is constrained by human-input demands, query ambiguity, and credit assignment.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "PRIMT addresses these challenges with foundation-model-generated multimodal feedback and trajectory synthesis, including hierarchical VLM–LLM fusion.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "trajectory mechanisms",
+        "summary": "Foresight generation warm-starts the trajectory buffer, while hindsight augmentation supports counterfactual reasoning and a causal auxiliary loss targets credit assignment.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report results on locomotion and manipulation benchmarks that outperform FM-based and scripted baselines.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links distinct learning obstacles to distinct mechanisms: foresight addresses early query ambiguity, while hindsight counterfactuals and a causal auxiliary loss target credit assignment.",
+          "source_ids": [
+            "S2",
+            "S5"
+          ]
+        },
+        "interpretation": "This is a concrete example of aligning each proposed component with a named failure mode rather than presenting the method as an undifferentiated package.",
+        "application": "When introducing a multi-component learning system, map every component to a specific bottleneck and state the intended mechanism of relief.",
+        "exception": "This framing is less suitable when component interactions are central and cannot be meaningfully attributed to separate bottlenecks."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide quantitative results, task-specific comparisons, statistical details, or definitions of “superior performance.”",
+      "It does not specify how multimodal feedback reliability or the causal auxiliary loss was measured."
+    ]
+  }
+}

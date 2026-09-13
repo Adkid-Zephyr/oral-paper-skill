@@ -1,0 +1,211 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008477",
+    "title": "OpenApps: Simulating Environment Variations to Measure UI Agent Reliability",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008477"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ac0597f3c7ba6323367de333430a669721053649aa95230c8942008a445b05f6",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "742f27fdda9e920c9e8c9d53347abf910252889b1c999a65b682f6cfa42e98e4",
+    "extracted_at": "2026-09-13T00:01:09.900887+00:00",
+    "session_id": "01a09811-0a26-7f61-aa1a-85dbee96d09c",
+    "usage": {
+      "input_tokens": 12843,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 769,
+      "reasoning_output_tokens": 90
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b5a30782aecb1ba1614274ed64ac404a12662218f218f5dc942cda980ecf2983"
+    },
+    {
+      "id": "S2",
+      "sha256": "a7e1bc7c434f0e03d02a574bb06dfa84d9a3418100922c4399f6e5456957e59a"
+    },
+    {
+      "id": "S3",
+      "sha256": "4ba5a10e9a85a0bf4f943652521d0bb02feff7a0d204a771543bb71accd1f6aa"
+    },
+    {
+      "id": "S4",
+      "sha256": "6e89bec617ac9a9b9157377fe461be9a03207842ceea623ae001c4257113ea0d"
+    },
+    {
+      "id": "S5",
+      "sha256": "f2260bc630f54729d66aab1ab4117d562e50e8aa5c2efac8089bc08e19458f4a"
+    },
+    {
+      "id": "S6",
+      "sha256": "e8fdaf7927ee08c874267f0b2ac435576169d019445a757c8d32e88dd93ccdcd"
+    },
+    {
+      "id": "S7",
+      "sha256": "6a3fdd2f6b38522d588212a03d2c2cd3b228310b7c1fe562060b7941c36ccf47"
+    },
+    {
+      "id": "S8",
+      "sha256": "47c4d90f3f10532a1871dc61ec5892583942b13f520a3097a777a50a1bc08f81"
+    },
+    {
+      "id": "S9",
+      "sha256": "b6fb58ad7b26c3410aaedc92380f60c08963bd0cb4204776c67c7180bf1297e8"
+    },
+    {
+      "id": "S10",
+      "sha256": "756806a2958079ff2a9fc93bde3560f5c1ddb894e02e67062303861ce15ba02f"
+    },
+    {
+      "id": "S11",
+      "sha256": "78722943dc995389bcc6c378e09f6ce7dddaa06fe2b133464724c1208eed6672"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008477",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Measure UI-agent reliability across variations in app design and content, not only within one fixed environment.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Fixed-environment evaluations reveal task completion only for specific app environments and can miss deployment-relevant variation effects.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "system",
+        "claim": "OpenApps is a lightweight open-source ecosystem of six configurable apps whose appearance and content can vary.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "infrastructure",
+        "claim": "The ecosystem runs on a single CPU and supports generating and deploying thousands of app versions.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Across more than 10,000 evaluations of seven leading multimodal agents, reliability varied substantially across app variations despite relative stability within fixed apps.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce app-variation evaluation as a new dimension for measuring UI-agent reliability, implemented through OpenApps.",
+      "source_ids": [
+        "S4",
+        "S11"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that many agents’ task success rates fluctuate by more than 50% across app variations.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report Kimi-VL-3B’s average success across tasks ranging from 63% to 4% across app versions.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that looping and hallucinated-action behaviors differ drastically with environment configuration.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Reliable task completion is necessary for users to trust autonomous UI agents.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Fixed app environments cannot characterize reliability under changing app design and content.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "resource",
+        "summary": "OpenApps provides six configurable apps and low-cost generation of thousands of versions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "study",
+        "summary": "The authors evaluate seven multimodal agents in more than 10,000 independent evaluations.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "Reliability and failure behaviors can change sharply across app variations, motivating this evaluation dimension.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper contrasts stable fixed-environment reliability with large variation across configurable app versions, including a 63%–4% example.",
+          "source_ids": [
+            "S7",
+            "S9"
+          ]
+        },
+        "interpretation": "A single-environment score may conceal sensitivity to interface and content changes.",
+        "application": "Report performance distributions across systematically varied environments alongside fixed-environment averages.",
+        "exception": "This may be unsuitable when deployment guarantees a genuinely immutable interface and content."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the variation dimensions, task set, agent identities beyond Kimi-VL-3B, or evaluation metric details.",
+      "The abstract does not provide per-agent results or conditions explaining the observed fluctuations."
+    ]
+  }
+}

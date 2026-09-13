@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009932",
+    "title": "In-the-Flow Agentic System Optimization for Effective Planning and Tool Use",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009932"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a406c78d1535620b6fe5a817579041d67ebcf01002eec4e9a9ee83459d2bdc8b",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "09e51064a8cb58d23430a98b5fab66c7a7e73a1e39dea3702d1d18511ddaa537",
+    "extracted_at": "2026-09-13T00:03:46.824732+00:00",
+    "session_id": "01a09813-7811-7572-8e1b-65961966b153",
+    "usage": {
+      "input_tokens": 12812,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 829,
+      "reasoning_output_tokens": 72
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2e96dc0dd81c02018e11495b3eea4cd6279cb0551f54de1d96aec65545c8b08e"
+    },
+    {
+      "id": "S2",
+      "sha256": "555587c90b53b4190f89237b6bce164eb5cf3011d8fa8065fbce9a54122a2332"
+    },
+    {
+      "id": "S3",
+      "sha256": "4a5f71dc6100f0ccd6032fdd9d5bd08985331fe2859763cc1fa308d1a27d9861"
+    },
+    {
+      "id": "S4",
+      "sha256": "fa1ba2fc0c87d6e77e32582b01b2c5a1361fb337f8508b2892d3309be2077541"
+    },
+    {
+      "id": "S5",
+      "sha256": "0a81504379f0a010d8890a90bc67da3633ca6cdf1a9684cc553def78a1d0247f"
+    },
+    {
+      "id": "S6",
+      "sha256": "888457770212d59e2832dbecce4006f2359c1c081a629daf4569ca5e23678258"
+    },
+    {
+      "id": "S7",
+      "sha256": "df1a932ca7186952ecee2ead9a06b03330bbb8041ab079aeacee4c7b719ae74b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009932",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to train agentic systems for effective long-horizon planning and tool use during live, multi-turn interaction.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing tool-augmented methods rely on monolithic policies that scale poorly and generalize weakly, while many modular systems are training-free or trained offline without live interaction dynamics.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "system",
+        "claim": "AgentFlow coordinates planner, executor, verifier, and generator modules through evolving memory, while optimizing the planner in the interaction loop.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Flow-GRPO converts multi-turn on-policy optimization into sequential single-turn updates for long-horizon, sparse-reward credit assignment, using trajectory-level outcome broadcasting and group-normalized advantages.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report gains across search, agentic, mathematical, and scientific benchmark categories using a 7B-scale backbone.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present an in-the-flow, trainable agentic framework that directly optimizes planning within the live multi-turn loop.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, across ten benchmarks, AgentFlow exceeds their top-performing baselines by average accuracy gains of 14.9% on search, 14.0% on agentic, 14.5% on mathematical, and 4.1% on scientific tasks, and surpasses larger proprietary models such as GPT-4o.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report analyses showing improved planning, more reliable tool calling, and positive scaling with model size and reasoning turns.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies scaling, generalization, and live-interaction training limitations in existing approaches.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "It introduces AgentFlow, a four-module system with evolving memory and in-the-flow planner optimization.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "optimization",
+        "summary": "It proposes Flow-GRPO to make long-horizon, sparse-reward on-policy training tractable and align turn-level decisions with trajectory-level success.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report category-level accuracy gains across ten benchmarks and favorable analyses of planning, tool calling, and scaling.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links local planner updates to a single verifiable trajectory-level outcome and uses group-normalized advantages to stabilize learning.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This suggests a useful claim-to-evidence pattern: explicitly connect local decisions to the global objective while naming the mechanism that handles delayed feedback.",
+        "application": "When presenting a multi-step training method, map each intermediate update to a shared end-to-end outcome and state how credit assignment is stabilized.",
+        "exception": "This framing may be unsuitable when intermediate actions have independently verifiable objectives or when no meaningful trajectory-level outcome exists."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark names, baseline identities, statistical uncertainty, or whether gains are statistically significant.",
+      "It does not provide ablation details isolating AgentFlow modules, Flow-GRPO components, or the reported scaling effects."
+    ]
+  }
+}

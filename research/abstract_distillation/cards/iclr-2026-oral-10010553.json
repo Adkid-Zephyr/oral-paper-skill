@@ -1,0 +1,186 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010553",
+    "title": "EditBench: Evaluating LLM Abilities to Perform Real-World Instructed Code Edits",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010553"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "db1bf5bccd8df398050e6e80347f10bc37064529c15f21d59cbbf8c359d7458b",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "a9739b8688e2bb7f58d40dce57d35ce28954a634aae23faa44b7648767a0b827",
+    "extracted_at": "2026-09-13T00:04:33.584156+00:00",
+    "session_id": "01a09814-27e8-7c33-918b-cb798603c28a",
+    "usage": {
+      "input_tokens": 12726,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 741,
+      "reasoning_output_tokens": 67
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1efa4a1b11125f67e70e68d5d2f7118dc360ad4c50a806dc578d3c98c1937b5b"
+    },
+    {
+      "id": "S2",
+      "sha256": "9aaee66339447b51557b4145403a718376250c5044b5d15aaff9e0908d8f2967"
+    },
+    {
+      "id": "S3",
+      "sha256": "3dddec0aa64f33240cb841cc209b6222a4814c0cdc31d8477fa98d8cfd459201"
+    },
+    {
+      "id": "S4",
+      "sha256": "d3db209bcb39bb75824d58c47594ee2b3247159c6468ac53ad8b14723b70f2c6"
+    },
+    {
+      "id": "S5",
+      "sha256": "3e978724809223c02dde7c204c0cfcad5090b6f217963eb1976ea398a92fc088"
+    },
+    {
+      "id": "S6",
+      "sha256": "a66f36096ab574755b53cbd72711c29d6f8bf66f14a3b89c03db894642e1ea37"
+    },
+    {
+      "id": "S7",
+      "sha256": "e0cd010a5a187fe95701ecc13e38a012573c757bdafcca4512230d7f93ed904b"
+    },
+    {
+      "id": "S8",
+      "sha256": "c3d2414fd720940c47b5bda54aa9daa34da9d92d2024d52f9b54ba0829d01602"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010553",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate LLMs that modify existing developer code in response to user instructions.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Few benchmarks directly assess instructed code editing, and existing datasets often use artificial sources.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces EditBench, grounded in user instructions and code contexts collected in the wild.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Provides 545 problems spanning multiple natural and programming languages and use cases from error resolution to feature addition.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "evaluation design",
+        "claim": "Includes context-dependent tasks requiring understanding of code context, highlighted code, and cursor position alongside the instruction.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The benchmark’s stated distinction is its real-world grounding and explicit evaluation of context-dependent editing conditions.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report evaluating 40 diverse LLMs; only 3 models scored above 60%, characterizing EditBench as challenging.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that performance varies across categories of user instructions.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that changing contextual information affects task success by up to 11%, highlighting the importance of realistic context evaluation.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Instructed code editing is becoming a common AI coding-assistant interaction, but benchmark coverage is limited and often artificial.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark introduction",
+        "summary": "EditBench is introduced as a real-world-grounded benchmark with 545 multilingual, varied-use-case problems.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "task formulation",
+        "summary": "Its problems require models to integrate the instruction with code context, highlighted code, and cursor position.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation findings",
+        "summary": "Evaluation across 40 LLMs reports low overall scores, category-dependent performance, and up to 11% variation from contextual information.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly separates user instructions from several contextual signals and reports up to 11% success-rate variation when context changes.",
+          "source_ids": [
+            "S5",
+            "S8"
+          ]
+        },
+        "interpretation": "This suggests that editing benchmarks should treat interaction state as part of the task definition, not merely as optional input.",
+        "application": "When designing a code-editing evaluation, factor instruction, surrounding code, highlighted span, and cursor position into controlled context variants and report their separate effects.",
+        "exception": "This design may be unsuitable when the target workflow does not expose stable highlighting or cursor state."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the scoring metric, model identities, category definitions, statistical uncertainty, or evaluation protocol.",
+      "The reported 11% variation is not qualified by whether it is an absolute or relative change, nor by the exact context conditions."
+    ]
+  }
+}

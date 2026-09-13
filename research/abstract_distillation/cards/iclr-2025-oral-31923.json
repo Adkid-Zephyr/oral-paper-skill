@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31923",
+    "title": "Flat Reward in Policy Parameter Space Implies Robust Reinforcement Learning",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31923"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7615a70724a1d046ee068e54d8f20ebe7f32cb88e3375706cf6952f89b526c27",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "66453ae28f66eb7aa74d839d63af8631a6c8dc6db18a47dde99589609d2f5eea",
+    "extracted_at": "2026-09-12T23:57:21.356151+00:00",
+    "session_id": "01a0980d-96a8-7de3-8f71-51f2a22e32f8",
+    "usage": {
+      "input_tokens": 12691,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 818,
+      "reasoning_output_tokens": 123
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "60a7362b44c80805958bbabee7e404e9370fe2e0763adeb8a508ca5b1f43b662"
+    },
+    {
+      "id": "S2",
+      "sha256": "b05618bf401bf5c3d097fb406ac958f941f27299ed95f3f40376d59549986976"
+    },
+    {
+      "id": "S3",
+      "sha256": "d17d1fb0d723b06c35de79b154e2c8791c5cb16cd9fcee98238f18c1a7a5c206"
+    },
+    {
+      "id": "S4",
+      "sha256": "20cc042221690312e0dafa7dfa17d9d8e13f9bdc7b65b5c5a5880fa128edfe64"
+    },
+    {
+      "id": "S5",
+      "sha256": "998913f55b278898a1b94cb402f2c6f5d8ddd489d321c95c272812a50ac7e5ba"
+    },
+    {
+      "id": "S6",
+      "sha256": "9d22a27edab44624aabf002dbf7bfd2990e88d4f772a26e8e1a0173a14e1df12"
+    },
+    {
+      "id": "S7",
+      "sha256": "41290f791706d81139a3b2565ff7226e8b64bd45758bd938629cadb8e28ef9a8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31923",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper investigates whether flat reward landscapes in policy parameter space are connected to robust reinforcement learning.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The impact of flatter reward landscapes in policy parameter space is described as largely unexplored in reinforcement learning.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "The authors propose a formal connection between reward-surface flatness and RL-model robustness.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "mechanistic finding",
+        "claim": "They report that flatter landscapes under parameter perturbations produce consistent rewards under action perturbations, with further robustness to transition-probability and reward-function changes.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "They simulate diverse RL environments to examine flatness-related robustness across action selection, transition dynamics, and reward functions.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work from direct extrapolation from supervised learning by seeking a formal RL-specific connection between flat reward surfaces and robustness.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report consistent rewards under action perturbations for policy models whose reward landscapes are flatter under parameter perturbations.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that action robustness further contributes to robustness against changes in transition probabilities and reward functions.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report consistent benefits of flatter reward landscapes in simulations spanning action selection, transition dynamics, and reward functions.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Flat minima are established in supervised learning as relevant to generalization.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "research gap",
+        "summary": "The abstract identifies limited study of flat reward landscapes in RL policy parameter space.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "objective",
+        "summary": "The authors seek a formal link between reward-surface flatness and RL robustness.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported mechanism",
+        "summary": "Flatter landscapes are associated with consistent rewards under action perturbations and broader variation robustness.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "simulation",
+        "summary": "Simulations across diverse environments are reported to support benefits across three variation types.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects one structural property—flatness under parameter perturbations—to several robustness targets, then reports simulations covering those targets.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact claim can become more informative when it specifies a proposed mechanism and tests the same concept across distinct perturbation axes.",
+        "application": "When presenting a robustness method, explicitly map the central property to each perturbation type and align evidence with that map.",
+        "exception": "This framing is unsuitable when the perturbation mechanisms are unrelated or when the abstract lacks evidence for the claimed cross-axis connection."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide the formal theorem or proof details, environments, baselines, robustness metrics, perturbation magnitudes, or quantitative results.",
+      "It is unclear whether the reported simulations establish causation or only associations between flatness and robustness."
+    ]
+  }
+}

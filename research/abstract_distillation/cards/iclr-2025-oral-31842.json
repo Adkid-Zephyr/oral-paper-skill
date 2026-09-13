@@ -1,0 +1,152 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31842",
+    "title": "A Decade's Battle on Dataset Bias: Are We There Yet?",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31842"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "09901215d59b0719893b12d9f33292907ecdfbc52f8d600848236a5d2c07f77d",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "b0b27c6a7dc75949768dcb43983a975bfcd604697df11cf6ddde6040bbabdbb7",
+    "extracted_at": "2026-09-12T23:54:05.517713+00:00",
+    "session_id": "01a0980a-9e33-7c41-8883-8d83ffdfa06b",
+    "usage": {
+      "input_tokens": 12594,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 747,
+      "reasoning_output_tokens": 129
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fd6c91e3e5302ce0b2dd7d89ec3e161689c9b08a5497919c5cdd818fb04481ac"
+    },
+    {
+      "id": "S2",
+      "sha256": "0b9aba6b416d83d8aff7b4cff08f9f078af70fbe4c53f360da17568b8f4d0051"
+    },
+    {
+      "id": "S3",
+      "sha256": "df4aa70da1baba0b9fc73b5bc6c3007ab4d2a577160d6262d54c11a0954e3a4a"
+    },
+    {
+      "id": "S4",
+      "sha256": "c5811cb8c43c8eecbb84cb8e303f921970a7d4b5c948350539a87bbb891a8ae1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31842",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Revisit dataset classification to examine whether images remain distinguishable by dataset origin in the era of larger, more diverse datasets and stronger neural networks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "Reports that modern neural networks can classify an image’s source dataset with high accuracy, including a three-way YFCC/CC/DataComp task.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that dataset classifiers learn semantic features that generalize and transfer, rather than relying solely on memorization.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present their observation about persistent dataset predictability and transferable semantic signals as a discovery intended to prompt renewed consideration of dataset bias.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report 84.7% held-out validation accuracy for three-way classification among YFCC, CC, and DataComp.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report that further experiments indicate the learned semantic features are generalizable and transferable and cannot be explained by memorization.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setup",
+        "summary": "The paper revisits the dataset-classification experiment proposed by Torralba and Efros in 2011.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "result",
+        "summary": "It reports unexpectedly high dataset-source classification accuracy with modern neural networks, including 84.7% on a three-way task.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "interpretation",
+        "summary": "Further experiments are reported to show transferable semantic features, not merely memorization.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The authors hope this finding encourages the community to rethink dataset-bias issues.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a dataset-origin classification result with a follow-up analysis of whether the signal transfers semantically or can be explained by memorization.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "This pairing makes a bias result more informative by probing what information the classifier appears to use.",
+        "application": "For a dataset-bias study, report both source-prediction performance and an analysis testing whether the learned signal transfers beyond superficial dataset identification.",
+        "exception": "This framing may be unsuitable when the task has no meaningful notion of transfer or when the available evaluation cannot distinguish memorization from semantic generalization."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the dataset-classifier architecture, training protocol, class balance, or confidence intervals.",
+      "The reported transfer analyses and the basis for ruling out memorization are not detailed.",
+      "It is unclear which specific dataset biases account for the classification signal."
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71041",
+    "title": "Multimodal Nested Learning for Decoupled and Coordinated Optimization",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71041"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9fd56ffb9dea51485a7e14ec7a5469550cba67e54c0e72846dff977bb6b1df3f",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "4759afaa706aa5e828d564d1a22a1ec5a1b83741e29758babf0a4cfa469bb6ca",
+    "extracted_at": "2026-09-13T00:11:43.842795+00:00",
+    "session_id": "01a0981a-c4d8-7b83-8339-faf197a7d079",
+    "usage": {
+      "input_tokens": 12757,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 728,
+      "reasoning_output_tokens": 74
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "814230ba464ebaf69bb2a83006a23662f20625fc885e75cdcfac43c04d5711d6"
+    },
+    {
+      "id": "S2",
+      "sha256": "a5ef1c6fd74acb4773a6a0f94f8307a8f1158ceebc9941cee1ad1805787f75e8"
+    },
+    {
+      "id": "S3",
+      "sha256": "3b6a8147c119361cf12f7e9d7ca45c545474a765eead98f2f84d7df2367a3396"
+    },
+    {
+      "id": "S4",
+      "sha256": "2707c217f912fde44b7d0f802c34baba390164010b9a351b58927b7054cd3f76"
+    },
+    {
+      "id": "S5",
+      "sha256": "e116961e56352654f03337a24a0c5ebe0a77041b13e8d0051722afc35b4cc917"
+    },
+    {
+      "id": "S6",
+      "sha256": "2045d051138c9c17a0de3f051d783e36e712d5684979a2bdec7a206274160e73"
+    },
+    {
+      "id": "S7",
+      "sha256": "90b83a8cdde517b6677e88d028c1b4a87defc6536d6fb3b65c905d7e9f56efd7"
+    },
+    {
+      "id": "S8",
+      "sha256": "72c7107f49a042120978cfd577cfec418bfd911c0ac802e9636693cda362879d"
+    },
+    {
+      "id": "S9",
+      "sha256": "ec2a91c100df1173d47a4e7ef02f0578ed7ca6a18f31874e7b6b9baad48270f8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71041",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Integrate heterogeneous multi-sensor modalities while avoiding imbalanced multimodal optimization and preserving joint learning performance.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing optimization-modulation and conflict-alleviation methods remain limited by entangled optimization and a uniform learning pace in monolithic frameworks.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes MoNet, a nested framework that decouples and coordinates multimodal learning.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces DMSM as an outer nested level with independent optimization streams for cross-modal semantic exploitation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces AMCF as an inner nested level to coordinate fusion across multi-timescale nested memories and balance multimodal integration.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish MoNet by reformulating a conventional monolithic multimodal framework into nested sub-processes for decoupled and coordinated optimization.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments across eight datasets and three tasks demonstrate MoNet's superiority.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Multimodal learning seeks to exploit complementary information from multiple sensors for broader perception and understanding.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Heterogeneous modalities cause imbalanced optimization; existing remedies still use entangled optimization and uniform learning pace.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The authors propose MoNet, replacing the monolithic design with nested sub-processes that decouple and coordinate learning.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "mechanisms_and_result",
+        "summary": "DMSM provides independent outer-level optimization streams, AMCF coordinates inner-level multi-timescale fusion, and reported experiments span eight datasets and three tasks.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links distinct optimization problems to separate nested mechanisms: DMSM handles independent streams, while AMCF handles coordinated fusion across timescales.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A contribution narrative can be more informative when each architectural component is mapped to a specific diagnosed failure mode.",
+        "application": "For a modular learning method, explicitly pair every major module with the optimization or representation problem it is intended to address.",
+        "exception": "This mapping may be unsuitable when modules are intentionally general-purpose or when the abstract cannot support distinct functional roles."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the eight datasets, three tasks, evaluation metrics, baselines, or quantitative effect sizes.",
+      "The reported claim of superiority is not independently verified here, and conditions for the comparison are unspecified.",
+      "The abstract does not report ablations separating DMSM and AMCF contributions."
+    ]
+  }
+}

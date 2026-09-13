@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31882",
+    "title": "MMQA: Evaluating LLMs with Multi-Table Multi-Hop Complex Questions",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31882"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b2ca1eee6fd222bb6961f3d54a81a15254ed104a12fc6b8421de3316f948eb70",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "1fb672f5b17ecb90de90f96bcf51513d9418b8a8aa948e7c31b64959c18b4495",
+    "extracted_at": "2026-09-12T23:55:41.989496+00:00",
+    "session_id": "01a0980c-1544-7f90-8095-65570660ff0d",
+    "usage": {
+      "input_tokens": 12755,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 747,
+      "reasoning_output_tokens": 73
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "677119fba9aebaa154cabe038379f20e9d7270cb9bbba1f3a84dc22fee8e08e4"
+    },
+    {
+      "id": "S2",
+      "sha256": "f88239953302d8fa68f660de5e5558fea124414f032eaa2f8f7b8de977b411ab"
+    },
+    {
+      "id": "S3",
+      "sha256": "8bcd70305d936b33d2b95b82c43b7c42fcf4c00d6870865e6a4632e7bf394923"
+    },
+    {
+      "id": "S4",
+      "sha256": "db1d82087d662c7fb99f3ffeea10e5f6cb42ddb3f592f6a25665b42f56cb622a"
+    },
+    {
+      "id": "S5",
+      "sha256": "38b1302067e5975a14f16825ca79f1db1ac20967702af8fe961c6cd83d44b1f5"
+    },
+    {
+      "id": "S6",
+      "sha256": "e6f21b8b32ebdbf7941727db7c587a0e9ff4773011e42dbf06114fff35ed25a5"
+    },
+    {
+      "id": "S7",
+      "sha256": "70401eb023592264b65e1589a0e471d7f2efc4b8150c1b4331ce2f93bfcf8827"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31882",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess LLM understanding and reasoning on complex questions requiring evidence from multiple connected tables and multiple inference steps.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing tabular benchmarks such as WikiTableQuestions and WikiSQL focus on single-table scenarios, limiting their reflection of real-world complexity.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "The MMQA dataset evaluates multi-table, multi-hop question answering, including relationships involving primary and foreign keys.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "evaluation framework",
+        "claim": "A framework assesses multi-table retrieval, Text-to-SQL generation, multi-table QA, primary-key selection, and foreign-key selection.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A multi-table retrieval method is proposed for the MMQA setting.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize their multi-table retrieval method as novel and report state-of-the-art performance on MMQA against several strong baselines.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their retrieval method achieves state-of-the-art performance on MMQA compared with several strong baselines; numerical results and experimental conditions are not given in the abstract.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that both open-source and commercial LLMs perform substantially below human performance on multi-table understanding and reasoning tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Single-table benchmarks are presented as insufficient for capturing real-world tabular complexity.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "resource",
+        "summary": "MMQA is introduced to assess multi-table, multi-hop understanding and reasoning.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "A framework is defined across retrieval, SQL generation, QA, and key-selection capabilities.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "method_and_findings",
+        "summary": "A retrieval method is proposed and reported as SOTA; broader experiments report substantial room for LLM improvement relative to humans.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns benchmark design, capability dimensions, and reported model comparisons around the same multi-table reasoning challenge.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A tightly matched task decomposition can make an evaluation claim easier to trace from problem definition to evidence.",
+        "application": "When introducing a benchmark, map each stated capability to an explicit evaluation dimension and report comparisons within that same task scope.",
+        "exception": "This structure may be unsuitable when the target task cannot be meaningfully decomposed into separable capabilities."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no dataset size, construction details, model list, human-evaluation protocol, numerical scores, or statistical uncertainty.",
+      "The basis and scope of the claimed SOTA result, including baseline configurations and evaluation conditions, are unspecified.",
+      "The abstract does not establish that the benchmark improves real-world capabilities; S7 states this as an expectation."
+    ]
+  }
+}

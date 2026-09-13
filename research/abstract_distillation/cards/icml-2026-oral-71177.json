@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71177",
+    "title": "On the Limits of LLM Adaptability: Impact of Model-Internalized Priors on Annotation Task Performance",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71177"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "dc32b10c3469288b487287885a95e5657b73666af5d7df1242656f63af48d213",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "04e3ab9cade7c8bbaddba285192b777619014fbfed90fd3917818a28738e4f12",
+    "extracted_at": "2026-09-13T00:17:07.081991+00:00",
+    "session_id": "01a0981f-aa3c-72e3-bd72-6f4ec459c7dd",
+    "usage": {
+      "input_tokens": 12812,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 837,
+      "reasoning_output_tokens": 123
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ba56fd956b67cdc26eb051eb7b73356b6d42fb0e93c892e3fe860ae0b6dd868c"
+    },
+    {
+      "id": "S2",
+      "sha256": "a9bdb7af70713a73c1086c35cb6595242bd3e03195d415ae2ed6ad97b8f646ce"
+    },
+    {
+      "id": "S3",
+      "sha256": "24732e14cfe7966dc8aa6f51eb85e4a8ca83da5d363bb98f06f59215adb40b38"
+    },
+    {
+      "id": "S4",
+      "sha256": "4811c9187b3648ab04a629bac2e5a8c62343d4d9fbb2850bc60e5ece50e47c0c"
+    },
+    {
+      "id": "S5",
+      "sha256": "c7fcf9f2beae1953ad5d657a92a6f581b2c182caaa7261184a3a01484e117a48"
+    },
+    {
+      "id": "S6",
+      "sha256": "2069560a95d313e032d7d6e8984ee3c24abe572e935edb30508b75a985fac4e5"
+    },
+    {
+      "id": "S7",
+      "sha256": "30b97a76727cad0ac65d614d7aff6ecad464856a3225a911da4bc1033afc3821"
+    },
+    {
+      "id": "S8",
+      "sha256": "3b4d802297103e8ff02b2378538e720e3808ef88ce0e5870ad808248b5866522"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71177",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper investigates how model-internalized priors interact with user instructions in zero-shot annotation and LLM-as-a-judge tasks, focusing on familiarity, prompt-based error correction, and susceptibility to misaligned definitions.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Definition-Specific Familiarity (DSF), a measure of alignment between a model’s internal concept and the task definition.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that prompt-based correction is limited: nearly two-thirds of zero-shot toxicity-detection errors resist correction, with a 34.8% rescue rate.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that, after controlling for dataset-level confounds, DSF is positively associated with performance, whereas three text-level memorization metrics are not.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present DSF as a new measure centered on definition-specific alignment rather than text-level memorization.",
+      "source_ids": [
+        "S6",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a 34.8% overall rescue rate for initially incorrect predictions after prompting across toxicity datasets and dense and mixture-of-experts models.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that high-confidence errors are especially resistant to correction.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report a partial correlation of +0.41 between DSF and performance after controlling for dataset-level confounds; ROUGE-L, BERTScore, and embedding cosine similarity show no positive association.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Frames reliability as dependent on interaction between internalized priors and user instructions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "research_questions",
+        "summary": "Defines three investigation dimensions: familiarity, decision stickiness, and response to misaligned task definitions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "experimental findings",
+        "summary": "Reports resistant zero-shot errors, particularly high-confidence errors, and unchanged confidence under misaligned definitions.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "proposed measure and interpretation",
+        "summary": "Introduces DSF and reports its positive performance association relative to non-predictive memorization metrics, emphasizing definition alignment.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates definition-specific familiarity from text-level memorization and reports different associations with performance.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This framing can distinguish conceptual alignment from surface or data similarity when explaining model behavior.",
+        "application": "Define and test a task-definition alignment measure alongside memorization proxies when studying annotation performance.",
+        "exception": "This move may be unsuitable when the task has no stable, explicit definition or when alignment cannot be operationalized."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dataset sizes, model identities, prompting protocols, or uncertainty/significance information for the reported associations.",
+      "The operational construction and validation of DSF are not described.",
+      "The abstract does not establish whether the reported patterns generalize beyond toxicity detection or the listed domains."
+    ]
+  }
+}

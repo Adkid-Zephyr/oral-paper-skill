@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009625",
+    "title": "Scaling Laws and Spectra of Shallow Neural Networks in the Feature Learning Regime",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009625"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "47da99cfe061287f81da36853f753167281f6baa16413d5f0618dce8e09b4ff1",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "4308deea0e9f1e49bad8521412cc53336bddbe15f00e690fda4e52ab881e0c2b",
+    "extracted_at": "2026-09-13T00:03:08.714521+00:00",
+    "session_id": "01a09812-e372-7371-8e69-410f763440ec",
+    "usage": {
+      "input_tokens": 12650,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 713,
+      "reasoning_output_tokens": 63
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "44a028e4dac124bee0a6d36673414623adbd4c01c98ffefd4cfdc8fd01cec7c3"
+    },
+    {
+      "id": "S2",
+      "sha256": "3d6f80e8e7de4435d149c07d143631591a1bfc50c737cca45c2ffed8dc5ca886"
+    },
+    {
+      "id": "S3",
+      "sha256": "2b9be8c3cf8aca849401738daedf74c6c1daa1cd17684aa93c185562171a10b6"
+    },
+    {
+      "id": "S4",
+      "sha256": "fb1d105ec0edacf2ad08e38937c22825a23fe3944546182d44911140bb269f4b"
+    },
+    {
+      "id": "S5",
+      "sha256": "d1bf6bae6b88bbc8f81f0d51e535874634e77f7a9bf0072a2ed112f9c9bcdcad"
+    },
+    {
+      "id": "S6",
+      "sha256": "e6dbd4d027b3f7ac7c3174766bc31df4b76637fc88a91e46607659f37512acfc"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009625",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper analyzes scaling laws and weight-spectrum behavior for shallow quadratic and diagonal neural networks in the feature-learning regime.",
+        "source_ids": [
+          "S2",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify that theoretical understanding of neural scaling laws remains largely confined to linear models.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A systematic analysis of scaling laws for quadratic and diagonal neural networks in the feature-learning regime.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "phase diagram",
+        "claim": "A detailed phase diagram for excess-risk scaling exponents as functions of sample complexity and weight decay, using connections to matrix compressed sensing and LASSO.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "spectral theory",
+        "claim": "A detailed characterization linking scaling regimes to the spectral properties of trained network weights.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a first-principles theoretical interpretation connecting power-law tails in weight spectra with network generalization performance.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The analysis reveals crossovers between distinct scaling regimes and plateau behavior, phenomena the authors say mirror reports from empirical neural-scaling research.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors establish a precise link between the identified regimes and spectral properties of trained weights.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report theoretical validation of empirical observations associating power-law tails in weight spectra with generalization performance.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Neural scaling laws have driven advances in deep learning, but their theory is described as largely limited to linear models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "The paper studies quadratic and diagonal networks in feature learning and derives excess-risk scaling exponents across sample complexity and weight decay.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "interpretation",
+        "summary": "It identifies regime crossovers and plateaus, then relates them to trained-weight spectra and power-law tails associated with generalization.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract organizes scaling behavior through a phase diagram indexed by sample complexity and weight decay, then connects those regimes to weight spectra and generalization.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This framing makes regime-dependent behavior and its proposed mechanism easier to state together.",
+        "application": "For a theory paper on scaling, define the control variables and regime map before presenting spectral or performance interpretations.",
+        "exception": "This structure may be unsuitable when the phenomenon has no meaningful regime boundaries or when the proposed spectral link is not established by the available analysis."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical scaling exponents, phase boundaries, model dimensions, data assumptions, or training details.",
+      "The abstract does not specify the exact sense or conditions of the reported theoretical validation and precise spectral link."
+    ]
+  }
+}

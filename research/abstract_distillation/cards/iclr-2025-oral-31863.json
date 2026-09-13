@@ -1,0 +1,196 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31863",
+    "title": "REGENT: A Retrieval-Augmented Generalist Agent That Can Act In-Context in New Environments",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31863"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5da32e0629fa6d30267830f8b829ba440eba177b6d028690f4d4042e2152cc5d",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "1c66bd5d43104106ac480951aa21d0782a6fff740c686d81d7415dd36a9423de",
+    "extracted_at": "2026-09-12T23:55:03.095705+00:00",
+    "session_id": "01a0980b-6f60-7f71-bb0f-79d39849bda0",
+    "usage": {
+      "input_tokens": 12692,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 923,
+      "reasoning_output_tokens": 90
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "126a2ef4ff833047698923b8527d3df3723d8ed6f5950082807b382c222353f5"
+    },
+    {
+      "id": "S2",
+      "sha256": "011c9dd58205a178225c8a800016a9206082f772f3f1535eddec31777d0717a3"
+    },
+    {
+      "id": "S3",
+      "sha256": "df7e7b55bed0226e5065e188143b7b24b7447edd422fd4b22ae861e03f7dcd79"
+    },
+    {
+      "id": "S4",
+      "sha256": "83447b8fe72f6c325b0b1d09ea3dd458b7481b4b660d99bfb87a9b2eaabe1536"
+    },
+    {
+      "id": "S5",
+      "sha256": "4f38863a07374161ebf1eaa6c8d8104cf0279c1ccc933bc30362146055154bc9"
+    },
+    {
+      "id": "S6",
+      "sha256": "f40fb894da27a53d40d2d3557125509f865df493d46fbb8b51c3657ed5680835"
+    },
+    {
+      "id": "S7",
+      "sha256": "ad8b15b103abf0ffaca5ecb661eb2c86be0ecbcf7d5565df18517544703601bb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31863",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses rapid adaptation of generalist agents to new digital, robotic, and game-playing environments.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A retrieval-augmented, semi-parametric agent, REGENT, trains a transformer policy on query and retrieved-neighbor sequences for finetuning-free in-context adaptation.",
+        "source_ids": [
+          "S3",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report generalization to unseen robotics and game-playing environments with up to 3× fewer parameters and an order of magnitude fewer pre-training datapoints than current generalist agents.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "baseline",
+        "claim": "The authors identify a simple retrieval-based 1-nearest-neighbor agent as a strong baseline for contemporary generalist agents.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present pre-training relatively small policies on relatively small datasets, then adapting them to unseen environments through retrieval-biased in-context learning without finetuning.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that a simple retrieval-based 1-nearest-neighbor agent is surprisingly strong against current state-of-the-art generalist agents.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that REGENT significantly outperforms current state-of-the-art generalist agents while using up to 3× fewer parameters and up to 10× fewer pre-training datapoints.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report generalization to unseen robotics and game-playing environments via retrieval augmentation and in-context learning.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Rapid adaptation to new environments is framed as a deployment challenge for generalist agents.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "research question",
+        "summary": "The paper questions whether scaling existing agent architectures is the most effective route to generality.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "core idea",
+        "summary": "It proposes small-policy pre-training followed by finetuning-free in-context adaptation, using retrieval as a bias for fast adaptation.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "system construction",
+        "summary": "Starting from a strong nearest-neighbor baseline, the authors construct REGENT as a transformer policy over queries and retrieved neighbors.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "REGENT is reported to generalize across unseen robotics and game-playing environments with reduced model and data requirements and higher performance than current generalist agents.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract introduces a simple retrieval-based 1-nearest-neighbor agent before presenting the more complex REGENT system.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A strong simple baseline can clarify whether added architectural complexity contributes beyond retrieval itself.",
+        "application": "When proposing a sophisticated adaptive agent, establish a retrieval-only baseline first and state the incremental role of the learned policy.",
+        "exception": "This is less suitable when a retrieval-only comparator cannot represent the task or violates the deployment setting."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract pairs adaptation claims with resource comparisons, reporting parameter and pre-training-data reductions alongside performance comparisons.",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        "interpretation": "Aligning capability claims with efficiency quantities makes the claimed tradeoff more concrete.",
+        "application": "Report performance and resource usage together when arguing that a smaller adaptive system is competitive or superior.",
+        "exception": "Resource comparisons may mislead when training budgets, environments, or evaluation conditions are not matched."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark tasks, dataset sizes, evaluation metrics, comparator identities, or statistical uncertainty.",
+      "The conditions behind the reported 3× parameter and order-of-magnitude data reductions are unspecified."
+    ]
+  }
+}

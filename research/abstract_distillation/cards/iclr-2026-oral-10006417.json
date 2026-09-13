@@ -1,0 +1,197 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006417",
+    "title": "On The Surprising Effectiveness of a Single Global Merging in Decentralized Learning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006417"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "1b7fe5193ed08bb6a280f76f04d740b5214cb9f330e78879f728ff6da35f0522",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "13f0d5fec6595536446c7f0a3e034256a58dc09fc026ce5f9d029b7f8bec801c",
+    "extracted_at": "2026-09-12T23:39:32.403228+00:00",
+    "session_id": "01a097fd-46ca-7090-8ac9-80aefbcaf01e",
+    "usage": {
+      "input_tokens": 12688,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 827,
+      "reasoning_output_tokens": 122
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "42c5826556e2062e8784d34e2c54f440a155bcf0c00071ffcffa7e2dc263fe88"
+    },
+    {
+      "id": "S2",
+      "sha256": "5e205b62dbc20272dbfb4f8792871347854ab632375a6f18e4847d99f944e91e"
+    },
+    {
+      "id": "S3",
+      "sha256": "cc3c4a62a39f94dc00f250859e9b1e4ef1c794d11249945c72e0b42133570117"
+    },
+    {
+      "id": "S4",
+      "sha256": "4b9f169551c47be02c760d8cb6f0b3c941e1b922411c7dd071910cb0e8c90dea"
+    },
+    {
+      "id": "S5",
+      "sha256": "bf1fbbb40046dad09a7799217186f249b74cccbd5adb6a68bdf2aed6b39c4bcb"
+    },
+    {
+      "id": "S6",
+      "sha256": "a135ba854f536183458b8b7e1011286264ce3785500a158d8a7cdb4366d4dceb"
+    },
+    {
+      "id": "S7",
+      "sha256": "5e79f7122e65b8afc3208a47cb0deaf8ccee032f96e491ec4d8b3fd4389d2730"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006417",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how to schedule decentralized-learning communication over time, including synchronization timing and frequency.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "Reports that concentrating communication in later training stages improves global test performance, including a single fully connected merge at the final step under high data heterogeneity.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "States a first theoretical result that the globally merged model of decentralized SGD can match parallel SGD’s convergence rate.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "interpretation",
+        "claim": "Reinterprets part of local-model discrepancy, previously treated as detrimental noise, as constructive components relevant to matching that rate.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their theory is the first to establish the convergence-rate match between globally merged decentralized SGD and parallel SGD.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report counterintuitive empirical results in which later-stage communication concentration remarkably improves global test performance.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that a single final-step global merge significantly improves decentralized-learning performance under high data heterogeneity.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report a theoretical convergence-rate result matching parallel SGD for the globally merged decentralized-SGD model.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Decentralized learning is presented as scalable but constrained by limited peer-to-peer communication.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "research question",
+        "summary": "The paper asks when and how often devices should synchronize during training.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "empirical result",
+        "summary": "Communication concentrated late, especially a single final global merge, is reported to improve performance, including under high data heterogeneity.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "theoretical explanation",
+        "summary": "The authors connect the phenomenon to a convergence-rate match and to constructive components in local-model discrepancy.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The work is framed as evidence for generalization with high heterogeneity and limited communication, while opening directions for model merging.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a counterintuitive scheduling result with a mechanism-level reinterpretation of local-model discrepancy and a convergence-rate claim.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A surprising empirical pattern becomes more informative when the abstract also identifies a theoretical lens that explains why it may occur.",
+        "application": "When presenting an unexpected systems result, explicitly align the result with a proposed mechanism and the strongest formal consequence supported by the work.",
+        "exception": "Do not use this framing when the study has no evidence connecting the mechanism to the reported outcome."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, empirical comparator identities, numerical communication budgets, full synchronization schedules, or quantitative performance gains.",
+      "The convergence-rate conditions and exact meaning of “match” are not given.",
+      "The abstract does not state how broadly the empirical findings generalize beyond the reported high-heterogeneity setting."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "unknowns[0]",
+      "before": "The abstract does not specify datasets, baselines, communication budgets, synchronization schedules, or quantitative performance gains.",
+      "after": "The abstract does not specify datasets, empirical comparator identities, numerical communication budgets, full synchronization schedules, or quantitative performance gains.",
+      "review_file": "reviews/pilot-01.json",
+      "review_sha256": "b548b6b21cf5cc87e15a0fb065b4980eb113634df49f0ca4263694767799715c",
+      "applied_at": "2026-09-12T23:46:38.298708+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

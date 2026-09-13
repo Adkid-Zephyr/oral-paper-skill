@@ -1,0 +1,168 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31912",
+    "title": "Do Vision-Language Models Represent Space and How? Evaluating Spatial Frame of Reference under Ambiguities",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31912"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2043506fadf4a4f3f7223cf06fa5096acfad5263d087caf61b4e934f00352514",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "029c62110550a7cf392df0a500b526c93663dc0aa9c594a23817fdc7d3d3fab9",
+    "extracted_at": "2026-09-12T23:56:52.848941+00:00",
+    "session_id": "01a0980d-2d9b-7f40-9ee0-55249517b4ea",
+    "usage": {
+      "input_tokens": 12696,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 727,
+      "reasoning_output_tokens": 111
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "56dd7e8d3ecbf91521a8d48081dbbe94cab1e2c5ecc7db3577d68062aa29f2af"
+    },
+    {
+      "id": "S2",
+      "sha256": "f7c01620819965f1d3f73b63e6f68c6b77b43cfeb5417c1ce9436e305430f2ab"
+    },
+    {
+      "id": "S3",
+      "sha256": "73177d99e9dc5051e625ce540c294dc75fbc0fb7812e94f722a70b5be7ee7428"
+    },
+    {
+      "id": "S4",
+      "sha256": "1db3da33f4c56bb1f1ea5f1de44f624fbeda62015b03d88c034dc79aecd0844f"
+    },
+    {
+      "id": "S5",
+      "sha256": "5e7c685adce5d0014258056c3892f033ac5325bb20284310c1245ee50045d82f"
+    },
+    {
+      "id": "S6",
+      "sha256": "18b9cd25cb9a13236c5d967b0662bb1dd533098b840fd1e68779d5903c0cf954"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31912",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper examines how VLMs resolve ambiguous spatial expressions whose meanings depend on frames of reference (FoRs).",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Ambiguity in VLM spatial language understanding and reasoning remains under-explored.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "evaluation protocol",
+        "claim": "Introduces COMFORT, a protocol for systematically assessing VLM spatial reasoning under FoR-related ambiguities.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports an evaluation of nine state-of-the-art VLMs using COMFORT.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present COMFORT as a systematic evaluation protocol focused on consistent, multilingual FoR assessment.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that VLMs show some alignment with English conventions when resolving spatial ambiguities, but exhibit poor robustness and consistency.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that evaluated models lack flexibility across multiple FoRs and fail to follow language-specific or culture-specific conventions in cross-lingual tests, with English tending to dominate other languages.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Spatial expressions can be ambiguous because speakers and listeners may adopt different FoRs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Such ambiguity is identified as under-explored in VLM spatial understanding and reasoning.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper introduces COMFORT to systematically evaluate spatial reasoning under these ambiguities.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Nine state-of-the-art VLMs are evaluated with COMFORT.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "findings and implication",
+        "summary": "Reported results indicate limited robustness, FoR flexibility, and cross-lingual cultural alignment, motivating greater attention to ambiguity and diversity.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract frames spatial reasoning evaluation around ambiguity, multiple FoRs, and multilingual or culture-specific conventions rather than a single English convention.",
+          "source_ids": [
+            "S1",
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "This framing makes hidden assumptions in benchmark tasks explicit and exposes failures that aggregate performance may overlook.",
+        "application": "Design evaluation cases that vary FoR and language or cultural convention, then report consistency and convention adherence separately.",
+        "exception": "This approach may be unsuitable when the target deployment fixes one explicitly specified FoR and language convention."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify COMFORT's task construction, metrics, languages, or per-model results.",
+      "The reported shortcomings lack quantitative magnitudes and experimental conditions in the supplied units."
+    ]
+  }
+}

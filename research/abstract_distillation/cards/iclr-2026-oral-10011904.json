@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011904",
+    "title": "Why Low-Precision Transformer Training Fails: An Analysis on Flash Attention",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011904"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e6fdefc6f2835b18391132a51f65dca2ff08b4628efd0a7edfdda3e9b98d93b0",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "e3378c400d5fd3b00a0e632731407596084a1ad84d61f6e41e1b9a9603fd9b39",
+    "extracted_at": "2026-09-13T00:06:40.894958+00:00",
+    "session_id": "01a09816-2398-70b2-842e-0c84177a6aff",
+    "usage": {
+      "input_tokens": 12698,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 735,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d90e879f47f7ee2a6194228a0519582ab1530a7d2ee4382e7099d671dbaef93b"
+    },
+    {
+      "id": "S2",
+      "sha256": "693cd05df96ed38d988bb22520a29640817ff890ae3453e9e4a870454ac7038a"
+    },
+    {
+      "id": "S3",
+      "sha256": "dde9728be6023c3c32c1096991ce3ce928719a7477e52b38899129d3d7aaa883"
+    },
+    {
+      "id": "S4",
+      "sha256": "2d4f3ce938bfeed61771edf66f2df1bb70e0acbf9dcf689b9d78d29cc2d5a597"
+    },
+    {
+      "id": "S5",
+      "sha256": "8bef1275fe99f1e26ebebb587b40bb53611eab89dc705cd059e0ffcf6b14fc90"
+    },
+    {
+      "id": "S6",
+      "sha256": "d65e68b55fdc7b371e379afcb217c6f2f7e772d39127aece16dacf7735af2d3d"
+    },
+    {
+      "id": "S7",
+      "sha256": "267eaadee373fbba493b4d161044387068f0e8a681a9372a703baec3b5b421fa"
+    },
+    {
+      "id": "S8",
+      "sha256": "4efd487d854fa0769f8bd2e19844894a2c9f4821163a439ff1bbdf5b6431371c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011904",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper examines why low-precision transformer training with flash attention can become unstable and suffer catastrophic loss explosion.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The authors address a long-standing, unresolved failure case lacking a mechanistic explanation.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "mechanistic analysis",
+        "claim": "The authors attribute the failure to interacting low-rank attention representations and biased rounding errors in low-precision arithmetic.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "They introduce a minimal flash-attention modification intended to mitigate rounding-error bias.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "practical solution",
+        "claim": "They report that the modification stabilizes training.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that this is the first mechanistic explanation of the specified flash-attention failure in low-precision training.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the two phenomena produce a cycle of accumulating errors that corrupts weight updates and derails training dynamics.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that their minimal modification stabilizes training, which they present as validating the analysis.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Low-precision formats are adopted for computational efficiency, but training instability remains a problem.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "failure and explanation",
+        "summary": "The paper targets catastrophic loss explosion with flash attention and explains it through similar low-rank attention representations plus biased rounding errors.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "These factors are described as creating a vicious cycle that accumulates error, corrupts weight updates, and derails training.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "intervention",
+        "summary": "A minimal modification is introduced to mitigate rounding bias and is reported to stabilize training.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a concrete training failure to two interacting mechanisms and then tests the account with a targeted modification addressing one mechanism.",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A failure analysis is more actionable when the proposed mechanism implies a narrowly matched intervention.",
+        "application": "For a numerical-training failure, map each hypothesized error source to a minimal mitigation and report whether the targeted change alters the failure.",
+        "exception": "This framing is unsuitable when the abstract lacks a specific failure mechanism or when the intervention changes multiple factors at once."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the low-precision formats, model or dataset scope, training settings, or quantitative stability improvements.",
+      "The claimed first explanation and the reported validation are author statements; comparative literature evidence and experimental details are not provided.",
+      "The abstract does not establish whether the modification generalizes beyond the stated flash-attention failure case."
+    ]
+  }
+}

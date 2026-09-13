@@ -1,0 +1,196 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007429",
+    "title": "Mixture-of-Experts Can Surpass Dense LLMs Under Strictly Equal Resource",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007429"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "40c9038989317412b2153fd8fc134880480d5e0e3350253fed9fc4b4ec0edf63",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "ac45f316cb7ec151a14e61b7ac8d461de5fa5303b9fd8ea52d95fc32358a6e23",
+    "extracted_at": "2026-09-12T23:59:33.141774+00:00",
+    "session_id": "01a0980f-9957-7062-93a0-c95570adf18f",
+    "usage": {
+      "input_tokens": 12761,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 775,
+      "reasoning_output_tokens": 71
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a87fa1e7aaf5e51d471bd6ea82a6b104892dd49439836629c735b3e833a090f3"
+    },
+    {
+      "id": "S2",
+      "sha256": "d46aad12eeb16626fb437c4017202cc8bf5c9f604f0539fdacf7f862c55e1402"
+    },
+    {
+      "id": "S3",
+      "sha256": "4d875880b1ad08d21753290694847fc5dd582c5567cf71307fafeecedb9bd245"
+    },
+    {
+      "id": "S4",
+      "sha256": "fbeb191a661efa16a2470f299399b42f19e2fe1935ba6eb2aeabcf35090d7abe"
+    },
+    {
+      "id": "S5",
+      "sha256": "e9fd9295bc29a48ec3da4413a0b6016fd2fd105794a2bc7bccc523f166af1501"
+    },
+    {
+      "id": "S6",
+      "sha256": "58dab56d95182aff30469c89d463a2912ce3d6e1654ea64a622f2cf61fd7078b"
+    },
+    {
+      "id": "S7",
+      "sha256": "c3910817a1e2085bd3dcdada9cc924ddabdb77fde3d420bd5af4850a3bd8ee6d"
+    },
+    {
+      "id": "S8",
+      "sha256": "10f828b7385719ab7503816eb32469e743cc460e4821a7d5d05a53cdfd477ea4"
+    },
+    {
+      "id": "S9",
+      "sha256": "bc1a9f32b957080653231dc3f73a45efc60ccd3ef83180e4d43a2b7911d0281b"
+    },
+    {
+      "id": "S10",
+      "sha256": "f68b5df1c5f3289b882da695f34315765e5b402f9756edc3f25c4141028674fa"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007429",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Whether MoE language models can outperform dense architectures when total parameters, training compute, and data budget are strictly equal.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "This question is described as under-explored despite practical value.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "methodological framework",
+        "claim": "A perspective and framework for studying MoE versus dense models under equal-resource constraints.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "architecture study",
+        "claim": "An investigation of MoE architecture leading to an authors-described optimal model design for maximizing performance.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Identification of an activation-rate region in which MoEs can outperform matched dense models, with the region reported as consistent across model sizes.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present their perspective and methodological framework as novel.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that an MoE with activation rate in an optimal region outperforms its dense counterpart under equal total parameters, training compute, and data resources.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that the optimal activation-rate region remains consistent across different model sizes.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "They report extensive validation involving nearly 200 language models at 2B scale, over 50 at 7B scale, and 50 trillion cumulative training tokens.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "MoEs increase capacity without increasing per-token compute, motivating a strict equal-resource comparison with dense models.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The abstract frames this equal-resource question as under-explored.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The paper proposes a framework and studies MoE architecture to identify an optimal design.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "findings_and_validation",
+        "summary": "It reports an advantageous activation-rate region, cross-size consistency, data reuse as a response to the data-performance trade-off, and large-scale model training for validation.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a tightly defined comparison condition with a specific design variable—activation rate—and reports how that variable relates to performance under the condition.",
+          "source_ids": [
+            "S2",
+            "S6"
+          ]
+        },
+        "interpretation": "This can make a technical claim easier to evaluate because the comparison regime and proposed explanatory factor are explicit.",
+        "application": "When presenting a resource-constrained comparison, define the matched budgets first, then identify the controllable design variable linked to the reported outcome.",
+        "exception": "This framing is unsuitable when the study cannot match the relevant budgets or lacks evidence connecting the design variable to the outcome."
+      }
+    ],
+    "unknowns": [
+      "The numerical boundaries of the optimal activation-rate region are not given.",
+      "The abstract does not specify how data reuse resolves the data-performance trade-off.",
+      "Experimental baselines, statistical details, and model-training protocols are unspecified.",
+      "Code and models are stated to be released publicly, but no release status or location is provided."
+    ]
+  }
+}

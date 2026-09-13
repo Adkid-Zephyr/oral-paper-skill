@@ -1,0 +1,160 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47249",
+    "title": "Generative Social Choice: The Next Generation",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47249"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7440ab4ebfeec8b545a8be9d7ff2cfb2c5efd4d6ae0756c30ede519fc61a52d5",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "1df7b73cd239ac6aa88b351827eb84b7a020edadec215c306f122a16c19fba34",
+    "extracted_at": "2026-09-13T00:10:22.902593+00:00",
+    "session_id": "01a09819-87de-7a41-9b15-7da24c3af5bf",
+    "usage": {
+      "input_tokens": 12607,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 737,
+      "reasoning_output_tokens": 121
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b5ce85b02e9b23a5eed1df7cff26dfc650b96eb40979281495ef72e746bb8107"
+    },
+    {
+      "id": "S2",
+      "sha256": "436ada2cdfbfed7d7b0ccd9f74a3ae1f3152c60b4297a305e062fae30c2914b3"
+    },
+    {
+      "id": "S3",
+      "sha256": "76269ecb21e8808ac104d440243462fc2192c51bc123c8553389b49e7f0f679d"
+    },
+    {
+      "id": "S4",
+      "sha256": "2d8634bde9747fd6fc1430ad4e7fc4167718e0b97ad33bfbae47cd31ce3038a5"
+    },
+    {
+      "id": "S5",
+      "sha256": "d7c00f6f354ed947b2c5fe9946f6824a2a99202063632e1a6347a642a0ee4e69"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47249",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate a concise slate of statements that proportionally represents the spectrum of user opinions when possible statements are accessed only through specific queries.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The prior generative social choice framework did not address theoretical guarantees under approximately optimal queries together with an overall slate-length budget.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Extends generative social choice with theoretical guarantees for approximately optimal queries and a bound on the slate’s total length.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical demonstration",
+        "claim": "Applies the approach to unstructured opinions about city improvement measures and drug reviews using GPT-4o queries.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work by adding approximate-query guarantees and an overall slate-length budget to generative social choice.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report demonstrating effectiveness in generating representative slates from unstructured user opinions on city-improvement and drug-review datasets.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report theoretical guarantees under approximately optimal queries and an overall slate-length budget.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The paper frames proportional representation of user opinions as producing a concise statement slate.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "setting",
+        "summary": "Unlike ordinary committee elections, the candidate space contains all possible variable-length statements and is query-accessed.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "prior framework",
+        "summary": "It situates the task within generative social choice, combining social choice with large language models.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "extension and demonstration",
+        "summary": "It adds approximate-query and length-budget guarantees, then reports GPT-4o-based demonstrations on two opinion datasets.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract states the task’s representation objective, unusual query-access model, theoretical constraints, and application domains.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact abstract can make a contribution legible by aligning the task setting, the precise extension, and evidence contexts.",
+        "application": "When presenting a new method, explicitly connect each claimed advance to the task constraint it addresses and name the datasets or domains used for demonstration.",
+        "exception": "This structure is less suitable when the work is purely theoretical or has no concrete application setting to report."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the form of the theoretical guarantees, the query approximation assumptions, or the slate-length budget.",
+      "It does not provide quantitative results, baselines, dataset sizes, or details of the GPT-4o query implementation."
+    ]
+  }
+}

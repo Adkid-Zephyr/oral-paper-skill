@@ -1,0 +1,210 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31873",
+    "title": "Measuring and Enhancing Trustworthiness of LLMs in RAG through Grounded Attributions and Learning to Refuse",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31873"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "bcc0e1a806b1f0c9b05e2d3a7371f1d35f96cc1d73c60ad625f01b629961a519",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "b6e0d6957dae009d4c914a293100e7feb7e7ddd74fddc4440da0640dd8760623",
+    "extracted_at": "2026-09-12T23:55:23.823093+00:00",
+    "session_id": "01a0980b-c45c-7473-ad02-737dc164e389",
+    "usage": {
+      "input_tokens": 12834,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 879,
+      "reasoning_output_tokens": 83
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4ac2d5387dcb38dc5e417cc4caa8640c8f416e8db3a997b109b1f475dd276c61"
+    },
+    {
+      "id": "S2",
+      "sha256": "3fb964a897441be8689d4ec1e03a7ea4f7473fe341b95a8503db708d958a9235"
+    },
+    {
+      "id": "S3",
+      "sha256": "2ecf1df77207d531bbf17cf4f1e99445130b46b0e59f4fb808a0ee02c081c5b4"
+    },
+    {
+      "id": "S4",
+      "sha256": "5d7da88b87648f85930cd159a1f672baa383b79d222064d7207dfdb599e9f6e4"
+    },
+    {
+      "id": "S5",
+      "sha256": "875a0eae8e3944a663a3737a615b396eb5d973b86c636f2613afdaab4d628165"
+    },
+    {
+      "id": "S6",
+      "sha256": "27d04878b06dc9461d7d01606ae5b7c6cfe3869026e0a9bba688a79b6a5d15a7"
+    },
+    {
+      "id": "S7",
+      "sha256": "2987c5aaee54c2c79bf22a09809db3a5c4c7e1c0450acce242cd1797c51444ae"
+    },
+    {
+      "id": "S8",
+      "sha256": "409701ebb7827f6aea3dd8ff5e5b3a225e0c6f504f609918a82e10af29512fc5"
+    },
+    {
+      "id": "S9",
+      "sha256": "96e72fba4a742411e49886065ef21869ea04c4cbca2e37efd883c58723f359f4"
+    },
+    {
+      "id": "S10",
+      "sha256": "c5afd5b23b8a8b25667aab93f074d89493920f726091501502e81c44e7776dc9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31873",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess whether LLMs are appropriate for the RAG task and improve their trustworthiness within RAG systems.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing work emphasizes end-to-end RAG quality, leaving the appropriateness of the underlying LLMs for RAG insufficiently understood.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "metric",
+        "claim": "Introduces Trust-Score, described as a holistic metric for evaluating LLM trustworthiness in RAG.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes Trust-Align to align LLMs for improved Trust-Score performance.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Releases implementation code for Trust-Align.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present Trust-Score and Trust-Align as their introduced metric and alignment method for trustworthy LLM use in RAG.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that in-context learning and other prompting methods fail to effectively adapt LLMs to RAG as measured by Trust-Score.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that 26 of 27 Trust-Align-aligned models substantially outperform competitive baselines on ASQA, QAMPARI, and ELI5.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "For LLaMA-3-8b, the authors report Trust-Align gains over FRONT of 12.56 on ASQA, 36.04 on QAMPARI, and 17.69 on ELI5, alongside improved refusal and citation quality.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames LLM appropriateness, rather than only overall RAG quality, as an underexplored issue.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "measurement",
+        "summary": "It introduces Trust-Score to evaluate trustworthiness of LLMs within RAG.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "It reports that prompting approaches, including in-context learning, do not effectively adapt models according to Trust-Score.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "intervention_and_results",
+        "summary": "It proposes Trust-Align and reports broad baseline gains, improved refusal and citations, and coverage across several open-weight model families.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a task-specific trustworthiness metric with an alignment method, then reports both aggregate benchmark comparisons and capabilities such as refusal and citation quality.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "A focused metric can connect diagnosis of task mismatch to a targeted intervention and make multiple trust dimensions visible.",
+        "application": "For another task-specific adaptation paper, define an evaluation measure tied to the task failure mode before presenting the training intervention, and report both aggregate outcomes and constituent behaviors.",
+        "exception": "This framing may be unsuitable when the task lacks a stable operational definition of trustworthiness or when component behaviors cannot be measured separately."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define Trust-Score or explain which trust dimensions it aggregates.",
+      "It does not specify training data, evaluation protocol, statistical uncertainty, or what constitutes a substantial improvement.",
+      "The meanings and reference points of the reported upward differences are not explained, and the baseline comparison details are unspecified.",
+      "The abstract does not specify the remaining model's outcome or whether the reported results generalize beyond the named datasets and open-weight models."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "unknowns[3]",
+      "before": "The abstract does not establish why one model failed to outperform baselines or whether the reported results generalize beyond the named datasets and open-weight models.",
+      "after": "The abstract does not specify the remaining model's outcome or whether the reported results generalize beyond the named datasets and open-weight models.",
+      "review_file": "reviews/flagged-batch-03.json",
+      "review_sha256": "c93f283691d24c7af3478546edc7fc47e416bced6cee4ba8298ba8291f36aa01",
+      "applied_at": "2026-09-13T00:27:36.275878+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

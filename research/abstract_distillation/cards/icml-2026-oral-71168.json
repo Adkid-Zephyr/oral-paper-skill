@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71168",
+    "title": "How much can language models memorize?",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71168"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4ad7f1d5ed9b0a36dac326628b5f53d1b843e101c36df84f2eed0fc8211dc6ea",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "fe0496ff3bd335380219eba348662151caa6e7c6574402a3dea9d0cf525e511f",
+    "extracted_at": "2026-09-13T00:16:46.887906+00:00",
+    "session_id": "01a0981f-5fed-7713-b35e-7c19d9f6f2a0",
+    "usage": {
+      "input_tokens": 12659,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 740,
+      "reasoning_output_tokens": 60
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f1fa4a9785c8a99098c6f398804cedd378a817f4aba13d3d9c1a501b628c0632"
+    },
+    {
+      "id": "S2",
+      "sha256": "2f2cfb80b1e54714fea45e4092cc1510e63741eb6304e77acd6773832bee0f43"
+    },
+    {
+      "id": "S3",
+      "sha256": "06d537efd0178f86cf841ad0caff6ee652f3a70d42bba85ea37034a23e3be212"
+    },
+    {
+      "id": "S4",
+      "sha256": "9f6193956811ad84832220f1e7ba62bdcbefa41f90df5a80cb48d40dcaf6d1b9"
+    },
+    {
+      "id": "S5",
+      "sha256": "59309e761a381de703e68d9d5cddc7142d3458c548b0ac7f4685d1fd66c6b7ce"
+    },
+    {
+      "id": "S6",
+      "sha256": "679943f3691738c0c64ebf1ee1759f15ee3daa0cae9dcbf0075d55737ed53400"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71168",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Estimate how much language models know about individual datapoints and measure their memorization capacity.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Prior work has struggled to distinguish memorization from generalization.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A method for estimating a model’s knowledge about a datapoint.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "A formal decomposition of memorization into unintended memorization of a specific dataset and generalization about the true data-generating process.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "scaling study",
+        "claim": "Scaling laws connecting model capacity and data size to membership inference, based on hundreds of transformer models.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors’ stated distinction is the formal separation of memorization into unintended memorization and generalization, enabling total memorization estimates when generalization is eliminated.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report an estimated capacity of approximately 3.6 bits per parameter for GPT-style models when generalization is completely eliminated.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that models memorize as training datasets grow until capacity fills; afterward, unintended memorization decreases as models begin to generalize.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report training hundreds of transformer language models spanning 500K to 1.5B parameters and deriving scaling laws relating capacity and data size to membership inference.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames the difficulty of separating memorization from generalization in prior studies.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "conceptual framework",
+        "summary": "It formally divides memorization into unintended dataset-specific information and generalization about the data-generating process.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "capacity estimate",
+        "summary": "Under complete elimination of generalization, it uses total memorization to estimate capacity at about 3.6 bits per parameter for GPT-style models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "scaling observations",
+        "summary": "Experiments varying dataset size report saturation of memorization followed by reduced unintended memorization, alongside scaling laws tied to membership inference.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract defines distinct information targets before reporting capacity and scaling results: dataset-specific information, process-level information, and their separation.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Separating confounded quantities can make a capacity claim more interpretable.",
+        "application": "Define and operationalize the distinct components of a target phenomenon before presenting aggregate measurements.",
+        "exception": "This framing is unsuitable when the components cannot be independently defined or estimated from the available setup."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the proposed estimator, how generalization is completely eliminated, or how the 3.6-bits-per-parameter estimate is calculated.",
+      "The scaling-law forms, datasets, training procedures, and membership-inference evaluation details are not provided."
+    ]
+  }
+}

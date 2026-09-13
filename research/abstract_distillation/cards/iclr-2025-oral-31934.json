@@ -1,0 +1,145 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31934",
+    "title": "Synthetic continued pretraining",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31934"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e9acbfa9df82667520f2207b81062bf4c4201cf59edbedac915104bd6a76a54c",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "3e57b56ff7e864529d781664bf6b37c40adc409e09fb68169badf6d10cedf98f",
+    "extracted_at": "2026-09-12T23:57:45.132336+00:00",
+    "session_id": "01a0980d-f3e0-76e0-a835-5c9ce226135f",
+    "usage": {
+      "input_tokens": 12644,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 765,
+      "reasoning_output_tokens": 72
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e9acbfa9df82667520f2207b81062bf4c4201cf59edbedac915104bd6a76a54c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31934",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Adapting a pretrained language model to a small domain-specific corpus where facts are rare or appear only once.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Internet-scale pretraining is data-inefficient for learning facts, requiring hundreds to thousands of diverse representations, creating a mismatch for small domain corpora.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes synthetic continued pretraining: synthesizing a larger, more learnable corpus from a small domain corpus before continued pretraining.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "Introduces EntiGraph, which extracts salient entities and generates diverse text by drawing connections among them.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Develops a mathematical model of EntiGraph to explain how synthetic augmentation can rearrange knowledge for more data-efficient learning.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by using a small domain corpus to synthesize training data specifically for continued pretraining.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that EntiGraph-based synthetic continued pretraining enables models to answer questions and follow generic instructions related to source documents without accessing those documents at inference time.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report that when source documents are available at inference time, acquired knowledge compounds with retrieval-augmented generation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report that their mathematical model shows how synthetic data augmentation can rearrange knowledge to support more data-efficient learning.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Large-scale pretraining acquires world knowledge but needs many representations per fact, making small-corpus adaptation difficult.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The paper proposes synthetic continued pretraining and instantiates it with EntiGraph, which generates text from entity connections.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "reported outcomes and explanation",
+        "summary": "The authors report document-related question answering and instruction following without source access, additive benefits with retrieval at inference, and a mathematical account based on knowledge rearrangement.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a data-generation mechanism—entity-based text synthesis—with a proposed explanation of its benefit as knowledge rearrangement for data-efficient learning.",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        "interpretation": "A concrete mechanism-plus-explanation pairing can make a method claim more interpretable.",
+        "application": "When introducing a synthetic-data method, specify the generation unit and add a simple model that links that operation to the claimed learning advantage.",
+        "exception": "This may be unsuitable when the data-generation process cannot be represented with defensible simplifying assumptions or when the task does not involve sparse factual coverage."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, datasets, model configurations, baselines, or evaluation protocols.",
+      "The reported compounding with retrieval-augmented generation is not quantified, and the conditions under which it occurs are unspecified.",
+      "The abstract does not establish priority or independently verify the stated novelty or theoretical result."
+    ]
+  }
+}

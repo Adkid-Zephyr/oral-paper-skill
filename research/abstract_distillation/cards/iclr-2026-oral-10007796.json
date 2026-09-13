@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007796",
+    "title": "Enhancing Generative Auto-bidding with Offline Reward Evaluation and Policy Search",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007796"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "75a2811e7ca582a2b9b7a6340743e678b94dc3457f264edfbbddb1b0c6a21420",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "13c8f9b49fc4971d6a2a0be29e739517f1df0928c0cbfe15d948c4371d22fa86",
+    "extracted_at": "2026-09-13T00:00:21.650628+00:00",
+    "session_id": "01a09810-5a55-7b32-b563-e6cd29bfe4b5",
+    "usage": {
+      "input_tokens": 12699,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 725,
+      "reasoning_output_tokens": 65
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "94879053e53ba2e0c3816ffc1162d7442ddffdda8260e384accdcdf5fe56af18"
+    },
+    {
+      "id": "S2",
+      "sha256": "a92a8c0b1bc1cab30e2d6a6947fe4f78cd0b834f57f142c6c289e82a95e54d81"
+    },
+    {
+      "id": "S3",
+      "sha256": "4058ad18198050367118b47310e634bae594aa205d77919681991bcef075aa48"
+    },
+    {
+      "id": "S4",
+      "sha256": "a04eb795f22b60ef0a2aebbe25c5fb5fa64d5133e278e6b736d408982c3679fb"
+    },
+    {
+      "id": "S5",
+      "sha256": "92f70d0de81f6b16949d3b05a8cf72ff789e89e7d452bd83919abe91f1d86c30"
+    },
+    {
+      "id": "S6",
+      "sha256": "83062d98e5095439aec6072bc9b559dfbbe8ec3fe95b54a7f770ded28b093736"
+    },
+    {
+      "id": "S7",
+      "sha256": "ace9522f50cf022c9ccb8ae59c56fe80f792721207a9985f40899020407c7587"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007796",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve offline auto-bidding beyond the exploration limits of static-data generative bidding.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing AIGB methods are bottlenecked by their inability to explore beyond the static offline dataset with feedback.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "AIGB-Pearl integrates generative planning with policy optimization through offline reward evaluation and policy search.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory-informed method",
+        "claim": "It uses a trajectory evaluator and a KL-Lipschitz-constrained score-maximization scheme described as provably sound for safe, efficient exploration beyond offline data.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "It develops a practical synchronous-coupling algorithm to provide the regularity required by the proposed scheme.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present AIGB-Pearl as a novel integration of generative planning and policy optimization, with evaluator-guided constrained score maximization.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art performance in extensive experiments on simulated and real-world advertising systems.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Auto-bidding is framed as important for improving advertising performance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior progress",
+        "summary": "AIGB is described as outperforming typical offline RL-based auto-bidding methods by learning a conditional generative planner from offline data.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The abstract identifies a performance bottleneck caused by AIGB's inability to explore beyond static data with feedback.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach and outcome",
+        "summary": "AIGB-Pearl adds trajectory evaluation, constrained score maximization, and synchronous coupling; the authors report state-of-the-art results in simulated and real-world systems.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The method links generated-score evaluation to a constrained optimization scheme intended to regulate exploration beyond offline data.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "This offers a concrete way to align a proposed capability with an explicit safety or regularity mechanism.",
+        "application": "When presenting offline-to-online or out-of-distribution policy improvement, pair the exploration objective with a named evaluator and an explicit constraint or regularization condition.",
+        "exception": "This framing may be unsuitable when no meaningful evaluator or defensible constraint can be defined for the target domain."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, datasets, baselines beyond the general comparison, or ablations.",
+      "The conditions and scope of the claimed provable soundness and required model regularity are unspecified.",
+      "It is unclear how simulated and real-world systems differ or what 'state-of-the-art' comparison set was used."
+    ]
+  }
+}

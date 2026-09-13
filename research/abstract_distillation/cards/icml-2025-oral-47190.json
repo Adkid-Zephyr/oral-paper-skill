@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47190",
+    "title": "LoRA Training Provably Converges to a Low-Rank Global Minimum Or It Fails Loudly (But it Probably Won't Fail)",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47190"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4f9f988df9f81c93b26783b50cf59656d4b5a69f36286cfba4bec814cf065754",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "c6ea56a969bebfb466baa374044171e3b626ec4761ceec2bc08cff0c11eeedec",
+    "extracted_at": "2026-09-13T00:08:04.224355+00:00",
+    "session_id": "01a09817-67c7-7ac1-b5d7-03fe770832a8",
+    "usage": {
+      "input_tokens": 12685,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 744,
+      "reasoning_output_tokens": 74
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "dabf66b5fb4675f26580d065a5ced3ac24b09f799e8c15a70462d20dd176b284"
+    },
+    {
+      "id": "S2",
+      "sha256": "204c7a52a9c65e4ae3a63983d8df1543a234274f60a47b950e55cd9338b29400"
+    },
+    {
+      "id": "S3",
+      "sha256": "3113406809aeccbeac43fae6e8ec914f48a9847ed437856945ee5658deed950a"
+    },
+    {
+      "id": "S4",
+      "sha256": "e71d2bcf192d6622892dc6de7d3e8412f76ad81a4752db99b12b8915a46ffd14"
+    },
+    {
+      "id": "S5",
+      "sha256": "79dfc0093d7a97e1bdefcfa36d317a4a5ab0a40cf5c6910cd013cb0a690da1f0"
+    },
+    {
+      "id": "S6",
+      "sha256": "76fab9e4e2aecfbb4730d96d933d1a96cfa1938758f7a9fa3e9cdd3cfad2cc9e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47190",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Analyze LoRA’s loss landscape and training dynamics without restrictive linearization assumptions.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Prior LoRA analyses relied on linearization arguments or highly simplified setups, leaving theoretical understanding limited.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Defines special and generic regimes to distinguish idealized settings where linearization applies from more realistic settings where it does not.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theoretical result",
+        "claim": "In the generic regime, characterizes training as converging either to a low-rank, small-magnitude global minimizer or to a qualitatively distinct high-rank, large-magnitude solution.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "implicit-bias explanation",
+        "claim": "Argues that zero initialization and weight decay bias LoRA toward the low-rank, small-magnitude region containing global minima.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present an analysis of the LoRA loss landscape without the restrictive assumptions used in prior analyses.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report the generic-regime dichotomy between convergence to a low-rank, small-magnitude global minimizer and convergence to a high-rank, large-magnitude solution.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors argue that LoRA’s zero initialization and weight decay create an implicit bias toward the region where global minima lie.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "LoRA is presented as a standard method for fine-tuning foundation models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Existing theoretical analyses are described as limited by linearization or highly simplified setups.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper introduces special and generic regimes, separating idealized linearizable cases from more realistic non-linearizable cases.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "result",
+        "summary": "For the generic regime, the authors report a low-rank global-minimum versus high-rank large-magnitude outcome dichotomy.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "interpretation",
+        "summary": "The authors attribute LoRA’s usual success to an implicit bias from zero initialization and weight decay.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates idealized and realistic settings before stating a regime-specific convergence result.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This makes the scope and conditions of a theoretical claim easier to identify.",
+        "application": "Define explicit operating regimes before presenting guarantees or convergence conclusions.",
+        "exception": "Avoid regime splitting when the distinctions are not mathematically or practically meaningful."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the assumptions, optimization algorithm, convergence conditions, or formal meaning of rank and magnitude in the reported dichotomy.",
+      "It does not provide empirical measurements establishing how often the proposed failure outcome occurs or how often LoRA finds global minima."
+    ]
+  }
+}

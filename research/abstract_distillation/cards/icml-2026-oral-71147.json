@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71147",
+    "title": "Distributional Inverse Reinforcement Learning",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71147"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "305b84c4993130584dcb05314e5edd00b2803cc03f55a79c1d52ad801821ffc8",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "3c17afb785dc5ac0a5e330249d3c5b68a952875030f763132043602dadd06a3f",
+    "extracted_at": "2026-09-13T00:15:52.769297+00:00",
+    "session_id": "01a0981e-8db2-7d41-960a-ec55adbcedbb",
+    "usage": {
+      "input_tokens": 12630,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 781,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "dbc304e853a03eda0b5c338651c6e172def2810defc4eb029467fa1687fbe7bb"
+    },
+    {
+      "id": "S2",
+      "sha256": "29ea351429725c971601099f2da292721b169cb71594bf9d1622bc78e0b2f3ac"
+    },
+    {
+      "id": "S3",
+      "sha256": "9041530b7e18e70f9922becce73ed4110c0e822b28f8965bfcc96083f8a055a2"
+    },
+    {
+      "id": "S4",
+      "sha256": "42c65925f65470e934e2fb85f3a544c371ea1f4ab1c6bd8ffddb1eeba72c373f"
+    },
+    {
+      "id": "S5",
+      "sha256": "817a7ffd23cdb318447e82caf669705a030489adda35799425dcb49ff7c9ab8b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71147",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop an offline IRL framework that models uncertainty over rewards and full return distributions, enabling distribution-aware policy learning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Conventional IRL typically estimates deterministic rewards or matches only expected returns, omitting richer distributional structure in expert behavior.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A distributional offline IRL framework jointly modeling reward-function uncertainty and full return distributions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "An FSD-violation objective that integrates distortion risk measures into policy learning to recover reward distributions and distribution-aware policies.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory and empirical finding",
+        "claim": "The authors provide an algorithm with stated O(ε^-2) iteration complexity and report results across synthetic, neurobehavioral, and MuJoCo benchmarks.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach from conventional IRL by jointly recovering reward distributions and distribution-aware policies rather than deterministic rewards or expected returns alone.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report convergence with O(ε^-2) iteration complexity.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report expressive reward representations and state-of-the-art imitation performance on synthetic benchmarks, real-world neurobehavioral data, and MuJoCo control tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "proposal",
+        "summary": "Introduces an offline IRL framework for uncertainty over rewards and full return distributions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "contrast and mechanism",
+        "summary": "Contrasts the framework with deterministic-reward and expected-return methods, using FSD violations and DRMs to learn distribution-aware policies.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "Positions the formulation for behavior analysis and risk-aware imitation learning.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "theory and evaluation",
+        "summary": "States an iteration-complexity result, then reports benchmark results spanning synthetic, neurobehavioral, and MuJoCo settings.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a specific modeling distinction—reward and return distributions—with a matching optimization mechanism based on FSD violations and DRMs.",
+          "source_ids": [
+            "S1",
+            "S2"
+          ]
+        },
+        "interpretation": "A compact abstract can make a methodological claim more interpretable by linking what is modeled to how it is optimized.",
+        "application": "When presenting a new distributional or uncertainty-aware method, explicitly map each richer object being modeled to the loss or constraint that operationalizes it.",
+        "exception": "This framing is less suitable when the method's key contribution is primarily theoretical, architectural, or resource-oriented rather than an altered modeled quantity."
+      }
+    ],
+    "unknowns": [
+      "The convergence statement omits assumptions, the precise algorithm, and what ε measures.",
+      "The reported state-of-the-art comparison does not identify baselines, metrics, statistical details, or whether all tasks use the same evaluation protocol.",
+      "The abstract does not quantify reward-representation or imitation improvements, nor specify how risk measures are selected."
+    ]
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31875",
+    "title": "AlphaEdit: Null-Space Constrained Model Editing for Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31875"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c81ed79e39717a60c72bbc069efddbf7bfb3eb6ff4cf8897774095347b4b92fa",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "a560548f7229e90f16b4498cd037401dc7ffc7a89b7f0518da02b2468e98500b",
+    "extracted_at": "2026-09-12T23:55:25.522363+00:00",
+    "session_id": "01a0980b-d16c-7523-a01b-94af4eeb137e",
+    "usage": {
+      "input_tokens": 12681,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 751,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "78f51f916417ff0cfbeefc3ab9d5eb40d802869ac0209669c848fac06749e6ff"
+    },
+    {
+      "id": "S2",
+      "sha256": "db325b54f86bc2d5ac060e553ee10f13222c4a376d463d91621cf1353b29e9a4"
+    },
+    {
+      "id": "S3",
+      "sha256": "115b1ec0d03bad767759e3de4b6c72e784fbe82d1aad284d07f851c284a34289"
+    },
+    {
+      "id": "S4",
+      "sha256": "924e07e67a2a76ade4db41128b9adc59c6a30e7dd48e17284db5fba4d3fef991"
+    },
+    {
+      "id": "S5",
+      "sha256": "281559f94cf812c8fc6b8ef5cbb4476b6a79520d6f82ee063ab6b2cd95c0d976"
+    },
+    {
+      "id": "S6",
+      "sha256": "954e21eed2667469c5ad090b732d8ad01013cc88f81914525f9be09ed5eaf5b4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31875",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Targeted knowledge updates in LLMs without disrupting preserved knowledge.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing locating-then-editing methods perturb and can disrupt preserved knowledge, particularly during sequential editing.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "AlphaEdit projects editing perturbations onto the null space of preserved knowledge before applying them to model parameters.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The authors theoretically prove that this projection keeps post-edited outputs unchanged for queries about preserved knowledge.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report that AlphaEdit improves most locating-then-editing methods across several LLMs.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe AlphaEdit as a novel null-space projection solution for reducing disruption during model editing.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report an average performance increase of 36.7% across most locating-then-editing methods, using LLaMA3, GPT2-XL, and GPT-J, with one additional projection-code line.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report a theoretical guarantee that outputs on preserved-knowledge queries remain unchanged after editing under the proposed projection.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLMs may contain incorrect or outdated knowledge, motivating targeted updates.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "baseline paradigm",
+        "summary": "The prevailing approach locates influential parameters and edits them through perturbations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "limitation and method",
+        "summary": "Such perturbations can disrupt preserved knowledge, especially sequentially; AlphaEdit projects them into its null space first.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "theory and results",
+        "summary": "The authors report an unchanged-output guarantee for preserved knowledge and broad gains across several models and methods.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a specific failure mode—knowledge disruption—with a mechanism targeted at that mode, then states a corresponding theoretical guarantee and empirical comparison.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Aligning each claimed problem with a mechanism, formal consequence, and measured outcome makes the contribution easier to assess.",
+        "application": "For a new editing method, explicitly map the main interference failure to an intervention, state the expected invariant, and report comparisons that test both update success and preservation.",
+        "exception": "This framing is unsuitable when preservation is not a meaningful objective or when the method’s central contribution is unrelated to interference."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define the performance metric, baselines, variance, or detailed experimental settings behind the 36.7% average.",
+      "The scope and assumptions of the theoretical guarantee, the precise preserved-knowledge representation, and the meaning of “most” methods are unspecified."
+    ]
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71121",
+    "title": "Modeling Hierarchical Thinking in Large Reasoning Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71121"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "67226fa1c71da3887282a67493346fc8ef60b0f1fa57a882bc5a828dcb598b63",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "4c6785f62873639265dd9c782b0d58c83e363560a047f85846abc60ba8a689a2",
+    "extracted_at": "2026-09-13T00:14:54.880441+00:00",
+    "session_id": "01a0981d-aae6-7a42-b333-c0f0b190ec3c",
+    "usage": {
+      "input_tokens": 12826,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 786,
+      "reasoning_output_tokens": 121
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1102d199995c7b3ddf5b25f9b1296f8afd5eb18e90b18e9aa205e518ab53b0ba"
+    },
+    {
+      "id": "S2",
+      "sha256": "3aab3b45f551b81f925a4405fe85ff7018b2c17c2cd164f3f5fd4a23b62aeaf3"
+    },
+    {
+      "id": "S3",
+      "sha256": "c92423f74fea2f4e1e5aba6cccb36f663c9d93284f20b3650521e31da461ca8b"
+    },
+    {
+      "id": "S4",
+      "sha256": "924a47d022de64e70fb6511de9d555774450c18170aa1202419c78ca29cd094f"
+    },
+    {
+      "id": "S5",
+      "sha256": "ccb6d648f4ef1e825637dfaa9da69b4c79d1031713c5ac7b2b6dddac79042a3b"
+    },
+    {
+      "id": "S6",
+      "sha256": "73f6ebbc5be33b045965bfbc03e7076df98022f62df52ac96210d864f26d21cc"
+    },
+    {
+      "id": "S7",
+      "sha256": "333b704cf59dd038037b35e5b88c0d8b43412fea1bb41ff0ff307229afb73671"
+    },
+    {
+      "id": "S8",
+      "sha256": "2b5cc86b22685afd569ce102b759418dd52fa055b0d5242297b4db61bb9a140c"
+    },
+    {
+      "id": "S9",
+      "sha256": "25ecb93af3d3a3c864dcb03a287f53049d9a32384385748bcca9e769572e4a39"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71121",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work addresses how to model and control reasoning trajectories in Large Reasoning Models that generate long Chain-of-Thought sequences.",
+        "source_ids": [
+          "S1",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "The dynamics governing LRM reasoning trajectories are not well understood and may produce inconsistencies and reasoning pathologies.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "An FSM representation approximates hierarchical reasoning dynamics through six abstract cognitive states and their transitions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "The authors analyze transition topology to identify statistical shifts associated with effective versus failing reasoning chains.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Q-Value guided steering provides training-free, inference-time control by estimating long-horizon transition utility and applying sparse orthogonal activation steering at sentence boundaries.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present reasoning as a planning problem and introduce Q-Value guided steering to align generation with high-level reasoning policies.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the six states and their transitions can be captured in the model's latent state.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "Across AIME25, MATH-500, GSM8k, and GPQA Diamond with three open reasoning models, the authors report significant performance gains from Q-Value steering and often 25× fewer interventions than greedy and weighted baselines.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Long CoT reasoning is difficult to understand and can exhibit inconsistencies or pathologies.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "representation",
+        "summary": "The authors model hierarchical reasoning as an FSM trajectory over six cognitive states.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "latent analysis",
+        "summary": "They report that the states and transitions appear in latent representations and use transition topology to distinguish effective from failing chains.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "role": "control and evaluation",
+        "summary": "They propose Q-Value steering and report benchmark gains with substantially fewer interventions than stated baselines.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a state-transition representation to both failure analysis and inference-time control.",
+          "source_ids": [
+            "S2",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A shared intermediate representation can connect explanation of behavior with a concrete intervention mechanism.",
+        "application": "When proposing a control method, define an interpretable trajectory representation and show how its structure motivates the control signal.",
+        "exception": "This is unsuitable when the representation is not empirically tied to model behavior or when added abstraction obscures the target failure mode."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the six cognitive states, how latent-state capture is measured, or how effective and failing chains are labeled.",
+      "Details of benchmark protocols, statistical significance, baseline configurations, and the meaning of “surgical” efficiency are not provided."
+    ]
+  }
+}

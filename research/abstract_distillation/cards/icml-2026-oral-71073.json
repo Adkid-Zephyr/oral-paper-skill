@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71073",
+    "title": "Minimax Optimal Strategy for Delayed Observations in Online Reinforcement Learning",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71073"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a8e6948d795d948db47439679f860497608d1c96add11d18ffa8508fff012e11",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "e3e8af06c37da17eeeda147a9031140988eeba4a43fc69b74ed5485febc12907",
+    "extracted_at": "2026-09-13T00:12:59.751236+00:00",
+    "session_id": "01a0981b-ebc1-7fd1-96ba-5708c6d4fafd",
+    "usage": {
+      "input_tokens": 12677,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 683,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2f884cbf75cd9555549ffe17ae59335a3ea61ea018a165cd77a29d24c911863b"
+    },
+    {
+      "id": "S2",
+      "sha256": "7af496484afd1f8f7d21a075bf3814c028771febe27e425eff26e36c4df60dd9"
+    },
+    {
+      "id": "S3",
+      "sha256": "ef51048dd3577e327fa2faed448e5127567251bad6f6ae5804049cf8f6c42971"
+    },
+    {
+      "id": "S4",
+      "sha256": "372040cb658b3a40d3aade76fd0fe9d2c78c6c881ba7eb4d4fa345ec5c84445f"
+    },
+    {
+      "id": "S5",
+      "sha256": "50af538d6e22d28d1579a97e978942edad1c4237171ae42073e4cfc6d2fe82f9"
+    },
+    {
+      "id": "S6",
+      "sha256": "94488f12f866633b89931f1ff4c51baf15e48c44a411ead87448603569bfd173"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71073",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies reinforcement learning when the current state is observed only after a random number of time steps.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "It proposes an algorithm combining state-space augmentation with an upper-confidence-bound approach.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "For tabular MDPs, it derives a regret upper bound of tilde-O(H sqrt(D_max S A K)), with D_max the maximum delay.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "It formulates delayed-observation learning as a special case of MDPs with a known transition component and an unknown structured component, and establishes general results for that setting.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a broader structured-transition MDP framework in which the delayed-observation problem is a special case, with general results stated to be potentially independently useful.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a regret upper bound of tilde-O(H sqrt(D_max S A K)) for tabular MDPs.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report a matching lower bound up to logarithmic factors, which they use to characterize their approach as optimal.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report general analytical results for the structured-transition MDP setting.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task setup",
+        "summary": "Delayed state observations are introduced as the reinforcement-learning setting of interest.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "algorithm",
+        "summary": "An algorithm combining augmentation and upper confidence bounds is proposed.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "tabular guarantee",
+        "summary": "A delay-dependent regret upper bound is derived for tabular MDPs.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "optimality claim",
+        "summary": "A lower bound matching the upper bound up to logarithmic factors is reported.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "generalization",
+        "summary": "The problem is embedded in a broader structured-transition MDP framework with general results.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a concrete delayed-observation problem to a broader MDP class with known and unknown structured transition components, then states general results for that class.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This suggests a useful way to expose reusable theory while retaining a clear application anchor.",
+        "application": "Frame a specialized learning problem through an explicitly defined broader model, and state which guarantees apply to the specialization versus the general class.",
+        "exception": "Avoid broadening the formulation when the abstraction adds no concrete result or obscures the original task."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the precise delay distribution, feedback protocol, algorithm details, or assumptions behind the bounds.",
+      "The constants and logarithmic factors hidden by tilde notation are not given.",
+      "The abstract does not provide experimental evidence or details for the claimed general results."
+    ]
+  }
+}

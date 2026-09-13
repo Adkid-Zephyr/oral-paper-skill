@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009121",
+    "title": "Mastering Sparse CUDA Generation through Pretrained Models and Deep Reinforcement Learning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009121"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b14a85dc4c0401fb7613d90b065bb25129c46491f4e495daa1a147ddf47182d9",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "fa3a0f8c1cab673fa5b1aac2164c33bb7322d77adc76470ad839fa068c8fbe67",
+    "extracted_at": "2026-09-13T00:02:22.190149+00:00",
+    "session_id": "01a09812-3044-7f52-8ecb-e887860246cf",
+    "usage": {
+      "input_tokens": 12808,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 700,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "89f8705e35867e7f3465af61d5f74258f8d67efc477072181ca082d61bfec7e9"
+    },
+    {
+      "id": "S2",
+      "sha256": "70f368637e66ca7c1fb6e5e68b3e89daac7d40bb0696582d7977fdcaf41e03ac"
+    },
+    {
+      "id": "S3",
+      "sha256": "556ecc211d6fbc9bd463e7c7484919ff0742d97abbac695a42ed59e0484b30e2"
+    },
+    {
+      "id": "S4",
+      "sha256": "7dc6cf1ea049f428c6be6ee7eac0266a45c2afa50152431b547ef5d31114e08a"
+    },
+    {
+      "id": "S5",
+      "sha256": "410b7b14a62aa822db3c4ccd1cb8181a446fc2a80305f90d9321ea1b22f275dc"
+    },
+    {
+      "id": "S6",
+      "sha256": "a0d553a29ab73e23009d7125b89e0f4872d88288d5113df1f3a13f07566430b7"
+    },
+    {
+      "id": "S7",
+      "sha256": "63dd1795bc1271961503511a439aeddcd325d34bd63751494abbbfaa324d33c6"
+    },
+    {
+      "id": "S8",
+      "sha256": "37471d0d609b7241c959d0fb39bea9df57716bf2ece480ee6a8524b6ac7d49cc"
+    },
+    {
+      "id": "S9",
+      "sha256": "f0dc73b34bfbb00896a39f79638d4c5846ead0a0acdb1ef513755a7ae9075ffc"
+    },
+    {
+      "id": "S10",
+      "sha256": "f6fc2966ccc37634df6b567e242e397a3933430d7184ada88407b3eae54ec936"
+    },
+    {
+      "id": "S11",
+      "sha256": "a449bd1d8db10e572a7f443898591eb3f995396863a66d552de7d32cc9f52234"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009121",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate high-performance CUDA code for sparse matrix operations under low-latency requirements.",
+        "source_ids": [
+          "S2",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods struggle with irregular sparse inputs and domain-specific architectural knowledge, resulting in sub-optimal performance.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "SparseRL uses deep reinforcement learning with a pretrained language model as a stochastic policy to generate CUDA code from sparse-matrix nonzero indices.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The framework combines dynamic-input domain-specific code generation, sparse-matrix sinusoidal embeddings, and a hierarchical reward covering correctness and execution efficiency.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that SparseRL introduces the listed domain-specific generation, embedding, and hierarchical-reward mechanisms for this task.",
+      "source_ids": [
+        "S4",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a 20% compilation-rate improvement over existing methods on SpMV and generated code that runs 30% faster on average.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report significant performance gains on SpMM tasks.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "High-performance code generation remains difficult for low-latency applications.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing approaches inadequately handle sparse-input irregularity and domain-specific architecture.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "SparseRL frames a pretrained language model as a reinforcement-learning policy that maps nonzero-element indices to CUDA code, using task-specific mechanisms and rewards.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The authors report improved SpMV compilation and runtime, plus significant gains on SpMM.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects each proposed mechanism to concrete task properties: dynamic sparse inputs, sparse-matrix structure, and the joint objectives of correctness and efficiency.",
+          "source_ids": [
+            "S3",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This provides a compact claim-to-design alignment that makes the method's rationale easier to assess.",
+        "application": "When presenting a specialized code-generation method, map each architectural component to a stated input irregularity or optimization objective, then report matching metrics.",
+        "exception": "This framing is less useful when components are generic or when the abstract lacks task-specific evaluation measures."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, statistical uncertainty, or experimental conditions.",
+      "The magnitude and measurement details of the reported SpMM gains are unspecified.",
+      "The abstract does not provide evidence independently verifying the stated state-of-the-art comparison."
+    ]
+  }
+}

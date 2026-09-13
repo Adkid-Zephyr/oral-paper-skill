@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-121452",
+    "title": "WebGen-Bench: Evaluating LLMs on Generating Interactive and Functional Websites from Scratch",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/121452"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "299cb5cfc737f2ad9830e4a97abc362278941eef53c8ace2f225f19e257cf430",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "db032f9b1c8b80344050f31a5aa5e79f4db65a5f25be49de6c89f08604590ef1",
+    "extracted_at": "2026-09-13T00:23:26.770357+00:00",
+    "session_id": "01a09825-75fe-7e82-9cc4-bb664f3ef1e6",
+    "usage": {
+      "input_tokens": 12865,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 819,
+      "reasoning_output_tokens": 77
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "51f86f90ac8c72d6aa43cda6fa0883338568a0e8df2894ec7c8a3bbd5b6180df"
+    },
+    {
+      "id": "S2",
+      "sha256": "c71b258a3fccabbc397ec81336fa3089c859f0877d95059135b92a4523a56f45"
+    },
+    {
+      "id": "S3",
+      "sha256": "6467a724f19456af4d43fcf552ee9d02be3b29d830f9e8932b3ad5ef5fc6d58c"
+    },
+    {
+      "id": "S4",
+      "sha256": "407822352366a2bfac6db867190484c47cc1390d1a97a946e82e63f536587bf8"
+    },
+    {
+      "id": "S5",
+      "sha256": "5b629c3c895b77e86e6bd91e35fa14145e34e922b59bb54ccc9580afe41158d5"
+    },
+    {
+      "id": "S6",
+      "sha256": "5f4354d50525ba8dc050b4576551eab19af1fe536fac45fee3897a0a6f5e9694"
+    },
+    {
+      "id": "S7",
+      "sha256": "75f22b5177b96abf29daf9565834b854847a8aec934052479da78a0cf6e62888"
+    },
+    {
+      "id": "S8",
+      "sha256": "5ed6efac38bbe090536c8b032802bf26ba94b2430c5a7dc2458f83331e165c05"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-121452",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Measure how well LLM-based agents create functional, interactive, multi-file websites from scratch.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces WebGen-Bench, covering three major and thirteen minor web-application categories with 647 manually refined functional test cases.",
+        "source_ids": [
+          "S2",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Constructs WebGen-Instruct, a dataset of 6,667 website-generation instructions, and releases datasets, code, and model weights.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports evaluations of Bolt.diy, OpenHands, and Aider with proprietary and open-source LLM engines, plus training of Qwen2.5-Coder-32B-Instruct on Bolt.diy trajectories.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe WebGen-Bench as a novel benchmark for measuring from-scratch multi-file website generation by LLM-based agents.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Bolt.diy powered by DeepSeek-R1 achieves 27.8% accuracy on the benchmark test cases.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that training Qwen2.5-Coder-32B-Instruct on trajectories from a subset of WebGen-Instruct reaches 38.2% accuracy, exceeding the best proprietary model's reported performance.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLM-based agents are positioned as promising for code generation and management in complex codebases.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "benchmark design",
+        "summary": "WebGen-Bench measures from-scratch multi-file website creation using diverse human- and GPT-4o-assisted instructions across web-application categories.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation protocol",
+        "summary": "Functionality-specific operations and expected outcomes define 647 manually refined test cases, executed by a web-navigation agent.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "results and extension",
+        "summary": "Three code-agent frameworks are evaluated; the reported best baseline reaches 27.8%, while trajectory training with WebGen-Instruct is reported at 38.2%.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The benchmark operationalizes website quality as agreement between observed and expected outcomes for specified operations, using an automated web-navigation agent.",
+          "source_ids": [
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "Function-level behavioral checks can make broad generation tasks more concrete and comparable.",
+        "application": "For an interactive-generation study, define per-instruction operations and expected outcomes before evaluation, then report aggregate behavioral accuracy.",
+        "exception": "This framing is unsuitable when quality depends mainly on aesthetics, maintainability, or open-ended user experience rather than testable behavior."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the category distribution, test-case weighting, execution environment, or aggregation details behind the accuracy scores.",
+      "The subset and training procedure for the 38.2% result, and the identity and score of the best proprietary model, are not detailed.",
+      "No ablations or uncertainty estimates are reported in the abstract."
+    ]
+  }
+}

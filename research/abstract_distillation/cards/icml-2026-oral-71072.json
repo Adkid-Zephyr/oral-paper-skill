@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71072",
+    "title": "Maximum Likelihood Reinforcement Learning",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71072"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7cfcc1660973a5b42d629389199c17cb4eeec444c69ca4bb493b373755aa967e",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "70db555c2f80d1b4b10236baee961217306b8303ec01245df1f553e20858d638",
+    "extracted_at": "2026-09-13T00:12:56.103838+00:00",
+    "session_id": "01a0981b-da64-7343-9f30-451cae7312e5",
+    "usage": {
+      "input_tokens": 12682,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 763,
+      "reasoning_output_tokens": 89
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ff168ced3ee431f8adb468abf72f9d05f5ce6f45d3f251e537c8a9f5d1b46e95"
+    },
+    {
+      "id": "S2",
+      "sha256": "44d5d2fe05c639ee4eef6c076044a3ed8e46aaf1e858c6cc14e4609fc73aad36"
+    },
+    {
+      "id": "S3",
+      "sha256": "486c9cd6c5de5545ae15028e5336e5aff665a0377a2fe4d8e67eb13496150229"
+    },
+    {
+      "id": "S4",
+      "sha256": "7cfc4ca91e0506d3b5cc8b4073fdd89567f768f679a1826048bbecad5a9c48ff"
+    },
+    {
+      "id": "S5",
+      "sha256": "16a0c934870bb94f37976b96549475124e4b6834dccc73b071923dab7f49a048"
+    },
+    {
+      "id": "S6",
+      "sha256": "b43fa8ee7f5419213087e55f65f3b29f596c14645e207c891d6bd5e7298d0919"
+    },
+    {
+      "id": "S7",
+      "sha256": "c0bb510bd67be3c05de62c4852713883840d1daf37dd05ae602ed624fad7babb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71072",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Train models when objectives are evaluated by sampling, particularly with terminal binary feedback that induces likelihood over correct rollouts.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Expected-reward RL is described as only a first-order approximation to the induced likelihood, despite maximum likelihood being the natural framework.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces MaxRL, a compute-indexed family of sample-based objectives interpolating between expected-reward RL and maximum likelihood as sampling compute increases.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "implementation",
+        "claim": "Provides an objective requiring a one-line change to standard RL implementations.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish MaxRL as a compute-indexed bridge between expected-reward RL and maximum likelihood for this setting.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that MaxRL Pareto-dominates existing methods across all tested models and tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report up to 20× higher test-time scaling efficiency than GRPO.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report more favorable scaling with additional training data and compute.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "RL is positioned as the standard choice when objectives are accessible only through model sampling.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "observation",
+        "summary": "Terminal binary feedback is said to induce a likelihood over correct rollouts, making maximum likelihood a natural formulation.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "The standard expected-reward RL objective is proved to be a first-order likelihood approximation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "MaxRL is introduced to interpolate between RL and maximum likelihood with increased sampling compute, using a one-line implementation change.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The authors report broad tested-task dominance, up to 20× test-time scaling-efficiency gains over GRPO, and improved scaling with data and compute.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a feedback structure—terminal and binary—to an induced likelihood, then aligns the proposed objective with that structure.",
+          "source_ids": [
+            "S2",
+            "S5"
+          ]
+        },
+        "interpretation": "A useful research move is to derive the optimization target from the statistical structure of the feedback before selecting a workaround.",
+        "application": "For another sampled-feedback problem, explicitly identify whether feedback induces a tractable likelihood and design an objective that approaches it under a controllable compute parameter.",
+        "exception": "This move may not apply when feedback is nonterminal, nonbinary, or does not define a meaningful likelihood."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the tested models, tasks, baselines beyond GRPO, or conditions underlying the reported Pareto dominance and 20× maximum.",
+      "The abstract identifies terminal binary feedback and describes interpolation from expected-reward RL toward maximum likelihood as sampling compute increases, but does not give the precise objective formula or full proof assumptions."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "unknowns[1]",
+      "before": "The proof assumptions and meaning of the compute-indexed interpolation are not given.",
+      "after": "The abstract identifies terminal binary feedback and describes interpolation from expected-reward RL toward maximum likelihood as sampling compute increases, but does not give the precise objective formula or full proof assumptions.",
+      "review_file": "reviews/audit-icml-2026.json",
+      "review_sha256": "2c724561fe80e956c191114320b9c01b2a2474bd8ecec0af311473a21fdb94f3",
+      "applied_at": "2026-09-13T00:20:52.599976+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

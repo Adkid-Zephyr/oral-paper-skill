@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71179",
+    "title": "Faster Activation Functions at the Edge for Post-Training Speedups",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71179"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "21f5e332a5484292a74c0d848ebd719d5f7e269799c53daca9838c6e95b97a60",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "cac46db4f61bd58c9d758d4eba87694bacad7277a73ba67bcdbf3b8ad6100c84",
+    "extracted_at": "2026-09-13T00:17:07.827483+00:00",
+    "session_id": "01a0981f-b89c-7331-b403-0145af063197",
+    "usage": {
+      "input_tokens": 12741,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 686,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c2d0154090392bc783c2643a68c6aea2b3dadc991d30dc3f0f7dffb89a0946ea"
+    },
+    {
+      "id": "S2",
+      "sha256": "1576e1ded765aab665f7c17eef481ca1c518d7f3d2703d5430e348d724e1dea7"
+    },
+    {
+      "id": "S3",
+      "sha256": "601ead67d636c61d2fe51e89488cfc2e96585e2f513efb311ab0317de01abb3f"
+    },
+    {
+      "id": "S4",
+      "sha256": "9386ba616e134a3a39c5ede0ca753d130b41fb8fd03765a2fbf5b2c334bcc971"
+    },
+    {
+      "id": "S5",
+      "sha256": "95d7376e9cd151e1a16c68edaf9dfa069a9dee5cf80d29dc7cd3df53c56a4ab1"
+    },
+    {
+      "id": "S6",
+      "sha256": "579d4c4109e1d237944263d064b32b4a1131d0c03942d36a8a3267961153a3ce"
+    },
+    {
+      "id": "S7",
+      "sha256": "d7776b2d1dc81316fb3aef203a73121c37740a93ea181d27fbf4cba4bd60a63d"
+    },
+    {
+      "id": "S8",
+      "sha256": "da9542a948aea645906bbad2dab781ea4997222dd895b493be9d749067d26334"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71179",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable accurate, lightweight deep-learning inference on resource-constrained edge devices despite activation-function overhead.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Advanced activations such as Swish and GELU lack hardware fast paths for exponentiation and division, making them costly and encouraging use of simpler activations such as ReLU, with potential accuracy limitations.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "system",
+        "claim": "FFCC, a compiler that automatically generates efficient activation-function approximations through floating-point reinterpretation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A specification-and-lowering workflow that converts activation expressions written with basic floating-point operators into efficient instruction sequences.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Activation-level approximations are reported to enable substantial speedups while remaining suitable as post-training drop-ins.",
+        "source_ids": [
+          "S5",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed distinction is automatically generating fast activation-function approximations via floating-point reinterpretation for post-training use on edge devices.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report order-of-magnitude speedups over accurate baselines on Arm M7, Aarch64, and Intel platforms.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that ConvNeXt activation gains translate into end-to-end speedups without significant model-accuracy loss.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "On-device AI seeks efficient, low-latency inference, but edge resource constraints complicate accurate lightweight deployment.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "bottleneck",
+        "summary": "Advanced activations are expensive without hardware fast paths, constraining edge models toward simpler activations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "FFCC generates efficient activation approximations from floating-point reinterpretation and lowers operator specifications into instruction sequences.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "Experiments report order-of-magnitude platform speedups and ConvNeXt end-to-end gains without significant accuracy loss.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a low-level activation optimization to end-to-end ConvNeXt speedups and reports the associated accuracy condition.",
+          "source_ids": [
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "This is a useful claim-evidence pattern: connect component-level gains to a representative system-level workload while stating the key quality trade-off.",
+        "application": "When presenting an inference optimization, pair micro-level operator benchmarks with an end-to-end model demonstration and explicitly report the relevant accuracy change.",
+        "exception": "This pattern is unsuitable when no representative end-to-end workload exists or when accuracy cannot be measured comparably."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify approximation errors, exact speedup values, benchmark settings, or the definition of “significant” accuracy loss.",
+      "It does not identify which activation functions, models beyond ConvNeXt, or post-training datasets were evaluated."
+    ]
+  }
+}

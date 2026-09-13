@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006532",
+    "title": "Depth Anything 3: Recovering the Visual Space from Any Views",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006532"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "ffe282297cefb0bad682a267e85b3b6e1b0db9eab5ca7ebad89dc205b5549664",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "d7cd79a7c47cb12d9f8223033ac7c05d648f2f798a097f7fd3192dcdaaeaf5c1",
+    "extracted_at": "2026-09-12T23:39:32.413221+00:00",
+    "session_id": "01a097fd-4803-7ef3-93a1-6f479c28d1c5",
+    "usage": {
+      "input_tokens": 12484,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 805,
+      "reasoning_output_tokens": 111
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d3c69337cffaafbdf82f32161fc21aa85af5ef4e8d9a7596da6e6af2bbc94216"
+    },
+    {
+      "id": "S2",
+      "sha256": "dbd086ce6166aee0d9134f80b0a8f6be23934f45a608769193ca46391c115b57"
+    },
+    {
+      "id": "S3",
+      "sha256": "8b89532bea89c7336281240e4b195b0f2fba12a01f212978471cfa3dd6214fcf"
+    },
+    {
+      "id": "S4",
+      "sha256": "d90b551a9fcd0c7fd2f9979f28e059901719692cd46848f5633c3bae3b9ff30a"
+    },
+    {
+      "id": "S5",
+      "sha256": "5c4fa31a7910d38491ea0aaad90330487b7593a3b0c7478f87b9e560309b88de"
+    },
+    {
+      "id": "S6",
+      "sha256": "fe122a10805fa2046da601b55b7e1df82726d9d04fe68d0ef9f544601a3f96a3"
+    },
+    {
+      "id": "S7",
+      "sha256": "6ac1d4c8cd18af00092f7b3a22caaa06edc5625b70a4678507f1fd93acfff68a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006532",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Predict spatially consistent geometry from arbitrary visual inputs, with or without known camera poses.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DA3 uses a plain transformer backbone and a single depth-ray prediction target, trained with a teacher-student paradigm.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "benchmark",
+        "claim": "A visual geometry benchmark covering camera pose estimation, any-view geometry, and visual rendering.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "DA3 is reported to achieve leading performance across the benchmark and to outperform DA2 on monocular depth estimation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish DA3 through minimal modeling: a nonspecialized transformer backbone and a singular depth-ray target instead of complex multi-task learning.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report detail and generalization comparable to DA2 under teacher-student training.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "On the introduced benchmark, the authors report average gains over VGGT of 35.7% in camera pose accuracy and 23.6% in geometric accuracy across the stated tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that DA3 outperforms DA2 in monocular depth estimation; all models were trained exclusively on public academic datasets.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The paper presents DA3 for spatially consistent geometry from arbitrary visual inputs, with optional camera poses.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "design insight",
+        "summary": "It argues that minimal modeling is sufficient: a plain transformer and one depth-ray prediction target.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "training and capability",
+        "summary": "Teacher-student training is reported to produce detail and generalization on par with DA2.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation resource",
+        "summary": "The authors introduce a benchmark spanning pose estimation, any-view geometry, and rendering.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "comparative results",
+        "summary": "DA3 is reported to surpass VGGT across benchmark tasks and DA2 on monocular depth.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a minimal architecture and singular prediction target to a model evaluated across multiple geometry tasks.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact design rationale can make broad evaluation easier to attribute to specific modeling choices.",
+        "application": "State the minimal design choices first, then evaluate them on a benchmark whose task coverage matches the claimed scope.",
+        "exception": "This framing is unsuitable when the target genuinely requires task-specific outputs or when broad task coverage is unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark datasets, splits, baselines beyond VGGT and DA2, or statistical uncertainty.",
+      "The reported average improvements and the DA2 comparison lack per-task conditions and implementation details.",
+      "The abstract does not establish that the stated design choices individually caused the reported gains."
+    ]
+  }
+}

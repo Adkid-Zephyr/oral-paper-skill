@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71074",
+    "title": "Optimal Decision-Making Based on Prediction Sets",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71074"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d5bed8ae1a7430a93a46546aff7487f4cfa22aa788c1364edd357cb4526caeb7",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "a6a7891d3c7c0dbef957e044ed2da653cdbbaf4e4c9ae5a2134c43534cc23b09",
+    "extracted_at": "2026-09-13T00:13:00.533556+00:00",
+    "session_id": "01a0981b-f137-7591-ab0d-e471e3d05c27",
+    "usage": {
+      "input_tokens": 12713,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 714,
+      "reasoning_output_tokens": 64
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "52de9dba38b4ce015a6cd4c2c323f0c3aaaf97da89a30456326f1b6437a7610b"
+    },
+    {
+      "id": "S2",
+      "sha256": "8a092bcc0135486fc4b32397aaea6a1dfc7f95df5a3cec0cde335de719e52fb4"
+    },
+    {
+      "id": "S3",
+      "sha256": "91d70799a8bb851d61925cc67b9ea9b95fc86b05fbdf60e219a8d962dfb04202"
+    },
+    {
+      "id": "S4",
+      "sha256": "26e089118f991d457f3558a1256bcc258c8205cbd91d9bda158ef0885398c58a"
+    },
+    {
+      "id": "S5",
+      "sha256": "4620899f1dd174f8a6fb2fb8d62d0629872170291ef045040e1af4300a40d53a"
+    },
+    {
+      "id": "S6",
+      "sha256": "c3e5b2b262dae84e9e931e024889118d158dc87b28dd033570daafb33f191d54"
+    },
+    {
+      "id": "S7",
+      "sha256": "797ef65b0d2ac0ee6f97099ff4eda9717f4bd719b5c3f639bd4e9f6e7477b806"
+    },
+    {
+      "id": "S8",
+      "sha256": "56c5e9f63be7b226f07c29476e641abab5d48a0f0147ba690fbdc3e228d38320"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71074",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to use prediction sets optimally for downstream decision-making.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing understanding does not clarify optimal downstream use of prediction sets.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "decision-theoretic framework",
+        "claim": "A framework minimizes expected loss against worst-case distributions consistent with a prediction set’s coverage guarantee.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory and construction",
+        "claim": "A minimax-optimal policy is characterized for a fixed set, and an optimal coverage-constrained prediction-set construction is derived.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "Risk-Optimal Conformal Prediction (ROCP) targets risk-minimizing sets while maintaining finite-sample distribution-free marginal coverage.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce a risk-oriented framework and ROCP for constructing prediction sets tailored to downstream decision risk.",
+      "source_ids": [
+        "S3",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that ROCP reduces critical mistakes versus baselines on medical diagnosis and a toy static hazard-decision benchmark, especially when out-of-set errors are costly.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "Authors report that experiment-reproduction code is publicly available.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Prediction sets can provide guaranteed-probability coverage of unknown test outcomes around any ML model.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Their optimal use in downstream decisions remains unclear.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "The paper formulates worst-case expected-loss minimization, characterizes the fixed-set minimax policy, and derives the optimal coverage-constrained set.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "method and evaluation",
+        "summary": "ROCP operationalizes the objective with finite-sample distribution-free marginal coverage; evaluations report fewer critical mistakes, notably when out-of-set errors are costly.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the prediction-set objective with downstream loss, explicitly adding a penalty for potential losses outside the set.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This links uncertainty representation to the decision costs that make some errors more consequential.",
+        "application": "When presenting an uncertainty method, define its optimization target in terms of the downstream loss and identify which uncertainty-related errors receive penalties.",
+        "exception": "This framing may be unsuitable when downstream costs are unavailable, unreliable, or not meaningfully reducible to a worst-case distribution."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the coverage level, loss functions, baselines, dataset sizes, or quantitative mistake reductions.",
+      "The conditions and assumptions behind the minimax characterization and coverage guarantee are not given.",
+      "The reported empirical evidence covers only medical diagnosis and one toy hazard-decision benchmark."
+    ]
+  }
+}

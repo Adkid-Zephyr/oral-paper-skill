@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71123",
+    "title": "A Recursive Decomposition Framework for Causal Structure Learning in the Presence of Latent Variables",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71123"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "546adb77426aa9aaf9393e4be9e3f3c0b55098550dd0508a613d43a21cd3ca3a",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "5c28777c76e68ee59ae8dad53d4d4a4bcd00097e0868405767ba5d7fb1562499",
+    "extracted_at": "2026-09-13T00:14:56.716342+00:00",
+    "session_id": "01a0981d-b2fb-7172-914b-028d2acba0f2",
+    "usage": {
+      "input_tokens": 12679,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 762,
+      "reasoning_output_tokens": 96
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d2918f7130f540dd8c6bcd1e9d28fb97e02bc9f55de9d0ab4b1cd4290949627c"
+    },
+    {
+      "id": "S2",
+      "sha256": "c7cef76424e91fe420c50da6495223946688167b3d7b53a022fce98cdc7650c5"
+    },
+    {
+      "id": "S3",
+      "sha256": "6e6c8b63b0bcb00126ed0f24b349da09952fb444b85e95b0932005325cdba6e7"
+    },
+    {
+      "id": "S4",
+      "sha256": "f69c3aa227fa1f270fd4091b6ebf57de2f84ad4bccc65cef3074df1ee3daa3cf"
+    },
+    {
+      "id": "S5",
+      "sha256": "74c25844aa1f998679b14f228b98ba34e2fc4ae959f7f0ca22633394b90f3323"
+    },
+    {
+      "id": "S6",
+      "sha256": "4997ee0d8f93bd79951b73a56396f5d22d6de53ad569905311f5a029d016927c"
+    },
+    {
+      "id": "S7",
+      "sha256": "7faea2dc8bc3bf6d573f5c5203024bfc3a78cd3465db6a91ebf8393c29dbabc8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71123",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Constraint-based causal discovery becomes computationally expensive in high-dimensional settings because it relies heavily on conditional-independence testing.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Most existing divide-and-conquer frameworks assume causal sufficiency and therefore do not address latent-variable settings.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Generalizes divide-and-conquer causal discovery theoretically to settings with latent variables.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces DiCoLa, a recursive decomposition framework that divides global learning into smaller subproblems and combines their solutions through principled reconstruction.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Reports soundness and completeness results for the proposed framework.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish DiCoLa as a divide-and-conquer framework designed to operate with latent variables, beyond the usual causal-sufficiency assumption.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that synthetic-data experiments show significant computational-efficiency improvements across a range of causal discovery algorithms.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that experiments on a real-world dataset illustrate the method’s practical effectiveness.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report theoretically established soundness and completeness of the framework.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "High-dimensional constraint-based discovery is computationally costly because of extensive conditional-independence testing.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Existing divide-and-conquer approaches generally rely on causal sufficiency, leaving latent-variable settings insufficiently addressed.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper proposes DiCoLa, which recursively solves smaller subproblems and reconstructs the global causal structure.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "guarantees_and_evaluation",
+        "summary": "The authors report soundness and completeness, synthetic efficiency gains, and a real-world demonstration.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a computational bottleneck with a limiting structural assumption, then introduces a recursive decomposition and reconstruction mechanism to address both.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This pairing makes the method’s purpose and claimed scope easy to trace from problem to design.",
+        "application": "When presenting a new algorithm, explicitly connect each major design component to a named bottleneck or assumption, then state how local outputs are recombined globally.",
+        "exception": "This framing is less suitable when the method has no meaningful decomposition or when local solutions cannot be principledly integrated."
+      }
+    ],
+    "unknowns": [
+      "No efficiency metrics, baselines, dataset details, algorithm list, or experimental conditions are provided.",
+      "The abstract does not specify the formal assumptions or meanings of soundness and completeness."
+    ]
+  }
+}

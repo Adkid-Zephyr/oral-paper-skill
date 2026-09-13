@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71182",
+    "title": "SoftJAX & SoftTorch: Empowering Automatic Differentiation Libraries with Informative Gradients",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71182"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d0c246e888b5b9968b8ae76058e5ae4c33aa5b6f72704ea6f7e6aa247760aeab",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "b8712802d54b947083a864eb8f7869c74678e65b3e28bffbf57b9a13eddafe48",
+    "extracted_at": "2026-09-13T00:17:18.771132+00:00",
+    "session_id": "01a0981f-e88f-7c43-a92b-e95235838f19",
+    "usage": {
+      "input_tokens": 14302,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 683,
+      "reasoning_output_tokens": 69
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f191741c2ff0fe0754c5347d4d5d60bef7ea38f26f484d4a003cb75efa0cef54"
+    },
+    {
+      "id": "S2",
+      "sha256": "0349e9a786ae9483beafc7fa5622cb44ababd44c22a6ea4cbf07e6cd70f08b67"
+    },
+    {
+      "id": "S3",
+      "sha256": "c444114a7d537a4b5139b4571ba793c7a0e20c6de1cb5a87b5dc3a4b0f5f370b"
+    },
+    {
+      "id": "S4",
+      "sha256": "83cc9ec43c3526843948bf685f4a505b8253ddf25a92c4d69c82abae4206e20a"
+    },
+    {
+      "id": "S5",
+      "sha256": "4c9ee85544ea8952c911b759a9add6f5affab04733ea67b4bfd89c783901e6ca"
+    },
+    {
+      "id": "S6",
+      "sha256": "789f081b8123e8d9a807d14d3b760b05713ba2e67c850a06fe2582ed6cc77de0"
+    },
+    {
+      "id": "S7",
+      "sha256": "8c205bd47ef748d7f1331ada37f73e41a19e4223f1c42c243901275e6089aa35"
+    },
+    {
+      "id": "S8",
+      "sha256": "909f9fd018c5de445ef19e37b7d5c96f9ac21f77dc7d48e166e761df954d83ce"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71182",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Hard primitives in automatic-differentiation libraries can produce zero or undefined gradients that are unhelpful for optimization.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing soft relaxations are fragmented across projects, making them difficult to combine and compare.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "system",
+        "claim": "Introduces SoftJAX and SoftTorch, open-source libraries for soft differentiable programming, with soft functions serving as drop-in replacements for hard JAX and PyTorch operations.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method/resource",
+        "claim": "Provides soft elementwise, Boolean/index, and axiswise operators, using fuzzy logic, optimal transport, or permutahedron projections, and supports straight-through gradient estimation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Makes a toolbox of soft relaxations accessible within differentiable programming.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish the work as introducing open-source, feature-complete SoftJAX and SoftTorch libraries that consolidate soft differentiable-programming functionality.",
+      "source_ids": [
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report benchmarking and a practical case study as demonstrations of the libraries.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "AD frameworks enable gradient-based optimization across scientific fields.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Hard primitives may yield zero or undefined gradients, while soft-relaxation implementations remain fragmented.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "system",
+        "summary": "The work introduces SoftJAX and SoftTorch with broad soft-operation coverage and straight-through estimation support.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "demonstration",
+        "summary": "The authors report benchmarking and a practical case study demonstrating access to the consolidated toolbox.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a concrete optimization obstacle to a fragmented implementation landscape, then describes a unified library organized by operator families and gradient-estimation support.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S6"
+          ]
+        },
+        "interpretation": "This structure helps align a systems contribution with both the user-facing problem and the capabilities needed to address it.",
+        "application": "For a similar library paper, map each stated limitation to an explicit capability category and identify the demonstration used for each category.",
+        "exception": "This framing is less suitable when the work centers on one algorithm or theoretical result rather than an integrated toolkit."
+      }
+    ],
+    "unknowns": [
+      "No quantitative benchmark results, baselines, datasets, or case-study details are given.",
+      "The abstract does not specify what makes the libraries feature-complete or how their implementations compare in practice."
+    ]
+  }
+}

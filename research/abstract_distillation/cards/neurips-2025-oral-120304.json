@@ -1,0 +1,165 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-120304",
+    "title": "OpenHOI: Open-World Hand-Object Interaction Synthesis with Multimodal Large Language Model",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/120304"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2ad26760475351a1c3d5d1133da9d7ebd91323ae5aef0a6bc49d1069e0b88869",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "49a88112d3df865956ac7406914417c42fd9f1ddb212f919722015134835a839",
+    "extracted_at": "2026-09-13T00:23:21.225749+00:00",
+    "session_id": "01a09825-68bd-7521-8311-12d926938beb",
+    "usage": {
+      "input_tokens": 12706,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 736,
+      "reasoning_output_tokens": 73
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "63548925881f09259778c4dc1efeef1bf9b7fb7684f2e2f85d68da5b150134a9"
+    },
+    {
+      "id": "S2",
+      "sha256": "01e0a394aa62fd72bef05e7ab1e2ba63742f9980a104606d1b61774bdcebfdc2"
+    },
+    {
+      "id": "S3",
+      "sha256": "d8fd356ddaca31f9efea08cc4836a84f14588eee3d012166118775aa74008016"
+    },
+    {
+      "id": "S4",
+      "sha256": "146a68b96d54d5d3f4ae1000b50511e02f220e47ba4964b780b77e5441a75bf4"
+    },
+    {
+      "id": "S5",
+      "sha256": "21e5cb006c37d477bcec5be2f87dd80b1dae1c64bbc893d739f9f5c05f992b2a"
+    },
+    {
+      "id": "S6",
+      "sha256": "e96dac8dbf7496d666a290137eec9986b107b85f48690e5c02d73c89e8474fdd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-120304",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses realistic 3D hand-object interaction synthesis for novel objects and language-guided, long-horizon manipulation.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods reportedly generalize poorly beyond closed-set objects and predefined tasks, especially for unseen objects and open-vocabulary instructions.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "OpenHOI is introduced as a framework for open-world HOI synthesis guided by free-form language and capable of generating long-horizon sequences for novel objects.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The approach combines a 3D MLLM for affordance grounding and task decomposition with an affordance-driven diffusion model and training-free physics refinement.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe OpenHOI as the first framework for open-world HOI synthesis.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that evaluations across diverse scenarios show superiority over state-of-the-art methods for novel object categories, multi-stage tasks, and complex language instructions.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Realistic 3D hand-object interaction synthesis is framed as important for AR/VR and dexterous robotics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing approaches are described as effective mainly for closed-set objects and predefined tasks, with failures on unseen objects and open-vocabulary commands.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "OpenHOI is presented for open-world, language-guided synthesis of long-horizon manipulation involving novel objects.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "technical design",
+        "summary": "A 3D MLLM grounds affordances and decomposes instructions, while diffusion synthesis and physics refinement target plausible, affordance-aligned interactions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report superior generalization across novel categories, multi-stage tasks, and complex instructions.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each stated limitation with a corresponding capability: unseen objects and open-vocabulary instructions motivate open-world synthesis, while complex commands motivate affordance grounding and task decomposition.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This makes the method-to-gap relationship easy to audit at the abstract level.",
+        "application": "When introducing a new system, map each central failure mode to an explicit capability and state that mapping before presenting implementation details.",
+        "exception": "This framing is unsuitable when the work targets a narrow task and does not claim to address multiple distinct limitations."
+      }
+    ],
+    "unknowns": [
+      "No quantitative metrics, dataset details, scenario counts, baseline identities, or statistical results are provided.",
+      "The abstract does not specify the relative gains or conditions underlying the reported superiority.",
+      "The claimed first-of-kind distinction is author-stated and not independently verified."
+    ]
+  }
+}

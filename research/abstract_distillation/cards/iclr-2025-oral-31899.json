@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31899",
+    "title": "Training Language Models to Self-Correct via Reinforcement Learning",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31899"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b5ba3c068511af784dc91e944b7faf3878218e70b22e9a6a75f73ad7a302293c",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "1970d7856bb0ff6ed6b4aa0db6f20032649e620c7f6dab34229cea961208e7a4",
+    "extracted_at": "2026-09-12T23:56:23.285564+00:00",
+    "session_id": "01a0980c-ad65-7b13-893a-81212979a169",
+    "usage": {
+      "input_tokens": 12827,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 819,
+      "reasoning_output_tokens": 109
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f97b63b088786f56032cde967be86bf667061a267d1d1b4cfa0cbdad727a4962"
+    },
+    {
+      "id": "S2",
+      "sha256": "eb9f8e146eddd73de440c089108c6b1c94f3b41023e8ca9b4c935494bcb4d054"
+    },
+    {
+      "id": "S3",
+      "sha256": "bb4e309cc1d9acac29fda7cc5e5d5dddf089ad1de2865b3673e1c4f9e28ca19b"
+    },
+    {
+      "id": "S4",
+      "sha256": "1ef0ca685f12d7f833d74e70452aa5a9391c1a545cae07667b08323e9bc6e27c"
+    },
+    {
+      "id": "S5",
+      "sha256": "f896415bdc80717376b13ee00a14c8fe16eae030b0f47955bf6c9d59414d4ba1"
+    },
+    {
+      "id": "S6",
+      "sha256": "2de8aa51aed06d203eaea3e9e2086983eabcecd8976b1869ada70b7ef56037c8"
+    },
+    {
+      "id": "S7",
+      "sha256": "52d8fda935b746832c4e1eccb23ae59d65972813a4c59bada53a21b2b6a59862"
+    },
+    {
+      "id": "S8",
+      "sha256": "1d3730273bc2ca08895615c699f90fdc8afb6c90000aaf27f3a9d1ef44476352"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31899",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable large language models to self-correct effectively.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing self-correction training methods typically require multiple models, a stronger model, or additional supervision.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "SCoRe, a multi-turn online reinforcement-learning approach that trains self-correction using entirely self-generated data.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A training design combining on-policy correction traces, regularization, a base-model RL initialization, and a reward bonus for amplifying self-correction.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report improved self-correction on Gemini 1.0 Pro and 1.5 Flash.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed approach addresses prior supervision and model-dependence shortcomings through multi-turn online RL with entirely self-generated data.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that supervised fine-tuning on offline model-generated correction traces is insufficient, due either to distribution mismatch or preference for correction modes that are ineffective at test time.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report state-of-the-art self-correction performance for Gemini 1.0 Pro and 1.5 Flash, with base-model improvements of 15.6% and 9.1% respectively on MATH and HumanEval.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Self-correction is desirable but reported as largely ineffective in modern LLMs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing training approaches rely on extra models or supervision; offline-trace SFT is reported as insufficient.",
+        "source_ids": [
+          "S2",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "SCoRe trains on the model’s own correction-trace distribution and regularizes learning toward test-time-effective strategies.",
+        "source_ids": [
+          "S3",
+          "S6"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "Its regularization uses initial RL to reduce collapse susceptibility and a reward bonus to amplify self-correction.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "result",
+        "summary": "The authors report gains on Gemini models across MATH and HumanEval.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links offline SFT failure to distribution mismatch and mode preference, then describes on-policy training and regularization as responses.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A method claim is more informative when its design choices are explicitly tied to diagnosed failure modes.",
+        "application": "Frame each proposed component as addressing a specific training or evaluation mismatch, and state the intended effect.",
+        "exception": "This framing is unsuitable when the mechanism-to-failure link has not been established or the method has no identifiable failure mode."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact evaluation metric, comparison baselines, statistical uncertainty, or whether the reported percentages are relative or absolute improvements.",
+      "Details of the RL reward, regularization strength, tasks, and ablations are not provided."
+    ]
+  }
+}

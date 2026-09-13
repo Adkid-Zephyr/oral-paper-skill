@@ -1,0 +1,203 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71174",
+    "title": "OMAC: A Holistic Optimization Framework for LLM-Based Multi-Agent Collaboration",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71174"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6877b461feee3816919ca0d5a59e551944740f5ce727c661f0215910ed9fa770",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "08db11ade06c96b5bb4937369842e6f4ed4ef115791a53ee891b37cee2daa6b9",
+    "extracted_at": "2026-09-13T00:16:58.490322+00:00",
+    "session_id": "01a0981f-974c-7f51-b5a3-0fcf0ed6ff2a",
+    "usage": {
+      "input_tokens": 12714,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 669,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "832810317da1e65612eed0d793c1dd005a7f167ba08254c4c4f15212f84bc631"
+    },
+    {
+      "id": "S2",
+      "sha256": "d657f9ec21a90586dc4a70e319fd71147f96567eee0e444874ff944fb0b2d457"
+    },
+    {
+      "id": "S3",
+      "sha256": "9af48f11959fc7df7e6280fdc884abd87cfce4bb495f86b3ffec4639083b6a15"
+    },
+    {
+      "id": "S4",
+      "sha256": "c27047b1811a07a5daa8cdad331167d55935f6637b00f99fbe5e22d1b5e67944"
+    },
+    {
+      "id": "S5",
+      "sha256": "1deb4adad53f9d7c0f1102c10eadc3b56a46eecc14ae28e10eb9d743717680cd"
+    },
+    {
+      "id": "S6",
+      "sha256": "7b6d31a7c6d894ccd67f743fb832d819208932652ac525b6c8f1b9c885bf22ef"
+    },
+    {
+      "id": "S7",
+      "sha256": "89ac77ca02dab2dc9cc2a93bb19ba4848095e42ffc899c4473b82f7556b30700"
+    },
+    {
+      "id": "S8",
+      "sha256": "9cc45d1bbdefc011146fe45e39c0b3a5f61cc879bd4d4045e0c42ed1a04059a5"
+    },
+    {
+      "id": "S9",
+      "sha256": "1e63d36955d7a48412e5b32baffb63180e5edc481618a7668685e19e9d156d5c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71174",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses holistic optimization of LLM-based multi-agent systems (MAS), where agents collaborate and communicate for complex tasks.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing development often relies on handcrafted methods, while systematic design and optimization of LLM-based MAS remains limited.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Introduces OMAC, a general framework for holistic optimization of LLM-based MAS.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Defines five optimization dimensions spanning agent functionality and collaboration structure, and proposes a two-actor algorithm—the Semantic Initializer and Contrastive Comparator—to optimize any single dimension.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Presents an algorithm for joint optimization across multiple MAS dimensions.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish OMAC as a general framework that holistically optimizes LLM-based MAS across five dimensions, including both agent functionality and collaboration structure.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive experiments show OMAC achieving superior performance on diverse tasks compared with recent approaches.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that code is available in a public GitHub repository.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "LLM agents and collaborative MAS are described as capable on complex applications and tasks.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "MAS development is characterized as often handcrafted, with limited systematic design and optimization literature.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "OMAC is introduced as a general framework for holistic MAS optimization.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "algorithms",
+        "summary": "The paper describes single-dimension optimization using two actors, followed by joint optimization across dimensions.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Extensive experiments are reported to show superior performance across diverse tasks against recent approaches.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract reports five optimization dimensions spanning agent functionality and collaboration structure, without enumerating them, then describes separate single-dimension and joint-optimization algorithms.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "Making optimization axes explicit can connect a broad systems objective to modular procedures and a later integrated procedure.",
+        "application": "For a multi-component system paper, enumerate the main design axes before describing algorithms, and state whether each procedure optimizes one axis or several jointly.",
+        "exception": "This structure may be unsuitable when the system has no meaningful separable dimensions or when joint interactions dominate and cannot be modularized."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the five optimization dimensions, task identities, baselines, metrics, quantitative gains, or experimental settings.",
+      "The abstract does not provide details sufficient to assess the reported performance claim or the algorithms' implementation and limitations."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "lessons[0].source_observation.claim",
+      "before": "The abstract organizes the framework around five explicit optimization dimensions covering both agent functionality and collaboration structure, then provides separate single-dimension and joint-optimization algorithms.",
+      "after": "The abstract reports five optimization dimensions spanning agent functionality and collaboration structure, without enumerating them, then describes separate single-dimension and joint-optimization algorithms.",
+      "review_file": "reviews/flagged-batch-13.json",
+      "review_sha256": "3abcd28c7d9cb76d6ddb30e86464f912a2fe3b250e3563cbc8d8841465a8664d",
+      "applied_at": "2026-09-13T00:42:27.389454+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

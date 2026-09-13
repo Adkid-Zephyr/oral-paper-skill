@@ -1,0 +1,173 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009845",
+    "title": "NextStep-1: Toward Autoregressive Image Generation with Continuous Tokens at Scale",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009845"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "beb3f0ac5a746e7c1399f3b7d53a0da4225b08597b44c49a889f556a4f31de98",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "8d8ee8c63d8c4813608236eb35b921c8f269fa6f5bd1bef21b7638a09830fcd8",
+    "extracted_at": "2026-09-13T00:03:29.929381+00:00",
+    "session_id": "01a09813-390e-7b02-9750-5a5b3cfd86d3",
+    "usage": {
+      "input_tokens": 12641,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 766,
+      "reasoning_output_tokens": 88
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4e60267c72bf44f56808c0acf0e9a7dc10ab3d05bbf30cd503fb4657f8542efc"
+    },
+    {
+      "id": "S2",
+      "sha256": "afc9a16af83c513278ccf17d22dfd469079b751f11c551b8e4e4a5fb778d2b70"
+    },
+    {
+      "id": "S3",
+      "sha256": "1e20fb86429d558ebb58901df467e62f1ca7336dfdbc65ef64f6be6d1493284a"
+    },
+    {
+      "id": "S4",
+      "sha256": "ec33c51851fe7185538f16332da0f02284281a2f702d71af7b14945c8dec07a3"
+    },
+    {
+      "id": "S5",
+      "sha256": "125f7506614eb0c8dd20e638f70182649f4f52ce222fecf95e1524cbd88a26e2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009845",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop autoregressive text-to-image generation using continuous image tokens at scale.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing AR approaches either use computationally heavy diffusion processing for continuous tokens or VQ-based discrete tokens that incur quantization loss.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "NextStep-1 combines a 14B autoregressive model with a 157M flow-matching head, training on discrete text tokens and continuous image tokens with next-token prediction objectives.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The unified approach is reported to perform strongly in both text-to-image generation and image editing.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors released code and models for open research.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a scaled autoregressive architecture that unifies discrete text-token and continuous image-token prediction with a flow-matching head.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art performance among autoregressive models on text-to-image generation, with high-fidelity synthesis.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report strong image-editing performance, presenting this as evidence of the approach's versatility.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Existing AR text-to-image systems face either heavy diffusion computation or quantization loss from discrete image tokens.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "NextStep-1 scales AR generation with a 14B model, a 157M flow-matching head, and mixed discrete/continuous token prediction.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The model is reported to achieve leading AR text-to-image performance and high-fidelity synthesis.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "broader_capability",
+        "summary": "The authors also report strong image-editing performance from the unified approach.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "resource_release",
+        "summary": "Code and models were released to support open research.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly connects the token representation choice, model components, training objective, and target capabilities across generation and editing.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This creates a compact claim-to-design-to-capability narrative for a systems contribution.",
+        "application": "When presenting a multimodal generation system, map each claimed limitation to a concrete architectural choice and state which reported capability each choice is intended to support.",
+        "exception": "This framing is unsuitable when the abstract lacks results for the claimed capabilities or when component-level attribution is unavailable."
+      }
+    ],
+    "unknowns": [
+      "No quantitative metrics, datasets, evaluation protocols, or comparator identities are provided for the reported state-of-the-art and strong-performance claims.",
+      "The abstract does not specify how the flow-matching head interacts with next-token prediction or which image-editing tasks are evaluated."
+    ]
+  }
+}

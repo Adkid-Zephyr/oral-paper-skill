@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007021",
+    "title": "Triple-BERT: Do We Really Need MARL for Order Dispatch on Ride-Sharing Platforms?",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007021"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4f333ab440edf0336809cf3d639c4b66a5680d05cdd67d041af64c04797d1754",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "d15815f77cfb4673dc1b48dd61f28bd975ed6532bad4cb4365b1d39560d8f5d7",
+    "extracted_at": "2026-09-12T23:58:57.890383+00:00",
+    "session_id": "01a0980f-1229-7af2-b2de-eb271e6066fc",
+    "usage": {
+      "input_tokens": 12837,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 749,
+      "reasoning_output_tokens": 36
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "785b4e480f135717e2cbdb504b158593990094a708e7790039b851fe62491f06"
+    },
+    {
+      "id": "S2",
+      "sha256": "b0bdcf64a5e865cb6575dfb2ffb747aaf434bed488e180b6a2fe5f79b7bc10ae"
+    },
+    {
+      "id": "S3",
+      "sha256": "2507a58ac0c34d9eb25190ee3eb21c07fc0ee4c420a8d80db3c870fce90c86a3"
+    },
+    {
+      "id": "S4",
+      "sha256": "8d7f700a3a2f61eac84d1856794605c6320687ee78d0715072775085c9986a6a"
+    },
+    {
+      "id": "S5",
+      "sha256": "28901aadc9dc23e30ab7087263b6dd276b4d05f231b9c1f9866e334cf72debe9"
+    },
+    {
+      "id": "S6",
+      "sha256": "be7d40b2489eacab36a22fe7c8a3e00b7ba5d4c37951da57bc4eab6afe333151"
+    },
+    {
+      "id": "S7",
+      "sha256": "f35528c7f817b024258ef4a8b3654dc22201a7947afb45cce6772c50133c46b3"
+    },
+    {
+      "id": "S8",
+      "sha256": "81f1a46a1966e0ed56cd3625d2c9096a157540abf62cfa0c9e7a96ef95a04418"
+    },
+    {
+      "id": "S9",
+      "sha256": "f9300234f37dbc79f03250ab994b20e29872ccec830bb39ac173901db861ff06"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007021",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Real-time ride-sharing order dispatch must bundle and match passengers with available vehicles under substantial uncertainty and very large driver/order observation spaces.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Independent MARL methods miss global information and cooperate poorly, while CTDE MARL methods face dimensionality problems for this centralized task.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Triple-BERT is proposed as a centralized single-agent reinforcement-learning method for large-scale ride-sharing dispatch, built on a TD3 variant with decomposed driver actions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "architecture",
+        "claim": "A BERT-based network uses parameter reuse to limit growth with system scale and attention to model relationships among drivers and orders.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors make code, trained parameters, and processed data publicly available.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Triple-BERT through centralized single-agent learning, action decomposition, and a BERT-based architecture tailored to large-scale dispatch.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "On a real-world Manhattan ride-hailing dataset, the authors report an approximately 11.95% improvement over current state-of-the-art methods.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report a 4.26% increase in served orders and a 22.25% reduction in pickup times.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "application context",
+        "summary": "Ride-sharing platforms must dispatch vehicles to passenger requests in uncertain, large-scale environments.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "existing-approach limitation",
+        "summary": "Although dispatch is centralized, MARL is commonly used; independent MARL lacks global information and cooperation, while CTDE faces dimensionality challenges.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "Triple-BERT applies centralized single-agent reinforcement learning, decomposes joint actions by driver, and uses a parameter-reusing attention network.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported validation and release",
+        "summary": "The method is evaluated on Manhattan data, with reported gains in overall performance, served orders, and pickup time; implementation artifacts are released.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links each scaling obstacle to a specific design choice: action decomposition for the action space and parameter reuse plus attention for the observation space.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This provides a compact problem-to-mechanism framing that makes architectural motivation traceable.",
+        "application": "For a systems paper, map each stated bottleneck to one named mechanism before presenting aggregate results.",
+        "exception": "This framing is unsuitable when the proposed components address overlapping or experimentally inseparable bottlenecks."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluation metric behind the approximately 11.95% overall improvement, baseline identities, dataset size, or experimental protocol.",
+      "The abstract does not report ablations separating action decomposition, parameter reuse, and attention effects."
+    ]
+  }
+}

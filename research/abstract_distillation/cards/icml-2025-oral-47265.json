@@ -1,0 +1,212 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47265",
+    "title": "Emergence in non-neural models: grokking modular arithmetic via average gradient outer product",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47265"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b67be4de493d0cb36ae19d943c7d57c9bea051da73a55eef3abe03d80246cf33",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "fb944b0ecdacd4da2c8b1fe885fb8188e0709b4508011665a0a28bd53bd35c50",
+    "extracted_at": "2026-09-13T00:11:03.478629+00:00",
+    "session_id": "01a0981a-212a-7541-8391-893966187eb1",
+    "usage": {
+      "input_tokens": 14408,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 881,
+      "reasoning_output_tokens": 122
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f68526462402320176f4b1a59413637448cca7a98c6aec4d253a033d7562baed"
+    },
+    {
+      "id": "S2",
+      "sha256": "73a3c266c3094273cc889860abccad5b1ec411727c70d1a44e6f5083bef59622"
+    },
+    {
+      "id": "S3",
+      "sha256": "2e4f32b4a450db359ac117722ea8ac950131071deb9682d621815f6b60e4e531"
+    },
+    {
+      "id": "S4",
+      "sha256": "0fd9dcd520e120a505a69439eb85f5a1628401e496931be23b101cc02d99b829"
+    },
+    {
+      "id": "S5",
+      "sha256": "15959707b3d24fabe28300bf86fa53dae60f7da7b238a1ca76f4699ab2f49a39"
+    },
+    {
+      "id": "S6",
+      "sha256": "47a4077afb50451c19554706eab29e3dd6dcf4951d456f3a46fb99ce2120d35d"
+    },
+    {
+      "id": "S7",
+      "sha256": "b05ce953bd3d8abd4144587be508ae1d578a34fb3e24c1f6f4621788eee80260"
+    },
+    {
+      "id": "S8",
+      "sha256": "a12630fa53c605f4b54051825f37d60ef0a64b0d0ea52c967d7f58dacc6991f2"
+    },
+    {
+      "id": "S9",
+      "sha256": "8375a4bce002e684256ef719d41abf97a4ade0b3b042dd2dc43b16b0c4996b40"
+    },
+    {
+      "id": "S10",
+      "sha256": "46aab7d3becdd0aef567725d85dc0af54241d22464c1a0d7ef4e294b29941393"
+    },
+    {
+      "id": "S11",
+      "sha256": "f06599c2062de6c1634e3ca20cbc9a3c956af8b8ea8a31eb14ce64e754fc2720"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47265",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain grokking in modular-arithmetic learning and determine whether it depends on neural architectures or gradient-descent optimization.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract challenges the framing of grokking as specific to neural networks or gradient descent, and examines feature learning as an alternative explanation.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S7"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Applies Recursive Feature Machines with AGOP to modular arithmetic using general machine-learning models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports grokking-like transitions in kernel machines and block-circulant feature learning in both RFM and neural networks.",
+        "source_ids": [
+          "S5",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "theoretical evidence",
+        "claim": "Links RFM’s learned block-circulant features to the Fourier Multiplication Algorithm.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that emergence can arise purely from learning task-relevant features, rather than being specific to neural architectures or gradient-descent methods.",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that iterated RFM with kernel machines transitions rapidly from near-zero random test accuracy to perfect test accuracy.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "They report that training loss stays identically zero and test loss remains constant during initial iterations, so these losses do not predict the transition.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "They report that RFM gradually learns block-circulant features, while neural networks solving the same tasks learn analogous features.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "phenomenon",
+        "summary": "Grokking is introduced as delayed test-accuracy improvement after perfect training accuracy, often viewed as emergence.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "scope extension",
+        "summary": "The work tests whether grokking requires neural networks or gradient descent by using RFM for modular arithmetic.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "observed transition",
+        "summary": "With kernel machines, RFM produces a rapid shift from near-zero to perfect test accuracy despite uninformative early losses.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "mechanistic account",
+        "summary": "The transition is attributed to gradual learning of block-circulant features; neural networks learn corresponding features.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "theoretical interpretation",
+        "summary": "The abstract presents evidence connecting these features to Fourier multiplication and AGOP-mediated feature learning.",
+        "source_ids": [
+          "S9",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract contrasts an abrupt accuracy transition with losses that provide no predictive signal, then identifies gradual feature learning as the determining process.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "When outcome metrics look discontinuous, tracking internal representations may reveal the gradual mechanism behind the change.",
+        "application": "Pair performance curves with measurements of task-relevant feature structure and test whether representation changes precede the transition.",
+        "exception": "This is unsuitable when representations are unavailable or when the task has no meaningful feature-level diagnostic."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, model sizes, optimization details, transition timing, or quantitative comparisons beyond the stated accuracy outcomes.",
+      "The theoretical evidence for implementing Fourier multiplication is not detailed enough here to assess its formal scope or proof status."
+    ]
+  }
+}

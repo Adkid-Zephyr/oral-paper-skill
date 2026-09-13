@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-98024",
+    "title": "CVQA: Culturally-diverse Multilingual Visual Question Answering Benchmark",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/98024"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4d33954102461c00b16e55c6081ae1f87ab999043b893f73177417c718eb0280",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "70b7073750f8b372aaa410975e206f6a244a28733d25116ec1e65a7b9c701081",
+    "extracted_at": "2026-09-13T00:20:21.959922+00:00",
+    "session_id": "01a09822-af09-7eb1-98f9-ac0068c34d1e",
+    "usage": {
+      "input_tokens": 12775,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 733,
+      "reasoning_output_tokens": 76
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7137da395a759ddf97ae714cefdb665e8f799409c1cca7e4143f4986cc5cbcd1"
+    },
+    {
+      "id": "S2",
+      "sha256": "ae0dcfcd96ace82cae607f639fc903534aee935555b8a6ffd00df13294a33e65"
+    },
+    {
+      "id": "S3",
+      "sha256": "9c1db1414a7352f09e8a234f40f7c307f975942759f2f2ec525574d5f3e316d4"
+    },
+    {
+      "id": "S4",
+      "sha256": "482728d64acbee63f92553c8984285669b6d9586be18420e21a01f0ed404f605"
+    },
+    {
+      "id": "S5",
+      "sha256": "be775185d490703c2dddb375c5fd9b68731d458657a68a40a7642d4759a7d732"
+    },
+    {
+      "id": "S6",
+      "sha256": "f12661324ae012cee7fdd5a3d0ad50bb3c3116c708bfe426bef5f3af482d38ba"
+    },
+    {
+      "id": "S7",
+      "sha256": "7a580536c08a4c1aad2142bf1256205774ed64bf3841d4307dd11a6cd7471d4d"
+    },
+    {
+      "id": "S8",
+      "sha256": "82c4c44b638ac3df72f850fb8d037ca5543682ec8f788a742fb7a16a4e6cc0d5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-98024",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Visual Question Answering requires models to understand and reason over visual and textual knowledge across languages and cultural contexts.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing VQA datasets and models emphasize English and major languages, use Western-centric images, underrepresent low-resource languages, and often translate text while retaining the same culturally narrow images.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark dataset",
+        "claim": "The authors introduce CVQA, a culturally diverse multilingual VQA benchmark involving native speakers and cultural experts in data collection.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "CVQA covers 28 countries across four continents, 26 languages, 11 scripts, and 9k questions, using culturally driven images and questions.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical evaluation",
+        "claim": "The authors benchmark several multimodal large language models on CVQA.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present CVQA as a new benchmark designed to jointly broaden linguistic, regional, and cultural coverage through culturally grounded data collection.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that CVQA is challenging for current state-of-the-art multimodal models.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task context",
+        "summary": "VQA is framed as multimodal understanding and reasoning over visual and textual knowledge.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "identified limitations",
+        "summary": "The abstract describes language, resource, Western-image, and cultural-representation gaps in existing datasets and models.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed resource",
+        "summary": "CVQA addresses these gaps with culturally diverse, multilingual data collected with native speakers and cultural experts.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "evaluation and intended use",
+        "summary": "Several multimodal models are benchmarked; the authors report the benchmark is challenging and position it as a probe of cultural bias and linguistic diversity.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a dataset's coverage claims with explicit dimensions—countries, continents, languages, scripts, question count—and connects the benchmark to a targeted concern, cultural bias.",
+          "source_ids": [
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "Making scope and intended diagnostic use explicit helps readers understand what a benchmark is designed to measure.",
+        "application": "When introducing a benchmark, enumerate coverage dimensions and state the specific model behavior or bias the resource is intended to probe.",
+        "exception": "This framing is less suitable when the resource has no meaningful geographic, linguistic, or demographic coverage dimensions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the model identities, evaluation metrics, per-language results, or comparisons supporting the claim that CVQA is challenging.",
+      "It does not quantify cultural bias, explain sampling procedures, or report how native-speaker and expert involvement affected data quality."
+    ]
+  }
+}

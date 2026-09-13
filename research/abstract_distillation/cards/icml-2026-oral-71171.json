@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71171",
+    "title": "$\\tau^2$-Bench: Evaluating Conversational Agents in a Dual-Control Environment",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71171"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e769b15006482f3e72695ca1102887410b53bc66060369e930b91e3d3b23e460",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "a898a424b7e7c6df196bbf9fc4b501ba3a958f77b6ed6351e29c251e7d3cdfdc",
+    "extracted_at": "2026-09-13T00:16:47.132656+00:00",
+    "session_id": "01a0981f-6770-7423-9a7e-bb22efe76ee6",
+    "usage": {
+      "input_tokens": 12753,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 734,
+      "reasoning_output_tokens": 85
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d511cb9690427e208261f74af2f7cdd8ef149e649a2b84de19924186456624e1"
+    },
+    {
+      "id": "S2",
+      "sha256": "a871f8e23ae852f5d7c2d77f38fe1668a1d3e6cde2203fe156c7ac7590146fbf"
+    },
+    {
+      "id": "S3",
+      "sha256": "5e32896e5883a204cb63ea972cb16f1cbd84ba8bde4e76a7f35353253985ac67"
+    },
+    {
+      "id": "S4",
+      "sha256": "97a9b8c0894216cbe0a990a5c5f0a9035cf1680f9cd86f0bc097cf58064f4e3d"
+    },
+    {
+      "id": "S5",
+      "sha256": "13b38c30a81cea24cac49f0ce2ac89c3bc62743b243580cc7daabc09cf78b3aa"
+    },
+    {
+      "id": "S6",
+      "sha256": "82bd8ddb898def5179d7e13aead3719af4ebbfa5ec9985aa097a629f104b7b3a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71171",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate conversational agents in settings where both agents and users act on a shared, dynamic world.",
+        "source_ids": [
+          "S2",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Existing conversational-agent benchmarks mainly model single-control environments in which users are passive, unlike scenarios requiring active user participation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark and domain",
+        "claim": "Introduces a Telecom dual-control domain modeled as a Dec-POMDP, testing tool-mediated agent–user coordination and communication.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method and resource",
+        "claim": "Provides a compositional task generator for diverse, verifiable tasks with controlled complexity, plus a tool- and state-constrained user simulator.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "Includes fine-grained ablations separating reasoning errors from communication/coordination errors.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish the benchmark through dual control: both the agent and user use tools to act in a shared environment.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report significant performance drops when agents move from no-user to dual-control settings, underscoring difficulty in guiding users.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that the benchmark supports controlled testing of agents required to reason and guide user actions.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that code, data, and a leaderboard are available online.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Existing benchmarks treat the user as a passive information provider.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "real-world contrast",
+        "summary": "Technical-support scenarios require users to help modify a shared world.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark design",
+        "summary": "The paper introduces a dual-control Telecom environment, compositional tasks, a constrained user simulator, and error-focused ablations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "empirical finding and resource",
+        "summary": "Experiments report a performance drop under dual control; the benchmark is presented as a controlled testbed with released code, data, and leaderboard.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The benchmark explicitly separates reasoning errors from communication/coordination errors through ablations.",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "interpretation": "A decomposition of failure modes can make an evaluation more diagnostically useful than a single aggregate score.",
+        "application": "Design evaluation analyses that isolate task reasoning from interaction or coordination failures.",
+        "exception": "This decomposition may be unsuitable when the failure mechanisms cannot be operationally separated or when the task has no interactive coordination component."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report benchmark scale, agent identities, quantitative scores, ablation outcomes, or evaluation conditions.",
+      "The abstract does not establish whether the proposed simulator improves fidelity quantitatively or whether the benchmark generalizes beyond Telecom."
+    ]
+  }
+}

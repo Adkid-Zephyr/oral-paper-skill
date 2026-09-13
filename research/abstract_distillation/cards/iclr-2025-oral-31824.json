@@ -1,0 +1,199 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31824",
+    "title": "MOS: Model Synergy for Test-Time Adaptation on LiDAR-Based 3D Object Detection",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31824"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f09bbfe9030fb265d400f9164b80fb7c3a7a42f2baf1282e311297c64d6acaf8",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "d4ab7fbd2c92ba6f73572e693a4412b2153e112d1ecf4bb37ff8124ece53679d",
+    "extracted_at": "2026-09-12T23:53:28.321715+00:00",
+    "session_id": "01a0980a-05e1-7cb0-b42b-1d7130eb32f9",
+    "usage": {
+      "input_tokens": 12864,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 824,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9a1da54a80d46efaebd8502fe02e9882fdb2cd4aaf258a15a2da81c0620e1495"
+    },
+    {
+      "id": "S2",
+      "sha256": "73cc816b35490d8b3c559e7b7e92a0d0b15645193a014de8e568e9d013b5639a"
+    },
+    {
+      "id": "S3",
+      "sha256": "aa978280302b607c26c63940c7aad6183cfef6dc7d5bae0909ae46cebf66136a"
+    },
+    {
+      "id": "S4",
+      "sha256": "d9e22126342645e9ed6e10e117073a857f427f7c45e1e28bdf8c220ba645fc3f"
+    },
+    {
+      "id": "S5",
+      "sha256": "71d333374425adf6c5ab6a778bd190ac7fd29e42ffad08075995feb96d70f6bb"
+    },
+    {
+      "id": "S6",
+      "sha256": "8dafebb1a0dd0f331704b0b4f32179a8d9ca331f23ccb706de27db20b81c9d08"
+    },
+    {
+      "id": "S7",
+      "sha256": "68a88b2c692e5dfe324600fd6aa9118d3bbe4010d706e1218623f6d5981bc742"
+    },
+    {
+      "id": "S8",
+      "sha256": "cdfc4c29e0621482c743bd497dc46db327699c56ba1c6cb508a74a78c0f24a23"
+    },
+    {
+      "id": "S9",
+      "sha256": "b2caa4419ee76baa42ab297330b9497107a06092c059da79704d62e9ac07b062"
+    },
+    {
+      "id": "S10",
+      "sha256": "a86e83167ca902dbe50ccf8b34b04fef95b319a23aa14747a3a0e7999de0dd4c"
+    },
+    {
+      "id": "S11",
+      "sha256": "f5489386540921ef6b5b32601136d82a715cb6797e78f3b75fbeda86e95d6e8f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31824",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Online test-time adaptation for LiDAR-based 3D object detectors under domain shifts, including simultaneous cross-dataset shifts and sensor/weather corruptions.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Practical sensor and weather corruptions are described as underexplored relative to cross-dataset shifts, especially when both shift types co-occur.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "MOS dynamically selects historical checkpoints with diverse knowledge and assembles them using Synergy Weights for the current test batch.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Synergy Weights use predicted-box similarity and feature independence to guide checkpoint weighting, while low-scoring checkpoints are replaced by newly updated models.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "benchmark",
+        "claim": "The study evaluates adaptation across three datasets and eight corruption types, including a cross-corruption setting.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present MOS as a novel online test-time adaptation framework that uses long-term knowledge from prior test batches and targets cross-corruption shifts.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that MOS outperformed existing test-time adaptation strategies across three datasets and eight corruption types.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report a 67.3% improvement in the cross-corruption scenario.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Deployment domain shifts degrade LiDAR-based 3D detection, while practical sensor and weather corruptions receive less attention.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The authors introduce online adaptation for diverse shifts, including co-occurring cross-dataset shifts and corruptions, and use prior test batches to mitigate catastrophic forgetting.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "MOS selects diverse historical checkpoints and combines them through Synergy Weights based on prediction similarity and feature independence.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "maintenance_and_results",
+        "summary": "The model bank discards low-scoring checkpoints; experiments span three datasets and eight corruption types, with a reported 67.3% cross-corruption improvement.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links checkpoint selection to two explicit signals—predicted-box similarity and feature independence—and links model-bank replacement to average Synergy Weight scores.",
+          "source_ids": [
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A method description becomes more actionable when each adaptive component is paired with its decision signal and update rule.",
+        "application": "When presenting an adaptive system, specify the observable signals driving selection, aggregation, and replacement, then state how each signal affects the component.",
+        "exception": "This framing is less suitable when the decision process is intentionally learned end-to-end or cannot be meaningfully decomposed into interpretable signals."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the datasets, baselines, evaluation metric, or experimental conditions behind the reported superiority.",
+      "The meaning and denominator of the 67.3% improvement are unspecified.",
+      "The abstract does not provide ablations separating long-term knowledge, checkpoint diversity, Synergy Weights, and model-bank replacement."
+    ]
+  }
+}

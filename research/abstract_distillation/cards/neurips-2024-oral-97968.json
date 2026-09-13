@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97968",
+    "title": "Learning to grok: Emergence of in-context learning and skill composition in modular arithmetic tasks",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97968"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "36f2b1078a93ec844cba7395401cf5b754beff9b834fb54e6d7dd9770873bf0d",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "aa7a79d9100fd72d4d0bf46058157d2595faad3024a8467a7040a27bfd5157d9",
+    "extracted_at": "2026-09-13T00:18:41.092016+00:00",
+    "session_id": "01a09821-1d50-7290-9c03-ada41dbb8177",
+    "usage": {
+      "input_tokens": 12763,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 780,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "40a3823dd96454e81b36a1cb72c31d042f90e00dca0f608fe2898d5b03e90a12"
+    },
+    {
+      "id": "S2",
+      "sha256": "1118b89c86e9e20688e592184e9ee35dacbc7541cd9f586afc4c2434ad4e1f9a"
+    },
+    {
+      "id": "S3",
+      "sha256": "907d8c82891ca06a8e23cdfd4b9c873a0a98daf9f86d60b458f19abf4a65a5cd"
+    },
+    {
+      "id": "S4",
+      "sha256": "f26af178e1cee4ef7cb6b90663fc556641be896c13fbb1c0b3d2fd5b0182f120"
+    },
+    {
+      "id": "S5",
+      "sha256": "52c1d5dd74c87d3e2e25e1217b217f81674ae9312aea9ea6038a29a4f1d6c28e"
+    },
+    {
+      "id": "S6",
+      "sha256": "c16b3143dc8836dad18d35e997fb66aa66a58daa3b089c4960673aea0e273f2b"
+    },
+    {
+      "id": "S7",
+      "sha256": "95f993f38bbd6b736a109bfd3969c2d1ecaffcac7bfebf3d9ad643c431d8f2ac"
+    },
+    {
+      "id": "S8",
+      "sha256": "cdd3f5ef62dec2538758200f5309fcc46a008db1e5756593ea9b7dabb1e22181"
+    },
+    {
+      "id": "S9",
+      "sha256": "831c1dec7a0fbc0619b8f916a1c96c93a71fdb5692edf81c5729e6c6c6f5dc9b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97968",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Study how in-context learning and skill composition emerge in modular arithmetic tasks.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "methodological setup",
+        "claim": "Defines a finite family of linear modular functions, using some for pre-training and the remainder for out-of-distribution testing.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports a transition from in-distribution to out-of-distribution generalization as the number of pre-training tasks increases, with depth-dependent behavior.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "interpretability analysis",
+        "claim": "Examines structured representations in attention heads and MLPs and discusses the learned algorithms.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work studies the emergence of in-context learning and skill composition through a modular-arithmetic task collection, including an interpretability analysis of learned algorithms.",
+      "source_ids": [
+        "S3",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the smallest model showing out-of-distribution generalization has two transformer blocks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that out-of-distribution generalization is transient in deeper models, so early stopping is necessary.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report an algorithmic shift in deeper models as the number of in-context examples grows from few to many.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Frames unseen-task solving as associated with in-context learning and skill composition.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "experimental design",
+        "summary": "Studies a finite family of labeled linear modular functions, splitting tasks between pre-training and out-of-distribution testing.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "generalization results",
+        "summary": "Reports increasing-task-driven transition to out-of-distribution generalization and identifies different depth requirements and transient behavior.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "mechanistic analysis",
+        "summary": "Reports structured attention-head and MLP representations, learned algorithms, and an example-count-dependent algorithmic shift in deeper models.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links generalization behavior to both model depth and the number of pre-training tasks, and separately reports a shift with the number of in-context examples.",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S9"
+          ]
+        },
+        "interpretation": "Generalization may depend on training scale and inference-context regime in interacting, non-monotonic ways.",
+        "application": "When presenting a generalization study, stratify results by model depth, training-task coverage, and context-example count, and state whether observed phases are transient.",
+        "exception": "This framing may be unsuitable when the task or model has no meaningful notion of task coverage, depth, or in-context examples."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide quantitative transition points, model sizes beyond block depth, task-sampling details, or evaluation metrics.",
+      "The conditions and evidence supporting the claim that early stopping is necessary are not specified.",
+      "The interpretability findings and proposed learned algorithms are not described in enough detail to assess their exact mechanisms."
+    ]
+  }
+}

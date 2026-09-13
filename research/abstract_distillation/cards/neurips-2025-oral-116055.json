@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-116055",
+    "title": "Adaptive Surrogate Gradients for Sequential Reinforcement Learning in Spiking Neural Networks",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/116055"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "336b873198240cfa6a015cef4213b3a1a615d7e2a72c7d96b33e63478c66df39",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "a67c8c95136bd26230252c950e14afde89ed799c69a521ba633f39381e1d7f80",
+    "extracted_at": "2026-09-13T00:21:02.778947+00:00",
+    "session_id": "01a09823-48c8-79e0-9926-169df80cc71d",
+    "usage": {
+      "input_tokens": 12824,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 786,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "eafacaa1f0000a61e050cdfa106e3cffce4e1ad30a565eeff16f321af811a299"
+    },
+    {
+      "id": "S2",
+      "sha256": "ad9037bf0743e5efab093d8fec84fa266c889d7cb13ddae6f119e94274f37e99"
+    },
+    {
+      "id": "S3",
+      "sha256": "080f0a7f8a86ac1dc53fd47ec3b39e0729a84b58930e058165ef17924ed623ac"
+    },
+    {
+      "id": "S4",
+      "sha256": "e2f35cae65ccb8ce2558fb0de727300411e77dec706c2a11b5ed883c692b164c"
+    },
+    {
+      "id": "S5",
+      "sha256": "ff3f7270050cfe1fac323b254067381183e2c4f6aaca8adf5897d43860ab6ccb"
+    },
+    {
+      "id": "S6",
+      "sha256": "667b20a74e7a92f86270edd02dbe82f16415ce0688eb982bc14cd6a04b775d5d"
+    },
+    {
+      "id": "S7",
+      "sha256": "fe11c7e52e2b9e515b3b77fec38290ed5bfbc6cbf468f10e17699ea2e2a21b28"
+    },
+    {
+      "id": "S8",
+      "sha256": "d705b347ede993b61e0f806f8029b212c667aba28d3fe6f1c696054f849716e3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-116055",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Train spiking neural networks for complex sequential reinforcement-learning control tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Non-differentiable spikes make surrogate-gradient optimization properties unclear, while limited early-training sequence lengths can prevent SNNs from bridging their warm-up period.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "analysis",
+        "claim": "Systematic analysis of surrogate-gradient slope settings and their effects on gradient magnitude and alignment.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A training approach using a privileged guiding policy to bootstrap learning while retaining online interactions with the spiking policy.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Combining the approach with adaptive slope scheduling for real-world drone position control outperformed the cited prior techniques.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe the privileged-policy bootstrapping approach as novel.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that shallower or scheduled slopes produced a ×2.1 improvement in both training and final deployed RL performance.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Authors report no clear fixed-versus-scheduled slope preference in supervised learning.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "Authors report an average return of 400 points for real-world drone position control, versus at most −200 for Behavioral Cloning and TD3BC under the same conditions.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames neuromorphic SNN control as promising but identifies surrogate-gradient and sequential-RL warm-up challenges.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gradient analysis",
+        "summary": "It analyzes slope settings, reporting a tradeoff between deeper-layer gradient magnitude and alignment with true gradients.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "learning-regime comparison",
+        "summary": "It reports no clear slope preference in supervised learning but a pronounced RL benefit from shallower or scheduled slopes.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "method and demonstration",
+        "summary": "It introduces privileged-policy bootstrapping and combines it with adaptive scheduling in a real-world drone task.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates slope behavior in supervised learning from its stronger effect in RL, then pairs slope scheduling with a task-specific bootstrapping method.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Claiming regime-specific effects can make a technical argument more informative than presenting one universal hyperparameter rule.",
+        "application": "When proposing an optimization technique, report whether its behavior differs across training regimes and connect that distinction to the method design.",
+        "exception": "This framing is unsuitable when the study evaluates only one regime or lacks evidence for cross-regime differences."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define the slope parameterization or schedule, quantify gradient-alignment measures, or report uncertainty for the ×2.1 improvement.",
+      "Details of the privileged guiding policy, baselines, task conditions, and deployment protocol are unspecified; the reported return comparison is therefore not independently interpretable from the abstract alone."
+    ]
+  }
+}

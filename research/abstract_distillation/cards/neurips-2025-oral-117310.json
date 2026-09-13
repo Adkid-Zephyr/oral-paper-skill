@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-117310",
+    "title": "QoQ-Med: Building Multimodal Clinical Foundation Models with Domain-Aware GRPO Training",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/117310"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "64199e3513a0723f62c54895a6ef1d6026d6a0b67fef8d397d803fc78c1965d3",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "4fa1c00bb7fe57a4bc1d50a2f8dcedc650ff5460000c254babe42ee40a6bfd72",
+    "extracted_at": "2026-09-13T00:21:52.640558+00:00",
+    "session_id": "01a09823-f83c-7f33-a63d-22a03c25176d",
+    "usage": {
+      "input_tokens": 12738,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 990,
+      "reasoning_output_tokens": 127
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fcf37bba3b3ab51ffb653541723a8da6c9817a8ec35deee5d7f56ca030c23796"
+    },
+    {
+      "id": "S2",
+      "sha256": "34759556150f85f4e73dff231307240014b73d50824294de8c37dac219dbe871"
+    },
+    {
+      "id": "S3",
+      "sha256": "6516fd93bfc05d638629851162f93505e3930b67782f2c97218ecf66effbd0bd"
+    },
+    {
+      "id": "S4",
+      "sha256": "53b0e647340a6169bccea04f0abcf1c4af51dac75ffa8d84c9b2b10e65d7a957"
+    },
+    {
+      "id": "S5",
+      "sha256": "9c957cf6cb37e848e4d6f9ae5f0eefe1de10d886a9cc2f5d80e044b0b98b3a3f"
+    },
+    {
+      "id": "S6",
+      "sha256": "6c95bf26da0cf02c40f4472ad24f806a8626eb514a3124dc51c14dc0b2728617"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-117310",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Clinical decision-making requires reasoning across heterogeneous data modalities.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing multimodal language models are described as vision-centric and as failing to generalize across clinical specialties.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "system",
+        "claim": "QoQ-Med-7B/32B, presented as an open generalist clinical foundation model jointly reasoning over medical images, time-series signals, and text reports.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Domain-aware Relative Policy Optimization (DRPO), which hierarchically scales normalized rewards by domain rarity and modality difficulty.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Release of full model weights, a modular training pipeline, and intermediate reasoning traces.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe QoQ-Med as the first open generalist clinical foundation model covering the three listed modalities, and DRPO as a novel reinforcement-learning objective.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, after training on 2.61 million instruction-tuning pairs across 9 clinical domains, DRPO improved average macro-F1 by 43% across visual domains versus other critic-free methods such as GRPO.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that, with intensive segmentation training, QoQ-Med highlighted diagnosis-related salient regions with 10× higher IoU than open models and reached the performance of OpenAI o4-mini.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Clinical reasoning spans heterogeneous data, while existing MLLMs are characterized as vision-centric and weak across specialties.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "model",
+        "summary": "The paper introduces QoQ-Med-7B/32B for joint reasoning over images, time-series signals, and text reports.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "training method",
+        "summary": "DRPO addresses imbalance by scaling normalized rewards according to domain rarity and modality difficulty.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "Across nine domains and visual tasks, the authors report macro-F1 gains over critic-free baselines and strong segmentation-region localization.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "release",
+        "summary": "The authors report releasing weights, training infrastructure, and reasoning traces for reproducibility and downstream research.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a stated data-distribution problem to a reward-scaling mechanism based on domain rarity and modality difficulty.",
+          "source_ids": [
+            "S1",
+            "S3"
+          ]
+        },
+        "interpretation": "A method claim is more interpretable when its optimization design explicitly targets the diagnosed source of imbalance.",
+        "application": "When proposing multimodal training, map each major data or modality imbalance to a corresponding objective component and state the intended mechanism.",
+        "exception": "This framing may be unsuitable when the imbalance is not measured or when a single objective cannot represent the task’s clinically relevant priorities."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract pairs aggregate macro-F1 results with a modality-specific segmentation result and names the comparison baselines or reference model.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Using complementary metrics and explicit comparison targets can make broad performance claims more concrete.",
+        "application": "Report an aggregate metric together with a task-specific metric, dataset scope, and named comparison systems when summarizing multimodal results.",
+        "exception": "Multiple metrics may mislead when their datasets, evaluation protocols, or task definitions are not directly comparable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the visual domains, baseline implementations, statistical variability, or whether the reported 43% is relative or absolute macro-F1 improvement.",
+      "The segmentation data, evaluation protocol, open-model identities, and precise scope of the comparison with OpenAI o4-mini are unspecified.",
+      "The claims of being first and novel are author statements and are not independently verified here."
+    ]
+  }
+}

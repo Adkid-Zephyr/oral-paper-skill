@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71128",
+    "title": "Geometric Flow Grounding: A Unified Manifold Decoupling Framework for Dynamics Discovery and Verification",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71128"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5c72ecfd857baec40f6a80eacc99f880f062ca0f849b6d75304af363edeacf29",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "8c8cbd74584e3c9d0a0726340923ab0aff1bdbada8081bc9e5d54b62227e7e17",
+    "extracted_at": "2026-09-13T00:15:14.780013+00:00",
+    "session_id": "01a0981d-ed9f-7030-88cd-c047a444296a",
+    "usage": {
+      "input_tokens": 12721,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 839,
+      "reasoning_output_tokens": 104
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f9122d78a97ae00d55a1fb1c9698fe5080b5d890ce830254b9b78df8149187ac"
+    },
+    {
+      "id": "S2",
+      "sha256": "ff4a0048ab310d059666a05e7106367ffbe2dfc3244c02e912f2b5b5dd9657c2"
+    },
+    {
+      "id": "S3",
+      "sha256": "d9674badf2f06be88c2f5768770ec08ad908da1d17f0fed1b619128a25552818"
+    },
+    {
+      "id": "S4",
+      "sha256": "faf85ea460b2e1979d9d89646ae975e89c03493a88c455d78eb67e37333dda79"
+    },
+    {
+      "id": "S5",
+      "sha256": "3d5a039a6d3c1c4921d158fa37274eb46648c5c3e055ec35612503f93914859a"
+    },
+    {
+      "id": "S6",
+      "sha256": "184b8b18ebe8183bb6b1e7a7071e5b6fbe9ac8f217af8b5430c939f3ed59cab4"
+    },
+    {
+      "id": "S7",
+      "sha256": "c914f83bc590cd8839a35a50dc9c7546fe956e351b707254236d5be724077e16"
+    },
+    {
+      "id": "S8",
+      "sha256": "35dd833938e294eeb68c51f9e55d44b2212762456e903d36351ad4b60a1eaaa8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71128",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Model complex dynamics from observational data while respecting the intrinsic geometry of the data manifold.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches often entangle static state representations with instantaneous motion, causing accumulated errors and off-manifold trajectories that violate geometric constraints.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Geometric Flow Grounding, which constrains dynamics to the learned manifold’s tangent bundle using a differentiable Neural Tangent Projection Layer.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "Separates state representation from tangential dynamics and presents manifold-constrained projection as an operator spanning dynamics discovery and synthetic-content verification.",
+        "source_ids": [
+          "S4",
+          "S7"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "Applies the framework to sparse dynamical systems, single-cell gene regulation, and deepfake video detection.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their framework through geometric decoupling and tangent-bundle-constrained dynamic evolution, positioning manifold-constrained projection as a unified operator for natural-law discovery and synthetic-content verification.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report reduced numerical aliasing and improved long-horizon stability in sparse dynamical systems, alongside recovery of interpretable gene-regulatory motifs from single-cell data.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that projection residuals provide a zero-shot metric for deepfake-video detection by exposing inconsistencies with the implicit flow of pretrained world models.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Dynamics discovery from observations is framed as important for science and AI.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The abstract identifies entangled representations and motion as a source of accumulated error and off-manifold hallucination.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "GFG decouples state and tangential dynamics while enforcing evolution through the learned manifold’s tangent bundle.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported applications",
+        "summary": "The framework is reported to support sparse-system forecasting and biological motif recovery, and to yield a residual-based deepfake detector.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "positioning",
+        "summary": "The authors characterize manifold-constrained projection as broadly applicable to discovery and verification.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific structural failure—off-manifold trajectories—to a correspondingly specific architectural constraint: tangent-bundle projection.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "Aligning a stated failure mode with an explicit mechanism makes the method’s motivation and claimed role easier to trace.",
+        "application": "When proposing a model, map each central failure mode to a named operation and state the constraint that operation enforces.",
+        "exception": "This framing is less suitable when the target phenomenon is intentionally allowed to leave the assumed manifold or when the manifold is not identifiable."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative improvements, baselines, datasets, or evaluation conditions for the reported results.",
+      "The scope and limits of the claimed “universal” operator are not specified.",
+      "The code is described as forthcoming, so its availability and reproducibility cannot be assessed here."
+    ]
+  }
+}

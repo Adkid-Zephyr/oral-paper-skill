@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71145",
+    "title": "The Signal is in the Steps: Local Scoring for Reasoning Data Selection",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71145"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f8f243648a8b9fa91f70e7a575af645d5cf64588885acbf82d7a32fe0d7f7883",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "58d1b0263048129e1c6d642b08a05294e5c91483ba8b36eba729013af7cbfd5e",
+    "extracted_at": "2026-09-13T00:15:51.044146+00:00",
+    "session_id": "01a0981e-8467-7252-9aae-baa27b9c139a",
+    "usage": {
+      "input_tokens": 12725,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 805,
+      "reasoning_output_tokens": 70
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "815d35efcebb88d8d38cc299d3c1b43841e507c79c5c744fbbf1207368a98c8f"
+    },
+    {
+      "id": "S2",
+      "sha256": "90f3f234d5a0acec43d5b527c7fd76f6d69829a8dc927bfd5f97f098fe86d5ba"
+    },
+    {
+      "id": "S3",
+      "sha256": "cba6eb1ea31565db9e4bfdf1e73db0084132cac11a3a1bc7e46a18418b7f552e"
+    },
+    {
+      "id": "S4",
+      "sha256": "d1e6a38e7fb9484c8827c90198c5f169d52cac91adba4bc7271848a529281487"
+    },
+    {
+      "id": "S5",
+      "sha256": "d7916f120805e53ce15363433220512de1b17d8d9bc1e6c6c1c6187ff4da351b"
+    },
+    {
+      "id": "S6",
+      "sha256": "ad694c738a6825676fb101f58e8d4aaf2e64424f0f2191ef2752e9d5f3f66bab"
+    },
+    {
+      "id": "S7",
+      "sha256": "861be4b3fc10bfddd8b052a4111b0373630afaea536573a4e92d0619dff2aa21"
+    },
+    {
+      "id": "S8",
+      "sha256": "599b036c9f09940335367afb190cade10cff4737786cc0f5080dc36973d453f4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71145",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Select candidate teacher-model solutions for distilling long-form reasoning into smaller students.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Whole-solution probability selection is reported to work within one teacher but fail for long traces from multiple diverse teachers, because it targets complete-response fluency rather than transferable local reasoning transitions.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Local Average Log Probability (LALP), scoring each reasoning step from a small preceding-context window to assess whether it is supported by its immediate premises.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "system use cases",
+        "claim": "Applies LALP to teacher selection before fine-tuning and training-data curation from diverse teacher pools.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper distinguishes local step-transition scoring from full-trajectory scoring and introduces LALP as this local alternative.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that whole-solution naturalness selection fails when scaling from a single teacher to long reasoning traces produced by multiple diverse teachers.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "Across math, coding, and science reasoning tasks, the authors report that LALP consistently improves accuracy over selecting the most natural solutions, by a large margin.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Reasoning distillation requires choosing which teacher-generated candidate solutions to train on.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior approach and limitation",
+        "summary": "Selecting responses with the highest student-assigned probability favors student-natural solutions, but is reported to fail for diverse multi-teacher long traces.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors attribute the failure to scoring complete solutions even though students generalize by recombining familiar local steps; global fluency is therefore misaligned with transferable signal.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "proposed method and uses",
+        "summary": "LALP scores each step using immediate preceding context and supports teacher selection and diverse-pool data curation.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report large, consistent accuracy improvements across math, coding, and science reasoning tasks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a selection failure to a mismatch between the scoring unit (whole trajectories) and the hypothesized unit of generalization (local reasoning steps), then aligns LALP with the latter.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Selection criteria may be more informative when their granularity matches the mechanism by which the target model is expected to learn.",
+        "application": "When designing reasoning-data filters, score locally justified transitions in addition to aggregate response likelihood, and state the assumed unit of transfer.",
+        "exception": "This move may be unsuitable when the intended capability depends primarily on global coherence, long-range planning, or complete-solution structure."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not quantify the reported large margin or specify datasets, model sizes, teacher counts, or evaluation protocols.",
+      "The claimed cause of whole-trajectory failure and the relative contribution of LALP's context window are not independently verifiable from the abstract alone."
+    ]
+  }
+}

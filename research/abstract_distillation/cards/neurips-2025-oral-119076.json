@@ -1,0 +1,200 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-119076",
+    "title": "Spectral Perturbation Bounds for Low-Rank Approximation with Applications to Privacy",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/119076"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "195bf286b708c5d65d3dc101072c00213550424206e10712558513c353a67f6b",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "af8edc1924c5fcc6bca163105ec4b28542fe59a7441465f0d69b85d1af3feaa1",
+    "extracted_at": "2026-09-13T00:22:58.340502+00:00",
+    "session_id": "01a09825-004c-7583-bc0b-6414c06bfb77",
+    "usage": {
+      "input_tokens": 12821,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 856,
+      "reasoning_output_tokens": 87
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1cd56cf3bd697617ffa0ef0356c044fb3b9e3bb4704931c85f19527b630cdf6e"
+    },
+    {
+      "id": "S2",
+      "sha256": "eebae810c2376bcf5ab5a4e1fbba6b44f28c042b846e9e7f307d5bbbec99a33a"
+    },
+    {
+      "id": "S3",
+      "sha256": "4e933621eed19dc9a3af2ab6bee6d6c73a9c1cc5bb88c1280e5a56fd36ddf033"
+    },
+    {
+      "id": "S4",
+      "sha256": "332b9c13758c68ff0590afc43ee1a07a0e6b5ff01b2b228bc9721d2c6300790e"
+    },
+    {
+      "id": "S5",
+      "sha256": "5ac85358b4df6ca2632e3c1e072f5ad42f37621cc2755e9b69e574003c91523e"
+    },
+    {
+      "id": "S6",
+      "sha256": "6067731b1db1c4f26a3959901d4db07e6f80b228edb5af0aa906546e60e31159"
+    },
+    {
+      "id": "S7",
+      "sha256": "cf3e500f0a67d4d69a4a1415e66be861ebe74c8f4d932b6102d574aee9573059"
+    },
+    {
+      "id": "S8",
+      "sha256": "74a143e5d12be4d118dcc3661548d7b296064a9059929fab05e340ffe41823af"
+    },
+    {
+      "id": "S9",
+      "sha256": "29e5bb523c6a3b1742b658fed9f7f267aa30ce09b10af9d5fe2717a3c7e0d5c2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-119076",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Understand how noise and measurement errors affect low-rank approximations in spectral norm, especially for differentially private approximation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Prior analyses often use Frobenius error or reconstruction quality, which may misrepresent subspace distortion.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "New high-probability spectral-norm perturbation bounds for symmetric matrices that model interactions between A and arbitrary symmetric E.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A contour bootstrapping approach from complex analysis, extended to spectral functionals including polynomials and matrix exponentials.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "Improved utility guarantees for differentially private PCA, reported as resolving an open literature problem.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their perturbation bounds refine Eckart–Young–Mirsky and that their contour bootstrapping method is novel and broadly extended.",
+      "source_ids": [
+        "S5",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report sharp estimates for ||(A+E)_p−A_p|| under mild eigengap and norm conditions, with improvements of up to a factor of √n.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report improved differentially private PCA utility guarantees and describe them as resolving an open problem.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "On real-world datasets, the authors report that the bounds closely track actual spectral error across diverse perturbation regimes.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames spectral-norm sensitivity of low-rank approximation as a central challenge and highlights differential privacy.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "It contrasts spectral norm with commonly used Frobenius or reconstruction metrics, arguing the latter can misestimate subspace distortion.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "It introduces high-probability perturbation bounds for symmetric matrices and states improvements under eigengap and norm conditions.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "method_and_application",
+        "summary": "It presents contour bootstrapping extensions and applies the analysis to differentially private PCA.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "empirical check",
+        "summary": "It reports close agreement between bounds and observed spectral error on real-world datasets.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract ties the chosen error metric to the target notion of subspace distortion and utility, then states explicit improvement and applicability conditions.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A paper can make its technical contribution more assessable by aligning the evaluation metric with the failure mode and preserving the conditions attached to guarantees.",
+        "application": "When presenting a perturbation result, define the operational error metric, state the assumptions beside the bound, and quantify improvement against the relevant baseline.",
+        "exception": "This framing is less suitable when the application objective is reconstruction fidelity rather than worst-case directional or subspace error."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact eigengap and norm conditions, probability level, or bound formulas.",
+      "The reported factor-√n improvement lacks a named baseline and regime details.",
+      "Dataset identities, perturbation constructions, and quantitative empirical errors are not given.",
+      "The open problem claimed to be resolved is not identified."
+    ]
+  }
+}

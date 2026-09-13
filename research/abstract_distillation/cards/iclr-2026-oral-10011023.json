@@ -1,0 +1,204 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011023",
+    "title": "Half-order Fine-Tuning for Diffusion Model: A Recursive Likelihood Ratio Optimizer",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011023"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c87bd3aeb5424a868d2a76d30fa2c5561ead26563d65517d1a2f0786e79969b3",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "edefeab8b51ebd17e85a04e1862dea7b353c7ee95aed120ac32c764817d62420",
+    "extracted_at": "2026-09-13T00:05:24.671371+00:00",
+    "session_id": "01a09814-ef1b-7f22-a11b-f0fd23e96183",
+    "usage": {
+      "input_tokens": 12790,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 878,
+      "reasoning_output_tokens": 167
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c377a162e2dd337d96802c5a711d3023aa70c20c963ab3f06c1b37c201896e97"
+    },
+    {
+      "id": "S2",
+      "sha256": "6a47df5139ca277e120006e56adeddd77cf6fa76e9a2acb849c4091f5bc6500f"
+    },
+    {
+      "id": "S3",
+      "sha256": "5c9d4fff9ccaccdfd5b168671eb547f1afe31f5c7d8f7b8176dd5e919b936e03"
+    },
+    {
+      "id": "S4",
+      "sha256": "4c477e152e68a91adf8b559acc5bae5eec02d802c7e93d2b19a6205c42eb9194"
+    },
+    {
+      "id": "S5",
+      "sha256": "ee653702b277268207040a4d76cc926be50ae9f6d9957bef3fc10094dbf346cd"
+    },
+    {
+      "id": "S6",
+      "sha256": "a512b19adc7688724b40dfbcd1d33d34c718efe8e83178df57aa3cdaecd0be1b"
+    },
+    {
+      "id": "S7",
+      "sha256": "c1adf6a8d95191bca7a1014f7bf61eebdf2ebfb4963a74e055c0e1293550046a"
+    },
+    {
+      "id": "S8",
+      "sha256": "450bcfdf92cf8f1309c8fca62612bddc4b6cc46e9d4838768af2390146f7df5f"
+    },
+    {
+      "id": "S9",
+      "sha256": "b8a115942424f708cde9f6138169c6835bfdc5a2658de7ee5c160e1cb9341f86"
+    },
+    {
+      "id": "S10",
+      "sha256": "2a255b1ed112e1c33fa0819a0ad719bcf8547711638e531095ab06a7b6c8b78a"
+    },
+    {
+      "id": "S11",
+      "sha256": "0025e6d64c1e516b7a44881c5ac16a21ba4fd45cc5f6a9e9ab249cc2cc4fad78"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011023",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Efficiently align a pretrained diffusion model for downstream applications.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing alignment methods based on reinforcement learning or truncated backpropagation are described as suffering from low sample efficiency or biased gradient estimation, limiting improvement and sometimes causing training failure.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Recursive Likelihood Ratio (RLR), a Half-Order fine-tuning paradigm for diffusion models.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "theoretical method property",
+        "claim": "Introduces a Half-Order gradient estimator that rearranges computation within the recursive diffusion chain; the authors state that the resulting estimator is unbiased and lower-variance than other methods.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "prompt technique",
+        "claim": "Proposes a prompt technique intended to work naturally with RLR for a synergistic effect.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper presents RLR as a Half-Order fine-tuning paradigm and additionally claims a novel prompt technique suited to it.",
+      "source_ids": [
+        "S6",
+        "S10"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical investigation of the method's bias, variance, and convergence.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report extensive experiments on image and video generation intended to validate RLR's superiority.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors state that their gradient estimator is unbiased and has lower variance than other methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Diffusion models generate content through a recursive chain and require alignment after pretraining.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "Efficient alignment is identified as important, while contemporary RL and truncated-BP approaches have stated efficiency or estimation limitations.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "RLR introduces Half-Order fine-tuning and a gradient-estimation rearrangement within the recursive chain.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "supporting work",
+        "summary": "The paper reports theoretical analysis, image/video experiments, and a compatible prompt technique.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the proposed optimizer with a specific estimator property, theoretical analysis, application domains, and a compatible prompting technique.",
+          "source_ids": [
+            "S7",
+            "S8",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "This provides a compact claim-to-support structure connecting mechanism, analysis, evaluation scope, and practical interface.",
+        "application": "Frame a technical contribution by pairing its proposed mechanism with the property it is intended to improve, then name the analysis and evaluation settings that bear on that property.",
+        "exception": "Use this structure cautiously when the abstract lacks quantitative outcomes or clearly specified evaluation conditions."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, datasets, baselines, or experimental conditions for the image and video experiments.",
+      "The stated unbiasedness, lower variance, and convergence claims are not accompanied by theorem statements, assumptions, or rates.",
+      "The meaning and measured effect of the proposed prompt technique's claimed synergy are unspecified."
+    ]
+  }
+}

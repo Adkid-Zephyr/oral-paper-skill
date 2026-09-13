@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47266",
+    "title": "Normalizing Flows are Capable Generative Models",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47266"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "48c626477586a79d937542ad2699c4558408c0b63ab0973294a66be61c00d69a",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "e0107ef2cc3d5b975eee6c1847e1c840b09a5c7164f372951c4d605fdd7ccf6e",
+    "extracted_at": "2026-09-13T00:11:05.868424+00:00",
+    "session_id": "01a0981a-2de9-7f52-b515-b711972d7ad4",
+    "usage": {
+      "input_tokens": 12747,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 792,
+      "reasoning_output_tokens": 112
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0c52d1cd7c08828c1e9c4599943187f9b081995e79462b94bccc5395219e7dec"
+    },
+    {
+      "id": "S2",
+      "sha256": "793603ad2a275e9fe54defc970c2cec8fa26f8b3b9d10355acfc6718a9d0f777"
+    },
+    {
+      "id": "S3",
+      "sha256": "7edeca5931eea56af99744b12b5a859b2225e6a7bee59b3ad1e3af0027cc0743"
+    },
+    {
+      "id": "S4",
+      "sha256": "d6a9589713625102c8ddbfb89780b93d21dfefecae74d3a8e002bca09bf26e34"
+    },
+    {
+      "id": "S5",
+      "sha256": "8a7535e469bffbf4219500ccf88747c49c50ebc66651093f5b942ef00e0185f6"
+    },
+    {
+      "id": "S6",
+      "sha256": "85dab0600734d709faaa982dc9194ee3cc4095183df9c1cf25507b08f862567c"
+    },
+    {
+      "id": "S7",
+      "sha256": "eae72c9ce9c714373ca6d4cc2c68d37b9077e56bcca21fb79a0b147242ff47af"
+    },
+    {
+      "id": "S8",
+      "sha256": "28e451edd2ef973ca57791aa29915d92047663250d7544f251ae9f5dda075922"
+    },
+    {
+      "id": "S9",
+      "sha256": "14909fff025320da0c219d171b36aa0721d91fe3f5fce25e7a61e9cbb781c513"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47266",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work asks how capable normalizing flows can be as likelihood-based generative models for continuous inputs.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Despite promising prior results, normalizing flows had received relatively little recent attention, and their power was believed to be underestimated.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "TarFlow, a simple scalable Transformer-based normalizing-flow architecture, stacks autoregressive Transformer blocks over image patches with alternating directions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Three sample-quality techniques are proposed: Gaussian-noise augmentation, post-training denoising, and guidance for conditional and unconditional generation.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors release TarFlow’s code.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present TarFlow as enabling highly performant normalizing-flow models and report stand-alone normalizing-flow generation with diffusion-comparable quality and diversity for the first time.",
+      "source_ids": [
+        "S4",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that TarFlow achieves new state-of-the-art image likelihood-estimation results, exceeding previous best methods by a large margin.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report sample quality and diversity comparable to diffusion models, using a stand-alone normalizing-flow model.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Normalizing flows are likelihood-based models for continuous inputs and have shown promise, but recently received limited attention.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The authors introduce TarFlow, a Transformer-style masked autoregressive flow over image patches with alternating autoregressive directions.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "enhancement",
+        "summary": "They add noise augmentation, denoising, and guidance techniques to improve generated-sample quality.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "They report leading image likelihood results and diffusion-comparable sample quality and diversity, alongside a code release.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns an architectural description with separate techniques for sample quality, then connects the combined system to distinct likelihood and generation outcomes.",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "Separating core architecture from targeted quality interventions can make a multi-objective contribution easier to attribute.",
+        "application": "For a generative-model paper, describe the base model, each quality intervention, and the specific metric or capability each is intended to improve.",
+        "exception": "This structure is less suitable when interventions cannot be meaningfully isolated or when the work presents only one indivisible mechanism."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, likelihood metrics, numerical margins, or evaluation protocols.",
+      "The basis and scope of the reported comparison with diffusion models are unspecified.",
+      "The abstract does not establish independent verification of the claimed state-of-the-art or first-time status."
+    ]
+  }
+}

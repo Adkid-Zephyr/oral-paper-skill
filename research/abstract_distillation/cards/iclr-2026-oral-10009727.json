@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009727",
+    "title": "Speculative Actions: A Lossless Framework for Faster AI Agents",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009727"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "206b9b3931103553efda5a47c9eaa2a4bdcfaf6f3031567d960a49560042dd84",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "e53097a6177fb125047e525989b3d811705a5463770799d7971d47512b8b5608",
+    "extracted_at": "2026-09-13T00:03:21.436008+00:00",
+    "session_id": "01a09813-106e-7851-9298-3d80520b12cd",
+    "usage": {
+      "input_tokens": 12725,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 817,
+      "reasoning_output_tokens": 109
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6365924db181673e153a326c635047f4b84d78cb931c58b2aadbb1e380f80f13"
+    },
+    {
+      "id": "S2",
+      "sha256": "55b72907c659ecaee6b5997db15f159f57a0fb1e36ed6a0bf00fb8b39af3705f"
+    },
+    {
+      "id": "S3",
+      "sha256": "b7c5a074f0c3fd9d06c8af9adf53573fcf06ffb387dad52f38b2a76c50591217"
+    },
+    {
+      "id": "S4",
+      "sha256": "56061a83b1f00d6caae489599f1cafb9c842956a851d6c3c6e2090d21b118cc3"
+    },
+    {
+      "id": "S5",
+      "sha256": "7138010c7e618f191b62e9ff16b0c4a17391613f908b6dd5fa311a2abf2b4efe"
+    },
+    {
+      "id": "S6",
+      "sha256": "afffc0ff4d75d66bb2bfecad6380c4a06220be49f9c4e79e1442ea6335218e55"
+    },
+    {
+      "id": "S7",
+      "sha256": "688cbda89bd3ab76892967aa038de184a621b91462689659f50acde0d53c8ce0"
+    },
+    {
+      "id": "S8",
+      "sha256": "0c9a458a659c017bf4c80752b4f8a45ddc202e739350db15edfd7815d3a6d522"
+    },
+    {
+      "id": "S9",
+      "sha256": "cd48ebed2b7f59c0b58d540c9b3399014df997aa67a550bd1f2cb18055c42706"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009727",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "AI agents incur high runtime because their actions typically execute sequentially through latency-prone API calls.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces speculative actions, a lossless framework that predicts likely future actions with faster models, executes them in parallel, and commits matching predictions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical study",
+        "claim": "Evaluates the framework across gaming, e-commerce, and web-search environments, plus a lossy operating-systems extension.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "theory/analysis",
+        "claim": "Presents a cost–latency analysis relating speculative breadth to time savings and motivating selective branch launching.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present speculative actions as a general, lossless acceleration framework for agentic systems, drawing on speculative execution and decoding.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report up to 55% next-action prediction accuracy across domains, with corresponding substantial latency reductions.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report a formalized cost–latency tradeoff intended to support tuning and selective branch launching without prohibitive cost growth.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Agent runtime is identified as a bottleneck, especially when sequential API calls accumulate latency.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "illustration",
+        "summary": "A chess game between two state-of-the-art agents is given as an example that can take hours.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "Speculative actions predicts future actions with faster models, runs them in parallel, and commits only matching predictions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation_and_analysis",
+        "summary": "The framework is evaluated across several environments, followed by a lossy extension and cost–latency analysis.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The analysis is used to motivate principled tuning and selective branch launching for practical speedups under cost constraints.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a lossless commit rule with a separate lossy extension and explicitly analyzes speculation breadth against cost and latency.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "Separating correctness-preserving operation from relaxed variants makes the scope of each claim easier to identify, while an explicit tradeoff model connects mechanism to deployment constraints.",
+        "application": "When proposing an acceleration method, define the acceptance or rollback rule, isolate any lossy variant, and state the resource tradeoff governing when broader parallelism is appropriate.",
+        "exception": "This framing may be unsuitable when the system has no reliable validation signal or when speculative work cannot be safely discarded."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report baseline values, latency-reduction magnitudes, evaluation budgets, or details of how prediction accuracy varies by domain.",
+      "It does not specify the formal assumptions or guarantees underlying the cost–latency analysis."
+    ]
+  }
+}

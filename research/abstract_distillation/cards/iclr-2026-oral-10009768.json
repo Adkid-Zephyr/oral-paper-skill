@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009768",
+    "title": "DepthLM: Metric Depth from Vision Language Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009768"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e8fbc7cb5e150613082847005f74e292663bbaf86513b68044b0461bc644ecb9",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "7bc19676106e7372325d309083f5dabb13a7c24e49e930d26e4b839cd00847fb",
+    "extracted_at": "2026-09-13T00:03:22.409705+00:00",
+    "session_id": "01a09813-155e-7973-b9b7-caaebf5cf763",
+    "usage": {
+      "input_tokens": 12801,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 835,
+      "reasoning_output_tokens": 67
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5d52c4ff0fe8deba10d33a642ac4b05044697ae61d344590cc124c18993b3672"
+    },
+    {
+      "id": "S2",
+      "sha256": "746686f8799f11b113949fa503c47af8ab58f6e251bdd8cda9ca9dcfa556f0bf"
+    },
+    {
+      "id": "S3",
+      "sha256": "d62cf7fabdd9df5df5f33c292c5b77e88454769442dbc093601ce36359919f4a"
+    },
+    {
+      "id": "S4",
+      "sha256": "10c0d6e17db0b21e9957a6a578c698aab2bcf34ecd590884835ca8031108c882"
+    },
+    {
+      "id": "S5",
+      "sha256": "f00685e322d8ba128447ac52f0e51ff13ec47a2d5daaec6fb60fc1ce90a02066"
+    },
+    {
+      "id": "S6",
+      "sha256": "66fc9c2a65f08df0459185d23713d5c744f2f3ecf9e6697e7e5915985961f730"
+    },
+    {
+      "id": "S7",
+      "sha256": "a5b08dc0d3b6b52808a2a4ca570ba7353a2ed69e1c1e7576c75955ac6f86c3e8"
+    },
+    {
+      "id": "S8",
+      "sha256": "f6b9f6554825d1b8ce0f0fd0bd24eed5b05bd548e8815f039c0c3b278119b6a4"
+    },
+    {
+      "id": "S9",
+      "sha256": "79a1e06eddc6cf07e7215ba4f65d57fbe36c1257bfd2c1ae328f8581bf89b43f"
+    },
+    {
+      "id": "S10",
+      "sha256": "dc7d8c52d741c7cd6cd90c2c0edcbf320fdb8121a8f1a91e47df7fcec900f39d"
+    },
+    {
+      "id": "S11",
+      "sha256": "671fd3e49dbe80800c3a3860bec829d50136b4e2401b0de320c4aa0b973e9f49"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009768",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Can vision-language models achieve expert-level metric depth accuracy without changing their architecture or loss?",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "VLMs excel at semantic understanding but struggle with 3D understanding from 2D inputs, while high-accuracy pure vision models require task-specific architectures and losses.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DepthLM uses text-based supervised fine-tuning with sparse labels, visual prompting, and intrinsic-conditioned augmentation for metric depth estimation.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "The authors identify pixel reference and cross-dataset camera ambiguity as bottlenecks for VLM-based metric depth estimation.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The proposed approach is designed to let one VLM cover multiple 3D tasks beyond metric depth.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that DepthLM makes VLMs comparable with pure vision models for metric depth for the first time.",
+      "source_ids": [
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that text-based supervised fine-tuning with sparse labels is sufficient to unlock strong 3D understanding, without a dense prediction head or complex regression/regularization loss.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that, with much smaller models, DepthLM surpasses the accuracy of most advanced VLMs by over 2×.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that DepthLM makes VLMs comparable with pure vision models.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "VLMs flexibly address vision tasks through text, but struggle with 3D understanding from 2D inputs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "Pure vision models achieve super-human metric-depth accuracy but depend on task-specific architectures and losses, motivating an architecture- and loss-preserving alternative.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "DepthLM uses sparse-label text supervision and addresses pixel reference and camera ambiguity through visual prompting and intrinsic-conditioned augmentation.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report more than 2× higher accuracy than most advanced VLMs with much smaller models, plus coverage of additional 3D tasks.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a simple training setup to two diagnosed bottlenecks—pixel reference and cross-dataset camera ambiguity—and names targeted remedies for each.",
+          "source_ids": [
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A compact problem-to-intervention mapping can make a method’s design rationale legible without detailing every component.",
+        "application": "When presenting a new multimodal method, explicitly pair each identified bottleneck with the mechanism intended to address it.",
+        "exception": "This framing is unsuitable when bottlenecks have not been isolated or when one mechanism affects several coupled failure modes."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, metrics, evaluation protocols, or what 'over 2×' measures.",
+      "The meanings of 'sparse labels,' 'most advanced VLMs,' 'super-human,' and 'comparable' are not operationalized.",
+      "The abstract does not provide evidence for the claimed first-time distinction beyond the authors' statement."
+    ]
+  }
+}

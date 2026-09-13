@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31911",
+    "title": "MoDeGPT: Modular Decomposition for Large Language Model Compression",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31911"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7b43afa9d93a59e43f8ee908c8ca7aec5921f3822b0e6a3521ce56deb141e228",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "e0d3811d0624af2256178be61ca02d67651ffcc97d3cc0bacfd7fa21508dd173",
+    "extracted_at": "2026-09-12T23:56:50.482512+00:00",
+    "session_id": "01a0980d-2220-7a61-962b-e72d169e7a46",
+    "usage": {
+      "input_tokens": 12761,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 803,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8371d4b9a8698f1793558a1b2f61fdb7905a4679d15090afab1dd012349c525c"
+    },
+    {
+      "id": "S2",
+      "sha256": "edf8251f7d842a20477e1dc84582fae6c1ccd32c79b9b3106a25fb5157cb695a"
+    },
+    {
+      "id": "S3",
+      "sha256": "fbc34045a953895fcaf06138aafb17d02f6b2cfe68fa6de8752d18f9ec8077d6"
+    },
+    {
+      "id": "S4",
+      "sha256": "be405314983ca58ad6b00f471b7c607c0becbd45ed4772bc28e8f5a47739446e"
+    },
+    {
+      "id": "S5",
+      "sha256": "d05d696cc97571904084fca74530bc6c6c3dcbf83f15caebfefabbeff3b4310b"
+    },
+    {
+      "id": "S6",
+      "sha256": "105b3253d0cc24fec7c163cb0b6e3aea3f14ece62c930c61fe0ae12ffecf71f6"
+    },
+    {
+      "id": "S7",
+      "sha256": "27ce3e4fad034a9a38b958c274da66d4d0255669097be2177ae1d692f2544353"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31911",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Compress LLMs for deployment on resource-limited devices while preserving performance and reducing computational demands.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing low-rank compression methods are reported to incur substantial accuracy loss or added parameter and inference-time overhead.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "MoDeGPT jointly decomposes consecutive Transformer subcomponents, reduces hidden dimensions through larger-scale output reconstruction, and repurposes Nyström approximation, CR decomposition, and SVD.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory-oriented design",
+        "claim": "The proposed decomposition approach is designed to provide bounded errors.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present Modular De-composition (MoDeGPT) as a new, efficient, structured compression framework intended to overcome limitations of prior methods.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that MoDeGPT, without backward propagation, consistently matches or surpasses prior gradient-dependent techniques and reduces compute costs by 98% when compressing a 13B-parameter model.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "On LLaMA-2/3 and OPT models, the authors report retaining 90–95% of zero-shot performance at compression rates of 25–30%.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that compression can finish on a single GPU within a few hours and increase inference throughput by up to 46%.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLM resource demands limit deployment on constrained devices, while low-rank methods may trade away accuracy or add overhead.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper introduces MoDeGPT as a structured compression framework.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "It jointly decomposes consecutive Transformer subcomponents, reconstructs outputs at larger structural scale, and uses three classical matrix decompositions with intended bounded errors.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "Experiments report competitive or better performance without backpropagation, substantial compute reduction, retained zero-shot performance, and higher throughput.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific structural design—joint decomposition and output reconstruction—to both an error-control objective and deployment metrics.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A compact abstract can make a method-to-evidence chain easier to assess by connecting design choices to measurable resource and quality outcomes.",
+        "application": "When presenting a compression method, explicitly pair each structural mechanism with its intended constraint and report quality, cost, and throughput under named model settings.",
+        "exception": "This framing is unsuitable when the work has no concrete mechanism-to-metric relationship or when the abstract cannot support the relevant conditions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baseline identities, statistical variability, evaluation-set details, or the precise definitions of compression rate and compute cost.",
+      "The magnitude and formal conditions of the claimed bounded-error guarantee are not given.",
+      "The reported ranges and throughput maximum are not tied to individual models or configurations."
+    ]
+  }
+}

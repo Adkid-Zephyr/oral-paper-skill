@@ -1,0 +1,94 @@
+{
+  "reviewer_model":"gpt-6-astra",
+  "effort":"medium",
+  "review_type":"AI source checking: targeted synthesis-source flags",
+  "records":[
+    {
+      "paper_id":"icml-2025-oral-40158","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"S4 explicitly introduces practical proxies, and S5-S7 describe techniques, trade-offs, applications and an evaluation demonstration. The observation is supported. Measurable proxies appears in the proposed application, not as an attributed claim that the abstract supplies their definitions.",
+      "synthesis_boundary":"Keep defining measurable proxies as a suggested application. The abstract gives neither proxy definitions nor evaluation measures or outcomes; it does not prove improvement in fairness, safety or manipulation resistance."
+    },
+    {
+      "paper_id":"icml-2025-oral-40167","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"The inequality and rent-seeking statements are in S4-S5. The card identifies economic analysis, attributes the claims to the authors, calls rent-seeking a characterization, and explicitly says empirical studies and detailed estimates are absent from the abstract.",
+      "synthesis_boundary":"Present inequality as an economic-theory-based argument and rent-seeking as the position paper's characterization. Do not classify these as measured causal effects, quantified labor-market estimates, or independently established misconduct."
+    },
+    {
+      "paper_id":"icml-2025-oral-40173","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"The card describes an outlined approach that can support accountability and compatibility, keeps the proposal and roadmap framing, and explicitly identifies missing experiments, proofs and security analysis. No completed security validation is claimed.",
+      "synthesis_boundary":"Compatibility and appropriate-action support are proposed capabilities in this abstract. Do not convert them into an implemented interoperable system, verified permission enforcement, or a demonstrated guarantee that agents act appropriately. This record overlaps the random audit; this check adds no new full-review coverage."
+    },
+    {
+      "paper_id":"icml-2025-oral-47212","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"S4 item 3 explicitly contains the NP-hardness wording and linear-time approximate-class claim; items 1-2 support construction and constraints, item 4 encoder limitations, item 5 the contrastive-learning relation, and item 6 performance. The bundled source locator is coarse but valid and the extraction follows the supplied abstract.",
+      "synthesis_boundary":"Do not promote 'exact automorphism detection is NP-hard' into an independently verified general complexity fact. The abstract does not define the exact decision/search problem or reduction, or the input-size convention of the linear bound. If used, attribute it expressly and retain this unresolved scope; use S4 item numbers in prose without inventing new source IDs."
+    },
+    {
+      "paper_id":"icml-2025-oral-47204","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"The suspected one-to-one mapping is explicit: S4 names pattern capture, architecture customization, and data domination; S5, S6, and S7 respectively assign those roles to disentangled encoding, invariant-guided customization, and curriculum customization. The source observation is faithful.",
+      "synthesis_boundary":"This is a clear stated design mapping. It does not establish that components are empirically independent or that each effect was isolated by an ablation."
+    },
+    {
+      "paper_id":"icml-2025-oral-47207","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"The card preserves both S2's core-assumption statement and S6's failure of common mixing-function assumptions in real data. It does not claim all method-specific assumptions hold.",
+      "synthesis_boundary":"Keep core CRL assumptions distinct from mixing-function restrictions needed by some evaluated methods. All evaluated methods fail on the real system; most fail on the synthetic ablation. Neither result shows all CRL methods fail under all of their theorem assumptions."
+    },
+    {
+      "paper_id":"icml-2025-oral-47209","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"The observation reports narrow finetuning, cross-domain misalignment and benign-context prevention from S1/S2/S4. Holding examples otherwise identical is visibly an application proposal, not an assertion about the authors' controls. The narrative retains systematic prevention as open in S5.",
+      "synthesis_boundary":"Label the identical-example comparison as a proposed experiment. Benign motivation prevented the observed effect in the reported setting; the abstract does not establish universal prevention, exact paired controls, or uniform effects across model variants."
+    },
+    {
+      "paper_id":"icml-2025-oral-47215","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"S9 explicitly makes preservation of synergy across comprehension, generation and multimodal interactions the evaluative criterion, and S10 reports an evaluation. The lesson tracks that criterion; the unknowns already leave measurements and aggregation unspecified.",
+      "synthesis_boundary":"Describe synergy as the proposed evaluation criterion, not a validated universal measure of general intelligence. Retain over 700 tasks, 325800 instances and over 100 models without inventing synergy scores or ranking outcomes."
+    },
+    {
+      "paper_id":"icml-2025-oral-47217","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"The card explicitly separates unavailable direct labeled validation from output-derived suitability signals and their distributional hypothesis tests. Its degradation-margin criterion is directly stated by S3-S4; it does not claim observed ground-truth user accuracy.",
+      "synthesis_boundary":"The observed quantities are signal distributions, not unlabeled-data accuracy itself. Margin assurance is an author claim with conditions and tests absent from the abstract; do not turn it into an unconditional accuracy guarantee or demonstrated failure prevention."
+    },
+    {
+      "paper_id":"icml-2025-oral-47244","first_pass_status":"minor",
+      "findings":[
+        {
+          "field":"narrative_sequence[3].summary","source_ids":["S5"],
+          "issue":"S5 argues that good CTF performance need not imply good real-world performance and illustrates a much larger performance gap on real defenses. 'Does not consistently predict ... across Sonnet and Opus' suggests a predictive-reliability result not established by the two examples. Their ordering does not reverse. The numeric evidence field and lesson observation are already correct.",
+          "severity":"minor",
+          "correction":"State the concrete comparison rather than an inferred prediction failure.",
+          "replacement_value":"Sonnet 3.5 and Opus 4 have similar reported attack success on CTF-like defenses (75% and 79%), but a wider separation on real-world defenses (13% and 30%)."
+        }
+      ],"final_disposition":"requires_correction",
+      "synthesis_boundary":"Do not infer rank reversal or quantify cross-benchmark predictive validity from this pair. Preserve the distinct strongest-ensemble 87% versus 37% comparison and the model-specific 75/79 versus 13/30 values."
+    },
+    {
+      "paper_id":"icml-2025-oral-47224","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"The complete S1 explicitly gives the individual exponential-failure result, the heavy-tailed low-success-probability explanation for aggregate scaling, and lower exponent-prediction error 'or equivalently' less inference compute. The card keeps the alternative formulation rather than asserting simultaneous savings.",
+      "synthesis_boundary":"One order of magnitude lower relative exponent error and approximately 2-4 orders less inference compute are author-reported alternatives at unspecified comparison conditions. Do not multiply them or claim both simultaneously. All content legitimately shares S1; distinguish its observation, explanation and forecasting sentences in prose instead of creating nonexistent IDs. Retain that the initial aggregate statement concerns negative log average success, whereas per-problem exponential behavior concerns failure probability."
+    },
+    {
+      "paper_id":"icml-2025-oral-47235","first_pass_status":"minor",
+      "findings":[
+        {
+          "field":"narrative_sequence[2].summary","source_ids":["S3"],
+          "issue":"'Prior-free pre-training' is broader shorthand than the source's 'without specifying any prior distribution' in the next-patch forecasting context. It may suggest absence of all priors or modeling assumptions, which the abstract does not establish. The stated-novelty field already uses the narrower source wording.",
+          "severity":"minor",
+          "correction":"Preserve the source's specific distribution wording without broadening it to all priors.",
+          "replacement_value":"The authors describe arbitrary-length time-series conditioning, pre-training without specifying a prior distribution, and generation of multiple probable predictions with greater representational flexibility than parametric densities."
+        }
+      ],"final_disposition":"requires_correction",
+      "synthesis_boundary":"Do not interpret this as no inductive biases, no flow reference distribution, or absence of modeling assumptions. The abstract does not precisely define the scope of prior distribution; tie the claim to its forecasting comparison with parametric densities."
+    }
+  ],
+  "summary":{
+    "targeted_records_checked":12,
+    "first_pass_pass":10,
+    "first_pass_minor":2,
+    "first_pass_material_error":0,
+    "material_findings":0,
+    "minor_findings":2,
+    "requires_correction":2,
+    "scope":"Targeted resolution of the twelve supplied flags against all original units and current card fields in flagged-source-review-batch-09/packet-01.json. Ten suspicions resolve to supported observations, clearly separated proposed applications, or source-level uncertainties requiring synthesis boundaries. Two local summary overstatements require correction. No synthesis text beyond supplied flags was assumed erroneous, so no speculative synthesis-prefixed edit is issued.",
+    "limitations":"Targeted checking only, separate from random audits and full semantic-review coverage. This is source faithfulness checking, not independent scientific, complexity-theoretic, security, normative, or experiment validation. No cards were edited, no source units were resegmented, and no additional model calls were made."
+  }
+}

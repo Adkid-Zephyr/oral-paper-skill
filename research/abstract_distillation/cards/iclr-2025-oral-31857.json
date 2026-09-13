@@ -1,0 +1,217 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31857",
+    "title": "No Pose, No Problem: Surprisingly Simple 3D Gaussian Splats from Sparse Unposed Images",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31857"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "35247bd8e29962497088f3e54c2c829be6b23617b4e5844abac8c70e08db38d9",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "d9c2d1afac9902c5e38abbc56cdf1340bc831f71bb063b58c8f87676f5e8a2c7",
+    "extracted_at": "2026-09-12T23:54:46.595573+00:00",
+    "session_id": "01a0980b-2d18-7923-88dc-3a46a813e749",
+    "usage": {
+      "input_tokens": 12829,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 981,
+      "reasoning_output_tokens": 123
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2babab3ad77395898cc58ca16e194c2a152c44e5519de719680970acc55ca88f"
+    },
+    {
+      "id": "S2",
+      "sha256": "479e207f579b21a61eca9a04b2172d31ff308c5c76510065e14f3aa9f1e95457"
+    },
+    {
+      "id": "S3",
+      "sha256": "f35c0a9b1e77f0f4ba80309f3fb3bc3a22477ef96351f705307cb627a2aa9fa0"
+    },
+    {
+      "id": "S4",
+      "sha256": "d61b0d8a0234d68ce2e2dafba591fef25add9291b4bd5accc57abd14818194f6"
+    },
+    {
+      "id": "S5",
+      "sha256": "51109192d2f52df386846a998fa88ca0f26c5c30d268aa477e68f41c16e224df"
+    },
+    {
+      "id": "S6",
+      "sha256": "bbdded47ac4f32b0a417d3ef63ebda86baa9b2152f94086d943a85d02ce3331a"
+    },
+    {
+      "id": "S7",
+      "sha256": "66ed0ef4fab609cfeed6e262c04d5de46352daa95423ed205ccf2ce3b52c6fb4"
+    },
+    {
+      "id": "S8",
+      "sha256": "5c961999d08ad52dc68953ee99b516d587fab7c5a311f049b4cf81e350056f52"
+    },
+    {
+      "id": "S9",
+      "sha256": "5aa7f7945bfb896b4385c280a1935fdd04a3a0878e670dd9bcd974db6de6cdad"
+    },
+    {
+      "id": "S10",
+      "sha256": "6c15111f52353e7014b322e89a334a1788cda08f27caa19a75ad5e0fb26d6e03"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31857",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reconstruct 3D Gaussian scenes from sparse multi-view images without known camera poses.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Pose-dependent reconstruction can require accurate pose input and incur errors from pose estimation and per-frame coordinate handling.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "NoPoSplat is a feed-forward, photometric-loss-trained model that predicts all-view 3D Gaussian primitives in one input view’s canonical camera coordinates.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The model embeds camera intrinsics as a token concatenated with image tokens to address scale ambiguity, and uses a two-stage coarse-to-fine pipeline for pose estimation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "The reconstructed Gaussians support novel view synthesis and pose estimation.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach as pose-free, generalizable 3D reconstruction from sparse unposed images using a canonical local camera space.",
+      "source_ids": [
+        "S1",
+        "S3",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report real-time inference for 3D Gaussian reconstruction after training exclusively with photometric loss.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report superior novel-view synthesis quality to pose-required methods, especially with limited input-image overlap.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report substantial improvements over state-of-the-art pose-estimation methods despite using neither ground-truth depth nor an explicit matching loss.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The paper introduces pose-free reconstruction of 3D Gaussian scenes from sparse, unposed multi-view images.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "design",
+        "summary": "It anchors one view’s local camera coordinates as canonical space, avoiding global transformation and associated pose-related errors.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "ambiguity handling",
+        "summary": "It compares intrinsic embeddings and selects tokenized camera intrinsics to enable scene-scale prediction.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "downstream use",
+        "summary": "The reconstructed Gaussians are used for novel-view synthesis and pose estimation through a coarse-to-fine pipeline.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The authors report advantages in novel-view synthesis and pose estimation under the stated comparisons and conditions.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract ties removal of pose input to a concrete coordinate choice: predicting all Gaussians in one input view’s local canonical space.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A strong method description can connect a target simplification directly to the representation change that enables it.",
+        "application": "When removing a required input, define a canonical representation that absorbs the missing variable and explain which error pathway this removes.",
+        "exception": "This move may be unsuitable when a shared global coordinate frame is itself required for downstream alignment or evaluation."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract reports downstream results with explicit comparison conditions, including limited image overlap and no ground-truth depth or explicit matching loss.",
+          "source_ids": [
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "Claim/evidence alignment is strengthened when the reported advantage is paired with the conditions under which it is claimed.",
+        "application": "State each headline result together with the comparator and the salient operating constraint or omitted supervision.",
+        "exception": "Avoid emphasizing such conditions if the comparison or constraint is not consistently defined across the reported evaluation."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no datasets, quantitative metrics, baselines, or numerical margins for the reported improvements.",
+      "The scope of “real-time” inference and the meaning of “accurate” scene-scale and pose prediction are unspecified.",
+      "The abstract does not establish independent proof of correctness, reproducibility, or priority of the claimed novelty."
+    ]
+  }
+}

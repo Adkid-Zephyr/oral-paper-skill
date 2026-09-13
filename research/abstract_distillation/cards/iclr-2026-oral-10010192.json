@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010192",
+    "title": "LongWriter-Zero: Mastering Ultra-Long Text Generation via Reinforcement Learning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010192"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3c9ced0843624db7a3b3ceb99607e1791c74dbea6c0f78ebb275d2036e8f6228",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "80197593255748274e452b600931db9e8aa4ae5d9944300154471e8a79a8831f",
+    "extracted_at": "2026-09-13T00:04:06.404772+00:00",
+    "session_id": "01a09813-c8bb-7081-aac0-cac531a40a71",
+    "usage": {
+      "input_tokens": 12782,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 721,
+      "reasoning_output_tokens": 73
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f4483ce79bc3b71acbb74da148e9ea294014cb98576f7f2cc086098cc447d21c"
+    },
+    {
+      "id": "S2",
+      "sha256": "cd3761c3de75059a1bfd9dfea21663460c3273bc9bbf935dd35dd885d4d1f4e3"
+    },
+    {
+      "id": "S3",
+      "sha256": "e0378d9c9603250d9b99754718ff47091232a4b11fe8569df5695285e48d39ac"
+    },
+    {
+      "id": "S4",
+      "sha256": "9901e94f1e00c2866fe6caef263c997b5e2e9c938a63cbf0d1580420191f880a"
+    },
+    {
+      "id": "S5",
+      "sha256": "f62ad5b41139e6e3f53387bdc9997ecb31aecfff655795f2eb96aba469b9c65e"
+    },
+    {
+      "id": "S6",
+      "sha256": "a2408979438cdee11d10082338dfef32bb4c2b830091d87d2f4c2ec12dcc2d79"
+    },
+    {
+      "id": "S7",
+      "sha256": "4e900c13b27b28c34c2eeb780e4feab490e03ee7b5ebdded0159d246722a8e19"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010192",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "LLMs struggle to generate ultra-long text because of maximum-length limits and quality degradation with increasing sequence length.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Synthetic-data-based supervised fine-tuning is costly to construct and may produce incoherent, inconsistent, artificial, and structurally monotonous outputs.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "An incentivization-based RL approach trains from a base model without annotated or synthetic data to develop ultra-long generation capabilities.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "training design",
+        "claim": "The approach uses reasoning for planning and refinement, supported by reward models targeting length control, writing quality, and structural formatting.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by developing ultra-long generation through RL from scratch without annotated or synthetic data.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that LongWriter-Zero, trained from Qwen2.5-32B, consistently outperforms traditional SFT methods on long-form writing tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report state-of-the-art results across all metrics on WritingBench and Arena-Write.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report surpassing DeepSeek R1 and Qwen3-235B, described as 100B+ models, on these evaluations.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "challenge",
+        "summary": "Ultra-long generation is demanded but constrained by length limits and worsening quality.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Prior LongWriter-style methods use synthetic long-form outputs for supervised fine-tuning, with substantial data-construction and quality drawbacks.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "LongWriter-Zero replaces this dependence with RL from a base model, encouraging planning and refinement during writing.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report broad benchmark gains over SFT methods and larger named models.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links distinct writing objectives—length control, quality, and formatting—to specialized reward models, then reports results across named benchmarks and metrics.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "Separating controllable objectives can make the training rationale and evidence alignment more inspectable.",
+        "application": "For a multi-objective generation method, define each reward target explicitly and report results broken down by corresponding evaluation dimensions.",
+        "exception": "This may be unsuitable when objectives are inseparable or when reliable objective-specific evaluators are unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide the benchmark metric values, training procedure, reward-model construction, or statistical uncertainty.",
+      "The comparative setup and model-size details beyond the named models are not specified."
+    ]
+  }
+}

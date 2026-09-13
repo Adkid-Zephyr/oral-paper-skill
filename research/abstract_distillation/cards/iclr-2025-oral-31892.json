@@ -1,0 +1,169 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31892",
+    "title": "How much of my dataset did you use? Quantitative Data Usage Inference in Machine Learning",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31892"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e575892eebf79f15a4540ede7c8e81cde43ea9873826e98c5edf7ba6c90e8dcb",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "af48f8f6d83217407ea77e3619dee2cb1c1ddc69e4a420fa33d44656b80e831b",
+    "extracted_at": "2026-09-12T23:56:00.761322+00:00",
+    "session_id": "01a0980c-6046-7b40-b939-c9b8f8bba6dc",
+    "usage": {
+      "input_tokens": 12617,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 714,
+      "reasoning_output_tokens": 90
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cb49a52de3500ea039dcbb0f8e1f7689a51ded660608c407c60837d7947166ff"
+    },
+    {
+      "id": "S2",
+      "sha256": "63f7ca529d2c5be6d0b2e65fa72893f5e75796ca7ed110ee41dc559d63c4bf39"
+    },
+    {
+      "id": "S3",
+      "sha256": "c9fe7eef89b9da9134b0532cdee9c67185e2ca86365ee38662ad18b713b5ec46"
+    },
+    {
+      "id": "S4",
+      "sha256": "9cfc53edf6b84b911d9679252f189982c245947c96f95b3c7e409bc994158487"
+    },
+    {
+      "id": "S5",
+      "sha256": "4cef9b7c5ffa4f1712e6374fcc45d6a098cfd0f58e88b2b93376f4359e28d6b9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31892",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine what proportion of a dataset was used to train a machine-learning model.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Prior work framed usage inference as binary all-or-none or any-or-none decisions, which the authors describe as fragile for real, non-binary usage risks.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Dataset Usage Cardinality Inference (DUCI), a fine-grained analysis for estimating the exact proportion of data used.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "Presents an algorithm that leverages debiased membership guesses for dataset-usage estimation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish DUCI from binary usage inference by targeting fine-grained, proportion-level estimation.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their algorithm matches the performance of the optimal MLE approach, with maximum error below 0.1.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report substantially lower computational cost than the optimal MLE approach, citing an example of 300× less computation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "question",
+        "summary": "Asks how much of a dataset was used to train a machine-learning model.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation_and_gap",
+        "summary": "Connects quantitative usage assessment to data owners' unauthorized-use risk and identifies the limitations of binary formulations.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed_solution",
+        "summary": "Proposes DUCI to estimate the exact usage proportion.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "Reports MLE-matched performance with maximum error below 0.1 at much lower computational cost, including a 300× example.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly contrasts binary usage inference with proportion-level estimation and pairs the proposed method with a reported maximum error and a computational-cost comparison.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A strong abstract can make the task distinction concrete by aligning the representation of the problem with directly comparable evidence.",
+        "application": "When replacing a coarse binary task, define the finer-grained target numerically and report matched quality and resource metrics against a relevant baseline.",
+        "exception": "This framing is unsuitable when the operational decision is genuinely binary or when the target proportion cannot be measured or interpreted reliably."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluation setting, datasets, sample sizes, or conditions under which the maximum error and 300× cost reduction were obtained.",
+      "It does not define the exact error metric, the computational-cost measure, or how the optimal MLE baseline was configured."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "lessons[0].source_observation.claim",
+      "before": "The abstract explicitly contrasts binary usage inference with proportion-level estimation and pairs the proposed method with both an error bound and a computational-cost comparison.",
+      "after": "The abstract explicitly contrasts binary usage inference with proportion-level estimation and pairs the proposed method with a reported maximum error and a computational-cost comparison.",
+      "review_file": "reviews/flagged-batch-03.json",
+      "review_sha256": "c93f283691d24c7af3478546edc7fc47e416bced6cee4ba8298ba8291f36aa01",
+      "applied_at": "2026-09-13T00:27:36.274742+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

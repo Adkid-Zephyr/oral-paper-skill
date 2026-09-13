@@ -1,0 +1,186 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010370",
+    "title": "WSM: Decay-Free Learning Rate Schedule via Checkpoint Merging for LLM Pre-training",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010370"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c637efa7d48b63dbfd9669ff1eb93862205273f3a91e21727a1fe93bd7b2950a",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "09d6295c4f9b25cd27e0f1b84d9f5363940593798ee35587f2499884f8bb0590",
+    "extracted_at": "2026-09-13T00:04:21.321999+00:00",
+    "session_id": "01a09813-f959-71e3-aa6a-c2921f5e44da",
+    "usage": {
+      "input_tokens": 12727,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 823,
+      "reasoning_output_tokens": 75
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1b70cf1343e9c688616cbaecfc99ad4a27a3f8e5634b889a3348e4d6349d613e"
+    },
+    {
+      "id": "S2",
+      "sha256": "7d7a83b845b4ed8108c54decc86a2d4276cb13ae591b651915778b199e64180d"
+    },
+    {
+      "id": "S3",
+      "sha256": "4440fca4de6b32d3e6d202c11f27bcadd34c5982ffd31a978fe1b7376cb674e0"
+    },
+    {
+      "id": "S4",
+      "sha256": "e732bae968bbed88644479a35ea889b213179cfeba231f40284469393d826886"
+    },
+    {
+      "id": "S5",
+      "sha256": "275a9a75d09066ad696f1b7daca360021b3491e67fad9128da173f64e3cb4687"
+    },
+    {
+      "id": "S6",
+      "sha256": "d400e2381c0cd8b30c06e8620e58fcd291ebefbb355068d3addee6f383c8f02f"
+    },
+    {
+      "id": "S7",
+      "sha256": "09ed624bbeb0a9ab1986df93ca41d37be898848d0a71f9823ab786b8a7d644f0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010370",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses decay-free learning-rate scheduling for LLM pre-training, using checkpoint merging to retain competitive performance without a traditional decay phase.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Introduces Warmup-Stable and Merge (WSM), a framework formally connecting learning-rate decay with model merging.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Provides a unified theoretical foundation for emulating cosine, linear, and inverse-square-root decay through principled model averaging, compatible with diverse optimizers.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Identifies merge duration as more influential on performance than checkpoint interval or merge quantity.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish WSM by establishing a formal connection between learning-rate decay and checkpoint merging, and by representing multiple decay strategies as model-averaging schemes.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, with high-quality annealing data, WSM outperforms WSD across multiple benchmarks: +3.5% on MATH, +2.9% on HumanEval, and +5.5% on MMLU-Pro.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that WSM’s performance advantages also extend to supervised fine-tuning scenarios.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report from extensive experiments that merge duration is the most critical factor affecting model performance, exceeding checkpoint interval and merge quantity in importance.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Decay-free learning-rate approaches and model merging are presented as promising ways to avoid traditional learning-rate decay while maintaining competitive performance.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "WSM is introduced as a framework formally relating learning-rate decay to checkpoint merging.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "theoretical scope",
+        "summary": "The framework is described as emulating cosine, linear, and inverse-square-root decay via model averaging across optimization methods.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "empirical analysis",
+        "summary": "Experiments identify merge duration as the key merge-design factor and report benchmark gains over WSD with high-quality annealing data.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "extension",
+        "summary": "The reported advantages extend to supervised fine-tuning.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a formal mechanism to several concrete decay strategies, then reports which implementation factor matters most empirically.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A strong abstract can align a general conceptual claim with both its scope and a focused sensitivity finding.",
+        "application": "When presenting a general training framework, enumerate the covered strategy variants and identify the design variable that experiments report as most consequential.",
+        "exception": "Avoid this framing when the work does not support broad theoretical coverage or comparative factor analysis."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify model sizes, training budgets, baseline implementation details, statistical variation, or benchmark protocols.",
+      "The meaning and construction of “high-quality annealing data” are unspecified, limiting interpretation of the reported gains.",
+      "The abstract does not provide the formal derivation or conditions underlying the claimed equivalence between decay and merging."
+    ]
+  }
+}

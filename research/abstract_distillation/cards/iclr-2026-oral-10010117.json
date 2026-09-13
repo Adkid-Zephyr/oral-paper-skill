@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010117",
+    "title": "Structured Flow Autoencoders: Learning Structured Probabilistic Representations with Flow Matching",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010117"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "47f5d49ed9e38d6e61416b6195904643099c088d01fd7d9be8e60d38d0d1f75f",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "7d765f42ad6f44c67efd5997cea81ff841120b1ec2e9454e202a7cb936b9bb7a",
+    "extracted_at": "2026-09-13T00:04:00.946669+00:00",
+    "session_id": "01a09813-b567-7a70-b248-96235bb7744a",
+    "usage": {
+      "input_tokens": 12707,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 748,
+      "reasoning_output_tokens": 75
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e906de31f65c5d5c351e5e1a4f1660c2ba7aa3b9cae34592fa15613e58d82500"
+    },
+    {
+      "id": "S2",
+      "sha256": "66e9a09691c1cd95a7fc2e30d4b487267f168b96290f2a8c3a829531b2366838"
+    },
+    {
+      "id": "S3",
+      "sha256": "2b09bca9f5474531333560b35ca1766fcb3d1ae52a4d9e2659a725bde6d7ca33"
+    },
+    {
+      "id": "S4",
+      "sha256": "c0142c73b67c90319614f51008d58c980e743fff49afffff0c1d2ab52181c302"
+    },
+    {
+      "id": "S5",
+      "sha256": "0d26e142de41103e4deb2b07d31b14c06719f913c7dd21ce42e7c4da49ba603f"
+    },
+    {
+      "id": "S6",
+      "sha256": "9c7d02bf88c78e69115d4882a0b9d0d6ca131520a383f2fb708848411b3c4833"
+    },
+    {
+      "id": "S7",
+      "sha256": "d31b08387f69826cf5fbcf6dcb3eab20fe32664a49b0605d115424aafee25dd8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010117",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Learn high-quality probabilistic representations that preserve latent structure in complex data.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Flow matching may miss latent structure, while VAEs and structured extensions may sacrifice sample quality.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Structured Flow Autoencoders, which augment graphical models with conditional continuous normalizing-flow likelihoods for flow-matching-based structured representation learning.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces a latent-variable-aware flow-matching objective for jointly learning the CNF likelihood and posterior.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "scope",
+        "claim": "Extends to graphical models with continuous or mixture latents and to latent dynamical systems.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors identify SFA as a new model family and its latent-variable-aware flow-matching objective as novel.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that studies on image, video, and RNA-seq data show consistent gains over VAEs and structured extensions in generation quality, representation utility, and scalability to large datasets.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that SFA produces more diverse samples than latent flow matching, suggesting better data-distribution coverage.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Flow matching offers high-fidelity density estimation but can miss complex-data latent structure; VAEs learn structure but may generate lower-quality samples.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "SFA combines graphical models with conditional continuous normalizing-flow likelihoods.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "optimization",
+        "summary": "A latent-aware flow-matching objective jointly trains the likelihood and posterior.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "The framework is presented for continuous and mixture latents and latent dynamical systems.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "Across three data domains, the authors report gains over VAEs and structured extensions, plus greater sample diversity than LatentFM.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract frames the method as resolving a tension between latent structure and sample quality, then evaluates both representation utility and generation quality.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S6"
+          ]
+        },
+        "interpretation": "A contribution is easier to assess when its motivation names the tradeoff and its evidence mirrors both sides.",
+        "application": "Frame a generative-model contribution around a concrete capability tradeoff and report metrics for each capability.",
+        "exception": "This is unsuitable when the work targets only one capability or lacks measurements for the paired objectives."
+      }
+    ],
+    "unknowns": [
+      "No quantitative metrics, baselines beyond VAEs/structured extensions and LatentFM, dataset details, or evaluation protocols are supplied.",
+      "The abstract does not specify which graphical-model configurations or latent dynamical systems were instantiated."
+    ]
+  }
+}

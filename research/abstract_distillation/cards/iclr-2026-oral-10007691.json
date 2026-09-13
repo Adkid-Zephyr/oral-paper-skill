@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007691",
+    "title": "Radiometrically Consistent Gaussian Surfels for Inverse Rendering",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007691"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "76eb05aa3604d96dc3f6f5deabfa5358469c28e2429e8de8c99c492bf26d1525",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "d3b640afbeb3a29734b7fdf3882195c3094204205a8c41b25315f20863b0d784",
+    "extracted_at": "2026-09-13T00:00:03.898770+00:00",
+    "session_id": "01a09810-0f04-7a90-a9c1-b70a5af28e69",
+    "usage": {
+      "input_tokens": 12761,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 799,
+      "reasoning_output_tokens": 50
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1dc9dac068891bb528c72d5b59ca7e0a1b8fb5da5a16f5f08a8db260232edad8"
+    },
+    {
+      "id": "S2",
+      "sha256": "56ec99599de2cd02cc08891db4d2e8989250daf648511e274582f39ba34b76f1"
+    },
+    {
+      "id": "S3",
+      "sha256": "57633117409f74a745c10ad847b900e9ec07a661efc59578bfdd2e33115fd07f"
+    },
+    {
+      "id": "S4",
+      "sha256": "40b1250b33b018c45f2669886e8f33757652f73ca61bb14cea12aff0a31316a6"
+    },
+    {
+      "id": "S5",
+      "sha256": "3d5a13110d51b696ddcec7eacb8c32bee5604714fec0a0027ec00bc7632ffbab"
+    },
+    {
+      "id": "S6",
+      "sha256": "104e3a5875011c5a3a411d41b3c09d98639f03b8ca54b77e1766c7c969b2850e"
+    },
+    {
+      "id": "S7",
+      "sha256": "6131489fab7d2e386b732ab26940552cec2b8238692066c4698dd1daadfc65c2"
+    },
+    {
+      "id": "S8",
+      "sha256": "9f24c91ba4c40dcfa2d1eb1db8b3621a9fea3713f93ca8de96cf0a1d463ec4af"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007691",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Inverse rendering with Gaussian Splatting must disentangle material properties from complex global illumination, especially indirect illumination.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches use Gaussian primitives supervised on limited training viewpoints, leaving indirect radiance at unobserved views insufficiently supervised.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory/constraint",
+        "claim": "Introduces radiometric consistency, a physically based constraint that supervises unobserved views by minimizing the residual between learned and physically rendered radiance.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method/framework",
+        "claim": "Proposes RadioGS, an inverse-rendering framework integrating radiometric consistency with Gaussian surfels and 2D Gaussian ray tracing.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes finetuning-based relighting that adapts Gaussian-surfel radiances to new illuminations within minutes at reported rendering cost below 10 ms.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe radiometric consistency as a novel physically based constraint for supervising indirect radiance from unobserved views.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that radiometric consistency creates a self-correcting feedback loop combining physically based rendering and novel-view synthesis, enabling modeling of inter-reflection.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "On existing inverse-rendering benchmarks, the authors report that RadioGS outperforms existing Gaussian-based methods while retaining computational efficiency.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report adaptation to new illuminations within minutes with rendering cost below 10 ms.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "challenge",
+        "summary": "The paper frames indirect illumination and material disentanglement as difficult in Gaussian-Splatting inverse rendering.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "It identifies limited-viewpoint supervision as a missing source of guidance for indirect radiance at unobserved views.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "principle",
+        "summary": "It introduces radiometric consistency to compare learned radiance with physically rendered radiance on unobserved views.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "It instantiates the principle as RadioGS using Gaussian surfels and 2D Gaussian ray tracing, then adds finetuning-based relighting.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report benchmark gains over Gaussian-based methods while preserving computational efficiency.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a specific supervision gap—unobserved-view indirect radiance—to a constraint defined on the same views, and describes the resulting feedback loop.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This alignment makes the proposed mechanism directly answer the diagnosed failure mode.",
+        "application": "When presenting a method, map each identified supervision or data gap to an explicit training signal and state how the signal targets that gap.",
+        "exception": "This framing is less suitable when the proposed signal does not operate on the missing or difficult cases themselves."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide benchmark names, quantitative scores, baselines, or experimental conditions supporting the reported performance comparison.",
+      "The meaning of “retaining computational efficiency” beyond the stated relighting cost is not specified."
+    ]
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010608",
+    "title": "The Art of Scaling Reinforcement Learning Compute for LLMs",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010608"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2d7ebcb1c4c78279a9f501593395b8113f669edbd19c466c790185bdb2d6057c",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "209957c7a312f0ad37cdf4839fde0fcaa334ec2b0f7caa1a8ac0c3cfb308040a",
+    "extracted_at": "2026-09-13T00:04:46.323802+00:00",
+    "session_id": "01a09814-60ea-73b3-928e-e38f8c82aaa2",
+    "usage": {
+      "input_tokens": 12754,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 813,
+      "reasoning_output_tokens": 100
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1ba2610458db3f308d22aee7c4653b6bfa8ec7d42082e28a6b54d469565eb7ce"
+    },
+    {
+      "id": "S2",
+      "sha256": "443a971da934cc1d2459fa1e17046d098d5c0b561d882b0846adf1df18c6496b"
+    },
+    {
+      "id": "S3",
+      "sha256": "4b617e053b4bfe53a3748108d9956a4abe04127d027fa465391722da4dbd0951"
+    },
+    {
+      "id": "S4",
+      "sha256": "42b453490b66671656a51a939004d624f2676b91bd2fc33b792cc8972aacf308"
+    },
+    {
+      "id": "S5",
+      "sha256": "4f4daacf0e3924a90c5ce2287a82fce94e2410f4630534415988a7b4d85d86ce"
+    },
+    {
+      "id": "S6",
+      "sha256": "f8e06373f98bebc78e2c881cc25609b53155911a1508dc420ecf03f9af4bacc8"
+    },
+    {
+      "id": "S7",
+      "sha256": "50ffc51eebf34347fd2dc242d3ec2bf513b1232d2343728c4097c45e769f2016"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010608",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop predictive and principled methods for evaluating and scaling reinforcement-learning compute for LLM training.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing RL scaling lacks the predictive methodologies and principled understanding available for pre-training.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "scientific framework",
+        "claim": "A framework for analyzing and predicting RL scaling in LLMs using compute-performance curves and design-choice ablations.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical study",
+        "claim": "A large-scale study of RL scaling covering more than 400,000 GPU-hours.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "recipe",
+        "claim": "ScaleRL, a proposed best-practice recipe for scalable RL training and validation-performance prediction.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize the study as the first large-scale systematic analysis defining a principled framework for RL scaling in LLMs.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that recipes differ in asymptotic performance, while loss aggregation, normalization, curriculum, and off-policy algorithm mainly affect compute efficiency without materially shifting the asymptote.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that stable, scalable recipes follow predictable trajectories, allowing extrapolation from smaller-scale runs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report successfully scaling and predicting validation performance in a single RL run using up to 100,000 GPU-hours.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "RL is central to LLM training, but predictive scaling methods comparable to pre-training are lacking.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "research gap",
+        "summary": "The abstract identifies no principled way to evaluate algorithmic improvements as RL compute grows.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "The study fits sigmoidal compute-performance curves and ablates common design choices to separate asymptotic performance from compute efficiency.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "findings and proposal",
+        "summary": "Reported scaling patterns motivate the ScaleRL recipe, which is demonstrated on a 100,000-GPU-hour RL run.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract distinguishes design choices that shift asymptotic performance from those that primarily change compute efficiency, and uses scaling trajectories to support extrapolation.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Separating endpoint quality from resource efficiency can make scaling claims more diagnostic and comparable.",
+        "application": "Report each intervention against both an estimated asymptote and compute-to-performance trajectory, then state which quantity changes.",
+        "exception": "This framing is unsuitable when the task has no meaningful asymptotic regime or when compute-performance curves cannot be estimated reliably."
+      }
+    ],
+    "unknowns": [
+      "S5 lacks the numbering marker (2), but includes an intervening observation about design choices primarily affecting compute efficiency; the supplied abstract does not establish whether any substantive content is missing.",
+      "It does not specify the LLMs, RL tasks, validation metric, baselines, curve-fitting procedure, prediction error, or evidence supporting the claimed effectiveness.",
+      "The abstract does not quantify how much each design choice changes asymptotic performance or compute efficiency."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "unknowns[0]",
+      "before": "The abstract omits the missing item (2) in the numbered observation list in S5.",
+      "after": "S5 lacks the numbering marker (2), but includes an intervening observation about design choices primarily affecting compute efficiency; the supplied abstract does not establish whether any substantive content is missing.",
+      "review_file": "reviews/flagged-batch-07.json",
+      "review_sha256": "da8130c13e152fce85f706ec0ec78e55cbb147ff44895d96357f9c6af2b9eea4",
+      "applied_at": "2026-09-13T00:35:16.271185+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

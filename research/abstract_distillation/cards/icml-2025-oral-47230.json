@@ -1,0 +1,157 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47230",
+    "title": "The dark side of the forces: assessing non-conservative force models for atomistic machine learning",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47230"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5fd5212e6b353f1ea35654734f5928d1f3b95ab81c00b46075652c63bdbabc00",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "d9e8487e3e694204b4369499afb817a281e158b45af2dba096ce0597e81b54aa",
+    "extracted_at": "2026-09-13T00:09:38.256042+00:00",
+    "session_id": "01a09818-d947-70a3-9c6a-381c5af2fbd4",
+    "usage": {
+      "input_tokens": 12672,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 718,
+      "reasoning_output_tokens": 70
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "65e4231dbee5c0897400fb19bba3dce76eb12b886495bb1376c3110d73137216"
+    },
+    {
+      "id": "S2",
+      "sha256": "fae03cf49aed7067294acd0634a952ddabc443dcbe568902888bd65b9c8cff75"
+    },
+    {
+      "id": "S3",
+      "sha256": "c12b9e0cdadf2bc90b66f32c48fb4236c0cc164d3bc8765636a2304ca7724a4b"
+    },
+    {
+      "id": "S4",
+      "sha256": "c017a769b74b2d9b0d9cae8bead7067e1a57ee45bcc5ff16bfd24c94a56a5da2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47230",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work investigates whether directly predicted, non-conservative interatomic forces are suitable for microscopic simulations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing proposals suggest direct force prediction can improve accuracy–efficiency trade-offs and learn energy conservation, but its simulation applicability is questioned by the authors.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "Identifies and demonstrates fundamental problems associated with non-conservative force models, including ill-defined geometry-optimization convergence and instability in several molecular-dynamics settings.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "position",
+        "claim": "Proposes combining direct force prediction with a conservative model to retain acceleration while reducing, rather than eliminating, backpropagation cost.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish energy conservation from rotational symmetry by arguing that conservation is difficult to learn, monitor, and correct in this context.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report ill-defined convergence during geometry optimization with non-conservative forces.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report instability in various molecular-dynamics types when using non-conservative force models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that energy conservation is harder to learn, monitor, and correct than rotational symmetry.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Atomistic machine learning estimates energies and forces, where symmetry and conservation have traditionally been treated as essential.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "conventional approach",
+        "summary": "Forces are usually obtained as derivatives of the potential energy to ensure energy conservation.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "challenge and investigation",
+        "summary": "Recent work questions this constraint in favor of direct force prediction; the paper investigates its use in microscopic simulations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "findings and recommendation",
+        "summary": "The authors report optimization and dynamics pathologies and recommend pairing accelerated direct prediction with a conservative model.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the modeling choice directly to downstream behaviors—geometry-optimization convergence and molecular-dynamics stability—and separates rotational symmetry from energy conservation.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A model-design claim is more informative when evaluated through the physical or algorithmic behaviors it affects, rather than only through prediction accuracy.",
+        "application": "Frame a methods paper around concrete downstream failure modes and test each claimed physical property separately from symmetry-related properties.",
+        "exception": "This framing may be unsuitable when the method is intended only for static prediction and is never used in optimization or dynamical simulation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, model architectures, simulation conditions, quantitative results, or the exact conservative–non-conservative hybrid design.",
+      "The scope of “various types” of molecular dynamics and the precise meaning of ill-defined convergence are unspecified."
+    ]
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31845",
+    "title": "ECD: A Machine Learning Benchmark for Predicting Enhanced-Precision Electronic Charge Density in Crystalline Inorganic Materials",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31845"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "61735092eb3e974ef7131eda457dbe9e9959086d8550c691c68eaece8eb52d51",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "60228de220f7fc2c75d9601bfaa336e2cde8b1612d777f75293342010db02437",
+    "extracted_at": "2026-09-12T23:54:18.679986+00:00",
+    "session_id": "01a0980a-ca79-7a40-882a-86da3b39bc25",
+    "usage": {
+      "input_tokens": 12697,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 826,
+      "reasoning_output_tokens": 112
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9fbf84a67ea1074a6c2cddbed41675ef8bdec81c8c4c11c028d1c69f83ceda47"
+    },
+    {
+      "id": "S2",
+      "sha256": "2709093de363156bb0c00862d3950d1cff1161f1047b8502fd983c873f6529ed"
+    },
+    {
+      "id": "S3",
+      "sha256": "8936c8de79f0381a0b1094cf1ed715cd6ebc4af593c22b76a6f5cd0980f6c9d6"
+    },
+    {
+      "id": "S4",
+      "sha256": "50df77071cfa9d167e0202d6c2c4927338337ac19b9d94ba9e76795db370c10a"
+    },
+    {
+      "id": "S5",
+      "sha256": "73135e53c795693145b2f27281601264ac829fc11363072ccbb7369930a2359c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31845",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop machine-learning approaches for predicting precise electronic charge densities in crystalline inorganic materials.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing DFT datasets mainly emphasize chemical properties and atomic forces, leaving precise charge-density prediction underrepresented despite its importance for total energy and ground-state properties.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "Introduces ECD, a dataset of 140,646 stable crystal geometries with medium-precision PBE data, including 7,147 geometries with high-precision HSE charge densities.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "benchmark and baselines",
+        "claim": "Defines crystalline-material charge-density benchmark tasks and provides baseline machine-learning models.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "open resource",
+        "claim": "Open-sources the ECD dataset and baseline models to support new methodology development and materials applications.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe ECD as a novel electronic charge-density dataset combining large-scale PBE data with a smaller high-precision HSE subset.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that current machine-learning models demonstrate efficacy on the proposed charge-density prediction benchmarks when trained primarily on large-scale PBE data and fine-tuned on the smaller HSE subset.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report releasing the dataset and baseline models publicly for community use.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Machine learning is being used to accelerate electronic-structure prediction as an alternative to first-principles methods such as DFT.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "The paper emphasizes that existing datasets focus mainly on chemical properties and atomic forces, while precise charge density matters for total energy and ground-state properties.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "resource",
+        "summary": "ECD supplies 140,646 medium-precision PBE geometries and a 7,147-geometry high-precision HSE subset.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation and release",
+        "summary": "The authors define benchmark tasks, report model efficacy using PBE training followed by HSE fine-tuning, and open-source the resources.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a large medium-precision dataset with a smaller high-precision subset and reports training on the former before fine-tuning on the latter.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This frames precision improvement as a staged data and modeling problem, making the computational tradeoff explicit.",
+        "application": "For a multi-fidelity learning paper, state the data scales, fidelity levels, and training sequence together with the resulting benchmark claim.",
+        "exception": "This framing is unsuitable when fidelity levels are not comparable, systematically related, or available in sufficient overlap for transfer."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark metrics, model identities, quantitative results, or comparisons against particular baselines.",
+      "It does not state how the data were split, whether the HSE subset overlaps the evaluation set, or what “efficacy” quantitatively means."
+    ]
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006994",
+    "title": "Agent Data Protocol: Unifying Datasets for Diverse, Effective Fine-tuning of LLM Agents",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006994"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6b174bf1d5a80f7fceb38768a73b98deb2472ee4e63730ec69651527323d869a",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "98e88870e0d42c1409758fba97b4ace19d92f891d8c958375eda6519f12bc7d0",
+    "extracted_at": "2026-09-12T23:58:54.042736+00:00",
+    "session_id": "01a0980e-fb70-7be3-9a2c-be1e37aa143f",
+    "usage": {
+      "input_tokens": 12771,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 888,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8ec345f4a5d52629ec70dc6f0db826fe51ee5d4e625de3a0adb7418fe8c67f9d"
+    },
+    {
+      "id": "S2",
+      "sha256": "62a6d94510902cc8aa092697c80d1b159adebf9aa6d0b658cfa4c11068962511"
+    },
+    {
+      "id": "S3",
+      "sha256": "8df16153686d8e87eafdf1f8e5988c46672a630a93d7700ab87b3491e6879370"
+    },
+    {
+      "id": "S4",
+      "sha256": "80f5caf186e04642c4007d2a69b0bba8cbe52ec2689067a1cf85ac29b688e1fc"
+    },
+    {
+      "id": "S5",
+      "sha256": "83098321d3fd923ab81c2e2bfeb896b529f7fce3e7b467e80cd37a6f91d1b90e"
+    },
+    {
+      "id": "S6",
+      "sha256": "ce58b1b85ca858959aef8468c811ba4bf46ea49f75c19df5c83d80919eae0579"
+    },
+    {
+      "id": "S7",
+      "sha256": "42b59ec059d816d1445649c6b80c251284ce60d14dedd902a6a64acd244b0c81"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006994",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to consolidate fragmented agent training data into unified pipelines for large-scale supervised fine-tuning.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing agent-data resources are fragmented across heterogeneous formats, tools, and interfaces, limiting standardized training; public large-scale supervised-fine-tuning results remain relatively rare.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces the Agent Data Protocol (ADP), a lightweight representation language acting as an interlingua between heterogeneous agent datasets and downstream training pipelines.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Defines a representation intended to cover API and tool use, browsing, coding, software engineering, and general agentic workflows while remaining simple to parse and train on without per-dataset engineering.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Unifies 13 existing agent training datasets in ADP and converts the standardized data into training-ready formats for multiple agent frameworks; code and data are publicly released.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present ADP as a unified interlingua for diverse agent datasets and training pipelines, designed to combine broad task coverage with lightweight processing.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report unifying 13 existing agent training datasets into ADP and converting them for multiple agent frameworks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report approximately 20% average performance gains over corresponding base models after supervised fine-tuning on the unified data.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report state-of-the-art or near-state-of-the-art results on standard coding, browsing, tool-use, and research benchmarks without domain-specific tuning.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Large-scale supervised fine-tuning of agents is relatively uncommon because collecting suitable training data is difficult.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors attribute the bottleneck primarily to fragmentation across data formats, tools, and interfaces rather than a shortage of underlying sources.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "ADP is introduced as a lightweight interlingua connecting diverse datasets to unified downstream training pipelines.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "demonstration",
+        "summary": "The authors standardize 13 datasets, prepare them for multiple frameworks, and report gains and strong benchmark performance without domain-specific tuning.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "release",
+        "summary": "Code and data are publicly released to support standardized, scalable, and reproducible agent training.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract diagnoses dataset fragmentation and then links the proposed representation to heterogeneous task coverage and multiple downstream frameworks.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A concrete bottleneck-to-interface mapping can make a systems contribution's purpose and scope easier to assess.",
+        "application": "When proposing a data or infrastructure layer, explicitly map the diagnosed incompatibilities to supported task types, conversion targets, and downstream consumers.",
+        "exception": "This framing is less suitable when the main contribution is a single-task algorithm whose value does not depend on interoperability."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define how the approximately 20% average gain is aggregated, which metrics or splits are used, or how corresponding base models are selected.",
+      "Details of the benchmark baselines, statistical variation, dataset composition, and conversion fidelity are not provided, so the reported comparisons cannot be independently assessed here."
+    ]
+  }
+}

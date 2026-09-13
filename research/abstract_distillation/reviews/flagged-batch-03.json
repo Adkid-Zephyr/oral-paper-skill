@@ -1,0 +1,133 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "scope": "Targeted resolution of synthesis flags, not random or full semantic audit",
+  "records": [
+    {
+      "paper_id": "iclr-2025-oral-31866",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "The card keeps the sub-second measurement tied to 1024-by-1024 and a 16GB laptop GPU, separate from the 4096-by-4096 capability. S11 and the card both preserve release upon publication as prospective. No card error; synthesis must not merge the two resolution settings or upgrade release status.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31867",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S4/S5 explicitly use causal modeling and non-causal filtering language. The card retains it as method description, reports prediction and peak-detection comparisons separately, and leaves causal validation unknown. The abstract does not establish interventionally validated regulatory causes; synthesis must distinguish the model's causal account from demonstrated causal identification.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31871",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S1 explicitly states reversion to shallow models when complexity is unneeded, without specifying whether this is an observed behavior, structural inclusion, or explicit selection mechanism. The card marks the conditions unknown. An explicit fallback appears only as a proposed application, not an author-attributed algorithm. Preserve the unresolved mechanism in synthesis.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31894",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "The supplied S1 itself says flash memory. The card did not introduce that terminology. This abstract-only check cannot determine whether the source means a memory technology or uses imprecise kernel terminology; do not silently replace it with SRAM or infer hardware facts. Synthesis can safely emphasize avoiding global logit materialization and on-the-fly reduction without relying on the ambiguous phrase.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31891",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S6 states 96.62% ImageNet accuracy with a three-layer network. The card preserves the number without assigning top-1/top-5, an ImageNet variant, or an architectural layer-count convention. Those details cannot be recovered from the abstract; surprising magnitude alone does not justify correcting the source. Synthesis must retain the measurement ambiguity.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31892",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "lessons[0].source_observation.claim",
+          "source_ids": ["S3", "S4", "S5"],
+          "issue": "The source reports a maximum error but does not identify a formal bound. Error-bound terminology blurs that distinction, although the evidence and unknowns already retain the reported and unspecified-condition status.",
+          "severity": "minor",
+          "replacement_value": "The abstract explicitly contrasts binary usage inference with proportion-level estimation and pairs the proposed method with a reported maximum error and a computational-cost comparison."
+        }
+      ],
+      "flag_resolution": "Use maximum error rather than a theoretical-bound label. The source does not establish whether the maximum is empirical or guaranteed, so do not assert either interpretation as resolved.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31899",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S8 contains both Gemini models, both datasets, both percentages, and respectively in one sentence. The card preserves that wording without constructing a model-by-dataset result table; it already marks relative/absolute convention unknown. The sentence alone does not establish all pairwise model-dataset results. Synthesis must not allocate gains to specific cells beyond the original ambiguous report.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31873",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "unknowns[3]",
+          "source_ids": ["S6", "S9"],
+          "issue": "S6 says 26 of 27 models substantially outperform baselines. It does not establish that the remaining model failed to outperform at all; its improvement could be smaller. The unknown introduces that unsupported negative outcome.",
+          "severity": "minor",
+          "replacement_value": "The abstract does not specify the remaining model's outcome or whether the reported results generalize beyond the named datasets and open-weight models."
+        }
+      ],
+      "flag_resolution": "The count denotes aligned models, as the card correctly states. S7 gives upward differences without defining units; the card preserves unit-free numbers and marks their meaning unknown. Restore uncertainty about the remaining model rather than asserting failure.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31880",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S10 states nearly 2x on a task of sequence length 50k without identifying the metric. The card repeats this author report and explicitly leaves its meaning unknown. Synthesis must not translate it into doubled accuracy, halved error, or speedup.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31916",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S6 describes ECG reconstruction from partial measurements for accurate cardiac diagnosis, but gives no diagnosis evaluation. The card's evidence retains that purpose wording, its narrative reports reconstruction, and its unknowns explicitly leave diagnostic measurement unresolved. No clinically validated diagnostic benefit can be synthesized from this abstract.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31890",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "The source observation correctly says retrieval versus random non-retrieval pruning, supported by S9. Matched control appears only in the proposed application; the card does not say the source's control was matched on count, layer, or other properties. Synthesis must preserve random non-retrieval as the observed control and matched control as advice requiring additional design work.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-32121",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "lessons[0].source_observation.claim",
+          "source_ids": ["S3", "S4", "S5", "S6"],
+          "issue": "The source diagnoses a potentially suboptimal estimated loss after direct LLM-method transfer and separately proposes objective alignment. The card converts that into an explicit diagnosis of pretraining/fine-tuning objective mismatch and its resolution. That causal framing is an interpretation, not the stated source diagnosis.",
+          "severity": "material_error",
+          "replacement_value": "The abstract identifies a potentially suboptimal estimated loss introduced by directly adapting LLM preference methods, then proposes score matching to align diffusion pretraining and fine-tuning objectives."
+        },
+        {
+          "field": "lessons[0].source_observation.source_ids",
+          "source_ids": ["S3", "S4", "S5", "S6"],
+          "issue": "Include S5 for the preserved potential-suboptimality qualification.",
+          "severity": "minor",
+          "replacement_value": ["S3", "S4", "S5", "S6"]
+        }
+      ],
+      "flag_resolution": "Objective alignment itself is explicitly stated in S6, and the theoretical equivalence elsewhere retains its under-certain-conditions qualifier. Only the stronger attributed diagnosis/resolution needs correction; the lesson interpretation may still propose objective alignment as a useful design perspective.",
+      "final_disposition": "requires_correction"
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "first_pass_pass": 9,
+    "first_pass_minor": 2,
+    "first_pass_material_error": 1,
+    "material_findings": 1,
+    "minor_findings": 3,
+    "requires_correction": 3,
+    "scope": "Targeted checking of 12 synthesis flags against supplied originals and current cards. One attributed diagnosis overreach and two local precision errors require correction; the additional minor locator edit supports the material correction. Other flags originate in source ambiguity, faithfully reported author claims, or explicitly proposed applications. No random error rate, full semantic certification, or scientific validity is established. No cards or other files were edited."
+  }
+}

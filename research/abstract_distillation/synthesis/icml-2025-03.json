@@ -1,0 +1,413 @@
+{
+  "batch_id": "icml-2025-03",
+  "covered_ids": [
+    "icml-2025-oral-47248",
+    "icml-2025-oral-47249",
+    "icml-2025-oral-47250",
+    "icml-2025-oral-47251",
+    "icml-2025-oral-47252",
+    "icml-2025-oral-47253",
+    "icml-2025-oral-47254",
+    "icml-2025-oral-47255",
+    "icml-2025-oral-47256",
+    "icml-2025-oral-47257",
+    "icml-2025-oral-47258",
+    "icml-2025-oral-47259",
+    "icml-2025-oral-47260",
+    "icml-2025-oral-47261",
+    "icml-2025-oral-47262",
+    "icml-2025-oral-47263",
+    "icml-2025-oral-47264",
+    "icml-2025-oral-47265",
+    "icml-2025-oral-47266",
+    "icml-2025-oral-47267",
+    "icml-2025-oral-47268",
+    "icml-2025-oral-47269",
+    "icml-2025-oral-47270",
+    "icml-2025-oral-47271"
+  ],
+  "candidate_practices": [
+    {
+      "name": "Make the information interface part of the problem",
+      "source_observation": "These abstracts specify how information becomes available and connect that interface to their proposed framework.",
+      "why_it_may_help": "Interpretation: interface details can explain why an otherwise familiar task requires a different algorithm or guarantee.",
+      "application": "Replace a broad practicality claim with the available query types, observable inputs, or access restrictions; state which design choice accommodates them.",
+      "when_not_to_use": "Do not foreground access restrictions when they neither constrain the method nor distinguish the research question.",
+      "support": [
+        {
+          "paper_id": "icml-2025-oral-47249",
+          "source_ids": [
+            "S2",
+            "S4"
+          ],
+          "specific_example": "Statements are query-accessed and variable-length; the extension addresses approximate queries and total slate length."
+        },
+        {
+          "paper_id": "icml-2025-oral-47260",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "The value-query versus practical demand-query mismatch motivates a combined-query learner and auction."
+        },
+        {
+          "paper_id": "icml-2025-oral-47263",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Collective assessment and coordination must use quantities inferable from observed data before intervention."
+        },
+        {
+          "paper_id": "icml-2025-oral-47270",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "History-dependent target substitution is linked to current/proposed-state information and reversible or non-reversible sampler compatibility."
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "Formal access models, implementation costs, and whether the claimed compatibility or practical correspondence holds."
+    },
+    {
+      "name": "Identify where expensive computation changes",
+      "source_observation": "These abstracts locate a computational change at a specific stage rather than reporting scalability alone.",
+      "why_it_may_help": "Interpretation: locating the change makes the claimed quality–cost relationship easier to interrogate.",
+      "application": "Name the expensive operation, specify where it is refined, relaxed, bypassed, or avoided, and attach the relevant quality and resource claims.",
+      "when_not_to_use": "Do not imply that omitted computation is harmless when the method only reports aggregate savings without locating their source.",
+      "support": [
+        {
+          "paper_id": "icml-2025-oral-47248",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "A co-clustering property motivates recursive low-rank refinement ending in a bijection with reported linear space and log-linear runtime."
+        },
+        {
+          "paper_id": "icml-2025-oral-47254",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "specific_example": "SPLIT permits greedy decisions near leaves and reports speedups with negligible performance loss."
+        },
+        {
+          "paper_id": "icml-2025-oral-47251",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Adaptive inference ordering bypasses difficult infilling subproblems; reported Sudoku accuracy rises from below 7% to about 90%."
+        },
+        {
+          "paper_id": "icml-2025-oral-47271",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6"
+          ],
+          "specific_example": "Directly targeting informative synthetic examples replaces generate-then-prune work, with separately reported sample and iteration savings."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2025-oral-47258",
+          "source_ids": [
+            "S1",
+            "S2"
+          ],
+          "contrast": "Small-model reasoning uses MCTS and large-scale synthesis; small parameter count alone does not establish computational savings."
+        }
+      ],
+      "full_text_needed_for": "Complexity assumptions, total computational accounting, quality measurements, and whether the proposed mechanism explains the savings."
+    },
+    {
+      "name": "Attach guarantees to their operative regime",
+      "source_observation": "These abstracts connect formal results to model classes, initialization, regularization, or supported component and knowledge regimes.",
+      "why_it_may_help": "Interpretation: adjacent conditions help readers distinguish a usable theorem from an unrestricted headline.",
+      "application": "Write each guarantee as condition–result–qualification; instantiate broad framework claims with the supported objects or components.",
+      "when_not_to_use": "Avoid adding arbitrary restrictions to genuinely unrestricted results; include the conditions that actually determine scope.",
+      "support": [
+        {
+          "paper_id": "icml-2025-oral-47253",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Random-feature ensemble equivalence is qualified by width, parameter budget, and exact ridgeless versus approximate small-ridge behavior."
+        },
+        {
+          "paper_id": "icml-2025-oral-47256",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Polynomial-delay listing uses singleton knowledge; counterexamples expose incompleteness for general background knowledge."
+        },
+        {
+          "paper_id": "icml-2025-oral-47261",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Predefined-component pipelines are instantiated with three choices at each of three stages, alongside a false-positive-control claim."
+        },
+        {
+          "paper_id": "icml-2025-oral-47268",
+          "source_ids": [
+            "S7",
+            "S9",
+            "S10"
+          ],
+          "specific_example": "The gradient-descent low-tubal-rank bias is tied to small random initialization, with simulations illustrating predicted dynamics."
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "Exact assumptions, error definitions, convergence bounds, proof scope, and whether simulations test the stated theoretical quantities."
+    },
+    {
+      "name": "Match evaluation granularity to the new capability",
+      "source_observation": "These abstracts introduce evaluation resources or measures corresponding to interaction, capability decomposition, task graphs, or generation duration.",
+      "why_it_may_help": "Interpretation: changing the measurement unit can make a newly targeted capability assessable; the resource can itself be a contribution.",
+      "application": "Identify what existing evaluation misses, then name the new unit or axis of measurement and the resource that enables it.",
+      "when_not_to_use": "Do not add capability slices or bespoke metrics when existing validated measures already resolve the research question.",
+      "support": [
+        {
+          "paper_id": "icml-2025-oral-47250",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "A multiturn benchmark accompanies LLM-judged task/interactivity results and separately reported satisfaction/time results from a 201-judge study."
+        },
+        {
+          "paper_id": "icml-2025-oral-47252",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Environment and capability coverage accompanies a high-level versus manipulation diagnosis and GPT-4o's 28.9% average."
+        },
+        {
+          "paper_id": "icml-2025-oral-47259",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Graph-composed tasks receive subtask and graph-level evaluation; dataset human acceptance is reported separately."
+        },
+        {
+          "paper_id": "icml-2025-oral-47262",
+          "source_ids": [
+            "S4"
+          ],
+          "specific_example": "Reportedly uninformative existing evaluations motivate LibriSpeech-Long and quality measurements across generation length and time."
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "Metric validity, aggregation, evaluator protocols, resource construction, and whether the measurements substantiate the capability diagnoses."
+    },
+    {
+      "name": "Separate structural evidence from its explanation",
+      "source_observation": "These abstracts name structural assumptions, analyzed factors, or representation changes alongside methods or behavioral findings, with differing explanatory strength.",
+      "why_it_may_help": "Interpretation: identifying the intermediate object can sharpen an explanation without treating a hypothesis as established causation.",
+      "application": "State the structural object and its evidential status—assumption, analyzed factor, observed pattern, or interpretation—before connecting it to the outcome.",
+      "when_not_to_use": "Do not invent a mechanism when only outcome measurements are available.",
+      "support": [
+        {
+          "paper_id": "icml-2025-oral-47257",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S6"
+          ],
+          "specific_example": "Distinct smooth feature subsets motivate Laplacian-smooth partitioning and condition the subset-identification guarantee."
+        },
+        {
+          "paper_id": "icml-2025-oral-47264",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "A generalization transition accompanies representational merger, interpreted as finite-automaton construction."
+        },
+        {
+          "paper_id": "icml-2025-oral-47265",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "Abrupt test-accuracy improvement and uninformative early losses accompany gradual block-circulant feature learning in RFM and analogous neural features."
+        },
+        {
+          "paper_id": "icml-2025-oral-47267",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Feature dimension and neighborhood size are analyzed alongside HOA and NFR layers; the extraction does not establish each layer's separate effect."
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "Representation measurements, causal identification, formal status of algorithmic interpretations, and component-to-factor mappings."
+    },
+    {
+      "name": "Choose comparisons that resolve distinct claims",
+      "source_observation": "These abstracts use comparisons for different questions: capability change, multiple generative objectives, or alternative policy investments.",
+      "why_it_may_help": "Interpretation: specifying the comparison's purpose can prevent a single ranking from substituting for the actual research decision.",
+      "application": "For each headline claim, name the relevant comparator and outcome; preserve best-case, task-specific, and non-directional qualifications.",
+      "when_not_to_use": "Do not manufacture a common score or cost comparison for alternatives whose objectives or budgets are not commensurate.",
+      "support": [
+        {
+          "paper_id": "icml-2025-oral-47258",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "MATH performance is reported as 58.8% to 90.0% and relative to o1-preview; AIME separately reports 8/15 problems."
+        },
+        {
+          "paper_id": "icml-2025-oral-47266",
+          "source_ids": [
+            "S7",
+            "S8"
+          ],
+          "specific_example": "TarFlow distinguishes likelihood results from sample quality/diversity comparisons with diffusion models."
+        },
+        {
+          "paper_id": "icml-2025-oral-47269",
+          "source_ids": [
+            "S2",
+            "S3"
+          ],
+          "specific_example": "Prediction is assessed against bureaucratic-capacity expansion using mathematical models and a German unemployment case study, without a stated winner."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2025-oral-47263",
+          "source_ids": [
+            "S6"
+          ],
+          "contrast": "The framework abstract names a product-evaluation experiment but provides no comparative outcome; a numerical victory cannot be reconstructed."
+        }
+      ],
+      "full_text_needed_for": "Comparator identities, budgets, protocols, metric definitions, and the conditions determining comparative conclusions."
+    }
+  ],
+  "unusual_but_useful": [
+    {
+      "paper_id": "icml-2025-oral-47255",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "practice": "Present mathematical discovery through a reformulation and a concrete discovered object.",
+      "application": "Name the hard-constrained problem, explain its differentiable probabilistic reformulation, and identify the resulting constructions and exact problem variant.",
+      "limit": "The two reported six-colorings concern an off-diagonal variant; neither original-constraint validity nor historical priority is independently established here."
+    },
+    {
+      "paper_id": "icml-2025-oral-47253",
+      "source_ids": [
+        "S6"
+      ],
+      "practice": "Reinterpret an established statistic's target.",
+      "application": "State the capacity-related interpretation of ensemble predictive variance separately from conventional uncertainty.",
+      "limit": "Keep this interpretation within the studied theoretical regime."
+    }
+  ],
+  "discarded_generalizations": [
+    {
+      "generalization": "Every abstract needs a missing-method gap and a numerical victory.",
+      "reason": "A focused question, explanatory case study, or decision framework can organize the contribution; missing results cannot be invented.",
+      "paper_ids": [
+        "icml-2025-oral-47255",
+        "icml-2025-oral-47264",
+        "icml-2025-oral-47269"
+      ]
+    },
+    {
+      "generalization": "A paper should contain only one contribution type.",
+      "reason": "Method, resource, evaluation, and theoretical extensions can form coherent combinations.",
+      "paper_ids": [
+        "icml-2025-oral-47250",
+        "icml-2025-oral-47254",
+        "icml-2025-oral-47262"
+      ]
+    },
+    {
+      "generalization": "Reported improvements establish practical user benefit.",
+      "reason": "Query reductions do not establish cognitive-load reductions, and dataset acceptance does not establish agent usefulness.",
+      "paper_ids": [
+        "icml-2025-oral-47260",
+        "icml-2025-oral-47259"
+      ]
+    },
+    {
+      "generalization": "These patterns explain Oral selection or validate ORAL as a universal framework.",
+      "reason": "Selected abstract extractions provide neither selection evidence nor a framework comparison.",
+      "paper_ids": [
+        "icml-2025-oral-47248",
+        "icml-2025-oral-47266"
+      ]
+    }
+  ],
+  "source_checks_needed": [
+    {
+      "paper_id": "icml-2025-oral-47255",
+      "field": "S2–S3 reformulation and discovery",
+      "issue": "Check exact off-diagonal scope and priority wording; the lesson's suggestion of preserved constraints exceeds demonstrated abstract evidence."
+    },
+    {
+      "paper_id": "icml-2025-oral-47256",
+      "field": "S7 problem_and_gap",
+      "issue": "General-background incompleteness is a boundary result, not necessarily the primary motivation for listing."
+    },
+    {
+      "paper_id": "icml-2025-oral-47267",
+      "field": "S6–S8 factor mapping and comparison",
+      "issue": "Check explicit factor-to-layer linkage and what outperforming in privacy protection means."
+    },
+    {
+      "paper_id": "icml-2025-oral-47264",
+      "field": "S6–S7 infinite generalization",
+      "issue": "Verify whether infinite generalization and automaton construction are proved, observed, or interpreted."
+    },
+    {
+      "paper_id": "icml-2025-oral-47270",
+      "field": "S5 sampling properties",
+      "issue": "Check whether unbiasedness and near-zero variance refer to samples, estimators, or asymptotic quantities."
+    },
+    {
+      "paper_id": "icml-2025-oral-47258",
+      "field": "S1, S3–S4 training and comparisons",
+      "issue": "Clarify 'from scratch,' o1 versus o1-preview, and the basis of the student-percentile comparison."
+    },
+    {
+      "paper_id": "icml-2025-oral-47261",
+      "field": "S2, S6 statistical target",
+      "issue": "Check pipeline significance versus selected-feature significance and the exact controlled error probability."
+    },
+    {
+      "paper_id": "icml-2025-oral-47262",
+      "field": "S5 availability",
+      "issue": "Preserve the distinction between available samples/dataset and prospective code/model releases."
+    }
+  ]
+}

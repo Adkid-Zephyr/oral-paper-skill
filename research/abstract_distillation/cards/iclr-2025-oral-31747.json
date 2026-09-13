@@ -1,0 +1,201 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31747",
+    "title": "Two Effects, One Trigger: On the Modality Gap, Object Bias, and Information Imbalance in Contrastive Vision-Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31747"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "de17caee800e0fb08fbf47ea1b7799cc3d70feeada152889fe845ff74f3cd973",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "74409d7cb3c841391a1afa893ea79130e105a2d2c7f0ea3809d47bacb63bffef",
+    "extracted_at": "2026-09-12T23:50:29.968491+00:00",
+    "session_id": "01a09807-496f-79a2-898e-7592232ad9ac",
+    "usage": {
+      "input_tokens": 12848,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 846,
+      "reasoning_output_tokens": 146
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7d5fd7220e355461cc21073222588cf403db82f0b3e6a1faf7973f1b5f019c97"
+    },
+    {
+      "id": "S2",
+      "sha256": "e920d9b3564051f1628642048919040d283bcc6c8c6133a60cfb4205950adf7f"
+    },
+    {
+      "id": "S3",
+      "sha256": "d70de511986314ba29e7c84239475cfe12a0f3ca13eff1d20a16c51a68936d32"
+    },
+    {
+      "id": "S4",
+      "sha256": "a6e514762fd5cfecf2c2b82694d7cf81b90a7ea362bae59641c2f04302b71ea3"
+    },
+    {
+      "id": "S5",
+      "sha256": "3d9f7a190114c3895846d0b9c232af86963762f0a2272b06c4b7757a212f188a"
+    },
+    {
+      "id": "S6",
+      "sha256": "894feb13fbab848b7c3f8d1fe7f6cbb7c76f336869db2d82913da3e03c0e02e9"
+    },
+    {
+      "id": "S7",
+      "sha256": "3a800c106a51bf5f65f3963f1add9d14d4192fdad14838032786308a51d0ba7e"
+    },
+    {
+      "id": "S8",
+      "sha256": "04bdd8bd2e1da4ebfac7a1b61c5d82db94016924e3b42cc7c66c0a43c9a38150"
+    },
+    {
+      "id": "S9",
+      "sha256": "05f6283749184e52c833f2ca8a9fefe7d055ff26f422578c9800a6dadde202c2"
+    },
+    {
+      "id": "S10",
+      "sha256": "6686b8b8e1953f159450da849f35a867f4f4c3f8cd4b91807bacc85b34ee39a4"
+    },
+    {
+      "id": "S11",
+      "sha256": "4eef7b0e59c4f4b846c9a0efc447c949e0d16f34841d8f07f9e1a41192ac728c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31747",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper analyzes the modality gap and object bias in contrastive vision-language models and investigates why both emerge.",
+        "source_ids": [
+          "S4",
+          "S9"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "analysis",
+        "claim": "It evaluates how the modality gap relates to performance and embedding-space organization.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "measure",
+        "claim": "It introduces a definition and corresponding measure of object bias.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "mechanistic finding",
+        "claim": "It identifies information imbalance between images and captions as the reported driver of both phenomena and connects the modality gap with logit entropy.",
+        "source_ids": [
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their object-bias analysis by introducing an explicit definition and measure for clean study.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the modality gap’s influence is usually outweighed by other factors, while closing the gap shows indications of improving performance.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "They report that only a few embedding dimensions drive the gap and that image and text embedding spaces are organized differently.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "Using controlled shared-information experiments, they report that information imbalance drives both the modality gap and object bias, with a connection to logit entropy.",
+        "source_ids": [
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "VLMs perform well on zero-shot object recognition but poorly on attribute recognition; prior work links this contrast to the modality gap and object bias.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "initial analysis",
+        "summary": "The authors analyze the modality gap, reporting limited typical influence but indications of improvement when it is closed, plus sparse and differently organized embedding dimensions.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "measurement",
+        "summary": "They define and measure object bias, finding that it does not inherently worsen performance on attributes or other concepts.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "mechanistic investigation",
+        "summary": "Controlled experiments varying shared image-caption information identify information imbalance as the reported common driver and link the gap to logit entropy.",
+        "source_ids": [
+          "S9",
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper separates the analysis of two related phenomena by introducing a specific object-bias measure, then uses controlled variation of shared information to investigate their common cause.",
+          "source_ids": [
+            "S7",
+            "S10"
+          ]
+        },
+        "interpretation": "A useful research pattern is to operationalize a disputed concept before testing mechanisms that may unify multiple effects.",
+        "application": "For a paper studying several correlated representation pathologies, define measurable constructs first and vary a shared candidate factor experimentally.",
+        "exception": "This approach may be unsuitable when the construct cannot be operationalized without imposing the very mechanism under investigation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluated VLMs, datasets, procedures for closing the gap or controlling shared information, or quantitative effect sizes.",
+      "The reported indications and connections do not establish the magnitude, generality, or causal validity of the findings from the abstract alone."
+    ]
+  }
+}

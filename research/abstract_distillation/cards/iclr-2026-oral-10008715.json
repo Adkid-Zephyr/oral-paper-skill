@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008715",
+    "title": "True Self-Supervised Novel View Synthesis is Transferable",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008715"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "588d438c685d4c52e90e77a7b3ab68afa7e26ec097218241eef6a39499741a8e",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "d3dc64fb02df7b4602ec25efe2759e83c941aee1c0acda7b1fc492d103e6254d",
+    "extracted_at": "2026-09-13T00:01:43.238679+00:00",
+    "session_id": "01a09811-8df7-7bf0-9109-62909e6a0247",
+    "usage": {
+      "input_tokens": 12709,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 848,
+      "reasoning_output_tokens": 103
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ada820ffb757deb261059d66bd9079074ca89406c46230bb4aedd5639af2b8a3"
+    },
+    {
+      "id": "S2",
+      "sha256": "6545c4be2fbb45d3960b0585b20113faf4c4b67a3f53e466c723be0328b072c1"
+    },
+    {
+      "id": "S3",
+      "sha256": "10f553c4665f5437f806371951b3715c26b31ab840ef8881432a41f0ebffc014"
+    },
+    {
+      "id": "S4",
+      "sha256": "0bff67b521f35f1d243b752f553addc385cedc7b899ddfdd5ccbd75744c72a75"
+    },
+    {
+      "id": "S5",
+      "sha256": "2e81f9309368a85dfecca5197ee9b6a731cc0f4a6b5de803c659d16d31af3749"
+    },
+    {
+      "id": "S6",
+      "sha256": "c07bfc91d0b9bbf27d89109b4b31e881af348bb7623e6907c72ef1525eb899b1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008715",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine whether self-supervised novel view synthesis models learn transferable camera pose representations: poses from one video should re-render the same camera trajectory in another scene.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The authors report that prior self-supervised NVS methods produce poses that do not transfer across 3D scenes, with identical pose sets yielding different camera trajectories.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "XFactor, a geometry-free self-supervised model for novel view synthesis, combines pair-wise pose estimation with input/output augmentations to disentangle camera pose from scene content.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "metric",
+        "claim": "The paper introduces a metric for quantifying transferability.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report transferability with unconstrained latent pose variables, without 3D inductive biases or explicit SE(3) pose parameterization.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe XFactor as the first geometry-free self-supervised model capable of what they define as true novel view synthesis.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that XFactor significantly outperforms prior pose-free NVS transformers in large-scale experiments.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that XFactor achieves transferability despite unconstrained latent pose variables and no stated 3D or multi-view-geometry inductive biases.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Probing experiments are reported to show a high correlation between latent poses and real-world poses.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "criterion",
+        "summary": "The paper defines transferability across video sequences and scenes as the key criterion for true NVS.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "It reports that prior self-supervised NVS poses fail this transfer test across different 3D scenes.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It presents XFactor, combining pair-wise pose estimation with simple input/output augmentations.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "claim",
+        "summary": "The method is reported to work with unconstrained latent poses and without explicit geometric inductive biases.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "A new transferability metric, large-scale comparisons, and probing experiments are used to report performance and pose correlation.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract makes transfer across scenes the defining test, then introduces a metric specifically for quantifying that property.",
+          "source_ids": [
+            "S1",
+            "S6"
+          ]
+        },
+        "interpretation": "A task-specific criterion can align the paper's central definition with its evaluation target.",
+        "application": "For a representation-learning paper, define the intended cross-context transfer behavior early and pair it with a metric that directly measures that behavior.",
+        "exception": "This is unsuitable when deployment contexts are fixed or when transfer cannot be operationalized without substantial task-specific assumptions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the transferability metric, datasets, experiment scales, baselines, or numerical performance differences.",
+      "The strength and statistical meaning of the reported pose correlations, as well as probing protocols and conditions, are unspecified.",
+      "The abstract does not provide details needed to assess the stated first-in-literature distinction independently."
+    ]
+  }
+}

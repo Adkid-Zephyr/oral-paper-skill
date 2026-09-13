@@ -1,0 +1,163 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009795",
+    "title": "On the Wasserstein Geodesic Principal Component Analysis of probability measures",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009795"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "adf27fc08bcf8bcd0a435100ca88ba008fa01534bbd7977e1b46dfeb31a12c77",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "106e027e978661adae092b6f0d278a93ad8da2d44578251197b6ec504b7496f8",
+    "extracted_at": "2026-09-13T00:03:27.864510+00:00",
+    "session_id": "01a09813-30f4-7121-b451-b1c6b4c127a1",
+    "usage": {
+      "input_tokens": 12591,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 698,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "565767c867cf2f2c31004ab48e50996205cc2acdbc4f16afc5d31af5721e0dbf"
+    },
+    {
+      "id": "S2",
+      "sha256": "96fa408aed120713448d476b6008a4415e2b81e9899244cd3a56a95b9c8d32bf"
+    },
+    {
+      "id": "S3",
+      "sha256": "f7ec954680cf94dc8abc35fcaba9d7252f377888fd88623580d25e9c60f9ba8d"
+    },
+    {
+      "id": "S4",
+      "sha256": "7cd6de6f343f83a40a255c71d25fec2d8e12fb4c12cb50c67c16a465fa53dcc3"
+    },
+    {
+      "id": "S5",
+      "sha256": "75e84a7369a71d2deb8e21cb993ad37565430422328825fd16c8b702b30bda2c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009795",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies Wasserstein Geodesic Principal Component Analysis to identify geodesic curves capturing variation in datasets of probability measures.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory/method",
+        "claim": "For collections of Gaussian distributions, the paper lifts GPCA computations to the space of invertible linear maps.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "For absolutely continuous probability measures, the paper uses neural networks to parameterize Wasserstein geodesics.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical comparison",
+        "claim": "The paper compares its approach with classical tangent PCA using examples and real-world datasets.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe their neural-network approach to parameterizing geodesics in Wasserstein space as novel.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report comparisons with classical tangent PCA across various examples.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report illustrations on real-world datasets.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "scope and objective",
+        "summary": "The paper frames GPCA for probability distributions under Otto-Wasserstein geometry and seeks geodesics that capture dataset variation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "structured case",
+        "summary": "It first treats Gaussian distributions by lifting computations to invertible linear maps.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "general method",
+        "summary": "It then addresses absolutely continuous measures using neural-network parameterizations of Wasserstein geodesics.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "comparison and demonstration",
+        "summary": "It concludes with comparisons to tangent PCA, examples, and real-world dataset illustrations.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract presents a structured Gaussian case before introducing a neural-network parameterization for the more general absolutely continuous setting.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A paper can make a complex geometric method easier to motivate by separating an analytically tractable special case from the broader computational setting.",
+        "application": "When presenting a new method, first expose a mathematically structured instance, then explain how the general case is parameterized or approximated.",
+        "exception": "This progression may be unsuitable when the special case is not representative of the intended applications or adds substantial exposition without clarifying the general method."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative comparison results, dataset details, or evaluation conditions.",
+      "It does not specify the exact GPCA objective, neural-network architecture, or how the Gaussian lift is derived.",
+      "The abstract does not state a limitation in existing approaches or establish priority for the claimed novelty."
+    ]
+  }
+}

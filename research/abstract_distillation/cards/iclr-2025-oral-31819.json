@@ -1,0 +1,198 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31819",
+    "title": "Problem-Parameter-Free Federated Learning",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31819"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "000d94bb892f3d78b7c9d8eea4e6e79567e089d9670cb4d72cbb782be8658cc9",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "f4b33a55b6ac896c32967e6696e5ade87db68383bd9e053f85ef5351429c1e0b",
+    "extracted_at": "2026-09-12T23:53:14.945530+00:00",
+    "session_id": "01a09809-cdf9-7b71-a590-4bcd2c155e39",
+    "usage": {
+      "input_tokens": 12883,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 846,
+      "reasoning_output_tokens": 87
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8409aa8facdaf2017c12d39c0892912c4586080b64ccfe7052c476b9094322bd"
+    },
+    {
+      "id": "S2",
+      "sha256": "e715078e3bc2184ae3b9e84e721cb67f4d246ad442a788ff7bcdeabe70a15105"
+    },
+    {
+      "id": "S3",
+      "sha256": "62b82a17e17fb09b34d0a20b56145cc73fdcff9ebef1eb5250212bf61a93b653"
+    },
+    {
+      "id": "S4",
+      "sha256": "09f90e3f3bc1401374e5e7d2e2f410fe8e4389566cc58eab7b60028b72b34cae"
+    },
+    {
+      "id": "S5",
+      "sha256": "cfa6a5cf38d4ae34458147ed9da650851b77291317fc66830fc77bcec05fb4b9"
+    },
+    {
+      "id": "S6",
+      "sha256": "7ddcf49f2400c4e6e29db6790ffd275b7af2a749fe88dfe83e6b87a8a900d35b"
+    },
+    {
+      "id": "S7",
+      "sha256": "39af491740d73faea585e0a990e7e89dda0bfea33573372bbd225e760269b7d1"
+    },
+    {
+      "id": "S8",
+      "sha256": "1cd77644cc4ed70fc712caf8b98a127cf2959b606478bd70a4a6c9b12b881f29"
+    },
+    {
+      "id": "S9",
+      "sha256": "d1f79fe31962f8b51ea7d42463961a83025d285bfdfc6e5fbd4d5a88a15b216e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31819",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Federated learning algorithms depend heavily on manually tuned problem-specific hyperparameters, especially learning rates, making deployment difficult under heterogeneous data and limited local-data access.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "This parameter dependence can hinder FL adoption and performance in dynamic or diverse environments.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces PAdaMFed, a nonconvex federated-learning algorithm combining adaptive stepsizes with momentum.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The authors state that PAdaMFed operates without problem-specific parameters and handles data heterogeneity and partial participation without heterogeneity bounds.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Provides convergence and scalability guarantees, including complexity bounds and linear speedup claims.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe PAdaMFed as a novel parameter-free algorithm for nonconvex federated learning based on adaptive stepsizes and momentum.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report sample complexity O(ε^-4) and communication complexity O(ε^-3) for obtaining ||∇f(θ)|| ≤ ε, including when using constant learning rates.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report improved O(ε^-3) sampling and O(ε^-2) communication complexities when variance reduction is incorporated.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report empirical evidence on image-classification and sentiment-analysis tasks supporting the efficacy of their approaches.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies hyperparameter tuning as a central obstacle to practical federated learning, especially with heterogeneous data and limited local-data access.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It introduces PAdaMFed, combining adaptive stepsizes and momentum for nonconvex FL.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "claimed_properties",
+        "summary": "The method is described as autonomous with respect to problem-specific parameters and as requiring no heterogeneity bounds under partial participation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "theoretical_results",
+        "summary": "The authors report convergence-complexity guarantees, variance-reduction improvements, and linear speedup with local steps and participating clients.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "empirical_results",
+        "summary": "The abstract reports evaluations on image classification and sentiment analysis.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns its parameter-free motivation with explicit algorithmic mechanisms, then states separate theoretical complexity claims and application domains.",
+          "source_ids": [
+            "S2",
+            "S5",
+            "S7",
+            "S9"
+          ]
+        },
+        "interpretation": "A paper can make a central practical objective easier to assess by linking the proposed mechanism to distinct theory and evaluation claims.",
+        "application": "For a method targeting deployment friction, state the operational obstacle, identify the mechanism addressing it, and separate guarantees from task-level demonstrations.",
+        "exception": "This structure is less suitable when the work is primarily a dataset, survey, or conceptual position without a proposed mechanism and corresponding evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact meaning or scope of operating without problem-specific parameters.",
+      "Details of datasets, baselines, experimental settings, and statistical results are not provided.",
+      "The conditions under which the variance-reduction and linear-speedup claims hold are unspecified."
+    ]
+  }
+}

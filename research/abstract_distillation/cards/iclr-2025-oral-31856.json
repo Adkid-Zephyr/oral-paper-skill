@@ -1,0 +1,203 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31856",
+    "title": "On the Hölder Stability of Multiset and Graph Neural Networks",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31856"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "93ffb2be2e028c2f06ba59f3bd5a883884d4b4e88fd7ec6336ea52a91102475b",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "8b7952eb43ef73a1d424a443861aefc66c96ee4ff3279b74faf088e62b8ca075",
+    "extracted_at": "2026-09-12T23:54:43.704788+00:00",
+    "session_id": "01a0980b-2bdf-7b10-b667-e5e9751cadb5",
+    "usage": {
+      "input_tokens": 12804,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 851,
+      "reasoning_output_tokens": 44
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "820b4a04190f3d85a43d1a5ab80eb5cc6130d505c199cb8b62f6d83977502cb6"
+    },
+    {
+      "id": "S2",
+      "sha256": "1873a11f679994220a1cce2711f4e0ac009937d1e1fbef745f9e2c516e6ae4ea"
+    },
+    {
+      "id": "S3",
+      "sha256": "70b1dd01afe4a7461a7565a46dd30ee8973618a6d19f3cefe2cbd113a0d21fc9"
+    },
+    {
+      "id": "S4",
+      "sha256": "f25cba7e2ef45d8735a8581d56f2e947549eba5eb4bea7e7d212fb14a7dee39a"
+    },
+    {
+      "id": "S5",
+      "sha256": "7deb8beb30b33d32654bec380a74ff5078fca42fd27667b575da8b39c1cc12d0"
+    },
+    {
+      "id": "S6",
+      "sha256": "abc2a410c3e93154694f41dd3773d9a8da406a495fa2445dc55581db936ab8d2"
+    },
+    {
+      "id": "S7",
+      "sha256": "d38416ded2001e14f3ab4744c19edcad21b839dd5768fb77ad26cc9192611bf4"
+    },
+    {
+      "id": "S8",
+      "sha256": "ef3649a60f2392d00fbcba0347a64e82c3a254b91290193aaec472b43857e8fc"
+    },
+    {
+      "id": "S9",
+      "sha256": "22b20c905062e25bf0fa4d66e972415ad742430fee8d87d71146ddaae85a3442"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31856",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how to analyze and improve the practical quality of separation in multiset and graph neural networks.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies a gap in separation-only analysis: theoretically separable objects may have nearly identical finite-precision embeddings, while theoretically non-separating architectures may separate objects when sufficiently wide.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "A pair-wise separation-quality framework, Hölder in expectation, adapts Lipschitz and Hölder stability to parametric functions without requiring simultaneous separation of the entire input space.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The authors prove that common sum-based models are lower-Hölder in expectation, with an exponent that decays rapidly with network depth.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "architecture",
+        "claim": "The authors propose two MPNNs intended to improve separation quality, including one that is lower Lipschitz in expectation.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present Hölder in expectation as a novel pair-wise separation-quality analysis framework and introduce two novel MPNNs.",
+      "source_ids": [
+        "S4",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report constructing adversarial graph pairs that three 1-WL iterations can separate but standard maximally powerful MPNNs cannot separate in practice.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that their proposed MPNNs easily classify these adversarial examples.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that the proposed MPNNs compare favorably with standard MPNNs on standard graph-learning tasks.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Prior work focuses on characterizing and constructing maximally separating multiset and graph neural networks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The abstract argues that separation alone misses weak finite-precision separation and width-dependent practical separation phenomena.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The authors introduce Hölder in expectation for pair-wise separation-quality analysis without requiring global simultaneous separation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "theory_and_stress_test",
+        "summary": "They establish a depth-dependent lower-Hölder result and derive adversarial graph examples exposing practical weaknesses of standard MPNNs.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "remedy_and_comparison",
+        "summary": "They propose two improved MPNNs and report performance on the adversarial examples and standard graph-learning tasks.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a formal stability analysis to adversarial examples that distinguish theoretical 1-WL separation from practical MPNN separation.",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A concrete stress test can make an abstract quality metric operational and reveal where theoretical capability diverges from practical behavior.",
+        "application": "When introducing a new analysis metric, construct input pairs targeted by the metric and report whether baseline models separate them under realistic computation conditions.",
+        "exception": "This approach may be unsuitable when no meaningful pair-wise adversarial construction or practical precision constraint exists."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact Hölder definitions, exponent formula, architectural details, datasets, or quantitative comparison results.",
+      "The conditions and meaning of “easily,” “rapidly,” and “compare favorably” are not quantified.",
+      "The abstract does not establish independent proof verification, empirical validity, reproducibility, or priority beyond the authors’ reports."
+    ]
+  }
+}

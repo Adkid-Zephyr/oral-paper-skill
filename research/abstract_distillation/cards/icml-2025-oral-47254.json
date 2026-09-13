@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47254",
+    "title": "Near-Optimal Decision Trees in a SPLIT Second",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47254"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f77f4f5893cf429275b01666a6b1912f916c3872a7c85b1926b4bb592fe5b69f",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "d9bc59b8568fa542fa72432fbc7d6328f1af404146fe52a60c8c050fca50abde",
+    "extracted_at": "2026-09-13T00:10:33.917035+00:00",
+    "session_id": "01a09819-aa41-7ef0-b6bc-569244a833a2",
+    "usage": {
+      "input_tokens": 12690,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 840,
+      "reasoning_output_tokens": 95
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f563bd70e3931b25ad397039a2fb9f36f816511d442f1c95db1c1a5396d87799"
+    },
+    {
+      "id": "S2",
+      "sha256": "1f6710402e4fd996013884bafcda3c5f42ee75ac6eddd07c23bd619837037cc8"
+    },
+    {
+      "id": "S3",
+      "sha256": "c1eeb7b80ecef0eef5500e3d5a30339241f8e1617896f03bbe928f639e07b786"
+    },
+    {
+      "id": "S4",
+      "sha256": "52cefd11b0c6773f8815adc11bfa47842e2bf0b1526b22dcfd6c8dc8ab5f8100"
+    },
+    {
+      "id": "S5",
+      "sha256": "92f454d3eedb353ecc19ca4d2f94342485915ebcb8a310cc3fc89b44d0c1bea5"
+    },
+    {
+      "id": "S6",
+      "sha256": "28cfbe335f0bcf0f305c3d2037e388d419f90eedd9ac9083fa3e237aa01876aa"
+    },
+    {
+      "id": "S7",
+      "sha256": "0dad2471399ae1d61471e3b4d5f6b7d2355e67ce16e65d23fb7c173f1343c2b9"
+    },
+    {
+      "id": "S8",
+      "sha256": "14821a1604e0c085da59560e86580083ea0ad02694c3ea126ecc49f752b3668e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47254",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop decision-tree optimization methods that combine the accuracy of globally optimal trees with the scalability of greedy search.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Greedy search is fast but provably suboptimal, while branch-and-bound methods can find global optima but scale poorly.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces SPLIT, a family of sparse-lookahead algorithms for interpretable decision trees.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "algorithmic insight",
+        "claim": "Shows that high-quality trees can be found without solving every subproblem optimally, using greedy decisions near the leaves.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "extension",
+        "claim": "Extends SPLIT to compute sets of near-optimal trees, including the Rashomon set.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish SPLIT as a new family designed to advance the balance between optimal-method accuracy and greedy-method scalability.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their algorithms are orders of magnitude faster than existing optimal methods, with negligible performance loss.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that greediness near the leaves is sufficient for finding high-quality trees.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report scalable computation of sets of near-optimal trees through their extension.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Decision-tree optimization is presented as central to interpretable machine learning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Greedy search offers speed but is provably suboptimal, whereas globally optimal approaches improve accuracy and sparsity at substantial scalability cost.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "design goal",
+        "summary": "The target is to combine optimal-method accuracy with greedy-method scalability.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "method and result",
+        "summary": "SPLIT uses sparse lookahead and permits greediness near the leaves; the authors report orders-of-magnitude speedups with negligible performance loss.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "extension",
+        "summary": "The approach is extended to scalable computation of near-optimal-tree sets, including the Rashomon set.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract identifies a depth-dependent allocation of optimization effort: subproblems need not all be solved optimally, and greediness is acceptable near the leaves.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A method can target a quality–scalability tradeoff by concentrating expensive computation where it matters most and relaxing it in lower-impact regions.",
+        "application": "For another hierarchical search problem, propose and test a depth- or stage-dependent schedule that switches from exact optimization to greedy selection, reporting both quality loss and computational savings.",
+        "exception": "This strategy may be unsuitable when decisions near the leaves have unusually high impact or when local errors cannot be recovered from."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, runtime measurements, or the quantitative meaning of “orders of magnitude” and “negligible loss.”",
+      "The conditions under which greediness near leaves preserves high quality are not stated.",
+      "The computational representation and coverage guarantees of the reported near-optimal tree sets are unspecified."
+    ]
+  }
+}

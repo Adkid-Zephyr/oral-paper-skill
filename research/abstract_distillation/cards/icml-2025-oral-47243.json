@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47243",
+    "title": "Scaling Collapse Reveals Universal Dynamics in Compute-Optimally Trained Neural Networks",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47243"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "266baf15c55f41582e541e21aa0142a6c3f77c4db2258d4a4ccd78ccc2d09027",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "c2db413269d7ad456fcf1987feb815286a441f44d7d0027004ad7626429e076a",
+    "extracted_at": "2026-09-13T00:10:07.781897+00:00",
+    "session_id": "01a09819-4448-7242-a986-107477f9fa33",
+    "usage": {
+      "input_tokens": 12690,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 853,
+      "reasoning_output_tokens": 100
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9afd96954dcdd32f453c62a33d7623013e5f7beafa6b071a5225a577e8bef692"
+    },
+    {
+      "id": "S2",
+      "sha256": "916abe22f23eecb16142cbc5e43d39a77193c9be80cd79f1149e1e0262214d6c"
+    },
+    {
+      "id": "S3",
+      "sha256": "197f3fedfcea5253a723db4dc302782ab39af5f00cc9932bed411d670862947d"
+    },
+    {
+      "id": "S4",
+      "sha256": "b207f39881e9e9a432e2107822578cef3afca580c396949b87bd23ef711ca98b"
+    },
+    {
+      "id": "S5",
+      "sha256": "b805d2b5daa29015dc33f04a4febf52d66db43d94abed2d7180258cfdd287b2a"
+    },
+    {
+      "id": "S6",
+      "sha256": "a62bdabf67eee4f181e7ca79ebcaa6ef7a26bb1e868dc4a85a9ffdcc4a23ab77"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47243",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Understand neural network training dynamics at scale.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Complex interactions among architectures, optimizers, and data make predictive theory challenging.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "Shows that compute-optimally trained models exhibit precise collective regularities, including universal loss-curve collapse under end-of-training normalization.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Identifies “supercollapse,” a tighter collapse with learning-rate decay that appears across schedules, datasets, and architectures, including next-token-prediction transformers.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory and model",
+        "claim": "Connects collapse to power-law neural scaling laws and analyzes an SGD-noise model intended to capture schedule-induced curve deformation and variance suppression.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors name the exceptionally tight normalized loss-curve collapse enabled by learning-rate decay “supercollapse.”",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that loss curves across model sizes collapse onto one universal curve after compute and loss are normalized to unity at training end.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that, with learning-rate decay, normalized-curve discrepancies fall below individual models’ seed-level noise floor, and observe this across schedules, datasets, and architectures.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that collapse breaks down under suboptimal hyperparameter scaling, suggesting it can indicate proper scaling.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Frames large-scale training dynamics as an open problem complicated by interacting design choices.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "core observation",
+        "summary": "Reports universal loss-curve collapse after normalizing compute and loss at training end.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "refinement and scope",
+        "summary": "Introduces supercollapse under learning-rate decay and reports it across schedules, datasets, and architectures.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "diagnostic implication",
+        "summary": "Reports breakdown under suboptimal hyperparameter scaling, making collapse a proposed practical scaling indicator.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "explanation",
+        "summary": "Links the phenomena to scaling-law power laws and an SGD-noise dynamics model, including the proposed role of learning-rate decay.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a normalized cross-model regularity with a failure mode under suboptimal scaling and then offers a mechanistic account involving SGD noise and learning-rate schedules.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact paper narrative can align an observable diagnostic, its boundary condition, and an explanatory model.",
+        "application": "When presenting a scaling phenomenon, define the normalization, show where the pattern breaks, and connect both the pattern and failure mode to a proposed mechanism.",
+        "exception": "This framing is unsuitable when the study has no explicit diagnostic boundary condition or mechanistic analysis."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact compute and loss normalization procedure beyond end-of-training unity, or quantify model sizes and collapse errors.",
+      "The criteria for compute-optimal versus suboptimal hyperparameter scaling are not given.",
+      "The abstract does not provide experimental counts, datasets, architectures, schedules, or details sufficient to assess the SGD-noise model quantitatively."
+    ]
+  }
+}

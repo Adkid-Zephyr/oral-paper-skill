@@ -1,0 +1,196 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011477",
+    "title": "Difficult Examples Hurt Unsupervised Contrastive Learning: A Theoretical Perspective",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011477"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3247a7e0b1b3133a78164ac9f52e4ef6247cc3217c2d2963ec5451b42c366cde",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "5affc972cc04aff801cb4b1a46d5d88109a210bb4e41b10c75259fa4d76ceded",
+    "extracted_at": "2026-09-13T00:06:05.556534+00:00",
+    "session_id": "01a09815-90a2-7f60-aa48-4572f9fe95ea",
+    "usage": {
+      "input_tokens": 12723,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 812,
+      "reasoning_output_tokens": 121
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "228850929eeda9165f1e4f725035a7f22d23fe9db08f70897f05eed3cc007e80"
+    },
+    {
+      "id": "S2",
+      "sha256": "c3ba4e8ec139a60853d62bc2d67064b381954099379485f168d5debbd1f45232"
+    },
+    {
+      "id": "S3",
+      "sha256": "d63f57e3e53a96663ff44dbba5efdbe8d8bea565b2d184db0b02ad40a435bb1f"
+    },
+    {
+      "id": "S4",
+      "sha256": "d64ab11cc09ddc22b495ac886980fad832e4bb43b81d0fcd7f440d742c163784"
+    },
+    {
+      "id": "S5",
+      "sha256": "df8fccd0ac434feeef97f28538de791264c47ededebee3491d166b59ea684c74"
+    },
+    {
+      "id": "S6",
+      "sha256": "2a5172d892bdbdab5f1837dfebf644d4369957867e813f2d06779ada2858f5e2"
+    },
+    {
+      "id": "S7",
+      "sha256": "011aa9094813b913ae83d48e62b8b6478fc984b8a87276cc5b27c7448aff7e61"
+    },
+    {
+      "id": "S8",
+      "sha256": "e18c514a93c31dee338a91ac811de5b4f0cadd0c982e92d0e66c9c9d270e8bfc"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011477",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Understand how difficult examples affect unsupervised contrastive learning and downstream classification.",
+        "source_ids": [
+          "S3",
+          "S5",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theoretical framework",
+        "claim": "Develops a framework modeling similarity between different sample pairs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Analyzes how difficult examples affect contrastive-learning generalization.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "method and empirical finding",
+        "claim": "Proposes difficult-example selection and examines removal, margin tuning, and temperature scaling as ways to improve generalization and performance.",
+        "source_ids": [
+          "S4",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper’s stated distinction is that removing difficult examples can improve contrastive-learning performance despite reducing sample size, contrary to their established importance in supervised learning.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that directly removing difficult examples boosts downstream classification performance.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that difficult examples negatively affect contrastive-learning generalization.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that difficult-example removal, margin tuning, and temperature scaling enhance generalization bounds and improve performance; an empirical mechanism for selecting difficult examples is also reported as effective.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Contrasts the mechanism of unsupervised contrastive learning with supervised learning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "prior observation",
+        "summary": "Positions difficult examples as important near-boundary cases in supervised learning but minimally contributive in unsupervised settings.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "core finding",
+        "summary": "Reports that removing difficult examples can improve downstream classification even with fewer samples.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "explanation and interventions",
+        "summary": "Introduces a pair-similarity framework, derives a negative generalization effect, and studies removal, margin tuning, and temperature scaling.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "empirical support",
+        "summary": "Reports a simple selection mechanism and validation of the proposed methods.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links an initially counterintuitive performance result to a similarity-based theoretical framework and then to interventions targeting difficult examples.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A surprising empirical pattern can motivate a useful explanatory variable and organize the method around a testable mechanism.",
+        "application": "When presenting an unexpected result, define a compact interaction or similarity quantity, state the predicted effect, and connect each proposed intervention to that prediction.",
+        "exception": "This framing is unsuitable when the proposed explanatory quantity is not operationally measurable or the abstract lacks evidence connecting interventions to the mechanism."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, metrics, quantitative gains, or experimental conditions.",
+      "Details of the theoretical assumptions, bounds, difficult-example selector, and comparisons are not provided.",
+      "It is unclear whether all three interventions were evaluated under identical settings."
+    ]
+  }
+}

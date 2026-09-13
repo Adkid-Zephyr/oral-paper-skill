@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71080",
+    "title": "Foundations of Equivariant Deep Learning: Unifying Graph and Sheaf Neural Networks",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71080"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a6561f3ada11066d8b994ba31741d4d417c24a634c94e8697964c5432d16ec95",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "b7012e5fdd9565aa4dffb9e3cea70a968a08d541d0efd80d2dbc970b6d679c98",
+    "extracted_at": "2026-09-13T00:13:17.610659+00:00",
+    "session_id": "01a0981c-2747-7c91-a2b9-62615e4221a8",
+    "usage": {
+      "input_tokens": 12767,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 811,
+      "reasoning_output_tokens": 71
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cb93a64ed00fe8907dc5a0949314ba96e6c08c9591b70bb8b3651e05a138fdc3"
+    },
+    {
+      "id": "S2",
+      "sha256": "d328613284bb907746b7514a5ed2efa75eea3e2b9799d6ec68162977c0433211"
+    },
+    {
+      "id": "S3",
+      "sha256": "5bb72bbd4a4dacaf786f7152120e78e702a7f1154ac5b35e9e9e485a1342e27b"
+    },
+    {
+      "id": "S4",
+      "sha256": "72119b6ec86192beb198213c8490d2ed172630a4ae2119551bcd0bf6fba51989"
+    },
+    {
+      "id": "S5",
+      "sha256": "f92f4bdd6b932b4a6d49d4370a5b70d6369ce4bb26cf84fb380dc9c09d458e7e"
+    },
+    {
+      "id": "S6",
+      "sha256": "2b2338513efe3de30c93b6e53cc812e723094fc48309f28527815a8856b539ae"
+    },
+    {
+      "id": "S7",
+      "sha256": "35c943a15553bc2397f44c7a98260eda3772e0cacdc34bba1836e8fb40863926"
+    },
+    {
+      "id": "S8",
+      "sha256": "97608efda8dcf0537f8e311b82dbc9a8847da1f6ba78161ff71fbde87254062f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71080",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Extend geometric deep learning to richer symmetry structures while covering graph and sheaf neural networks.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "No universal approximation theorem was previously known for sheaf neural networks, according to the authors.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces order-equivariant neural networks (OENN), generalizing graph message passing and sheaf neural networks through equivariant bundles over face posets/categories.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Characterizes all linear order-equivariant maps, constructs OENN layers, and states universal approximation theorems for continuous order-equivariant maps.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "generalization",
+        "claim": "Extends the framework to category-equivariant neural networks (CENN) for categorical, potentially non-invertible symmetries with compositional relations.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their universal approximation results are new even for sheaf neural networks, where they report no prior UAT was known.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report universal approximation theorems for continuous order-equivariant maps.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that the framework extends the known graph-neural-network UAT to a setting that also subsumes sheaf neural networks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report illustrating the framework on graph and sheaf models.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames symmetry-aware geometric deep learning as a way to improve deep-learning performance and efficiency.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "It proposes OENN to exploit richer order-based symmetries and unify graph message passing with sheaf neural networks.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "It characterizes linear equivariant maps, builds layers, and provides universal approximation theorems, including a reported new result for sheaf networks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "scope_extension",
+        "summary": "It relates the results to graph UATs, illustrates graph and sheaf models, and extends the framework to categorical symmetries through CENN.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a generalized architecture with structural theory and approximation guarantees, then situates it relative to graph and sheaf models.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A transferable research pattern is to make the scope extension explicit while pairing the new model with formal characterization and claim-specific guarantees.",
+        "application": "When proposing a broader symmetry-aware architecture, define the inclusion relation to existing model classes, state the corresponding formal guarantee, and demonstrate representative inherited cases.",
+        "exception": "This framing is unsuitable when the work has no formal theory or when the proposed system does not genuinely subsume the cited model classes."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not state the assumptions, domains, or exact formulations of the approximation theorems.",
+      "The graph and sheaf illustrations lack datasets, baselines, metrics, and quantitative results.",
+      "The abstract does not specify the precise additional capabilities or evaluations of CENN."
+    ]
+  }
+}

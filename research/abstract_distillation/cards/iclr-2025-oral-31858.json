@@ -1,0 +1,212 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31858",
+    "title": "KAN: Kolmogorov–Arnold Networks",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31858"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "be0400dff60b35692e8f9c57f03bbd5d57d1bd57ad47a8ac05107de9dd8fd958",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "8303b01896ff85ca90fec47176638248302bb462afe4f7dd32180fc4e295384f",
+    "extracted_at": "2026-09-12T23:54:48.392223+00:00",
+    "session_id": "01a0980b-37b3-7b13-ac45-b05c054a00ed",
+    "usage": {
+      "input_tokens": 12811,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 941,
+      "reasoning_output_tokens": 152
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "60a7f936fd369624f376d2bfb832be70c7fafc9454b8b8e7888b3098cea56773"
+    },
+    {
+      "id": "S2",
+      "sha256": "9ac0cef4d1adf61f66b10fd4ab8d38258ef8598b942ddc1c09708c3934a53c5d"
+    },
+    {
+      "id": "S3",
+      "sha256": "da9eb23c23a3ced11a3d3cc075af8b62ed76be44a30add113eee662f72ab6015"
+    },
+    {
+      "id": "S4",
+      "sha256": "f521fe2645fc674933d89b0c678b2494db5678a4bfb968fde1878cb289628c4d"
+    },
+    {
+      "id": "S5",
+      "sha256": "c2a0af66af56ecd4504be905fb52be0c8eb93b5208197e87d2bc7220cef40e9e"
+    },
+    {
+      "id": "S6",
+      "sha256": "6b6799fa28f9b111d8e0f3ea2f541f886d3976bbc89e07c322adf2743f882621"
+    },
+    {
+      "id": "S7",
+      "sha256": "de28ed5fbd12a55b51d593a77a8565f63c9a5e9f8075e38fc354aab7d4ce476a"
+    },
+    {
+      "id": "S8",
+      "sha256": "da408405b765db6b173b95f742cf09970e8cd0e82a12b444170653e40397c8b1"
+    },
+    {
+      "id": "S9",
+      "sha256": "7267144c17f16c37cec50bcd24f4476132b4325d925d933ed9f414a0df867bb1"
+    },
+    {
+      "id": "S10",
+      "sha256": "241a2ad86c622a372ca770f26684f082474aa9f01a40fac0cb77eb42c02f1f2b"
+    },
+    {
+      "id": "S11",
+      "sha256": "725c83d9184597b09a822e1a2b1ac57105ac4ce36c3255082cf360cc4fd26a3d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31858",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks whether Kolmogorov-Arnold Networks can serve as alternatives to MLPs for accuracy and interpretability in small-scale AI and Science tasks.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes KANs, replacing MLP linear weights with learnable univariate spline functions on edges.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "theory and empirical finding",
+        "claim": "Reports that KANs possess faster neural scaling laws than MLPs, theoretically and empirically.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "system and scientific-use demonstration",
+        "claim": "Presents KANs as visualizable, human-interactive collaborators for rediscovering mathematical and physical laws through two examples.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors' stated architectural distinction is to place learnable spline-parameterized activation functions on edges and eliminate linear weights, unlike MLPs' fixed node activations.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that KANs outperform MLPs in accuracy and interpretability on small-scale AI and Science tasks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that smaller KANs achieve comparable or better function-fitting accuracy than larger MLPs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report faster neural scaling laws for KANs than MLPs, supported by theoretical and empirical results.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation and proposal",
+        "summary": "The paper introduces KANs as MLP alternatives, inspired by the Kolmogorov-Arnold representation theorem.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "architectural distinction",
+        "summary": "KANs move learnable activation functions from nodes to edges and replace every linear weight with a spline-parameterized univariate function.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "reported performance",
+        "summary": "The authors report improved accuracy, including smaller KANs matching or exceeding larger MLPs in function fitting, plus faster scaling laws.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "interpretability and application",
+        "summary": "The paper describes visualization and human interaction, then gives mathematics and physics examples of law rediscovery.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "qualification and outlook",
+        "summary": "Despite slow training, the authors present KANs as promising and call for more efficient training research.",
+        "source_ids": [
+          "S9",
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs architectural changes with separate claims about accuracy, scaling, interpretability, and scientific use.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "This makes a broad method proposal easier to assess by linking each design choice to distinct outcome categories.",
+        "application": "For a multifunctional method, organize the abstract around explicitly separated capability claims and attach each to a concrete reported result or demonstration.",
+        "exception": "This structure may be unsuitable when the work has only one narrowly defined objective or lacks evidence for the additional capability categories."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify datasets, task counts beyond two mathematics/physics examples, metrics, or quantitative accuracy and scaling-law results.",
+      "The reported accuracy and interpretability comparisons lack experimental conditions and baselines beyond MLPs.",
+      "The abstract does not specify how much slower KAN training is or whether the reported benefits offset that cost."
+    ]
+  }
+}

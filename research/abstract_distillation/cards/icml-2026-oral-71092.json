@@ -1,0 +1,206 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71092",
+    "title": "Activation Oracles: Training and Evaluating LLMs as General-Purpose Activation Explainers",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71092"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f3b5c0adc5ce1d8ab7339ecba4f4bfea1d95ce75bc0c8d2df94f1dadd7db7019",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "1602829cbc9c73a32c60bc6ab262d6efbe6d49fce68966dafadf70b2e4b43cc5",
+    "extracted_at": "2026-09-13T00:13:45.642735+00:00",
+    "session_id": "01a0981c-8d44-7110-8c34-c65967679a39",
+    "usage": {
+      "input_tokens": 12812,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 907,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e285a43991a846adc1af9c55cea7a54781b96d223847fba4bc1388470ff784bd"
+    },
+    {
+      "id": "S2",
+      "sha256": "fdbdfbb21ef4bcf790b134090d52d78dcaa4abcf1b2c06c62c27ca1fe90509f3"
+    },
+    {
+      "id": "S3",
+      "sha256": "885850984c6cb48be8942ecdc197bb41fefb65c796f101387c0814e66441948d"
+    },
+    {
+      "id": "S4",
+      "sha256": "2fcb324d83db18967ed93f9c25b84d2f5dd70af322e48e150690295ebc359857"
+    },
+    {
+      "id": "S5",
+      "sha256": "1eaf4601a2bd1ebb4ae8d6e03da1a9b2d1a056842cbe6f1e9c191a07008a9b91"
+    },
+    {
+      "id": "S6",
+      "sha256": "f7490e2971252ab898a170b5ff2a78075f540edc8dfbfb7e8e48c4086b51dd59"
+    },
+    {
+      "id": "S7",
+      "sha256": "9d317ccb084f68101923660cf5d5c98330625142f5a0eb940523fc9ee0fb618d"
+    },
+    {
+      "id": "S8",
+      "sha256": "7079fadaef47f4f27bba174920c13a72db5beabf641db33a5fd5ee35038d9974"
+    },
+    {
+      "id": "S9",
+      "sha256": "f15d14534a9e9139f9981c0e7508312a4658c2d6037fa896c07411e293a256d8"
+    },
+    {
+      "id": "S10",
+      "sha256": "9d050e8994e71ef1967318366f3f064c6dcca9ef923fba61aa999dd4bfc29baf"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71092",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper investigates whether LLMs can serve as general-purpose natural-language explainers of LLM activations.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Prior LatentQA training and evaluation focused on narrow task settings, leaving generalist and far-out-of-distribution capability less examined.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "evaluation framework",
+        "claim": "Evaluates LatentQA-trained Activation Oracles in far-out-of-distribution settings and studies how performance scales with training-data diversity.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that Activation Oracles can recover fine-tuned information absent from input text, despite not being trained on activations from fine-tuned models.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that adding classification and self-supervised context-prediction datasets produces consistent further improvements over narrowly trained models.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work by adopting a generalist perspective on LatentQA-trained activation explainers.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their best Activation Oracles match or exceed white-box baselines on all four evaluated downstream tasks and exceed the best overall baseline on three of four.",
+        "source_ids": [
+          "S7",
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report recovery of fine-tuned biographical knowledge or malign propensities that do not appear in the input text, without training on fine-tuned-model activations.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that even narrowly trained models generalize well, with further consistent gains from additional diverse datasets.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLM activations are difficult to interpret, and existing methods are complex and specialized.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior approach and gap",
+        "summary": "LatentQA simplifies interpretation by letting LLMs answer natural-language questions about activations, but prior work used narrow training and evaluation settings.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "paper scope",
+        "summary": "The paper adopts a generalist perspective and evaluates Activation Oracles under far-out-of-distribution conditions while varying training-data diversity.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "The authors report recovery of hidden fine-tuned information, strong narrow-training generalization, and improvements from diversified training.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      },
+      {
+        "role": "comparison and implication",
+        "summary": "Across four downstream tasks, the best models reportedly match or exceed white-box baselines and beat the best overall baseline on three; the results suggest diversified natural-language-query training builds verbalization capability.",
+        "source_ids": [
+          "S7",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a general capability claim with far-out-of-distribution evaluation, training-diversity scaling, and comparisons across four downstream tasks.",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "A broad capability claim is made more inspectable by varying distribution and training diversity and by anchoring it to multiple task-level comparisons.",
+        "application": "When presenting a general-purpose method, organize evaluation around distribution shift, controlled diversity changes, and a compact set of comparative downstream tasks.",
+        "exception": "This structure may be unsuitable when the method is explicitly designed for one narrowly defined task or when comparable baselines are unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the four downstream tasks, dataset sizes or composition, model architectures, numerical performance, or details of the out-of-distribution settings.",
+      "The reported gains and baseline comparisons lack uncertainty estimates and experimental conditions in the supplied material."
+    ]
+  }
+}

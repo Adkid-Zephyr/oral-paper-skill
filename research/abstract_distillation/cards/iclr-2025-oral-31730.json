@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31730",
+    "title": "Joint Graph Rewiring and Feature Denoising via Spectral Resonance",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31730"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0cc528f55739e9d60dc9645ad7ca018c76aa503aa6450aa075e00bd78e6c35c5",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "0ba4cd8b1108b494c9b37a42953de0bde5dbc28654a9ef14373c210d89fc1dfc",
+    "extracted_at": "2026-09-12T23:49:52.915680+00:00",
+    "session_id": "01a09806-bb4f-7d30-8527-6531438691c3",
+    "usage": {
+      "input_tokens": 12610,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 780,
+      "reasoning_output_tokens": 126
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bb98c298ff3fc05a94d200311cb2d17a8dea99628e244b5995f6e07c420ca077"
+    },
+    {
+      "id": "S2",
+      "sha256": "49ff019847345000cd0e7fab741717bdbe92b81fc61d5096a4fafb39e35e0a1c"
+    },
+    {
+      "id": "S3",
+      "sha256": "aed0d2e5acc990ee809cb9fc7bd35d5799d30e164ad6eb40338c31ed6e5fda0d"
+    },
+    {
+      "id": "S4",
+      "sha256": "6ed1364ffb98055bfd2e29f13e5b66ff7d48b88e0fe8d052ebada3ff76af5613"
+    },
+    {
+      "id": "S5",
+      "sha256": "74d33cb6809e75a3df1aac8590ec3414fc1c60c1b45660e151f27a01992bbf8b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31730",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Graph structure and node features both provide noisy information for node-label prediction; the paper addresses denoising both jointly for downstream node classification.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes JDR, an algorithm that jointly denoises node features and rewires the graph.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "mechanism",
+        "claim": "JDR aligns the leading spectral spaces of graph and feature matrices and approximately solves an associated non-convex optimization problem.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "scope",
+        "claim": "The approach is designed to handle multiple classes and varying homophily or heterophily levels.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present joint feature denoising and graph rewiring through spectral-space alignment as their proposed approach.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical justification for JDR in a stylized setting.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that JDR consistently outperforms existing rewiring methods across a wide range of synthetic and real-world node-classification tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Graph topology and node features can both be noisy sources of label information.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "JDR jointly denoises features and rewires the graph to support downstream GNN node classification.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method_and_scope",
+        "summary": "It aligns leading spectral spaces, approximately addresses a non-convex objective, and targets diverse class and homophily settings.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_support",
+        "summary": "The authors report stylized theoretical justification and broad synthetic and real-world comparisons favoring JDR over existing rewiring methods.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects joint graph-and-feature intervention to spectral-space alignment, states applicability to differing homophily or heterophily levels, and separately reports broad synthetic and real-world comparisons.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact method narrative is stronger when the proposed operation, its mechanistic rationale, and its intended variation in data conditions are explicitly linked.",
+        "application": "When presenting a structure-and-feature method, state the coupled operation, the representation-level mechanism, and the data regimes used to test its scope.",
+        "exception": "This framing may be unsuitable when the method has no meaningful shared representation or when only one information source is available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the stylized theoretical assumptions or the exact guarantee.",
+      "Dataset identities, baseline implementations, metric values, and experimental conditions are not given.",
+      "The reported performance improvement is not quantified, and the abstract does not establish independent validity or reproducibility."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "lessons[0].source_observation.claim",
+      "before": "The abstract connects the joint intervention to a specific mechanism—alignment of graph and feature spectral spaces—and then reports results across differing homophily or heterophily conditions.",
+      "after": "The abstract connects joint graph-and-feature intervention to spectral-space alignment, states applicability to differing homophily or heterophily levels, and separately reports broad synthetic and real-world comparisons.",
+      "review_file": "reviews/flagged-batch-01.json",
+      "review_sha256": "b7ba5492b24b672d551bcb1ba390c5351017aa8b3168c19950ca75f30a878af4",
+      "applied_at": "2026-09-13T00:20:52.603709+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

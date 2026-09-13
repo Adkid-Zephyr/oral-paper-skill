@@ -1,0 +1,304 @@
+{
+  "title": "Oral Paper Skill: Compare, Revise, Reflect",
+  "scope_statement": "This editorial synthesis consolidates 21 supplied batch syntheses covering 883 eligible abstracts from 884 official event records; one workshop/session event was excluded. Source-review resolutions and corrected current cards override earlier snapshots. The completed work is abstract-level knowledge distillation, not full-paper reading or model-weight training. It supports manuscript comparison with relevant Oral examples and focused learning exercises. Scientific claims remain author-reported; the material establishes neither selection causes nor writing effectiveness, acceptance probabilities, or an Oral-level quality guarantee.",
+  "core_practices": [
+    {
+      "id": "P1",
+      "name": "Specify the Research Tension",
+      "name_zh": "写清研究张力",
+      "source_observation": "The analyzed abstracts make research questions concrete through unmet operational requirements or discrepancies between theoretical expectations and reported observations.",
+      "why_it_may_help": "Editorial inference: a specific tension may help readers understand why the study matters and what answering its question would change.",
+      "author_action": "Replace a broad importance or weakness statement with the condition, the unresolved requirement or observation, and its consequence for the research objective. Follow with the question investigated. Label a suspected explanation as a hypothesis.",
+      "use_when": "The draft describes a broad problem but leaves the reason for this particular investigation unclear.",
+      "exception": "An exploratory question, resource introduction, or focused characterization can lead directly. Do not invent a prior-method failure or theoretical contradiction.",
+      "examples": [
+        {
+          "paper_id": "iclr-2025-oral-31728",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "observed_practice": "Full expert annotation requirements and missing workload control motivate EM for incomplete annotations and a workload constraint solved during the E-step."
+        },
+        {
+          "paper_id": "icml-2025-oral-47202",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "observed_practice": "Contrasts memorization suggested by optimal score matching with reported original outputs, then introduces locality and equivariance as an explanatory account with calibrated predictions for convolution-only models."
+        }
+      ],
+      "reflection_question": "Which specific observation or unmet requirement makes my research question worth answering?"
+    },
+    {
+      "id": "P2",
+      "name": "State the Contribution Delta",
+      "name_zh": "明确贡献增量",
+      "source_observation": "Abstracts identify contributions through changed outputs, representations, assumptions, or operations, making the claimed difference more specific than a novelty label.",
+      "why_it_may_help": "Editorial inference: naming the change may let readers assess its relevance without first accepting a priority claim.",
+      "author_action": "Replace 'a novel framework' with the previous object or requirement, the precise change, and the remaining dependencies. Locate the change in the computation or analysis. For several contributions, explain their relationship without claiming independently established component effects.",
+      "use_when": "The draft names modules or claims novelty without making the difference from relevant work identifiable.",
+      "exception": "A discovery or resource need not replace an existing method. Improvements within unchanged assumptions should be described on their actual terms.",
+      "examples": [
+        {
+          "paper_id": "icml-2025-oral-47198",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5"
+          ],
+          "observed_practice": "Extends the stated adaptive-query setting from returning optimization costs to returning search solutions, while identifying the additional information those outputs may reveal about internal randomness."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97963",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "observed_practice": "Generates semantic representations in a self-supervised encoder's representation space and uses them to condition image generation without labels."
+        }
+      ],
+      "reflection_question": "After removing the method name and the word 'novel,' can I still state exactly what changes?"
+    },
+    {
+      "id": "P3",
+      "name": "Match Evidence to the Claim",
+      "name_zh": "让证据对应主张",
+      "source_observation": "Some abstracts distinguish related properties through separate measurements; others define a precise formal object supporting a broader interpretation.",
+      "why_it_may_help": "Editorial inference: explicit claim–evidence links may reveal when a convenient score, proof, or demonstration answers a narrower question than the headline.",
+      "author_action": "For each central claim, identify the measured or proved property and the reported result. Keep proxies, hypotheses, proposals, and findings distinct. Where support is narrower, revise the claim or suggest one focused check. An announced evaluation supplies no result by itself.",
+      "use_when": "The draft uses broad capability language or presents several evidence types as interchangeable support.",
+      "exception": "A descriptive finding can stand without an intervention, and a theorem can stand without experiments. Add evidence only for claims the author intends to make.",
+      "examples": [
+        {
+          "paper_id": "iclr-2026-oral-10006549",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "observed_practice": "Reports attack success separately from attempts, including attempts as high as 92.5%; the authors attribute some failures to capability limitations."
+        },
+        {
+          "paper_id": "neurips-2025-oral-118143",
+          "source_ids": [
+            "S5"
+          ],
+          "observed_practice": "Describes a polynomial-time check of whether all multi-head linear-attention networks best-fitting a given dataset perform an identical computation. The dataset determines the solution set; identical computation is not restricted to observed inputs."
+        }
+      ],
+      "reflection_question": "What exact property supports each headline claim, and where am I relying on a proxy or an unreported outcome?"
+    },
+    {
+      "id": "P4",
+      "name": "Choose a Meaningful Comparison",
+      "name_zh": "选择有解释力的比较",
+      "source_observation": "Comparison-focused abstracts expose task exposure, shared model components, or resource budgets that affect what a reported advantage means.",
+      "why_it_may_help": "Editorial inference: identifying the comparison's purpose and conditions may make results useful for a research or deployment decision.",
+      "author_action": "State what the comparison should decide, select the relevant comparator, and identify what stays fixed and what changes. For efficiency, pair quality with the actual resource unit and accounting boundary, including tuning when relevant. Distinguish component attribution from comparison of complete systems.",
+      "use_when": "A ranking could reflect different training exposure, inputs, implementations, or budgets rather than the difference under discussion.",
+      "exception": "Matching can change the research question. Comparing systems as delivered may be appropriate; controlling one factor does not establish that all budgets or conditions match.",
+      "examples": [
+        {
+          "paper_id": "iclr-2025-oral-31791",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "observed_practice": "Proposes fine-tuning compared models on the same task-relevant data before evaluation and reports that instances of emergent behavior disappear gradually with training on the test task."
+        },
+        {
+          "paper_id": "icml-2026-oral-71032",
+          "source_ids": [
+            "S4"
+          ],
+          "observed_practice": "Reports a Kimi-Dev comparison using the same base model and agentic scaffold under two post-training settings, while explicitly reporting a different mid-training budget of 73.1B tokens."
+        }
+      ],
+      "reflection_question": "Which decision does my comparison resolve, and which differing condition could change its interpretation?"
+    },
+    {
+      "id": "P5",
+      "name": "Keep Conditions Beside Conclusions",
+      "name_zh": "结论紧随适用条件",
+      "source_observation": "Theory abstracts distinguish removed restrictions, additional recovery conditions, error metrics, and the particular regimes supporting optimality claims.",
+      "why_it_may_help": "Editorial inference: adjacent conditions may prevent a scoped result from becoming an unrestricted headline during compression.",
+      "author_action": "Rewrite the result as: for this object, under these consequential conditions, this quantity has this guarantee relative to this comparison class. Separate extensions with different conditions. For empirical work, use tested settings and observed outcomes instead of guarantee language.",
+      "use_when": "A theorem, transfer claim, scaling statement, or scope extension changes meaning when its regime or quantifier is omitted.",
+      "exception": "Do not invent assumptions, a converse, or multiple regimes. Qualitative results need not become numerical rates, and missing abstract details need not imply missing full-paper justification.",
+      "examples": [
+        {
+          "paper_id": "icml-2026-oral-71052",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "observed_practice": "Allows a compact basic semi-algebraic parameter set without assuming finiteness, then separates asymptotic convergence from finite convergence and optimal mixing-measure recovery under a rank condition."
+        },
+        {
+          "paper_id": "neurips-2024-oral-97962",
+          "source_ids": [
+            "S1"
+          ],
+          "observed_practice": "Reports p-Wasserstein finite-sample bounds for distributional TD in tabular discounted MDPs, while restricting minimax optimality up to logarithmic factors to p=1."
+        }
+      ],
+      "reflection_question": "Which condition or quantifier would make my conclusion materially stronger if a reader missed it?"
+    },
+    {
+      "id": "P6",
+      "name": "Explain What the Resource Enables",
+      "name_zh": "说明资源支持的研究",
+      "source_observation": "Resource contributions specify research activities, contents, or interfaces; integrated papers also distinguish infrastructure from an accompanying training method.",
+      "why_it_may_help": "Editorial inference: connecting resource design to enabled work may make its contribution assessable beyond collection size or an accompanying model's score.",
+      "author_action": "Describe the resource unit, attached information or interface, construction and access conditions, and the research activity it supports. Separate intended uses from demonstrated uses. Identify each artifact's reported release status independently, preserving prospective wording.",
+      "use_when": "A dataset, benchmark, environment, implementation, or documentation resource carries part or all of the contribution.",
+      "exception": "A narrow or exploratory resource need not include a leaderboard, new model, or demonstrated downstream gain. An ordinary code-release sentence alone need not become an independent resource contribution.",
+      "examples": [
+        {
+          "paper_id": "icml-2025-oral-47182",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "observed_practice": "Organizes nine algebraic-combinatorics datasets around open-ended research questions and example collections for conjecture generation; the abstract supplies no measured model-performance outcome."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10008786",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S7",
+            "S8"
+          ],
+          "observed_practice": "Describes AgentGym-RL's modular training framework across environments and separately introduces ScalingInter-RL's staged expansion from short to longer interaction horizons."
+        }
+      ],
+      "reflection_question": "What can another researcher investigate, construct, or compare with this resource, and which feature makes that possible?"
+    },
+    {
+      "id": "P7",
+      "name": "Extract a Bounded Lesson",
+      "name_zh": "提炼有边界的认识",
+      "source_observation": "Explanatory and position abstracts develop lessons through distinctions that matter: an interaction changes with training stage, or a cross-domain recommendation depends on both similarities and differences.",
+      "why_it_may_help": "Editorial inference: a bounded implication may give readers something to reconsider or investigate beyond remembering a method name or favorable score.",
+      "author_action": "Replace a generic closing with the specific distinction learned and its implication in the studied setting. Separate the observation from its explanation and any proposed action. Identify a condition or domain difference that would change the lesson.",
+      "use_when": "Results or arguments support a useful change in understanding, interpretation, or a proposed choice.",
+      "exception": "A descriptive finding need not supply a mechanism or prescription. A single interesting case does not establish a universal design rule.",
+      "examples": [
+        {
+          "paper_id": "icml-2025-oral-47206",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S9",
+            "S10"
+          ],
+          "observed_practice": "Reports that CIWL helps ICL emerge but later competes with and replaces it in the studied setup; a mathematical model reportedly guides identification of a persistent-ICL setup."
+        },
+        {
+          "paper_id": "icml-2025-oral-40120",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "observed_practice": "Compares generative-AI and social-media affordances, preserving similarities and differences before offering four regulatory recommendations; these are proposals, not demonstrated regulatory outcomes."
+        }
+      ],
+      "reflection_question": "What should a reader understand or reconsider after this work, and what would make that lesson fail to transfer?"
+    }
+  ],
+  "archetype_differences": [
+    {
+      "archetype": "Method",
+      "priority": "Identify the changed operation, its intended role, and evidence for the claimed capability or explanation.",
+      "avoid_forcing": "A theorem, bespoke benchmark, or independently beneficial role for every coupled component."
+    },
+    {
+      "archetype": "Theory",
+      "priority": "Specify mathematical objects, assumptions, quantifiers, guarantees, and the exact relationship to prior results.",
+      "avoid_forcing": "Empirical wins, matching bounds where none are established, or an operational application for every theorem."
+    },
+    {
+      "archetype": "Empirical finding",
+      "priority": "Make the observation, protocol, relevant conditions, uncertainty, and explanatory status clear.",
+      "avoid_forcing": "A new method, universal scaling law, or causal explanation for a descriptive result."
+    },
+    {
+      "archetype": "System",
+      "priority": "Explain interfaces and component relationships; connect workload-specific outcomes to measured resource costs.",
+      "avoid_forcing": "Treating local speedups as total savings or requiring every component to be novel."
+    },
+    {
+      "archetype": "Resource",
+      "priority": "Explain contents, construction, coverage, access boundaries, and enabled research activities.",
+      "avoid_forcing": "A superior accompanying model, fixed-answer scoring for exploratory work, or inferred current availability."
+    },
+    {
+      "archetype": "Position",
+      "priority": "Separate the thesis, value premises, supporting arguments or evidence, transfer limits, and any warranted proposed action.",
+      "avoid_forcing": "A benchmark victory or presentation of an agenda's intended benefits as achieved outcomes."
+    }
+  ],
+  "framework_decision": {
+    "keep_from_ORAL": "Keep the author's motivation to learn deliberately from exemplary Orals. ORAL can remain an optional mnemonic if its existing prompts help author judgment.",
+    "change_or_demote": "Demote ORAL from an assumed answer to an initial authored heuristic. Organize the Skill around seven selectable practices, contribution-specific evidence, and two services: manuscript comparison and focused learning. Require neither a fixed sequence nor a single contribution, and produce no Oral-readiness score.",
+    "reason": "The material supports different contribution structures and conditional editorial moves. It contains no comparison establishing ORAL's effectiveness or explaining Oral selection. The evidence should determine which questions are useful for each manuscript."
+  },
+  "discarded_generalizations": [
+    {
+      "claim": "These practices explain Oral selection or promise Oral-level papers and acceptance.",
+      "why_discarded": "Selected abstracts provide neither selection-process evidence nor measured effects of adopting these practices."
+    },
+    {
+      "claim": "Every paper needs one new method, a prior-work failure, theory, experiments, and a numerical victory.",
+      "why_discarded": "Resources, characterizations, empirical discoveries, positions, and several coherent contributions have different evidential needs."
+    },
+    {
+      "claim": "A component's intended role and an aggregate gain prove its causal effect.",
+      "why_discarded": "Design rationale, explanatory interpretation, and isolated intervention evidence are distinct."
+    },
+    {
+      "claim": "A favorable proxy establishes the whole capability or efficiency claim.",
+      "why_discarded": "Attempts differ from success; parameter or token counts differ from total cost; measured moments differ from distributional equality."
+    },
+    {
+      "claim": "An unknown fact or missing abstract detail invalidates the research idea.",
+      "why_discarded": "Absence from an abstract does not establish absence from the work. Early uncertainty can motivate a bounded question or feasible next check."
+    }
+  ],
+  "suggested_skill_workflow": [
+    "Identify comparison or learning mode, the research question, contribution types, stage, and relevant constraints. Ask only for missing information that materially changes the advice.",
+    "For manuscript comparison, locate the draft's central claims and existing support. Select a small relevant set of exemplary papers by problem, contribution, evidence needs, and constraints; explain why each comparison is useful.",
+    "Apply only relevant practices. Return at most three prioritized improvements by default, each with a draft location or short quotation, a cited example, a concrete rewrite or feasible next check, its rationale, and its applicability limit. Distinguish unclear exposition from evidence not yet supplied.",
+    "For learning mode, teach one practice with one small sourced example and an explicitly labeled illustrative rewrite. Ask the author to revise one sentence or comparison and answer one focused reflection question; discuss the answer without expanding into another literature survey.",
+    "Preserve the author's choices and several coherent contributions. Turn consequential unknowns into questions or manageable next steps; do not make the Skill a gate for abandoning early research.",
+    "Before publication, directly check selected examples against original abstracts. Consult full text when a recommendation depends on omitted details. Preserve source qualifiers and distinguish original-author practice from the Skill's proposed application."
+  ],
+  "readme_takeaways_zh": [
+    "保留向 Oral 学习的动力，把它转化为与相关论文的具体比较和可尝试的修改。",
+    "默认最多给三项优先改进：定位原稿、说明示例依据，并提供具体改写或下一步验证。",
+    "方法、理论、经验发现、系统、资源和立场论文需要不同证据；多项连贯贡献可以并存。",
+    "学习模式一次练一种做法：看一个小例子、修改一处稿件、反思适用条件。早期未知可以成为研究问题。"
+  ],
+  "unresolved_limits": [
+    "The supplied AI review records report 86 field corrections across 65 cards with no unhandled findings or correction-application errors. Review groups overlap, targeted checks are not necessarily full-card audits, and no corpus-wide accuracy or scientific-validity estimate follows.",
+    "The xhigh synthesis call did not itself recheck original abstracts. A subsequent Astra medium check covered all 14 selected publication examples (final_examples_review.json); one model-class qualifier was restored in this edited artifact. This does not establish proof correctness, experimental rigor, true novelty, figure design, or live artifact availability.",
+    "Some source assumptions, percentage conventions, cost boundaries, and inconsistent or ambiguous wording remain unresolved. They must not be reconstructed from intuition. No measured author-learning or manuscript-improvement benefit has been established."
+  ],
+  "case_selection_notes": "The 14 examples all come from supplied current reviewed cards and collectively cover six conference cycles, methods, theory, findings, systems, resources, and a position paper. Selection favors clear, teachable moves and consequential qualifications, including solution-set computation, instances of emergence, retained training differences, conditional recovery, and restricted optimality. The two guarantee examples are intentionally theoretical. This is a purposeful teaching selection, not evidence of prevalence or representativeness; the examples support bounded moves, not every possible application of a practice.",
+  "editorial_revisions": [
+    {"practice_id":"P3","paper_id":"neurips-2025-oral-118143","field":"observed_practice","before":"Describes a polynomial-time check of whether all networks best-fitting a given dataset perform an identical computation. The dataset determines the solution set; identical computation is not restricted to observed inputs.","after":"Describes a polynomial-time check of whether all multi-head linear-attention networks best-fitting a given dataset perform an identical computation. The dataset determines the solution set; identical computation is not restricted to observed inputs.","review":"final_examples_review.json","reason":"Restore the model-class restriction verified directly in abstract unit S5."},
+    {"field":"unresolved_limits[1]","reason":"Refresh the stage status after the subsequent 14-example original-abstract check; scientific-validity limits remain unchanged. The as-generated text is preserved in the local response log."}
+  ]
+}

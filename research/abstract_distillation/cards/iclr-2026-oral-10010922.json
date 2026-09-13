@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010922",
+    "title": "TRACE: Your Diffusion Model is Secretly an Instance Edge Detector",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010922"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ac72a88d985ddfc40ae93f3c68beafbfd93818796fcfe769bdca70a3dd3e752d",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "d79897fbb159d8fd953fb24d62d0863035423f5f2d1fb26789a91bd37c3bc1f2",
+    "extracted_at": "2026-09-13T00:05:10.997253+00:00",
+    "session_id": "01a09814-c28d-7921-a71c-4e1afb67f177",
+    "usage": {
+      "input_tokens": 12742,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 793,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e15bca301a04430cacf331561a1c9f41815cb63049926a1fc15db7d577ab39c3"
+    },
+    {
+      "id": "S2",
+      "sha256": "13af3c8adf1607f73f23489b1e84123f64808a769b6e86af63c89728d0f81ee9"
+    },
+    {
+      "id": "S3",
+      "sha256": "22f52beb14cda55a5af41bc68b675aeb2a2583fa570a2cb8e6a4383488fc1e2e"
+    },
+    {
+      "id": "S4",
+      "sha256": "7f54f71aa2e787e4141dc6876105f4d313d3799dc21e452a963b63ed4c0e26db"
+    },
+    {
+      "id": "S5",
+      "sha256": "4b2fb3596b6ae71929140df13dfc481d0bbb8a71348caaa428649b63a106d68f"
+    },
+    {
+      "id": "S6",
+      "sha256": "beef3a0c92e6c750023042a1b5fbda41053a36edc2e2e7708a387c73e0247c91"
+    },
+    {
+      "id": "S7",
+      "sha256": "48f7f6e87ae6e5d765871650e70995af5f589f647d2529e83e22fbc64ffc077c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010922",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reduce the cost and scalability burden of obtaining high-quality instance and panoptic segmentation boundaries without dense instance-level annotations.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing unsupervised and weakly supervised methods remain limited by semantic-backbone constraints and human bias, often yielding merged or fragmented outputs.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "TRACE locates an Instance Emergence Point in diffusion self-attention maps, extracts boundaries with Attention Boundary Divergence, and distills them into a lightweight one-step edge decoder.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The design removes per-image diffusion inversion for faster boundary decoding.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "TRACE uses diffusion-derived cues for unsupervised instance segmentation and tag-supervised panoptic segmentation without instance-level labels.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present text-to-image diffusion models as latent instance-edge annotators and propose decoding their boundary cues through TRACE.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report 81× faster inference, with sharper and more connected boundaries, after removing per-image diffusion inversion.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "On COCO, the authors report a +5.1 AP improvement for unsupervised instance segmentation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "For tag-supervised panoptic segmentation, the authors report +1.7 PQ over point-supervised baselines without instance-level labels.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Dense instance annotations are costly, inconsistent, and difficult to scale.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Unsupervised and weakly supervised alternatives can produce merged or fragmented predictions under backbone and bias constraints.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "TRACE treats diffusion self-attention as a source of emerging instance boundaries, extracts them, and decodes them in one step.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report substantially faster inference and gains on COCO instance and panoptic segmentation benchmarks without instance-level labels.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a specific internal signal—boundary emergence in self-attention—to a targeted decoder and reports both efficiency and task metrics.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact paper narrative can align an interpretable intermediate cue with a concrete computational design and separately quantified outcomes.",
+        "application": "When proposing a repurposing method, define the detected signal, the extraction rule, and the minimal downstream module before presenting task-level gains.",
+        "exception": "This framing is less suitable when the intermediate signal cannot be operationally identified or independently measured."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify inference hardware, baseline configurations, absolute AP/PQ values, or statistical variability.",
+      "The conditions behind claims of sharper and more connected boundaries are not detailed.",
+      "The abstract does not establish whether the reported gains generalize beyond COCO or the stated supervision settings."
+    ]
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008506",
+    "title": "How Reliable is Language Model Micro-Benchmarking?",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008506"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "26f8b0d7e19718914d4f9aed70d445f810a44d92f2296319b284991e3749a97d",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "b6828bd75848e8802f636aa4b6b95099c702884e65b45208d676d9861dd0fa1a",
+    "extracted_at": "2026-09-13T00:01:17.808025+00:00",
+    "session_id": "01a09811-2da4-76e2-adfe-9fb26952e8a3",
+    "usage": {
+      "input_tokens": 12821,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 880,
+      "reasoning_output_tokens": 132
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fb88891a8ea3e62e6c2c781d50c2062df2202a9af3693f29a7d26a9778fb8eb2"
+    },
+    {
+      "id": "S2",
+      "sha256": "4c43f8d478e19470a118d5ade9709ef292cfd8a2e24b63c18b66437c048eca74"
+    },
+    {
+      "id": "S3",
+      "sha256": "4120b590729482adcb15593241b6e7d241bd82da8832aaf70c9b4d3abb07a026"
+    },
+    {
+      "id": "S4",
+      "sha256": "6cb500b2d599a6d2a34beb496d056718e861ec8ed7611ab702256bccb953fd19"
+    },
+    {
+      "id": "S5",
+      "sha256": "0cfefec1d233d1ca8509893b0a8c868a6533b224744648beced57fde5ee0a105"
+    },
+    {
+      "id": "S6",
+      "sha256": "ed162b6d9b3b5bdbd5bfb82cb536f6aa55c51b542b3e3acff6c1493148e695e5"
+    },
+    {
+      "id": "S7",
+      "sha256": "f9c935f59e01317ba7917145cbe196c000d2525604150ed4182fb98c84fac891"
+    },
+    {
+      "id": "S8",
+      "sha256": "803da48d7a329bb5363f9914b11c6d3b224627ab48b066465833a66dde1b1f80"
+    },
+    {
+      "id": "S9",
+      "sha256": "d22a95d6b5dc9243b3a3d7439aafa14d38ca997b47c38f6108c29af9e1597535"
+    },
+    {
+      "id": "S10",
+      "sha256": "ee82e9175115960a17f052eb26230b691ae38ce70ded4d1bfcc7950aedded5d2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008506",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks whether micro-benchmarks can rank models as consistently as full benchmarks, and whether they outperform random subsets.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The authors report that micro-benchmarks are unreliable in many scenarios, challenging prior suggestions that as few as 10 examples may suffice.",
+        "source_ids": [
+          "S4",
+          "S7"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "meta-evaluation measure",
+        "claim": "Introduces a measure relating micro-benchmark ranking reliability to model performance differences on the full benchmark.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "analysis framework",
+        "claim": "Uses the measure to identify which model pairs can be ranked correctly and analyze the trade-off between benchmark size and reliability.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "guidance",
+        "claim": "Provides actionable guidance for navigating evaluation efficiency versus reliability.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that they introduce a meta-evaluation measure for micro-benchmarking.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that no micro-benchmarking method can consistently rank model pairs separated by 3.5 accuracy points on MMLU-Pro or 4 points on BIG-bench Hard.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "They report that consistently ranking relatively similar models often requires up to 250 examples, after which random sampling is competitive with existing methods.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "For 8B instruction-tuned models on MMLU-Pro with 25-example micro-benchmarks, more than half of pairwise comparisons are reported as unlikely to be preserved.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Micro-benchmarking is presented as a way to reduce the time and cost of language-model development by evaluating a small subset of existing benchmarks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "research questions",
+        "summary": "The paper examines consistency against full benchmarks and performance relative to random data-point selection.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It introduces a meta-evaluation measure that links ranking ability to full-benchmark performance differences and supports pair-specific analysis.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "The authors report poor reliability at small sizes, with substantially larger samples often needed and random sampling becoming competitive.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The work offers guidance for balancing evaluation efficiency and reliability.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract evaluates ranking reliability as a function of model performance difference and benchmark size, rather than treating reliability as a single overall property.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "This framing makes evaluation claims more operational and exposes where a method fails.",
+        "application": "Report reliability thresholds separately by model-gap size and sample budget when presenting a reduced evaluation method.",
+        "exception": "This may be unsuitable when the intended use is calibration, generation quality, or another objective not reducible to pairwise ranking."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the datasets, sampling procedures, number of model pairs, or statistical criterion underlying “consistently” and “likely.”",
+      "It does not identify which micro-benchmarking methods were compared or provide aggregate performance figures."
+    ]
+  }
+}

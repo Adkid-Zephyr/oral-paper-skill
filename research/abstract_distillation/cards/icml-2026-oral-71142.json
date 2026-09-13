@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71142",
+    "title": "WeDLM: Reconciling Diffusion Language Models with Standard Causal Attention for Fast Inference",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71142"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f56838d7ed8b5c38a1257cd6c091b972e7dff5240f0ecce26c3744bd3f960761",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "9e42cbfcac8c097ac58825e5a1f01a929bd768f01f4110eae8c5cd1f554a8538",
+    "extracted_at": "2026-09-13T00:15:46.093041+00:00",
+    "session_id": "01a0981e-6e95-7980-9b4f-9d2cf6d7585a",
+    "usage": {
+      "input_tokens": 12749,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 819,
+      "reasoning_output_tokens": 69
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "25dc822227d36d4a9b6753fcd28ebf152cc49947c48dea99bf58abbccc89f3f3"
+    },
+    {
+      "id": "S2",
+      "sha256": "f0e644e5021b75c1b5124cc16ea436742cc51f345204ebf59a1f2e3850623acf"
+    },
+    {
+      "id": "S3",
+      "sha256": "6c29ff06d6c61d8810f68f207d05d8338592d63b38474cc6ecdeeff33849fc65"
+    },
+    {
+      "id": "S4",
+      "sha256": "6bfec22acf94af66a8262f38b361322ab71d276019fa9296b3e9b645b9abae71"
+    },
+    {
+      "id": "S5",
+      "sha256": "ba2f80e0de49b4b61e2d892897c18761f8d9ba91debfe113e8ce69c7c7fc73dd"
+    },
+    {
+      "id": "S6",
+      "sha256": "bee68f2cf2b42acb52fa786b2c2ac8b8d4d26ff5f61c43ec5ea7ac2370743d24"
+    },
+    {
+      "id": "S7",
+      "sha256": "10fba1eb57cfe5b0aa127c87132c8778332b1ac4e6a208fccc92f10cff105794"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71142",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses how to achieve parallel language-model generation without sacrificing compatibility with standard causal-attention inference infrastructure.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify a practical gap: diffusion language models’ parallel decoding often does not yield speed gains over optimized autoregressive engines because bidirectional attention disrupts prefix KV caching.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The authors propose WeDLM, a diffusion decoding framework using standard causal attention and Topological Reordering so masked positions can condition on observed tokens while remaining prefix-cache friendly.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The authors introduce streaming decoding that commits confident tokens into a growing left-to-right prefix, avoiding the stop-and-wait behavior described for block diffusion methods.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish WeDLM by combining diffusion decoding with entirely standard causal attention, physical-prefix reordering, and streaming prefix growth.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that WeDLM preserves the quality of strong autoregressive backbones while approaching 3× speedup on challenging reasoning benchmarks and up to 10× in low-entropy generation regimes.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report comparisons against autoregressive baselines served by vLLM under matched deployment settings.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Autoregressive decoding is presented as standard but inherently token-by-token, limiting inference parallelism.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Diffusion models can recover multiple masked tokens per step, yet often fail to outperform optimized autoregressive engines because bidirectional attention breaks prefix KV caching.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "WeDLM applies causal attention with Topological Reordering, moving observed tokens into the physical prefix while preserving logical positions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "decoding procedure",
+        "summary": "A streaming procedure continuously commits confident tokens into a left-to-right prefix.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Experiments are reported to retain autoregressive-backbone quality while producing context-dependent speedups under matched vLLM deployment comparisons.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects its architectural proposal directly to a deployment bottleneck—bidirectional attention preventing standard prefix KV caching—and reports comparisons under matched serving conditions.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "A systems paper’s motivation is more actionable when the method targets a concrete infrastructure constraint and the evaluation names the deployment baseline and matching conditions.",
+        "application": "Frame a proposed inference optimization as a causal chain from the bottleneck, to the mechanism that removes it, to comparisons using the same serving assumptions.",
+        "exception": "This framing is less suitable when the work is purely theoretical or when deployment conditions cannot be controlled or meaningfully matched."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify model names, benchmark sizes, latency measurement details, or whether reported speedups include all serving overheads.",
+      "The meaning and measurement of preserved quality are not detailed, and no uncertainty estimates or statistical variation are reported.",
+      "The abstract does not establish independently verified effectiveness or priority over prior methods."
+    ]
+  }
+}

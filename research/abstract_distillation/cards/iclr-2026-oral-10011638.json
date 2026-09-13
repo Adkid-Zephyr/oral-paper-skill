@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011638",
+    "title": "Fast training of accurate physics-informed neural networks without gradient descent",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011638"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3e49a145b21ebf32af21140e88a327a5cbb177df511d4d9bb6591c01375523e9",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "262548403b25cb0d6305be5e5925aaa9c3ca69387ab8a3ecf7b1b597331234b7",
+    "extracted_at": "2026-09-13T00:06:12.159118+00:00",
+    "session_id": "01a09815-b30d-7902-bcd7-15be12b33fa6",
+    "usage": {
+      "input_tokens": 12707,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 739,
+      "reasoning_output_tokens": 73
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "70fd46a0f42108ac43840c92de344afa8952da277b8e7245820e8f26461973c7"
+    },
+    {
+      "id": "S2",
+      "sha256": "0cf9437fab46653cee325f28d52f4b14a287bf11e15e3fe33503898aaafc54b9"
+    },
+    {
+      "id": "S3",
+      "sha256": "6448a77a0c07c6194fbefa7d52c4e22376518b266e98967af6e8960a6a052607"
+    },
+    {
+      "id": "S4",
+      "sha256": "89afa5350757af9b2deb63b159ecc63f32b0f21d3162af40eacf2898904cb259"
+    },
+    {
+      "id": "S5",
+      "sha256": "c7797fd49f1bd6a459267f6441b1b4df3438dcd64c5182728f5d43b4b8624c89"
+    },
+    {
+      "id": "S6",
+      "sha256": "8b156640f8630638da7c0836fbceb96e907eb103a6f73f9a8fcff60bea317dc9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011638",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop fast and accurate solvers for time-dependent PDEs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing PINNs are limited by gradient-descent optimization over complex loss landscapes and by treating time non-causally as an additional spatial dimension.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Frozen-PINN, using space-time separation and random features instead of gradient-descent training.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Builds temporal causality into the PDE solver by construction.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports improved training efficiency and accuracy over state-of-the-art PINNs across nine PDE benchmarks.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Frozen-PINN as combining rapid training, high accuracy, and inherent causality in a way they state prior methods did not realize.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report superior training efficiency and accuracy on nine PDE benchmarks, including extreme advection speeds, shocks, and high-dimensional problems, often by several orders of magnitude.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors argue that their approach challenges PINNs' reliance on stochastic gradient-descent methods and specialized hardware.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Time-dependent PDE solving is framed as a central computational-science problem, while PINNs face speed and accuracy barriers.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Frozen-PINN applies space-time separation, random features, and construction-time temporal causality.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "Across nine challenging PDE benchmarks, the authors report gains in efficiency and accuracy over state-of-the-art PINNs.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "positioning",
+        "summary": "The authors present the method as addressing PINN bottlenecks and challenging gradient-descent and hardware dependence.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract presents space-time separation, random features in place of gradient-descent training, and built-in temporal causality in response to optimization and non-causal time-treatment bottlenecks, then reports overall performance across nine PDE benchmarks with varied challenges.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This creates a compact claim-to-mechanism-to-evidence chain.",
+        "application": "Frame a proposed scientific-ML method by mapping each component to a named failure mode and testing it across benchmarks that instantiate those modes.",
+        "exception": "This framing is unsuitable when the abstract lacks benchmark coverage or when the proposed components do not correspond to separable bottlenecks."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify quantitative accuracy or training-time metrics, baseline identities, or the exact size of the reported orders-of-magnitude gains.",
+      "Details of the random-feature method, space-time separation, causal construction, hardware requirements, and benchmark protocols are unstated."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "author_reported_evidence[1].claim",
+      "before": "The authors report that the approach avoids reliance on stochastic gradient-descent methods and specialized hardware.",
+      "after": "The authors argue that their approach challenges PINNs' reliance on stochastic gradient-descent methods and specialized hardware.",
+      "review_file": "reviews/audit-iclr-2026.json",
+      "review_sha256": "9db1d33092aee5a803b7d3ad220b1081bba29d55a6d0042abe64e06eecb72248",
+      "applied_at": "2026-09-13T00:10:20.780350+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "lessons[0].source_observation.claim",
+      "before": "The abstract links each design choice—random features, space-time separation, and built-in temporal causality—to specific stated PINN bottlenecks, then reports evaluation across varied PDE challenges.",
+      "after": "The abstract presents space-time separation, random features in place of gradient-descent training, and built-in temporal causality in response to optimization and non-causal time-treatment bottlenecks, then reports overall performance across nine PDE benchmarks with varied challenges.",
+      "review_file": "reviews/flagged-batch-08.json",
+      "review_sha256": "c15cd19a5467a1c08a4a8b6b897249b802981d9a407ea6f7acf6dfc47b0b97ba",
+      "applied_at": "2026-09-13T00:35:16.275170+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

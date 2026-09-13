@@ -1,0 +1,186 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006563",
+    "title": "MetaEmbed: Scaling Multimodal Retrieval at Test-Time with Flexible Late Interaction",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006563"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "7a53bda707a987cc402c14a874190a4c006ab70cb2feb1ebcdead6cbfef5d8d8",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "542f23684983626117cae566bd9d96352fd8342b8851b1de39955640c4a84f5e",
+    "extracted_at": "2026-09-12T23:39:50.934228+00:00",
+    "session_id": "01a097fd-90f0-7b90-8f8f-6ad5ab984eca",
+    "usage": {
+      "input_tokens": 12762,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 805,
+      "reasoning_output_tokens": 113
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "38789ddc0a9c2a7890991aaf8e62dda313726b0280a93a65860ed60516bc46ab"
+    },
+    {
+      "id": "S2",
+      "sha256": "6540f67cc2971e8c11a75450be3bfea790746f4d243fbc8c429af896d63aa9b6"
+    },
+    {
+      "id": "S3",
+      "sha256": "33e0065fa7ca12ab898225094907fe1a3103d838c3ea9851c9f5ae1ad19b1117"
+    },
+    {
+      "id": "S4",
+      "sha256": "784fadcd0efc2120cbe8c1273d0728a9d8dbed16030053617327afa93e13866b"
+    },
+    {
+      "id": "S5",
+      "sha256": "3ea05e69502f6cf219950551f74c560d008242afa892b490b4e02154cf9e61ff"
+    },
+    {
+      "id": "S6",
+      "sha256": "40a4592340a0e0c249251545fc18d0c95c934acb953ebdbb396370a97b955e2f"
+    },
+    {
+      "id": "S7",
+      "sha256": "7fb3bbd3a422f5434c996a735fbb31fd022bf474aba0db339e0036dbb27e929d"
+    },
+    {
+      "id": "S8",
+      "sha256": "36440594e4d729c17f84a6b721cd37658d828ba010298f4d73ae5eb432ffefe2"
+    },
+    {
+      "id": "S9",
+      "sha256": "0bcc4bcd259301b0a2d4ee3d28cf0f3f207178ecba496df8fa8a6947d824a5f7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006563",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design multimodal retrieval embeddings that retain fine-grained expressiveness while remaining efficient for large-scale multi-vector retrieval.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches either compress queries and candidates into one potentially limiting vector or generate too many vectors for cost-effective retrieval.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "MetaEmbed appends a fixed number of learnable Meta Tokens during training and uses their contextualized final-layer representations as compact multi-vector embeddings at test time.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "training method",
+        "claim": "Matryoshka Multi-Vector Retrieval training organizes information by granularity across the vectors.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "system capability",
+        "claim": "The framework supports test-time selection of the number of indexed and interacting tokens, allowing a quality–efficiency tradeoff.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present MetaEmbed as a new framework that rethinks multimodal embedding construction and interaction at scale.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art retrieval performance on MMEB and ViDoRe.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report robust scaling to models with 32B parameters on those evaluations.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation and gap",
+        "summary": "Multimodal embeddings capture query–candidate relevance, but single-vector and high-vector-count designs expose expressiveness or efficiency limitations.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "MetaEmbed introduces learnable Meta Tokens whose contextualized representations become compact multi-vector embeddings.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "training and scaling mechanism",
+        "summary": "Matryoshka training organizes information by granularity, enabling users to vary token counts at test time to balance quality and efficiency.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report state-of-the-art benchmark retrieval and scaling to 32B-parameter models.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links variable token counts at test time with an explicit retrieval-quality versus efficiency tradeoff, supported by training that organizes information by granularity.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A controllable inference budget can make one retrieval representation adaptable to different deployment constraints.",
+        "application": "When designing scalable retrieval, train representations so prefixes or subsets of components correspond to progressively finer information, then expose that budget as an inference-time control.",
+        "exception": "This is unsuitable when downstream retrieval requires a fixed representation or when partial components do not preserve meaningful granularity."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report metrics, baseline identities, dataset sizes, or the specific conditions underlying the state-of-the-art and robustness claims.",
+      "It does not quantify the quality–efficiency tradeoff across different token counts or explain the training objective in detail.",
+      "The abstract alone does not establish independent validity, reproducibility, or priority of the stated contributions."
+    ]
+  }
+}

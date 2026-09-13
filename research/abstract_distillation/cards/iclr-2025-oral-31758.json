@@ -1,0 +1,196 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31758",
+    "title": "Cheating Automatic LLM Benchmarks: Null Models Achieve High Win Rates",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31758"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7884ce0e68094b4a305e84838364dd4e58a4f37845078290b06019e06e31d7c6",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "8acff3ce2c62a30e6ddd9b2db2b1b2fb312d87011f3ea095281298eb3a69a333",
+    "extracted_at": "2026-09-12T23:50:53.097561+00:00",
+    "session_id": "01a09807-9d38-72e1-8d37-5820cec0ca06",
+    "usage": {
+      "input_tokens": 12810,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 907,
+      "reasoning_output_tokens": 101
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "88c1caeb0e78aca0d4f47fcda3c9491b51b36c462fc2912ea2722c9306f4f33a"
+    },
+    {
+      "id": "S2",
+      "sha256": "dcd768f41246976c91423f1b44f39a76239fdb16f08120d16fd4fd98a979c0c6"
+    },
+    {
+      "id": "S3",
+      "sha256": "fff490d389e6c8edee8385e358d7b16d32a03d36408edea6ee791f6b9abe4d1d"
+    },
+    {
+      "id": "S4",
+      "sha256": "98c633a88c70aed0983702be53840233a238799871fd69c1c16246a95f685fec"
+    },
+    {
+      "id": "S5",
+      "sha256": "389e49c1710e816339c2e69dbad25c87ec712f4fc3fce94d6095fd8d23444888"
+    },
+    {
+      "id": "S6",
+      "sha256": "89423ae389aee3acd86e7a1a98223993d66d40d0131cd06ad8ec50df97256cb2"
+    },
+    {
+      "id": "S7",
+      "sha256": "a1d5869ffdda061f0762ece6ee80c0a2f930ad9acbfec0e0de5d593ce0b00127"
+    },
+    {
+      "id": "S8",
+      "sha256": "74cab863c9d2283c54d7fa1168ae3ef5a3f8b3872c736659e5d8fadb2a1368df"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31758",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess whether automatic LLM benchmarks can be gamed despite mechanisms intended to control output length and style.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract reports that existing controls do not prevent a constant, input-irrelevant null model from attaining top-ranked benchmark results.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "Demonstrates that a constant-response null model can achieve high scores across three automatic LLM benchmarks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "threat analysis",
+        "claim": "Reports transferable cheating outputs under the assumption that benchmark instructions and samples are private.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "recommendation",
+        "claim": "Calls for anti-cheating mechanisms to improve automatic benchmark reliability.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their demonstration by showing that an always-constant, input-irrelevant null model can reach top-ranked win rates on multiple benchmarks.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report an 86.5% LC win rate on AlpacaEval 2.0, an 83.0 score on Arena-Hard-Auto, and a 9.55 score on MT-Bench for the null model.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that crafted cheating outputs transfer when benchmark instructions are assumed private, including 805 AlpacaEval 2.0 samples.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors characterize the experiments as primarily proof-of-concept and warn that LLM-generated cheating responses could be more imperceptible.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Automatic benchmarks are presented as scalable, cost-effective alternatives to human evaluation, while high win rates provide promotional benefits.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "threat",
+        "summary": "The abstract notes that output-length and style manipulation may game win rates despite existing controls.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "demonstration",
+        "summary": "A constant, irrelevant null response is reported to achieve high or top-ranked results on three benchmarks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The reported transferability under private-instruction assumptions motivates anti-cheating mechanisms, with ethical risks noted.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a concrete adversarial baseline—a constant response—with benchmark-specific scores across three evaluation systems.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "A deliberately degenerate baseline can expose whether an evaluation metric rewards superficial response properties rather than task relevance.",
+        "application": "When introducing or auditing a benchmark, add fixed, input-irrelevant response baselines and report their metric scores alongside model results.",
+        "exception": "This diagnostic is unsuitable when the benchmark is explicitly designed only for a narrow capability that such a baseline cannot meaningfully target."
+      },
+      {
+        "source_observation": {
+          "claim": "The authors discuss transferability while assuming benchmark instructions and samples are private.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "Robustness claims should account for attackers who lack direct access to evaluation prompts.",
+        "application": "Evaluate cheating defenses under both public-prompt and private-prompt threat models, stating the access assumptions explicitly.",
+        "exception": "A private-prompt threat model is unsuitable when the deployed evaluation protocol necessarily exposes all prompts."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide benchmark baselines, statistical uncertainty, ranking thresholds, or experimental procedures.",
+      "The meaning and scale of the reported Arena-Hard-Auto and MT-Bench scores are not specified.",
+      "The extent of transferability and the exact construction of cheating outputs are not detailed."
+    ]
+  }
+}

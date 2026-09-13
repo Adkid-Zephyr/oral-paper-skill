@@ -1,0 +1,169 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011067",
+    "title": "How Do Transformers Learn to Associate Tokens: Gradient Leading Terms Bring Mechanistic Interpretability",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011067"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "283dfd61a8ec4fe6dbce0bea567ae6a642bb5bacc319d99d5ccb0f4339419fed",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "427c900c6c60bdefc804e23ddf6ef61ffeab387337956780a07800febdc70dc8",
+    "extracted_at": "2026-09-13T00:05:27.803124+00:00",
+    "session_id": "01a09815-0355-7260-b6ee-16d76ea7787b",
+    "usage": {
+      "input_tokens": 12705,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 693,
+      "reasoning_output_tokens": 95
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "df9374a0abcbd83a6e52b0c57b58e45a568eada62de265cb8c6bb83f7ee3c5c9"
+    },
+    {
+      "id": "S2",
+      "sha256": "9e1b9444259b740001a573cc57687b43b404c381c9ea4caaa90d6df9b1a571fa"
+    },
+    {
+      "id": "S3",
+      "sha256": "0d17727c02898e1c21b90f4ef3d90c007c70154313690b416011b1b294cec667"
+    },
+    {
+      "id": "S4",
+      "sha256": "253db0725203e35e46d8fa850f55b2b63b4b31f7b59848585bef7c655d4545ba"
+    },
+    {
+      "id": "S5",
+      "sha256": "35a83d9fdc607776c54145bb61a7d09ef165846243579aae681a5b6dd2c6d0fb"
+    },
+    {
+      "id": "S6",
+      "sha256": "559ec3a7b032a3039f17cf2d9e0b346c2e819fba691373b800e6597327860cbd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011067",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain how transformer language models learn semantic token associations from natural-language data.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Uses leading-term gradient approximations to derive closed-form early-training transformer weights.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theoretical decomposition",
+        "claim": "Characterizes transformer weight sets as compositions of bigram, token-interchangeability, and context-mapping basis functions tied to corpus statistics.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "interpretability analysis",
+        "claim": "Connects the weight characterization to how transformer components capture semantic associations.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present closed-form early-training weight expressions and a three-basis-function decomposition for interpreting semantic association formation.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments on real-world LLMs closely match their theoretical weight characterizations.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that qualitative analyses use the theorem to illuminate interpretation of learned transformer associations.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Semantic associations support generalization and coherent text beyond memorization.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "analytical approach",
+        "summary": "The work studies association formation through training dynamics and leading-term gradient approximations.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "mechanistic account",
+        "summary": "Weights are expressed through bigram, token-interchangeability, and context mappings, explaining component-level association capture.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported validation",
+        "summary": "Real-world LLM experiments and qualitative analyses are reported as supporting the characterization and its interpretive use.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a mathematical weight characterization with a basis-function decomposition and qualitative interpretation.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A mechanistic claim becomes more actionable when the formal object is mapped to interpretable components and then examined qualitatively.",
+        "application": "For a theory paper, define the analyzed parameters in closed form, decompose them into semantically motivated components, and show how each component relates to the target behavior.",
+        "exception": "This framing may be unsuitable when the target behavior cannot be meaningfully decomposed or when a closed-form approximation is not available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the approximation’s range of validity, training scale, model architectures, datasets, or matching metrics.",
+      "It does not provide quantitative experiment results or details sufficient to assess the reported qualitative analyses."
+    ]
+  }
+}

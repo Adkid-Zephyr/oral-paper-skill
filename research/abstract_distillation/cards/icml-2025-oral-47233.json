@@ -1,0 +1,169 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47233",
+    "title": "Fundamental Bias in Inverting Random Sampling Matrices with Application to Sub-sampled Newton",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47233"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f8947e2774009d6683a515dbeb39327e7e022b68e022ab02ed0e56bcc2ba214f",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "6baa7a6d5919a05db1d427bbdb8b707d21a970381cb8441d4362bfa6ca40ddcf",
+    "extracted_at": "2026-09-13T00:09:44.699990+00:00",
+    "session_id": "01a09818-f0be-77d3-abfc-3d8fc76b6c7b",
+    "usage": {
+      "input_tokens": 12718,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 742,
+      "reasoning_output_tokens": 139
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "60de12a1fd8aef8fc4196206b5c5bd6e889c362ff0496d9dca6e6dc262666a77"
+    },
+    {
+      "id": "S2",
+      "sha256": "4b1a1a28fcd64d5a82c8cdfce1bb57e5ad3ecee0d06170c0bd24a215a012ebff"
+    },
+    {
+      "id": "S3",
+      "sha256": "9948be04330867fc2b365d46a35ced5b91677ea096c2416ae3749dba451c50a9"
+    },
+    {
+      "id": "S4",
+      "sha256": "13c638fbf4c3a3e2b72f412eed48ab910598c22c3b1f206e97c46bf55e873deb"
+    },
+    {
+      "id": "S5",
+      "sha256": "57cba485c9a4e45555a218680da0bfe21a0b7a5ee54063f8f5a03287aa633bb2"
+    },
+    {
+      "id": "S6",
+      "sha256": "0ce8dc8e49e7446944af8f70abe517a78878647639774a70526c376ed387274a"
+    },
+    {
+      "id": "S7",
+      "sha256": "3abd32a4e12b76793b2e914c8eb4de5853a2f807819cc667db252d52183bab00"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47233",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses inversion bias: inverses of unbiased random sketches can nevertheless be biased, complicating their use in machine-learning and optimization pipelines.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A correction for inversion bias in uniform and leverage-based non-uniform random sampling methods.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A correction for inversion bias in structured random projections, including Hadamard-based projections.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Problem-independent local convergence rates for sub-sampled Newton methods derived using these corrections.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their correction framework covers random sampling methods and structured random projections, extending beyond the projection settings described in the abstract.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report establishing problem-independent local convergence rates for sub-sampled Newton methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Random sketching is widely used in machine learning and randomized numerical linear algebra, with analyses often based on Johnson–Lindenstrauss or subspace-embedding techniques.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "Prior work identified inversion bias: an unbiased sketch does not imply an unbiased inverse, creating challenges in several scalable pipelines.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "prior_scope",
+        "summary": "The abstract describes corrections for dense Gaussian and sparse sub-Gaussian random projections, while noting that dense Gaussian projections can be too expensive.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "proposed_results",
+        "summary": "The paper reports corrections for uniform and leverage-based sampling and structured projections, then derives local convergence rates for sub-sampled Newton.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract first isolates inversion bias, then specifies correction coverage by sketch family, and finally connects those corrections to sub-sampled Newton convergence rates.",
+          "source_ids": [
+            "S2",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This links a precise failure mode to a scoped remedy and a downstream theoretical consequence.",
+        "application": "When presenting a methods paper, explicitly map the failure mode, supported method classes, and resulting guarantee in sequence.",
+        "exception": "This framing is unsuitable when the work has no identifiable failure mode or downstream consequence to connect."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no formula for the correction, assumptions, quantitative convergence rates, or comparison baselines.",
+      "It does not specify whether the listed corrections are exact, approximate, or empirically validated."
+    ]
+  }
+}

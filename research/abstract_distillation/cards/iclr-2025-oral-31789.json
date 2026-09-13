@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31789",
+    "title": "Instant Policy: In-Context Imitation Learning via Graph Diffusion",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31789"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "983d5b4bcabca3a21a4170b194166262f46518be1cc23dadb208217e887a7674",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "a71c30071057be305206419433f5770131ac017e09b1762146bd4b50f5354d56",
+    "extracted_at": "2026-09-12T23:52:06.326984+00:00",
+    "session_id": "01a09808-c9af-7860-a416-69379d7ce09d",
+    "usage": {
+      "input_tokens": 12641,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 779,
+      "reasoning_output_tokens": 122
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ff8f00e32d092f2a294c53492abf65626d6b72a4d9c1257ee61dcf5e4fdae895"
+    },
+    {
+      "id": "S2",
+      "sha256": "e1eae86a83e7c0262d0909cb8582784e7402b9f2b7fb88e1a6726734ae9aa9cb"
+    },
+    {
+      "id": "S3",
+      "sha256": "065acd96e41d199bd2a6341b9a565827a7e6206e4027c96a4a5b9924f8e42cf8"
+    },
+    {
+      "id": "S4",
+      "sha256": "9b3f1df45a45242dcbd1d8624cfab4e903a1eed27e1c91ab52fbb13d5f3dfe0f"
+    },
+    {
+      "id": "S5",
+      "sha256": "79464b7cc9de8ff8e9680e836366e779c96fa679b944a327282c5d50b3574c04"
+    },
+    {
+      "id": "S6",
+      "sha256": "6f34d2276d67c361297040113c8c5c1fd7c40ac71d07d03287e4629b8f75f137"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31789",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses in-context imitation learning for robotics, where a robot learns new tasks from demonstrations.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Instant Policy models in-context imitation learning as graph generation with a learned diffusion process over demonstrations, observations, and actions.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "training approach",
+        "claim": "It proposes training with pseudo-demonstrations: arbitrary simulated trajectories intended to provide a virtually infinite training pool.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      {
+        "type": "transfer capability",
+        "claim": "It presents the model as a foundation for cross-embodiment and zero-shot transfer to language-defined tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Instant Policy through two components: graph-diffusion modeling for structured reasoning and pseudo-demonstration training from simulation.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments in simulation and reality showing rapid learning of various everyday robot tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report cross-embodiment and zero-shot transfer to language-defined tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "In-context learning motivates in-context imitation learning as an opportunity for robotics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "Instant Policy is introduced to learn new tasks from one or two demonstrations using two components.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "The first component uses graph representations and learned diffusion to structure reasoning over demonstrations, observations, and actions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "training",
+        "summary": "The second component trains on arbitrary simulated trajectories as pseudo-demonstrations.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_scope",
+        "summary": "The authors report rapid learning in simulation and reality, plus cross-embodiment and language-defined zero-shot transfer.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a structured representation for demonstrations with a training-data strategy based on simulated pseudo-demonstrations.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A learning system can be framed by jointly specifying the representation that organizes context and how scalable context examples are generated.",
+        "application": "When presenting a demonstration-driven method, state both the inductive structure used to interpret demonstrations and a concrete source of scalable training trajectories.",
+        "exception": "This framing may be unsuitable when simulated trajectories do not reflect the target environment or when the task lacks useful relational structure."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, baselines, task inventory, or details about the one- or two-demonstration setting.",
+      "It does not specify how pseudo-demonstrations are generated, how closely simulation matches reality, or what cross-embodiment and zero-shot transfer conditions were tested."
+    ]
+  }
+}

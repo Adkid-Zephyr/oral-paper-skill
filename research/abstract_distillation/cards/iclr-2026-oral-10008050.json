@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008050",
+    "title": "P-GenRM: Personalized Generative Reward Model with Test-time User-based Scaling",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008050"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "bfbbdcef3e8ceee6e18361c6b33a0399ae004e63a99a2f6b93c23001d848423c",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "e0a824bbb1deaf79660586f0c7ab0bd46d77d58921598ca9dae957bcadcb2b14",
+    "extracted_at": "2026-09-13T00:00:38.132783+00:00",
+    "session_id": "01a09810-9721-7c20-8795-7d3688d1ee94",
+    "usage": {
+      "input_tokens": 12795,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 774,
+      "reasoning_output_tokens": 71
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c85fba7118907089af00f789a608e692df351ac9de44fd95772138200005d68a"
+    },
+    {
+      "id": "S2",
+      "sha256": "8e65b72e47c2d9c43a13acedbb6bac6c9c600d614da885950ad286d2becba463"
+    },
+    {
+      "id": "S3",
+      "sha256": "3ff847025996e8d605042d84044563b2841d6030b5be6e831ae76534a98edf70"
+    },
+    {
+      "id": "S4",
+      "sha256": "cdafbcc592c06fa579257e238c73d56d47cacc49d487e14e37aadd67c94a27f4"
+    },
+    {
+      "id": "S5",
+      "sha256": "a28aca8c474e16f4a63e0d9af296d124ab5c0206732bb9c764938702d62d7bea"
+    },
+    {
+      "id": "S6",
+      "sha256": "2e92a467da68d348c220db7c10da56d6a29306bcc59221488cb426764ffc50ba"
+    },
+    {
+      "id": "S7",
+      "sha256": "670ba1fa43038ec925bcdc54544dfd0fd99e9ac93741d89339ec8e781fce8ba5"
+    },
+    {
+      "id": "S8",
+      "sha256": "3311ba67c4ef1565027418aa9cbd5d0ffcef327b0bdbf9f77dc1ef6955f25657"
+    },
+    {
+      "id": "S9",
+      "sha256": "788612862302fc5c3c0ce3c5ced07e832ffff5f44e74f08d2935ffa5e815e812"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008050",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Personalized alignment needs accurate user-specific reward signals for open-ended scenarios.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing personalized reward models oversimplify scenario-specific preferences and generalize poorly to new users with limited feedback.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "P-GenRM converts preference signals into structured evaluation chains that derive adaptive personas and scoring rubrics across scenarios.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It combines individual-level adaptive scaling and aggregation with prototype-level transfer from similar users.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It introduces test-time user-based scaling for personalized generative reward modeling.",
+        "source_ids": [
+          "S4",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe P-GenRM as the first personalized generative reward model with test-time user-based scaling.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art results on widely used personalized reward-model benchmarks, with an average improvement of approximately 2.31%.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report strong generalization on an out-of-distribution dataset.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that test-time user-based scaling adds approximately a 3% boost.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Personalized alignment adapts language-model responses to individual preferences, but open-ended settings require accurate user-specific rewards.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing reward models use overly small fixed principle sets and struggle with new users who provide little feedback.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "P-GenRM builds structured evaluation chains, adaptive personas, scoring rubrics, User Prototypes, and dual-granularity scaling.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The authors report benchmark gains, out-of-distribution generalization, and an additional boost from test-time scaling.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links distinct failure modes to distinct design components: adaptive scenario rubrics address preference diversity, while prototype-level transfer addresses limited-feedback generalization.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A compact abstract can make a method rationale legible by mapping each identified limitation to a corresponding mechanism.",
+        "application": "When presenting a multi-component method, explicitly state which component targets each named limitation and preserve the mechanism-to-claim mapping.",
+        "exception": "This framing is less suitable when components interact inseparably or when the abstract lacks evidence isolating their roles."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the benchmarks, baseline methods, dataset sizes, evaluation protocol, or statistical uncertainty behind the reported improvements.",
+      "The out-of-distribution dataset and the conditions defining the approximately 3% test-time boost are unspecified.",
+      "The abstract does not report ablations that would isolate the effects of adaptive rubrics, user prototypes, and the two scaling granularities."
+    ]
+  }
+}

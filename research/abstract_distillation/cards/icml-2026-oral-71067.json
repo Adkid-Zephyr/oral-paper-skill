@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71067",
+    "title": "From Feasible to Practical: Pareto-Optimal Synthesis Planning",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71067"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "cd12af6fa6cbfc356df60068e7f134ed25cee75254283ad6a8c7521f283a982a",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "64544aedfd3be102590bdf13af56122c0eb25ec32e38a456a22c438e9386a959",
+    "extracted_at": "2026-09-13T00:12:45.407621+00:00",
+    "session_id": "01a0981b-aa9a-7262-9295-7583235aa145",
+    "usage": {
+      "input_tokens": 12696,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 834,
+      "reasoning_output_tokens": 104
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "abe28318b0a5b8aeb47cf30259bcb626643321c20cb3d6d976e3d84e23e805f7"
+    },
+    {
+      "id": "S2",
+      "sha256": "b66f08438f9ab9f7490fd2079139cbb13b81685eb0d65081a26084880d121585"
+    },
+    {
+      "id": "S3",
+      "sha256": "ffa6f1efe7b06133983e13ff43e9a7708384ab544d731b35c2728deea0758b0e"
+    },
+    {
+      "id": "S4",
+      "sha256": "33d3d5422e608ea809bb412b9d6f465e0ee2ffcffec2ea351196d52d6d84d755"
+    },
+    {
+      "id": "S5",
+      "sha256": "68cd8679898f568bc80ab360bc1e906c12e17649246bf09c459881ce0c52cc4a"
+    },
+    {
+      "id": "S6",
+      "sha256": "4215570cf921a0bad2c13df545daccdd7051a66ed7f7534fc398e9a8dfc3e8ce"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71067",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "CASP must plan synthesis routes while balancing competing practical objectives, including cost, sustainability, toxicity, and overall yield.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing CASP approaches often stop at one feasible route and emphasize convergence or shortest-path metrics, leaving practical trade-offs insufficiently represented.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Formulates synthesis planning as multi-objective search and introduces MORetro* to generate Pareto fronts of routes under user-defined criteria.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "Combines weighted scalarization with solution-informed sampling to navigate combinatorial search toward promising trade-offs.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Based on multi-objective A*-search, provides an author-stated guarantee of recovering the true Pareto front for a fixed single-step model under admissibility.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper’s stated distinction is explicit Pareto-front generation for synthesis planning, with trade-offs represented rather than reduced to a single objective.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, across multiple retrosynthesis benchmarks, MORetro* produces diverse, high-quality Pareto fronts.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that the method uncovers solutions overlooked by single-objective approaches and better aligns CASP outputs with industrial decision-making.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors state that, under admissibility and with a fixed single-step model, MORetro* recovers the true Pareto front.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "diagnosis",
+        "summary": "The abstract identifies single-feasible-route and shortest-path emphases as misaligned with practical synthesis decisions.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "formulation",
+        "summary": "It reframes synthesis planning as multi-objective search and introduces MORetro* for generating Pareto-optimal route sets.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "Weighted scalarization and solution-informed sampling are used to navigate the combinatorial search space.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "theory_and_results",
+        "summary": "The abstract states an admissibility-based Pareto-front guarantee and reports diverse benchmark fronts that reveal solutions missed by single-objective methods.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper connects its algorithmic output—a Pareto front—to the competing criteria chemists must balance in practice.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "This makes the proposed representation serve as an explicit bridge between technical optimization and the downstream decision problem.",
+        "application": "When introducing a multi-objective method, define the output artifact in terms of the real decision trade-offs it is intended to expose.",
+        "exception": "This framing is unsuitable when the application has a validated, genuinely single objective or when criteria cannot be measured consistently."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no benchmark names, quantitative comparisons, or details supporting the claims of diversity, quality, or industrial alignment.",
+      "The exact admissibility conditions and scope of the optimality guarantee are not specified beyond the fixed single-step-model setting.",
+      "The objectives, weighting choices, and computational costs used in practice are unspecified."
+    ]
+  }
+}

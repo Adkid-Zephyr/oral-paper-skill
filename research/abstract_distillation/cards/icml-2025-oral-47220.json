@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47220",
+    "title": "LLM-SRBench: A New Benchmark for Scientific Equation Discovery with Large Language Models",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47220"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a1974f8e607e6661d5c96fd09c4d57ce52bb0011794833b4754866d51c7b4cae",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "5ba001fcfe6ca7cd764cf02b1c5f6e38cc9df93c68e33331755ec84e564cfa09",
+    "extracted_at": "2026-09-13T00:09:11.077403+00:00",
+    "session_id": "01a09818-7037-7f30-940a-99bf606631fd",
+    "usage": {
+      "input_tokens": 12725,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 730,
+      "reasoning_output_tokens": 88
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e00dbb7a9fc5f3efbc4e96b995aa652a6286e7f64a5437487c8bde0bb2e52e17"
+    },
+    {
+      "id": "S2",
+      "sha256": "05f639f24543fe66ceda913e7912dfd53bbf721cd65e587c8871170904b1f78d"
+    },
+    {
+      "id": "S3",
+      "sha256": "b2421eeaa595f39902351f9df26d4ec1b117b13c680f7055c77071d4d81a6829"
+    },
+    {
+      "id": "S4",
+      "sha256": "ae0d333f92ad018beb450d0a5a838d2251407735711e5ee89a37d7b7592f289a"
+    },
+    {
+      "id": "S5",
+      "sha256": "8b32a52d61af0b777c3fa3f3e58ccc43f9aa1898127dcd6dee2ef94bd078945b"
+    },
+    {
+      "id": "S6",
+      "sha256": "2f9d3be04f80d1fb985a5463379d04d167b1921c2bd333a93060d427f048cf0a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47220",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess whether LLM-based methods can discover scientific equations from challenging problems.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing benchmarks often use common equations vulnerable to LLM memorization, inflating performance measures that may not reflect actual discovery.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces LLM-SRBench, a benchmark of 239 problems spanning four scientific domains, designed to reduce trivial memorization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "benchmark design",
+        "claim": "Defines LSR-Transform for uncommon mathematical representations of common physical models and LSR-Synth for synthetic, discovery-driven problems requiring data-driven reasoning.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports an evaluation of several state-of-the-art methods using both open and closed LLMs.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The benchmark combines transformed and synthetic equation-discovery problems specifically intended to test reasoning beyond memorization.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that the best-performing evaluated system achieves only 31.5% symbolic accuracy on LLM-SRBench.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "Authors report evaluating several state-of-the-art methods with both open and closed LLMs.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Scientific equation discovery supports deriving laws governing natural phenomena, and LLMs are being considered for hypothesis generation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "evaluation gap",
+        "summary": "Common-equation benchmarks can permit memorization and produce inflated measures of discovery capability.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "resource design",
+        "summary": "LLM-SRBench addresses this concern with 239 problems across four domains, organized into transformed-model and synthetic discovery categories.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported result",
+        "summary": "Evaluation across open and closed LLMs yields a reported best symbolic accuracy of 31.5%.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The benchmark separates transformed versions of familiar models from synthetic problems to distinguish reasoning beyond memorization from data-driven discovery.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "Separating challenge types can make a benchmark’s intended capability dimensions more inspectable.",
+        "application": "When introducing an evaluation resource, define task categories that isolate competing explanations for success, such as memorization versus reasoning.",
+        "exception": "This framing may be unsuitable when the target capability cannot be cleanly decomposed or when category construction changes the task substantially."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the four scientific domains, evaluated method names, or the benchmark’s data and scoring protocol.",
+      "The reported 31.5% symbolic accuracy lacks confidence intervals, per-category results, and comparison details."
+    ]
+  }
+}

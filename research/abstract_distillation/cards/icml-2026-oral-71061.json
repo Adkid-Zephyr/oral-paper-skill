@@ -1,0 +1,158 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71061",
+    "title": "TG-RAG: A Retrieval-Augmented Framework for Reasoning Guidance in Specialized Domains",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71061"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "52d03452b5021e5f1f1df7ea65be3d6f7492eed14a165d4f99fb1abf464dcc0d",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "9d0a70614b245d32640825d70d16caf4d2f3328c1ed904743955d0d4ea2077cf",
+    "extracted_at": "2026-09-13T00:12:25.048714+00:00",
+    "session_id": "01a0981b-6638-7082-906b-f5c3ed8b33e8",
+    "usage": {
+      "input_tokens": 12665,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 671,
+      "reasoning_output_tokens": 67
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e461c832145ec3fbc5ce9142136c771a6e46cde7e3c4664a2320a7d886400caa"
+    },
+    {
+      "id": "S2",
+      "sha256": "3e777b1a5f8340b34c67e858a98016916f6e34103f337bd05a346149d22b4941"
+    },
+    {
+      "id": "S3",
+      "sha256": "7e64ea294a1e3104a6ea0fbce86d9647c8015497db0f78820bb3aead428884a1"
+    },
+    {
+      "id": "S4",
+      "sha256": "2f197fab54daadfa0dc8367507f1c2e1cbcb9d43ee2f974f0da26afc7a65b741"
+    },
+    {
+      "id": "S5",
+      "sha256": "89085ef7eead4a3de7d1bd890a1bd10d8a3944b42442e8f5bb4b682ef953effc"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71061",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improving large reasoning models for specialized domains while maintaining adherence to domain procedures.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Context-engineered retrieval of modular SOP skills can be insufficient for complex workflows and may lead to “Cognitive Drift,” while relying solely on model self-correction is inadequate.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "TG-RAG, a retrieval-augmented framework designed to steer generation during specialized-domain reasoning.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "An Expert Procedure Graph formalizes unstructured SOPs, and the dynamic Interrupt-Retrieve-Generate mechanism injects step-specific directives into the reasoning process.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The framework’s stated distinguishing feature is actively injecting step-specific guidance through a dynamic Interrupt-Retrieve-Generate mechanism.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive evaluations show competitive performance for TG-RAG, with advantages in specialized domains and faithful adherence to domain SOPs.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Specialized-domain enhancement of large reasoning models is presented as a critical challenge.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing modular-skill retrieval used through context engineering is described as insufficient for complex workflows and associated with Cognitive Drift.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "TG-RAG is proposed to steer generation without relying solely on self-correction.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "The framework combines an Expert Procedure Graph with dynamic Interrupt-Retrieve-Generate guidance.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "The authors report competitive evaluation performance and improved SOP adherence in specialized domains.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a named failure mode, Cognitive Drift, with a mechanism that injects step-specific directives during reasoning.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "Naming the operational failure and linking it to a targeted intervention makes the method’s motivation-to-design relationship easier to assess.",
+        "application": "Frame a method by explicitly mapping each workflow failure mode to the mechanism intended to address it.",
+        "exception": "This framing is unsuitable when the failure mode has not been operationalized or the proposed mechanism is not specifically tied to it."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no evaluation metrics, datasets, baselines, or quantitative results.",
+      "The specialized domains and the meaning or measurement of faithful SOP adherence are unspecified.",
+      "The abstract does not establish independently verified effectiveness, correctness, reproducibility, or priority of novelty."
+    ]
+  }
+}

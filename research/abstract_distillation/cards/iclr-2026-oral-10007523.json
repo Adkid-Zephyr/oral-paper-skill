@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007523",
+    "title": "Learning with Dual-level Noisy Correspondence for Multi-modal Entity Alignment",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007523"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d9e7bfc046b9de9c007a8effa1d64ecd7468b38b26fec572cf23711781e7be50",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "7999e6822f1c7f7e0ab99b770bfb4cb00c43accfba74be60bb251a1aa5054309",
+    "extracted_at": "2026-09-12T23:59:44.359890+00:00",
+    "session_id": "01a0980f-c277-7fd1-a87a-e15a55fed1d7",
+    "usage": {
+      "input_tokens": 12814,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 760,
+      "reasoning_output_tokens": 104
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "512976e8e91a8c0ea1c07586a1e93f004993e826813f540abc71b96bbcc4aba3"
+    },
+    {
+      "id": "S2",
+      "sha256": "7ee7835f0ff362f8f52e014432f8d8fd348600d037e3a56c1b2fc13867ada08c"
+    },
+    {
+      "id": "S3",
+      "sha256": "348b3829df8eefbbba988956641c4bf0ef70e400fdef5e66bc16c6c55534add1"
+    },
+    {
+      "id": "S4",
+      "sha256": "46e0953e2bade6df195e70b1a194a1e19c43d7c0113797de8da6bc0a933791b3"
+    },
+    {
+      "id": "S5",
+      "sha256": "ba47f29bb1459ff2df080a8ec1aa3a55c78a55db7d3a96fbdd3ee66209118c09"
+    },
+    {
+      "id": "S6",
+      "sha256": "9cebb2bbb877593a3ebd4db79dffa5981af31ab3a7239ce75a15dc3c4ca33013"
+    },
+    {
+      "id": "S7",
+      "sha256": "d6cd8f428c885b3e9419372586c9d12dc91de2cb3e479c2ebfe77764deef0491"
+    },
+    {
+      "id": "S8",
+      "sha256": "bfd7de614d9540018d100399c7c56056d568881d5cab7fbb55b8460de0e7468d"
+    },
+    {
+      "id": "S9",
+      "sha256": "778a4a06c0b5e0eeeacd25beb7642f03b9c87968a363586df0ef4e3534056892"
+    },
+    {
+      "id": "S10",
+      "sha256": "edb26b4ccd9854c76b1c7fad9512758610e6adeab4221dc2acdef7e4973c514a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007523",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "MMEA must identify equivalent entities across heterogeneous multi-modal knowledge graphs despite misalignments in both entity-attribute and cross-graph correspondences.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods typically assume faultless correspondences, while dual-level noisy correspondence is described as practical but under-explored.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "problem formulation",
+        "claim": "Introduces and studies Dual-level Noisy Correspondence (DNC) in MMEA.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes RULE, which estimates correspondence reliability and uses it to reduce intra-entity noise during attribute fusion and overfitting to noisy inter-graph correspondences.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "reasoning module",
+        "claim": "Adds correspondence reasoning to uncover attribute-attribute connections across graphs for equivalent-entity identification.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper distinguishes DNC as a dual-level noise problem covering intra-entity and inter-graph correspondences, and proposes RULE to address it.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments on five benchmarks verify RULE's effectiveness against DNC compared with seven state-of-the-art methods.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task and assumption",
+        "summary": "MMEA aligns entities across multi-modal knowledge graphs, but existing methods commonly assume perfect correspondences.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "problem definition",
+        "summary": "The paper identifies DNC: misalignments within entity descriptions and across graphs.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed solution",
+        "summary": "RULE estimates reliability at both levels and uses it to make fusion and discrepancy elimination more robust to noise.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "additional mechanism and evaluation",
+        "summary": "A reasoning module targets cross-graph attribute connections; experiments cover five benchmarks and compare seven state-of-the-art methods.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract names a concrete failure mode, separates its two correspondence levels, and maps each level to a corresponding reliability-aware design.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This structure can make a method's motivation and component-to-problem alignment easier to assess.",
+        "application": "Define a narrowly scoped failure mode, decompose it into operational subtypes, and explicitly link each subtype to a mitigation component.",
+        "exception": "Avoid this decomposition when the subtypes cannot be observed or tied to distinct design decisions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report benchmark names, metrics, numerical results, baselines' identities, or experimental conditions.",
+      "The claimed guarantee and reported effectiveness are not independently verifiable from the abstract alone."
+    ]
+  }
+}

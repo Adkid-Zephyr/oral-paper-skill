@@ -1,0 +1,169 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47216",
+    "title": "Learning Dynamics in Continual Pre-Training for Large Language Models",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47216"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "26b173bdffcd9f93e85fe823748058264db2406768e9bac32ac60deeae506836",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "f65fce713ce5dee615077db889c8a6e6fb13788ed29647240066068a5bf06177",
+    "extracted_at": "2026-09-13T00:09:02.989776+00:00",
+    "session_id": "01a09818-4b06-7a41-ab85-e152e7660f19",
+    "usage": {
+      "input_tokens": 12697,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 742,
+      "reasoning_output_tokens": 85
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b3efef291430b81f81f8c5096d35f0a8ada6d821a1ad80a8dcd65210626a2a6b"
+    },
+    {
+      "id": "S2",
+      "sha256": "afa461c8b9313ba1298ff9e3c6c6114171347def8ae515e042bd8f260655cdfe"
+    },
+    {
+      "id": "S3",
+      "sha256": "22df7608e4f4734c71f1e7a718953e88ce7700a5ba19219d8bf373178e705388"
+    },
+    {
+      "id": "S4",
+      "sha256": "766fe18aa090bef0696d42005e77dd729f66b06d2d9560f29ee6b76c89ede8d3"
+    },
+    {
+      "id": "S5",
+      "sha256": "ba392aa650cc6f51bf740e1ce9a5aaca22cfd9a2c40d8b56a2bf1493060883d0"
+    },
+    {
+      "id": "S6",
+      "sha256": "c9270ab3db4cd90652ffef0e9246145778edb4e1307679908ef884620e3df1a1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47216",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize how general and downstream-domain performance evolves at each step of continual pre-training for LLMs, using validation losses as domain-performance measures.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A decomposition of the CPT loss curve into distribution-shift and learning-rate-annealing effects.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "scaling law",
+        "claim": "A CPT scaling law combining distribution shift and learning-rate effects to predict loss across continual-training steps and learning-rate schedules.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A formulation for relating learning rate, training steps, and PT–CPT dataset distance, with proposed hyperparameter customization for balancing general and domain-specific performance.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a CPT scaling law that jointly accounts for distribution shift and learning-rate annealing and predicts losses across training steps and schedules.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the CPT loss curve characterizes a transition between an initial curve and a hidden curve, explainable by decoupling distribution shift from learning-rate annealing.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that extensive experiments support the scaling law across various CPT datasets and hyperparameters.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "CPT is framed as a popular approach for adapting foundation models to downstream tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "The work examines learning dynamics during CPT, tracking general and downstream-domain validation losses at each training step.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "observation",
+        "summary": "The authors describe CPT loss evolution as a transition between curves shaped by distribution shift and learning-rate annealing.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "result",
+        "summary": "They derive a combined scaling law for loss prediction across steps and learning-rate schedules, and report broad experimental support.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates distribution shift and learning-rate annealing before combining them in a loss-prediction law.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Separating interacting factors can make a training-dynamics claim more interpretable and actionable.",
+        "application": "When proposing a training scaling law, model major data and optimization effects separately, then state how their combination yields predictions or tuning rules.",
+        "exception": "This framing may be unsuitable when the factors cannot be independently identified or when the target behavior is not measurable through a comparable loss."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the scaling-law form, prediction accuracy, datasets, model sizes, training-step ranges, or learning-rate schedules.",
+      "The meaning and empirical construction of the referenced hidden curve is not detailed.",
+      "The reported experiments do not provide quantitative comparisons or uncertainty information."
+    ]
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31848",
+    "title": "Do LLMs Recognize Your Preferences? Evaluating Personalized Preference Following in LLMs",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31848"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "70639269ea65d99cd19a03957b013e987a0bd8cfd1e44aac17057994629d04a7",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "0edab19ee064d81329f54669cee86a3a72ed01d420f53fe0f6b952cf2a57a7a4",
+    "extracted_at": "2026-09-12T23:54:24.387577+00:00",
+    "session_id": "01a0980a-dfe9-7f03-bdd2-18ee2c0006e4",
+    "usage": {
+      "input_tokens": 12797,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 899,
+      "reasoning_output_tokens": 106
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b57fe376a71c051d219dbcf04930a038425bcc32990e8489a5be8d05cf2d288d"
+    },
+    {
+      "id": "S2",
+      "sha256": "144e154c801db7fd8bd63f9274cfd64f5d6fe4d561b4f160c968581a010de64d"
+    },
+    {
+      "id": "S3",
+      "sha256": "70ed85137a341b06c01a07477d5ad8d583e86beace09a7872e2b8b57cae92182"
+    },
+    {
+      "id": "S4",
+      "sha256": "940049338fcd2e63fc09ecd5361f89261a05cdd754093ceae8798d6f4aa3440a"
+    },
+    {
+      "id": "S5",
+      "sha256": "ea0db27c927878d4f8c158a6c2bac77ff47bdba21aa83b3744ef4f12df550211"
+    },
+    {
+      "id": "S6",
+      "sha256": "414efabcf8da908ff8d57bc3c002884a5b0cf4f9158e7f3f37cf264194848975"
+    },
+    {
+      "id": "S7",
+      "sha256": "f61a1bc2b2dbb3144a891c1c34186f6a609b452f26164646f01da65450cfa8aa"
+    },
+    {
+      "id": "S8",
+      "sha256": "2ef765fe74615e230946a3ab827ccd6e300dc1a0f9e42b5a3793c3d09b93e699"
+    },
+    {
+      "id": "S9",
+      "sha256": "a3b52c625ded1ab79c429b6173ed04341da01cc15654add554b082e19d009279"
+    },
+    {
+      "id": "S10",
+      "sha256": "754eee3c3b9ff4492b89dd1a882b70a73a108ad10168ce5707d6bbbdccb8f26f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31848",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate whether LLMs can infer, memorize, and follow user preferences in long-context conversations.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that deployed LLMs remain limited in personalizing responses to user preferences.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces PrefEval, a benchmark with 3,000 manually curated preference-query pairs across 20 topics, covering explicit and implicit preferences.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "evaluation",
+        "claim": "Benchmarks 10 open-source and proprietary LLMs across multi-session conversations up to 100k tokens, including prompting, feedback, and retrieval-augmented methods.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports substantial difficulty with preference following and improvement from fine-tuning on PrefEval.",
+        "source_ids": [
+          "S6",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present PrefEval as a resource for measuring, understanding, and enhancing proactive preference following.",
+      "source_ids": [
+        "S2",
+        "S10"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, in zero-shot settings, preference-following accuracy is below 10% at 10 turns (about 3k tokens) for most evaluated models.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that preference following continues to deteriorate in long-context conversations despite advanced prompting and retrieval methods.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that fine-tuning on PrefEval significantly improves performance.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLMs are widely deployed, but personalization to user preferences remains limited.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "resource",
+        "summary": "The paper introduces PrefEval, spanning 3,000 preference-query pairs, 20 topics, and explicit or implicit preferences.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation design",
+        "summary": "It evaluates 10 open-source and proprietary models in multi-session contexts up to 100k tokens using prompting, feedback, and retrieval variants.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "The authors report low zero-shot accuracy, long-context deterioration, and gains from fine-tuning.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The benchmark separates explicit and implicit preferences and evaluates both generation and classification tasks.",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "interpretation": "Separating preference visibility and task type can reveal whether failures arise from preference inference, memory, adherence, or output format.",
+        "application": "Design evaluations with explicit/implicit conditions and both behavioral generation and targeted classification measures.",
+        "exception": "This decomposition may be unsuitable when the application has only one preference representation or requires exclusively end-to-end interaction quality."
+      },
+      {
+        "source_observation": {
+          "claim": "The reported results track preference following across conversation lengths up to 100k tokens and show deterioration even with prompting and retrieval.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S8"
+          ]
+        },
+        "interpretation": "Performance should be framed as a function of conversational context, not as a single aggregate score.",
+        "application": "Report results at multiple context lengths and identify the point at which preference following degrades.",
+        "exception": "A length-sensitivity analysis may be unnecessary for short-session systems with fixed, small contexts."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify model identities, dataset splits, evaluation metrics beyond the reported accuracy result, or statistical details.",
+      "The abstract does not quantify the fine-tuning improvement or establish which prompting or retrieval method performs best."
+    ]
+  }
+}

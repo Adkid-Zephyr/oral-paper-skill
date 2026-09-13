@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97952",
+    "title": "Reinforcement Learning Under Latent Dynamics: Toward Statistical and Algorithmic Modularity",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97952"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8f12a897c067b24b94411c390873c1199b416f266978eafb0a420456edca313f",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "ed5c403b395df7254af75b75422332331fd474ddef58065781137f24fbd1280e",
+    "extracted_at": "2026-09-13T00:18:04.552919+00:00",
+    "session_id": "01a09820-8b14-7500-8574-e09fdc093621",
+    "usage": {
+      "input_tokens": 12744,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 825,
+      "reasoning_output_tokens": 63
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e13e09e2247abbc6e281b59b40a1748be72b55b9bc308c9667e71ca7c72071d7"
+    },
+    {
+      "id": "S2",
+      "sha256": "d57a127809902a8766a43ab9b71b8aaf0140544e16fc808528c73ed26f5a9f23"
+    },
+    {
+      "id": "S3",
+      "sha256": "8d41c837036e58c2e65f8ad387ea64bc643fba74059008241aaf6e165d2b1bfd"
+    },
+    {
+      "id": "S4",
+      "sha256": "481536e4c088823e404aea0e534781c47ebea589a4589d3911e0c62a825d6c79"
+    },
+    {
+      "id": "S5",
+      "sha256": "bcb5557aae9c733c545ea3d88b6f57855c073e26c8bb381b0bf16b2ea4f4aa8b"
+    },
+    {
+      "id": "S6",
+      "sha256": "fb962dc8a729b41f96308eead5bbd5000a3846f44dbb80d8e617b685e043cb40"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97952",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize reinforcement learning under general latent dynamics from statistical and algorithmic perspectives.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Beyond restrictive cases such as tabular latent dynamics, the statistical requirements and algorithmic principles remain poorly understood.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "statistical theory",
+        "claim": "Shows that most well-studied function-approximation settings become intractable when combined with rich observations, and identifies latent pushforward coverability as a general condition for statistical tractability.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "algorithmic method",
+        "claim": "Develops provably efficient observable-to-latent reductions for hindsight observations and self-predictive latent-model estimation settings.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theoretical framework",
+        "claim": "Positions the results as an initial step toward a unified statistical and algorithmic theory of reinforcement learning under latent dynamics.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper presents a unified statistical and algorithmic treatment of reinforcement learning under general latent dynamics, including latent pushforward coverability and observable-to-latent reductions.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a negative result: most established function-approximation settings become intractable after composition with rich observations.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report a positive result identifying latent pushforward coverability as a condition enabling statistical tractability.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report provable efficiency of observable-to-latent reductions in the hindsight-observation and self-predictive-model settings.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Real-world reinforcement-learning environments may expose complex, high-dimensional observations despite comparatively simple latent dynamics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "open question",
+        "summary": "The statistical requirements and algorithmic principles for general latent dynamics are described as poorly understood beyond tabular settings.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "statistical results",
+        "summary": "The paper reports both broad intractability under rich observations and a tractability condition, latent pushforward coverability.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "algorithmic results",
+        "summary": "It develops observable-to-latent reductions under hindsight observations and self-predictive latent-model estimation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "positioning",
+        "summary": "The combined results are presented as a first step toward a unified theory.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a negative statistical result with a positive condition for tractability, then links both to concrete reduction settings.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This pairing makes the boundary of feasibility more informative than presenting only an algorithm or only a hardness result.",
+        "application": "Frame a theory paper around an explicit obstruction followed by a condition or structural assumption that restores tractability, and connect the assumption to an implementable reduction.",
+        "exception": "Avoid this framing when the work has no meaningful negative result or when the proposed condition is not formally tied to the method's operating regime."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define latent pushforward coverability or specify the exact function classes and hardness notion behind “most” and “intractable.”",
+      "The efficiency guarantees, assumptions, sample complexities, and algorithmic details of the reductions are unspecified.",
+      "No empirical evaluation or experimental conditions are reported in the supplied units."
+    ]
+  }
+}

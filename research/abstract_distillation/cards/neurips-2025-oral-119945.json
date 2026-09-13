@@ -1,0 +1,207 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-119945",
+    "title": "Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/119945"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7f5ce2089ae9b23cd76fc45ad38248bc8501c062e6eeeaa4ee7fdc17647c2010",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "788cebe0cbc98ebe7afa2ba43d6744eb918d7e23ebb2ecc4e58708855f28318e",
+    "extracted_at": "2026-09-13T00:23:22.634344+00:00",
+    "session_id": "01a09825-63b7-7361-a167-124041d9d7f0",
+    "usage": {
+      "input_tokens": 12960,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 866,
+      "reasoning_output_tokens": 90
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ad5fc0cd25d452dfb6284bf25c49a4643466581f9511a7d8a9656ec945b03089"
+    },
+    {
+      "id": "S2",
+      "sha256": "7dc196361e3a2105a31f223f9031214e4c2ee966ce99caee65087bfb96e5f70e"
+    },
+    {
+      "id": "S3",
+      "sha256": "22230581fc9ccf8d1c0636fa96cfc2352d118c965601bfa2d78a37c35864dc65"
+    },
+    {
+      "id": "S4",
+      "sha256": "2559b69c8495969afc4ebcb36437e13e8c5def2df6a71dbbfaac5a2156f9f227"
+    },
+    {
+      "id": "S5",
+      "sha256": "382aacb5d14d7efc5fbf8b54cc6d2374d72ec4969a587c08b2524ca91fe65abc"
+    },
+    {
+      "id": "S6",
+      "sha256": "b726a93d4c9424559bb300ed391579a2faa9925939a42a31dc399e13ccf5763a"
+    },
+    {
+      "id": "S7",
+      "sha256": "bfef9542b0643a123a17ee83060e53a92b7da6da546bb6bf4221a34c0cd4986f"
+    },
+    {
+      "id": "S8",
+      "sha256": "54d044dbf3f572d00e27aafe722b2aabf28c0274598272a299d677c86794b6f0"
+    },
+    {
+      "id": "S9",
+      "sha256": "7dff5b900ee2d1e2874b5ade27735c1f0e2dc1ae0c2ffa79c9c8e1ec54b2b098"
+    },
+    {
+      "id": "S10",
+      "sha256": "d7f9558768efd0cc6ef8618e1bf1f2fcfaacca3727933fdcd4e24231747aaaae"
+    },
+    {
+      "id": "S11",
+      "sha256": "c5b27aaade9fcadae8eea36c8b754041a2f31587f1cf73a5ec391b713ea60d92"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-119945",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The study probes whether RLVR-trained LLMs develop reasoning abilities beyond their base models across model families, algorithms, and math, coding, and visual-reasoning benchmarks using pass@k at large k.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The authors challenge the prevailing belief that RLVR enables continuous self-improvement and novel reasoning abilities exceeding the base model.",
+        "source_ids": [
+          "S2",
+          "S4",
+          "S10"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "A systematic boundary analysis of current RLVR-trained LLMs using large-k pass@k across diverse settings.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Evidence that current RLVR improves sampling efficiency but does not elicit fundamentally new reasoning patterns and may narrow capability boundaries.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "comparison",
+        "claim": "A contrast between RLVR and distillation: distillation is reported to introduce teacher-derived reasoning patterns and expand capabilities.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a critical, quantitative analysis treating the base model as an upper bound and comparing six RLVR algorithms with distillation.",
+      "source_ids": [
+        "S3",
+        "S8",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that RLVR-trained models outperform base models at small k, such as k=1, whereas base models achieve higher pass@k at large k.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Authors report that coverage and perplexity analyses indicate RLVR-generated reasoning paths are already present in the base model’s sampling distribution.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "Authors report that six popular RLVR algorithms perform similarly and remain far from optimal in exploiting the base model’s potential.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context and question",
+        "summary": "RLVR has improved reasoning performance, motivating the belief that it teaches novel strategies beyond the base model.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "evaluation design",
+        "summary": "The study probes capability boundaries across models, algorithms, and reasoning benchmarks with large-k pass@k.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "main findings",
+        "summary": "RLVR improves correct-path sampling efficiency, but large-k comparisons, narrowing boundaries, and distribution analyses point to bounded rather than fundamentally new abilities.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "contrast and implication",
+        "summary": "Distillation is reported to expand reasoning patterns, while current RLVR methods leave substantial potential unrealized and motivate new RL paradigms.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract contrasts small-k gains with large-k pass@k reversals and uses coverage/perplexity analysis to examine whether reasoning paths are new.",
+          "source_ids": [
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "Evaluating only first-sample performance can obscure whether training expands the reachable reasoning distribution or merely changes sampling probabilities.",
+        "application": "Pair low-k efficiency metrics with large-k coverage or distributional analyses when claiming that training creates new capabilities.",
+        "exception": "This pairing may be unsuitable when compute constraints or the deployment objective specifically concern only low-k inference."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the model families, six RLVR algorithms, benchmarks, or exact large-k values.",
+      "It does not provide quantitative effect sizes, training details, or statistical uncertainty.",
+      "The distillation setup and the operational definition of a reasoning capability boundary are unspecified."
+    ]
+  }
+}

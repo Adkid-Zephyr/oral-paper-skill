@@ -1,0 +1,206 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31886",
+    "title": "Inference Scaling for Long-Context Retrieval Augmented Generation",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31886"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0be35560358fcfecd8412aa663331ca13494b2c7b01801b92475fb7a4cdb5e7a",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "1b24da5e666bec78389217354e4a7fe3f66f408a5a57218826a2af30c386e139",
+    "extracted_at": "2026-09-12T23:55:51.777756+00:00",
+    "session_id": "01a0980c-3951-7dc0-b234-c45f55fd9ef6",
+    "usage": {
+      "input_tokens": 12821,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 826,
+      "reasoning_output_tokens": 51
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d928cae05f9d971e1e709296d55df1f9fe1cd11a322d0cd53f5788d44e4ab846"
+    },
+    {
+      "id": "S2",
+      "sha256": "4ff49dda72b621542f09eba4c1135ca2241c8539e4065e4a2a91aa1a378de119"
+    },
+    {
+      "id": "S3",
+      "sha256": "e05672afe90c66d9dfa45c529bab71855620a7dc158ca73fba823bda0a604b40"
+    },
+    {
+      "id": "S4",
+      "sha256": "265cb4b3e63a4a62063a65b970775f9f63a05f85ccab9b3102e0f57019b449d2"
+    },
+    {
+      "id": "S5",
+      "sha256": "864ae98a000cba80d1600df8b4b0399031a52412296b56f15ad9d8360c5b3867"
+    },
+    {
+      "id": "S6",
+      "sha256": "899f87126649082dd97502285a594d06c3e8c8624bbc6e12aec4279b029c9958"
+    },
+    {
+      "id": "S7",
+      "sha256": "ef084609cdf1e46086e751b997acc9f7b40248ff8bcd71da90f3846052eafcad"
+    },
+    {
+      "id": "S8",
+      "sha256": "d8ddadcd562aa8f35a0ba20f737b1c0b023137440ee28affa6e8e6cbddaedd0f"
+    },
+    {
+      "id": "S9",
+      "sha256": "c0fc338afd9d06dcb656f77dcacd773477ff05404a9c97603344815926628e05"
+    },
+    {
+      "id": "S10",
+      "sha256": "e4e8cf4bb79f58040074421c84617a4fc00ec7f48a57cb3d28572e5bdbc587e7"
+    },
+    {
+      "id": "S11",
+      "sha256": "932f3961a42b5be8394294daf46ac4d745c0d9d4951fabc04d047806ceeabdf4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31886",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how to scale test-time computation in retrieval-augmented generation and allocate a fixed compute budget across inference parameters.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7"
+        ]
+      },
+      "gap": {
+        "claim": "Simply expanding the context with more external knowledge does not consistently improve performance when the knowledge is not effectively used.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "scaling analysis",
+        "claim": "It characterizes near-linear RAG performance gains from optimally allocated inference computation as inference scaling laws for RAG.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "type": "computation allocation model",
+        "claim": "It develops a model that estimates RAG performance across inference configurations and predicts optimal parameters under compute constraints.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "It demonstrates gains from applying optimal configurations to long-context LLMs relative to standard RAG.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present inference scaling laws for RAG and a computation allocation model for choosing test-time inference parameters.",
+      "source_ids": [
+        "S8",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report nearly linear RAG performance gains as inference computation increases, when computation is optimally allocated.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that their allocation model’s predicted optimal inference parameters align closely with experimental results across computation constraints.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report up to 58.9% benchmark gains for long-context LLMs using optimal inference configurations compared with standard RAG.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Long-context LLMs can use more inference computation and external knowledge, but adding context alone may not improve knowledge-intensive tasks.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The work combines multiple RAG scaling strategies, including in-context learning and iterative prompting, to expand test-time computation beyond document quantity.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "questions",
+        "summary": "It asks how optimally scaled inference computation affects RAG performance and whether optimal compute allocation can be predicted for a given budget.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "The authors report near-linear scaling, introduce an allocation model, and report close agreement with experiments plus up to 58.9% gains over standard RAG.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links performance scaling to the allocation of inference computation across multiple strategies, rather than only increasing retrieved knowledge.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S8"
+          ]
+        },
+        "interpretation": "A paper can make a stronger scaling argument by specifying what resource is scaled, how it is allocated, and under which configuration.",
+        "application": "When presenting a test-time scaling method, define the allocation variables and report performance as a function of the total budget and allocation choice.",
+        "exception": "This framing may be unsuitable when the task has no adjustable test-time budget or when allocation variables cannot be measured consistently."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the benchmarks, datasets, baselines beyond standard RAG, model configurations, compute budgets, or experimental uncertainty.",
+      "The meaning of “nearly linear,” the range over which it holds, and the exact inference parameters in the allocation model are unspecified.",
+      "The abstract does not provide per-dataset results or conditions underlying the reported maximum 58.9% gain."
+    ]
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47263",
+    "title": "Statistical Collusion by Collectives on Learning Platforms",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47263"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ee4fc8eff10570b9069043cc321dedb32359ff9e2b49b84b003fe1e994c32e1d",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "4cbbf9e9d7f7a0350931ad099637c0ca6eaaad285ceec1774c25be480cadc27e",
+    "extracted_at": "2026-09-13T00:10:53.187424+00:00",
+    "session_id": "01a0981a-0503-7b63-86aa-54f0751332af",
+    "usage": {
+      "input_tokens": 12608,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 688,
+      "reasoning_output_tokens": 170
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "41617f038ec3e56030fb8e9cbbc43df253551ba497d70e64c67e1447c4ed9ef8"
+    },
+    {
+      "id": "S2",
+      "sha256": "cb1f8f4571b71fcd5be447df2e2cfb5931c6b94d1e8bb0d424e68d04ee21cf00"
+    },
+    {
+      "id": "S3",
+      "sha256": "3e93d76273d7cfcc546ffd52812394ab837acff252882c33ea5e1c6aa963fa68"
+    },
+    {
+      "id": "S4",
+      "sha256": "66f5cd5007be5bc2d730ff13e42e6c41c4a571edc927225530ef2e940ea9b843"
+    },
+    {
+      "id": "S5",
+      "sha256": "fe731d85e7f3fa6d27b13c8301e4ba4c61f73b890c3ab277170743898340aeb1"
+    },
+    {
+      "id": "S6",
+      "sha256": "517e4cd7b8099a75a5f0921f2ee2d392426747e64c293ea922b85ec6800edb7f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47263",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses how collectives can assess and coordinate altered-data submissions to influence learning-based platforms while accounting for risks.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "A framework giving theoretical and algorithmic treatment of collective influence through coordinated altered data.",
+        "source_ids": [
+          "S2",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical demonstration",
+        "claim": "Experimental results applying the framework in a product evaluation domain.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present an integrated theoretical and algorithmic framework for these assessment and coordination issues.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experimental results in a product evaluation domain, but the abstract gives no outcomes, baselines, or quantitative results.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Learning-based platforms may be influenced by collectives pursuing their own interests.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "The proposed influence mechanism is coordinated submission of altered data.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "requirements",
+        "summary": "Before acting, collectives must assess effects and risks and develop coordination algorithms using quantities inferable from observed data.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "resolution",
+        "summary": "The paper develops a theoretical and algorithmic framework and reports experiments in product evaluation.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links pre-action risk assessment with coordination algorithms based on observable quantities.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact research framing can connect decision risk, required computation, and implementability rather than treating them as separate concerns.",
+        "application": "When presenting a strategic-data method, define the actor’s pre-action decision, the observable inputs available then, and the coordination procedure in the same problem statement.",
+        "exception": "This framing may be unsuitable when actors have direct access to the platform’s internal state or face no material risk from intervention."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the framework’s assumptions, algorithms, theoretical guarantees, experimental design, baselines, or reported outcomes."
+    ]
+  }
+}

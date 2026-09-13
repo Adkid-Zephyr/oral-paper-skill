@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97948",
+    "title": "Get Rid of Isolation: A Continuous Multi-task Spatio-Temporal Learning Framework",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97948"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "5026507224944de0b60ee90b72152396cfe6ca76089a8383c4d27dd4188d551a",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "1880fb5e32033808ba61c017b2116afe78965c401babb8337271a0dfcc37eddd",
+    "extracted_at": "2026-09-12T23:40:44.542570+00:00",
+    "session_id": "01a097fe-6409-7e12-9f98-380056d950f7",
+    "usage": {
+      "input_tokens": 12838,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 812,
+      "reasoning_output_tokens": 57
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "41f29cd23a6ea298f7ef984cf7ebb2014425a34ff94a4faed2f8165e1e474d7a"
+    },
+    {
+      "id": "S2",
+      "sha256": "817ce2b730bbe0d95a37aafffbe2178bbda06e3e19d80412c429743f79d9701d"
+    },
+    {
+      "id": "S3",
+      "sha256": "2605af8e817da6fbc80b96fedc4bd591207b995bb3e0df549b950b84cca5acbc"
+    },
+    {
+      "id": "S4",
+      "sha256": "d6d9c20f254e1c95d061e99b0f77871dcad2ece5d98bfd072efec95dc3d73cf3"
+    },
+    {
+      "id": "S5",
+      "sha256": "30a458d67a5ba98cf7a4dcfdcc6ecc87830a2582a01eb94a2836de1da27c4747"
+    },
+    {
+      "id": "S6",
+      "sha256": "c31b39bdd12af3fed37dd1e8a08df86a0721d225bcf8c120531035f63ec5ebd2"
+    },
+    {
+      "id": "S7",
+      "sha256": "5099f6dd08ab71665c241f4c5b3b54e480c928b62d0779b7d37359486fe22ded"
+    },
+    {
+      "id": "S8",
+      "sha256": "658e3780c62c2f8f6310b2871fdd4298725b8115d5fdcd8463dad2e72e657076"
+    },
+    {
+      "id": "S9",
+      "sha256": "10d25b2ca20e956aa9fb7a02680e4b61e309a3fdfcbda7ab3bd2a47eb3edbfe1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97948",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop spatiotemporal learning that supports continuously adapting, cooperative multi-task urban intelligence across dimensions, tasks, and domains.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing task-specific models assume matching train/test distributions and do not explicitly model interdependencies across urban data, limiting generalization to changing urban conditions and new domains.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "CMuST reformulates urban spatiotemporal learning from single-domain learning toward cooperative multi-dimensional and multi-task learning.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "MSTI models cross-interactions between context and main observations plus self-interactions across spatial and temporal aspects to capture task commonality and personalization.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method and benchmark",
+        "claim": "RoAda supports continuous task learning through summarization-driven task prompts and iterative model-behavior modeling; the authors also establish a three-city benchmark.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present CMuST, including the new MSTI network and Rolling Adaptation training scheme, as a continuous multi-task spatiotemporal framework addressing the isolation of single-domain learning.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report extensive evaluations on a benchmark spanning three cities and describe CMuST as superior on these datasets.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report improvements over existing state-of-the-art methods on few-shot streaming data and new-domain tasks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Spatiotemporal learning is positioned as important for urban intelligence.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Traditional task-specific models assume the same training and testing distribution, while dynamic, multi-source urban systems create imbalance and domain shifts.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "CMuST is proposed to enable cooperative multi-dimensional and multi-task learning, with MSTI exposing cross- and self-interactions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "adaptation",
+        "summary": "RoAda is introduced to preserve task uniqueness while exploiting correlated task patterns during continuous learning.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report a three-city benchmark and improvements on few-shot streaming and new-domain tasks.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each major mechanism with a distinct challenge: MSTI addresses interaction structure and task commonality/personalization, while RoAda addresses continuous learning and task uniqueness.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This mechanism-to-challenge mapping makes the method’s design rationale easier to assess from a compact abstract.",
+        "application": "When introducing a multi-component method, explicitly state which failure mode each component targets and what capability it is intended to provide.",
+        "exception": "Avoid this mapping when components are inseparable or when the abstract lacks evidence that the proposed capability is tested."
+      }
+    ],
+    "unknowns": [
+      "No quantitative improvements, dataset details, task definitions, evaluation protocol, or baseline identities are provided.",
+      "The abstract does not specify whether the reported superiority is statistically tested or how broadly it transfers beyond the three-city benchmark.",
+      "The stated code availability is reported, but reproducibility cannot be assessed from the abstract alone."
+    ]
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71045",
+    "title": "AI Engram: In Search of Memory Traces in Artificial Intelligence",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71045"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "314f01e0ec2244dfa5f80e0e870a0519df062e9d92994574a2d38c903e68154b",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "9aee9f45a98354aee4215dd3aeab039814adadb7c5f183be3725e8fc13423b84",
+    "extracted_at": "2026-09-13T00:11:57.195999+00:00",
+    "session_id": "01a0981a-fa40-7653-8df1-f3938d646a9c",
+    "usage": {
+      "input_tokens": 14184,
+      "cached_input_tokens": 9984,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 762,
+      "reasoning_output_tokens": 85
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "288d794c0815e5b4fea746912576a258630f82d18602a803bfbc60cd6ed6dcde"
+    },
+    {
+      "id": "S2",
+      "sha256": "824c1da8c32966008d18b90bd4b83e45d9c202e16b77fd40c7305d33eaf7953d"
+    },
+    {
+      "id": "S3",
+      "sha256": "c5267df4012e685b97dace2149af91567445d3dd87527f54d82ae8a77fc454df"
+    },
+    {
+      "id": "S4",
+      "sha256": "a0f9281e1c260f05cbc0e5cdd5147446f6cac8e64660ddadf9cb6ed710a1edf6"
+    },
+    {
+      "id": "S5",
+      "sha256": "bf75159a658cc0ddb8f1b1bb482fe0218094986d739895673b6282dc5dece645"
+    },
+    {
+      "id": "S6",
+      "sha256": "bfd643369586b821276fb20d758caa1082bdd4242a9aca67753aac01463c9882"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71045",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine whether deep neural networks preserve identifiable memory traces analogous to biological memory units.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The existence of such identifiable traces in deep networks remains unresolved.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A geometric framework formalizes specificity, reactivation, sufficiency, and necessity as a constrained inverse problem for identifying AI engrams.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "A closed-form trace estimator is derived and related to a natural-gradient update on the parameter manifold.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "capability",
+        "claim": "The framework supports composing or erasing arbitrary memory subsets through linear arithmetic without iterative optimization.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work introduces a geometric, biologically grounded framework for identifying artificial memory traces and connects its estimator to natural-gradient geometry.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments from simple MLPs through LLMs demonstrate causal validity and substantial scalability.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that learned knowledge can be surgically composed or erased by linear arithmetic without iterative optimization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report a correspondence between the biologically derived estimator and a natural-gradient update.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "open_question",
+        "summary": "The paper frames identifiable memory traces in deep networks as an unresolved question.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "It defines AI engrams geometrically by translating four neuroscientific criteria into a constrained inverse problem.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "estimator",
+        "summary": "It derives a closed-form estimator and interprets it as a natural-gradient update on the parameter manifold.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "manipulation_and_evidence",
+        "summary": "It describes optimization-free composition and erasure of memory subsets, then reports demonstrations across MLPs and LLMs.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a proposed representation, its estimator, an interpretable geometric correspondence, and concrete manipulation operations before reporting experiments across model scales.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This creates a traceable chain from definition to mechanism to capability to evidence.",
+        "application": "For a new representation-learning construct, explicitly map its formal criteria to an estimator, a directly enabled operation, and evaluations spanning relevant scales.",
+        "exception": "This structure may be unsuitable when the construct has no formal characterization or when scale variation is not meaningful for the task."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify experimental datasets, metrics, baselines, model sizes, or what establishes the reported causal validity and scalability.",
+      "Details of the constrained inverse problem, closed-form estimator, and natural-gradient correspondence are not provided.",
+      "The abstract does not state limitations, failure cases, or whether arbitrary memory composition and erasure hold under specific constraints."
+    ]
+  }
+}

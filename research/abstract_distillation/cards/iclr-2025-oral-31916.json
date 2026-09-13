@@ -1,0 +1,172 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31916",
+    "title": "Variational Diffusion Posterior Sampling with Midpoint Guidance",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31916"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ed2b97e5b2d5d5aa8af1fdfbc5be079042f4b0ecfff8b88053ace164981edc9e",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "d178ed071f9f775fff32dde645639f019f1369d8c48c6c37fd5e26aac3d38ce5",
+    "extracted_at": "2026-09-12T23:57:04.231368+00:00",
+    "session_id": "01a0980d-5205-79e1-ab27-7823dad75fa7",
+    "usage": {
+      "input_tokens": 12672,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 779,
+      "reasoning_output_tokens": 101
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b48d21d54f7d7a65b6f46db5883855afdf22370d46f733eb0cf9ebd135e8d105"
+    },
+    {
+      "id": "S2",
+      "sha256": "e808b974ef4edf0ad06336bbd7145a49777f938e92289bedf2fd36a6fce319de"
+    },
+    {
+      "id": "S3",
+      "sha256": "c9cfff934b0c821fd8d1f5a5c29e01ff412960fa240488ec97fe08d94e9304bb"
+    },
+    {
+      "id": "S4",
+      "sha256": "32be0715ced80171aa2fb83fa4123d09c229defcc3014ecf7da221d37612173d"
+    },
+    {
+      "id": "S5",
+      "sha256": "eb225dc2ab4f2a8b856cf60d4def9dc4436cae480174c05a50f97eac002af18a"
+    },
+    {
+      "id": "S6",
+      "sha256": "7e68421b8c5a12f4d1104108229d121730610c0555a8ac064e4d1866fe4ddb18"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31916",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Sampling denoising posterior distributions for diffusion-based Bayesian inverse problems is difficult because it involves intractable terms.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing surrogate-diffusion approaches estimate an intractable guidance term, but the abstract does not describe a way to trade its complexity against that of prior transitions.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes a transition-decomposition approach that trades off the complexity of the intractable guidance term against that of prior transitions.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical validation",
+        "claim": "Applies the approach to linear and nonlinear inverse problems, including cases using latent diffusion priors and ECG reconstruction from partial measurements.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach from previous methods by using a decomposition of transitions that enables the stated complexity trade-off.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report extensive experiments on linear and nonlinear inverse problems, including challenging latent-diffusion-prior cases.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report reconstructing ECG signals from partial measurements for accurate cardiac diagnosis and describe the approach as effective in this setting.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Diffusion models are presented as promising priors for Bayesian inverse problems.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "Posterior sampling remains difficult because denoising posteriors contain intractable terms.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "prior approach",
+        "summary": "State-of-the-art methods use surrogate diffusion models, combining a pretrained prior score with an estimated guidance term.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "The paper introduces transition decomposition to balance guidance complexity against prior-transition complexity.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported validation",
+        "summary": "Experiments cover linear, nonlinear, latent-diffusion, and partial-measurement ECG reconstruction problems.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the proposed mechanism directly to the identified bottleneck: estimating the intractable guidance term, while also naming the resulting complexity trade-off.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A contribution can be framed more diagnostically by connecting a specific decomposition or design choice to the precise computational difficulty it addresses.",
+        "application": "When presenting a new inverse-problem method, state the bottleneck, identify which component changes, and describe the resulting trade-off in the same contribution statement.",
+        "exception": "This framing is less suitable when the method’s main contribution is theoretical characterization or empirical scaling rather than a change in computational decomposition."
+      }
+    ],
+    "unknowns": [
+      "No quantitative metrics, baselines, dataset details, or experimental settings are supplied.",
+      "The abstract does not specify how the transition decomposition implements or tunes the claimed complexity trade-off.",
+      "The meaning and evaluation of “accurate cardiac diagnosis” are not detailed."
+    ]
+  }
+}

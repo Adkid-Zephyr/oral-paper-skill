@@ -1,0 +1,166 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31728",
+    "title": "Probabilistic Learning to Defer: Handling Missing Expert Annotations and Controlling Workload Distribution",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31728"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "ebc7472045998d2aaf143ae41a2c9ba5ed0cc58cdc32c5a6b0ebd9a7009c2ce7",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "fa594cd37c89fba2bc12f598e65cff9dd0382eb7ba258b717c205fe67d9ae70d",
+    "extracted_at": "2026-09-12T23:39:12.021149+00:00",
+    "session_id": "01a097fc-fe4f-73b3-b44b-1fa7a5a01237",
+    "usage": {
+      "input_tokens": 14292,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 673,
+      "reasoning_output_tokens": 62
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2c49f88cf4997ea187534b883f28885e8c1677f262d284ba1c505eeff284fa0c"
+    },
+    {
+      "id": "S2",
+      "sha256": "a64b17d7c73523886ebfe9ce4ba1293ae7be2d2314cf57f94758214b3ea66d99"
+    },
+    {
+      "id": "S3",
+      "sha256": "10c9571f3bddca54f00ec99fd6f9d4ec7d458b6c11c3badce485028350bbc65f"
+    },
+    {
+      "id": "S4",
+      "sha256": "87f92ed0e49c64bde122f3390db517675bcd818c24d5fd3aff18124796913a98"
+    },
+    {
+      "id": "S5",
+      "sha256": "b61fe24fb3e4e81e6aec6ce50f1f62bf185e8c37105cf092a59f60e53cc93e8b"
+    },
+    {
+      "id": "S6",
+      "sha256": "7c21e24b1e60a8d3c1c80f76cda0a6f8c1571b5958dc48e9845577a8e8e38c54"
+    },
+    {
+      "id": "S7",
+      "sha256": "36e6e2e01779dad1cfe92a41a7e904e9932dd7405b7ec70ed3f96cc062bd73c8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31728",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Learning to defer must decide whether an AI model should act or defer an input to human experts while reducing annotation costs and allocating workload.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Standard L2D requires all experts to annotate the full training set and lacks a principled mechanism for distributing workload among experts and the AI classifier.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A probabilistic mixture-of-experts-inspired approach uses Expectation-Maximization to handle missing expert annotations.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A constraint solved during the E-step controls workload distribution among human experts and the AI classifier.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by jointly addressing missing expert annotations and workload-distribution control within probabilistic L2D.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that empirical evaluation on synthetic and real-world datasets finds competitive or superior performance relative to previously proposed methods on the same benchmarks.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Human-AI cooperation motivates systems that combine expert reliability with AI efficiency.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "task",
+        "summary": "Learning to defer lets a system choose between making an AI decision and deferring to experts.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "limitations",
+        "summary": "Existing L2D is costly because experts annotate the entire training set and offers no principled workload allocation.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "approach_and_result",
+        "summary": "The paper proposes probabilistic mixture-of-experts modeling with EM for missing annotations, adds an E-step workload constraint, and reports competitive or better benchmark performance.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs each identified deployment limitation—missing annotations and workload imbalance—with a corresponding modeling or optimization component.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This creates a tight problem-to-mechanism alignment that makes the claimed contribution easier to assess.",
+        "application": "When presenting a method, map each stated operational bottleneck to a named component and explain where that component is optimized.",
+        "exception": "Avoid forcing a one-to-one mapping when a limitation is only motivational or when the abstract lacks evidence that the component addresses it."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dataset names, metrics, numerical results, workload targets, or which prior methods were compared.",
+      "It does not report annotation-cost, workload-balance, or ablation results, so the separate impact of each component is unknown."
+    ]
+  }
+}

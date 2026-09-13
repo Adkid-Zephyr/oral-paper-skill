@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-116507",
+    "title": "Advancing Expert Specialization for Better MoE",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/116507"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f561eff8577aecad3c1cd36827ddeb50c750385a6e27e510ad5da307b40a2558",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "324d347bba4f73d49757e8a16f4b8dc510d5a2beabb4f8d1ccebdb87ca3a25a8",
+    "extracted_at": "2026-09-13T00:21:21.624422+00:00",
+    "session_id": "01a09823-90d7-7fb1-a642-6db7de2f323e",
+    "usage": {
+      "input_tokens": 12687,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 790,
+      "reasoning_output_tokens": 96
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "60af422497223f8c6cd76a23f12eb03bbec63e6649c255b95623bfb587ba6b1a"
+    },
+    {
+      "id": "S2",
+      "sha256": "9b33cb2883e0e9ca87b8db0282e602a8bf672e93766a86996ce9babdf7cc3972"
+    },
+    {
+      "id": "S3",
+      "sha256": "bbd1ad8be1f1eb4fcc26292690e100e8cdf8b4ecc5ea6c00c2fc0bc85ead6bf1"
+    },
+    {
+      "id": "S4",
+      "sha256": "71354165ad1814d1ed88a63e66c35ae0bb11cdbf16c32d0eb8e1a9274476b0a9"
+    },
+    {
+      "id": "S5",
+      "sha256": "aff7dbb28b1b4ab633264ae7c68e360b5574a1e139c716dd1680ea72e325a64e"
+    },
+    {
+      "id": "S6",
+      "sha256": "001c94eb07251edf61f837e03a2359f2c69ccc208210f9ca554c78d4a587e72f"
+    },
+    {
+      "id": "S7",
+      "sha256": "d69aea68af224e2fde6582d1046973bd01c464e9ba73188440d1f8d5c4488f1f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-116507",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses expert routing in Mixture-of-Experts models, where only a subset of experts is activated per input.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The authors report that commonly used auxiliary load-balancing loss can cause expert overlap and overly uniform routing, limiting specialization and degrading post-training performance.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A training approach adds orthogonality and variance objectives to encourage distinct expert token processing and more discriminative routing.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory/analysis",
+        "claim": "A gradient-level analysis reports that the two objectives are compatible with the existing auxiliary loss and support training optimization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report improved expert specialization across model architectures and multiple benchmarks, without architectural modifications or additional components.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by jointly using complementary orthogonality and variance losses to improve specialization while retaining the existing load-balancing setup.",
+      "source_ids": [
+        "S3",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the objectives improve classic MoE baselines using auxiliary loss by up to 23.79%.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report enhanced specialization across various architectures and multiple benchmarks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that downstream tasks maintain load balancing while using the proposed method.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "MoE models scale LLMs efficiently by activating only subsets of experts per input.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem diagnosis",
+        "summary": "The authors identify overlap and overly uniform routing under common auxiliary load balancing, with negative post-training effects.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal and analysis",
+        "summary": "They introduce orthogonality and variance losses, then report gradient-level compatibility with the auxiliary objective.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation and release",
+        "summary": "They report specialization gains across architectures and benchmarks, including up to 23.79% improvement, and state that code will be released.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a concrete routing pathology to two complementary objectives targeting distinct expert processing and discriminative decisions.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A method can be motivated more convincingly when each added objective is explicitly tied to a diagnosed failure mode.",
+        "application": "For a new training method, map each auxiliary objective to a specific observed behavior and state the intended direction of change.",
+        "exception": "This framing is unsuitable when the objectives lack an identifiable mechanism or the observed pathology is not measured."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the architectures, benchmarks, downstream tasks, or experimental conditions.",
+      "The scope and baseline details behind the maximum 23.79% improvement are unspecified.",
+      "The abstract does not provide quantitative specialization or load-balancing metrics.",
+      "Code release is stated as future work; availability and reproducibility are not established."
+    ]
+  }
+}

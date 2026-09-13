@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71131",
+    "title": "DPO Unchained: Your Training Algorithm is Secretly Disentangled in Human Choice Theory (and Its Loss' Convexity is Dispensable)",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71131"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "596e0f6b792bb4dd4be6b1d1b91a641e1af9195817a53b2761148735f4fcbf3b",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "44ac04a3d6f0c2d322bda44a7f61346e46778e8f1df184636a593e94abd2ea98",
+    "extracted_at": "2026-09-13T00:15:15.851207+00:00",
+    "session_id": "01a0981d-faea-7d92-9577-81194bcdf5bd",
+    "usage": {
+      "input_tokens": 12706,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 783,
+      "reasoning_output_tokens": 111
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7e97156cecdcbfd170a3e50084cb510bfd98f9d541f03ef7502370b10989d614"
+    },
+    {
+      "id": "S2",
+      "sha256": "d2aaf2ad4f46e47068e4cfd4ba3eab705b2a61cfc93d9ccfdc84bb7aec5278f2"
+    },
+    {
+      "id": "S3",
+      "sha256": "8be4893d7dc1bc92b0d980ea4c27f855a85838938856adf360d5c2c24de06fed"
+    },
+    {
+      "id": "S4",
+      "sha256": "bdd0391279fff53f95103ec98c2b9ed798aecde077fc9a8489655061873effcb"
+    },
+    {
+      "id": "S5",
+      "sha256": "66be33f717e42719ca76a3111b9fae4f9e69c2a4fc90d719de766644107c08c5"
+    },
+    {
+      "id": "S6",
+      "sha256": "be23b03eec3c3c67081e2666922b0b8cd8f87a7cbf070779186a6333dcd67177"
+    },
+    {
+      "id": "S7",
+      "sha256": "6ac8ee119ac0e44d00b87761d721313f5309117d3bb26b7218b634c0017c3485"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71131",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper examines the normative foundations and generality of preference-optimization algorithms, especially DPO and its follow-ups.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify a need to adapt social choice theory’s textbook route for RLHF/ML and to extend DPO’s connection beyond one specific human-choice model.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A generalized normative account intended to cover the full generality of DPO’s normative framework.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "A broad perspective on preference optimization spanning current DPO follow-ups and extensions such as margins and length correction.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "theoretical implications",
+        "claim": "The framework supports non-convex losses and allows any compliant ML analytical choice to be embedded with any human choice model, as author-reported properties.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present an unusually broad normative viewpoint that extends DPO’s human-choice connection to non-convex losses, arbitrary compliant analytical choices paired with human choice models, and DPO extensions.",
+      "source_ids": [
+        "S3",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Normative theories are framed as tools for deriving parts of ML algorithms from first principles amid increased scrutiny.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "starting point",
+        "summary": "DPO is described as bypassing reward modeling through an explicit link to a particular normative human-choice model.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "generalization",
+        "summary": "The paper broadens this link and reworks social choice theory for better RLHF/ML fit.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "implications",
+        "summary": "The resulting viewpoint is claimed to encompass DPO follow-ups, non-convex losses, arbitrary compliant analytical choices with human-choice models, and extensions.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "demonstration",
+        "summary": "A toy experiment outside the usual DPO setting is reported.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a named algorithm to a normative model, then expands the account to cover follow-ups, extensions, and broader analytical choices.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A paper can make a framework’s scope legible by moving from a concrete algorithmic connection to explicit boundary-expanding consequences.",
+        "application": "After introducing an algorithm–theory link, enumerate which loss classes, model choices, and extensions the generalized account is intended to cover.",
+        "exception": "Do not enumerate such consequences without separately stating their conditions or support."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no outcome or quantitative result for the toy experiment.",
+      "The conditions behind “compliant” analytical choices and the claimed embedding properties are unspecified.",
+      "No independently verifiable proof details or comparisons are provided."
+    ]
+  }
+}

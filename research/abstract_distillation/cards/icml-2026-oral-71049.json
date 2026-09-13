@@ -1,0 +1,199 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71049",
+    "title": "Motion Attribution for Video Generation",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71049"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "67476d8bd3565f06d78d7b27429fa6f3aff509dee28bc963be5d6ee367281a3d",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "d1d12953aacd84b379873a8e0709d974d7fced0f75cf1ec242013a5ef4174e1c",
+    "extracted_at": "2026-09-12T23:40:26.476179+00:00",
+    "session_id": "01a097fe-18c1-75a1-9893-af5e7d46bd3f",
+    "usage": {
+      "input_tokens": 12671,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 776,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a68b9a4aefae209cb67d8c2083522bb34cfd348f65fcc142748b540ddfc33aa8"
+    },
+    {
+      "id": "S2",
+      "sha256": "454890df0a38155dc29b4d6195300cb176ba5db6cc858bc01275f19357fb0ac1"
+    },
+    {
+      "id": "S3",
+      "sha256": "7090e1e1568667b9b6e1b7f319f61ce35051ba6b0c2df3409ec3e844cacf9f39"
+    },
+    {
+      "id": "S4",
+      "sha256": "09dd1a06ce4f52957e6fb5fc125651c5404ec808d700a60ab00aee66bea2af3d"
+    },
+    {
+      "id": "S5",
+      "sha256": "7a1bcc3e4e10c94db99f3c36244e0eb020f93752512b64e2312710f6157ac0bf"
+    },
+    {
+      "id": "S6",
+      "sha256": "e2966b39f12e2e005e7ee5ba288f03b18d5da4387a6070d8a9a71a4637864fd1"
+    },
+    {
+      "id": "S7",
+      "sha256": "77131dff805bd45601036b6ce5b6439f2583c147a3e471a57f55dd119547e490"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71049",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Understand and manage how training data influences motion in video generation models.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The role of data in influencing motion was poorly understood.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Motive is a motion-centric, gradient-based data-attribution framework designed to scale to large video datasets and models.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It isolates temporal dynamics from static appearance using motion-weighted loss masks for efficient, motion-specific influence computation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "It uses motion attribution to identify influential fine-tuning clips and guide data curation for text-to-video models.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that Motive is, to their knowledge, the first framework to attribute motion rather than visual appearance in video generative models and use that attribution for fine-tuning-data curation.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Motive identifies clips strongly affecting motion and guides curation that improves temporal consistency and physical plausibility in text-to-video models.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Using Motive-selected high-influence data, the authors report improved motion smoothness and dynamic degree on VBench, plus a 74.1% human-preference win rate over the pretrained base model.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies limited understanding of how data affects motion in video generation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "It introduces Motive, which computes scalable, motion-specific data influence by separating temporal dynamics from appearance.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      {
+        "role": "use and outcome",
+        "summary": "Motive is applied to fine-tuning-clip analysis and curation; the authors report better motion-related metrics and human preference than the pretrained base.",
+        "source_ids": [
+          "S3",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "stated distinction",
+        "summary": "The authors characterize the framework as the first, to their knowledge, to attribute motion rather than appearance and use that attribution for curation.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly separates temporal dynamics from static appearance with motion-weighted loss masks before computing influence.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "Separating entangled objectives can make attribution more targeted and align the analysis with the desired behavior.",
+        "application": "For a generative-model analysis, define an objective or mask that isolates the behavior of interest before ranking influential training examples.",
+        "exception": "This may be unsuitable when the target behavior is inherently coupled to appearance or when the proposed decomposition lacks a meaningful operational definition."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify model sizes, datasets, fine-tuning settings, VBench protocol, human-evaluation design, or comparison baselines beyond the pretrained base.",
+      "The reported improvements do not establish independent verification or explain which clips cause which specific motion changes."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "problem_and_gap.gap.claim",
+      "before": "The role of data in influencing motion was poorly understood, especially relative to static visual appearance.",
+      "after": "The role of data in influencing motion was poorly understood.",
+      "review_file": "reviews/pilot-02.json",
+      "review_sha256": "c9e1dc2a2b1b9cf5da4c272566b234e853aac460dbe9a2ef30fd633c4351a569",
+      "applied_at": "2026-09-12T23:46:38.301338+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "problem_and_gap.gap.source_ids",
+      "before": [
+        "S1",
+        "S4"
+      ],
+      "after": [
+        "S1"
+      ],
+      "review_file": "reviews/pilot-02.json",
+      "review_sha256": "c9e1dc2a2b1b9cf5da4c272566b234e853aac460dbe9a2ef30fd633c4351a569",
+      "applied_at": "2026-09-12T23:46:38.301951+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

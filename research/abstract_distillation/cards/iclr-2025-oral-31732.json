@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31732",
+    "title": "Syntactic and Semantic Control of Large Language Models via Sequential Monte Carlo",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31732"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7249b1e2bc87d3df77c460e4ad4f599449d1c7d355931087259626ff8f1597b7",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "ae3be1fdb36e255bd3cf8f50ccbfe471b21541884e0ae076c2dc5469d5918e25",
+    "extracted_at": "2026-09-12T23:49:52.363374+00:00",
+    "session_id": "01a09806-bb7b-7cb3-ae54-f5461621fe58",
+    "usage": {
+      "input_tokens": 14280,
+      "cached_input_tokens": 9984,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 788,
+      "reasoning_output_tokens": 71
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ab36bba07da34be1235e5f66b957c9721309aeb02cea7267eaa52363c70b0cce"
+    },
+    {
+      "id": "S2",
+      "sha256": "e11f5b42ee3950834b99b6ad17cce6bf13dc315f40948504d6f0ac27865c4c99"
+    },
+    {
+      "id": "S3",
+      "sha256": "72ed796854d33913c70c3061162e5577cfdf9293c86caeceee03204cf37bbe21"
+    },
+    {
+      "id": "S4",
+      "sha256": "255e862ea627d47702fb3fc81b19613de23d80b04ab384b5fbe256848bc6b345"
+    },
+    {
+      "id": "S5",
+      "sha256": "fb76328c0dcdaba675631f973f3361d1c4fb678dd5ab75a622699b8986820539"
+    },
+    {
+      "id": "S6",
+      "sha256": "61c3f93c42de3653cf0ce5541aa723a98a89f2316901b85a9f0ec28a19654991"
+    },
+    {
+      "id": "S7",
+      "sha256": "6d05de2dbe2a59cfac535516f3f31c5bedb9d9bee627757d20942d4d51be06e3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31732",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate language-model text satisfying syntactic or semantic constraints.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Although constrained generation can be framed as probabilistic conditioning, exact sampling from the resulting distribution is generally intractable and may differ substantially from the base language-model distribution.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "An architecture for controlled language-model generation based on sequential Monte Carlo.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A framework that incorporates domain- and problem-specific inference-time constraints while reallocating computation as generation reveals new information.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "An integration with a language-model probabilistic programming language that provides a programmable interface for applying SMC to controlled-generation problems.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present SMC as an architecture and programmable framework for controlled language-model generation across varied constraint problems.",
+      "source_ids": [
+        "S3",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, with little overhead, their approach enabled small open-source models to outperform models more than 8× larger and closed-source fine-tuned models across four domains: Python code generation for data science, text-to-SQL, goal inference, and molecule synthesis.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that comparisons and ablations support the view that the performance improvements arise from better approximation to the posterior distribution.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "application context",
+        "summary": "Constrained text generation is needed for syntactic and semantic requirements.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "formalization and obstacle",
+        "summary": "The task is framed as probabilistic conditioning, but exact generation from the conditioned distribution is generally intractable.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "The work develops an inference-time SMC architecture that adapts computation as generation proceeds and accepts problem-specific constraints.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported evaluation and explanation",
+        "summary": "Across four challenging domains, comparisons and ablations are reported to show strong performance with little overhead, attributed to improved posterior approximation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "deployment interface",
+        "summary": "The system builds on Lew et al. (2023) and integrates with a probabilistic programming language for programmable controlled generation.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects performance comparisons and ablations to a posterior-approximation explanation, rather than reporting only aggregate task outcomes.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Pairing outcome evidence with a mechanism-level account can make a technical claim more informative and testable.",
+        "application": "When presenting a controlled-generation method, report task comparisons alongside an analysis of whether the method better approximates the intended conditioned or posterior distribution.",
+        "exception": "This framing is unsuitable when no meaningful target distribution or diagnostic for approximation can be defined."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dataset sizes, metrics, statistical uncertainty, overhead magnitude, or the exact comparison baselines.",
+      "The reported posterior-approximation account is not independently verifiable from the abstract alone."
+    ]
+  }
+}

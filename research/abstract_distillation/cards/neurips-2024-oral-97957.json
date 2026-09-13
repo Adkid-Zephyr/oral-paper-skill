@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97957",
+    "title": "SeeA*: Efficient Exploration-Enhanced A* Search by Selective Sampling",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97957"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6acbfbbc3b1c7e59c1bff01cbec2248fe34f4cd60f8ccad25537a6ece02259eb",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "e5d03d00f837a9b98687dd450b3caa89d1ff1ecdda7d81ab62574c1595cace27",
+    "extracted_at": "2026-09-13T00:18:15.961438+00:00",
+    "session_id": "01a09820-bd25-7e80-a01d-ac72e1374524",
+    "usage": {
+      "input_tokens": 12812,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 777,
+      "reasoning_output_tokens": 67
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7caaab086b2a137bf5524f66ca3a76d1fc3821f9665f6c3b5354101ee051226c"
+    },
+    {
+      "id": "S2",
+      "sha256": "a6b15071df7aaebe3d210c9b90af3e9378165fab58fea5872b5d8d9a11f9295f"
+    },
+    {
+      "id": "S3",
+      "sha256": "f9ad892be4dd40a4b0878769c20d35669ac47d3e9da6ac330313266d6d375bc2"
+    },
+    {
+      "id": "S4",
+      "sha256": "9762d0db74131e7e8710bc4d46d87143dde9103ee80dc0c488cf2b248c6da77e"
+    },
+    {
+      "id": "S5",
+      "sha256": "84951cd462c491ccd6c2918be78d511cb638f3ca8486367a04cfcd666d583522"
+    },
+    {
+      "id": "S6",
+      "sha256": "17cc64808d5fbd4b6de73fb494ffeecf09c92797196662e06203aa7a7bb57733"
+    },
+    {
+      "id": "S7",
+      "sha256": "ad2877789770cb42553f751068709cc7f85478a74670452ff979fd0327f06e56"
+    },
+    {
+      "id": "S8",
+      "sha256": "046e1fd15a92b53d753330c1c056d67410a05a4f7feee0e594ecc4eab704d1bf"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97957",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper investigates how to enhance A* search through exploration while retaining heuristic guidance.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "The OPEN list, a proposed avenue for advancing A* search, had received insufficient deep investigation.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "SeeA* constructs a dynamic subset of OPEN by selective sampling and expands the subset node with the best heuristic value.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The paper presents three sampling techniques for comparative investigation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Under an assumption about prediction-error distributions, the authors derive a theoretical efficiency advantage of SeeA* over A*, especially when heuristic accuracy is insufficient.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated new approach is to combine selective sampling of OPEN with heuristic expansion to enable exploration of alternative promising branches.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the best-heuristic OPEN nodes are usually sampled, while occasional exclusion enables exploration of other promising branches.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report theoretical superior efficiency over A* under their prediction-error distribution assumption, particularly with insufficient heuristic accuracy.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report empirical efficiency on retrosynthetic planning, integrated-circuit logic synthesis, and Sokoban, compared with state-of-the-art heuristic search algorithms.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "A* and MCTS are presented as heuristic-search approaches with mutually beneficial relationships.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Recent A* advances are described as leaving the OPEN-list direction insufficiently investigated.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "SeeA* addresses this direction through selective sampling of a dynamic OPEN subset before heuristic expansion.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "Three sampling techniques are introduced, alongside a theoretical efficiency claim under a prediction-error assumption.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The abstract reports empirical comparisons across three application domains.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the proposed search mechanism, its exploration rationale, a conditional theoretical claim, and application-based comparisons in sequence.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A compact abstract can make a method's motivation and evidence easier to assess by preserving the link between mechanism, condition, and evaluation scope.",
+        "application": "When presenting a search method, state the operational change, explain its intended behavioral effect, then separate assumption-dependent theory from domain-specific empirical evidence.",
+        "exception": "This structure is less suitable when the work has no meaningful behavioral mechanism or when evidence cannot be partitioned by conditions and scope."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the prediction-error distribution assumption, theoretical metric, or proof details.",
+      "It does not identify the three sampling techniques, benchmark sizes, quantitative results, or exact comparison baselines.",
+      "The reported empirical efficiency lacks numerical effect sizes and experimental conditions."
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "targeted synthesis-source checking",
+  "records": [
+    {
+      "paper_id": "neurips-2025-oral-119099",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S2 states a universal Ω(√d) lower bound; S4 states that for every d there exists a class attaining O(√d). The card preserves these distinct quantifiers. S5–S6 support the reported improvement over the prior (2/3)·d upper bound attributed to Ben-David et al. (1997), without independently specifying its quantification. Later synthesis must retain the existential scope of the matching construction and must not imply an O(√d) upper bound for every class.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2025-oral-121771",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S2 explicitly calls NOVA evaluation-only, and S5 explicitly states that NOVA is never used for training. The card faithfully summarizes these author statements; it does not establish independently audited absence from model pretraining or absence of contamination. S6 supports the reported approximately 65% localization gap against natural-image benchmarks and 40% captioning and 20% reasoning gaps against resident radiologists. The card retains those comparators and explicitly leaves the percentage definitions and underlying values unknown. Later synthesis must preserve that uncertainty and must not convert the gaps into percentage-point differences or calculated relative reductions.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2025-oral-121503",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S8–S9 support a comparison of methods trained on BEDLAM and BEDLAM2.0 with author-reported accuracy improvements, but do not establish a fully controlled, matched training protocol. The lesson's source observation describes a direct comparison without calling it fully matched. Its interpretation presents a general conditional principle about matched comparisons, and its application recommends comparing identical methods; neither establishes that the authors performed that stronger protocol. No correction is required, but later synthesis must keep the recommendation separate from observed source practice and leave training controls unspecified.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2025-oral-119904",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S5 explicitly connects foresight trajectory generation both to warm-starting the buffer with bootstrapped samples and to reducing early-stage query ambiguity. The lesson's statement that foresight addresses early query ambiguity is therefore directly supported. S5 also explicitly connects hindsight counterfactual reasoning and the causal auxiliary loss to credit assignment. Later synthesis must retain these as the authors' stated mechanism roles, without upgrading reduced ambiguity to complete resolution or treating the aggregate results in S6 as isolated causal validation of each component.",
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 4,
+    "material_error_cards": 0,
+    "minor_cards": 0,
+    "pass_cards": 4,
+    "scope": "targeted flags only"
+  }
+}

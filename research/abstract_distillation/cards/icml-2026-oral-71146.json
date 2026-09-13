@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71146",
+    "title": "Transforming Weather Data from Pixel to Latent Space",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71146"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "cd67e8dad93d70d2767515cb09c3a50d61b7b6cfa83e5f4be30262e9961504d8",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "ae9ca699b2653de4ab5f1ba42c9fb760f93b61f52cc0c0c3d5cba77d5a56d111",
+    "extracted_at": "2026-09-13T00:15:54.299764+00:00",
+    "session_id": "01a0981e-8bcf-7643-af94-6beb57763191",
+    "usage": {
+      "input_tokens": 12785,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 821,
+      "reasoning_output_tokens": 57
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a76018e4b03f3f061b8a1960ce21582b622a9988a5359a07a41332140ee0e194"
+    },
+    {
+      "id": "S2",
+      "sha256": "1a6a41b7b0d6a321bcee832e8ea74389014062add9681ceae666ad2a1ca06c74"
+    },
+    {
+      "id": "S3",
+      "sha256": "b9819d5bcf2ab01d6c604e6becb074c940c83e8461078e1a2e80de346104b2cf"
+    },
+    {
+      "id": "S4",
+      "sha256": "43c97084fac31ae236fea992d5378084dda45544b8a9ef9353566f5c086bd531"
+    },
+    {
+      "id": "S5",
+      "sha256": "b1bf2f8e18c5a1e3413d5714809106f43cc73db5b1f54551e33cb4fcc3ac85d0"
+    },
+    {
+      "id": "S6",
+      "sha256": "078aee1653795eb132c1192b0a3ce933a0dba7b8afb8e772bb64962f94d17e0c"
+    },
+    {
+      "id": "S7",
+      "sha256": "fafb46422590c5e5c87f896430028c2197bce23b03372de42d30754640624659"
+    },
+    {
+      "id": "S8",
+      "sha256": "fcb1af2f906de4609fd375317169d1766cf1329c6ee132537e7acc4e3a20bf6d"
+    },
+    {
+      "id": "S9",
+      "sha256": "ce017c5b36904c09fc8615f980fb3224c4efa1c0f402ff46b1876e0e58fe97de"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71146",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Represent weather data efficiently while supporting reconstruction and downstream weather tasks across multiple pressure-variable subsets (PVS).",
+        "source_ids": [
+          "S3",
+          "S5",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Pixel-space approaches are reported to produce smooth outputs, remain limited to a single PVS, and incur high storage and computational costs.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes a Weather Latent Autoencoder (WLA) that transforms weather data from pixel space into an efficient latent representation and decouples reconstruction from downstream tasks.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "module",
+        "claim": "Introduces a Pressure-Variable Unified Module that maps multiple PVS into a unified representation for multiple weather scenarios.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Creates the ERA5-Latent dataset with unified representations of multiple PVS from ERA5 data.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe WLA and its integrated Pressure-Variable Unified Module as a novel approach for latent-space weather representation across multiple PVS.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report extensive experiments showing superior compression and reconstruction performance and enabling ERA5-Latent.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report reducing compressed full-PVS data from 244.34 TB to 0.43 TB in ERA5-Latent.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that downstream models operating in latent space apply to multiple PVS at low data cost and outperform pixel-space models.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation_and_gap",
+        "summary": "Climate change and extreme weather increase interest in deep learning, while pixel-space weather studies face output, applicability, storage, and compute challenges.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "proposed_representation",
+        "summary": "WLA transforms weather data into latent space and separates reconstruction from downstream tasks.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "unification_and_efficiency",
+        "summary": "Its Pressure-Variable Unified Module combines multiple PVS, while latent-space processing reduces storage and computation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_validation_and_resource",
+        "summary": "Experiments report compression and reconstruction gains, a 244.34-to-0.43 TB reduction, and stronger multi-PVS downstream performance than pixel-space models.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns architectural components with distinct stated obstacles: task decoupling with reconstruction/downstream performance, PVS unification with multi-scenario adaptability, and latent processing with storage and compute reduction.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Mapping each design choice to a named limitation makes the method-to-claim logic easy to inspect.",
+        "application": "When introducing a multi-component system, explicitly pair each component with the problem dimension it is intended to address, then report evidence under the same dimensions.",
+        "exception": "This framing is less suitable when components have strongly entangled effects or when the abstract cannot isolate which evidence supports which component."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, evaluation metrics, experimental settings, or statistical uncertainty beyond the reported storage figures and directional comparisons.",
+      "The conditions and absolute magnitude of the reported downstream and reconstruction improvements are not given."
+    ]
+  }
+}

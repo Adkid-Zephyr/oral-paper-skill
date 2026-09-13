@@ -1,0 +1,198 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47199",
+    "title": "ITBench: Evaluating AI Agents across Diverse Real-World IT Automation Tasks",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47199"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ef770eab0f5b156cab0d6c02eb1c6298a2cbe469ebc18644993b70c613180df5",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "c7205f06af2a0b7264fe37da2dc9a1960d9ffdfa081a992925b87404325c9059",
+    "extracted_at": "2026-09-13T00:08:25.781656+00:00",
+    "session_id": "01a09817-b4d4-7e12-bd2b-759f1fa69f99",
+    "usage": {
+      "input_tokens": 12760,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 864,
+      "reasoning_output_tokens": 116
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5cbc9aed8e3c9336c7fa7080311f661ed1c15955961e511097594d8e573edaa9"
+    },
+    {
+      "id": "S2",
+      "sha256": "c489084acbfc1b54b1f9f671825e8ffa28a10a3a729b6aef5cd8f9f1f1d19a3a"
+    },
+    {
+      "id": "S3",
+      "sha256": "ab47c24b3d1a76ced323f4e4d649072db37447d253bfc97412c2635dd2deebcb"
+    },
+    {
+      "id": "S4",
+      "sha256": "184a62f063b539019f6217d97ad8650c6b36ca6457303403714ec0f6381c3451"
+    },
+    {
+      "id": "S5",
+      "sha256": "5d6acf28d5fa440ba3011eb905c5276074eed3aa7f9befc6c358b645a75592e1"
+    },
+    {
+      "id": "S6",
+      "sha256": "c9c025feb632199f542344b640c2c1dd9c94ca4d143c70f3e9c4f5206b765736"
+    },
+    {
+      "id": "S7",
+      "sha256": "d114023e4a579aa9d3f7a7081539c288c4d1cae48c5524e10e6839954c0b3706"
+    },
+    {
+      "id": "S8",
+      "sha256": "5caaff360d4384f32852e50a02316bcbd38b34a60a31f47378cf86f9b30f041d"
+    },
+    {
+      "id": "S9",
+      "sha256": "3d8025277460da957cab0d0ea5b206f3bb17613a416814f9999716ff245bfd8a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47199",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Measure and understand how effectively AI agents perform critical real-world IT automation tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies a need for systematic benchmarking methodology for AI-agent IT automation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmarking framework",
+        "claim": "Introduces ITBench, a systematic framework for benchmarking AI agents on real-world IT automation tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Provides 102 initial scenarios spanning SRE, CISO, and FinOps, designed for community extension, with a leaderboard and sample agent implementations.",
+        "source_ids": [
+          "S3",
+          "S5",
+          "S9"
+        ]
+      },
+      {
+        "type": "evaluation design",
+        "claim": "Uses push-button workflows and interpretable metrics to characterize challenges and opportunities in IT automation.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present ITBench as a systematic, extensible benchmark covering three IT-operations domains with operational workflows and interpretable metrics.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that state-of-the-art-model agents resolve 11.4% of SRE scenarios, 25.2% of CISO scenarios, and 25.8% of FinOps scenarios, excluding anomaly detection.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "For FinOps anomaly-detection scenarios, the authors report an F1 score of 0.35.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Effective AI-agent automation requires ways to measure and understand performance on critical IT tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "benchmark",
+        "summary": "The authors introduce ITBench as a systematic benchmarking methodology for real-world IT automation.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "scope and design",
+        "summary": "The initial release covers SRE, CISO, and FinOps, using push-button workflows, interpretable metrics, and 102 extensible scenarios.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "Agents resolve a minority of scenarios across the three domains; FinOps anomaly detection reaches an F1 of 0.35.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "availability and aspiration",
+        "summary": "The benchmark, leaderboard, and sample implementations are released publicly; the authors position ITBench as an enabler of correct, safe, and fast automation.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a benchmark's operational interface and interpretable metrics with domain-specific scenario coverage and concrete resolution rates.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A benchmark contribution is more informative when its scope, interaction workflow, metrics, and baseline outcomes are stated together.",
+        "application": "Frame an evaluation resource by naming its target domains, scenario count, user workflow, metric interpretability, and representative baseline results.",
+        "exception": "This framing is unsuitable when the work is purely theoretical or when benchmark scope and evaluation metrics are not yet defined."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define scenario construction, resolution criteria, model configurations, or evaluation protocols.",
+      "The conditions behind the reported rates and the FinOps anomaly-detection F1 are unspecified.",
+      "The claims that automation will be correct, safe, and fast are expectations, not reported validation results."
+    ]
+  }
+}

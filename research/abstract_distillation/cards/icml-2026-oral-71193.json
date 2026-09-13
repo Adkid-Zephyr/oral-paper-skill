@@ -1,0 +1,203 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71193",
+    "title": "Focus and Dilution: The Multi-stage Learning Process of Attention",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71193"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2d58f3aa9c85cbd1c65f51c0025bbab931e9a1e1a794afa37f58f14a3130ba60",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "d411f9af8fd85d1bf8dc623394d52f2149fbfc40465dbb89d8a9899e1f2e531a",
+    "extracted_at": "2026-09-13T00:17:46.147633+00:00",
+    "session_id": "01a09820-3f10-70b1-b7f1-78527935b96a",
+    "usage": {
+      "input_tokens": 12708,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 903,
+      "reasoning_output_tokens": 97
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "eb3b3ef858dc8af765dd3e45cf99bfa926ad4ad0b5150d190b096b58d4d1f525"
+    },
+    {
+      "id": "S2",
+      "sha256": "d3597e15a35f6fb2c5873527cb4d2dff53c765487b499ffc582885035d9f40a8"
+    },
+    {
+      "id": "S3",
+      "sha256": "bd264d9ebe35ebbcdb83120ac8bb24c3618400d00010684a240ef1a6c4dc12a6"
+    },
+    {
+      "id": "S4",
+      "sha256": "83fbe394b45a6bb5bdd693e5c2d8071875c447a3477ab661e5c596c7eebc8ea9"
+    },
+    {
+      "id": "S5",
+      "sha256": "61ecb395aced68e73413e670dedbdc6bf8a02f81226b1d67e2565bfc2c67fbdd"
+    },
+    {
+      "id": "S6",
+      "sha256": "9bf5026c2ed27726e1d6e002a2e9c7fb6aaa2cf5154f0c39f526a317d6d04279"
+    },
+    {
+      "id": "S7",
+      "sha256": "bc0b7a74370271672ca2c378014549058770b6ffa1b0437cb14de8c9920ec7aa"
+    },
+    {
+      "id": "S8",
+      "sha256": "d5549896b18ecaa5ca7f7faa01f812cb5979c82b732c8b59cb730b4d0ca5d21a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71193",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work examines training dynamics in Transformer-based models, focusing on how attention learning evolves over time.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies limited understanding of Transformer training dynamics as the motivating gap.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Identifies a recurrent focus–dilution cycle in attention learning and analyzes it in a one-layer Transformer with Markovian data using gradient-flow analysis.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "decomposition",
+        "claim": "Decomposes one focus–dilution cycle into distinct stages through stage-wise linearization around critical points.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "mechanistic account",
+        "claim": "Characterizes how parameter freezing, frequency-driven focus, embedding perturbations, mass redistribution, and symmetry breaking form the cycle.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present the focus–dilution cycle and its staged theoretical explanation as the work's contribution.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, in their analyzed setting, embedding and projection rapidly become rank-one while attention parameters remain effectively frozen, followed by attention growth toward high-frequency tokens.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that evolving attention induces embedding perturbations that progressively redistribute mass and dilute the focus; low-frequency-token asymmetries then open new embedding directions and initiate another cycle.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that experiments on synthetic Markovian data, WikiText, and TinyStories corroborate the predicted stages and cyclical dynamics.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Transformer success contrasts with limited understanding of training dynamics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "core claim",
+        "summary": "The authors identify a recurrent focus–dilution cycle and analyze it theoretically in a one-layer Markovian setting.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "stage decomposition",
+        "summary": "Stage-wise linearization separates the cycle into distinct phases.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "The phases progress from rank-one condensation and frozen attention, to frequency-driven focus, dilution through embedding perturbations, and symmetry-breaking restart.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "empirical check",
+        "summary": "Experiments across synthetic Markovian data, WikiText, and TinyStories are reported to align with the predicted dynamics.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a high-level cyclical claim with an ordered mechanistic decomposition and then names datasets used to corroborate the stages.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A staged mechanism can make a complex training-dynamics claim more inspectable and connect theory to targeted empirical checks.",
+        "application": "For a dynamics paper, define the global cycle, partition it into observable phases, and report evidence separately for each phase.",
+        "exception": "This framing may be unsuitable when the phenomenon has no meaningful temporal stages or when phase boundaries cannot be operationalized."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative details about rates, parameter regimes, approximation error, or the strength of the reported corroboration.",
+      "The theoretical scope is limited in the abstract to a one-layer Transformer with Markovian data; broader architectural and data-distribution applicability is unspecified.",
+      "The abstract does not state whether the cycle is claimed to be universal or only established for the analyzed setting."
+    ]
+  }
+}

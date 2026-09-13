@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-115563",
+    "title": "RAG4GFM: Bridging Knowledge Gaps in Graph Foundation Models through Graph Retrieval Augmented Generation",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/115563"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "669db2f50d0e49f39238356526d95b7701643d7c0226650dc0a5d8c4fbd19309",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "871e1ebb5cb4e7f56f0d438fca274a3ba166dbea6b68925dad44b71db57f54f0",
+    "extracted_at": "2026-09-13T00:20:39.159815+00:00",
+    "session_id": "01a09822-f163-7f50-9c62-8c6b85dd065d",
+    "usage": {
+      "input_tokens": 12720,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 740,
+      "reasoning_output_tokens": 130
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "24a76a23d697f79e7bb57134c689e6dd54127294dd9e0590655a5c6fb9c758c9"
+    },
+    {
+      "id": "S2",
+      "sha256": "df8a648f7dbe2074e2920d1c64cf5777a1aea19f13810329e8f3673174253a86"
+    },
+    {
+      "id": "S3",
+      "sha256": "3af9f3ee25d16eac54431a3713e3fc78ce287544500a07452af7495a0ac9b674"
+    },
+    {
+      "id": "S4",
+      "sha256": "0f301b8533af7b8f10644993af282fb84db4938fa1894e0048d4bcb41d78cc4c"
+    },
+    {
+      "id": "S5",
+      "sha256": "33b880f02707079bef7d09efd453f80f33360d6f19f25b81c2e66c2e94783d63"
+    },
+    {
+      "id": "S6",
+      "sha256": "4f110ade6969b4c3521a173acfd27808cebd1f27848fa9f30bc83a4718112d87"
+    },
+    {
+      "id": "S7",
+      "sha256": "167ee488d0292ca05381583ed16efe850a1e96b755ce9a76949f8cb2d0dc52e9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-115563",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "GFMs face challenges in updating knowledge and maintaining faithful reasoning across graph learning tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies limitations in existing GFM capabilities but does not specify a separate limitation of prior approaches.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces RAG4GFM, an end-to-end framework combining multi-level graph indexing, task-aware retrieval, and graph fusion enhancement.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Provides hierarchical indexing for multi-granular graphs, adaptive retrieval for node-, edge-, and graph-level tasks, and topology-aware feature fusion for GFM inference.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "Applies a retrieval-augmented generation paradigm to GFMs through the RAG4GFM framework.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that hierarchical indexing enables efficient logarithmic-time retrieval.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that experiments across diverse GFM applications improve the efficiency of knowledge updating and reasoning faithfulness.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "GFMs show broad potential but struggle with knowledge updating and reasoning faithfulness.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "paradigm",
+        "summary": "The paper introduces graph knowledge retrieval as a RAG approach for GFMs.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "RAG4GFM integrates hierarchical indexing, task-aware retrieval, and graph fusion enhancement.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_evaluation",
+        "summary": "Experiments across diverse GFM applications are reported to improve updating efficiency and reasoning faithfulness.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The framework adapts retrieval to node-, edge-, and graph-level tasks and combines retrieved evidence with query features and sparse topology links.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Matching evidence selection and fusion to the task's structural granularity can make an architecture's information pathway more explicit.",
+        "application": "For a graph-learning paper, define retrieval and evidence-integration behavior separately for each prediction granularity, then connect each design choice to the inference input.",
+        "exception": "This decomposition may be unsuitable when tasks share a genuinely uniform representation or when added retrieval complexity is not justified."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no dataset names, baseline comparisons, numerical gains, or experimental conditions.",
+      "The claimed logarithmic retrieval efficiency and improvements in updating and faithfulness are author-reported; implementation and evaluation details are not provided."
+    ]
+  }
+}

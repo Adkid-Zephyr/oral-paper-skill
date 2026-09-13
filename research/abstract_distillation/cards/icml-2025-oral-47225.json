@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47225",
+    "title": "An Online Adaptive Sampling Algorithm for Stochastic Difference-of-convex Optimization with Time-varying Distributions",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47225"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4e8619cda1124d8db80b3adb2d140d5ea4272e6a998094b82d3906dd208f02c6",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "b49c4c70d48b5262289dc5de2af7eca963187de78be8974cd2419d56dca7b82a",
+    "extracted_at": "2026-09-13T00:09:26.454489+00:00",
+    "session_id": "01a09818-9ed0-7073-b244-15f3e9f2fe6e",
+    "usage": {
+      "input_tokens": 12698,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 889,
+      "reasoning_output_tokens": 109
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b276a9f2a5550a54dc23838ee8f17d8a7a3193014beeb257600a75bf9e51d3fe"
+    },
+    {
+      "id": "S2",
+      "sha256": "537720e4c60c96f3e9ad69e8298531560a23144604f8792e17eafa1b2de1f4ff"
+    },
+    {
+      "id": "S3",
+      "sha256": "153f98907cea63c106892059dcfecb345e95be257de589c66f187fe994fef0ef"
+    },
+    {
+      "id": "S4",
+      "sha256": "f191c2127f0ffeadb61aeafaa5f30e6dc10c1340cf5ab96a83f7bec85a55a070"
+    },
+    {
+      "id": "S5",
+      "sha256": "bf309894637e4bf141750668184ed9add3422f21dad1dcae5f6cf99744444220"
+    },
+    {
+      "id": "S6",
+      "sha256": "f2a6120d0f2fa662d6d349f6b64181d0a6ec730224da25a68db08b1cd7949f93"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47225",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Solve stochastic nonsmooth difference-of-convex optimization when the data distribution changes over time.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "An online adaptive sampling algorithm using only current-distribution data and separate sampling rates for convex and concave components.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "A convergence analysis establishing almost-sure subsequential convergence to DC critical points under suitable distribution-convergence conditions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "A pointwise O(√(p/n)) convergence rate, up to logarithmic factors, for sample-average approximations of subdifferential mappings.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors identify separate component-wise sampling rates as a novel design guided by theory and present the subdifferential-mapping rate as a novel result of independent interest.",
+      "source_ids": [
+        "S2",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report almost-sure subsequential convergence to DC critical points when the distributions satisfy proper convergence conditions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that the sample-size requirement matches static-distribution results for smooth problems or cases with a measurable subgradient selector.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "Numerical experiments are reported to confirm efficiency and effectiveness on stochastic nonsmooth problems.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task_and_method",
+        "summary": "The paper proposes online adaptive sampling for stochastic nonsmooth DC optimization with time-varying distributions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "algorithmic_design",
+        "summary": "The method uses only current data and assigns distinct adaptive sampling rates to the convex and concave components.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "convergence_result",
+        "summary": "Under suitable distribution-convergence conditions, the method is reported to converge subsequentially almost surely to DC critical points.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "sample_complexity_and_rate",
+        "summary": "The reported sample-size requirement matches specified static-distribution benchmarks, supported by a new subdifferential-mapping convergence rate.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "empirical_check",
+        "summary": "Numerical experiments report efficiency and effectiveness for stochastic nonsmooth problems.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a distinct algorithmic choice—separate sampling rates for convex and concave terms—to the theoretical analysis.",
+          "source_ids": [
+            "S2"
+          ]
+        },
+        "interpretation": "A method’s design rationale can be made more persuasive by explicitly connecting it to the theorem or rate that motivates it.",
+        "application": "When presenting an adaptive algorithm, state which analytical asymmetry motivates each separately tuned component.",
+        "exception": "This framing is unsuitable when component-specific tuning is heuristic or lacks a corresponding analytical role."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract states a convergence rate together with its dependence on dimension, sample size, and logarithmic-factor qualification.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "Including scaling variables and caveats makes a quantitative claim more interpretable.",
+        "application": "State rates with their key parameters and explicitly mark omitted factors or regimes.",
+        "exception": "Do not foreground a rate when the relevant assumptions or evaluation setting are unavailable."
+      }
+    ],
+    "unknowns": [
+      "The specific conditions required for distribution convergence and the exact meaning of subsequential convergence are not given.",
+      "The sample-size requirement and matching constants or regimes are unspecified.",
+      "The numerical datasets, baselines, metrics, and experimental results are not reported."
+    ]
+  }
+}

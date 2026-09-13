@@ -1,0 +1,134 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "scope": "Targeted resolution of synthesis flags, not random or full semantic audit",
+  "records": [
+    {
+      "paper_id": "neurips-2025-oral-116754",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S6 explicitly states the necessity of knowing or estimating the sub-optimality gap to ensure logarithmic regret with a constant learning rate. The lesson cites S5/S6 correctly. Synthesis must retain the constant-rate and two-arm context, and cannot supply a gap-estimation algorithm or claim all-instance polynomial regret above the threshold.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2025-oral-116419",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "lessons[0].source_observation.claim",
+          "source_ids": ["S2", "S3", "S5"],
+          "issue": "The source identifies continuity failure at clip transitions. It provides semantic and transitional module roles but does not identify a separate semantic failure, so the claim that each module maps to a distinct failure mode invents part of the diagnosis.",
+          "severity": "material_error",
+          "replacement_value": "The abstract identifies disrupted continuity at clip boundaries and introduces modules combining semantic guidance with phase details from adjacent clips in a transition-aware representation."
+        }
+      ],
+      "flag_resolution": "Preserve distinct module functions without converting each function into an independently diagnosed failure. The application may still suggest a failure-to-component mapping when another paper has evidence for it.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "neurips-2025-oral-117761",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "lessons[0].source_observation.claim",
+          "source_ids": ["S2", "S7", "S8"],
+          "issue": "Matching-style is imprecise: the source establishes an upper guarantee and necessity of exponential dependence under a simplex/dimension restriction, not matching asymptotic rates. The evidence fields already preserve the actual forms and conditions.",
+          "severity": "minor",
+          "replacement_value": "The abstract links a calibration guarantee to a regret guarantee and separately gives a lower bound showing that exponential dependence on inverse accuracy is necessary in the stated simplex regime; it does not establish matching rates."
+        }
+      ],
+      "flag_resolution": "The necessity result is supported, but tightness and matched dependence on dimension or epsilon cannot be inferred from the supplied asymptotic forms.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "neurips-2025-oral-116595",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "This reliance in S5 refers back to predominant local-shape reliance in S4. The evidence array keeps these adjacent and the narrative states the local-shape referent explicitly. Synthesis must not describe ConvNeXt/ViT as mitigating a newly established texture bias or eliminating all cue reliance.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2025-oral-116347",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "unknowns[0]",
+          "source_ids": ["S6", "S7"],
+          "issue": "Inverse-model-dimension scaling already specifies an exponent of minus one with respect to dimension. Saying that no quantitative exponent is given contradicts the source and the card's own contribution summary.",
+          "severity": "minor",
+          "replacement_value": "The abstract states inverse-model-dimension scaling but does not provide fitted exponent estimates or uncertainties, model dimensions, datasets, or details of the reported confirmation in open-sourced LLMs."
+        }
+      ],
+      "flag_resolution": "Preserve the stated inverse-dimension relation without converting dimension into total parameter count or inventing a measured fit or uncertainty interval.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "neurips-2025-oral-117310",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S4 reports the visual-domain macro-F1 gain as 43% without defining percentage convention, and S5 places o4-mini in the salient-region/IoU comparison. The card preserves those reports and explicitly leaves percentage convention and o4-mini scope unknown. Synthesis must not generalize parity to overall clinical diagnosis or assign a percentage-point gain.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2025-oral-116345",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S7 supplies the 63x/23x faster-training comparisons, while S8 separately supplies 400K versus 4M iterations for different model sizes. The card explicitly leaves speedup meaning and convergence criteria unknown. Synthesis must not equate the speedup ratios with measured wall-clock reductions or transfer them to the separate iteration-count comparison.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2025-oral-118251",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S9 explicitly says under 1 ms for a 9K-by-9K image on RTX 2080 Ti; the extraction matches it. The timing boundary is unspecified, so surprising magnitude alone does not justify editing the number. Keep it author-reported, separate from the 15K-by-15K/24GB capacity claim, and do not infer end-to-end timing or CPU-only deployment.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2025-oral-119732",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "author_reported_evidence[0].claim",
+          "source_ids": ["S6"],
+          "issue": "The source's over 94 compression lacks a unit or symbol. The card assigns compression-ratio units despite correctly noting that ambiguity in unknowns. A ratio exceeding 94 is not supported.",
+          "severity": "material_error",
+          "replacement_value": "The authors report experiments across standard architectures, datasets, and adversarial attacks with a compression result stated as over 94, whose units are unspecified, while recovering or improving adversarial accuracy relative to uncompressed baselines."
+        }
+      ],
+      "flag_resolution": "Preserve the malformed numeric report as unresolved. Neither percent compression nor a 94-fold ratio can be recovered from the supplied abstract.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "neurips-2025-oral-121422",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S3 gives 26K queries and S6 gives 31,250 annotations with 25 per example. The card repeats both without asserting that all queries receive 25 annotations. The annotated subset and meaning of example are not specified; synthesis must not multiply 26K by 25 or infer the full annotation design from a division of aggregate counts.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2025-oral-121452",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S6 itself contains operations, expected outcomes, and navigation-agent execution. S4 supplies functionality-oriented test construction. The lesson cites S4/S6 and makes no 647-case or manual-refinement claim, so it does not need S5 for its actual content. No locator correction is warranted.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2025-oral-118373",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "The title and S8 repository identify the work as HyperET, but S5/S6/S7 contain unresolved method macros in the abstract body. The card's generic method description and warning accurately reflect that body. Synthesis can identify the paper as HyperET from supplied identity, without claiming the exact expansion or relationship of each unresolved macro is established.",
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "first_pass_pass": 8,
+    "first_pass_minor": 2,
+    "first_pass_material_error": 2,
+    "material_findings": 2,
+    "minor_findings": 2,
+    "requires_correction": 4,
+    "scope": "Targeted checking of 12 supplied synthesis flags. Two material card errors invent a distinct failure diagnosis or numerical units; two local precision errors concern matching-rate language and a false missing-exponent statement. Eight flags are resolved without card changes. Results do not establish a random error rate, complete semantic review, scientific validity, actual runtime, or verified release availability. No cards or other files were edited."
+  }
+}

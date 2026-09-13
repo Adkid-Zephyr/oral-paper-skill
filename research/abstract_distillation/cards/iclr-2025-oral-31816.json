@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31816",
+    "title": "RB-Modulation: Training-Free Stylization using Reference-Based Modulation",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31816"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "59679434e6e12c828b03523d063bf310c6738c13a1cd5f923c070bbd8ad011d6",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "499754c292bd9f1d1b357f984d129a597fb884508253f5f8784124b7083bda1c",
+    "extracted_at": "2026-09-12T23:53:09.861942+00:00",
+    "session_id": "01a09809-bbd0-7b72-9ed8-3b988262cbcc",
+    "usage": {
+      "input_tokens": 12699,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 828,
+      "reasoning_output_tokens": 123
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "30a2dcc3198078781330eb4670fe7ba1498eb0be3db64964ff45f727b3ddd298"
+    },
+    {
+      "id": "S2",
+      "sha256": "59f2818718dfa4a6c50da1989fbb444717629cbd6d44f95ada8275fa340f9acf"
+    },
+    {
+      "id": "S3",
+      "sha256": "3ee499706f7604ea32cc8c59ad2c3b624fe1478b7bfc5c65195380b6b0951486"
+    },
+    {
+      "id": "S4",
+      "sha256": "d635866bf6cf20a8bd8c35323dbeb91b45e21548f6fb004eabffd2e446be12e1"
+    },
+    {
+      "id": "S5",
+      "sha256": "db649ae150e3ab5d81f5d51c86459effd431adeeff27ee0504d7abf995fddcee"
+    },
+    {
+      "id": "S6",
+      "sha256": "9929c3699324c0231fa31294f47f394f94a9f87108b50ec00cac91c14b3452a9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31816",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Training-free personalization and stylization of diffusion models from reference images while preserving prompt-specified content.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing training-free approaches struggle to extract style without extra text descriptions, avoid content leakage from style references, and compose style with content effectively.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A plug-and-play, training-free RB-Modulation framework based on a stochastic optimal controller whose terminal cost encodes a style descriptor.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A cross-attention feature-aggregation scheme intended to decouple reference-image content and style, combined with test-time optimization for their control.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "A method for composing content and style without relying on external adapters or ControlNets.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present RB-Modulation as a new training-free personalization solution and describe its controller and feature aggregation scheme as novel, with style-content composition positioned as a departure from external-adapter or ControlNet dependence.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical justification and empirical evidence for precise extraction and control of content and style in a training-free setting.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that the resulting drift preserves high fidelity to the reference style while adhering to the text prompt.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper identifies three difficulties in existing training-free approaches: style extraction without extra descriptions, content leakage, and weak style-content composition.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "core mechanism",
+        "summary": "RB-Modulation uses a stochastic optimal controller with a terminal-cost style descriptor.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "disentanglement mechanism",
+        "summary": "Cross-attention feature aggregation is introduced to separate reference-image content from style, supported by theoretical and empirical claims.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "claimed outcome",
+        "summary": "The framework is reported to enable precise content/style control and seamless composition without external adapters or ControlNets.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each identified failure mode with a named mechanism: controller-based style encoding and cross-attention aggregation for content-style decoupling.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S4"
+          ]
+        },
+        "interpretation": "Mapping shortcomings to explicit components makes the method’s intended causal story easier to inspect.",
+        "application": "When presenting a multi-failure problem, pair each failure mode with the specific module claimed to address it, then state the corresponding observable outcome.",
+        "exception": "This framing is less suitable when one mechanism addresses several entangled causes or when component-level evidence is unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract provides no quantitative metrics, datasets, baselines, or experimental conditions for the empirical claims.",
+      "The controller formulation, terminal cost, feature-aggregation details, and scope of the theoretical justification are unspecified.",
+      "No concrete evidence is given for the claimed departure from adapters or ControlNets beyond the stated capability."
+    ]
+  }
+}

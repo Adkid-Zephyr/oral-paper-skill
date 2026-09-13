@@ -1,0 +1,226 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97983",
+    "title": "Questioning the Survey Responses of Large Language Models",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97983"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9c05516927fd20d93ba15691fbb83a85714869fffc2bb59f16e68015dd6137fa",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "90467da870afc1296fecefdb1465317618871d591a6ee67c5c859a6475e560c0",
+    "extracted_at": "2026-09-13T00:19:12.783856+00:00",
+    "session_id": "01a09821-9d9b-76a2-8122-c3d7fd106141",
+    "usage": {
+      "input_tokens": 12683,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 736,
+      "reasoning_output_tokens": 83
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "28b7efee820fee08d29ccfd7861cea7bb42a1891f02da4d07c58078a7b975d2c"
+    },
+    {
+      "id": "S2",
+      "sha256": "a934e509d56c1c92d57d0420e8702932923c599cd8681822f81ceba4d5ae34a0"
+    },
+    {
+      "id": "S3",
+      "sha256": "132971cf7f5e5629954dc2cf0ec7ddffd6ce4891171014e29e6351791897827e"
+    },
+    {
+      "id": "S4",
+      "sha256": "1d04bfaeedaec66e79402f721de181c597474afd8ed43d4c15164bfd3a36055d"
+    },
+    {
+      "id": "S5",
+      "sha256": "f645424b3f55729071fbf2557ec6d4a1c4d31db55d43d80b48a0a7d9ef660bb4"
+    },
+    {
+      "id": "S6",
+      "sha256": "be8449108895762a4228447790e72383f6a6599132f85e76cdcb019cdc823d13"
+    },
+    {
+      "id": "S7",
+      "sha256": "bc7ddd79d65ca9d06fe66198c4b0223506147decd8f30b54d0ff3e9f2409c9a0"
+    },
+    {
+      "id": "S8",
+      "sha256": "2437b7da89c42dc17dfef9ce4a5280f01c74ce9cc1557933932ed64c7edaceb9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97983",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess whether language-model survey responses support inferences about the human populations, opinions, or values they represent.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical examination",
+        "claim": "A critical evaluation of 43 language models using standard prompting and the American Community Survey as a reference.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Identification of ordering/labeling biases and a tendency toward uniformly random responses after randomized answer ordering.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "interpretation",
+        "claim": "An account of how these patterns can make models appear to represent unusually uniform subgroups and thereby mislead alignment conclusions.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their evaluation of 43 language models establishes two dominant response patterns: ordering and labeling biases, and a trend toward uniformly random survey responses after randomized answer ordering.",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report evaluating 43 language models with de-facto standard prompting methodologies.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that responses show ordering and labeling biases, including a tendency toward answers labeled “A.”",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that, after randomized answer ordering, the evaluated models trend toward uniformly random survey responses, irrespective of model size or training data within the evaluated set.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Surveys are increasingly used to study large language models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivating use",
+        "summary": "Comparing model answers with human reference populations is used to infer represented demographics, political opinions, or values.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The work examines model survey responses against the American Community Survey and evaluates 43 models with standard prompting.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "findings and implication",
+        "summary": "The abstract reports ordering and labeling biases, followed by a trend toward uniformly random survey responses among evaluated models after randomized answer ordering, potentially misleading conclusions about model alignment.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates raw response artifacts from responses after a specified intervention—randomized answer ordering—and reports that the conclusion changes substantially.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "Making prompt or answer-order sensitivity explicit can prevent interpretation of survey outputs as stable preferences.",
+        "application": "Report results under controlled permutations of answer labels or option order before mapping model responses to human populations.",
+        "exception": "This move is unsuitable when answer ordering is semantically meaningful and cannot be randomized without changing the task."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the 43 models, survey questions, prompting details, or quantitative measures of bias and randomness.",
+      "The abstract does not report uncertainty estimates, statistical tests, or the precise basis for the reported trend toward uniformly random survey responses."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "stated_novelty.claim",
+      "before": "The authors state that their evaluation establishes two dominant response patterns: labeling/order bias and post-adjustment uniform randomness across models.",
+      "after": "The authors state that their evaluation of 43 language models establishes two dominant response patterns: ordering and labeling biases, and a trend toward uniformly random survey responses after randomized answer ordering.",
+      "review_file": "reviews/flagged-batch-14.json",
+      "review_sha256": "ff9c3edd278c3f414d5a8ebc4a74177286b64d696386f76cb1a334980eb249a7",
+      "applied_at": "2026-09-13T00:42:27.400666+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "author_reported_evidence[2].claim",
+      "before": "The authors report that randomized answer ordering yields uniformly random responses across models, irrespective of model size or training data.",
+      "after": "The authors report that, after randomized answer ordering, the evaluated models trend toward uniformly random survey responses, irrespective of model size or training data within the evaluated set.",
+      "review_file": "reviews/flagged-batch-14.json",
+      "review_sha256": "ff9c3edd278c3f414d5a8ebc4a74177286b64d696386f76cb1a334980eb249a7",
+      "applied_at": "2026-09-13T00:42:27.401640+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "narrative_sequence[3].summary",
+      "before": "The abstract reports label/order bias, then uniformly random responses after randomized ordering, implying potentially misguided alignment conclusions.",
+      "after": "The abstract reports ordering and labeling biases, followed by a trend toward uniformly random survey responses among evaluated models after randomized answer ordering, potentially misleading conclusions about model alignment.",
+      "review_file": "reviews/flagged-batch-14.json",
+      "review_sha256": "ff9c3edd278c3f414d5a8ebc4a74177286b64d696386f76cb1a334980eb249a7",
+      "applied_at": "2026-09-13T00:42:27.402154+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "unknowns[1]",
+      "before": "It does not report uncertainty estimates, statistical tests, or the precise basis for the claim that responses are uniformly random.",
+      "after": "The abstract does not report uncertainty estimates, statistical tests, or the precise basis for the reported trend toward uniformly random survey responses.",
+      "review_file": "reviews/flagged-batch-14.json",
+      "review_sha256": "ff9c3edd278c3f414d5a8ebc4a74177286b64d696386f76cb1a334980eb249a7",
+      "applied_at": "2026-09-13T00:42:27.402589+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

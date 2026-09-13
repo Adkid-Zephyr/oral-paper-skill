@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31807",
+    "title": "Influence Functions for Scalable Data Attribution in Diffusion Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31807"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a214681e1eb72a9e04dc62831d374cf53d7ee730ae0e21ef00d1f1e96311d025",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "12773d187152d1c6b6efae25765d8f1978f9341da8855b9d2500735bd0195dbf",
+    "extracted_at": "2026-09-12T23:52:48.399001+00:00",
+    "session_id": "01a09809-7320-74a3-9912-01cdcd57a6fa",
+    "usage": {
+      "input_tokens": 12724,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 724,
+      "reasoning_output_tokens": 100
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fd9ef05cd5befb22a31f0be6c5844df47a61ed5c6e3dce0218a725c3af115ca5"
+    },
+    {
+      "id": "S2",
+      "sha256": "a2e36afb1db09b2831b40becd055a1e625adb72a2321f38eeeca068f285d4ef2"
+    },
+    {
+      "id": "S3",
+      "sha256": "d276312bba60b9de41a377a9d008e83ea1f11db4a3973679f1aa2cf88315218f"
+    },
+    {
+      "id": "S4",
+      "sha256": "8e731e77e2d572c76b43aaab80285e0df4a7994873d1a5624bb4c5542ffb623f"
+    },
+    {
+      "id": "S5",
+      "sha256": "a2ef0daeea4a7a32be4a268f0fedf70d29b34043e50deed68e9c34f3ace85e35"
+    },
+    {
+      "id": "S6",
+      "sha256": "49bb5ae43ef86214ed444612796e0f4200375d0bb5a5edd7466698d43ece28f4"
+    },
+    {
+      "id": "S7",
+      "sha256": "c91b52c97e1510350803fd2514d07dd2a05dc5f8adb62948c011e5778f0d9d23"
+    },
+    {
+      "id": "S8",
+      "sha256": "18549fbb62b8ae56c2e907fce55c6a6652085e8ac4bde65c0c60fc23d51b2e6f"
+    },
+    {
+      "id": "S9",
+      "sha256": "90c05915966fe5f98144bc1c09c2e8d5d5868371a6bde8b7539613d9212911ba"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31807",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses data attribution and interpretability challenges in diffusion models.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Extends influence functions to predict changes in diffusion-model generation probabilities using proxy measurements.",
+        "source_ids": [
+          "S3",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "Provides a formulation in which prior attribution methods correspond to different design choices.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "scalable computation",
+        "claim": "Uses a diffusion-model-tailored K-FAC approximation based on generalised Gauss–Newton matrices for Hessian computations.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by formulating influence functions for generation-probability-related quantities in diffusion models and tailoring scalable Hessian approximation to this setting.",
+      "source_ids": [
+        "S3",
+        "S6",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their recommended method outperforms previously proposed attribution methods on LDS and retraining without top influences, without method-specific hyperparameter tuning.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Diffusion models advance generative modelling, while adoption creates data-attribution and interpretability challenges.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "adaptation",
+        "summary": "The paper extends influence functions from supervised-loss changes to changes in the probability of generating a particular example, measured through proxies.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "unification_and_scaling",
+        "summary": "It formulates these quantities, interprets prior methods as design choices, and introduces a diffusion-tailored K-FAC approximation for scalable Hessian computation.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported_comparison",
+        "summary": "The authors report stronger performance on LDS and retraining-without-top-influences evaluations without method-specific tuning.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a target quantity—generation probability—to proxy measurements, then explicitly formulates influence functions for those quantities.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "Making the attribution target explicit can clarify what an influence estimate is intended to approximate.",
+        "application": "Define the downstream quantity of interest first, list its measurable proxies, and state how each proxy enters the attribution formulation.",
+        "exception": "This structure may be unsuitable when the target quantity has no defensible proxy or when proxy choice is itself the central unresolved question."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the proxy measurements, datasets, numerical results, or evaluation protocols.",
+      "The magnitude and statistical reliability of the reported performance advantage are not given.",
+      "The abstract does not establish priority or independently verify the claimed scalability or performance."
+    ]
+  }
+}

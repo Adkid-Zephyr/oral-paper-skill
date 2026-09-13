@@ -1,0 +1,110 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "scope": "Targeted resolution of synthesis flags, not random or full semantic audit",
+  "records": [
+    {
+      "paper_id": "iclr-2025-oral-31808",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S2 is genuinely a long supplied block containing the linear mapping, tentative homomorphism interpretation, model components, results, and analysis. The card explicitly says possible homomorphism and marks it unproved. No finer source IDs were supplied, so their absence is not fabricated support. Synthesis must retain the hypothesis status.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31820",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "lessons[0].source_observation.claim",
+          "source_ids": ["S1"],
+          "issue": "The abstract assigns reconstruction-gap elimination to the one-to-one normalizing-flow mapping. It introduces importance-adaptive sampling additionally, without assigning that sampling strategy to repairing the same gap. The observation attributes a component-specific rationale beyond the source.",
+          "severity": "material_error",
+          "replacement_value": "The abstract links reconstruction-induced value discrepancy to optimization errors, proposes a one-to-one normalizing-flow mapping to eliminate that gap, and additionally introduces importance-adaptive token sampling without specifying its relationship to gap repair."
+        }
+      ],
+      "flag_resolution": "Mapping and gap-elimination wording are directly author-stated in S1, not an independently verified theorem. Only the combined sampling-to-gap attribution requires correction; the application remains a proposed writing/design practice.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31821",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S9 explicitly reports LLM scores up to 60% and human performance 97%. The card accurately attributes both and explicitly leaves their direct comparability unknown. Neither matched conditions nor a calibrated human-model deficit can be inferred from this abstract; the card does not claim either.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31824",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S10 reports a 67.3% improvement without identifying its metric, denominator, or percentage-point/relative convention. The card repeats the author-reported number and explicitly marks meaning and denominator unspecified. No defensible numeric normalization is available from the source.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31826",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S3 directly juxtaposes 21.3%, 91.2%, and 73.0%, explicitly tying 21.3% to the o1-preview agent. The card follows that author comparison and leaves its protocol unspecified; its lesson exception warns against incomparable benchmarks. The abstract alone cannot establish identical agent configurations or matched protocols for all three figures. Synthesis must present a reported cross-benchmark comparison, not a controlled estimate of difficulty or an independently calibrated deficit.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31828",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S8 itself claims reduced data contamination from experiments. The card preserves author attribution; it does not invent contamination counts or a measurement instrument. The abstract does not reveal whether the claim uses direct contamination measurement or a proxy. This distinction remains unresolved and synthesis must not portray it as independently measured elimination of contamination.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31833",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S7 uses 4.6% and 3.5% accuracy gain without distinguishing relative percentages from percentage points. The card preserves that wording and reports missing baseline accuracies. Its fully specified result language is an application suggestion, not a statement that this example has complete measurement conditions. Synthesis must retain the source's unresolved percentage convention and not call this result fully specified.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31835",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S1 contains the entire supplied abstract. The card's reported experiment correctly modifies the hypernetwork-generated value network from linear to nonlinear. Direct intervention on an internal code appears only as a proposed future application, not an experiment attributed to the authors. Synthesis must not convert that suggestion into an observed latent-code intervention.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31838",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S7 explicitly reports over 80% agreement with almost 80% coverage on a Chatbot Arena subset and the GPT-4 comparison. The card retains the subset and coverage qualifiers and marks guarantee assumptions, calibration, escalation conditions, and costs unknown. It does not establish all-case agreement, universal superiority over GPT-4, or an unconditional guarantee; those would exceed the source.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31848",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S3 expressly includes explicit/implicit preferences and generation/classification tasks, so the observation is supported. The next field is an interpretation of possible diagnostic usefulness, not a report that inference, memory, and adherence were independently isolated. Those dimensions are not demonstrated to be identifiable from these task axes alone; synthesis must keep diagnostic isolation as an unvalidated possibility.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31854",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S3 contains the authors' undefined profound-understanding assertion, and S5 contains the unquantified functional-probability comparison. The card labels both as author reports and leaves functional measurement, magnitude, uncertainty, and independent support unknown. Do not synthesize measured mechanistic understanding, laboratory validation, or a known probability gain from these claims.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31862",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S6 directly claims determination of general spatial arrangements from distances and dihedral angles. The card retains general arrangements and explicitly leaves proof conditions and precise rigidity scope unspecified. Generic-position assumptions and equivalence under symmetries cannot be recovered from this abstract and must not be supplied from prior knowledge or treated as verified unrestricted uniqueness.",
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "first_pass_pass": 11,
+    "first_pass_minor": 0,
+    "first_pass_material_error": 1,
+    "material_findings": 1,
+    "minor_findings": 0,
+    "requires_correction": 1,
+    "scope": "Read all 12 supplied originals and current cards to resolve specific synthesis flags. One confirmed source-observation error assigns sampling a reconstruction-repair role not stated in the abstract. Eleven flags are resolved without card changes because the card preserves source wording, marks missing conditions, or labels the disputed step as interpretation/application. Per-record resolutions identify limits that final synthesis must preserve. No actual overreaching synthesis statement was supplied beyond the flags, so no unsupported synthesis-only edit was invented. These are targeted judgments, not a random error estimate, scientific validation, or full semantic certification. No cards or other files were edited."
+  }
+}

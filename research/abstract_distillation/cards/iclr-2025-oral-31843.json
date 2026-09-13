@@ -1,0 +1,199 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31843",
+    "title": "Context-Parametric Inversion: Why Instruction Finetuning May Not Actually Improve Context Reliance",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31843"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "20035e8ed851159d4eca44f856b9f248b3c88fe00da9d57b166315216a3c67d0",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "6ce610eead20e664d6801b846211493953f61294c6350ec190866ab218e91481",
+    "extracted_at": "2026-09-12T23:54:10.468044+00:00",
+    "session_id": "01a0980a-aac8-7962-92be-0c2a48779840",
+    "usage": {
+      "input_tokens": 12786,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 808,
+      "reasoning_output_tokens": 112
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ac0274cc9350c391cc1acaceb051dc97724fab615c520b7dc687e331c743a905"
+    },
+    {
+      "id": "S2",
+      "sha256": "6c1a405b27b8d3bf1caf9fa1c7c976a9174c923fd48d6b93bbe0e00ad4a2ab3b"
+    },
+    {
+      "id": "S3",
+      "sha256": "89c71518d047a8e3cd156f1ccf1e667492d0afe7764f4931eb97594306a3704e"
+    },
+    {
+      "id": "S4",
+      "sha256": "2d31cc4241390ce3dec4776217e465b803b98bb8a91a4ea867cae767a48cf6eb"
+    },
+    {
+      "id": "S5",
+      "sha256": "528692155c16b027c78274880e699b8df0a631f63bd6fce709488598180a6e9c"
+    },
+    {
+      "id": "S6",
+      "sha256": "c03b1a62484769aaa81da4088c00ada253b537196f695da4e99f46c089bc6ea3"
+    },
+    {
+      "id": "S7",
+      "sha256": "5dfdfe444540726e574db2a06198f3b06037a6558561b08f19f37da277c7fd6c"
+    },
+    {
+      "id": "S8",
+      "sha256": "7f24f1edccdd552b9142bb2cddf6764734a970a9aa17f87e1e4e4e5ad7aec15e"
+    },
+    {
+      "id": "S9",
+      "sha256": "bcdea24c1421fa3f5c456e5e3fe11e91fd1d497a9d5ff72cb14c5989b4be9f0a"
+    },
+    {
+      "id": "S10",
+      "sha256": "9f1616c6d38bb1e44096d07ca94e73a8222e0032975752539486766a63d2569d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31843",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper examines why instruction-finetuned language models may fail to rely on input context, particularly when it conflicts with parametric knowledge.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "Identifies context-parametric inversion: context reliance decreases as instruction finetuning progresses despite an initially expected increase.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "Reports controlled studies probing which data points contribute to the counter-intuitive behavior and theoretically analyzes its variation during finetuning.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "type": "mitigation",
+        "claim": "Connects the inversion to finetuning-data properties and reports potential mitigation strategies with limited gains.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce and name the observed context-parametric inversion phenomenon.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report observing the behavior across TULU, Alpaca, and Ultrachat, and across Llama, Mistral, and Pythia model families.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report controlled studies that eliminate some simple hypotheses and isolate datapoints associated with the behavior.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report mitigation strategies yielding limited but insightful gains.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Instruction finetuning aims to improve instruction following and context comprehension, yet models can disregard contradictory context and insert outdated or unwarranted facts.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "observation",
+        "summary": "Context reliance reportedly declines over finetuning, following an initially expected increase; the paper names this context-parametric inversion.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "The authors report the pattern across several instruction-tuning datasets and model families.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "explanation_and_response",
+        "summary": "Controlled studies, theoretical analysis, and data-property analysis are used to investigate causes and motivate mitigation strategies.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a trajectory-level behavioral observation with cross-dataset/model-family scope, controlled probing, theoretical analysis, and data-linked mitigation.",
+          "source_ids": [
+            "S4",
+            "S7",
+            "S8",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "This alignment makes an unexpected training-dynamics claim more informative by connecting detection, scope, explanation, and intervention.",
+        "application": "For a paper reporting non-monotonic training behavior, state the trajectory, test its scope across settings, then link targeted analyses to a proposed intervention.",
+        "exception": "This sequence may be unsuitable when the study has only a single setting or lacks an intervention grounded in the analysis."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify how context reliance or gains are measured, the finetuning trajectories, dataset/model configurations, or statistical uncertainty.",
+      "The controlled-study hypotheses, theoretical assumptions, datapoint properties, and mitigation procedures are not detailed."
+    ]
+  }
+}

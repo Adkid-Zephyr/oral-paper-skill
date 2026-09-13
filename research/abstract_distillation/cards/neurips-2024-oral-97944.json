@@ -1,0 +1,168 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97944",
+    "title": "Learning diffusion at lightspeed",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97944"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4d57af3a636c389176eeb5d670b4193b250e1658cae9bbd9be89d3fd0772b847",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "ffc0c46ae854fe5840efb563c6f07732f2d77e3e303feaae78840ca80860b0a3",
+    "extracted_at": "2026-09-13T00:17:45.893951+00:00",
+    "session_id": "01a09820-44d2-7902-8725-94846423053d",
+    "usage": {
+      "input_tokens": 12648,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 751,
+      "reasoning_output_tokens": 62
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f97e4f6986af7b918e6e55db98570f9657cd2326cf9794981ced223cb859d9c1"
+    },
+    {
+      "id": "S2",
+      "sha256": "2ef85f5e59609b70f26cd8ad2148b2f9b1c168be27241360a1c5e64899c38bca"
+    },
+    {
+      "id": "S3",
+      "sha256": "d8baa33e77d57416e7025743f2041bbfc88c8c32ec8c97e2559f0a06d2b9ccfa"
+    },
+    {
+      "id": "S4",
+      "sha256": "0afbb73eba0de00bfce284eda651c7b67f4a2710e2143786a55569047c079f54"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97944",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Learn diffusion terms and predict diffusion-driven dynamics from observational or real-world data.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches use complex bilevel optimization and model only system drift, leaving other diffusion components unmodeled.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces JKOnet*, a simple model that recovers potential, interaction, and internal-energy components of an underlying diffusion process.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Provides a closed-form optimal solution for linearly parametrized functionals, based on first-order optimality conditions for the JKO scheme.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports improved sample efficiency, computational complexity, and accuracy relative to baselines, including cellular-process prediction.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish JKOnet* from existing architectures by combining a simple quadratic-loss objective with recovery of multiple diffusion components rather than drift alone.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that JKOnet* outperforms other baselines in sample efficiency, computational complexity, and accuracy.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "On real-world cellular-process data, the authors report state-of-the-art accuracy at a fraction of the computational cost of existing methods.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "For linearly parametrized functionals, the authors report a closed-form optimal solution.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Diffusion is presented as important for natural processes and generative-model dynamics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing observational-data methods are described as bilevel, complex, and drift-only.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "JKOnet* is introduced with a quadratic loss and the ability to recover three diffusion components.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "theory_and_application",
+        "summary": "The method is grounded in the JKO energy-minimization view, yields a closed-form solution in a linear case, and is applied to cellular-process prediction.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a modeling simplification—a quadratic loss—to broader component recovery and then reports efficiency and accuracy comparisons.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A compact abstract can make a method claim persuasive by pairing the design choice, the capability it enables, and concrete comparison axes.",
+        "application": "When presenting a new method, explicitly connect each architectural or objective-level simplification to the additional quantity it can represent, then report aligned efficiency and accuracy measures.",
+        "exception": "This framing is unsuitable when the claimed capability or comparison is not directly evaluated or theoretically characterized."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dataset sizes, baseline identities, numerical gains, or evaluation protocols.",
+      "The conditions and derivation behind the closed-form solution and the scope of the cellular-process result are not given."
+    ]
+  }
+}

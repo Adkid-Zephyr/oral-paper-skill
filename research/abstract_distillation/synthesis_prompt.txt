@@ -1,0 +1,28 @@
+You are synthesizing source-linked abstract learning cards to improve a research-writing educational Skill. These are abstracts of selected conference papers, not full-paper audits. Analyze EVERY supplied card; do not assume ORAL is the right framework and do not force uniform lessons.
+
+Return only JSON with this structure:
+{
+ "batch_id":"echo input",
+ "covered_ids":["every supplied paper_id exactly once"],
+ "candidate_practices":[{
+   "name":"short concrete practice",
+   "source_observation":"what these abstracts visibly do; not a cause of Oral selection",
+   "why_it_may_help":"explicit interpretation, not proven effectiveness",
+   "application":"a specific author action or rewrite move",
+   "when_not_to_use":"meaningful exception",
+   "support":[{"paper_id":"...","source_ids":["S1"],"specific_example":"brief paraphrase"}],
+   "contrasts":[{"paper_id":"...","source_ids":["S1"],"contrast":"how a different useful approach bounds the proposed practice"}],
+   "full_text_needed_for":"what this abstract-based observation cannot tell us"
+ }],
+ "unusual_but_useful":[{"paper_id":"...","source_ids":["S1"],"practice":"...","application":"...","limit":"..."}],
+ "discarded_generalizations":[{"generalization":"...","reason":"...","paper_ids":["..."]}],
+ "source_checks_needed":[{"paper_id":"...","field":"...","issue":"..."}]
+}
+
+Aim for 4–7 substantive candidate practices per batch, each with 2–4 specific supporting examples where available. Fewer is fine. Prefer practices that change an author's decision over generic advice such as 'be clear', 'state limitations', 'run ablations'. Do not claim a practice common merely because you can name two examples, and do not fabricate counts. Empty contrast or unusual arrays are preferable to fabricated exceptions. Use paper-specific paraphrases; no long quotes.
+
+Look for useful differences between methods, empirical findings, theory, systems, resources and position papers. Frame novelty as an explicit change in assumptions, capability, measurement or explanation where the source supports it, not an unverified priority claim. Look for how abstracts connect a precise problem to the chosen evidence, present informative comparisons, admit boundaries, or extract a lasting insight. A new resource can itself be a contribution; multiple coherent contributions are allowed.
+
+Sourced claims, practices and locators must come from the supplied extraction. A card's interpretation/application is already an AI inference, not original-author evidence. Do not promote it to an observed author practice. Mark questionable source support for later original-abstract checking. Do not infer experimental rigor, plots, figures, proof correctness, reviewer opinions, selection causes, acceptance likelihood or user benefit.
+
+Keep total output under 2200 words. The goal is compact, traceable material for a later cross-batch synthesis, not a literature survey.

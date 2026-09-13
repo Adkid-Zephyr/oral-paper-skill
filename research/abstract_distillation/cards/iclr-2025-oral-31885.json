@@ -1,0 +1,199 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31885",
+    "title": "Population Transformer: Learning Population-level Representations of Neural Activity",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31885"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1cf1fb94cb5f22e9dd5b8c245ef48457c5eb85f161ae711b0d3ee22ddb4849f0",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "6cfd3ca1907718246c86028f9b270390a2368aeb0d6c161c57f771a02f6e2d3b",
+    "extracted_at": "2026-09-12T23:55:51.347748+00:00",
+    "session_id": "01a0980c-35e9-7711-b6af-eef35cd890de",
+    "usage": {
+      "input_tokens": 12724,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 842,
+      "reasoning_output_tokens": 125
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bb68f841fec60fe960108830bbd976a5b1175e0563a217c9943d28d5a9654819"
+    },
+    {
+      "id": "S2",
+      "sha256": "341dd97f3d586e221af104a494700e2fcb2c4391c3c0330df527323e71e5e3cf"
+    },
+    {
+      "id": "S3",
+      "sha256": "4190662077f28b3edd2f444f3101a965548511bfceb2f342b5b164d51bdbd6a2"
+    },
+    {
+      "id": "S4",
+      "sha256": "e50cfc16bdfc2fef1a97f175feb727806b1603c9bf8625d14bfc64298072e819"
+    },
+    {
+      "id": "S5",
+      "sha256": "1fd1cfb5e20a9318e4ab83744eca1c3375465d6a7edfa6d06db9d93101c33780"
+    },
+    {
+      "id": "S6",
+      "sha256": "9f155318eb6765815a194cc4d14e142aae4811a2aeea5397b281a5799f660db3"
+    },
+    {
+      "id": "S7",
+      "sha256": "042e67f96d45b44ea69f151edb964a491112dee261a449251787b0067cadc321"
+    },
+    {
+      "id": "S8",
+      "sha256": "e1fc79955c7e91da2b5df4cbb39bd948db0354704fea0fb91e78cc8ea043d057"
+    },
+    {
+      "id": "S9",
+      "sha256": "822d85237f7e128ec40f75700aef63d1df18a2f425595d51ba93d3d4602362a3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31885",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Scaling neural time-series models across subjects and datasets with sparse, variable electrode distributions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A self-supervised Population Transformer learns population-level codes for arbitrary neural-recording ensembles and aggregates spatially sparse channels on top of pretrained temporal embeddings.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The framework supports multiple time-series embeddings and neural data modalities, and is reported to improve downstream decoding.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors release code and a pretrained PopT for off-the-shelf multi-channel intracranial decoding and interpretability.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed framework combines pretrained temporal embeddings with learned aggregation of multiple spatially sparse neural channels to produce population-level representations.",
+      "source_ids": [
+        "S1",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that pretrained PopT reduces the data required for downstream decoding while increasing accuracy, including on held-out subjects and tasks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "Compared with end-to-end methods, the authors report lower computational cost with similar or better decoding performance.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report interpreting pretrained and fine-tuned PopT models to extract neuroscience insights from large datasets.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames sparse and variable electrode coverage across subjects and datasets as a scaling challenge.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It introduces self-supervised population-level coding through PopT, which aggregates spatially sparse channels over pretrained temporal embeddings.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The authors report improved data efficiency and accuracy, including on held-out subjects and tasks, with lower computational cost than end-to-end methods.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "scope_and_interpretation",
+        "summary": "The framework is reported to generalize across embeddings and modalities and to support neuroscience interpretation beyond decoding.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "release",
+        "summary": "Code and a pretrained model are released for off-the-shelf use.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a representation-learning design choice—learned aggregation over sparse channels—to both decoding outcomes and interpretation beyond decoding.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "A representation method can be framed more persuasively when its intended mechanism and multiple downstream uses are stated together.",
+        "application": "When presenting a new representation, connect the architectural operation to a measurable task benefit and a distinct scientific-use case.",
+        "exception": "This framing is unsuitable when the abstract lacks evidence for the additional use case or when the mechanism-to-outcome link is only speculative."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no dataset sizes, accuracy values, computational-cost measurements, or details of the held-out subjects and tasks.",
+      "The comparison conditions and evaluation protocols for end-to-end methods are unspecified.",
+      "The abstract does not quantify or detail the neuroscience insights extracted through interpretation."
+    ]
+  }
+}

@@ -1,13 +1,13 @@
 # Oral Paper Skill · Learn from Exemplary Papers
 
-**Starting from 884 top-conference Oral entries, develop reusable research and writing lessons for comparing, improving, and reflecting on your own paper.**
+**Starting from 884 top-conference Oral entries, extract lessons from 883 abstracts to compare, improve, and reflect on your own paper.**
 
-[中文 README](README.md) · [Full Skill](skills/oral-paper-skill/SKILL.md) · [Quick prompt](prompts/quick-prompt-en.txt) · [Research progress](docs/ABSTRACT_DISTILLATION.md)
+[中文 README](README.md) · [Full Skill](skills/oral-paper-skill/SKILL.md) · [Quick prompt](prompts/quick-prompt-en.txt) · [Distillation process](research/abstract_distillation/RESULTS.md)
 
 [![Starting index: 884 entries](https://img.shields.io/badge/starting%20index-884%20entries-blue)](skills/oral-paper-skill/references/oral-patterns.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Adkid-Zephyr/oral-paper-skill/pulls)
 
-This is a learning-tool prototype informed by a historical abstract scan, selected full-text passages and figures, and official award commentary. Per-abstract semantic extraction is not complete; 884 describes the historical index size.
+Abstract-level AI extraction, source checks, and cross-paper synthesis are complete, yielding **seven selectable practices and 14 examples checked against original abstracts**. “Distillation” means knowledge synthesis, not model training or full-text reading of all 883 papers.
 
 ## Why I am building this
 
@@ -23,7 +23,7 @@ After my anti-defensive-writing video brought in a few hundred followers, I kept
 
 **The goal is to study Oral entries and other exemplary papers from the latest two completed cycles of ICLR, ICML, and NeurIPS, then turn their useful practices into reusable learning guidance.**
 
-Here, “distillation” means extracting and synthesizing knowledge into instructions and examples. We start at the abstract level and supplement it with passages and figures actually inspected.
+Here, “distillation” means extracting and synthesizing knowledge into instructions and examples. This run extracted abstracts individually, compared their practices, checked sources, and synthesized lessons. Advice depending on full text or figures requires reading that material separately.
 
 ## Two uses
 
@@ -39,14 +39,19 @@ For example, a draft claiming lower compute cost may need a comparison of end-to
 
 Explain how exemplary papers develop their introduction, distinguish their contribution, present the central figure, and use experiments to address alternative explanations. Include applicability and exceptions, then help authors reflect on their own work.
 
-## ORAL: four reflection questions
+## What to learn from these papers
 
-- **O — One irreducible claim:** What is the central research question, and how do the contributions connect?
-- **R — Reader-visible proof:** Where does the reader encounter the main evidence?
-- **A — Adversarial evidence:** Which alternative explanation deserves testing, and are comparisons fair?
-- **L — Lasting lesson:** What finding, method, or resource value does the work offer?
+- **Specify the research tension:** Which concrete requirement or observation makes the question worth investigating?
+- **State the contribution delta:** What changes after removing the method name and “novel”?
+- **Match evidence to the claim:** Is the measured property the capability being claimed?
+- **Choose a meaningful comparison:** What should it decide, and what stays fixed or changes?
+- **Keep conditions beside conclusions:** Which model class, quantifier, or tested regime must remain visible?
+- **Explain what the resource enables:** What can researchers do with its data, environment, or interfaces?
+- **Extract a bounded lesson:** What can readers take away, and when would it not apply?
 
-These are editorial learning prompts, not empirically established requirements for all Oral papers. The default output is a few supported improvements or a reflection exercise, not an Oral score or an automatic decision to abandon research.
+Each has source-linked examples, an author action, and an exception in [the practices reference](skills/oral-paper-skill/references/abstract-derived-practices.md). Select what fits; default to at most three improvements or one focused exercise.
+
+The original ORAL questions can remain a mnemonic, not a common law or scorecard. Methods, theory, findings, systems, resources, and position papers do not need the same evidence package.
 
 ## Quick start
 
@@ -72,20 +77,20 @@ storytelling and experimental design, then guide a retrospective on my draft.
 
 ## What 884 means
 
-The extraction log from September 2, 2026 reported:
+The six official lists were rebuilt on September 13, 2026:
 
-| Conference cycles | Oral entries |
-|---|---:|
-| ICLR 2025–2026 | 436 |
-| ICML 2025–2026 | 289 |
-| NeurIPS 2024–2025 | 159 |
-| Total | 884 |
+| Conference cycles | Indexed entries | Eligible abstracts |
+|---|---:|---:|
+| ICLR 2025–2026 | 436 | 436 |
+| ICML 2025–2026 | 289 | 288 |
+| NeurIPS 2024–2025 | 159 | 159 |
+| Total | 884 | 883 |
 
-It reported 883 available abstracts. The original index was not archived in this repository; rebuilding and validating the entry-to-paper mapping remains necessary.
+One entry points to [a workshop/session event](https://icml.cc/virtual/2026/workshop/54094), not a paper, and was excluded. All 883 eligible abstracts have per-paper semantic records and are covered by 21 batch syntheses, consolidated into seven practices.
 
-Completed work consists of lexical abstract scans, selected full-text passages and figure inspection, and award-commentary notes. A semantic record for every abstract and full-paper distillation of all 884 entries have not been completed.
+Luna performed extraction, Astra medium handled source checking and selection, and Astra xhigh performed final synthesis. Checks include a 24-paper pilot, a separately fixed random sample of 36, and targeted reviews of flagged issues. This is not human full-corpus close reading or verification of every scientific claim.
 
-[Sources and reading levels](skills/oral-paper-skill/references/oral-patterns.md) · [Abstract-distillation plan](docs/ABSTRACT_DISTILLATION.md)
+[Per-paper records](research/abstract_distillation/cards) · [Process, errors, and corrections](research/abstract_distillation/RESULTS.md) · [Sources and reading levels](skills/oral-paper-skill/references/oral-patterns.md)
 
 ## Interpreting the advice
 

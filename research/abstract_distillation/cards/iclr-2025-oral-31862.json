@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31862",
+    "title": "A Theoretically-Principled Sparse, Connected, and Rigid Graph Representation of Molecules",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31862"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e810aa96d274223d334a1b3229d8030915c44863060131946f9144efbb066e65",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "aa8392d179bc3ad6673c69ba5d1ead3dd301cc8eee40e2a7f79ae60d663fcfb6",
+    "extracted_at": "2026-09-12T23:54:57.467613+00:00",
+    "session_id": "01a0980b-699f-78e2-a568-597954a485ed",
+    "usage": {
+      "input_tokens": 12720,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 765,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "979477822471f5a8136bef5c1bd50096156e98b378fb88d6e1d124005ee75884"
+    },
+    {
+      "id": "S2",
+      "sha256": "6eada7ca79682fe16a03e4c9f5ff3d34a4ecd18f15284fd5c1b016220ddf52ac"
+    },
+    {
+      "id": "S3",
+      "sha256": "a81e08da3b879ef45540936a44501ccdf66ded40d00e1831529891730c00b5de"
+    },
+    {
+      "id": "S4",
+      "sha256": "b5d4305eab76060291324c91a627a89f5fff10355e59709786ef4998c0ffe74d"
+    },
+    {
+      "id": "S5",
+      "sha256": "839782daef57a883a3eb83d4ace42b017f84805870e58d83354d2926feea6643"
+    },
+    {
+      "id": "S6",
+      "sha256": "7e16b8946426f00853916197fc88d7da2f8374bc28135959a022a4c68ae404f0"
+    },
+    {
+      "id": "S7",
+      "sha256": "b9d17687d1890cf2f07da5655a3c2c0d559134e6d6604e000bb1be868f9fbdda"
+    },
+    {
+      "id": "S8",
+      "sha256": "d6c218b14beb08e95d9a8891baaa919542932e07c379efb6db91dee6f2ccdcfe"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31862",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Construct molecular graphs that support GNN learning while jointly providing sparsity, connectivity, and rigidity.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Common molecular graph constructions lack theoretical guarantees for simultaneous sparsity and connectivity, and generally lack rigidity for exploiting atoms' spatial arrangement.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces a hyperparameter-free molecular graph construction with guarantees of sparsity, connectivity, and rigidity.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theoretical representation",
+        "claim": "Provides graphs whose edge distances and dihedral angles are sufficient to uniquely determine general spatial arrangements of atoms.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical evaluation",
+        "claim": "Evaluates the proposed graphs in various molecular modeling benchmarks for effectiveness and efficiency.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their construction as hyperparameter-free and jointly guaranteed to be sparse, connected, and rigid.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their method consistently produces connected and sparse graphs with edge-to-node ratio bounded above by 3.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report effectiveness and efficiency on various molecular modeling benchmarks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that rigidity makes edge distances and dihedral angles sufficient to uniquely determine general atomic spatial arrangements.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "GNNs use molecular graph sparsity, connectivity, and symmetries to learn geometric data.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitations",
+        "summary": "Widely used graphs lack simultaneous sparsity-connectivity guarantees and lack rigidity for spatial reasoning.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "The paper introduces a hyperparameter-free graph construction with guarantees for all three properties.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_properties",
+        "summary": "The authors report an edge-to-node ratio at most 3 and rigidity sufficient for determining general spatial arrangements.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The proposed graphs are reported as effective and efficient across molecular modeling benchmarks.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each claimed graph property with a concrete consequence: a ratio bound for sparsity and geometric determination from edge distances and dihedral angles for rigidity.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This makes abstract-level claims more checkable by pairing design guarantees with operational implications.",
+        "application": "When presenting a structured representation, state one measurable structural bound and one explicit downstream capability enabled by each key guarantee.",
+        "exception": "This framing is less suitable when the property cannot be expressed through a meaningful bound or task-relevant consequence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the benchmark tasks, datasets, baselines, metrics, or numerical effectiveness and efficiency results.",
+      "It does not detail the construction, the proof conditions, or the precise scope of the rigidity guarantee beyond general spatial arrangements.",
+      "The abstract does not establish priority or independently verified correctness of the reported guarantees."
+    ]
+  }
+}

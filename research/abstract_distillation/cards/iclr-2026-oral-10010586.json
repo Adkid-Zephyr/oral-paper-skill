@@ -1,0 +1,166 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010586",
+    "title": "FALCON: Few-step Accurate Likelihoods for Continuous Flows",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010586"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "54b5e358f0da52626335db0a4e43bafea7ec30fdd76033e77b5f3d7632de87ac",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "af59379ddcd0d8c69537260d2ebe4574dbbd14c9c71bc9d6d1cef165e7b3fd8c",
+    "extracted_at": "2026-09-13T00:04:41.842853+00:00",
+    "session_id": "01a09814-5709-7b90-911d-ab8cbd992a5d",
+    "usage": {
+      "input_tokens": 12695,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 693,
+      "reasoning_output_tokens": 64
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "386781f5b65a1cca86789d39ba5623861e5a1730e873db0f9ff8299dbfe9e1bc"
+    },
+    {
+      "id": "S2",
+      "sha256": "f1a56aba1d250a91c5bcfbfe38a6462da951fdb22f9522278f7b51e1484e0773"
+    },
+    {
+      "id": "S3",
+      "sha256": "adc5a25c09add88b7201356709154c61b4e2f308bff45a49780819bfa7836eb7"
+    },
+    {
+      "id": "S4",
+      "sha256": "1f927fff193ab5a09a398095d10eb7bdfe95160e96c36a622f57ec909e03c805"
+    },
+    {
+      "id": "S5",
+      "sha256": "27dc2287e1f5ced122b8f76c8ce2dc774b470116429f16c29b248749cdd23ef7"
+    },
+    {
+      "id": "S6",
+      "sha256": "2600f1461704cd7d4e2363e191e9213f01a6349cc5101c74d34b3e6ffc18b7f4"
+    },
+    {
+      "id": "S7",
+      "sha256": "91a77e34c4f22c4c615fee19310663e0d6731d82621b6b40cb450fb3b07294bb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010586",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Scalable sampling of molecular states at thermodynamic equilibrium is challenging.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "CNF-based Boltzmann Generators require thousands of function evaluations per sample for likelihood calculation, limiting adoption.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "FALCON combines few-step sampling with likelihoods intended to be sufficiently accurate for importance sampling, using a hybrid objective that encourages invertibility.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors provide FALCON code publicly.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce FALCON as a hybrid-training approach for few-step, importance-sampling-compatible likelihood calculation in continuous flows.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that FALCON outperforms state-of-the-art normalizing flow models for molecular Boltzmann sampling.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that FALCON is two orders of magnitude faster than an equivalently performing CNF model.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "challenge",
+        "summary": "Molecular equilibrium-state sampling is identified as a longstanding scalability problem.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "existing_approach_and_limitation",
+        "summary": "Boltzmann Generators combine exact-likelihood generative models with importance sampling, while CNFs offer efficient training but make likelihood calculation extremely costly.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed_solution",
+        "summary": "FALCON uses a hybrid objective encouraging invertibility to enable few-step sampling with likelihoods intended for importance sampling.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_outcome",
+        "summary": "The authors report stronger molecular Boltzmann sampling performance than state-of-the-art normalizing flows and a two-orders-of-magnitude speedup over an equivalently performing CNF.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the computational bottleneck to a specific design change: a hybrid objective that encourages invertibility while targeting few-step likelihood accuracy.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A persuasive method summary can connect a concrete systems limitation to the mechanism intended to address it.",
+        "application": "When introducing a computationally motivated method, explicitly pair the bottleneck with the training or architectural objective designed to relieve it.",
+        "exception": "This framing is less suitable when the claimed improvement depends primarily on data, hardware, or evaluation changes rather than the proposed method."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the molecular systems, datasets, evaluation metrics, or experimental conditions behind the reported comparisons.",
+      "The meaning and quantitative criterion of likelihood accuracy, and the basis for the equivalently performing CNF comparison, are unspecified."
+    ]
+  }
+}

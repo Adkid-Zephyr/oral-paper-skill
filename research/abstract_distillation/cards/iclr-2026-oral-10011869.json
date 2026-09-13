@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011869",
+    "title": "BioX-Bridge: Model Bridging for Unsupervised Cross-Modal Knowledge Transfer across Biosignals",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011869"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5e8e96b8c25a145d4f1a3fccd5f8d3ef9757b1eabdae96290fd68f907ed30e40",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "702164b06851e29fa05fc63cb5c258c96fc773031fc1d42cd57459869e67ecfc",
+    "extracted_at": "2026-09-13T00:06:30.825933+00:00",
+    "session_id": "01a09815-fb6a-7a93-9baf-cde0728a7401",
+    "usage": {
+      "input_tokens": 14371,
+      "cached_input_tokens": 9984,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 714,
+      "reasoning_output_tokens": 53
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ebbb257d9c2ea16caf1941f111e17379a0eed9ff88bf27d1ea057249ba0503d8"
+    },
+    {
+      "id": "S2",
+      "sha256": "b2434fcd00388a652c77021f950b5a5b99d265bf3819bc8d08dc6e95188edebc"
+    },
+    {
+      "id": "S3",
+      "sha256": "b6d1e272fd0fff819bdbe68919f98688c6190364bf72dfa043e26b4da6ae670f"
+    },
+    {
+      "id": "S4",
+      "sha256": "1e1c1b519c65d09da25b75c2190491841e120256af1896105c03108ea58115e0"
+    },
+    {
+      "id": "S5",
+      "sha256": "00b3ecb47e50ef089427d9cc35d26a5e19f080a5bc90d39c826a028fee1871cb"
+    },
+    {
+      "id": "S6",
+      "sha256": "2b898c25757d12c6260dc89088b8cf202ee3746c80a91854c5d045da163f2ca6"
+    },
+    {
+      "id": "S7",
+      "sha256": "f413ab8852e10318059037c3a85cd372e9809e63f4e89131cee33bebd20f7a80"
+    },
+    {
+      "id": "S8",
+      "sha256": "9924da6f34aaf4020a6852755df791b4230d1627f2f21f10d739d1ab1298042c"
+    },
+    {
+      "id": "S9",
+      "sha256": "5c5382e9a37213052da79591c0cd57c432fc860bdbc7b43eec9fc179c13d8731"
+    },
+    {
+      "id": "S10",
+      "sha256": "efda8084bab03e4fca797087f276c7051792e72ef97876368ee378c920806583"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011869",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable unsupervised knowledge transfer between biosignal modalities when labeled data are limited.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Distillation-based methods impose high computational and memory overhead, especially with large foundation models.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "BioX-Bridge uses a lightweight bridge network to align intermediate representations and transfer information between foundation models across biosignal modalities.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The framework provides an alignment-position selection strategy and a flexible prototype bridge architecture.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a new framework for unsupervised cross-modal biosignal knowledge transfer centered on a lightweight representation bridge.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments across multiple biosignal modalities, tasks, and datasets.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "They report reducing trainable parameters by 88–99% while maintaining or improving transfer performance relative to state-of-the-art methods.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Biosignal modalities differ in practical properties but are intercorrelated, suggesting alternative modalities could support similar health-monitoring tasks.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "constraint",
+        "summary": "Limited large labeled datasets hinder modality- and task-specific model training.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "prior limitation",
+        "summary": "Existing cross-modal transfer commonly relies on teacher–student distillation, creating computational and memory costs that are amplified by foundation-model scale.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "BioX-Bridge trains a lightweight representation-alignment bridge, with targeted alignment positions and a flexible prototype architecture.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Across multiple modalities, tasks, and datasets, the authors report 88–99% fewer trainable parameters with maintained or improved transfer performance.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a practical bottleneck—large-model distillation overhead—to a specific architectural response: a lightweight bridge with selected alignment positions.",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "A compact problem-to-mechanism chain makes the claimed contribution easier to evaluate.",
+        "application": "Frame a method introduction by mapping each stated deployment bottleneck to one explicit design component, then report the corresponding resource and task outcome.",
+        "exception": "This framing is unsuitable when the method has no identifiable component-level response or when resource costs are not measured."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the modalities, tasks, datasets, baselines, evaluation metrics, or conditions behind the 88–99% reduction and performance comparison.",
+      "It does not clarify whether the reported performance gains are statistically significant or consistent across all experimental settings."
+    ]
+  }
+}

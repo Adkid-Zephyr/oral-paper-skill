@@ -1,0 +1,157 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010045",
+    "title": "DCFold: Efficient Protein Structure Generation with Single Forward Pass",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010045"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "05859ac2c9289b5d4c9ceb299a446353fc165f8068655c92804708d77a2e51ba",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "be0c0e1d3a655ad6bd7dc9d45ca123e8beb87ed200da368fc5c2eb51a44821b3",
+    "extracted_at": "2026-09-13T00:03:55.240423+00:00",
+    "session_id": "01a09813-a370-7c31-a9ad-0350142a5839",
+    "usage": {
+      "input_tokens": 12612,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 678,
+      "reasoning_output_tokens": 108
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5746cc93116f983926d8242138de49476e4343446409daec38dc3a1b2e15d932"
+    },
+    {
+      "id": "S2",
+      "sha256": "fd5ec54fb44bb22242ed0f79445f21484031aedb81a90aecff7a25747ae117b7"
+    },
+    {
+      "id": "S3",
+      "sha256": "dd598a6781d848cbbbc1d20808b8d3a77ad9244675f04811bf096573c91a355f"
+    },
+    {
+      "id": "S4",
+      "sha256": "29f35bcfa9ed26c33fd6ff9eff2489b31a26e407a27a7076ec5ea518d114397d"
+    },
+    {
+      "id": "S5",
+      "sha256": "014c8f7080c5355c3ad2a1dfa1183edd572d3b310e2f057c2b0b3694d21a00c0"
+    },
+    {
+      "id": "S6",
+      "sha256": "72125a2bed5da57341122917fcd918e35837c3bf389cdf7ecd836d854bb3366e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010045",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable efficient protein structure generation and design for downstream use while preserving predictive accuracy.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "AlphaFold3’s iterative inference increases runtime, limiting practical deployment in applications such as virtual screening and protein design.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A single-step generative model, DCFold, designed to attain AlphaFold3-level accuracy.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "training framework",
+        "claim": "A Dual Consistency training framework with a Temporal Geodesic Matching scheduler for accelerating inference while maintaining predictive fidelity.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors identify Temporal Geodesic Matching as a novel scheduler within their Dual Consistency framework.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report 15× faster inference while maintaining predictive fidelity.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report validation on structure prediction and binder design benchmarks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "AlphaFold3 is presented as a diffusion-based, all-atom foundation model for protein prediction and generation tasks.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Its iterative design is described as making inference too slow for some downstream applications.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal_and_reported_validation",
+        "summary": "The authors propose single-step DCFold, attribute its speed and fidelity to Dual Consistency training with TGM, and report benchmark validation.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a specific deployment bottleneck—iterative inference—to a single-step model and a training scheduler, then reports speed and fidelity together.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A strong method summary can align one operational limitation, one targeted design choice, and the corresponding outcome dimensions.",
+        "application": "Frame a future method around a named bottleneck, state the mechanism intended to address it, and report both efficiency and task-quality outcomes.",
+        "exception": "This framing is unsuitable when the primary contribution is conceptual or when efficiency and quality are not jointly relevant."
+      }
+    ],
+    "unknowns": [
+      "No quantitative accuracy or benchmark results are provided, so the claimed AlphaFold3-level accuracy and maintained fidelity cannot be assessed from the abstract.",
+      "The abstract does not specify benchmark datasets, evaluation metrics, hardware, or the baseline conditions underlying the 15× acceleration."
+    ]
+  }
+}

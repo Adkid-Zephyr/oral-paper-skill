@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71134",
+    "title": "To Grok Grokking: Provable Grokking in Ridge Regression",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71134"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ddfab0f8cdd04385bf31c88d0e63d766715300a8cb30b968526597161e46062b",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "13aa60d5602b7a37216c361bfaf08ab030bd070adfeea4d0849bfff6311734d7",
+    "extracted_at": "2026-09-13T00:15:26.331805+00:00",
+    "session_id": "01a0981e-219d-7c61-af8a-7516e5b6672e",
+    "usage": {
+      "input_tokens": 12731,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 788,
+      "reasoning_output_tokens": 72
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "79ac2c51fa8a52ce40e0e3e749ce3ca8f0b7606954e457db91782202747bafa4"
+    },
+    {
+      "id": "S2",
+      "sha256": "d8e3249675bbb3ad5893b0b4f34c2875b644b2afa26187b6c1c3c1bd592d77b1"
+    },
+    {
+      "id": "S3",
+      "sha256": "8cfaa736afe87c1d33c553fe15ed963cf8afa6aec2a9d051206dd9ac0d28031d"
+    },
+    {
+      "id": "S4",
+      "sha256": "6dc550ab9311232bf79a907c88fe99700641c1bc127e3173cbdb30778be3a90b"
+    },
+    {
+      "id": "S5",
+      "sha256": "cfc98a508893606f7c2f25113406fd6a82cab311ad8fab5cf5bb7f2dcd16aa1a"
+    },
+    {
+      "id": "S6",
+      "sha256": "ce657e4fb7b2c8de9aaf4edc7cf41fde0621b03fafaf2defa93ead664fe628f8"
+    },
+    {
+      "id": "S7",
+      "sha256": "a05202b37afe76b4c8317af0792ba10ee842c74a267ad53aa17afc8025be8cbc"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71134",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies grokking—the delayed onset of generalization after early overfitting—in over-parameterized ridge regression trained with gradient descent and weight decay.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify a lack of rigorous quantitative bounds relating generalization delay, or “grokking time,” to training hyperparameters.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "End-to-end results establish the sequential stages of overfitting, prolonged poor generalization, and eventual arbitrarily small generalization error in the linear setting.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "theory and empirical finding",
+        "claim": "The authors show that hyperparameter tuning can systematically amplify or eliminate grokking.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical extension",
+        "claim": "Experiments indicate that the quantitative bounds also capture grokking behavior in non-linear neural networks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their work provides the first rigorous quantitative bounds on grokking time in terms of training hyperparameters.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors prove that training first overfits, then remains poorly generalizing for an extended period, and eventually reaches arbitrarily small generalization error.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report theoretical and empirical evidence that suitable hyperparameter choices can amplify or eliminate grokking.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors empirically report that their bounds capture grokking behavior in non-linear neural networks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setup",
+        "summary": "The paper frames grokking as delayed generalization after overfitting and studies it in ridge regression.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "core result",
+        "summary": "It proves the full overfit–delay–eventual-generalization sequence for over-parameterized linear regression with gradient descent and weight decay.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "control mechanism",
+        "summary": "It reports that hyperparameter tuning can amplify or remove the phenomenon.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "extension and implication",
+        "summary": "It states quantitative grokking-time bounds and tests their behavioral relevance on non-linear neural networks, motivating the view that grokking depends on training conditions rather than being inherent.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a staged theoretical account of the phenomenon with a controllability result and an empirical nonlinear extension.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "This links explanation, intervention, and scope extension in one compact argument.",
+        "application": "When presenting a training pathology, define its temporal stages, identify controllable parameters, and test whether the explanation transfers beyond the simplest model.",
+        "exception": "This framing is unsuitable when the phenomenon is static, lacks measurable stages, or has no plausible intervention variable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the quantitative bounds, hyperparameter regimes, data assumptions, network architectures, or experimental protocols.",
+      "It does not report numerical effect sizes or define the conditions under which grokking is amplified or eliminated."
+    ]
+  }
+}

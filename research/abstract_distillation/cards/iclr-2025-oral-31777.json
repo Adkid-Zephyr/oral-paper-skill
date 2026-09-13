@@ -1,0 +1,196 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31777",
+    "title": "Transformers Provably Solve Parity Efficiently with Chain of Thought",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31777"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "970517a4c91b64f556cb3b7ae884673538dd5cf4b21927ed5a6a34107b04cdcc",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "2bb71a0566fdd769318bf239fd6659fa4012005658a36d628a05b0b2f5968e0c",
+    "extracted_at": "2026-09-12T23:51:35.210025+00:00",
+    "session_id": "01a09808-3fb9-7353-92a3-97f73950235b",
+    "usage": {
+      "input_tokens": 12708,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 942,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "837d640bc6ffdc1168044b33012dd23e1728176dc8112c4f1344615639fb978e"
+    },
+    {
+      "id": "S2",
+      "sha256": "fdb2ac755846f089fe33be9972125e970f244bc33954c23b2bc3039ab9761e02"
+    },
+    {
+      "id": "S3",
+      "sha256": "daca2b0aac589ba65514aa253c185db2de03d88ed82a2590852e832b68cb5e9c"
+    },
+    {
+      "id": "S4",
+      "sha256": "a7bd2bc717c30337a9ecd46ebbc75172e00974919a8eedc678bf9b7c6b5718a5"
+    },
+    {
+      "id": "S5",
+      "sha256": "0f6fa9ff48adc67f6f5bb7fe3ace1394348add4e0bfffa8c5b17fb56ca1ebf3f"
+    },
+    {
+      "id": "S6",
+      "sha256": "fca80a9393f5cd7b838e8fa78e2d2fada6b1650f943f0e102531b35905d24875"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31777",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work studies how a one-layer transformer can be trained to solve the k-parity problem while recursively generating intermediate reasoning states.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors present their work as the first theoretical analysis of training transformers through recursively generated intermediate states for complex problem solving.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Characterizes iteration requirements for finite-precision gradient-based training without intermediate supervision: substantial iterations are required with finite samples.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method/theory",
+        "claim": "Shows that supervising intermediate parities can enable learning in one gradient update with teacher forcing.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method/theory",
+        "claim": "Shows that efficient parity learning is possible without teacher forcing when augmented data supports internal verification of intermediate steps.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that this is the first theoretical analysis of transformer training for recursively generated intermediate states analogous to CoT fine-tuning.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that intermediate-parity supervision plus teacher forcing permits learning parity in one gradient update.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report efficient learning without teacher forcing when augmented data is used to internally verify intermediate-step soundness.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report numerical experiments supporting the emergence of task decomposition and stepwise reasoning, and improvement from self-consistency checking.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "framing",
+        "summary": "Introduces a theoretical analysis of transformer training through recursively generated intermediate states, analogous to CoT fine-tuning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "task setup",
+        "summary": "Studies a one-layer transformer trained on the k-parity problem, extending prior RNN work.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "contrastive results",
+        "summary": "Contrasts slow finite-precision gradient training without intermediate supervision with one-update learning under intermediate-parity supervision and teacher forcing.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "end-to-end result",
+        "summary": "Reports efficient parity learning without teacher forcing when augmented data enables internal verification of intermediate steps.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "broader implication",
+        "summary": "Uses numerical experiments to connect task decomposition, stepwise reasoning, and self-consistency checking with improved multi-step reasoning.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract organizes its main comparison around the presence or absence of intermediate supervision, teacher forcing, and internal verification, with distinct learning outcomes.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Separating training mechanisms can make the source of a claimed efficiency difference explicit.",
+        "application": "When presenting a reasoning method, define separate variants for intermediate supervision, teacher forcing, and self-verification, then state the reported outcome for each.",
+        "exception": "This decomposition may be unsuitable when the method has no meaningful intermediate states or when variant comparisons are not supported by the available analysis."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract pairs theoretical claims with a stated numerical-experiment qualifier and distinguishes teacher-forced from end-to-end generation.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Matching each claim to its evidence type helps preserve the scope of what is being asserted.",
+        "application": "Label whether each result is theoretical, numerical, or both, and retain conditions such as teacher forcing and augmented verification in the claim wording.",
+        "exception": "Do not use this format to imply empirical validation for a result the source reports only as a theoretical statement."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the precise model, data, finite-sample regime, iteration bound, or assumptions behind the theoretical results.",
+      "The numerical experiments' scale, metrics, baselines, and quantitative outcomes are not given.",
+      "The abstract does not establish priority or independently verify the authors' stated novelty."
+    ]
+  }
+}

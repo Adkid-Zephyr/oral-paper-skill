@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009598",
+    "title": "DTO-KD: Dynamic Trade-off Optimization for Effective Knowledge Distillation",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009598"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "15b1ba0b0605c1e3c38dca8ba54ffd95313ed55d794abc4a83fa6fba3a69809f",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "00b7d62fec817d3ed1597107dd8b6ec852bff62da439eeeb559c2ecd727c3efe",
+    "extracted_at": "2026-09-13T00:03:02.470753+00:00",
+    "session_id": "01a09812-cd19-7671-9c83-37106434f9ca",
+    "usage": {
+      "input_tokens": 12773,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 746,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f43e8a77a3d199b5ecd541d9add516a4c48fa8c4280d2c2ffdc8d9589c38ee3d"
+    },
+    {
+      "id": "S2",
+      "sha256": "d958370c9b9b4504e1530e5b40b1817074c2431d71d1dcf975f93439ecb4398a"
+    },
+    {
+      "id": "S3",
+      "sha256": "4099410ff85ca9a69d4d90137d7a193e10ccd5b64debfdd392fb2beaca286fbb"
+    },
+    {
+      "id": "S4",
+      "sha256": "5fd390fd5491231c2030301fc948e8b814132ebe4197275d984ca8e21c5ba35b"
+    },
+    {
+      "id": "S5",
+      "sha256": "356247c06a49ba3769910fa721bc3aaa0241e8dba497def41b40cc7a62295952"
+    },
+    {
+      "id": "S6",
+      "sha256": "adbcedf4e8d624c5a7d41b8db1073e19c6a96ae4b45d8cdf984a1d08aa2b936f"
+    },
+    {
+      "id": "S7",
+      "sha256": "abe87efbe8791d0f742404610b3e6abfede345317ce7f2b4c5b0237cedcd3228"
+    },
+    {
+      "id": "S8",
+      "sha256": "dd24930f39c23c5d9f6e7993ce599f5aaef71af9d3e34290bcfdd9636940bab4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009598",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Knowledge distillation compresses large teacher models into compact students by transferring knowledge while optimizing task and distillation objectives.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies unresolved trade-offs between task loss and teacher imitation, plus gradient disparity caused by teacher–student architectural and representational mismatches.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DTO-KD formulates distillation as multi-objective optimization and dynamically balances task and distillation losses at the gradient level.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "optimization technique",
+        "claim": "The method addresses gradient conflict and gradient dominance using per-iteration trade-offs and gradient projection for balanced updates.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present DTO-KD as a principled, dynamic gradient-level multi-objective formulation of knowledge distillation.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report evaluation on ImageNet-1K classification and COCO object detection benchmarks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that DTO-KD consistently outperforms prior knowledge-distillation methods across both tasks, with state-of-the-art accuracy and improved convergence behavior.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that DTO-KD-trained students surpass their non-distilled counterparts.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context and challenge",
+        "summary": "KD compresses high-capacity teachers, but task–distillation trade-offs and teacher–student gradient disparity remain persistent challenges.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "DTO-KD casts KD as gradient-level multi-objective optimization and targets conflict and dominance between objectives.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "Per-iteration trade-offs and gradient projection are used to produce balanced, constructive updates.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "Experiments on ImageNet-1K and COCO are reported to show stronger accuracy, convergence, and performance over non-distilled students.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links specific failure modes—gradient conflict and gradient dominance—to a concrete optimization mechanism: gradient projection with adaptive per-iteration trade-offs.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Naming the failure mode and matching it to the mechanism makes the method’s rationale easy to follow.",
+        "application": "Frame a proposed optimization method by pairing each diagnosed interaction between objectives with the update rule intended to address it.",
+        "exception": "This framing is less suitable when the method has no clearly identified optimization failure mode or objective interaction."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baseline methods, numerical gains, model architectures, training settings, or statistical variability.",
+      "The reported state-of-the-art and convergence claims cannot be independently assessed from the abstract alone."
+    ]
+  }
+}

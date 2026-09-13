@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71117",
+    "title": "Pretrained Vision-Language-Action Models are Surprisingly Resistant to Forgetting in Continual Learning",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71117"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "fd72f1f031da42cca1c5e87c17bf2bc96e773b5abbb77a128e35a97a221184d8",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "9a5ee5fe34d74cadaad96ca8a3068128f06ae5cdf711c7a41e212a19cc284fe0",
+    "extracted_at": "2026-09-13T00:14:43.029877+00:00",
+    "session_id": "01a0981d-73bb-7403-b711-b29fe2b596f0",
+    "usage": {
+      "input_tokens": 12723,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 803,
+      "reasoning_output_tokens": 62
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a3d4467bff2e8ad6132c0eec2a2e72943eabd5ae0ebb62ae075a99d73c8db9da"
+    },
+    {
+      "id": "S2",
+      "sha256": "a0e13a52e8811f8a40eaf4362b11238defe7e717fd2386abf1e6bc7fecac4908"
+    },
+    {
+      "id": "S3",
+      "sha256": "964a9991eccbf2ff2e9d6cdd15d3b2ba1ab13d22bd8414758d7fa76ca4768085"
+    },
+    {
+      "id": "S4",
+      "sha256": "d933c8b28ec6f56c6f1b85a8c21eb122cbab540d86646a7625a1816b80c6be63"
+    },
+    {
+      "id": "S5",
+      "sha256": "eeceaaf32fc56bed822c223b08103461a71843412d431a8c570b18be26783433"
+    },
+    {
+      "id": "S6",
+      "sha256": "e0164637b2dbf55dacb14b2d9821d87c1894baf000778d66a8c7f99ccbfea6de"
+    },
+    {
+      "id": "S7",
+      "sha256": "b5e5d4d19ecd6cf648511005c999de0fe55eb7484f9deb6e7f44b33f3b19f4b1"
+    },
+    {
+      "id": "S8",
+      "sha256": "1f7d80f3f5182f13401a8ad0f16fc3bd53387b8a26d6a435174429be251d66fd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71117",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Robot policies must learn new skills over time without catastrophically forgetting prior skills.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Continual learning in modern pretrained Vision-Language-Action models is underexplored relative to small behavior-cloning models trained from scratch.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "Pretrained VLAs are reported to be more resistant to forgetting than smaller policies trained from scratch.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method finding",
+        "claim": "Simple Experience Replay is reported to work well for VLAs, sometimes yielding zero forgetting with a small replay dataset.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "The authors link pretraining to reduced forgetting, preserved forward learning, retention of prior-task knowledge, and rapid recovery through finetuning.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work presents insights that large-scale pretraining changes continual-learning dynamics, allowing ongoing skill acquisition with simple replay.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that pretrained VLAs are remarkably resistant to forgetting compared with smaller from-scratch policy models.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that Experience Replay sometimes achieves zero forgetting on VLAs even with a small replay data size.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that retained prior-task knowledge enables rapid recovery of seemingly forgotten skills through finetuning.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem",
+        "summary": "Continual robot policy learning requires acquiring skills without losing earlier ones.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "research gap",
+        "summary": "Existing continual-learning study has focused mainly on small from-scratch behavior-cloning policies, leaving pretrained VLAs less explored.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "core finding",
+        "summary": "Pretrained VLAs are reported to forget less than smaller from-scratch policies, and simple replay can sometimes eliminate forgetting with little data.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "mechanistic insight",
+        "summary": "Pretraining is reported to support both low forgetting with small replay buffers and strong forward learning; prior knowledge may persist despite temporary performance decline and can be rapidly recovered by finetuning.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The authors interpret these results as evidence that large-scale pretraining changes continual-learning dynamics and supports continued skill acquisition with simple replay.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates observed forgetting from retained prior-task knowledge and subsequent recovery through finetuning.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This framing distinguishes behavioral performance loss from loss of internal task knowledge.",
+        "application": "When reporting continual-learning results, measure both immediate task performance and post-finetuning recovery to distinguish erasure from temporary interference.",
+        "exception": "This move is unsuitable when recovery finetuning is not defined or when the study cannot assess prior-task representations or performance."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify tasks, model sizes, replay-buffer sizes, baselines, metrics, or experimental protocols.",
+      "The conditions under which zero forgetting occurs and the evidence for retained knowledge are not detailed.",
+      "The abstract does not quantify the speed or extent of recovery through finetuning."
+    ]
+  }
+}

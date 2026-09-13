@@ -1,0 +1,168 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31736",
+    "title": "When Selection Meets Intervention: Additional Complexities in Causal Discovery",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31736"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a698162d7d8a176aa7b9b4e16fcf004dd3bcedefd0bd65292882a851e8680bf8",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "b3dfaf6d73b1b35278fb356c857b2e14e1202132adacb85e3b92e7188be49d44",
+    "extracted_at": "2026-09-12T23:49:48.964187+00:00",
+    "session_id": "01a09806-baff-7b62-a0fe-cc339d010e9e",
+    "usage": {
+      "input_tokens": 14251,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 676,
+      "reasoning_output_tokens": 55
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a6bebb83679991add504bc2ca95111e27234a45cf56cd227a797165ad308c917"
+    },
+    {
+      "id": "S2",
+      "sha256": "417074c02998dd54192a65a4aea5b3b113184cd1abd23f99b03d0b443d3e913f"
+    },
+    {
+      "id": "S3",
+      "sha256": "cbe118efb27e79a41788cf5693d4e0b1bab6155b34592e285f1f48880b5b2091"
+    },
+    {
+      "id": "S4",
+      "sha256": "5a9351a185d332c1dbb50c6bd12dcd1c4346085864c33a5c0af5cc253517bc43"
+    },
+    {
+      "id": "S5",
+      "sha256": "98295f43460c56f520c019d0160b8c1f616efa1642042dba774069358a8d63fe"
+    },
+    {
+      "id": "S6",
+      "sha256": "f79ae94ebea5133cc8c647bc52367e5473cb9dc3a72e128a1594e85e355be13d"
+    },
+    {
+      "id": "S7",
+      "sha256": "726c4d24358d7b62e794c2d011e839a09289d9c3b0c74738ec8fcc52042c82c4"
+    },
+    {
+      "id": "S8",
+      "sha256": "c619f14a03525a5854678ca81905c5f6ed913bc27fb2b2f7927c695458cacea5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31736",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Interventional causal discovery must account for selective enrollment of subjects into experiments.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing interventional causal-discovery approaches do not address selection bias because intervention timing and location can produce different statistical patterns.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "graphical model",
+        "claim": "Introduces a graphical model representing both the observed intervention world and the counterfactual selection world.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "theory and algorithm",
+        "claim": "Characterizes the model’s Markov property and proposes a provably sound algorithm for identifying causal relations and selection mechanisms up to an equivalence class from soft-intervention data with unknown targets.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated new distinction is explicitly modeling where interventions occur in the observed world versus where selection occurs before intervention in the counterfactual world.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report synthetic and real-world experiments in which their algorithm effectively identifies true causal relations despite selection bias.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Selective enrollment is common in drug trials, app A/B tests, and gene perturbation studies.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "risk and gap",
+        "summary": "Ignoring selection bias can produce incorrect causal-discovery results, while existing paradigms still fail to address it.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "explanation",
+        "summary": "The abstract attributes the difficulty to differences in when and where interventions occur, which alter statistical patterns.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "proposal and evaluation",
+        "summary": "The paper introduces a two-world graphical model, derives its Markov property, proposes an algorithm, and reports synthetic and real-world demonstrations.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper links its model design directly to a specific distinction between intervention and selection contexts, then aligns the algorithm’s stated scope with soft interventions and unknown targets.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A concrete causal or statistical distinction can motivate both the representation and the precise problem boundary.",
+        "application": "When proposing a model, explicitly map each added variable or world to the mechanism it represents and state the data regime the resulting method targets.",
+        "exception": "This framing is unsuitable when the application has no defensible separation between the modeled contexts or lacks data supporting the proposed regime."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the assumptions, exact Markov property, equivalence class, algorithm details, or what “effectively” means quantitatively.",
+      "The real-world datasets, baselines, metrics, and experimental conditions are not reported."
+    ]
+  }
+}

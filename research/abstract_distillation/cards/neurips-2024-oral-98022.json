@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-98022",
+    "title": "OpenMathInstruct-1: A 1.8 Million Math Instruction Tuning Dataset",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/98022"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5ac5e84f06b745f9d5e392caa86511ad01df0bb1dabc9a02880de62065dc3bc7",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "925f26d4faf925ecd539d959283fdfe53a32198e50a6eeb1ec2759b9a8576a9f",
+    "extracted_at": "2026-09-13T00:20:20.016693+00:00",
+    "session_id": "01a09822-9ef7-7af2-923a-822e6ad6b492",
+    "usage": {
+      "input_tokens": 12783,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 818,
+      "reasoning_output_tokens": 96
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2983ebdd34bb73da7f2a6804c39fbae6dd89ed2c72aebea4532e896f0936c867"
+    },
+    {
+      "id": "S2",
+      "sha256": "cde40f02fb985f141af0a638d4dd78fe0a10eafd52977738aa36e55011b0d166"
+    },
+    {
+      "id": "S3",
+      "sha256": "505bc52b9671a53776f53df7f84ad29f438ae793ad708bd728565e7363137427"
+    },
+    {
+      "id": "S4",
+      "sha256": "fda01e8994950b9b6d442f2ba18939746f6d1bdaaaaac0be31e9e067bb4be05e"
+    },
+    {
+      "id": "S5",
+      "sha256": "7d91627a20a2344d047e069a049acc123204d485402e1bc0e655db5c97f9ca7c"
+    },
+    {
+      "id": "S6",
+      "sha256": "41a799122b58fe731e249aff49c9e35ec3b5694d78126cd2380754d7390a2630"
+    },
+    {
+      "id": "S7",
+      "sha256": "95b85efcaf2d805adf2ce503f50fe3814b86271a25539ef72db2b816423ede23"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-98022",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Construct a large-scale, commercially permissive math instruction-tuning dataset using open-source generation pipelines.",
+        "source_ids": [
+          "S2",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Existing large-scale math instruction datasets relied on closed-source LLM outputs, while a skill gap had limited open-source LLMs in comparable generation pipelines.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "OpenMathInstruct-1, a dataset of 1.8M math problem-solution pairs synthesized with Mixtral code-interpreter solutions for GSM8K and MATH.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "OpenMath-CodeLlama-70B, trained on a subset of the dataset.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "release",
+        "claim": "A planned release of the code, models, and dataset under a commercially permissive license.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors identify their prompting approach, combined with brute-force scaling and recent open-source LLM progress, as the novelty behind constructing the dataset.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that OpenMath-CodeLlama-70B scores 84.6% on GSM8K and 50.7% on MATH.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report these scores as competitive with the best GPT-distilled models.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Synthetic datasets are presented as useful for teaching targeted LLM skills.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing large-scale math datasets use closed-source LLM outputs, and open-source models had lagged mathematically.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "construction",
+        "summary": "The authors combine prompting, scaling, and Mixtral-generated code-interpreter solutions to build a 1.8M-pair dataset.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "A CodeLlama-70B model trained on a subset is reported to reach 84.6% on GSM8K and 50.7% on MATH, competitive with GPT-distilled models.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "release",
+        "summary": "The authors state that code, models, and data will be released under a commercially permissive license.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links dataset accessibility to both the generator model's license and the planned licensing of the resulting code, models, and data.",
+          "source_ids": [
+            "S2",
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "When a dataset is intended for broad use, provenance and downstream licensing are part of the contribution rather than implementation details.",
+        "application": "State the source-model license, generation provenance, and intended redistribution terms alongside the dataset construction description.",
+        "exception": "This framing is less central when redistribution rights are already standardized or the work does not release generated artifacts."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the prompting method, scaling procedure, subset composition, training setup, baselines, or evaluation protocols.",
+      "The meaning of “competitive” is not quantified beyond the two reported benchmark scores."
+    ]
+  }
+}

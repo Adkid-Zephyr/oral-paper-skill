@@ -1,0 +1,108 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "targeted synthesis-source checking",
+  "records": [
+    {
+      "paper_id": "icml-2026-oral-71034",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S4 explicitly interprets performance gaps relative to prior benchmarks as indicating more challenging and realistic tasks. The card preserves this as the authors' interpretation. Later synthesis must retain that attribution and must not present lower performance as independently establishing realism.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71038",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S7 names an experimental CATH v4.4 evaluation intended to test transfer beyond AlphaFold structures but gives no outcome. The card explicitly preserves that unknown and does not claim successful transfer. The lesson's second-source evaluation is a recommendation; later synthesis must not extend the reported TEDBench improvements to CATH or treat the changed structure source as proof of successful out-of-distribution generalization.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71042",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S4 itself claims constant-cost amortized inference without specifying the variable with respect to which cost is constant. The card reproduces this unresolved author claim without assigning a variable. Later synthesis must leave that variable unknown, avoid asserting independence from dataset size or dimension, and keep the reported up-to-400× acceleration scoped to amortized inference under unspecified comparison conditions.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71047",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S5 says accuracy drops by up to 60% without clarifying relative percentage versus percentage points. The card retains the source notation and the named experimental models; it does not convert the quantity. Later synthesis must preserve the ambiguity and upper-bound qualifier rather than calculate an absolute drop or relabel it as percentage points.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71060",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S5 supports structural interventions with surface statistics held fixed but does not identify the matched statistics. Length, wording, and clause order appear as surface factors in S1. The card places matching these specific factors in the lesson application as a recommendation, not a report of the authors' protocol. Later synthesis must preserve that separation and must not claim the authors matched all three or varied only one factor at a time.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71074",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S4 explicitly describes the fixed-set minimax policy as balancing worst-case loss inside the set against a penalty for potential losses outside it. This directly supports the lesson observation even though the contribution paraphrase is shorter. Later synthesis must retain the fixed-set policy and coverage-consistent robust-risk context; ROCP targets risk-minimizing sets while maintaining finite-sample distribution-free marginal coverage.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71118",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "author_reported_evidence[1].claim",
+          "source_ids": [
+            "S9"
+          ],
+          "issue": "The baseline name contains an erroneous null character before pi_0. S9 names π_0. This is a transcription defect, not a change to the reported comparison.",
+          "severity": "minor",
+          "replacement_value": "The authors report that XR-1 consistently outperforms π_0 and GR00T-N1.5, while generalizing to novel objects, backgrounds, distractors, and illumination changes."
+        }
+      ],
+      "resolution": "Replace the corrupted baseline spelling with π_0. Preserve author attribution, the GR00T-N1.5 comparator, and the listed generalization conditions; S9 supplies no quantitative comparison values.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "icml-2026-oral-71089",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S5 explicitly states that the first stage learns speech translation at high latency using sentence-level aligned data, followed by GRPO reinforcement learning to optimize latency while preserving translation quality. The lesson accurately retains detail omitted from the shorter contribution summary. Later synthesis must distinguish eliminating word-level alignment from eliminating all alignment and preserve the two-stage ordering.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71094",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S3 reports targeted removal or augmentation of high-influence samples compared with random interventions on the Pythia family; it does not establish matching details. The source observation accurately reports that contrast. A matched random-intervention comparison appears only in the lesson application as a recommendation. Later synthesis must not attribute a matched-control protocol to the authors or treat their causal claims as independently verified.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71077",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S6 supports four memory categories across 16 tasks, and S7 supports 14 π0.5-based variants exploring representations across integration strategies. These statements do not establish a controlled factorial design. The card's crossing proposal is in the lesson application, and its factorial reference is a feasibility caveat. Later synthesis must treat these as recommendations and read the source observation as distinguishing design dimensions, not proving independent controls or exhaustive combinations.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71088",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S6 reports average advantages of 15.6% over Tongyi DR and 0.7% over OpenAI DR across four benchmarks, plus 1000× cheaper cost per query than OpenAI DR. The card retains the figures, comparators, averaging, and per-query unit. Neither percentage-point interpretation nor cost-accounting basis is specified; the card acknowledges missing metric and comparison details. Later synthesis must not convert the percentages, infer included cost components, or generalize the cost ratio beyond the reported comparison.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71111",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S6 reports 512 calibration samples for pretrained 1.7B–8B models, comparison with 1.3B–7B BitNet families trained on 100B tokens, and about 100,000× fewer training tokens. The card accurately attributes these claims. The calibration-token denominator and treatment of prior pretraining costs remain unspecified. Later synthesis must not equate samples with tokens, derive a sample length, assert a confirmed accounting exclusion, or reinterpret this as an end-to-end training-cost reduction. The differing model sizes and training regimes remain relevant comparison boundaries.",
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "material_error_cards": 0,
+    "minor_cards": 1,
+    "pass_cards": 11,
+    "scope": "targeted flags only"
+  }
+}

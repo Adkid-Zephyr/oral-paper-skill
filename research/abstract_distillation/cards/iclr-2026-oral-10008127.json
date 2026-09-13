@@ -1,0 +1,161 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008127",
+    "title": "Semi-Supervised Preference Optimization with Limited Feedback",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008127"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7c9d56a4e4f5941abb6cbbb4a276603cbf793633a110e29f6a93ba7536d642c6",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "c8a34daaab4cf71ccac048c1304c46261079f73873b8f6a38cfe936796bc4338",
+    "extracted_at": "2026-09-13T00:00:44.328864+00:00",
+    "session_id": "01a09810-b601-7642-be42-3e08eaf45067",
+    "usage": {
+      "input_tokens": 12670,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 719,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cae790fbfcedfd6015d1e8af91c9da5ee1d2576ebebd4d1342a49154b56d1ea0"
+    },
+    {
+      "id": "S2",
+      "sha256": "b0d3a6205db0e263e234d8cdf79ed5cb36e9c4fe3fd5d7a8b89e4db2f844e96a"
+    },
+    {
+      "id": "S3",
+      "sha256": "0a2fb2ba1c7039fe05166faae32749a78e00809e8009c84c6f10f5a71de39914"
+    },
+    {
+      "id": "S4",
+      "sha256": "1fd3fef2223692c4176be62694f8d7e0014999d4727aafe02554f61e2d905d60"
+    },
+    {
+      "id": "S5",
+      "sha256": "240a249c9c0269b7cc2fb6c363b36391e8dc1bd9b0ccc1403c7886dd03fd86e7"
+    },
+    {
+      "id": "S6",
+      "sha256": "6ab1808c252383915265a789625d34b1adbf3410c31c965c54bd5961cbec6aec"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008127",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Semi-Supervised Preference Optimization learns from a small number of pairwise preference labels together with many unpaired samples.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods rely heavily on substantial paired feedback, creating substantial resource expenditures.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "The authors prove the existence of an optimal reward threshold that separates winning and losing responses with high probability, enabling principled pseudo-labeling of unpaired data.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "SSPO uses pseudo-labels to distill latent preferences from large-scale unpaired data.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors identify the reward-threshold-based pseudo-labeling mechanism as their key theoretical contribution.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that SSPO shows data efficiency across datasets; with Mistral-7B-Instruct, training on 1% of UltraFeedback consistently surpasses strong baselines trained on 10%.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that pseudo-labeling enables SSPO to maintain human alignment while reducing acquisition costs.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Preference optimization has advanced language-model alignment, but current methods require substantial paired feedback and resources.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "problem_setup",
+        "summary": "The paper studies learning from few pairwise labels plus a large pool of unpaired samples.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "A theoretically justified reward threshold supports pseudo-labeling of unpaired responses, which SSPO uses to distill latent preferences.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "Experiments report that 1% of UltraFeedback with Mistral-7B-Instruct beats strong baselines trained on 10%.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a specific theoretical separation result to pseudo-label construction, then reports a concrete data-budget comparison.",
+          "source_ids": [
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A claim is easier to assess when the proposed mechanism and its resource-relevant evaluation are explicitly linked.",
+        "application": "Frame a semi-supervised method by stating the decision rule that creates extra supervision and pairing it with an explicit labeled-data budget comparison.",
+        "exception": "This framing is unsuitable when the method has no interpretable pseudo-label or thresholding mechanism, or when budget comparisons are not commensurate."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the probability guarantee, threshold conditions, evaluation metrics, number or identities of datasets, or how acquisition-cost reduction is quantified.",
+      "The comparison does not state whether training, tuning, model size, or other conditions were otherwise matched."
+    ]
+  }
+}

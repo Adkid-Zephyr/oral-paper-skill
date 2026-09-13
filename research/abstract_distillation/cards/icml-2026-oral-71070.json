@@ -1,0 +1,219 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71070",
+    "title": "Towards Sub-Second Molecular Docking as a Structural Primitive: A Quantized Consistency Diffusion Framework",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71070"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9725d9ab9a6e6fb759f6c73f105e23277a6556214d741085ed56e3ae928b7da9",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "49bf0ac57f0c6dce98f5144f5e189814c7a8e5b8a9cf0e3980fd16fd73911284",
+    "extracted_at": "2026-09-13T00:12:56.223603+00:00",
+    "session_id": "01a0981b-cff1-7e71-bc23-cea701c8f695",
+    "usage": {
+      "input_tokens": 12832,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 949,
+      "reasoning_output_tokens": 69
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "00263d09c67d841fac88e161e8f0b42e2d703372e611d6edb979adc891f75444"
+    },
+    {
+      "id": "S2",
+      "sha256": "ae53521f8f18c0f9845555e83f3fc91fbfc7d21279c801bcb547f5420f53f22b"
+    },
+    {
+      "id": "S3",
+      "sha256": "e2871ac7625cd3bdb8412429a1f8144b5fb2567ea0b051e3cb2fed7ee8328b24"
+    },
+    {
+      "id": "S4",
+      "sha256": "472be7a5af1033b25ab48fa60f426d11b5de3ed35cef3f35913bf3c878c8007b"
+    },
+    {
+      "id": "S5",
+      "sha256": "d87b17edf6eeee3612709b7cf1750da10c0c67fcd05a2919b37a40a4e103144a"
+    },
+    {
+      "id": "S6",
+      "sha256": "63601be33cacc6932d655de4d3f10f6a4a283b95b0333a1ca6b5987d940d78f0"
+    },
+    {
+      "id": "S7",
+      "sha256": "5ccd3506d91ca184ae88a5f1f2c6812dbc5cc8c4434a8af6bfaa7a8ecade2ed0"
+    },
+    {
+      "id": "S8",
+      "sha256": "afcd83925002d14e978285b8829f759e315caf785c0a9dae86df406e7e193caa"
+    },
+    {
+      "id": "S9",
+      "sha256": "2a05ff1ca6d264ce183e47edd1762270e78172bf1232fffd425a60e96b9168fd"
+    },
+    {
+      "id": "S10",
+      "sha256": "827eef22264a5ee58cfcc8a89559571830c332c4a14d5baab982c30d3e1efd6b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71070",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Molecular docking must provide accurate structural feedback fast enough for high-frequency, agent-driven drug-discovery loops.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing high-fidelity docking and co-folding models are constrained by iterative generative refinement and heavy computation.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A compute-efficient co-folding framework combining Progressive Consistency Regularization for few-step diffusion inference with Residual-Safe Quantization for selective low-precision computation.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "evaluation protocol",
+        "claim": "Information-level-matched accuracy evaluation, separating blind comparisons from blind generative methods and interface-informed comparisons from surface- or interface-informed baselines.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "A docking model designed to function as a sub-second structural primitive for agent-centered drug discovery.",
+        "source_ids": [
+          "S4",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a framework that combines reconstruction-anchored consistency tuning with residual-safe quantization to turn docking into a sub-second structural primitive.",
+      "source_ids": [
+        "S4",
+        "S7",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art docking accuracy under the matched interface-informed protocol.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors separately report blind-docking performance under the matched blind protocol.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "For a representative 256-token complex, the model generates five conformations in 0.17 seconds on one NVIDIA H20 GPU, reported as over 300× faster than AlphaFold3 under the benchmarked setting.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Agent-centered discovery requires accurate domain models that are callable in real time.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "bottleneck",
+        "summary": "Molecular docking supplies important structural feedback but is slowed by iterative refinement and heavy computation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The proposed framework combines few-step consistency diffusion with selective quantization that protects residual streams and geometry-sensitive operations.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "evaluation_and_result",
+        "summary": "Accuracy is evaluated with information-level-matched protocols, alongside reported sub-second generation and a benchmarked speed comparison.",
+        "source_ids": [
+          "S5",
+          "S9"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The authors frame the results as moving docking toward a real-time structural primitive.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract matches comparisons to the structural-information level available to each docking method, separating blind and interface-informed protocols.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "This makes the comparison framing more explicit and reduces ambiguity about whether methods received comparable structural information.",
+        "application": "When comparing systems with different inputs or priors, define matched evaluation strata and report each stratum separately.",
+        "exception": "This structure is unsuitable when all methods consume genuinely identical information and no meaningful protocol distinction exists."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract links each efficiency goal to a specific mechanism: consistency tuning reduces diffusion steps, while quantization selectively targets compute-intensive transformations and preserves geometry-sensitive paths in BF16.",
+          "source_ids": [
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "Mechanism-to-outcome mapping helps readers connect an engineering claim to its proposed source.",
+        "application": "For an efficiency contribution, pair each claimed bottleneck reduction with the component intended to produce it and state protected operations or constraints.",
+        "exception": "Avoid this decomposition when the abstract lacks evidence or the system’s effects cannot be meaningfully attributed to individual components."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide numerical accuracy values, datasets, sample counts, variance, or details of the matched protocols.",
+      "The speed result is for one representative 256-token complex and a benchmarked setting; broader runtime scope and comparison conditions are unspecified.",
+      "No ablation evidence is supplied for the separate effects of PCR and Residual-Safe Quantization."
+    ]
+  }
+}

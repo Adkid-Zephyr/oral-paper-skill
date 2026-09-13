@@ -1,0 +1,223 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31790",
+    "title": "GeSubNet: Gene Interaction Inference for Disease Subtype Network Generation",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31790"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d34ffde6700bd965a9f5997a7f19e0be54ede27a76b1c59195afb58308c056dd",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "04abaaa439bae7d52bd0e726b0cd319b78dbe0f703dc1abf4594423392ad829b",
+    "extracted_at": "2026-09-12T23:52:09.348130+00:00",
+    "session_id": "01a09808-ce85-7471-80e5-9a5b4e28c013",
+    "usage": {
+      "input_tokens": 12803,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 909,
+      "reasoning_output_tokens": 64
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "df8c50cf77d2605da262f4ddd904ce261ea1bcbb053c6cebf713e4a0a6c8396b"
+    },
+    {
+      "id": "S2",
+      "sha256": "80cc4def251a0a47dede2a66a622c5291622bb7c9cc934701ef7661e55c21f6d"
+    },
+    {
+      "id": "S3",
+      "sha256": "703787ce22e59be208d14663062c0cafa97a86fa044219f62467478af67b98ad"
+    },
+    {
+      "id": "S4",
+      "sha256": "d9446678de085dcaa5fc572771c42a6ef43adc34f71f442e8147c09b19bb1bce"
+    },
+    {
+      "id": "S5",
+      "sha256": "3d8d7d7168dce0f1be37c6f364cca18e26139970b276c7993742ab0c8d18312e"
+    },
+    {
+      "id": "S6",
+      "sha256": "818a20924edda660392c25769b1cda335db13a0192e174a8e6a556bc7a510586"
+    },
+    {
+      "id": "S7",
+      "sha256": "8ec90f796a488a301ddbe095d80ec85dff8ff388829f55d3bcb47a96c0c344a2"
+    },
+    {
+      "id": "S8",
+      "sha256": "c915b15f0c5fbd9527429d72791e2e9581fd61a4e14c19682dda07d348c8e6ce"
+    },
+    {
+      "id": "S9",
+      "sha256": "d0efefde5c83c9e5d2aedcc7a531fdfc6f27be3384e1c33fa8ac1983a1f482d5"
+    },
+    {
+      "id": "S10",
+      "sha256": "e5b4b61b85f5abd85e343e2344770b9b404d6edc84a6367078f26d317f17e8fa"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31790",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Infer gene interactions and generate disease-subtype-specific networks from patient expression profiles and prior gene-network knowledge.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing statistical and deep-learning approaches often do not integrate database interaction knowledge effectively or explicitly learn subtype-specific interactions.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "GeSubNet combines subtype learning, prior-network representation, and loss-based integration to predict interactions while distinguishing disease subtypes.",
+        "source_ids": [
+          "S3",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The framework generates graphs that can be treated as subtype-specific gene networks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report consistent improvements over traditional methods across four graph metrics and four cancer datasets.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed distinction is a unified representation that jointly predicts gene interactions and differentiates disease subtypes, integrating patient-derived and database-derived representations.",
+      "source_ids": [
+        "S3",
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report average improvements of 30.6%, 21.0%, 20.1%, and 56.6% across four graph evaluation metrics, averaged over four cancer datasets.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "From a biological simulation examining selected genes from over 11,000 candidates, the authors suggest that the generated network has potential to identify subtype-specific genes with an 83% likelihood of impacting patient-distribution shifts; the likelihood's operational definition is unspecified.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Disease networks do not align cleanly with subtype-specific variation, while existing methods have integration and subtype-learning limitations.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "GeSubNet learns a unified representation for interaction prediction and subtype discrimination.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Its three modules learn subtypes, encode prior gene networks, and integrate both representations through an inference loss conditioned on patient separation.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report multi-dataset metric gains and a biological simulation linking generated networks to subtype-specific genes and patient-distribution shifts.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly maps each representation-learning module to a distinct information source or objective: patient profiles, prior networks, and subtype-refining integration.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A compact method description becomes more informative when components are tied to their roles and inputs.",
+        "application": "Describe a multi-module model by pairing every module with its data source, learning objective, and interaction with the other modules.",
+        "exception": "This framing is less suitable when modules are interchangeable implementation variants rather than semantically distinct components."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract reports both broad graph-metric comparisons and a biologically motivated simulation with a concrete candidate count and outcome percentage.",
+          "source_ids": [
+            "S8",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "Pairing aggregate benchmark results with a domain-specific behavioral test can connect general performance to intended scientific use.",
+        "application": "Add a use-oriented analysis after benchmark comparisons, stating its population, selection scope, and measured outcome explicitly.",
+        "exception": "Do not present such a test as causal or definitive when the study only reports likelihood or simulated effects."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the traditional baselines, individual datasets, metric definitions, variance, or statistical significance behind the reported improvements.",
+      "The simulation setup, gene-selection procedure, meaning of the 83% likelihood, and comparison condition are unspecified.",
+      "No independently verifiable evidence is provided here for correctness, reproducibility, or priority of the claimed novelty."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "author_reported_evidence[1].claim",
+      "before": "In a biological simulation involving selected genes from more than 11,000 candidates, the authors report that the generated network identified subtype-specific genes with an 83% likelihood of affecting patient-distribution shifts.",
+      "after": "From a biological simulation examining selected genes from over 11,000 candidates, the authors suggest that the generated network has potential to identify subtype-specific genes with an 83% likelihood of impacting patient-distribution shifts; the likelihood's operational definition is unspecified.",
+      "review_file": "reviews/flagged-batch-01.json",
+      "review_sha256": "b7ba5492b24b672d551bcb1ba390c5351017aa8b3168c19950ca75f30a878af4",
+      "applied_at": "2026-09-13T00:20:52.607961+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

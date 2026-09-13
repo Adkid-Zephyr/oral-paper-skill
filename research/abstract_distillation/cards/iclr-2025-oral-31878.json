@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31878",
+    "title": "SAM 2: Segment Anything in Images and Videos",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31878"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1981709ee6074a732071564f862a354499a6817a90d5791acf693be6d509df3c",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "2cd9d53cd1d6eb9ff30ce7043effb75b9a8cd3b6d2145e968834fde75c06f331",
+    "extracted_at": "2026-09-12T23:55:33.052346+00:00",
+    "session_id": "01a0980b-f751-7802-8e5c-e9d4ecb4d506",
+    "usage": {
+      "input_tokens": 12655,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 747,
+      "reasoning_output_tokens": 100
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3cfcd3c61fede7c4a6c6beea0b1751a14d758303ce14cbb9d61c354189d8942e"
+    },
+    {
+      "id": "S2",
+      "sha256": "9c03450a213de390680fea232adf00f8cb8c9d2c2ba0b90d8c174780c8dac20b"
+    },
+    {
+      "id": "S3",
+      "sha256": "4bbeeffb246c28ed96aa6bc3d00dbd997b4cc80bf9d6ca617324689bbd1dd386"
+    },
+    {
+      "id": "S4",
+      "sha256": "0c0c18e37a14f62a4f2a03b9dbc5ed356e461aeb736b1474b9c178e076058347"
+    },
+    {
+      "id": "S5",
+      "sha256": "2475553f8b2ac2ac97ccfd514ea847ba98bcffccc2b9e1f3588f9cff6924f700"
+    },
+    {
+      "id": "S6",
+      "sha256": "273955b7b292cebeb97a779cbc553a0c286d64a1a88e8d44414df6d887bd8654"
+    },
+    {
+      "id": "S7",
+      "sha256": "8bbb88a3555020fea2c1182be8df2218e65502aaf649b94a70aeaa86ba6dfb5c"
+    },
+    {
+      "id": "S8",
+      "sha256": "e92732cbfa0f17a629e0e23d0a3f31419f0c0b9f65e215e9bd72aea91d62437e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31878",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop a foundation model for promptable visual segmentation in images and videos.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "SAM 2 uses a simple transformer architecture with streaming memory for real-time video processing.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource and data engine",
+        "claim": "A user-interaction data engine is used to improve the model and data while collecting what the authors describe as the largest video segmentation dataset to date.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "release",
+        "claim": "The authors release the main model, dataset, interactive demo, and code.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present SAM 2 as a model extending promptable visual segmentation to both images and videos.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report better video-segmentation accuracy than prior approaches while using three times fewer interactions.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that SAM 2 is more accurate and six times faster than SAM for image segmentation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report strong performance across a wide range of tasks when SAM 2 is trained on their data.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "objective",
+        "summary": "The work targets promptable visual segmentation across images and videos.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "data development",
+        "summary": "A user-interaction data engine jointly improves model and data and produces a large video-segmentation dataset.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "model design",
+        "summary": "The proposed architecture combines a transformer with streaming memory for real-time video processing.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported outcomes and release",
+        "summary": "The authors report task-wide performance, improved interaction efficiency in video, gains over SAM in images, and release the model, data, demo, and code.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a user-interaction data engine to simultaneous model/data improvement and reports an interaction-efficiency comparison for video segmentation.",
+          "source_ids": [
+            "S2",
+            "S5"
+          ]
+        },
+        "interpretation": "This suggests framing data collection and model development as a feedback loop, with a task-relevant efficiency measure alongside accuracy.",
+        "application": "For a new interactive system, describe the feedback mechanism explicitly and evaluate both output quality and interaction cost against a prior approach.",
+        "exception": "This framing is unsuitable when the system has no interaction loop or when interaction cost is not a meaningful deployment constraint."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the benchmarks, dataset size, interaction definitions, or statistical details behind the reported comparisons.",
+      "The conditions supporting the real-time claim and the scope of the stated task-wide performance are not given.",
+      "The abstract does not establish independent verification or priority relative to the literature."
+    ]
+  }
+}

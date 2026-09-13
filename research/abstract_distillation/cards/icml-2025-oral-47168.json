@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47168",
+    "title": "VideoJAM: Joint Appearance-Motion Representations for Enhanced Motion Generation in Video Models",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47168"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7372e5c03d869b60e3bc376c5d9ee23ca56acb9aab8f8ad002385f94f078d734",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "b2dac0dd3ce22408f121d103f004cf8ade0bbbe0821bdc24eb045ddc99eea7ee",
+    "extracted_at": "2026-09-13T00:07:08.581005+00:00",
+    "session_id": "01a09816-953f-70c3-9d60-aaf44107c1a3",
+    "usage": {
+      "input_tokens": 12700,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 705,
+      "reasoning_output_tokens": 98
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6dd40b0baec221899687d039c0e65d6334adb932d3910d21cfe6bcba97206c30"
+    },
+    {
+      "id": "S2",
+      "sha256": "7a42b41134a2ca8a89e301b2edc6b50901e63bbe5570b41daea379bc14010d96"
+    },
+    {
+      "id": "S3",
+      "sha256": "27c16d0503d3683d9094c16656bc6a38d629084b4e3e139cf0d74c38988adee3"
+    },
+    {
+      "id": "S4",
+      "sha256": "bbf27a085660cabe984de1461f484c21f0b89c6f504f5c08bb0f68e9a8b99c62"
+    },
+    {
+      "id": "S5",
+      "sha256": "f748ad35ad68e242a6e0dbad93c577c77c35f45e42472428f393040d5c8b238a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47168",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generative video models struggle to capture real-world motion, dynamics, and physics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract attributes this limitation to pixel reconstruction objectives that favor appearance fidelity over motion coherence.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "VideoJAM jointly learns appearance and motion by predicting generated pixels and corresponding motion from one learned representation during training.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Inner-Guidance uses the model’s evolving motion prediction to steer inference toward coherent motion.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The framework is presented as broadly applicable to video models with minimal adaptations, without changing training data or model scale.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce VideoJAM as a framework combining joint appearance–motion representation learning with inference-time Inner-Guidance.",
+      "source_ids": [
+        "S2",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art motion-coherence performance, surpassing highly competitive proprietary models.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report improved perceived visual quality alongside improved motion coherence.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Existing generative video models are described as weak at realistic motion, dynamics, and physics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors link the limitation to pixel reconstruction objectives that prioritize appearance over motion coherence.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "VideoJAM combines joint pixel-and-motion prediction during training with Inner-Guidance during inference.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report leading motion coherence, gains in perceived visual quality, and performance above proprietary competitors.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a stated failure mode—appearance-biased reconstruction—with two corresponding interventions: joint motion learning and motion-based inference guidance.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact problem-to-mechanism mapping can make a method’s design rationale easier to evaluate.",
+        "application": "When presenting a model, explicitly connect each component to the diagnosed objective or inference failure it is intended to address.",
+        "exception": "This framing is less suitable when the method has multiple independent goals or when the failure diagnosis is not supported by the available evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative metrics, datasets, evaluation protocol, or details of the proprietary-model comparisons.",
+      "The claimed broad applicability and minimal adaptation requirements are not operationally specified in the abstract."
+    ]
+  }
+}

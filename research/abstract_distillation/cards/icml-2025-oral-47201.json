@@ -1,0 +1,166 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47201",
+    "title": "Multi-agent Architecture Search via Agentic Supernet",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47201"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5c2e6ac1c9114f8589bea1af4a593f9e22a19d1ea8071414b016c8cc7a913049",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "925a4f8ee621f4c060866e6a5d3ba71aa045103b0b24fae7b308641bcd296df2",
+    "extracted_at": "2026-09-13T00:08:24.601597+00:00",
+    "session_id": "01a09817-be8e-79c2-988e-a7c9e4f47ff7",
+    "usage": {
+      "input_tokens": 12721,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 733,
+      "reasoning_output_tokens": 73
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f67bcfa1c97c8dd471095d436e30e1b2d3dfd8fabe5c977e8010a7e2a46a8937"
+    },
+    {
+      "id": "S2",
+      "sha256": "f3364ccb432a2d575fefa96008fd5313d143d27e006a58f81f93b8864d71dc83"
+    },
+    {
+      "id": "S3",
+      "sha256": "9c2f4a5a2e79f86974203820640d8a93491a4e25594be26abf0bd04a9b25cbc6"
+    },
+    {
+      "id": "S4",
+      "sha256": "9aa27194d9c1aba65a8512a0e6dc6b89571ef21b091f131ff4d124ba5ff12f48"
+    },
+    {
+      "id": "S5",
+      "sha256": "50796bbf4f1ef979488a1dde894b11bf9f06860b17cbc1fdd7bff3a1cf0fd7e4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47201",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Automate multi-agent system design while allocating inference resources according to each query’s difficulty and domain.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing automated workflow methods generally target static, complex, one-size-fits-all systems that do not dynamically allocate resources per query.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces MaAS, which samples query-dependent agentic systems from a probabilistic, continuous distribution of agentic architectures called an agentic supernet.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "resource-allocation approach",
+        "claim": "Targets tailored allocation of LLM calls, tool calls, and token cost across queries.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by optimizing an agentic supernet rather than pursuing a monolithic agentic system.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report evaluation on six benchmarks showing MaAS uses 6–45% of the inference costs of existing handcrafted or automated multi-agent systems.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that MaAS surpasses those systems by 0.54%–11.82%.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report superior cross-dataset and cross-LLM-backbone transferability.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Multi-agent systems extend individual-agent capabilities through collaboration, but manual construction is labor-intensive.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Automated workflow methods typically produce static, one-size-fits-all systems that cannot adapt resource allocation to query characteristics.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The paper proposes optimizing a probabilistic continuous agentic supernet and introduces MaAS to sample query-dependent systems with tailored resource use.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "Across six benchmarks, the authors report lower inference costs, higher performance, and stronger transferability than existing systems.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a limitation in static system design to a specific remedy: sampling query-dependent architectures with tailored resource allocation.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A strong abstract can align the proposed mechanism directly with the stated failure mode.",
+        "application": "When presenting an adaptive system, explicitly map each design choice to the fixed behavior or resource mismatch it is intended to address.",
+        "exception": "This framing is unsuitable when adaptation is not central to the task or when the system’s operating conditions are genuinely uniform."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the six benchmarks, baselines, task domains, or evaluation protocol.",
+      "The meanings of the reported performance margin, inference-cost accounting, and transferability comparisons are unspecified.",
+      "No details are given about training cost, sampling procedure, or statistical uncertainty."
+    ]
+  }
+}

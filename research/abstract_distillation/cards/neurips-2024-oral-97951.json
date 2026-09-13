@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97951",
+    "title": "RG-SAN: Rule-Guided Spatial Awareness Network for End-to-End 3D Referring Expression Segmentation",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97951"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6df8f487c889abec6f9eb6f1bbb4dd5e4fff9149a44d4f6fca6e30fd153d71ca",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "5a2cbcefd3c6215ab38bb091db18bbfd4088f893c8c7600590f2df549e29bff3",
+    "extracted_at": "2026-09-13T00:18:00.181389+00:00",
+    "session_id": "01a09820-7f5e-7673-87cb-4e1e37b564f5",
+    "usage": {
+      "input_tokens": 12771,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 693,
+      "reasoning_output_tokens": 61
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4ae62ac206706d8bc1c4a7e0c6b62b6dc9e71fadc695192f0ffd021b825ddf01"
+    },
+    {
+      "id": "S2",
+      "sha256": "e13b2274e0b678ca2b82cef251783cdf9bf99c57545ec08c624e16511d09108a"
+    },
+    {
+      "id": "S3",
+      "sha256": "b5a6892dd1f8d9263bc005298300eec7e608f2cb8c08f3d3588418ba4c2fbb35"
+    },
+    {
+      "id": "S4",
+      "sha256": "219b043e888e837e0583b2f0d7a14ff164b7425140f6ff6618bcf792069f0313"
+    },
+    {
+      "id": "S5",
+      "sha256": "68cc3fb639a4de6223485b94d76878d06cc301ed88f0fdae46d4cf279db4ad84"
+    },
+    {
+      "id": "S6",
+      "sha256": "284b2cad143630df7c4acd127a10d5141133e46ea8cfebb4e49be3d1a1d51712"
+    },
+    {
+      "id": "S7",
+      "sha256": "7423c3b7a46c98a18eb2f6bd710aea77dcf9be0eeba76ca32eab09ae58d6e866"
+    },
+    {
+      "id": "S8",
+      "sha256": "80708eafee5a0ff81907bbd03cc67349a2204e7f9660a241cd1ca9d477ef61a9"
+    },
+    {
+      "id": "S9",
+      "sha256": "39e20e7ab43c3c6049813798b62acc2b86c7829d880d1649c2a28c6a667cb83c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97951",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "3D referring expression segmentation correlates referring expressions with point clouds to segment described 3D objects.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Traditional approaches often over-segment or mis-segment because they insufficiently emphasize instance spatial information.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces RG-SAN, using only target-instance spatial information for supervision, with a text-driven localization module and a rule-guided weak-supervision strategy.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The TLM locates and iteratively refines mentioned instances, while dependency-tree rules guide positioning of the core instance when only the target has supervised positional information.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper presents a rule-guided spatial-awareness network that combines iterative localization with dependency-tree-guided weak supervision based solely on target-instance spatial information.",
+      "source_ids": [
+        "S3",
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report extensive ScanRefer testing and a 5.1-point mIoU increase, establishing new performance benchmarks.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report significant robustness improvements on descriptions containing spatial ambiguity.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Defines 3D referring expression segmentation as linking language descriptions to point clouds for object segmentation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Attributes common over-segmentation and mis-segmentation to insufficient attention to instance spatial information.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Introduces RG-SAN, comprising TLM for iterative localization and RWS for dependency-tree-guided positioning under target-only supervision.",
+        "source_ids": [
+          "S3",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "Reports a 5.1-point mIoU gain and improved robustness to spatial ambiguity on ScanRefer.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a supervision limitation—only target objects have positional labels—with a dependency-tree rule strategy designed to guide the core instance.",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        "interpretation": "Making the supervision constraint explicit can motivate a targeted mechanism rather than leaving weak supervision underspecified.",
+        "application": "State the available labels and map each missing supervision signal to a concrete rule, module, or training constraint.",
+        "exception": "This framing may be unsuitable when dense annotations are available or when dependency-tree structure does not represent the task reliably."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the ScanRefer baselines, evaluation protocol, absolute mIoU values, or statistical details behind the reported improvements.",
+      "It does not provide ablations separating the TLM and RWS contributions or details of the robustness evaluation."
+    ]
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71127",
+    "title": "CoEvol-NO: State and Coordinate Co-Evolution with an Error-Driven Predictor-Corrector Paradigm for Neural Operator Transformer",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71127"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4bff0841016f9cf1663be83487def98256d07a2cdcde791630417cea0ccd4e47",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "de6da96125211908c5146a6f387ca1ace29f587de0e09adddd3b1b7daad6457e",
+    "extracted_at": "2026-09-13T00:15:09.818384+00:00",
+    "session_id": "01a0981d-e351-76b0-981d-b31615ca5c06",
+    "usage": {
+      "input_tokens": 12729,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 817,
+      "reasoning_output_tokens": 103
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5ea8e17d43cb59d9423301718a22a6942b69e2118c49523405dde6e02453a21a"
+    },
+    {
+      "id": "S2",
+      "sha256": "862f8095fac7a9956531595f63af5b2609d6759aab112802201246f28c44f981"
+    },
+    {
+      "id": "S3",
+      "sha256": "5d5c94d93a5d14b48d6e9d8acc7b01b36e56fda5b6a34a294b4393be688e3403"
+    },
+    {
+      "id": "S4",
+      "sha256": "8ac46dc4db797cf8262842e9dc13d5c0faf687de71ee61ac38ee2b7baca81b26"
+    },
+    {
+      "id": "S5",
+      "sha256": "013913239afd770542b684493748af26554098fb7db7bec809048ae68924123c"
+    },
+    {
+      "id": "S6",
+      "sha256": "f79b529a91dde37861b6fe1c47928c4d88ec8455ae558c75310982ed142a8a3b"
+    },
+    {
+      "id": "S7",
+      "sha256": "b2abea9410c09a819cc7d605b9b020663c0f3ddb76d3b83b5fd887ce15fff047"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71127",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Long-sequence modeling remains a challenge in neural operator learning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods are characterized as treating latent states as transient or decoupled rather than jointly and bidirectionally updating them with the mesh sequence.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces CoEvol-NO, a persistent-state co-evolutionary framework that jointly and bidirectionally updates latent state and mesh sequence.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Formulates layer-wise state evolution as a predictor-corrector process with error-driven refinement of the persistent state.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Analyzes direct substitution and residual update as first-order approximations of error-driven correction under different loss assumptions, and proves strict linear time complexity for CoEvol-NO.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish CoEvol-NO through a persistent state and joint bidirectional co-evolution of state and mesh sequence.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a theoretical proof of strict linear time complexity.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that experiments on five standard benchmarks and two large-scale industrial design tasks consistently achieve state-of-the-art performance.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem",
+        "summary": "Long-sequence modeling is identified as an ongoing challenge for neural operator learning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "CoEvol-NO introduces a persistent latent state and co-evolves it with the mesh sequence in both directions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "Layer-wise evolution follows a predictor-corrector process: prediction proposes a target, then error-driven correction refines the persistent state.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "The analysis relates direct substitution and residual updates to first-order approximations under differing loss assumptions.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The authors report strict linear complexity and SOTA performance across seven evaluation settings spanning benchmarks and industrial design tasks.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a persistent-state design to a predictor-corrector mechanism and interprets existing update paradigms as approximations under explicit loss assumptions.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A method claim becomes more informative when its architectural choice, operational update rule, and relation to prior paradigms are presented together.",
+        "application": "When proposing an iterative architecture, define the persistent quantity, state the update sequence, and map simpler baselines to approximations under named assumptions.",
+        "exception": "This framing is unsuitable when the method has no iterative state or when such approximation relationships have not been theoretically established."
+      }
+    ],
+    "unknowns": [
+      "The specific loss assumptions behind the first-order-approximation claim are not given.",
+      "The setup and proof conditions for strict linear complexity are unspecified.",
+      "Benchmark names, baselines, metrics, and numerical margins for the reported SOTA results are absent."
+    ]
+  }
+}

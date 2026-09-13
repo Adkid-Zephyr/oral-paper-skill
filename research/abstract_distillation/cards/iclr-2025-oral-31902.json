@@ -1,0 +1,139 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31902",
+    "title": "Backtracking Improves Generation Safety",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31902"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a804ae3e91a1e055fd63b69ae854e7de2111221c9e9022169f6e93ec255fa920",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "6afae183db85561059e19b44ab30960aa72c43499f557e5fba3fe0b70e7181ed",
+    "extracted_at": "2026-09-12T23:56:27.659920+00:00",
+    "session_id": "01a0980c-c8e2-7c23-8d5c-372334b8f74e",
+    "usage": {
+      "input_tokens": 12637,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 758,
+      "reasoning_output_tokens": 73
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a804ae3e91a1e055fd63b69ae854e7de2111221c9e9022169f6e93ec255fa920"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31902",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Language models may continue unsafe text after a partial unsafe generation because generated tokens cannot normally be undone.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Safety alignment is typically framed as prevention, yet unsafe generations can circumvent alignment; the abstract presents recovery from already-generated unsafe text as an alternative direction.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes backtracking via a special [RESET] token, allowing a language model to undo and recover from unsafe generation; it can be incorporated into SFT or DPO training.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that backtracking-trained models are safer than baseline models without regression in helpfulness, and provide protection against four adversarial attacks, including an adaptive attack.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach from prevention-oriented safety alignment by introducing generation-time undo-and-recovery through backtracking.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that backtracking Llama-3-8B reduced unsafe-generation rate from 6.1% to 1.5% in their evaluations, described as four times safer than baseline, without helpfulness regression.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report protection against four adversarial attacks, including an adaptive attack, despite not training specifically on these attacks.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem",
+        "summary": "Generated unsafe tokens cannot ordinarily be taken back, and models tend to continue unsafe text once a partial unsafe generation appears.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "The abstract links this continuation behavior to circumvention of safety alignment and motivates moving beyond prevention.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Backtracking introduces a special [RESET] token so models can undo and recover from unsafe generation, trained through SFT or DPO.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The authors report lower unsafe-generation rates without helpfulness regression and protection against four attacks, including an adaptive attack.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract frames safety as both prevention and recovery, then aligns the method and evaluation with recovery from unsafe partial generations.",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        "interpretation": "A failure-recovery framing can expose a concrete capability gap left by prevention-only objectives.",
+        "application": "When a system can enter a harmful intermediate state, define and train an explicit recovery action, then evaluate both the target failure rate and preservation of the desired capability.",
+        "exception": "This framing may be unsuitable when an irreversible action occurs before recovery is possible or when rollback introduces unacceptable cost or new attack surface."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify evaluation datasets, sample sizes, safety metric definitions, attack implementations, or statistical uncertainty.",
+      "The basis for the stated four-times-safer comparison and the meaning of “without regression in helpfulness” are not detailed.",
+      "Training and inference procedures for the [RESET] token, including when it is triggered, are unspecified."
+    ]
+  }
+}

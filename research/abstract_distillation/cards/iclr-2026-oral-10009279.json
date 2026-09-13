@@ -1,0 +1,199 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009279",
+    "title": "UALM: Unified Audio Language Model for Understanding, Generation and Reasoning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009279"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "de764445a1c7199bf4bab19ee689619af1028ca5f451fbc781ff734992c37b8d",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "c6d0213fba529b6ee35089b8b9068ff1e139629059b03200a7ed8505a882cda7",
+    "extracted_at": "2026-09-13T00:02:39.639076+00:00",
+    "session_id": "01a09812-675d-74d0-9424-938eda8bac26",
+    "usage": {
+      "input_tokens": 12704,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 950,
+      "reasoning_output_tokens": 98
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ee12a3adab546a6cf080b12563ec1a1f3898feb81d6064b357beb10eea118f61"
+    },
+    {
+      "id": "S2",
+      "sha256": "9a1fd775c4cded863f6f3a8b5648eb1010210b40d5947e1faec6847e256e583c"
+    },
+    {
+      "id": "S3",
+      "sha256": "82203cadd0ba432bc2d06d99b606ace702eb09dbe91a123013e072588e66ab37"
+    },
+    {
+      "id": "S4",
+      "sha256": "d2003ad9372b72f9c83918b87b819666119b0c54cee1e4db32e76122a446f1a4"
+    },
+    {
+      "id": "S5",
+      "sha256": "1ce8d5a91b2fa3042abe8858644cea0570b5567bf5c4e62d16181edd7efd1cba"
+    },
+    {
+      "id": "S6",
+      "sha256": "bc79547c51038cf0d66c17872899ee1c64cd53ccc6255f95e00b215e6d81c5d6"
+    },
+    {
+      "id": "S7",
+      "sha256": "9dbd929d01c9fcd6466445adcf42215e46e07991051553ac80d2e472d4a6fc07"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009279",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Unify audio understanding, text-to-audio generation, and multimodal reasoning within one model.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing audio language modeling work generally treats audio understanding and text-to-audio generation separately, while few studies attempt to unify them.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "UALM-Gen, a text-to-audio language model that directly predicts audio tokens.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "training and inference approach",
+        "claim": "A single UALM model using data blending, training recipes, and inference techniques to target understanding, generation, and text reasoning together.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "multimodal reasoning model",
+        "claim": "UALM-Reason, which uses text and audio during intermediate reasoning steps for complex generation tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that UALM-Reason is, to their knowledge, the first demonstration in audio research of cross-modal generative reasoning.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that UALM-Gen is comparable to state-of-the-art diffusion-based models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that a single UALM matches the quality of state-of-the-art specialized models in audio understanding, text-to-audio generation, and text reasoning.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that UALM-Reason’s effectiveness was confirmed by subjective evaluations.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Audio language modeling commonly addresses understanding and text-to-audio generation as separate tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Only a small number of studies attempt to unify these tasks, which the authors frame as important for advanced multimodal reasoning.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "model introduction",
+        "summary": "The paper introduces UALM as a unified model for understanding, generation, and multimodal reasoning.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "technical development",
+        "summary": "It presents UALM-Gen for direct audio-token prediction and UALM-Reason for reasoning with text and audio in intermediate steps.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The authors report parity with specialized systems and subjective-evaluation support for cross-modal generative reasoning.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a unified-model objective with explicit mechanisms—data blending, training recipes, and inference techniques—and then states the resulting comparison with specialized models.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact abstract can align an architectural ambition with the enabling choices and the concrete comparison used to support it.",
+        "application": "When presenting a multi-task system, name the integration mechanisms before stating how the unified system compares with task-specific baselines.",
+        "exception": "This framing is unsuitable when the abstract lacks a meaningful unified objective or a comparison that covers the claimed tasks."
+      },
+      {
+        "source_observation": {
+          "claim": "The cross-modal reasoning claim is accompanied by a specific description of intermediate text-and-audio thinking steps and a stated subjective-evaluation result.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A novel capability is easier to assess when its operational mechanism and evaluation mode are both identified.",
+        "application": "For a proposed reasoning capability, briefly specify what modalities enter intermediate reasoning and identify the evaluation type supporting the claim.",
+        "exception": "Do not use subjective evaluation alone for claims requiring objective measurements or formal guarantees."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the datasets, metrics, baseline configurations, or conditions underlying the quality comparisons.",
+      "Details of the subjective evaluations, including participants, protocols, and quantitative outcomes, are not provided.",
+      "The “first demonstration” statement is author-reported and not independently established by the abstract."
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "paper_id": {"type": "string"},
+    "reading_level": {"type": "string", "enum": ["abstract_only"]},
+    "problem_and_gap": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "problem": {"$ref": "#/$defs/optional_claim"},
+        "gap": {"$ref": "#/$defs/optional_claim"}
+      },
+      "required": ["problem", "gap"]
+    },
+    "contributions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {"type": "string"},
+          "claim": {"type": "string"},
+          "source_ids": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["type", "claim", "source_ids"]
+      }
+    },
+    "stated_novelty": {"$ref": "#/$defs/optional_claim"},
+    "author_reported_evidence": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+    "narrative_sequence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "role": {"type": "string"},
+          "summary": {"type": "string"},
+          "source_ids": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["role", "summary", "source_ids"]
+      }
+    },
+    "lessons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "source_observation": {"$ref": "#/$defs/claim"},
+          "interpretation": {"type": "string"},
+          "application": {"type": "string"},
+          "exception": {"type": "string"}
+        },
+        "required": ["source_observation", "interpretation", "application", "exception"]
+      }
+    },
+    "unknowns": {"type": "array", "items": {"type": "string"}}
+  },
+  "required": ["paper_id", "reading_level", "problem_and_gap", "contributions", "stated_novelty", "author_reported_evidence", "narrative_sequence", "lessons", "unknowns"],
+  "$defs": {
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "claim": {"type": "string"},
+        "source_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "required": ["claim", "source_ids"]
+    },
+    "optional_claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "claim": {"type": ["string", "null"]},
+        "source_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "required": ["claim", "source_ids"]
+    }
+  }
+}

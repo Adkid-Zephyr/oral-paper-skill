@@ -1,0 +1,605 @@
+{
+  "batch_id": "iclr-2026-04",
+  "covered_ids": [
+    "iclr-2026-oral-10009920",
+    "iclr-2026-oral-10009926",
+    "iclr-2026-oral-10009928",
+    "iclr-2026-oral-10009932",
+    "iclr-2026-oral-10009945",
+    "iclr-2026-oral-10009972",
+    "iclr-2026-oral-10009981",
+    "iclr-2026-oral-10010024",
+    "iclr-2026-oral-10010045",
+    "iclr-2026-oral-10010053",
+    "iclr-2026-oral-10010117",
+    "iclr-2026-oral-10010187",
+    "iclr-2026-oral-10010192",
+    "iclr-2026-oral-10010220",
+    "iclr-2026-oral-10010224",
+    "iclr-2026-oral-10010258",
+    "iclr-2026-oral-10010292",
+    "iclr-2026-oral-10010353",
+    "iclr-2026-oral-10010370",
+    "iclr-2026-oral-10010387",
+    "iclr-2026-oral-10010392",
+    "iclr-2026-oral-10010431",
+    "iclr-2026-oral-10010464",
+    "iclr-2026-oral-10010538",
+    "iclr-2026-oral-10010553",
+    "iclr-2026-oral-10010558",
+    "iclr-2026-oral-10010574",
+    "iclr-2026-oral-10010579",
+    "iclr-2026-oral-10010586",
+    "iclr-2026-oral-10010608",
+    "iclr-2026-oral-10010680",
+    "iclr-2026-oral-10010691",
+    "iclr-2026-oral-10010706",
+    "iclr-2026-oral-10010749",
+    "iclr-2026-oral-10010787",
+    "iclr-2026-oral-10010798",
+    "iclr-2026-oral-10010814",
+    "iclr-2026-oral-10010834",
+    "iclr-2026-oral-10010880",
+    "iclr-2026-oral-10010918",
+    "iclr-2026-oral-10010922",
+    "iclr-2026-oral-10010942",
+    "iclr-2026-oral-10010996",
+    "iclr-2026-oral-10011018",
+    "iclr-2026-oral-10011023",
+    "iclr-2026-oral-10011030",
+    "iclr-2026-oral-10011067",
+    "iclr-2026-oral-10011087"
+  ],
+  "candidate_practices": [
+    {
+      "name": "Name the requirement being replaced",
+      "source_observation": "These abstracts distinguish methods through a changed training dependency or architectural requirement.",
+      "why_it_may_help": "Interpretation: a concrete substitution makes novelty assessable without priority claims.",
+      "application": "Write: prior approach requires X; ours uses Y; report the capability retained.",
+      "when_not_to_use": "When the requirement remains elsewhere in the pipeline.",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10009945",
+          "source_ids": [
+            "S3",
+            "S5"
+          ],
+          "specific_example": "Q-RAG moves fine-tuning from small LLMs to an RL-trained embedder."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010192",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "specific_example": "LongWriter-Zero describes base-model RL without annotated or synthetic training data."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010996",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "specific_example": "ABOM replaces predefined task distributions with online target-population feedback."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010387",
+          "source_ids": [
+            "S2",
+            "S3"
+          ],
+          "specific_example": "WAFT substitutes high-resolution warping for cost volumes."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10010292",
+          "source_ids": [
+            "S2",
+            "S3"
+          ],
+          "contrast": "RodriNet adds kinematic structure; removing specialized structure is not a universal improvement."
+        }
+      ],
+      "full_text_needed_for": "Residual dependencies, matched comparisons, and whether the substitution explains gains."
+    },
+    {
+      "name": "Anchor efficiency to a retained capability",
+      "source_observation": "These abstracts pair resource changes with quality or capability conditions.",
+      "why_it_may_help": "Interpretation: the pairing identifies what the resource saving buys or preserves.",
+      "application": "State the resource, reference system, retained outcome, and comparison condition together.",
+      "when_not_to_use": "When resource and quality results come from incomparable settings.",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10009981",
+          "source_ids": [
+            "S6"
+          ],
+          "specific_example": "ThinKV reports near-lossless accuracy below 5% of original cache usage."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010431",
+          "source_ids": [
+            "S7",
+            "S8"
+          ],
+          "specific_example": "FlashVID reports retained performance at 10% tokens and additional frames under equal compute."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010586",
+          "source_ids": [
+            "S6"
+          ],
+          "specific_example": "FALCON compares speed with an equivalently performing CNF."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010691",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Πnet qualifies solver comparisons by modest accuracy and distinguishes single problems from batches."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10010024",
+          "source_ids": [
+            "S4"
+          ],
+          "contrast": "HSD claims provable distribution preservation, a different standard from empirical near-lossless quality."
+        }
+      ],
+      "full_text_needed_for": "Hardware, quality tolerances, denominators, workload matching, and guarantee assumptions."
+    },
+    {
+      "name": "Define a resource through its missing evaluation conditions",
+      "source_observation": "These benchmark abstracts specify task or environment conditions absent from earlier evaluations.",
+      "why_it_may_help": "Interpretation: this explains why the resource changes measurement, beyond adding examples.",
+      "application": "Name the omitted condition, its representation in the resource, and the resulting evaluation question.",
+      "when_not_to_use": "When deliberately isolating a narrow capability makes environmental realism irrelevant.",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10009972",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "AstaBench combines scientific tasks, search infrastructure, and agent baselines."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010053",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S6"
+          ],
+          "specific_example": "SimuHome adds evolving environmental effects and accelerated workflow evaluation."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010553",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S8"
+          ],
+          "specific_example": "EditBench includes in-the-wild instructions, highlighting, cursor state, and context-sensitive outcomes."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010880",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "WebDevJudge combines static and interactive assessment with rubric-grounded human preferences."
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "Sampling, annotation reliability, simulator fidelity, controls, and metric definitions."
+    },
+    {
+      "name": "Make a diagnosis observable before prescribing a remedy",
+      "source_observation": "These abstracts expose intermediate dependencies or behaviors rather than reporting only aggregate success.",
+      "why_it_may_help": "Interpretation: diagnostic observations can distinguish explanations and motivate targeted changes.",
+      "application": "Name the suspected failure, the observable or perturbation, and the specific resulting finding.",
+      "when_not_to_use": "When the probe changes the task or its signal admits unresolved alternative explanations.",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10009928",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S8"
+          ],
+          "specific_example": "Graph inference probes features, edges, and labels; code-generation advantages are tied to token-constrained regimes."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010224",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "MC-Search uses step annotations and process metrics to identify retrieval and modality-planning failures."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010464",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "TRACE operationalizes effort through reward at progressively truncated reasoning lengths."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010680",
+          "source_ids": [
+            "S4",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "Collaborative Battleship separates answering, information gain, and targeting outcomes."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10010814",
+          "source_ids": [
+            "S4",
+            "S8"
+          ],
+          "contrast": "CRV additionally reports feature interventions correcting errors; predictive diagnosis alone does not establish that intervention claim."
+        }
+      ],
+      "full_text_needed_for": "Probe validity, alternative explanations, intervention controls, and diagnostic effect sizes."
+    },
+    {
+      "name": "Attach theorem claims to their operative regime",
+      "source_observation": "These theory abstracts distinguish assumptions, extensions, and computational conclusions.",
+      "why_it_may_help": "Interpretation: localizing conditions prevents a headline from becoming an unconditional claim.",
+      "application": "Place the regime beside the conclusion; separately state what an extension changes.",
+      "when_not_to_use": "Do not invent multiple regimes when only one is analyzed.",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10010579",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Softmax completeness separates restricted languages from arbitrary languages requiring relative positions."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010918",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "specific_example": "InfoNCE Gaussianity separates alignment/concentration assumptions from a regularization-assisted regime."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010942",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "specific_example": "MDM equivalence uses finite precision and log width; efficiency advantages concern specified problem classes."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010558",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Federated complexity comparisons follow an explicit strategy-dependent cost model."
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "Definitions, theorem quantifiers, proof correctness, rates, and correspondence to implementations."
+    },
+    {
+      "name": "Translate an explanation into an operational consequence",
+      "source_observation": "These abstracts connect structural accounts to algorithms, schedules, or cheaper representations.",
+      "why_it_may_help": "Interpretation: the connection shows what an explanation changes in author or practitioner decisions.",
+      "application": "Follow the explanatory claim with the computation it enables, then distinguish supporting evidence from interpretation.",
+      "when_not_to_use": "When the explanation has no established operational consequence.",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10010392",
+          "source_ids": [
+            "S2",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Exchangeability leads to order-statistic Euclidean comparisons and graph LSH."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010706",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "SGF connects a unified potential to a critical guidance window and early-denoising findings."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010749",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "RALI targets RL-derived text representations directly to omit inference-time reasoning."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010922",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Diffusion boundary cues are extracted and distilled into a one-step decoder."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10011067",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "contrast": "Early-training weight decompositions contribute explanation without requiring a replacement system."
+        }
+      ],
+      "full_text_needed_for": "Validity of the explanatory account and whether the operational change depends on it."
+    },
+    {
+      "name": "Explain component roles without inventing isolated effects",
+      "source_observation": "These abstracts describe coordinated mechanisms serving distinct or coupled goals.",
+      "why_it_may_help": "Interpretation: explicit roles make multiple contributions coherent without asserting unsupported attribution.",
+      "application": "Replace a component list with intended functions and interactions; reserve causal language for demonstrated effects.",
+      "when_not_to_use": "When assigning separate roles would misrepresent an inseparable mechanism.",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10009926",
+          "source_ids": [
+            "S3"
+          ],
+          "specific_example": "WAVE jointly presents fusion and multimodal multitask training for retrieval and prompt awareness."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009932",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "AgentFlow separates system modules from trajectory-linked planner optimization."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10010353",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Mamba-3 assigns expressiveness, state tracking, and latency aims to three changes."
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011087",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "specific_example": "CoCo combines local/global views, low-rank embeddings, and consistency learning."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10009920",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "contrast": "One progressive-stratification procedure addresses both multiple testing and entanglement; mappings need not be one-to-one."
+        }
+      ],
+      "full_text_needed_for": "Component interactions, attribution evidence, and discrepancies between intended and measured effects."
+    }
+  ],
+  "unusual_but_useful": [
+    {
+      "paper_id": "iclr-2026-oral-10010117",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S6",
+        "S7"
+      ],
+      "practice": "Compare against different families for different capabilities.",
+      "application": "Separate structure/quality comparisons from sample-diversity comparisons.",
+      "limit": "Diversity only suggests distribution coverage."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010187",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "practice": "Separate explicit control from configuration assistance.",
+      "application": "Explain user primitives and inferred settings separately.",
+      "limit": "Code length does not establish usability."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010370",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "practice": "Pair formal scope with the consequential tuning variable.",
+      "application": "Name covered schedules, merge-duration sensitivity, and annealing-data condition.",
+      "limit": "Sensitivity magnitudes are absent."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010538",
+      "source_ids": [
+        "S6",
+        "S8"
+      ],
+      "practice": "Connect an integration model to a transfer diagnostic.",
+      "application": "State what geometric consistency measures before interpreting scaling.",
+      "limit": "Dataset-count associations do not establish causality."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010574",
+      "source_ids": [
+        "S5",
+        "S7"
+      ],
+      "practice": "Specify interaction capability beyond output duration.",
+      "application": "Report speaker capacity alongside timing and annotation design.",
+      "limit": "Naturalness lacks quantitative support here."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010608",
+      "source_ids": [
+        "S4",
+        "S5"
+      ],
+      "practice": "Distinguish faster progress from a higher endpoint.",
+      "application": "State whether an intervention changes compute efficiency or estimated asymptote.",
+      "limit": "Requires identifiable scaling trajectories."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010834",
+      "source_ids": [
+        "S4",
+        "S5"
+      ],
+      "practice": "Turn a tradeoff into an objective and constraint.",
+      "application": "Identify proxies before stating the constrained update.",
+      "limit": "Proxy satisfaction need not imply retained knowledge or plasticity."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011018",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "practice": "State phase-specific predictions.",
+      "application": "Connect each learning phase to its predicted observable and exponent.",
+      "limit": "Phase boundaries and numerical agreement are unavailable."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011030",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "practice": "Justify a metric by downstream predictiveness.",
+      "application": "Define coverage and the cross-entropy prediction problem it addresses.",
+      "limit": "Necessity and sufficiency require theorem conditions."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010798",
+      "source_ids": [
+        "S3",
+        "S6",
+        "S7"
+      ],
+      "practice": "Match generalization tests to an omitted variable.",
+      "application": "Connect camera conditioning to cross-camera evaluation.",
+      "limit": "Reported gains do not establish universal prerequisite status."
+    }
+  ],
+  "discarded_generalizations": [
+    {
+      "generalization": "Every abstract needs a new method and a leaderboard win.",
+      "reason": "Resource design and theoretical characterization can stand as contributions; no position-paper template is evidenced here.",
+      "paper_ids": [
+        "iclr-2026-oral-10009972",
+        "iclr-2026-oral-10010942",
+        "iclr-2026-oral-10011030"
+      ]
+    },
+    {
+      "generalization": "Efficiency figures establish preservation of quality.",
+      "reason": "DCFold leaves fidelity unquantified; InfoTok leaves performance influence undefined; p-less reports several outcomes without numerical conditions.",
+      "paper_ids": [
+        "iclr-2026-oral-10010045",
+        "iclr-2026-oral-10010220",
+        "iclr-2026-oral-10010258"
+      ]
+    },
+    {
+      "generalization": "Naming analyses or capabilities establishes their effectiveness.",
+      "reason": "RLR's analyses and prompting synergy are unspecified; OmniVerifier's atomic capabilities are not identified in the substantive extraction.",
+      "paper_ids": [
+        "iclr-2026-oral-10011023",
+        "iclr-2026-oral-10010787"
+      ]
+    },
+    {
+      "generalization": "These patterns explain Oral selection or establish ORAL as the framework.",
+      "reason": "Selected abstracts provide neither selection evidence nor a framework comparison.",
+      "paper_ids": [
+        "iclr-2026-oral-10009920",
+        "iclr-2026-oral-10010880"
+      ]
+    }
+  ],
+  "source_checks_needed": [
+    {
+      "paper_id": "iclr-2026-oral-10010220",
+      "field": "lessons.source_observation; method name",
+      "issue": "S7 appears only in the lesson; method symbol is unresolved. Check original wording."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010608",
+      "field": "S5",
+      "issue": "Numbered observation (2) is missing."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010680",
+      "field": "S8–S9",
+      "issue": "S8 is truncated; recover win-rate comparisons and cost conditions."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010387",
+      "field": "lessons.source_observation",
+      "issue": "Memory-cost claim appears only in the lesson; verify S2 before reuse."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010053",
+      "field": "lessons.application",
+      "issue": "Feasible/infeasible requests within every category is an inferred design recommendation, not established coverage."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010787",
+      "field": "lessons.source_observation",
+      "issue": "Lesson says three capabilities are named; supplied substantive claims give only their number."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009932",
+      "field": "lessons.source_observation; S6",
+      "issue": "Check added wording 'single verifiable' and 'stabilize'; clarify whether percentage gains are relative or absolute."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010431",
+      "field": "unknowns",
+      "issue": "Two VLLMs are named elsewhere; only the complete three-model roster is missing."
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010192",
+      "field": "S4",
+      "issue": "Check scope of 'without annotated or synthetic data,' including reward-model construction."
+    }
+  ]
+}

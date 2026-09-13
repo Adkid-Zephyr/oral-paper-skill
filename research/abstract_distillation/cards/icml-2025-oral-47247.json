@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47247",
+    "title": "SK-VQA: Synthetic Knowledge Generation at Scale for Training Context-Augmented Multimodal LLMs",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47247"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "93a6b8113e63aa630a09e82d89e00c079bbbed6e8f0f72c5356e92370d575410",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "dff858fbb478e4a74d3b8e60c76eddf77e624b8658d40c9e69c41b4799c577ae",
+    "extracted_at": "2026-09-13T00:10:19.544903+00:00",
+    "session_id": "01a09819-732a-7322-adf1-1d20a8810aeb",
+    "usage": {
+      "input_tokens": 12755,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 851,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "50d3d136e10da0db185e0793d9b26f7fd5d71dd9b90a09860ce55c54713108c4"
+    },
+    {
+      "id": "S2",
+      "sha256": "d7f7337b85167a8d08447279ec4e17ffdba3e7a3008534829fa61254f46d3255"
+    },
+    {
+      "id": "S3",
+      "sha256": "ac81d34c85edbfcf18e20515e38c9f8450be590f5c590de2f25df2cde7184c7a"
+    },
+    {
+      "id": "S4",
+      "sha256": "66ea14f612a8231e39bb53b4ce2f732ec7362bec769769a62f0e9532fa9e0002"
+    },
+    {
+      "id": "S5",
+      "sha256": "6d6367eafc83d0338c08283ba5aaa8a7ca86799af1eb3790221d654d6fae1872"
+    },
+    {
+      "id": "S6",
+      "sha256": "bc180a8fa778908003c20e6d2ee7f89356760454323c3d3a4a84aeb1997d1262"
+    },
+    {
+      "id": "S7",
+      "sha256": "b55b0d4a27aad87d887991e53eff4c4d3f58f8e3fd53f6dae4a350943c76abaa"
+    },
+    {
+      "id": "S8",
+      "sha256": "93c051da372f07a1389b0cb8731d02ca97ccd2ed1a9523a7d7af5ad8e34b8f9c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47247",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable multimodal models to integrate external knowledge for knowledge-based visual question answering and related context-augmented generation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Synthetic-data generation for context-augmented generation is described as underexplored, while existing VLMs are not inherently designed for this setting.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "Introduces SKVQA, a synthetic multimodal dataset with over 2 million visual question-answer pairs linked to external knowledge sources used to determine answers.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "comparative resource characterization",
+        "claim": "Reports 11× more unique questions than previous datasets, along with greater domain diversity and a broader range of image sources.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "benchmark and training resource",
+        "claim": "Positions SKVQA as both a knowledge-based VQA benchmark and a resource for adapting generative multimodal models to context-augmented generation.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish SKVQA by its large scale, explicit external-knowledge associations, question diversity, domain diversity, and image-source breadth.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that human evaluations found the generated question-answer pairs to be high quality and contextually relevant.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that extensive experiments support SKVQA's use as a challenging benchmark and effective training resource.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report enhanced generalization by models trained on SKVQA in both context-aware VQA and multimodal RAG settings.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task context",
+        "summary": "Multimodal RAG is framed as important for integrating knowledge in KB-VQA.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "Existing VLM design limitations and the underexplored use of synthetic data motivate the work.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "resource introduction",
+        "summary": "SKVQA is introduced as a dataset exceeding 2 million knowledge-associated multimodal question-answer pairs.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "characterization and evaluation",
+        "summary": "The abstract reports broader dataset coverage, positive human-evaluation findings, benchmark and training utility, and improved reported generalization.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the dataset's construction—knowledge sources associated with each pair—with its intended context-augmented generation tasks and then reports benchmark, training, and generalization outcomes.",
+          "source_ids": [
+            "S4",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "This is a useful claim-to-evidence pattern: connect resource design choices to target capabilities and evaluate multiple intended uses.",
+        "application": "For a dataset paper, explicitly map each structural design choice to a target task, then report evidence separately for benchmarking, training, and transfer.",
+        "exception": "This framing is less suitable when the work has only one intended use or when the abstract lacks task-specific evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify human-evaluation procedures, participant numbers, or quantitative quality and relevance results.",
+      "It does not provide experimental datasets, baselines, metrics, training details, or the conditions and magnitude of reported generalization gains.",
+      "The comparison behind the 11× figure and the meaning of “previous datasets” are unspecified."
+    ]
+  }
+}

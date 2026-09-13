@@ -1,0 +1,168 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71124",
+    "title": "DISCO: Mitigating Bias in Deep Learning with Conditional Distance Correlation",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71124"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d87a9ae61a6348a23d142c3e792798bb24c71bd324733780f2e2d04df3c64798",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "a9c58fa7cb4dabfaf400a3dc21b9061890079278350067650ca65124ad3d9be1",
+    "extracted_at": "2026-09-13T00:15:01.384255+00:00",
+    "session_id": "01a0981d-c56c-7b80-998a-3a0224c9b2f0",
+    "usage": {
+      "input_tokens": 12627,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 768,
+      "reasoning_output_tokens": 113
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e38c3928d8b858ddedac00e12dcf1fb5565a527f23c83610072e5c7ba87e9e7d"
+    },
+    {
+      "id": "S2",
+      "sha256": "f4d25ba5f9cd23a96250e4382296b14988c3aad8308ebb71f56c55d30ff8b8cb"
+    },
+    {
+      "id": "S3",
+      "sha256": "97767662694a87a6dbfc604420d31c203bbef88de6e9dd970911d7d598550de0"
+    },
+    {
+      "id": "S4",
+      "sha256": "43529d05ac010bacd2222f1618eb7e7d7bcda780f7fb538e61d068f831213ff3"
+    },
+    {
+      "id": "S5",
+      "sha256": "76e6fd7ffcd8804011b47ce2b4c526c0b03ce988fcc41355be94a29b3405c6fa"
+    },
+    {
+      "id": "S6",
+      "sha256": "b6582b8313011e730bcdce9e4d2fd3e97acc1a74ed63804e0d252068befbc7b4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71124",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Dataset bias can cause deep learning models to rely on spurious correlations rather than task-relevant signals.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Introduces the Standard Anti-Causal Model (SAM), a causal framework for characterizing bias mechanisms and defining a conditional-independence criterion for causal stability.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes DISCO_m and sDISCO, efficient and scalable conditional distance-correlation estimators for independence regularization in gradient-based models.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports methods that outperform or match existing observed-bias mitigation approaches across six datasets, with fewer hyperparameters and support for multi-bias scenarios.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that the work unifies causal theory with practical deep-learning tools through SAM and conditional distance-correlation estimators.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that DISCO_m and sDISCO consistently outperform or are competitive with existing observed-bias mitigation approaches across six diverse datasets.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report fewer hyperparameters and seamless scaling to multi-bias scenarios.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Dataset bias may drive models toward spurious rather than task-relevant signals.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "SAM is introduced to characterize bias mechanisms and formulate a conditional-independence criterion for causal stability.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "DISCO_m and sDISCO operationalize the theory as scalable estimators for independence regularization.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "Across six datasets, the methods are reported as outperforming or matching existing approaches while using fewer hyperparameters and handling multiple biases.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a causal framework and stability criterion to concrete regularizers and estimators, then reports comparisons on six datasets.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A theory-to-method-to-evidence chain helps align the motivation, mechanism, and empirical claim.",
+        "application": "State the formal criterion first, identify the model component that enforces it, and evaluate that component against the claimed failure mode.",
+        "exception": "This structure may be unsuitable when the work is primarily descriptive or lacks a formal mechanism tied to the evaluation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the six datasets, evaluation metrics, baseline methods, or the magnitude of performance differences.",
+      "The conditional-independence criterion, estimator formulations, multi-bias setup, and hyperparameter counts are not detailed.",
+      "No experimental conditions or evidence supporting the claimed causal stability are provided in the abstract."
+    ]
+  }
+}

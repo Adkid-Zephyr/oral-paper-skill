@@ -1,0 +1,171 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-117680",
+    "title": "Tighter CMI-Based Generalization Bounds via Stochastic Projection and Quantization",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/117680"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4a9df4b8085f99f28239968516bc580aa0b05550be005d2a8f609ee52566a3b8",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "52f492df35a4382d1e097183aa10d5aa6f7551e5cf3533b5887a2402f4557e9f",
+    "extracted_at": "2026-09-13T00:22:06.618495+00:00",
+    "session_id": "01a09824-474b-7a03-88b9-ca2989efab81",
+    "usage": {
+      "input_tokens": 12713,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 743,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b0d0cba148ff88e815b80436aca2a4e9c6b75efef304b3e89dc3f44fda031495"
+    },
+    {
+      "id": "S2",
+      "sha256": "9faf63bb965a34921e4af3e3a8aa52be51e7a78bf357a3f3c0186e2fca1e6fb7"
+    },
+    {
+      "id": "S3",
+      "sha256": "ea22be69ed4476659d09fc97045d7438bf27ea16ac04ae76782bdf3d51e20361"
+    },
+    {
+      "id": "S4",
+      "sha256": "3c603fd67ca42ceeab25a1cce46de3ad93722a18b5b238095b74545d86cbd960"
+    },
+    {
+      "id": "S5",
+      "sha256": "4854aaca14f216338e7b9080f7cf273c14c4cde9552b081e13f94769ac00c948"
+    },
+    {
+      "id": "S6",
+      "sha256": "58eef6d82ca86ee3e5acd2d74fb03450fafe1c974397a1d4005e958e02e34674"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-117680",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Derive conditional mutual information bounds for the generalization error of statistical learning algorithms and use them to study memorization.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing mutual-information and conditional-mutual-information bounds can become vacuous or fail to describe the right generalization behavior on certain problem instances.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces CMI generalization bounds based on stochastic projection and lossy compression.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Establishes guarantees of order O(1/sqrt(n)) for certain instances where prior MI and CMI bounds are inadequate.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "For every learning algorithm, constructs an auxiliary non-memorizing algorithm with comparable generalization error for any data distribution.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present stochastic projection and lossy compression as the basis for new CMI bounds.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their bounds are generally tighter than existing bounds.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report O(1/sqrt(n)) generalization guarantees on certain instances where existing MI and CMI bounds become vacuous or mischaracterize generalization.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that the auxiliary algorithm avoids memorization while retaining comparable generalization error for every data distribution.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "approach",
+        "summary": "The paper uses stochastic projection and lossy compression to derive new CMI generalization bounds.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "bound behavior",
+        "summary": "The authors report generally tighter bounds and suitable O(1/sqrt(n)) guarantees on selected hard instances.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "memorization analysis",
+        "summary": "The bounds are applied to the memorization question, yielding a non-memorizing auxiliary algorithm with comparable generalization error.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract ties a proposed bound construction to both a failure mode of prior bounds and a separate conceptual question about memorization.",
+          "source_ids": [
+            "S1",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A technical contribution can be framed more persuasively by connecting its mechanism to a concrete limitation and then demonstrating a broader implication.",
+        "application": "When presenting a new theoretical bound, explicitly identify where prior bounds fail, state the replacement rate or guarantee, and use the result to address a related modeling question.",
+        "exception": "This framing is unsuitable when the work has no clearly specified prior failure case or downstream theoretical implication."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the conditions defining the selected problem instances or the exact form of the bounds.",
+      "The meaning and quantitative scope of “generally tighter” and “comparable generalization error” are unspecified.",
+      "The abstract does not provide proof details or independent verification of the reported claims."
+    ]
+  }
+}

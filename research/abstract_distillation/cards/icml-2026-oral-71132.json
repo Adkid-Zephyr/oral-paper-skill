@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71132",
+    "title": "High-Accuracy Sampling for Diffusion Models and Log-Concave Distributions",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71132"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5b47c446686353e97571150b4913caaa1ffcafeb5a7171aa3ad512686842e70c",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "115217e55b74bcaa49f1871a291e29c5b7ed13ebbb212233637cf7545038f169",
+    "extracted_at": "2026-09-13T00:15:25.480173+00:00",
+    "session_id": "01a0981e-0d2b-7f20-a362-cb7adb36a376",
+    "usage": {
+      "input_tokens": 12670,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 999,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6234c85beccc86b70ba6da246ae9577a16545cab08a05fb49a472ea224074326"
+    },
+    {
+      "id": "S2",
+      "sha256": "6158178433d2568f320cbef0eb0aa0dc75947573e4fea4a03bf340f50ad50d99"
+    },
+    {
+      "id": "S3",
+      "sha256": "f2a91b08381d030ede5b56aa0e76b1a348b4f0bed46a8cd72ff72f5d0123b29b"
+    },
+    {
+      "id": "S4",
+      "sha256": "7ddc8aecde06c44df6c8b3336360946045324b933ab628cc9b2a170a63d42d1a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71132",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop high-accuracy samplers for diffusion models and log-concave distributions with polylogarithmic dependence on the target error.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "The authors report an exponential improvement over previous diffusion-model sampling results and identify the first polylogarithmic-error-complexity sampler for general log-concave distributions using only gradient evaluations.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Algorithms for diffusion-model sampling that achieve δ-error in polylog(1/δ) steps given score estimates with approximately δ accuracy in L².",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "theoretical complexity",
+        "claim": "Complexity bounds scaling with ambient dimension, a non-uniform Lipschitz parameter, or intrinsic dimension under the corresponding stated assumptions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A sampler for general log-concave distributions with polylogarithmic dependence on 1/δ using only gradient evaluations.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their diffusion-model results exponentially improve all previous results and that their log-concave sampler is the first with polylogarithmic error dependence using only gradients.",
+      "source_ids": [
+        "S2",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report diffusion-model sampling complexity of approximately d·polylog(1/δ) under minimal data assumptions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "Under a non-uniform L-Lipschitz condition, the authors report complexity of approximately √(dL)·polylog(1/δ).",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "For data with intrinsic dimension d⋆, the authors report complexity of approximately d⋆·polylog(1/δ), and report a corresponding first result for general log-concave sampling using gradient evaluations.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "core proposal",
+        "summary": "Introduces diffusion-model sampling algorithms targeting δ-error with polylogarithmic step complexity and approximately δ-accurate L² score estimates.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "claimed comparison",
+        "summary": "Characterizes the result as an exponential improvement over all previous results.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "regime-specific bounds",
+        "summary": "Gives complexity expressions for minimal data assumptions, a non-uniform L-Lipschitz condition, and intrinsic dimension.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "extension",
+        "summary": "Applies the approach to general log-concave distributions using only gradient evaluations, with polylogarithmic error dependence.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract states one core method alongside separate complexity guarantees tied to explicit assumptions and structural parameters.",
+          "source_ids": [
+            "S1",
+            "S3"
+          ]
+        },
+        "interpretation": "Making assumption-dependent regimes explicit can show how a method behaves across ambient-dimension, smoothness, and intrinsic-dimension settings.",
+        "application": "Present a main algorithmic claim followed by a compact regime table specifying assumptions, complexity, and the relevant effective dimension.",
+        "exception": "This format is unsuitable when the regimes are not mathematically distinct or when omitted constants and conditions determine the practical meaning of the bounds."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a broad improvement claim with concrete asymptotic bounds and a narrowly scoped first-result statement for log-concave sampling.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Linking comparative or novelty language to an immediately stated scope and quantitative result makes the claim easier to delimit.",
+        "application": "Attach each priority or comparison statement to its exact domain, access model, and error dependence rather than presenting it as an unrestricted advance.",
+        "exception": "Do not use this framing when the relevant prior-work comparison or scope cannot be established from the available evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the precise sampling error metric, score-estimation model beyond L² accuracy, hidden logarithmic factors, constants, or computational costs of gradient and score evaluations.",
+      "The basis and scope of the claim of exponential improvement over all previous results are not detailed.",
+      "The abstract does not provide empirical results, proof details, or conditions needed to independently assess the reported guarantees."
+    ]
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31865",
+    "title": "MAP: Multi-Human-Value Alignment Palette",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31865"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a65c1b15145123c0b86f1dbd80ffb6423b7733a839681a30f91c9c5deaebdce8",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "ba7465d6dd479b27465ee574baf7e5fbb203742b5b6de6df16c27a06b9522501",
+    "extracted_at": "2026-09-12T23:55:03.051606+00:00",
+    "session_id": "01a0980b-7e94-7370-954d-7eafa061f069",
+    "usage": {
+      "input_tokens": 12742,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 748,
+      "reasoning_output_tokens": 98
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "84c1af357878ce76f111b2d4982c8956c1a4d9404a2f2c565862ede2d44b1a30"
+    },
+    {
+      "id": "S2",
+      "sha256": "9325bc9d255976e778201be49fc25f8cc99c8431b487107f5bbbdd69094cf23a"
+    },
+    {
+      "id": "S3",
+      "sha256": "fa324e9046d09e09337a8f308b56ec2a67d90cc7cb511dafb2b3610346aad7dc"
+    },
+    {
+      "id": "S4",
+      "sha256": "d46df2951fe0156bb51078c99836fa2cb32b264e7b7fb45b843e8539a0dfcd63"
+    },
+    {
+      "id": "S5",
+      "sha256": "f109d8411d1f7dad3858939be37d116259ea53acd14a94beac42d272debf4e2a"
+    },
+    {
+      "id": "S6",
+      "sha256": "5c3c4da034264e44c06a875b98524a8a5fe5222fc62dc53e2f64e0ebad01b74e"
+    },
+    {
+      "id": "S7",
+      "sha256": "9c8cb25a2e839345142e36960ff8697b21d4188656bb665a08d5d31b8539d62d"
+    },
+    {
+      "id": "S8",
+      "sha256": "d3eedc9044ef4c9bf2f90c01ddbfb4445e62f43c4a00ca826348449f2dedd312"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31865",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Align generative AI with multiple, personalized, changing human values while managing trade-offs across directions such as harmlessness, helpfulness, and positiveness.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing frameworks make it difficult to define and simultaneously align AI systems across multiple value directions and user contexts.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "MAP formulates multi-human-value alignment as constrained optimization, with user-defined constraints specifying value targets.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "A primal-dual approach solves the formulation and determines target achievability and how to attain it.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The paper analyzes value trade-offs, constraint sensitivity, the link to sequential alignment, and the sufficiency of linear weighted rewards for multi-value alignment.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present MAP as a novel first-principles approach for structured, reliable navigation of alignment across multiple human values.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical results quantifying trade-offs and constraint sensitivity, connecting multi-value with sequential alignment, and proving sufficiency of linear weighted rewards.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report extensive experiments showing principled multi-value alignment and strong empirical performance across various tasks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Multiple values, changing preferences, and trade-offs make value alignment difficult.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing frameworks struggle with simultaneous alignment across value directions and user contexts.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "MAP casts alignment as constrained optimization and solves it with a primal-dual method.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "analysis_and_evaluation",
+        "summary": "The paper develops theoretical analyses and reports experiments across various tasks.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links user-defined value targets to explicit optimization constraints, then states what the solver can determine about achievability.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This makes the relationship between desired behavior, formal control variables, and decision outcomes easy to inspect.",
+        "application": "When proposing a multi-objective method, map each stakeholder target to an explicit constraint and state whether the procedure tests feasibility, provides a solution, or both.",
+        "exception": "This framing may be unsuitable when objectives cannot be operationalized or constrained without substantial loss of meaning."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, metrics, task details, or quantitative experimental results.",
+      "The scope and assumptions of the theoretical guarantees, including the sufficiency claim for linear weighted rewards, are not given."
+    ]
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010558",
+    "title": "Non-Convex Federated Optimization under Cost-Aware Client Selection",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010558"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "be5c0f2da337f57208931208a1f17546aa6e782f73cd4c258cb913da889763db",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "0cb039caede36f66e58d24c0d49b1f19530fe5c25a1c037827b15d290c80ff3c",
+    "extracted_at": "2026-09-13T00:04:37.719545+00:00",
+    "session_id": "01a09814-3a35-7d00-a8c8-3cf049d58393",
+    "usage": {
+      "input_tokens": 12798,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 863,
+      "reasoning_output_tokens": 69
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d8e0b54cc9142a6df2bfd79790d2f2ae1e3aa7958613bdeac740add8f5804953"
+    },
+    {
+      "id": "S2",
+      "sha256": "679123ea4d3b2563e66c2f7ea331109af07f61966fb71fbb5e32ea193283f005"
+    },
+    {
+      "id": "S3",
+      "sha256": "f5f206b57b1b7f93a397a943a97315f569daae283e45114deb3225e2ad383b64"
+    },
+    {
+      "id": "S4",
+      "sha256": "1f34beb9b61de37ee0431c7c0c773faff0796c03672c488996d833581adfe48c"
+    },
+    {
+      "id": "S5",
+      "sha256": "9ef5bedeafcfeb247d9a6e1e5ab2499ed78bf5095cda4c6a765e150ff35e4b74"
+    },
+    {
+      "id": "S6",
+      "sha256": "7f1938aebd349270418d085356417fe8db4bf71d097565b2afe00bac13f00710"
+    },
+    {
+      "id": "S7",
+      "sha256": "fa825e742fac86d86d64feac9abff8b5451790c693b48637a5260b925e9e478a"
+    },
+    {
+      "id": "S8",
+      "sha256": "bef3f4b42d0d04b77f7a6eb9b30ed47801eec36f4a4ab1c1c0aef011d0067293"
+    },
+    {
+      "id": "S9",
+      "sha256": "af2f36bb5ed9262c3323656e56cf683b0516686dea5c8c5df02b5d086d4c800f"
+    },
+    {
+      "id": "S10",
+      "sha256": "d50e2b39a57258770c711870d14aff815015649186c9655ed43b871c0650f5a8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010558",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Compare and design non-convex federated optimization methods while accounting for communication and local computation costs under different client-selection strategies.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing optimization metrics typically do not distinguish client-selection strategies with different practical communication costs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "model",
+        "claim": "Introduces a federated optimization model that quantifies communication and local computation complexities and assigns distinct costs to several client-selection strategies.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "Proposes an algorithm based on inexact composite gradients, a carefully constructed estimator, and a special auxiliary-subproblem procedure.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "estimator technique",
+        "claim": "Introduces Recursive-Gradient as a general technique for potentially improving error bounds of conditionally unbiased estimators, and applies it to create RG-SAGA.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that the proposed algorithm attains the best-known communication and local complexities among existing non-convex federated optimization methods within their cost model.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a new variance bound for SAGA that shows it can exploit functional similarity.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that applying Recursive-Gradient to SAGA yields RG-SAGA with an improved error bound relative to the original SAGA estimator.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report best-known communication and local complexities for their algorithm among existing non-convex federated optimization methods in the introduced setting.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Federated optimization algorithms use random-subset, all-client, or hybrid client selection strategies.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Existing comparison metrics generally overlook the differing communication costs induced by these strategies.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper introduces a model that quantifies communication and local computation and links each supported strategy to a distinct cost.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "algorithm",
+        "summary": "Within this model, it proposes a non-convex optimization algorithm using inexact composite gradients, a gradient estimator, and an auxiliary-subproblem procedure.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "estimator development",
+        "summary": "Starting from a new SAGA variance bound, the paper proposes Recursive-Gradient and derives RG-SAGA with an improved error bound.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract first identifies a mismatch between standard comparisons and strategy-dependent communication costs, then introduces an explicit cost model before presenting the algorithm.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A problem framing can make an algorithmic contribution more specific by defining the operational cost being optimized before claiming comparative performance.",
+        "application": "Define client-selection regimes and their communication/local-computation costs before reporting complexity comparisons for a federated method.",
+        "exception": "This framing is unsuitable when the target deployment has uniform costs or when the study concerns statistical quality without computational resource constraints."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact complexity bounds, assumptions, or baseline methods underlying the best-known comparison.",
+      "It does not provide quantitative values or conditions for the SAGA and RG-SAGA variance/error-bound improvements.",
+      "The meaning and operational scope of functional similarity are not defined in the abstract."
+    ]
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47164",
+    "title": "Exploring and Mitigating Adversarial Manipulation of Voting-Based Leaderboards",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47164"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "87b9485b34bbb63016d52e7b5dd1018ab518ccd2e5d428e161922ea2067aad70",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "0349c87aad99e896452f7ae2db57df4ae8e9e73b1959f1eea88b847023698e18",
+    "extracted_at": "2026-09-13T00:07:02.415713+00:00",
+    "session_id": "01a09816-7852-7fc2-a63d-5b5389f53137",
+    "usage": {
+      "input_tokens": 12820,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 768,
+      "reasoning_output_tokens": 79
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "02f46000fa8edc82ceea0531a0bd24988ede9d137c0d67c4627b3600defbf278"
+    },
+    {
+      "id": "S2",
+      "sha256": "896dd73b4049e5dfc548ce81ed507361161e85f509869a66063df9e0fde4efd3"
+    },
+    {
+      "id": "S3",
+      "sha256": "cad682a4411fa09dc4ba73a5d1c07e0ab0229c4d6aa86a6ee97d1903842dfc15"
+    },
+    {
+      "id": "S4",
+      "sha256": "3e081e2d6c0ce7fdeb8f59c4c50da33fb7627c5e6967141ac8c950b7b7702fc3"
+    },
+    {
+      "id": "S5",
+      "sha256": "63ea144507f71a365611660af56240035ce9082160e4c50f49c8abc9451283e7"
+    },
+    {
+      "id": "S6",
+      "sha256": "663a733316c3bfe4aea6419a963ffd765564e9fe16403557ceb39f794fc90caa"
+    },
+    {
+      "id": "S7",
+      "sha256": "ce7f6d310e9f6b10092cd9ed3ec057b1c3e70c2dd208d27b96efdce4c7ec8bf0"
+    },
+    {
+      "id": "S8",
+      "sha256": "a1b43003ae32f1d8725379e24ac20a099eaea5f3245585483ae2794dd7c690c4"
+    },
+    {
+      "id": "S9",
+      "sha256": "6f841eff796bf687297b602b616d80199d288eaffe82b437adf61461c3b8ad38"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47164",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Voting-based LLM leaderboards use human preferences to rank models and are trusted as capability measures.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The paper addresses vulnerability when bot protection and other defenses are not implemented, enabling adversarial leaderboard manipulation.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "attack",
+        "claim": "A two-step attack identifies the generating model for a reply and then targets voting for or against a selected model.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report that an attacker can alter the leaderboard at roughly the cost of a thousand votes in a simulated, offline Chatbot Arena.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "mitigation",
+        "claim": "In collaboration with Chatbot Arena developers, the authors identify, propose, and implement defenses intended to increase attack cost.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work by demonstrating adversarial manipulation of voting-based benchmarks and implementing mitigations with the Chatbot Arena developers.",
+      "source_ids": [
+        "S4",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report over 95% accuracy for determining which model generated a given reply.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report leaderboard alteration at roughly one thousand votes in a simulated, offline Chatbot Arena.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that their analysis indicates the mitigations substantially increase attack cost; Cloudflare bot protection, malicious-user detection, and rate limiting predated the collaboration, while reCAPTCHA and login were being integrated.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Human voting is increasingly used to evaluate LLM outputs, with Chatbot Arena ranking anonymously paired model responses.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "trust premise",
+        "summary": "These platforms are described as widely trusted measures of LLM capabilities.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "threat and attack",
+        "summary": "Without adequate defenses, an attacker can identify reply sources with over 95% accuracy and manipulate votes to change rankings at roughly one thousand votes.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "mitigation",
+        "summary": "The authors collaborated with Chatbot Arena developers to identify, propose, and implement mitigations; Cloudflare bot protection, malicious-user detection, and rate limiting were already present before the collaboration, while reCAPTCHA and login were being integrated.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The attack first infers model identity, then uses that information to vote consistently for or against a target.",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        "interpretation": "Separating attribution from manipulation exposes a concrete attack surface in anonymized preference systems.",
+        "application": "When analyzing a human-voted benchmark, decompose threats into information leakage and downstream vote manipulation, then test each stage separately.",
+        "exception": "This decomposition may be unsuitable when model identity is already public or votes cannot be targeted."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report whether the attack works against the live platform or only the simulated offline version.",
+      "It does not specify the mitigations' individual effects, attack-cost measurements, or deployment status beyond the stated integrations.",
+      "Attacker resources, vote distribution, and statistical significance conditions are unspecified."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "author_reported_evidence[2].claim",
+      "before": "Based on their analysis, implemented and planned defenses substantially increase the cost of attacks.",
+      "after": "The authors report that their analysis indicates the mitigations substantially increase attack cost; Cloudflare bot protection, malicious-user detection, and rate limiting predated the collaboration, while reCAPTCHA and login were being integrated.",
+      "review_file": "reviews/flagged-batch-08.json",
+      "review_sha256": "c15cd19a5467a1c08a4a8b6b897249b802981d9a407ea6f7acf6dfc47b0b97ba",
+      "applied_at": "2026-09-13T00:35:16.275983+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "narrative_sequence[3].summary",
+      "before": "The authors collaborated with developers on defenses, including existing bot protection and proposed reCAPTCHA and login integration.",
+      "after": "The authors collaborated with Chatbot Arena developers to identify, propose, and implement mitigations; Cloudflare bot protection, malicious-user detection, and rate limiting were already present before the collaboration, while reCAPTCHA and login were being integrated.",
+      "review_file": "reviews/flagged-batch-08.json",
+      "review_sha256": "c15cd19a5467a1c08a4a8b6b897249b802981d9a407ea6f7acf6dfc47b0b97ba",
+      "applied_at": "2026-09-13T00:35:16.276730+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

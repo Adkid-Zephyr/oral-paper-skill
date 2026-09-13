@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011653",
+    "title": "Quotient-Space Diffusion Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011653"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6059a670ef086d699d9b0416ec6cf3644fa07babab37d308242e08efb3c94bdd",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "eab78236a10023bce3e8205745e841313230f62671a3e1eb91d9e2ec3456ce97",
+    "extracted_at": "2026-09-13T00:06:15.935537+00:00",
+    "session_id": "01a09815-c1b1-7530-8084-7c4c67543ae5",
+    "usage": {
+      "input_tokens": 12657,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 747,
+      "reasoning_output_tokens": 54
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a7ea50e05597033e91ec56d7f0db8cfc9a9fd3c69f47dbf56e36405c8fcebb77"
+    },
+    {
+      "id": "S2",
+      "sha256": "30bf8de7e9c4c6f2b81276494e7995f89c14ecb2de4ac582e980734ad50e8395"
+    },
+    {
+      "id": "S3",
+      "sha256": "b4ebadb0db1e24fb72057e25d25b943245a03614794051f1e3d80048ae1a2019"
+    },
+    {
+      "id": "S4",
+      "sha256": "bf96f5a2562b327652636dcc5800f71790cc729f9b647a6b523ff5fe5cfbb72a"
+    },
+    {
+      "id": "S5",
+      "sha256": "ff52057d7cf760ce4b9fb81fabb6a1db21ac2f8a086ce760e9dc86ad0db75006"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011653",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Model generative distributions for tasks whose objects are equivalent under group symmetries, including molecular structures with SE(3) symmetry.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Conventional group-equivariant diffusion and heuristic alignment approaches do not directly provide the proposed quotient-space formulation; heuristic alignment lacks proper samplers.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A formal framework for diffusion modeling on a general quotient space.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A quotient-space diffusion approach that reduces the need to learn the component associated with group actions and includes a sampler claimed to recover the target distribution.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "Application of the framework to molecular structure generation under SE(3) symmetry.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present quotient-space diffusion as a new principled framework for treating symmetry in diffusion-based structure generation.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report empirical validation on small-molecule and protein structure generation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that the proposed quotient-space model outperforms previous symmetry treatments in these structure-generation experiments.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors state that the sampler guarantees recovery of the target distribution, while heuristic alignment strategies lack proper samplers.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Diffusion models have enabled scientific generation tasks such as molecular 3D structures.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem_formulation",
+        "summary": "Intrinsic task symmetries identify group-related objects as equivalent, so the target distribution is naturally defined on a quotient space.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The work develops general quotient-space diffusion and applies it to SE(3)-symmetric molecular generation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "claimed_advantage",
+        "summary": "The approach reduces group-action learning, provides a target-recovering sampler, and is reported to outperform prior symmetry treatments on molecules and proteins.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects the modeling choice, the symmetry-induced quotient-space target, the sampler property, and application-level comparisons.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A strong abstract can align an architectural principle with a concrete theoretical property and domain-specific evidence.",
+        "application": "When proposing symmetry-aware generative modeling, explicitly state the induced target space, which variables become unnecessary to learn, the sampler guarantee, and the tasks used for comparison.",
+        "exception": "This framing is unsuitable when the task has no meaningful equivalence symmetry or when the claimed sampler property has not been established under stated conditions."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, baselines, dataset sizes, or evaluation metrics.",
+      "The conditions and proof details behind the sampler's stated target-distribution guarantee are unspecified.",
+      "The scope and exact meaning of “outperforms” are not detailed."
+    ]
+  }
+}

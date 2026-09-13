@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007744",
+    "title": "Latent Speech-Text Transformer",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007744"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ad24730ffabb3be32b2158fef9beeaec45b111d1e7cd12411384f624cff288f7",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "fbb64a7302f8def8f3b1783d47afd16142af5cdfb5c7a65a41127d59c63c4bf1",
+    "extracted_at": "2026-09-13T00:00:11.277044+00:00",
+    "session_id": "01a09810-2a82-7eb1-bb0f-ce270362e6ed",
+    "usage": {
+      "input_tokens": 12806,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 826,
+      "reasoning_output_tokens": 92
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f2d7c49cdf202bd2b1c7a143d48b31cdcfeb45dfab414c7b1f3866d25f8cb47e"
+    },
+    {
+      "id": "S2",
+      "sha256": "7f7fdb4afc6dff1b56fe70f19bbbf67a64cc2561e2f35355478e98fc2526c1fc"
+    },
+    {
+      "id": "S3",
+      "sha256": "4d015e99387f292e97b9fc5a82fb055bd2c3b4a9244ce96f2b89b2ab5efb6b80"
+    },
+    {
+      "id": "S4",
+      "sha256": "7a5abf9152d5824919aaa5c9bebbad36253f427d0977c14da2ea712d5a4f37d9"
+    },
+    {
+      "id": "S5",
+      "sha256": "ea5546cb77cc658d58e57c60b6511ced5185b863804b87a8698a1f7589363d38"
+    },
+    {
+      "id": "S6",
+      "sha256": "40482a382071e99da28199e22b649691678c8efb59361f89a2dedff266dd1a4e"
+    },
+    {
+      "id": "S7",
+      "sha256": "032866415af76da4490dd49668e1d1e3ecfb7d58651cef1fe11216681d699a7f"
+    },
+    {
+      "id": "S8",
+      "sha256": "237e27b7b2a98e5298c2ec95b45438215388a855c5721a56bd37a34c575fbc1f"
+    },
+    {
+      "id": "S9",
+      "sha256": "ab4c298749432f7a2a93454c964ce7afc65a6d74e86e15112d880eac88a95a64"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007744",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Interleaved speech-text autoregressive models use much longer speech-token sequences, making them less compute-efficient than text LLMs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The modality imbalance may overallocate compute to speech, hinder cross-modal alignment, and slow performance scaling.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Latent Speech-Text Transformer (LST), which aggregates speech tokens into latent speech patches as higher-level autoregressive units.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "design",
+        "claim": "Aligns speech and text sequence-modeling granularity, while enabling textual-unit alignment and compact representation of recurring acoustic patterns.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Provides an implementation for the proposed model.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish LST by replacing individual speech-token autoregression with latent speech patches that align modeling granularity across modalities.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report consistent improvements in speech and text performance across story-completion benchmarks under compute-controlled and data-controlled settings; speech HellaSwag improves by up to 6.5 percentage points and 5.3 points, respectively.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that gains increase from 420M to 1.8B parameters under near compute-optimal scaling and persist up to 7B parameters under fixed-token budgets.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report stabilized ASR adaptation and shorter effective autoregressive sequences for ASR and TTS inference, reducing computational cost without degrading reconstruction quality.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Speech-token sequence length creates a compute-efficiency and modality-balance problem.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "LST aggregates speech tokens into latent speech patches as autoregressive units.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "The patches align speech-text modeling granularity and can capture textual correspondences and recurring acoustic patterns.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Reported benchmark and scaling results show gains in speech and text performance, with downstream ASR/TTS cost reductions.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a representation change—latent speech patches—to both the proposed alignment mechanism and compute/performance outcomes.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact causal narrative can make a technical contribution easier to assess by linking design choice, intended mechanism, and separately reported outcomes.",
+        "application": "When presenting a new sequence representation, explicitly map it to the bottleneck it targets, the mechanism it is intended to enable, and evaluations under matched resource conditions.",
+        "exception": "This framing is less suitable when the method has no identifiable bottleneck or when resource-controlled comparisons are unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark counts, baselines, dataset sizes, statistical uncertainty, or exact compute budgets.",
+      "The reported inference-cost reductions lack quantitative values and hardware or latency conditions.",
+      "The abstract does not provide details needed to assess reconstruction-quality measurement or scaling methodology."
+    ]
+  }
+}

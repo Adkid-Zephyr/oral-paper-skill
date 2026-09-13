@@ -1,0 +1,208 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009693",
+    "title": "SafeDPO: A Simple Approach to Direct Preference Optimization with Enhanced Safety",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009693"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0993841302528044ffb7de191e967ffc1fdb52dc61b3914a4d86093aab37c2b1",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "f8d418eda5e433761cf5026b653c01aebc19aa52a93ec0538e75444248aa8bc7",
+    "extracted_at": "2026-09-13T00:03:11.728298+00:00",
+    "session_id": "01a09812-e961-7c10-9f7c-1036a1021516",
+    "usage": {
+      "input_tokens": 12835,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 875,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "555ab5bd3cf2ff5fc36d35548cf5e196d758b662e39968556ec243a7d165b99f"
+    },
+    {
+      "id": "S2",
+      "sha256": "a571c3e4c1f9accaeac12fe2efbcd6723aa8bc6707cd0af95f37782cced29486"
+    },
+    {
+      "id": "S3",
+      "sha256": "10e45f36c8aac34756fc7210a8e32c5e0e62f146d4a17edb22e244f6fcacd28b"
+    },
+    {
+      "id": "S4",
+      "sha256": "5b2f789fc0a6ae9cdde6df2e0ee990ede420a33649a21faf5393014ca78d9da4"
+    },
+    {
+      "id": "S5",
+      "sha256": "533976162e783a14bc07882d0799ba280e22f81d876aa3b58d79301e82e6b052"
+    },
+    {
+      "id": "S6",
+      "sha256": "735909ba42237029080ff600a6a8cf5ceffa08717ac223c423d6315ce1ca36b1"
+    },
+    {
+      "id": "S7",
+      "sha256": "aad9a55c6a2c4c5ec700573876ca3cbe3e235998382b8c6057c36af23cc0d195"
+    },
+    {
+      "id": "S8",
+      "sha256": "6a11cd0db5dfc385486ad9c8f29a4eecd5bff0eb854b3c73fdf885a2a84274ff"
+    },
+    {
+      "id": "S9",
+      "sha256": "5505fd2474d75d8fc08da5316e5233011a0794b9a826b657d29f9f00ad3a9eb0"
+    },
+    {
+      "id": "S10",
+      "sha256": "ac31aaa809b459ec3b723a25381a23ff0c4cca7300b891edb78ea3c7296f531f"
+    },
+    {
+      "id": "S11",
+      "sha256": "6c89cba9a7a116c30cb519484d540f37ceff1765225c66afd3b1b86a7fce64d5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009693",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Balance helpfulness and safety in deployed LLMs through safety alignment.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing safety-alignment approaches often increase complexity through auxiliary networks or multi-stage pipelines.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Shows that, under mild assumptions, the original safety-alignment objective has a closed-form optimal policy and yields a provably equivalent tractable objective for direct optimization.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes SafeDPO, a lightweight preference-training method using one additional hyperparameter and minimal modifications while preserving the underlying safety-constrained objective’s optimal solution.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Removes the need for reward models, cost models, and online sampling by using preference data and safety indicators.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish SafeDPO as a lightweight, theory-driven direct-optimization approach that preserves the safety-constrained optimum with minimal added machinery.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report competitive safety–helpfulness trade-offs against existing safety-alignment methods.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "On PKU-SafeRLHF-30K, the authors report substantially improved safety while maintaining competitive helpfulness.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that ablations support flexible safety tuning via the additional hyperparameter while preserving the theoretical optimum, and that the method scales to models up to 13B parameters.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLM deployment makes balancing helpfulness and safety a central alignment challenge; existing constrained RLHF methods can be complex.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "theoretical insight",
+        "summary": "The safety-alignment objective is shown, under mild assumptions, to admit a closed-form optimum and an equivalent tractable direct objective.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "SafeDPO applies this insight as a lightweight preference-based method with one extra hyperparameter and no reward or cost models or online sampling.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report competitive trade-offs, improved benchmark safety, tunable safety, and scaling to 13B-parameter LLMs.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a closed-form optimum and equivalent objective directly to a lightweight method, then reports evaluation aligned with safety, helpfulness, tuning, and scale.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S8",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "A compact abstract can make the theory-to-method-to-evidence chain explicit, helping readers map each design choice to its claimed benefit.",
+        "application": "When presenting a theory-driven method, state the derived objective, implementation overhead, preserved property, and evaluations that test each claimed benefit in that order.",
+        "exception": "This structure is less suitable when the work has no formal derivation or when its main contribution is primarily qualitative or resource-based."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the mild assumptions, objective formulation, or proof details behind the optimality and equivalence claims.",
+      "It gives no numerical safety/helpfulness results, baselines, statistical details, or experimental protocol.",
+      "The reported 13B scaling claim lacks model identities, datasets beyond the named benchmark, and operational reliability criteria."
+    ]
+  }
+}

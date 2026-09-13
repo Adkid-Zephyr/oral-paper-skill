@@ -1,0 +1,219 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008641",
+    "title": "Distributional Equivalence in Linear Non-Gaussian Latent-Variable Cyclic Causal Models: Characterization and Learning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008641"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ed18e616faea67cec55056b36b082cc40262f0f30f120ce1fe00097ef0b217e0",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "c54b01353c38bc5cb747a8bbef33e3aad393046231cea80453fced4fda79d422",
+    "extracted_at": "2026-09-13T00:01:36.516813+00:00",
+    "session_id": "01a09811-7c05-79d0-8adb-108b98ea61a9",
+    "usage": {
+      "input_tokens": 12754,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 843,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bd2e66fa45255acfa5d52f75a124046c93cf0b02e16d54653d5c54936999b8c2"
+    },
+    {
+      "id": "S2",
+      "sha256": "67f082974c14c0abc988e60f6191f14e2eb8a02756ca9f5a10b8ada1fc676b54"
+    },
+    {
+      "id": "S3",
+      "sha256": "e0891bc00e1f21d3db1c3878f5e16610434d730a203d8af0889be88b37b625f5"
+    },
+    {
+      "id": "S4",
+      "sha256": "f2a2738dc3751965502179e53a0493d0d5bec2490b9ec0ff0a2c3bc2a97d41d4"
+    },
+    {
+      "id": "S5",
+      "sha256": "23d9c53f596a3b6f1e58a3b128ee54368bf102d638ba02193dc3ef668a0d809a"
+    },
+    {
+      "id": "S6",
+      "sha256": "aac3f387c8792aabd83b01f7e2a2670faf6cf918ad2af3a0387c48a9d85369e1"
+    },
+    {
+      "id": "S7",
+      "sha256": "a14cab2d53bc42e5140e00736d570b986a6e51dac5162d57c94f04d8eab6057c"
+    },
+    {
+      "id": "S8",
+      "sha256": "fd525f30dfcc8f236a863127f9c3bc4916aff492eecd4d4d8674354fb62fd5bf"
+    },
+    {
+      "id": "S9",
+      "sha256": "c6b5770373475d3c4b3d47e986a637603d7e174e9b951fe30c5bc7c1f4c6e6b2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008641",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop causal-discovery methods for linear non-Gaussian models with arbitrary latent structure and cycles.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods use strong structural assumptions, while a general approach without structural assumptions lacks an equivalence characterization needed to determine what is identifiable.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A graphical criterion for distributional equivalence between graphs with arbitrary latent structure and cycles, defined by inducing the same observed distribution set.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "methodological tool",
+        "claim": "Edge rank constraints, presented as a new tool for latent-variable causal discovery in broader settings.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "A procedure for traversing an entire equivalence class and an algorithm for recovering models from data up to that equivalence.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that, to their knowledge, this is the first latent-variable equivalence characterization in any parametric setting without structural assumptions, and consequently the first structural-assumption-free discovery method.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report establishing a graphical criterion for when arbitrary-latent, cyclic graphs are distributionally equivalent.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report providing a whole-equivalence-class traversal procedure and a data-recovery algorithm operating up to the characterized equivalence.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report releasing code and an interactive demo.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Causal discovery with latent variables is framed as a fundamental task.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing approaches are described as relying on strong assumptions about latent indicators or interactions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "The authors identify missing equivalence characterization as an obstacle to methods without structural assumptions and address this gap for linear non-Gaussian models.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "technical development",
+        "summary": "The work introduces a graphical equivalence criterion, edge rank constraints, equivalence-class traversal, and recovery up to equivalence.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "novelty and access",
+        "summary": "The authors state a first-of-its-kind distinction and point to code and an interactive demo.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects the missing equivalence characterization directly to the design of identification methods, then presents characterization before traversal and recovery procedures.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A paper can make its method logic easier to follow by ordering the central identifiability object before algorithms that operate on it.",
+        "application": "For a new causal-discovery setting, define the relevant equivalence or observational indistinguishability class first, then state algorithms as procedures relative to that object.",
+        "exception": "This ordering may be unsuitable when the equivalence notion is itself induced by an already-established computational method or when the paper is primarily empirical."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no experimental results, dataset details, baselines, or quantitative performance conditions for the recovery algorithm.",
+      "The scope and assumptions underlying the graphical criterion and edge-rank constraints are not specified beyond linear non-Gaussian models with arbitrary latent structure and cycles.",
+      "The priority claim is explicitly author-reported and is not independently verified here."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "problem_and_gap.gap.claim",
+      "before": "Existing methods use strong structural assumptions, while a general assumption-free approach lacks an equivalence characterization needed to determine what is identifiable.",
+      "after": "Existing methods use strong structural assumptions, while a general approach without structural assumptions lacks an equivalence characterization needed to determine what is identifiable.",
+      "review_file": "reviews/flagged-batch-06.json",
+      "review_sha256": "5848ca503403cccb672608419422439c08eda33210472a45340050926e95a017",
+      "applied_at": "2026-09-13T00:35:16.267802+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "narrative_sequence[2].summary",
+      "before": "The authors identify missing equivalence characterization as the obstacle to general assumption-free identification methods.",
+      "after": "The authors identify missing equivalence characterization as an obstacle to methods without structural assumptions and address this gap for linear non-Gaussian models.",
+      "review_file": "reviews/flagged-batch-06.json",
+      "review_sha256": "5848ca503403cccb672608419422439c08eda33210472a45340050926e95a017",
+      "applied_at": "2026-09-13T00:35:16.269261+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

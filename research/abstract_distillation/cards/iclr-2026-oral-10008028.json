@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008028",
+    "title": "AutoEP: LLMs-Driven Automation of Hyperparameter Evolution for Metaheuristic Algorithms",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008028"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c43b40c6658ec469b4a104faa8a262c228857c6cd8948ddce3faac1b25d3d577",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "fcb0988bca13f5800656a1f51c568eeefb4e9c8e78e417260d69f748aa4ff625",
+    "extracted_at": "2026-09-13T00:00:32.764226+00:00",
+    "session_id": "01a09810-8654-7e33-8331-e74b84236d98",
+    "usage": {
+      "input_tokens": 12726,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 776,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "15f189d28835a41d16b351e6e81d2231710f79dc74ce776cf2bfcb9457f85e40"
+    },
+    {
+      "id": "S2",
+      "sha256": "32e264abc8330a71a7a9b0e8ba87a703f574d91a1074859dcc15091bdd3f8a75"
+    },
+    {
+      "id": "S3",
+      "sha256": "4cf1b4646cd646ad90609f1c3a191cee8043308e9f845a793d01775a7a604c5f"
+    },
+    {
+      "id": "S4",
+      "sha256": "2af485893c916f542d44ad36f85c223fbc708b231fd8bb7d063882478bb812be"
+    },
+    {
+      "id": "S5",
+      "sha256": "149a01ae502fa4d7d5ce355bde58217d0edf3b5856268a8b628f5e2353131ecb"
+    },
+    {
+      "id": "S6",
+      "sha256": "9ba37bcc682769ade81f03a302dd11ed5820faa3a5547794fb7858d0b72c3c7c"
+    },
+    {
+      "id": "S7",
+      "sha256": "1c637cd6acbcb52e6b3f3e491fabb74c9654b8904f1674da40ba270133f7e563"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008028",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Dynamically configuring hyperparameters for metaheuristic algorithms is a fundamental computational-intelligence challenge.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Learning-based automation methods are described as limited by prohibitive sample complexity and poor generalization.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "AutoEP uses LLMs as zero-shot reasoning engines for algorithm control, avoiding training.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The framework combines online Exploratory Landscape Analysis for real-time quantitative search feedback with a multi-LLM reasoning chain that generates adaptive hyperparameter strategies.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "position",
+        "claim": "The authors present grounding LLM reasoning in empirical search data as a way to mitigate hallucination and describe an accessible paradigm for automated hyperparameter design.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors identify AutoEP's tight integration of online ELA and multi-LLM reasoning, together with training-free zero-shot control, as its core innovation.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that AutoEP consistently outperforms state-of-the-art tuners, including neural-evolution and other LLM-based methods, across three metaheuristics and diverse combinatorial-optimization benchmarks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that the open-source Qwen3-30B matches GPT-4 in performance within their framework.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "challenge",
+        "summary": "Dynamic hyperparameter configuration is framed as a fundamental challenge.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing learning-based automation is characterized as sample-inefficient and weakly generalizing.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "AutoEP replaces training with zero-shot LLM reasoning, coordinated with online ELA feedback and adaptive strategy generation.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report gains over several tuner classes and parity between Qwen3-30B and GPT-4.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "AutoEP connects high-level LLM reasoning to real-time quantitative search feedback to mitigate hallucination.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A claim about reasoning-based control can be made more concrete by explicitly tying decisions to measured process signals.",
+        "application": "For an adaptive algorithm, define an online diagnostic module and show how each diagnostic informs the controller's next action.",
+        "exception": "This may be unsuitable when reliable online diagnostics are unavailable or their computation materially disrupts the optimization process."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark identities, evaluation metrics, baselines, statistical variation, or the meaning of “consistently.”",
+      "The conditions under which Qwen3-30B matches GPT-4, including prompting, resources, and tasks, are unspecified.",
+      "The abstract does not provide details needed to assess the reported mitigation of hallucination or the claimed generalization."
+    ]
+  }
+}

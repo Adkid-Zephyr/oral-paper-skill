@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71149",
+    "title": "Second-Order Smooth Planning with Optimal-Transport Bellman Smoothing",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71149"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "36bdfa6fa8f77fa9e1f2adcab477ba0ee9473d402569159a0b891aad3e67d4dc",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "8acb944ef4cbafb150fc420fcf6bbfd39b944b581a432a03d97c887d4ddebe58",
+    "extracted_at": "2026-09-13T00:16:05.607747+00:00",
+    "session_id": "01a0981e-b474-7a82-abf8-2c8913476a29",
+    "usage": {
+      "input_tokens": 12724,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 951,
+      "reasoning_output_tokens": 58
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "413b5a0b7721cfef2227e1c498eae3a3ba411a9129c35bfdd20cf3233fc30175"
+    },
+    {
+      "id": "S2",
+      "sha256": "9a63972532ba459781433af92cc28ca6e292f91f298ee9a65ab5d28b13c664d0"
+    },
+    {
+      "id": "S3",
+      "sha256": "6fa0f2f680fc2975ef26cc2ad09452a2447f0d41243b55224d5f05512e2f3b5e"
+    },
+    {
+      "id": "S4",
+      "sha256": "7402f74a1d9a98a7d4520b0d3bf6ae8fa70a1ba366c9451d217eed5fd1010254"
+    },
+    {
+      "id": "S5",
+      "sha256": "79ff0d30de82cf77f0a5b14d1774ed2f916ff4d365be5bac2767fbbc866b3044"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71149",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Estimate state values in generative-model planning with few simulator calls.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "SmoothCruiser-type planning exploits Bellman smoothness but uses only a first-order estimator, while the role of higher-order local Taylor remainders in sample complexity is not characterized.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Characterizes oracle-complexity scaling by the local Taylor-remainder order β, including the β=3 rate.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces an optimal-transport-smoothed Bellman backup with a closed form, policy gradient, Lipschitz Hessian, and an unbiased estimator for its quadratic correction.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Presents SecondOrderSmoothCruiser with stated ε⁻³ oracle complexity for fixed OT parameters and explicit regularization-bias relations among OT, entropy-regularized, and unregularized objectives.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed second-order smoothing approach uses optimal transport over action distributions to reach a cubic-remainder planning regime.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report oracle complexity Õ(ε^{-(2+2/(β−1))}) for SmoothCruiser-type planners; β=2 recovers Õ(ε⁻⁴), while β=3 gives Õ(ε⁻³).",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that SecondOrderSmoothCruiser achieves Õ(ε⁻³) oracle complexity when OT parameters are fixed.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report explicit regularization-bias bounds connecting OT, entropy-regularized, and unregularized objectives.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Generative-model planning seeks value estimation with minimal simulator calls.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "baseline_and_gap",
+        "summary": "SmoothCruiser obtains a problem-independent Õ(ε⁻⁴) rate from entropy-regularized Bellman smoothness but remains first-order.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "Complexity is linked to the local Taylor-remainder order, with a cubic remainder implying Õ(ε⁻³).",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Optimal-transport smoothing supplies the required second-order structure and an unbiased quadratic-correction estimator.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "result",
+        "summary": "SecondOrderSmoothCruiser is reported to attain Õ(ε⁻³) for fixed OT parameters, alongside regularization-bias bounds.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a general complexity law with concrete special cases: β=2 reproduces the baseline rate, whereas β=3 yields the improved rate.",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "interpretation": "A parameterized theory can make the source of an improvement legible and connect new claims to an existing baseline.",
+        "application": "State the general scaling rule first, then instantiate it for the baseline and proposed regimes.",
+        "exception": "This framing is unsuitable when no meaningful parameter controls the claimed improvement or the special cases are not comparable."
+      },
+      {
+        "source_observation": {
+          "claim": "The method description pairs structural properties of the smoothed backup with the estimator needed for its quadratic correction.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "Linking mathematical structure to an explicit estimator clarifies how an abstract algorithmic benefit is operationalized.",
+        "application": "When presenting a higher-order method, name the required smoothness property and the estimator that uses it.",
+        "exception": "Do not use this pattern if the abstract does not establish that the estimator corresponds to the stated correction."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the planning assumptions, simulator model, definition of fixed OT parameters, or the precise meaning of oracle complexity.",
+      "No experimental comparisons, numerical settings, or proof details are supplied.",
+      "The abstract does not establish independent verification of the reported rates or novelty."
+    ]
+  }
+}

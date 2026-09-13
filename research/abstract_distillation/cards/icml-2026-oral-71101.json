@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71101",
+    "title": "Incentivizing Truthfulness and Collaborative Fairness in Bayesian Learning",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71101"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9be27f9fac92757107da174165130d71fd328460b1ffc4f88e7d037631c66747",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "4033d6ce9c3d20f90f8b5867307ec6f2029f51334c19a93c418b6f499a18be56",
+    "extracted_at": "2026-09-13T00:14:04.991610+00:00",
+    "session_id": "01a0981c-e540-7262-86ab-4d2739a13b35",
+    "usage": {
+      "input_tokens": 12738,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 823,
+      "reasoning_output_tokens": 85
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7b68ed7a12cd4be907f90839fce8c57b50e946ce88b3d9513cf8b7566aa76baf"
+    },
+    {
+      "id": "S2",
+      "sha256": "fcbde1a9c985dc7a0b6dd244617887f7db8dbdb3c59dfb7388a93e80d38c59a6"
+    },
+    {
+      "id": "S3",
+      "sha256": "c04817abd8ab5a79394c9c547a7084bf84b25a61106904c7aeffcd0af910f05f"
+    },
+    {
+      "id": "S4",
+      "sha256": "09159ce1b18f8769dfa9ca494ca593069588c9937db0dc45318f9e17249d9656"
+    },
+    {
+      "id": "S5",
+      "sha256": "600816dd0571c091ffecc271fa66e83ea885610d042c7f87448dfc6bbbfebe00"
+    },
+    {
+      "id": "S6",
+      "sha256": "ac3e5fceb456a6d26a56df6f73204518c3e954a267ba6e64facfbb0e70997c2f"
+    },
+    {
+      "id": "S7",
+      "sha256": "1fe46eadd24a5d5fb7cdc6fe796b4033522d5eaf1d4b983949232580e8ffd583"
+    },
+    {
+      "id": "S8",
+      "sha256": "634dcb36c10b2c093c7fe73ccc7d3bf1a76a614fee8df3a5b0c561eb8ea63e6d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71101",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design incentives for multiple data sources in collaborative Bayesian machine learning to share truthful data while distributing rewards fairly.",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Existing valuation methods reward submitted data but neither verify nor incentivize truthfulness, allowing manipulation such as duplication or noise to distort rewards or limit others' benefits.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "mechanism",
+        "claim": "A mechanism combining semivalues, including the Shapley value, with a validation-set-based truthful data valuation function to target collaborative fairness and equilibrium truthfulness.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "An additional condition under which a source can maximize expected coalition data values and semivalues by submitting data that captures its true knowledge.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "Discussion of suitable relaxations when rewards are budget-limited or no validation set is available.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe the mechanism as the first to provably ensure collaborative fairness and incentivize truthfulness at equilibrium for Bayesian models.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical findings for the proposed fairness and truthfulness mechanism, including the added coalition-related condition.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report validation of their theoretical findings on synthetic and real-world datasets.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Collaborative learning aggregates datasets from multiple sources to train high-quality models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing data valuation rewards submitted data fairly but leaves truthfulness unchecked, enabling manipulative submissions.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper proposes a mechanism pairing semivalues with a truthful valuation function based on a source-unknown validation set.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "theory_and_scope",
+        "summary": "Because semivalues depend on other sources' data, the authors add a condition for truthful knowledge capture and discuss relaxations for budget or validation-set constraints.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported_validation",
+        "summary": "The authors report testing the theoretical findings on synthetic and real-world datasets.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the mechanism's fairness and truthfulness goals to separate ingredients—semivalues for fairness and a hidden-validation-set valuation function for truthfulness—and then states an additional condition because semivalues depend on others' data.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Separating incentive objectives from their technical dependencies can make a mechanism's claim structure easier to evaluate.",
+        "application": "When presenting a multi-objective mechanism, map each desired property to its responsible component and state cross-component conditions explicitly.",
+        "exception": "This framing may be unsuitable when the properties are inseparable or when the abstract cannot identify meaningful component-level dependencies."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal definitions of collaborative fairness, truthfulness, equilibrium, or the additional condition.",
+      "No quantitative dataset results, baselines, parameter settings, or details of the reported relaxations are provided.",
+      "The validation-set assumptions and the precise scope of the Bayesian models are unspecified."
+    ]
+  }
+}

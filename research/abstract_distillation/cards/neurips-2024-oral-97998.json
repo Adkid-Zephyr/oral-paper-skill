@@ -1,0 +1,180 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97998",
+    "title": "LLM Evaluators Recognize and Favor Their Own Generations",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97998"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7da0d992e12fd97205e659ce32f3500c314dc4e731eb637f93bb9d787034b06d",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "2cd81c7840387790c19561a971564ea6e825555aeb328abed34b88e66fa95dd8",
+    "extracted_at": "2026-09-13T00:19:49.106475+00:00",
+    "session_id": "01a09822-25a5-73c3-b037-5589832a2536",
+    "usage": {
+      "input_tokens": 12719,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 838,
+      "reasoning_output_tokens": 121
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bcd26d46e8d1e7deba4393c3756748e31ec8d74ed45a02518f23f175fc97f870"
+    },
+    {
+      "id": "S2",
+      "sha256": "aa0198d9b7550e8822780a2b9b31f7a581600165c50539f08b908158b86f2db8"
+    },
+    {
+      "id": "S3",
+      "sha256": "3ca7c496752b82040173836a1d2f881953499469620ff1dd5b289dde4f096079"
+    },
+    {
+      "id": "S4",
+      "sha256": "99b4e0b32474a7c8016f20952f290e7d8a96dded08396ff9980b5dc797521a7f"
+    },
+    {
+      "id": "S5",
+      "sha256": "165575afafe7a0a9caadaa2a75565580b1657ca05f83f541149a35c7ed501cd4"
+    },
+    {
+      "id": "S6",
+      "sha256": "dd9190561a5c14a3b1bcbab678e4e91358920f1b374761fd9393f892929ae156"
+    },
+    {
+      "id": "S7",
+      "sha256": "37ed26d9761e640c2838a21a466c02b996d7c2488bffdec76d0c44aed960cc92"
+    },
+    {
+      "id": "S8",
+      "sha256": "5dcece0f4d3ea78e241b0e22ed9570318af76d15be5b114474ef17689994e72d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97998",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper investigates whether an LLM’s ability to recognize its own outputs contributes to its tendency to score those outputs preferentially.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "It is unclear whether higher scores for an evaluator’s own outputs reflect self-recognition or coincidence, creating uncertainty about the mechanism behind self-preference.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "Reports that GPT-4, Llama 2, and other LLMs have non-trivial out-of-the-box accuracy in distinguishing their own outputs from outputs by other LLMs and humans.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports a linear correlation between self-recognition capability and self-preference bias strength after finetuning.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "causal analysis",
+        "claim": "Uses controlled experiments to report that the proposed causal explanation resists straightforward confounders.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors connect LLM self-recognition with self-preference bias and examine this relationship through finetuning and controlled experiments.",
+      "source_ids": [
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report non-trivial self-versus-other recognition accuracy for GPT-4, Llama 2, and other LLMs without additional training.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report a linear relationship between self-recognition and self-preference strength under finetuning, with controlled experiments addressing straightforward confounders.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "LLM self-evaluation is used in benchmarking, reward modeling, constitutional AI, and self-refinement.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "Using the same model as evaluator and evaluatee introduces biases, including higher scores for its own outputs despite equal human-judged quality.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "question_and_method",
+        "summary": "The paper asks whether this self-preference reflects self-recognition and investigates the relationship through observation, finetuning, and controlled experiments.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S7"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The authors discuss possible interference from self-recognition in unbiased evaluation and AI safety.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates the observed bias from its proposed mechanism, then reports finetuning and controlled experiments to examine their relationship and confounders.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "Separating phenomenon, mechanism, and evidence makes a causal claim easier to assess.",
+        "application": "Frame a paper around the observed failure, the mechanistic question, and the specific intervention or control used to distinguish competing explanations.",
+        "exception": "This structure may be unsuitable when the work is primarily theoretical or lacks evidence that can discriminate mechanisms."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, prompts, model list beyond examples, accuracy values, finetuning details, or the controlled-experiment design.",
+      "The reported correlation and resistance to confounders are not independently verified here, and the abstract does not establish generality beyond the tested settings."
+    ]
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009731",
+    "title": "PateGAIL++: Utility Optimized Private Trajectory Generation with Imitation Learning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009731"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ea75be7212578d6cedeb8607e036acbd94e4f5cb637c5a3bfa19273c1c12bc97",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "2742ed36bd1a979100ba88b2e5d37d3dac78bcfa1e02aecae8f504385802a8ab",
+    "extracted_at": "2026-09-13T00:03:19.631221+00:00",
+    "session_id": "01a09813-14ee-7092-b66f-a0b3d44e672e",
+    "usage": {
+      "input_tokens": 12814,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 698,
+      "reasoning_output_tokens": 78
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "14ecaa0c84dd7b4e265986f936561d8031b51971de2b2d07c2f4ab2c6be73403"
+    },
+    {
+      "id": "S2",
+      "sha256": "2187355309d57da1af407794d90f7de2bba4ca01b466d101208389d12f2f1508"
+    },
+    {
+      "id": "S3",
+      "sha256": "db0bff5a36c108a5017726e1f7c9ee17538a235bb27a1ac492668447b85128a4"
+    },
+    {
+      "id": "S4",
+      "sha256": "0161f892890b4c714fc07642412a7dc0da8c7d27c4c6b64fde4362456c110868"
+    },
+    {
+      "id": "S5",
+      "sha256": "8ed95a346b4d570fe1b15e1946956e93a02f062da713005ffa5474b015acc32a"
+    },
+    {
+      "id": "S6",
+      "sha256": "e4eb39f7bdf8e71511ab210f258f8e82d92c8bc2185f22d7094fa30f9d4279de"
+    },
+    {
+      "id": "S7",
+      "sha256": "f5e07ff4af382a28cafc9664cf92be18931e775cc6a69ec9134678adf09dea6f"
+    },
+    {
+      "id": "S8",
+      "sha256": "77833cb8c1b1dca9576c39101107f7cccb1456979c324b9d29a3b744e0ff6a59"
+    },
+    {
+      "id": "S9",
+      "sha256": "a06ba4e3970c0e107cd3cd458d3be21f0f4b8c8b8b86e1f2ea6d5d682042042f"
+    },
+    {
+      "id": "S10",
+      "sha256": "814050ce24680f8ad295fabd02b16234f5635cf0ca5115ce2a940b36a0b6527a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009731",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate useful privacy-preserving human mobility trajectories for applications such as urban planning and transportation.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing synthetic trajectory methods reportedly lack formal privacy guarantees or lose utility and scalability; DP-based approaches struggle with diverse patterns and utility degradation.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces sensitivity-aware noise injection that dynamically adjusts privacy noise using sample-level sensitivity.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "setting extension",
+        "claim": "Adapts the framework to local differential privacy, protecting individuals without a trusted server.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed framework extends PateGAIL++ with sample-level sensitivity-aware privacy-noise adjustment and an LDP adaptation.",
+      "source_ids": [
+        "S7",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report improved trajectory fidelity, downstream task performance, and scalability under strong privacy guarantees.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "On a real-world mobility dataset, the authors report superiority over state-of-the-art baselines in privacy-utility trade-off.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Mobility data is valuable, but privacy concerns make large, high-quality datasets difficult to obtain.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "prior-work limitation",
+        "summary": "Synthetic trajectory methods and DP generative approaches face privacy, generalization, utility, or scalability limitations.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "The framework adds sensitivity-aware noise injection to adjust privacy noise per sample.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "extension and evaluation",
+        "summary": "The method is adapted to LDP and evaluated on real-world mobility data against state-of-the-art baselines.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a concrete mechanism—sample-level sensitivity-aware noise—to specific target outcomes: fidelity, downstream performance, and scalability.",
+          "source_ids": [
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "Aligning each architectural change with named utility and deployment objectives makes the claimed contribution easier to assess.",
+        "application": "When presenting a privacy mechanism, explicitly map its design variable to the utility, scalability, and privacy outcomes it is intended to affect.",
+        "exception": "This framing is insufficient when the abstract or paper cannot provide outcome-specific measurements or conditions."
+      }
+    ],
+    "unknowns": [
+      "No numerical privacy budgets, utility scores, scalability measurements, dataset identity, downstream tasks, or baseline results are provided.",
+      "The abstract does not specify the conditions behind the claimed strong privacy guarantees or the exact LDP mechanism.",
+      "The reported superiority and improvements are author-reported and not independently verified."
+    ]
+  }
+}

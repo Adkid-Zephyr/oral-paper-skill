@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31901",
+    "title": "What should a neuron aim for? Designing local objective functions based on information theory",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31901"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "360d7d177565e8b50616ed8ea7029e01114c0d934993777de9e7e9fa0e48d660",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "6d4c02235edd1b6da4a198b9b91412c8dcc894df47cf699ddc5ba343783d191f",
+    "extracted_at": "2026-09-12T23:56:29.180177+00:00",
+    "session_id": "01a0980c-c87f-7a10-8b09-79308d81f1f7",
+    "usage": {
+      "input_tokens": 12719,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 786,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "da2d4e06379a48f7064b077e04d09f56c60a255d681cc2ce4d1f2ead12c37c03"
+    },
+    {
+      "id": "S2",
+      "sha256": "5b5da7701127dfdbad4afc1444fde9614d601b446f1a08174322423232b60119"
+    },
+    {
+      "id": "S3",
+      "sha256": "9a7e0d48443eba5b165e69201e0a06dbc3290f77325a6870bcb0189dd166bd1e"
+    },
+    {
+      "id": "S4",
+      "sha256": "1f5be4e4102e920bfcebda0ea0b51e802440c02fd0065f3823e54bcd8b817c94"
+    },
+    {
+      "id": "S5",
+      "sha256": "620113185cb1a13eb6364c13d8954499b1e5e2d461cbb74b1781f973c91324fc"
+    },
+    {
+      "id": "S6",
+      "sha256": "5bbe71e63fae7a5025b3d20c6e27031c58fab766e5e2961eae045e6f6d0414c4"
+    },
+    {
+      "id": "S7",
+      "sha256": "5f4e42adacce6ba741df29f58907bab90b5011ecc3b992454693bcc658b1853c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31901",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work addresses how to design local learning goals that make individual artificial neurons self-organize and shape input integration.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies that individual-neuron learning dynamics in globally optimized deep networks are often obscure, motivating a local, interpretable alternative inspired by biological learning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "It proposes a framework that parameterizes bio-inspired local neuron objectives with Partial Information Decomposition (PID), separating unique, redundant, and synergistic information.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It lets neurons control how feedforward, feedback, and lateral inputs contribute to outputs by selecting their desired unique, redundant, or synergistic roles through a weighted sum of PID terms.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "interpretability foundation",
+        "claim": "It presents an information-theoretic foundation intended to combine neuron-level interpretability with strong performance under local learning.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their work advances a principled information-theoretic foundation for local learning strategies by combining PID-parameterized local objectives with neuron-level interpretability.",
+      "source_ids": [
+        "S4",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their framework enables self-organization between individual artificial neurons through abstract bio-inspired local learning goals.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that PID-based objectives can be obtained either from intuitive reasoning for a given problem or through numerical optimization.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that the framework enables strong performance using local learning while providing neuron-level interpretability.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Global optimization makes the learning dynamics of individual neurons difficult to understand.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "contrast",
+        "summary": "Biological systems are presented as using self-organized local learning with robustness and efficiency despite limited global information.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The work designs local neuron goals using PID, which decomposes source information into unique, redundant, and synergistic components.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "A weighted sum of PID terms controls the desired roles of feedforward, feedback, and lateral inputs, with weights derived intuitively or numerically optimized.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "claimed outcome",
+        "summary": "The authors position the framework as enabling neuron-level interpretability, strong local-learning performance, and a principled foundation for local learning.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract maps each local objective to explicit information roles—unique, redundant, or synergistic—and expresses the choice as a weighted sum of PID terms.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A precise decomposition can connect an interpretable design choice to an optimizable objective.",
+        "application": "When proposing a local learning rule, define the information or functional roles of each input stream and write the objective as explicit weighted components.",
+        "exception": "This framing may be unsuitable when the task lacks a meaningful outcome variable or when the chosen information decomposition cannot be estimated reliably."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the tasks, datasets, baselines, quantitative performance, or conditions supporting the claim of strong performance.",
+      "It does not state which PID definition or numerical optimization procedure is used, nor how the local objectives are implemented or evaluated."
+    ]
+  }
+}

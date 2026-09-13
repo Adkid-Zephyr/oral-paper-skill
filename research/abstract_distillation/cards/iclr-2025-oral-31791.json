@@ -1,0 +1,204 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31791",
+    "title": "Training on the Test Task Confounds Evaluation and Emergence",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31791"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f2a87972281c49e70d7fe74fe52ff36197101cb122ddcf2e015fa94a503e55b4",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "b3311b9a0ec7e4d531620c14af2ac8b7f37f6a969fe6a7022f55d384e2770669",
+    "extracted_at": "2026-09-12T23:52:12.446278+00:00",
+    "session_id": "01a09808-d17a-75a3-b9b2-1f30bb3dea14",
+    "usage": {
+      "input_tokens": 12714,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 811,
+      "reasoning_output_tokens": 95
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f6f6a50bafcd636bca0f9e0bd10be9971ccc5871e4c076c03df576aa2352447e"
+    },
+    {
+      "id": "S2",
+      "sha256": "c566a8875df747b8ee0f55e20494b2d755b70cb058277b2e7ae7bc8f74e4bc2f"
+    },
+    {
+      "id": "S3",
+      "sha256": "dd8f5701b8bc51e7b776613d7c729217f2589fb460feade648115d9ce68d4423"
+    },
+    {
+      "id": "S4",
+      "sha256": "a8b8e0e104ec704ad968c439ca77a4c6a4b851a01846b32ae7cca548de124e58"
+    },
+    {
+      "id": "S5",
+      "sha256": "c71fbd20478c31c958bc38e06fa17a8783d0de241b4ca4072055db5832e3785e"
+    },
+    {
+      "id": "S6",
+      "sha256": "49f4fe19830dd3be2cfbd6122fba4eb99b8d81cff2e5e7eb2706d86ceadeb3d3"
+    },
+    {
+      "id": "S7",
+      "sha256": "5e747200f51a0a0eaddc0609cade5e3f6b0da631bd30f7b8e2fda370cec28df4"
+    },
+    {
+      "id": "S8",
+      "sha256": "6c6ef14e087595eaa8bbb54ebb8fb13105afbb9c7a201a87fea0ce13460816b9"
+    },
+    {
+      "id": "S9",
+      "sha256": "d7b860d63f50462add7024c27efca687d16bb0a24c3c149064f76cac0958ea23"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31791",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how including task-relevant data during pretraining affects evaluation of large language models.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "conceptual framing",
+        "claim": "It defines “training on the test task” as a set of task-relevant pretraining techniques and distinguishes it from malpractice such as test-data training, leakage, or contamination.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It proposes adjusting benchmark comparisons by fine-tuning each compared model on the same task-relevant data before evaluation.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "It reports that training on the test task can confound relative model evaluations and claims of emergent capabilities.",
+        "source_ids": [
+          "S4",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a new perspective on language-model evaluation centered on accounting for training on the test task.",
+      "source_ids": [
+        "S6",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that apparent superiority between model families may be explained by different degrees of training on the test task.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that instances of emergent behavior disappear gradually as models train on the test task.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that training on the test task confounds both relative model evaluations and emergent-capability claims.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem introduction",
+        "summary": "The paper identifies training on the test task as a fundamental evaluation problem.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "definition and distinction",
+        "summary": "It characterizes the practice as task-relevant pretraining data, while distinguishing it from evaluation malpractice.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "It argues that unequal exposure to task-relevant training can distort model-family comparisons and emergent-capability claims.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "proposed adjustment and implication",
+        "summary": "It proposes matched task-relevant fine-tuning before evaluation and reports that instances of emergent behavior disappear gradually as models train on the test task.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper links a proposed evaluation adjustment directly to the confounding mechanism: equalize task-relevant fine-tuning across compared models before benchmarking.",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This offers a concrete claim–evidence alignment pattern: identify a suspected source of comparison bias, then construct a matched-condition adjustment.",
+        "application": "When comparing systems exposed to different task-relevant pretraining, add a pre-evaluation matched-data condition and report results before and after adjustment.",
+        "exception": "This move may be unsuitable when task-relevant data cannot be defined consistently or when matching changes the research question being evaluated."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no benchmarks, model details, sample sizes, quantitative effect sizes, or statistical conditions.",
+      "The scope and operational definition of “emergent behavior” and the conditions under which it disappears are unspecified.",
+      "The abstract does not establish independently verified effectiveness, correctness, reproducibility, or priority of the proposed method."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "narrative_sequence[3].summary",
+      "before": "It proposes matched task-relevant fine-tuning before evaluation and reports gradual disappearance of emergent behavior under such training.",
+      "after": "It proposes matched task-relevant fine-tuning before evaluation and reports that instances of emergent behavior disappear gradually as models train on the test task.",
+      "review_file": "reviews/audit-iclr-2025.json",
+      "review_sha256": "d4904729924df90bdac59649dfddc019d2cec0d72b6d91c391649d23295d1f06",
+      "applied_at": "2026-09-13T00:00:49.789790+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31887",
+    "title": "Proxy Denoising for Source-Free Domain Adaptation",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31887"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2989d069dc1a598619e436c593b56be2d8a32a1aaa2e2db674a3e49560668a63",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "3e49142b107199d824518533a7c8fdec6e1f61150e65b0ade83c73c0cb1d1992",
+    "extracted_at": "2026-09-12T23:55:58.058729+00:00",
+    "session_id": "01a0980c-4e84-71e0-8254-a54551be27e2",
+    "usage": {
+      "input_tokens": 12791,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 822,
+      "reasoning_output_tokens": 70
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8e78421c74e42070ba3cbd3a76532f2f0683f5d4b311a76ba651b83f7d4d942a"
+    },
+    {
+      "id": "S2",
+      "sha256": "f35fa3c3fbc7d76b825f85b5517461fed7fe7d6d9df592eab565109b38768cae"
+    },
+    {
+      "id": "S3",
+      "sha256": "eff66c606f59098ff8f1d382b6f113c9dd5334de726ad4f186f965433834d5c0"
+    },
+    {
+      "id": "S4",
+      "sha256": "ec7384b0cdf35539cd1722c8b61780e73b409d4982f148e09c244fa505372ade"
+    },
+    {
+      "id": "S5",
+      "sha256": "9d1aeb254fc25ebf9a11e1bb6eb60cd6a65d7eef7722d45ac1c0f0bc43bd101b"
+    },
+    {
+      "id": "S6",
+      "sha256": "ba1c286eba3aa31e970ea58cc008287dc4906c1cd3f6e47627375dfbb8c14277"
+    },
+    {
+      "id": "S7",
+      "sha256": "3593f4e187192bc96fb4e6c99237db0152b3c1588b1383c8123a15744702729f"
+    },
+    {
+      "id": "S8",
+      "sha256": "56d56e955daa4c271d72908e580c0ef9b5a03b839f4c59240fd19b59e170f909"
+    },
+    {
+      "id": "S9",
+      "sha256": "67027ff892a3071dd6bc725e60ed009417640e2ba6e0a7edd7898fa61c8f1321"
+    },
+    {
+      "id": "S10",
+      "sha256": "451fb876fecdf099b968c592d32e7020a956919f3bc2977e2450a936111ceeb1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31887",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Source-Free Domain Adaptation adapts a pretrained source model to an unlabeled target domain without source data, using potentially useful external supervision.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Vision-Language supervision can be noisy and inaccurate at an unknown rate, a challenge the authors describe as previously ignored in this adaptation setting.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The authors introduce Proxy Denoising (ProDe), which uses a Vision-Language model as a proxy to guide adaptation toward a latent domain-invariant space and correct its predictions.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "They formulate a proxy confidence theory modeling the dynamic effect of the proxy's divergence from the domain-invariant space during adaptation.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "regularization",
+        "claim": "They derive a mutual knowledge-distilling regularization to exploit the corrected proxy supervision.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that ProDe is a novel approach addressing the previously ignored challenge of noisy Vision-Language supervision in SFDA.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive experiments show ProDe significantly outperforms current state-of-the-art alternatives across conventional closed-set and several more challenging SFDA settings, including open-set, partial-set, generalized, multi-target, multi-source, and test-time adaptation.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that code and data are publicly available.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "SFDA adapts a pretrained source model to unlabeled target data without source access.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "context",
+        "summary": "Recent work uses Vision-Language model predictions as pseudo-supervision for SFDA.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "The authors identify unknown-rate noise and inaccuracy in that supervision as a potential source of negative adaptation effects.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach_and_result",
+        "summary": "ProDe denoises proxy predictions, models proxy confidence, adds mutual distillation, and is reported to outperform state-of-the-art alternatives across multiple SFDA settings.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly connects a supervision-risk diagnosis—unknown-rate noise in Vision-Language predictions—to a denoising mechanism, a confidence theory, and a downstream regularization strategy.",
+          "source_ids": [
+            "S3",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A compact abstract can make a method's rationale traceable by mapping the identified failure mode to distinct technical components.",
+        "application": "When presenting a new learning method, state the supervision failure mode first, then name the mechanism that corrects it and the training component that uses the corrected signal.",
+        "exception": "This framing is unsuitable when the method has no specific diagnosed failure mode or when the abstract cannot support a component-level mapping."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no datasets, metrics, numerical gains, statistical details, or experimental conditions behind the reported superiority.",
+      "The proxy confidence theory's assumptions, formal results, and meaning of divergence are not specified.",
+      "The scope and exact implementation of the denoising and mutual distillation mechanisms are not detailed."
+    ]
+  }
+}

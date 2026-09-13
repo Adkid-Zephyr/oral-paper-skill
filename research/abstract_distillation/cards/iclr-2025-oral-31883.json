@@ -1,0 +1,186 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31883",
+    "title": "GridMix: Exploring Spatial Modulation for Neural Fields in PDE Modeling",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31883"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9829062459da3df44c8128cd543f5dfc2a08897c796a02ad6d74998b3e2180f5",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "4b36b11fa68888cf8f1d8c0d1249bf2179de634218ed03a1e612228d58689b0e",
+    "extracted_at": "2026-09-12T23:55:43.025043+00:00",
+    "session_id": "01a0980c-19e3-71f1-b8dd-b15940fa2377",
+    "usage": {
+      "input_tokens": 12662,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 744,
+      "reasoning_output_tokens": 94
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7bdbfca8e5b504fa5ed4441ace484f27b91673e307ed6eb2a2050f13ea900c18"
+    },
+    {
+      "id": "S2",
+      "sha256": "ab3d49c22b61f9381bd23704c1db06e5c13f8d3dd11b52d4f58a42a61b41d8a6"
+    },
+    {
+      "id": "S3",
+      "sha256": "dd6bdc0c1f65d69dbec6b1fdea742cf6ba8a13e2628cb5dae9f470913835787a"
+    },
+    {
+      "id": "S4",
+      "sha256": "b80bda44f3f5b44305d1f8c40029c6b027591e46c7c6d0a0888a7d14e0a93f10"
+    },
+    {
+      "id": "S5",
+      "sha256": "5966619c668a83230b35d678b69e3f1781338270af533e490a74c68aeb418088"
+    },
+    {
+      "id": "S6",
+      "sha256": "c96efc34b56903f7a0e1f8eccfdde7f756d6cc87f6d797f8abb37f5e370a9948"
+    },
+    {
+      "id": "S7",
+      "sha256": "42f126221d743627423c349aab376f7b7f0df3ac1462993890eaba8693cccfc5"
+    },
+    {
+      "id": "S8",
+      "sha256": "834dfa15cc94a2b034264d13f9a3fbdce6d934f740db822cc6b7c692c713551e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31883",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve neural-field PDE modeling while reconstructing local details and handling spatial-domain variation.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Existing global modulation limits local-detail reconstruction, while vanilla grid-based spatial modulation inadequately models global information and overfits the training spatial domain.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "GridMix models spatial modulation as a mixture of grid-based representations to combine global-structure modeling with local fine-grained modulation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The paper introduces spatial-domain augmentation to improve robustness to spatial-domain variations.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "The combined approach, MARBLE, targets enhanced neural-field capabilities for PDE modeling.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe GridMix as a novel mixture-of-grid-based-representations approach for spatial modulation, together with spatial-domain augmentation.",
+      "source_ids": [
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that MARBLE was extensively validated on diverse benchmarks covering dynamics modeling and geometric prediction.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Neural fields have advanced PDE modeling.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Global modulation restricts local-detail reconstruction; vanilla grid representations face global-modeling and spatial-domain overfitting issues.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "GridMix uses a mixture of grid-based representations and preserves locality while exploring global structures.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "robustness",
+        "summary": "Spatial-domain augmentation is added to address variation across spatial domains.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "framework_and_evidence",
+        "summary": "The resulting MARBLE framework is reported as extensively validated on dynamics-modeling and geometric-prediction benchmarks.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects each proposed component to a specific limitation: mixed grid representations address the global/locality tradeoff, while spatial-domain augmentation addresses domain variation.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This alignment makes the method rationale traceable from problem diagnosis to design choice.",
+        "application": "When presenting a multi-component method, map each component explicitly to the limitation it is intended to address and state the resulting capability.",
+        "exception": "Avoid this framing when component roles are genuinely inseparable or the abstract lacks evidence that the proposed role is distinct."
+      }
+    ],
+    "unknowns": [
+      "No benchmark names, metrics, baselines, numerical results, or ablation findings are supplied.",
+      "The abstract does not specify how GridMix and MARBLE differ operationally or define MARBLE’s acronym.",
+      "The stated robustness improvement from spatial-domain augmentation is not quantified in the supplied units."
+    ]
+  }
+}

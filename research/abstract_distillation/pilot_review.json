@@ -1,0 +1,147 @@
+{
+  "decision": "PASS",
+  "reviewed_ids": [
+    "iclr-2025-oral-31728",
+    "iclr-2025-oral-31744",
+    "iclr-2025-oral-31761",
+    "iclr-2025-oral-31776",
+    "iclr-2026-oral-10006417",
+    "iclr-2026-oral-10006532",
+    "iclr-2026-oral-10006549",
+    "iclr-2026-oral-10006563",
+    "icml-2025-oral-40109",
+    "icml-2025-oral-40118",
+    "icml-2025-oral-40120",
+    "icml-2025-oral-40140",
+    "icml-2026-oral-71032",
+    "icml-2026-oral-71038",
+    "icml-2026-oral-71049",
+    "icml-2026-oral-71052",
+    "neurips-2024-oral-97946",
+    "neurips-2024-oral-97948",
+    "neurips-2024-oral-97950",
+    "neurips-2024-oral-97963",
+    "neurips-2025-oral-115363",
+    "neurips-2025-oral-116048",
+    "neurips-2025-oral-117519",
+    "neurips-2025-oral-118167"
+  ],
+  "extraction_config": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e"
+  },
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking and correction verification",
+  "initial_review_counts": {
+    "reviewed": 24,
+    "material_error_cards": 1,
+    "minor_cards": 7,
+    "pass_cards": 16
+  },
+  "initial_review_method": "Two Astra medium agents reviewed all 24 complete supplied abstracts and cards in three packets, recorded in reviews/pilot-01.json, reviews/pilot-02.json, and reviews/pilot-03.json. The same agent reviewed packets 01 and 03. This gate reviewer initially reviewed packet-02 and then verified every correction across all packets; it did not independently repeat the full semantic review of all unaffected cards.",
+  "corrections_verified": {
+    "all_verified": true,
+    "cards": 8,
+    "field_changes": 11,
+    "manifest": "pilot_corrections.json",
+    "current_packet": "runs/pilot-source-review/packet-01.json",
+    "method": "Read all three initial review files, all eight affected original abstracts, and each corrected field in the repacked 24-card packet. Verified source meaning as well as equality with the correction manifest. Initial error counts remain unchanged by these repairs.",
+    "records": [
+      {
+        "paper_id": "iclr-2025-oral-31761",
+        "field": "contributions[0].claim",
+        "source_ids": ["S2"],
+        "status": "verified",
+        "reason": "The corrected object is the time derivative of relative entropy; negative and positive terms, N times expected KSD squared, and regular initialization match S2."
+      },
+      {
+        "paper_id": "iclr-2025-oral-31761",
+        "field": "unknowns[0]",
+        "source_ids": ["S2", "S3", "S4", "S5", "S6", "S7"],
+        "status": "verified",
+        "reason": "The correction acknowledges S3's definition of near optimal through corresponding i.i.d. rates. Exact assumptions, constants, horizons, and the quantitative interpretation of double-exponential improvement are not supplied in the abstract."
+      },
+      {
+        "paper_id": "iclr-2026-oral-10006417",
+        "field": "unknowns[0]",
+        "source_ids": ["S2", "S3", "S4", "S5"],
+        "status": "verified",
+        "reason": "Missing information is qualified as full schedules and empirical comparator identities; this no longer denies the stated late-stage communication pattern, final-step merge, or theoretical parallel-SGD comparator."
+      },
+      {
+        "paper_id": "iclr-2026-oral-10006549",
+        "field": "narrative_sequence[3].summary",
+        "source_ids": ["S6", "S7", "S8"],
+        "status": "verified",
+        "reason": "The ASRs are now attached to the two named CUAs, without treating 42.9% as a maximum over the evaluated set. Attempt Rate as high as 92.5% and end-to-end ASRs up to 50% preserve their distinct metrics and qualifiers. This resolves the initial material finding."
+      },
+      {
+        "paper_id": "iclr-2026-oral-10006549",
+        "field": "unknowns[0]",
+        "source_ids": ["S5", "S6"],
+        "status": "verified",
+        "reason": "Only the complete evaluated set and detailed construction or splits remain unknown; this preserves the two named CUAs and the stated 864-example benchmark."
+      },
+      {
+        "paper_id": "icml-2025-oral-40140",
+        "field": "problem_and_gap.problem.claim",
+        "source_ids": ["S1", "S2", "S3"],
+        "status": "verified",
+        "reason": "Typically nearly unbounded restores the source qualifier; the remaining listed evaluation challenges are supported by S2 and S3."
+      },
+      {
+        "paper_id": "icml-2026-oral-71049",
+        "field": "problem_and_gap.gap.claim",
+        "source_ids": ["S1"],
+        "status": "verified",
+        "reason": "The gap now states only the poor understanding of data's influence on motion, directly supported by S1, without the unsupported relative-understanding comparison."
+      },
+      {
+        "paper_id": "icml-2026-oral-71049",
+        "field": "problem_and_gap.gap.source_ids",
+        "source_ids": ["S1"],
+        "status": "verified",
+        "reason": "The narrowed locator points exactly to the remaining gap claim, rather than including S4's method mechanism."
+      },
+      {
+        "paper_id": "icml-2026-oral-71052",
+        "field": "stated_novelty.claim",
+        "source_ids": ["S4"],
+        "status": "verified",
+        "reason": "Without assuming it is finite correctly removes a restriction without excluding finite sets, and preserves the compact basic semi-algebraic domain and comparison with many existing approaches."
+      },
+      {
+        "paper_id": "neurips-2024-oral-97963",
+        "field": "narrative_sequence[2].summary",
+        "source_ids": ["S4", "S5"],
+        "status": "verified",
+        "reason": "Generation is correctly located in the encoder's representation space, without attributing representation generation to the encoder itself; conditioning the image generator is supported by S5."
+      },
+      {
+        "paper_id": "neurips-2025-oral-115363",
+        "field": "author_reported_evidence[1].claim",
+        "source_ids": ["S8"],
+        "status": "verified",
+        "reason": "Sequence lengths reaching approximately 50,000 preserves the extent qualifier across the mid- to long-range classification and regression collection, rather than assigning that length to all tasks."
+      }
+    ]
+  },
+  "mechanical_verification": {
+    "packet_records": 24,
+    "identity_and_abstract_only_checks": "passed",
+    "all_extraction_locators_resolve_to_supplied_units": true,
+    "unique_extraction_configurations": 1
+  },
+  "remaining_material_errors": 0,
+  "remaining_review_findings": 0,
+  "full_run_scope": "This pilot decision permits expansion only with the exact extraction configuration above and the existing pilot_gate.md full-run checks, targeted repairs, and additional 36-card audit. A change to model, effort, prompt, or schema is not covered by this decision.",
+  "orchestration_usage": null,
+  "limitations": [
+    "This is AI source-faithfulness checking, not independent scientific validation, experiment verification, evidence of Oral-selection causes, or measurement of lesson effectiveness.",
+    "The conclusion concerns the reviewed pilot and its applied corrections. It does not establish the accuracy of future or unreviewed corpus cards.",
+    "Extraction provenance is copied from the cards. Orchestration and review usage are unknown here; no token or monetary usage is inferred."
+  ]
+}

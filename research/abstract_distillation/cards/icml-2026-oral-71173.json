@@ -1,0 +1,199 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71173",
+    "title": "CVE-Factory: Scaling Expert-Level Agentic Tasks for Code Security Vulnerability",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71173"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6aa57e74f5325cbb328ab25ee1f5cfd1cf8bed39adf5b64135bc7504cea49469",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "b4bdff5fbe0227eda5f86e5cefd8e99457a368a56f9c25cfeb751b715727eec7",
+    "extracted_at": "2026-09-13T00:17:02.025690+00:00",
+    "session_id": "01a0981f-96c6-79b0-ad00-a4175d467063",
+    "usage": {
+      "input_tokens": 12788,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 833,
+      "reasoning_output_tokens": 65
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d9c2b84ae7e8fc36c25bbca01cdd856fea565609c9f1fec361ed58c5cb92067f"
+    },
+    {
+      "id": "S2",
+      "sha256": "d4093fb95f1782db351a41e61f33c731f903f59bd315c5f32c2ac6455cd034ff"
+    },
+    {
+      "id": "S3",
+      "sha256": "d843cfdd0d91fec3e1a8aa5f409165641c730dcee6897936c5ecf04b602c12d5"
+    },
+    {
+      "id": "S4",
+      "sha256": "eb4b867ab72d66ee6872408dbf6f8adb66d62f478708ebb3a2729b43df833df7"
+    },
+    {
+      "id": "S5",
+      "sha256": "8b65d34facd52ac1d0cd0f50c0cbdb414212ab1dfeed8e808ed3ff0c525b6fda"
+    },
+    {
+      "id": "S6",
+      "sha256": "f02a90011d5596af17e9dc16f193d88c432adf79991b985726d8e4ee6d80748e"
+    },
+    {
+      "id": "S7",
+      "sha256": "1659bd5c386a02bced0757a0cc4cc1bc369038bb1d3438c3382a1a2d33005a69"
+    },
+    {
+      "id": "S8",
+      "sha256": "757ea779c895afd4fe74dbf5cca4b324f46a5697a9d9ad757ec7b98e5923e689"
+    },
+    {
+      "id": "S9",
+      "sha256": "b35d045f9e6c177c83ecddc196701cdf371e09008386a3c09701e70ecac8e09b"
+    },
+    {
+      "id": "S10",
+      "sha256": "aab730b543bcd32398a5d74c38dc564eade83ec00d832ed37b2a3e1b44c89de3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71173",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Code-agent security capabilities require high-quality, executable vulnerability tasks for evaluation and improvement.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches depend on costly, unscalable manual reproduction and use outdated data distributions.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "CVE-Factory is a multi-agent framework that automatically transforms sparse CVE metadata into executable agentic tasks.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors construct LiveCVEBench, a continuously updated benchmark with 190 tasks across 14 languages and 153 repositories, including emerging AI-tooling vulnerabilities.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors synthesize more than 1,000 executable training environments for code-security agentic tasks.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe CVE-Factory as the first multi-agent framework achieving expert-level quality in this automatic task-transformation setting, and the training-environment scaling as the first large-scale scaling of agentic code-security tasks.",
+      "source_ids": [
+        "S3",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report 95% solution correctness and 96% environment fidelity when cross-validating against human expert reproductions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "Authors report 66.2% verified success on the latest realistic vulnerabilities.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Authors report that fine-tuned Qwen3-32B improved from 5.3% to 35.8% on LiveCVEBench, surpassed Claude 4.5 Sonnet, and improved from 12.5% to 31.3% on Terminal Bench.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Security evaluation needs executable vulnerability tasks, while manual reproduction is costly and existing data can be outdated.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "core approach",
+        "summary": "CVE-Factory automatically converts sparse CVE metadata into executable agentic tasks through a multi-agent framework.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "validation",
+        "summary": "The authors report high agreement with human reproductions and 66.2% verified success on recent realistic vulnerabilities.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "downstream scaling",
+        "summary": "The automation supports LiveCVEBench, over 1,000 training environments, and reported gains on two benchmarks.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links an automated task-construction method to both a continuously updated benchmark and a large training-environment collection, then reports downstream model results.",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "A contribution narrative is more informative when it connects infrastructure outputs to concrete evaluation and training consequences.",
+        "application": "When introducing a data-generation pipeline, map each generated artifact to a named benchmark or training use and report the resulting metric change.",
+        "exception": "This framing is unsuitable when downstream uses or outcome measurements are outside the work's scope."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluation protocols, sample sizes, confidence intervals, or definitions of solution correctness, environment fidelity, and verified success.",
+      "The basis and conditions of the Claude 4.5 Sonnet comparison are not given.",
+      "The abstract does not describe how continuously updated data are maintained or how the reported generalization was tested."
+    ]
+  }
+}

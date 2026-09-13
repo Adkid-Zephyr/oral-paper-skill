@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31891",
+    "title": "MIND over Body: Adaptive Thinking using Dynamic Computation",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31891"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "61cdbf3542dcedaf1d162b0bc7d1c048ffbf78d4847596c6771c87cb3757f92f",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "c9194d99300cf2d2321799561a5c88e27dfe81a039f312007c206c9f1a46702c",
+    "extracted_at": "2026-09-12T23:56:01.807203+00:00",
+    "session_id": "01a0980c-5ea0-7f80-b4df-d0ebf433b13e",
+    "usage": {
+      "input_tokens": 12741,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 838,
+      "reasoning_output_tokens": 138
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8bdbb6d85d50caf313bc233b23f6acf4d7d7df54e97610f591f967d49566922a"
+    },
+    {
+      "id": "S2",
+      "sha256": "a24254417a477b610adc029e51f2ae63da75e58ad661c08332c0909e517b152e"
+    },
+    {
+      "id": "S3",
+      "sha256": "a24e3f3c7399f02011122dc4f3a887c614ff7350b3b46ef3450a47eeec7efa38"
+    },
+    {
+      "id": "S4",
+      "sha256": "b48afdee6566d84bd4540782e968a1b10c3c409d2d5d8af7ea3b7ec382b45d7e"
+    },
+    {
+      "id": "S5",
+      "sha256": "7236c4c762febae48f463fe1abb71bd7132386db107747c9dbaa6c680dc28352"
+    },
+    {
+      "id": "S6",
+      "sha256": "7b5e4f7b89616344940ed4033e6d813ea0e90ff17cca809313047a76065b26eb"
+    },
+    {
+      "id": "S7",
+      "sha256": "0c2461cb1aed0e29087b13b4bce015f2d6a641ec017ad1c70acbe16e06e4332f"
+    },
+    {
+      "id": "S8",
+      "sha256": "ec71cf3c2139b4494007ecc697fb9023a3d4de641f4ab15f0917f5bba1ae1e08"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31891",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Traditional deep networks require more parameters for improved performance, yet use the same computation for equal-sized inputs regardless of complexity, causing inefficiency.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies fixed computation per input size as an inefficiency in existing networks but does not state a broader unresolved research gap.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces network self-introspection to adjust parameter usage and computation time according to the task’s internal representation and complexity.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "mechanism",
+        "claim": "Enables adaptive parameter reuse across tasks while dynamically matching computational effort to input complexity.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical demonstration",
+        "claim": "Demonstrates the approach on language modeling and computer vision tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by adding self-introspection that dynamically adapts parameter use and computation to task complexity.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report 96.62% ImageNet accuracy with a three-layer network, surpassing the larger ResNet-50 and EfficientNet models.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report 95.8%/88.7% F1 on SQuAD v1.1/v2.0 when applying the approach to a transformer, at negligible parameter cost.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract contrasts brain efficiency with parameter growth in traditional deep networks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "It identifies uniform computation for same-sized inputs as wasteful when input complexity differs.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "It introduces self-introspection, adaptive parameter reuse, and computation scaled to task complexity.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The method is reported effective across vision and language settings, including ImageNet and SQuAD results.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The authors frame the results as supporting dynamic, reflective resource management.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the fixed-computation limitation directly to a mechanism that conditions parameter use and computation on task or input complexity.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This provides a compact problem-to-mechanism rationale rather than presenting dynamic computation as an isolated design choice.",
+        "application": "When proposing adaptive computation, explicitly map the identified resource mismatch to the signal used for adaptation and the computation it controls.",
+        "exception": "This framing is unsuitable when the task has uniform complexity or when adaptive control overhead could outweigh resource savings."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the adaptation mechanism, training procedure, or computational overhead.",
+      "Baseline model sizes, evaluation protocols, and statistical variation are not reported, so the comparisons cannot be independently assessed from the abstract.",
+      "“Negligible parameter cost” and the resource-efficiency implications are not quantitatively defined."
+    ]
+  }
+}

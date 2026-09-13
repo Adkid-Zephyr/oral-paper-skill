@@ -1,0 +1,146 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71130",
+    "title": "Training-Free Bayesian Filtering with Generative Emulators",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71130"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "576902f978c0ce4f7b548c45a8c4e3f0a6eb08cebbe1f46f96518f59300bccbb",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "04a279fe89698aabed8068deff636af24f4f4d8f7ce3f50b205bbbfbffa9f3c1",
+    "extracted_at": "2026-09-13T00:15:13.150835+00:00",
+    "session_id": "01a0981d-f9ef-79c3-b531-89197e73d809",
+    "usage": {
+      "input_tokens": 12564,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 667,
+      "reasoning_output_tokens": 99
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d02d79bc12350f9020b51b921220be81990f9b961a008ebfa25d4e0a4659f8ae"
+    },
+    {
+      "id": "S2",
+      "sha256": "fc5a7fedd35f946296cca73f5543ba0ed0377b092f1382a7e7ef5b5a59e998d2"
+    },
+    {
+      "id": "S3",
+      "sha256": "ea2a862efa21cef6ad2c2229787cd894206ca636a016a3ed6714c989757ab0ea"
+    },
+    {
+      "id": "S4",
+      "sha256": "52276cbd20ba3a0d5e9ddab8742ee3b6d7858287c9018b15d9d411ff5fd49136"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71130",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Estimate plausible dynamical-system states from observations through Bayesian filtering.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Particle filters are theoretically exact for nonlinear dynamics and observations but scale poorly in high dimensions.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Uses diffusion-based dynamical-system emulators, without additional training, to implement an optimal particle-filter variant.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports successful scaling to high-dimensional particle filtering on nonlinear chaotic systems, including atmospheric dynamics.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work presents a training-free use of diffusion-based emulators for an optimal particle-filter variant described as previously largely unexplored because classical numerical solvers posed implementation challenges.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments on nonlinear chaotic systems, including atmospheric dynamics, demonstrate successful scaling to high-dimensional settings.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Defines Bayesian filtering as estimating plausible system states from observations.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Identifies poor high-dimensional scalability as a weakness of particle filters despite their theoretical exactness for nonlinear settings.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "Introduces a no-additional-training diffusion-emulator implementation of an optimal particle-filter variant.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported result",
+        "summary": "Reports successful high-dimensional scaling in experiments on nonlinear chaotic systems, including atmospheric dynamics.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a specific scalability limitation to a method choice: diffusion-based emulators are used to avoid implementation challenges associated with classical numerical solvers.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A focused problem-to-mechanism link can make a technical proposal’s motivation and intended advantage easy to assess.",
+        "application": "When presenting a numerical method, explicitly map the target bottleneck to the component intended to remove it, including whether extra training or solver changes are required.",
+        "exception": "This framing is unsuitable when the proposed component does not directly address the stated bottleneck or when the abstract lacks evidence testing that connection."
+      }
+    ],
+    "unknowns": [
+      "No quantitative scaling results, baselines, dimensionalities, or experimental conditions are supplied.",
+      "The abstract does not define which particle-filter variant is optimal or specify the meaning of successful scaling.",
+      "No details establish how broadly the reported result generalizes beyond the listed chaotic systems."
+    ]
+  }
+}

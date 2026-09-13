@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47229",
+    "title": "AdaSplash: Adaptive Sparse Flash Attention",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47229"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "14a09c1e0e73640c6367c31aa2ee8f53c5a81a499d350b6cc6af8abdb98e5a8d",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "2aa66c8c824a62d1262bc821c1ee21c59fbbc37972cfeb2b6fd45b361b2a0c81",
+    "extracted_at": "2026-09-13T00:09:34.085629+00:00",
+    "session_id": "01a09818-c9fd-7762-a5a8-1711d9ebb135",
+    "usage": {
+      "input_tokens": 12707,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 750,
+      "reasoning_output_tokens": 85
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fa46e0e4711ece24877743c50e3a39bef22e84cb244b4371391ae6e3fffdc3cf"
+    },
+    {
+      "id": "S2",
+      "sha256": "ea7eda63fefe9398b80d6eac09878f854e7ec890950c10c2f73ca184f17980e6"
+    },
+    {
+      "id": "S3",
+      "sha256": "c402869f6498f0c4906861cb3d0863cc6f936d30abebdf066313f5dbbb414d25"
+    },
+    {
+      "id": "S4",
+      "sha256": "329df6b0ee662bea6121ebc52cbff4e36ec9b015866809663bb2ae026ee24b84"
+    },
+    {
+      "id": "S5",
+      "sha256": "3464db1141ed44514414a04649590063a4c2aaf7aa36dc084761b506356da677"
+    },
+    {
+      "id": "S6",
+      "sha256": "64abc3bac8d2af8cc536ef7a2107dd938b96a6bb2b3485a9653a0156850d497d"
+    },
+    {
+      "id": "S7",
+      "sha256": "eec54c5e9b8fba33ffd911f2f4b2baab16d9e6c4819fb5d5dc78d1e70733bc57"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47229",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Softmax attention's computational cost limits transformer use on long-context tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing adaptive-sparsity implementations are inefficient and do not exploit sparsity for runtime or memory gains.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "AdaSplash combines GPU-optimized algorithms with the sparsity of α-entmax attention.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "A hybrid Halley-bisection algorithm reduces the iterations needed for α-entmax computation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Custom Triton kernels efficiently handle adaptive sparsity.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present AdaSplash as a combination of GPU-optimized computation and adaptive α-entmax sparsity.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a 7-fold reduction in iterations for computing the α-entmax transformation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "Across RoBERTa, ModernBERT, and GPT-2 tasks, the authors report substantial runtime and memory-efficiency improvements over existing α-entmax implementations; they also report approaching or sometimes surpassing FlashAttention-2 efficiency while maintaining strong task performance.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Long-context applicability is constrained by the cost of softmax attention.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Adaptive sparsity is flexible and data-dependent, but current implementations are inefficient and fail to realize runtime and memory benefits.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "algorithm",
+        "summary": "AdaSplash combines GPU optimization with α-entmax, using hybrid Halley-bisection computation and custom Triton kernels.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "Experiments on encoder classification and retrieval, plus GPT-2 language modeling, report improved efficiency and competitive comparison with FlashAttention-2.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each system component with a stated bottleneck: faster α-entmax transformation addresses iteration cost, while Triton kernels address adaptive-sparsity handling; reported comparisons then target runtime and memory efficiency.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This makes the method-to-evidence relationship easy to audit at the abstract level.",
+        "application": "For a systems paper, map each optimization to a named computational bottleneck and report the corresponding efficiency comparison.",
+        "exception": "This framing is less suitable when component-level effects cannot be isolated or the contribution is primarily theoretical."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no absolute runtime, memory, iteration baseline, or statistical uncertainty.",
+      "Task-performance details, sequence lengths, hardware, implementation baselines, and experimental conditions are unspecified.",
+      "The abstract does not establish independent verification of the reported results or priority of the stated novelty."
+    ]
+  }
+}

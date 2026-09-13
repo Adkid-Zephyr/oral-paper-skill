@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47260",
+    "title": "Prices, Bids, Values: One ML-Powered Combinatorial Auction to Rule Them All",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47260"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "83f297a0caa10d28dab2dd4ebd205112d37cd6fad2aa73b4b9ebc4e448a772ce",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "f7deb7ee7b21463f0ed7fe56de77388f82d79de0ac21c96e08fea30cc29feb47",
+    "extracted_at": "2026-09-13T00:10:49.269545+00:00",
+    "session_id": "01a09819-e84a-78c0-819a-99fa970f6a5b",
+    "usage": {
+      "input_tokens": 12738,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 781,
+      "reasoning_output_tokens": 66
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8ea7b115db0d080ac3f4d282573f66c3e5e14b26c9e02c1de8484bd71bd750d1"
+    },
+    {
+      "id": "S2",
+      "sha256": "91de1db2349cd21b87aff9e95ec23537556c34df54eace3e3eaf028f913f368a"
+    },
+    {
+      "id": "S3",
+      "sha256": "bf2679d6cd9a3a520efe0c13eb49cbcd9a8c92f5c36760aa92442c170dc30bfd"
+    },
+    {
+      "id": "S4",
+      "sha256": "4f95fca8309a688db32e51a2c9eea4d0acbdf9c8e754647c1cc5301795948c6f"
+    },
+    {
+      "id": "S5",
+      "sha256": "8ff76f8ea07048f67aa94f666d8b2feb4a24130ce7d472b6b4571f938321bf7c"
+    },
+    {
+      "id": "S6",
+      "sha256": "fb5ed7d95641e08f52c84485448469e88bb235eb4e825477eb466ce354079735"
+    },
+    {
+      "id": "S7",
+      "sha256": "6dc6f4d2abcba00a3a096677f681d1ee9f04302e588a31d9034461258b5c4cc3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47260",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design iterative combinatorial auctions despite an exponentially growing bundle space.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Recent ML preference-elicitation methods primarily use value queries, whereas practical iterative combinatorial auctions use demand queries.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A purportedly novel ML algorithm that uses information from both value and demand queries.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "MLHCA, an ML-powered auction using both value and demand queries.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report that MLHCA reduces efficiency loss by up to a factor of 10 with up to 58% fewer queries than the previous state of the art.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present their combined-query ML algorithm and MLHCA as novel contributions to auction learning and design.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments showing that combining value and demand queries produces significantly better learning performance in practice.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that MLHCA outperforms the previous state of the art, with up to tenfold lower efficiency loss and up to 58% fewer queries.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task and challenge",
+        "summary": "The paper studies iterative combinatorial auctions and identifies exponential bundle-space growth as the main challenge.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "literature gap",
+        "summary": "It contrasts value-query-based ML elicitation with demand-query elicitation in practical auctions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "algorithmic proposal",
+        "summary": "The authors introduce an ML algorithm that uses information from both query types and report improved learning in experiments.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "auction system and comparison",
+        "summary": "They present MLHCA and report lower efficiency loss and query burden than the previous state of the art.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "practicality claim and resource",
+        "summary": "The authors characterize the approach as improving efficiency and reducing cognitive load, and provide code online.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly connects a mismatch between query types in prior ML methods and practical auctions to a combined-query algorithm and auction design.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A concrete deployment mismatch can motivate both the algorithmic mechanism and the evaluation comparison.",
+        "application": "When a method targets practice, identify the information interface used in deployment and design the model to incorporate it, then compare against the interface used by prior methods.",
+        "exception": "This framing is unsuitable when deployment constraints prohibit one of the information sources or when query costs and semantics are not comparable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, auction environments, baselines, statistical uncertainty, or conditions behind the reported best-case improvements.",
+      "It does not define how efficiency loss or bidders' cognitive load is measured, nor provide evidence details for the cognitive-load claim.",
+      "The abstract states that the algorithm makes use of full information from both query types but gives no proof details or formal guarantee."
+    ]
+  }
+}

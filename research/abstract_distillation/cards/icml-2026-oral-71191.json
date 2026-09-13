@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71191",
+    "title": "A Random Matrix Perspective on the Consistency of Diffusion Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71191"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "cb71565930f7f82c9f22838ed01be970f2c6aea7b0d7c71235d95eaa4b472c35",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "527ab44b929e898395b52e8e4d1f358b5c6a1af8fc00c736c6778822e380de31",
+    "extracted_at": "2026-09-13T00:17:41.695005+00:00",
+    "session_id": "01a09820-31c2-7691-8fc4-5963b9ada023",
+    "usage": {
+      "input_tokens": 12776,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 838,
+      "reasoning_output_tokens": 107
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "26086bebee9623645cfcc70521c97cf3a8a2a994f254fa1e768c2ffb2d24ef55"
+    },
+    {
+      "id": "S2",
+      "sha256": "308489fa1adcef80a17db7111c2f2cc59ab76406ffc86858e60a021c5d4d400b"
+    },
+    {
+      "id": "S3",
+      "sha256": "b89483f1717c0951227db0a910db04b4cd37b84c0e6ad4121649358b84fb050d"
+    },
+    {
+      "id": "S4",
+      "sha256": "2a4180b15d3531fd89a0fa0a6550354bd25894ee6aceb2a0c4870c2be780a9fe"
+    },
+    {
+      "id": "S5",
+      "sha256": "fbe1c5a6dae63fdd19e5983f7da5b98fab758740d1432f9893284ba1af46fc4f"
+    },
+    {
+      "id": "S6",
+      "sha256": "6d838b966748c13729b6f84e3b9483cbcfd8814142a72cb7ccc0b5a538f6dac9"
+    },
+    {
+      "id": "S7",
+      "sha256": "efcceec4bb01a026d99d994e84c4fe5664318a36b1935f54f30ce6d6bf34e63d"
+    },
+    {
+      "id": "S8",
+      "sha256": "cca71c2f503f5f8cde82141ff3d243d2d06a18c716d65c07ccd8424e220c2eff"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71191",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain why diffusion models trained on non-overlapping data subsets can produce similar outputs from the same noise seed, and quantify cross-split consistency.",
+        "source_ids": [
+          "S1",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Develops an RMT framework for quantifying finite-data effects on the learned denoiser and sampling map in linear diffusion models.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theoretical extension",
+        "claim": "Extends deterministic-equivalence tools to fractional matrix powers to analyze full sampling trajectories.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "interpretive baseline",
+        "claim": "Links data spectral properties to generative-output stability as a baseline for reproducibility in diffusion training.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present an RMT treatment that explains diffusion consistency through shared Gaussian statistics and analyzes both expectations, fluctuations, and sampling trajectories.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that shared Gaussian statistics across data splits predict much of the generated imagery.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report that the theory sharply predicts linear diffusion-model behavior and validate those predictions on UNet and DiT models in their non-memorization regime.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report variance formulas identifying anisotropy, input inhomogeneity, and dataset size as factors governing cross-split disagreement.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "phenomenon",
+        "summary": "Non-overlapping training subsets can yield strikingly similar outputs under the same noise seed.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "mechanistic explanation",
+        "summary": "The authors attribute much of this consistency to shared Gaussian statistics across splits.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "formal framework",
+        "summary": "An RMT framework quantifies finite-dataset effects, including expectation renormalization and fluctuation sources.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "trajectory analysis and validation",
+        "summary": "Fractional matrix-power tools cover sampling trajectories, and predictions are tested on UNet and DiT models outside memorization.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The resulting account is positioned as a reproducibility baseline linking data spectra to output stability.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates expected behavior from disagreement: limited data renormalizes effective noise and overshrinks low-variance directions, while variance depends on anisotropy, input inhomogeneity, and dataset size.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A useful analysis can make reproducibility claims more diagnostic by distinguishing systematic bias from split-to-split fluctuations.",
+        "application": "Report separate mechanisms for mean drift and variance, then map each to measurable data or model properties.",
+        "exception": "This decomposition may not transfer directly beyond the stated linear setting or the non-memorization regime."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the quantitative prediction errors or validation metrics for UNet and DiT.",
+      "The scope and assumptions of the linear theory, including dataset and noise conditions, are not detailed.",
+      "It is unclear how much of the generated-image similarity is explained quantitatively by the shared Gaussian statistics."
+    ]
+  }
+}

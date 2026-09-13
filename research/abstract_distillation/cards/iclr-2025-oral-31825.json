@@ -1,0 +1,160 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31825",
+    "title": "On Conformal Isometry of Grid Cells: Learning Distance-Preserving Position Embedding",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31825"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f8a386c4f711fc996c45e4dc3e753cd8e4c4a6fa3d93d9dfa331f4db84ca7486",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "5eff5500161b2a3a12fd322c42c9a28333d74c9408dbe2314fe6baec31c0739d",
+    "extracted_at": "2026-09-12T23:53:26.488331+00:00",
+    "session_id": "01a0980a-09fd-7f12-9d5a-8b5e39d247cf",
+    "usage": {
+      "input_tokens": 12698,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 684,
+      "reasoning_output_tokens": 95
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "61f5328a0534e34290835e9642a0bdd4aefb5ba64192c8c34313af32acf1e583"
+    },
+    {
+      "id": "S2",
+      "sha256": "ac37c9db39072de9a5784a59c261d40d7e3b167d0bac3a56fac8ee7aec72c0cc"
+    },
+    {
+      "id": "S3",
+      "sha256": "6c840388f10570227d702a343f3bc9787cdb296209ee0850caedbdc0f5e8062c"
+    },
+    {
+      "id": "S4",
+      "sha256": "4e392fa1f68f6ebfa18c09b67be3b258580486c4780f037a2e0c1c0a84dba0a2"
+    },
+    {
+      "id": "S5",
+      "sha256": "3a9cdbf07de0a4f7099f3ccb7d87f457141f6775c1ccbb64aa3fd9e557d16a38"
+    },
+    {
+      "id": "S6",
+      "sha256": "3df80e3bce1ef87312e2d30f1df1ff91d7e71a3d92d6c0c6198af435267c4e57"
+    },
+    {
+      "id": "S7",
+      "sha256": "88882672fc148ea111781d59f97299574e87ac9d77dc918d7c92c2be6704eed4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31825",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper investigates whether conformal isometry explains hexagonal periodic patterns in grid-cell response maps.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "It learns maximally distance-preserving position embeddings and reports hexagonal grid firing patterns, agnostic to the recurrent neural network choice.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "It provides a theoretical explanation by arguing that the hexagon flat torus is maximally distance preserving under the proposed loss.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The abstract distinguishes the approach by combining distance-preserving embedding learning independent of recurrent-network choice with a flat-torus explanation for hexagonal periodicity.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report numerical experiments in which maximizing distance preservation leads to hexagonal grid firing patterns.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report a theoretical result that minimizing their loss favors the hexagon flat torus because it is maximally distance preserving.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "phenomenon and question",
+        "summary": "The paper frames hexagonal grid-cell patterns as potentially explained by conformal isometry.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "model and hypothesis",
+        "summary": "It represents position as a high-dimensional neural vector rotating on a two-dimensional manifold, with local physical distances preserved up to scale.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "Numerical experiments connect distance-preserving embedding learning to hexagonal patterns, followed by a flat-torus theoretical explanation.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects an observed geometric pattern to an explicit distance-preservation objective and then gives a geometric explanation for the resulting structure.",
+          "source_ids": [
+            "S1",
+            "S4",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A compact research narrative can align phenomenon, mechanism, optimization objective, and theory.",
+        "application": "When presenting a structured representation method, state the target geometric property, show how the training objective encodes it, and identify the structure predicted by optimizing it.",
+        "exception": "This framing is unsuitable when the objective does not directly encode the proposed mechanism or when no theoretical characterization of the resulting structure is available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify experimental settings, baselines, quantitative results, or conditions under which the reported patterns emerge.",
+      "The meaning and assumptions of “maximally distance preserving” and the scope of the flat-torus argument are not detailed."
+    ]
+  }
+}

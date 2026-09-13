@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97964",
+    "title": "Graph Diffusion Transformers for Multi-Conditional Molecular Generation",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97964"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "740950714b034d01d37b399af8c96ab35b375562b92c20bf3d1870124a9b1075",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "7fd16b20e1a288aff8114ff3aabefc335b13288a06c97105fb101441750a3124",
+    "extracted_at": "2026-09-13T00:18:27.651194+00:00",
+    "session_id": "01a09820-e564-7db1-a65c-cbe58acd967a",
+    "usage": {
+      "input_tokens": 12714,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 763,
+      "reasoning_output_tokens": 72
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "73f3d1a1f83a3cde2a268572516cbcfa21f182b25cbd030fd4fb6faa9ef792a3"
+    },
+    {
+      "id": "S2",
+      "sha256": "2f1721854b3cd30966c68ba3b3be9a54b3360b6d76be6638c8d6a45858a2bde6"
+    },
+    {
+      "id": "S3",
+      "sha256": "1d31e51516cc70d103b122da4bbf63fa767d5b9a5966bc3da8bdf7b4ae1ce7f1"
+    },
+    {
+      "id": "S4",
+      "sha256": "2b5e16fcb189e3ff8af7dbd690d36c0d744a284b8283f30e18c77a53e356b01a"
+    },
+    {
+      "id": "S5",
+      "sha256": "e2c8cd0a194d3db66e1b6df826b66a995143f0d410a7c5161d6f83812b58bcfb"
+    },
+    {
+      "id": "S6",
+      "sha256": "4180d24de2d70f2c236fcb69ca90cfeacf517e4cccbff066bf8eb56cdd4cb583"
+    },
+    {
+      "id": "S7",
+      "sha256": "f814a92d3213856eb16b1c59199ea146f4140d7b52b4623412c0e30d3aa90564"
+    },
+    {
+      "id": "S8",
+      "sha256": "919148d0814d964feccf3b37452ccbdb1ba8c1bfb3995d4208c71b101d5119cc"
+    },
+    {
+      "id": "S9",
+      "sha256": "dbee88c29264da3c5a321c171784dc2af4be631d3567849c2dec00bc9834fc15"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97964",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable molecular inverse design with multiple numerical and categorical property constraints, including synthetic score and gas permeability.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract states that integrating multiple properties as diffusion-model conditions remained unexplored despite progress in unconditional molecule generation.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Graph DiT combines a property condition encoder with a Transformer-based graph denoiser for conditional molecular graph generation.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "training model",
+        "claim": "The authors propose graph-dependent noise modeling instead of separately adding noise to atoms and bonds.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "validation and application",
+        "claim": "The method is evaluated on conditional polymer and small-molecule generation and applied to a gas-separation polymer inverse-design task with domain-expert feedback.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Graph DiT through multi-conditional generation and a graph-dependent noise model designed to estimate graph-related molecular noise.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report superiority across metrics spanning distribution learning and molecular-property condition control.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report extensive validation on polymer and small-molecule generation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report practical utility in a gas-separation polymer inverse-design task incorporating domain-expert feedback.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation and gap",
+        "summary": "Inverse molecular design is positioned as useful for materials and drug discovery, while multi-property conditioning is described as unexplored.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Graph DiT encodes numerical and categorical conditions and denoises molecular graphs with a Transformer.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "training distinction",
+        "summary": "A graph-dependent noise model is introduced in place of separate atom and bond noise processes.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "validation and application",
+        "summary": "The abstract reports validation across polymers and small molecules, metric advantages, and a domain-expert-informed gas-separation application.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each architectural choice with a specific challenge: property representation, graph denoising, and graph-structured noise estimation.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This creates a compact problem-to-design rationale that makes the method's purpose legible.",
+        "application": "When introducing a structured generative model, map each component to a named unmet requirement and state the relevant alternative it replaces.",
+        "exception": "This framing is unsuitable when component roles or comparison baselines are not established by the available evidence."
+      }
+    ],
+    "unknowns": [
+      "No metric values, datasets, baselines, or experimental conditions are given, so the reported superiority cannot be assessed here.",
+      "The abstract does not specify the nature or outcome of the domain-expert feedback.",
+      "The abstract does not state a formal novelty claim beyond the described method distinctions."
+    ]
+  }
+}

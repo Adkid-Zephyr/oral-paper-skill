@@ -1,0 +1,152 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007014",
+    "title": "LLM Fingerprinting via Semantically Conditioned Watermarks",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007014"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5a9517ca91886755d47fca6a0f795422b566603f971a23f6a37742b71686e736",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "a1066e1e39202f496cc171b968ca477d714dd2f8d59bab58adbdc8ffc2eef3aa",
+    "extracted_at": "2026-09-12T23:58:53.527461+00:00",
+    "session_id": "01a0980f-0a89-7482-b34d-05eccc8eb524",
+    "usage": {
+      "input_tokens": 14161,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 676,
+      "reasoning_output_tokens": 77
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "678250e7dabd2c47e56bd2bd39fe39674303425184b75cc1174cd772f403912e"
+    },
+    {
+      "id": "S2",
+      "sha256": "cfc108eb7edb5a586dcf84677b9292daba736993fca93e3d76a5c64d915819cb"
+    },
+    {
+      "id": "S3",
+      "sha256": "2d9aa825d23b43f7a894d5cb9986394f511573952e1140420d29d16f2f083fca"
+    },
+    {
+      "id": "S4",
+      "sha256": "d71c7e91ea204958efc274746d30c4af75bf29823a3676358a94af79bec0591a"
+    },
+    {
+      "id": "S5",
+      "sha256": "6b331f29cc69b892dcb2f88ec3f04b5c532916cbfdaeb7fc993b96d5158c6163"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007014",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable LLM owners to detect a fingerprint and verify ownership from responses to prompts in a semantic domain.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing query-key fingerprinting can fail after finetuning or quantization and may be detected and filtered from responses.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces semantically conditioned fingerprinting that replaces fixed query sets with a broad semantic domain and atypical keys with a statistical watermark diffused throughout responses.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Conditions watermarking on prompts from a predetermined domain, such as French, so domain-specific queries can be used for fingerprint detection and ownership verification.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their approach introduces semantically conditioned watermarks for LLM fingerprinting.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the fingerprint is stealthy and robust to all common deployment scenarios in their experimental evaluation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "prior approach",
+        "summary": "Existing methods train responses to a few fixed queries with predefined atypical keys.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Such memorized keys may not survive finetuning or quantization and can be detected and filtered.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "The method uses a broad semantic domain and a distributed statistical watermark instead of fixed queries and brittle keys.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report stealth and robustness across common deployment scenarios, with domain-specific detection enabling ownership verification.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the proposed mechanism with the stated failure modes: semantic conditioning broadens trigger coverage, while a distributed statistical signal replaces easily identifiable atypical keys.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A mechanism-to-failure-mode mapping can make a technical proposal's motivation and intended benefits easy to assess.",
+        "application": "When presenting a robustness-oriented method, explicitly pair each design change with the specific weakness it is meant to address.",
+        "exception": "This framing is insufficient when the abstract does not provide evidence isolating which design change explains each reported outcome."
+      }
+    ],
+    "unknowns": [
+      "No quantitative results, baselines, deployment conditions, or definitions of stealth and robustness are provided.",
+      "The abstract does not specify how the semantic domain is selected, how detection is performed, or how ownership verification is calibrated.",
+      "The claim of robustness covers “all common deployment scenarios,” but the scenarios are not enumerated."
+    ]
+  }
+}

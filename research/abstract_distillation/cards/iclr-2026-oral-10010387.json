@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010387",
+    "title": "WAFT: Warping-Alone Field Transforms for Optical Flow",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010387"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "dbc19e64371d9e5bd1b3deee3ca509c34df353f886a1ebe8a97d953684a1fb71",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "1214d8a51efe2ff596cce1b8b2e18d21ac402efe6c29592a9902a1002321f510",
+    "extracted_at": "2026-09-13T00:04:24.941844+00:00",
+    "session_id": "01a09814-0e26-7400-bbb3-3fa8c87b632c",
+    "usage": {
+      "input_tokens": 12649,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 784,
+      "reasoning_output_tokens": 97
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bdacbb8a07e3f3a10ee1554ccfaa73297e9b4b9d93f27606665158331c67fe64"
+    },
+    {
+      "id": "S2",
+      "sha256": "55e8244e687264f332f4e1bd2896b11bbd853bff9e0ca65068593d7fd4ce088c"
+    },
+    {
+      "id": "S3",
+      "sha256": "41f36ea9595b4b866547a449b43928a7b8357b157ef605a3bf71ec34333bb9dc"
+    },
+    {
+      "id": "S4",
+      "sha256": "1582b9711e9786022574e023b87c857722bd80dcb0c521ef9993ebcb8dc39a02"
+    },
+    {
+      "id": "S5",
+      "sha256": "ad0ec0c781e8e80b79a4e115703665e2f7145e97deb0b3c6c0545b462c1447b2"
+    },
+    {
+      "id": "S6",
+      "sha256": "546f8afe8195980816ca699027a655e5fe175a18b9a92b395ce4b2783ad28984"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010387",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design a simple, effective, and flexible method for optical flow.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "The authors challenge the conventional assumption that cost-volume construction is necessary for strong optical-flow performance.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "WAFT replaces RAFT-style cost volumes with high-resolution warping in a meta-architecture with minimal inductive biases and limited reliance on custom designs.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report top benchmark rankings, strong zero-shot generalization on KITTI, and faster inference than competitive existing methods.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors provide code and model weights.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present warping-alone field transforms as a simple alternative to cost-volume-based optical-flow architectures.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that WAFT ranks first on Spring, Sintel, and KITTI benchmarks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report the best zero-shot generalization on KITTI.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report 1.3–4.1× faster speed than existing methods with competitive accuracy, including 1.3× versus Flowformer++ and 4.1× versus CCMR+.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "proposal",
+        "summary": "Introduces WAFT as a simple optical-flow method.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "architectural distinction",
+        "summary": "Replaces cost volumes with high-resolution warping while retaining similarity to RAFT.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "design implication",
+        "summary": "Uses a flexible, minimally biased meta-architecture and questions the necessity of cost volumes.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "Reports leading benchmark rankings, KITTI zero-shot performance, and speed advantages over competitive methods.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "availability",
+        "summary": "Provides code and model weights.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific architectural substitution—cost volumes replaced by high-resolution warping—to both accuracy and memory-cost claims.",
+          "source_ids": [
+            "S2"
+          ]
+        },
+        "interpretation": "A focused mechanism-to-benefit framing can make a method’s central design hypothesis easy to evaluate.",
+        "application": "State the replaced component, its substitute, and the intended resource or accuracy consequence in one contribution claim.",
+        "exception": "This framing is unsuitable when the method’s benefits arise from many interacting components that cannot be isolated at abstract level."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark metrics, numerical accuracy results, dataset splits, or evaluation protocols.",
+      "The speed comparisons lack hardware, implementation, and measurement conditions.",
+      "The meaning and scope of “best zero-shot generalization” on KITTI are not defined.",
+      "No ablation or evidence isolating high-resolution warping from other design choices is reported."
+    ]
+  }
+}

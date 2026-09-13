@@ -1,0 +1,8 @@
+Review every supplied original abstract and its extracted learning card for source faithfulness. This is AI source checking, not independent scientific validation or a test of the Skill's effectiveness. Return only a JSON object, no Markdown fences, with:
+{"reviewer_model":"gpt-6-astra","effort":"medium","review_type":"AI source checking","records":[{"paper_id":"...","first_pass_status":"pass|minor|material_error","findings":[{"field":"...","source_ids":["S1"],"issue":"...","severity":"minor|material","correction":"exact suggested correction or omission"}],"final_disposition":"pass|requires_correction"}],"summary":"..."}
+
+Use the actual enum value, not the pipe-separated options. Inspect each source and card completely. Check attribution, entailment, scope, direction, numerical units, comparator and decisive qualifications. Non-null attributed content must have valid supporting IDs, not just a related topic. Preserve unknowns rather than assuming what is in the full paper.
+
+Lessons must distinguish observed source practice, interpretation of possible usefulness, a proposed application, and an exception. The abstract cannot establish rigorous experiments, proof correctness, genuine novelty, reproducibility or reasons for Oral selection. Do not demand a lesson if none is defensible.
+
+Material errors change understanding of a paper's contribution, evidence or the source basis of a lesson. Stylistic preference and optional detail are not material. Do not manufacture objections or force a pass. A genuinely unsupported strengthening must be corrected or marked unknown before passing. Record minor issues separately. Keep observations concise, paraphrase, and do not reproduce long quotes. Do not edit cards; return review findings only.

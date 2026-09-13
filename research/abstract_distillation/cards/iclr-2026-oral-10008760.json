@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008760",
+    "title": "Through the Lens of Contrast: Self-Improving Visual Reasoning in VLMs",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008760"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "04c945f3372e073200ada2d86fc53c9788fdce4a62e6da02520e8bcba8a8a223",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "7ef5d7a1ce702c2731b2da9ecd464f0b215b9f4901b208180d37186ee06d5203",
+    "extracted_at": "2026-09-13T00:01:50.633731+00:00",
+    "session_id": "01a09811-a339-7d30-90c2-4e39b31932c7",
+    "usage": {
+      "input_tokens": 12820,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 848,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a31e68e12a509e9a9cf6249070edf52d134b9a97f300392863134430aae12a47"
+    },
+    {
+      "id": "S2",
+      "sha256": "4552090cc6bdd657f5c2686961dd8872ea591a85bb1b611cbad0f0ff174e4bc0"
+    },
+    {
+      "id": "S3",
+      "sha256": "f1d709c0939284e32e9b293b5356c40db99a7c8ccfdafd9253b47010410b103a"
+    },
+    {
+      "id": "S4",
+      "sha256": "9aaf8ce0d9519d2dd56cffa29a2b62c1f98b464bde4855dc2ba3b577709c83e2"
+    },
+    {
+      "id": "S5",
+      "sha256": "90add144126545a6745a44e21994b2c815bdca60c6933f22d5fe593625202d2b"
+    },
+    {
+      "id": "S6",
+      "sha256": "a0d416116579e7f8943074943072383bf64cf33b6a61fdea23008b1deec415b1"
+    },
+    {
+      "id": "S7",
+      "sha256": "3603143617c60d0679b02f5f8acd023051df49520f3eae1565282a94e071ab49"
+    },
+    {
+      "id": "S8",
+      "sha256": "4050c469ebe9ee13ffe1fff50f956880423da623d1349d9d674f98094ed1fd28"
+    },
+    {
+      "id": "S9",
+      "sha256": "d038e7862b199771a8c5370626ab06e560d657d13fe3bcdef8e3bb3c6dadc860"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008760",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Extend self-improving reasoning methods from language tasks to visual reasoning in VLMs.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Visual hallucinations in VLM-generated reasoning paths are difficult to verify or correct, limiting direct extension of language-based approaches.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "VC-STaR, a self-improving framework that uses visual contrast to mitigate hallucinations in generated rationales.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "VisCoR-55K, a visual reasoning dataset created from curated multimodally similar contrastive VQA pairs and generated rationales.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report that VC-STaR improves reasoning across various VLMs through supervised fine-tuning.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe VC-STaR as a novel framework and VisCoR-55K as a new visual reasoning dataset.",
+      "source_ids": [
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that VLMs identify relevant visual cues more precisely with contrastive VQA pairs than with a single VQA sample.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that VC-STaR outperforms existing self-improving approaches and models fine-tuned on stated state-of-the-art visual reasoning datasets.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that VLMs' inherent contrastive ability can bootstrap their own visual reasoning.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Reasoning enhancement through self-improvement is established for linguistic tasks.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "Applying this paradigm to VLMs is complicated by unverifiable or unrectifiable visual hallucinations in reasoning paths.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "observation_and_method",
+        "summary": "The authors motivate VC-STaR with improved cue identification on contrastive VQA pairs and use visual contrast to reduce rationale hallucinations.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "resource_and_evaluation",
+        "summary": "They curate contrastive pairs, generate rationales, construct VisCoR-55K, fine-tune various VLMs, and report favorable comparisons.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific observation—better visual-cue identification from contrastive VQA pairs—to the design of VC-STaR and its rationale-generation process.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A concrete behavioral observation can provide a traceable bridge from problem diagnosis to method design and data construction.",
+        "application": "When proposing a self-improvement pipeline, state the triggering model behavior, then show exactly how it determines the training examples or supervision.",
+        "exception": "This framing is unsuitable when the proposed mechanism is not motivated by an observable behavior or when the observation is only anecdotal."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide dataset composition details, evaluation metrics, model identities, baselines, or numerical results.",
+      "The claimed comparisons and bootstrap interpretation are author-reported; the abstract does not specify experimental conditions or ablations.",
+      "Code, data, and trained models are stated to be released only upon acceptance."
+    ]
+  }
+}

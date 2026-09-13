@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-118806",
+    "title": "Perception Encoder: The best visual embeddings are not at the output of the network",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/118806"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "819d485dc976da2b77afeef3c519612c806ef01aefb139f17fd7a3bd4f2dd6c0",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "77254789e554330ccc1ee73f46a69a00211338e2a7b88d0fe94231d0075052ff",
+    "extracted_at": "2026-09-13T00:22:51.634131+00:00",
+    "session_id": "01a09824-eecb-7302-a6e9-5ee4ef545d8b",
+    "usage": {
+      "input_tokens": 12702,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 803,
+      "reasoning_output_tokens": 109
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "33aae639f68fe2a3eeaa83e9cc918934dd3c655696f94c399865ef7dbb5568ac"
+    },
+    {
+      "id": "S2",
+      "sha256": "305a99352344d6a453bce39160c6b2ba7ff2c6fa0394112c3c54cb5d2702d6d2"
+    },
+    {
+      "id": "S3",
+      "sha256": "5a1d11ccbea8fac92f481767234d4ca945075ce123f12f3649e0d99f81df29db"
+    },
+    {
+      "id": "S4",
+      "sha256": "33cf9112858d911d2f7774b56a08858b0fefa1de44e77c9d882f06eec95f342d"
+    },
+    {
+      "id": "S5",
+      "sha256": "6f1d7ccf049430b6f4e6ff2c68fe0904bd941cf65b886f1bb113c46d174a0467"
+    },
+    {
+      "id": "S6",
+      "sha256": "939976412c16e9853c96839d03be7071d69b7e659c074d0302ac9d88fd429d09"
+    },
+    {
+      "id": "S7",
+      "sha256": "988af1148ede5a68ca1121d5a791341acecebd3a9e31937643eba96f7b9d605b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-118806",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop general-purpose vision encoders for image and video understanding across diverse downstream tasks.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Perception Encoder, using contrastive vision-language pretraining plus language and spatial alignment to expose useful intermediate representations.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that contrastive vision-language training alone can produce strong general embeddings across the described downstream tasks, with embeddings located in intermediate layers.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Releases models, code, and a dataset of synthetically and human-annotated videos.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work distinguishes itself by extracting task-useful visual embeddings from intermediate network layers and aligning them for multimodal language modeling and dense prediction.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art results across zero-shot image/video classification and retrieval, document/image/video question answering, detection, tracking, and depth estimation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that scaling a tuned image-pretraining recipe and refining it with a robust video data engine makes contrastive vision-language training alone yield strong general embeddings for the listed tasks.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Vision encoders traditionally use different pretraining objectives, each excelling at different downstream tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "finding",
+        "summary": "The authors report that scaled, tuned contrastive vision-language training can instead produce strong general embeddings, but these embeddings reside in intermediate layers.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "PE introduces language alignment for multimodal language modeling and spatial alignment for dense prediction to draw out those representations.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "outcome",
+        "summary": "The authors report state-of-the-art performance across classification, retrieval, question answering, and spatial tasks, and release models, code, and video data.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract identifies a mismatch between where useful embeddings reside and the network output, then pairs separate alignment methods with multimodal language modeling and dense prediction.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A representation can be broadly useful even when it is not exposed at the default output; downstream alignment can be framed around the representation location and task structure.",
+        "application": "When presenting a general encoder, explicitly inspect or motivate intermediate representations and map each extraction or alignment mechanism to the downstream task type.",
+        "exception": "This framing is unsuitable when the target task or architecture requires only the final representation, or when intermediate-layer utility has not been measured."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark names, numerical results, dataset sizes, or evaluation conditions behind the state-of-the-art claims.",
+      "It does not quantify how much the alignment methods contribute relative to the base encoder or alternative layer choices."
+    ]
+  }
+}

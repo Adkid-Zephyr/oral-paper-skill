@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31737",
+    "title": "Scaling Laws for Precision",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31737"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8751a52f92b1de29604b16572770ed7e278390afc06b390d418b2a253147fbe3",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "d9783f349ecbfa8d9482b24fdb1d459a6188cdb87a9c672f485d1a7f0a6cf1de",
+    "extracted_at": "2026-09-12T23:50:09.498654+00:00",
+    "session_id": "01a09806-f948-7080-95d9-7c2e626ea892",
+    "usage": {
+      "input_tokens": 12684,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 872,
+      "reasoning_output_tokens": 93
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "83f4472203b732ed073776faa58e9252378c906ad53977357171c81552de774f"
+    },
+    {
+      "id": "S2",
+      "sha256": "ca735796e5b00b4182efb844fd9240471950466ceb5a711bd1a16045023ba820"
+    },
+    {
+      "id": "S3",
+      "sha256": "e3b7a8c17aece386a38a1730d18a8ca93d7c262b14c94057bd3c57ab49a9e274"
+    },
+    {
+      "id": "S4",
+      "sha256": "123d9be5945d2554da9b915de6a605173b39cc8798238b99d319e21eee80dc9f"
+    },
+    {
+      "id": "S5",
+      "sha256": "ccfb93c4e3da48b2b1f74e01d60afe739293af9ecf8da2cd28711039a413544a"
+    },
+    {
+      "id": "S6",
+      "sha256": "65b64a00443d00534e97ceb973b8176fb76695106094d18e1e8f8020f2e83711"
+    },
+    {
+      "id": "S7",
+      "sha256": "df1311e1025ec6e1ad726c3981eda4864a3fd796710438d2aae209bd9fb8e8ac"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31737",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how training and inference precision affect language-model quality and cost, including low-precision training and post-training quantization.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that existing scaling laws do not account for precision effects.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The authors devise precision-aware scaling laws for both training and inference.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "They propose modeling lower-precision training as reducing effective parameter count, enabling prediction of added loss from low-precision training and post-training quantization.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "unified formulation",
+        "claim": "They unify post- and pretraining quantization scaling laws into one functional form for varied training and inference precisions.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present precision-aware scaling laws and a unified functional form covering degradation across training and inference at varied precisions.",
+      "source_ids": [
+        "S2",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report fitting the laws on more than 465 pretraining runs and validating predictions for models up to 1.7B parameters trained on up to 26B tokens.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "For inference, the authors report that post-training-quantization degradation grows with training-data scale and can eventually make additional pretraining data harmful.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "For training, the authors report that the laws predict losses for models whose components use different precisions and suggest that larger models trained at lower precision can be compute-optimal.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Precision changes language-model quality and cost, but current scaling laws omit this factor.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The authors introduce precision-aware laws and interpret low-precision training through an effective-parameter-count reduction.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "inference result",
+        "summary": "They report that quantization degradation increases with more training data and may eventually reverse the benefit of additional pretraining.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "training result",
+        "summary": "The laws cover mixed-precision model parts and suggest a compute-optimal regime involving larger, lower-precision models.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "unification and validation",
+        "summary": "A single functional form is fit to over 465 runs and validated through 1.7B parameters and 26B tokens.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a modeling assumption—lower precision reduces effective parameter count—to concrete predictions of additional loss, then reports separate training and inference implications.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A mechanistic or interpretable abstraction can organize multiple precision settings while keeping predictions tied to measurable degradation.",
+        "application": "When introducing a scaling law, state the latent quantity being modeled, map it to the target loss or degradation, and then enumerate distinct operational consequences by regime.",
+        "exception": "This framing may be unsuitable when the relevant precision effects cannot plausibly be summarized by a shared latent quantity or when regime-specific behavior dominates."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify precision formats or ranges, loss definitions, baselines, validation protocol, or prediction errors.",
+      "The reported compute-optimal suggestion is not quantified, and the abstract does not establish whether the unified form holds beyond the stated model and token scales."
+    ]
+  }
+}

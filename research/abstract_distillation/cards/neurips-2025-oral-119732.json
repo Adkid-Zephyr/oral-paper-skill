@@ -1,0 +1,173 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-119732",
+    "title": "Dynamical Low-Rank Compression of Neural Networks with Robustness under Adversarial Attacks",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/119732"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7da64088133b9ff3578e3ef24cf96ad7493c9e2df327ac4f5237fa39785f9ca0",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "01540d4eb87422bcc9667ef97f2b7f5461fb365ed9db68be732562a3996acae9",
+    "extracted_at": "2026-09-13T00:23:11.420272+00:00",
+    "session_id": "01a09825-40a9-72f0-8566-d2959a3b9b43",
+    "usage": {
+      "input_tokens": 12629,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 720,
+      "reasoning_output_tokens": 94
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cdf674f003375df39309a556bcd5790d377c9fa1893dd988f4e2573f1a3c146d"
+    },
+    {
+      "id": "S2",
+      "sha256": "4366c5ac21690ba0ac05f334c3bb261b08caafe33f0a3c90b0bb47bbed45fe8a"
+    },
+    {
+      "id": "S3",
+      "sha256": "694e9231fa664784c8eccc2a6cb924797b146faa22e5eb29e550e4d638554262"
+    },
+    {
+      "id": "S4",
+      "sha256": "a1293d1452c6435151f171907174ae86a120be9b992b3612888a6bda0e161790"
+    },
+    {
+      "id": "S5",
+      "sha256": "66cb465b4c2aaa8c7a9c14314fb9663458a0d616ce51b98688106fc7049b6184"
+    },
+    {
+      "id": "S6",
+      "sha256": "acec04f1b133c2b1325153cbd4b5c76d9fe4f6e878e4b8b16591454b3b82b3ad"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-119732",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable neural-network deployment on resource-constrained devices while maintaining compactness and adversarial robustness.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Compression and adversarial robustness often conflict.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A dynamical low-rank training scheme with a spectral regularizer controlling each layer’s low-rank-core condition number.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method property",
+        "claim": "The approach is described as model- and data-agnostic, computationally efficient, and rank-adaptive for automatic compression.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report that regularized compressed networks retain clean accuracy while mitigating sensitivity to adversarial perturbations.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors identify the spectral regularizer as novel within their introduced training scheme.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments across standard architectures, datasets, and adversarial attacks with a compression result stated as over 94, whose units are unspecified, while recovering or improving adversarial accuracy relative to uncompressed baselines.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report mitigation of compressed-model sensitivity to adversarial perturbations without sacrificing clean accuracy.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "deployment motivation",
+        "summary": "Resource-constrained deployment requires models that are both compact and robust to adversarial inputs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "stated tension",
+        "summary": "The abstract frames compression and adversarial robustness as frequently conflicting objectives.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposed approach and reported outcome",
+        "summary": "The authors introduce dynamical low-rank training with condition-number regularization and report strong compression alongside preserved or improved robustness and clean accuracy.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific structural control—the low-rank core’s condition number—to the stated robustness goal, then reports comparisons against uncompressed baselines.",
+          "source_ids": [
+            "S3",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact abstract claim can be made more explanatory by connecting an intervention, its targeted mechanism, and a concrete comparison.",
+        "application": "When presenting a compression method, name the controlled internal quantity, explain its intended link to robustness, and pair the claim with a baseline comparison.",
+        "exception": "This framing is unsuitable when the mechanism is only hypothesized or when the abstract lacks evidence connecting the controlled quantity to the reported outcome."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the meaning or units of “over 94 compression.”",
+      "It omits attack types, quantitative clean and adversarial accuracy values, experimental budgets, and details of the baseline comparisons.",
+      "The abstract does not establish priority for the claimed novelty or independently verify the reported results."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "author_reported_evidence[0].claim",
+      "before": "The authors report experiments across standard architectures, datasets, and adversarial attacks showing compression ratios over 94 while recovering or improving adversarial accuracy relative to uncompressed baselines.",
+      "after": "The authors report experiments across standard architectures, datasets, and adversarial attacks with a compression result stated as over 94, whose units are unspecified, while recovering or improving adversarial accuracy relative to uncompressed baselines.",
+      "review_file": "reviews/flagged-batch-15.json",
+      "review_sha256": "f1eaeba916feff5cb775cc2af0cb450a65216607f4ecabdc228052b8db188965",
+      "applied_at": "2026-09-13T00:42:27.410537+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

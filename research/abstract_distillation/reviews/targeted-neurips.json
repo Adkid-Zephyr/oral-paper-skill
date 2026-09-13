@@ -1,0 +1,37 @@
+{
+  "reviewer_model":"gpt-6-astra",
+  "effort":"medium",
+  "review_type":"AI source checking: targeted release temporality",
+  "records":[
+    {
+      "paper_id":"neurips-2024-oral-97953",
+      "first_pass_status":"minor",
+      "findings":[
+        {
+          "field":"contributions[1].claim",
+          "source_ids":["S7","S8"],
+          "issue":"The source contains both a statement that anonymous code was submitted and will be public, and a subsequent explicit 'Code is available' statement with a URL. The card preserves only intended future release and reduces the availability assertion to merely a supplied URL. Both source statements should remain visible without claiming live verification.",
+          "severity":"minor",
+          "correction":"Preserve both the initial future-release wording and subsequent author assertion of availability.",
+          "replacement_value":"The abstract states that anonymous code was submitted for future public release, and also states that code is available at the supplied repository URL."
+        }
+      ],
+      "final_disposition":"requires_correction"
+    },
+    {"paper_id":"neurips-2024-oral-97963","first_pass_status":"pass","findings":[],"final_disposition":"pass"},
+    {"paper_id":"neurips-2024-oral-98022","first_pass_status":"pass","findings":[],"final_disposition":"pass"},
+    {"paper_id":"neurips-2025-oral-116507","first_pass_status":"pass","findings":[],"final_disposition":"pass"},
+    {"paper_id":"neurips-2025-oral-126301","first_pass_status":"pass","findings":[],"final_disposition":"pass"}
+  ],
+  "summary":{
+    "targeted_records_checked":5,
+    "first_pass_pass":4,
+    "first_pass_minor":1,
+    "first_pass_material_error":0,
+    "material_findings":0,
+    "minor_findings":1,
+    "requires_correction":1,
+    "scope":"Targeted release-temporality review of all source units and card fields in targeted-source-review-neurips-2024 and targeted-source-review-neurips-2025 packets. These five checks are not random or full semantic audits. HydraLoRA needs both its future and available source statements preserved. RCG makes no contradictory release claim. OpenMathInstruct-1 keeps its planned release and intended license wording. The MoE paper explicitly keeps code release in the future. Pedestrian privacy has no artifact-release promise in its abstract or invented release claim in the card; it is a temporal-filter false positive. RCG overlaps the pilot and must not be counted as a new fully reviewed record.",
+    "limitations":"This checks faithful extraction of source release statements only; no live repository availability or reproducibility verification was performed. No cards were edited and no additional model calls were made."
+  }
+}

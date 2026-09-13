@@ -1,0 +1,186 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008532",
+    "title": "Modality-free Graph In-context Alignment",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008532"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0ba1d3a5c84d7c1be94f9d1fbac8b25d1f59398e813749a83d48ff9a653fe302",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "76948466ddd68c3c964720b29171c28174506339f70727098382e727a8f56243",
+    "extracted_at": "2026-09-13T00:01:21.198974+00:00",
+    "session_id": "01a09811-3f93-7dd3-8d2c-5d2546d5ba0e",
+    "usage": {
+      "input_tokens": 12771,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 787,
+      "reasoning_output_tokens": 48
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "24befc8e646c59d68ebf342a8a5a6f30d4c9ab5926bcf60fb2f07fa96d41577c"
+    },
+    {
+      "id": "S2",
+      "sha256": "d07adddb0d40c762cb5f06722654436b5f9c117a3fe545c17aa4178e97f6c48d"
+    },
+    {
+      "id": "S3",
+      "sha256": "7f585fe13d9afbbaeb778d970f3deb8b94ef89704eb62fe0c3038b6d75d71c05"
+    },
+    {
+      "id": "S4",
+      "sha256": "f5e190ed4ae45c9ee6c438f4d0372b1cb260fd04c9d31a65fe7f3d9125c1bb70"
+    },
+    {
+      "id": "S5",
+      "sha256": "a35534e818a1ecba2926152ea5c5e1676de454e2b0f214856fde3ab0e3423371"
+    },
+    {
+      "id": "S6",
+      "sha256": "6703579fe1736ce19ed43aed60ce748fc1a856effdfe8f724f7b71fbacfca2a2"
+    },
+    {
+      "id": "S7",
+      "sha256": "8426fc7a1b1b4ed91230bfbab0f1db10090958f9dc80f7291ad41ac941bc8ccf"
+    },
+    {
+      "id": "S8",
+      "sha256": "3bd41cad959326d8b5bf8c6b62e1e270ab4a55c5c90c76d4a867dc51acb56384"
+    },
+    {
+      "id": "S9",
+      "sha256": "3754539f553e0a396a0b5fa96a8becfb5224a506c0a8cecdc242b7da95aacc13"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008532",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable few-shot, prompt-based prediction and cross-domain alignment for graph foundation models when modality assumptions and raw data cannot be relied on.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Current graph foundation models typically depend on modality-specific encoders and struggle to align heterogeneous domains, especially when graphs are pre-vectorized or raw data is inaccessible.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces MF-GIA, a modality-free framework that makes a pretrained graph encoder promptable for few-shot prediction across heterogeneous domains.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses gradient fingerprints to parameterize lightweight transformations aligning pre-encoded features and indexed labels into unified semantic spaces.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "training and inference procedure",
+        "claim": "Trains with dual prompt-aware attention and an episodic objective, then adapts without parameter updates using only a few-shot support set.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present MF-GIA as a framework for modality-free graph in-context alignment without modality assumptions.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report superior few-shot performance across diverse graph domains.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report strong generalization to unseen domains.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "In-context learning is framed as parameter-free adaptation from a few examples, and as important for graph foundation models seeking broad generality.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing graph foundation models are described as struggling with cross-domain alignment because they rely on modality-specific encoders that break under pre-vectorized graphs or inaccessible raw data.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "MF-GIA addresses this with gradient-fingerprint-conditioned transformations, unified feature-label semantic spaces, and prompt-aware episodic pretraining.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "inference and results",
+        "summary": "At inference, the framework uses a few-shot support set without parameter updates; the authors report strong few-shot performance and unseen-domain generalization.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the proposed mechanism with the deployment constraint: gradient fingerprints and lightweight transformations operate on pre-encoded features and indexed labels, while inference uses no parameter updates.",
+          "source_ids": [
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A method can be framed more convincingly when each architectural choice is explicitly tied to the stated data-access and adaptation constraint.",
+        "application": "For a cross-domain learning paper, map every major component to one concrete obstacle, such as inaccessible raw inputs or costly test-time updates, and state the resulting operational benefit.",
+        "exception": "This framing is unsuitable when the proposed components are not directly motivated by the target constraint or when the task requires trainable test-time adaptation."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative metrics, datasets, baselines, statistical variation, or precise meaning of “superior” and “strong.”",
+      "It does not specify the graph domains, the pretraining setup, or how unseen-domain generalization was evaluated.",
+      "The abstract alone does not establish the correctness, reproducibility, or priority of the claimed method."
+    ]
+  }
+}

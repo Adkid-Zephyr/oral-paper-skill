@@ -1,0 +1,73 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "records": [
+    {
+      "paper_id": "neurips-2024-oral-97966",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2024-oral-97999",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "problem_and_gap.problem.claim",
+          "source_ids": ["S1"],
+          "issue": "S1 establishes the importance of multimodal fusion and object detection for autonomous driving; it does not state that they need to be handled jointly. Joint optimization is the subsequent proposed method, so the problem statement slightly promotes a design choice into a prerequisite.",
+          "severity": "minor",
+          "correction": "State the problem's importance directly and leave joint optimization in the method contribution.",
+          "replacement_value": "Multimodal image fusion and object detection are important for autonomous driving."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "neurips-2024-oral-98021",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2024-oral-98002",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2024-oral-97962",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "unknowns[1]",
+          "source_ids": ["S1"],
+          "issue": "The abstract gives the NTD rate and explicitly states that the same non-asymptotic bounds hold for CTD under p-Wasserstein error. The meaning of 'same' is therefore supplied at the reported-rate level; the missing information is the detailed assumptions and derivation. Other card fields correctly report the matching bounds.",
+          "severity": "minor",
+          "correction": "Retain matching rate information and restrict the unknown to detailed assumptions and derivation.",
+          "replacement_value": "The abstract states that CTD has the same reported p-Wasserstein convergence bounds as NTD, but does not detail the assumptions or derivation needed to obtain them."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "neurips-2024-oral-97993",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 6,
+    "full_original_abstracts_read": 6,
+    "first_pass_pass": 4,
+    "first_pass_minor": 2,
+    "first_pass_material_error": 0,
+    "material_findings": 0,
+    "minor_findings": 2,
+    "requires_correction": 2,
+    "scope": "Read all original source units and all extraction fields of the six cards in runs/audit-source-review-neurips-2024/packet-01.json, including the complete single-unit distributional-TD abstract. Checked support, qualifiers, numerical mappings, theorem scope, narrative, unknowns, and lesson separation. Diffusion guidance retains smaller/less-trained guide design and the 1.01/64x64 and 1.25/512x512 FID mapping. E2E-MFD preserves single-phase training and the 3.9% M3FD versus 2.0% DroneVehicle mAP50 mapping without inventing percentage-point interpretation. MedCalc preserves over 1000 manually reviewed instances, 55 tasks, and author-reported insufficiency of evaluated models for clinical settings. BLM retains the probabilistic mapping and example model families. Distributional TD preserves high-probability p-Wasserstein rate exponents and p=1 minimax scope. ScaleGMN preserves valid scalings and conditional expressivity in its main theorem claims. No material errors found; two minor local corrections are proposed.",
+    "limitations": "AI source checking only, not independent experiment or proof verification, novelty validation, or measurement of lesson effectiveness. Random-audit first-pass outcomes remain separate from targeted checks and the pilot. No cards were edited and no additional model calls were made."
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007708",
+    "title": "Planner Aware Path Learning in Diffusion Language Models Training",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007708"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7f2176992e2dfc204865821e1c5c108c3cd1a2eda40283343d4d79cbed90c891",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "ee0473f8bf9cba922878ec7fc8b9339049ce2bfd49ddf9532aa1c10ffad24636",
+    "extracted_at": "2026-09-13T00:00:07.831023+00:00",
+    "session_id": "01a09810-1d54-76d3-822f-5630c6e10a24",
+    "usage": {
+      "input_tokens": 12795,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 866,
+      "reasoning_output_tokens": 67
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bbaea7755beb693d1890d9ad66ca540ba34a2cfe8c52c0c41a38ac1c6e0c89e9"
+    },
+    {
+      "id": "S2",
+      "sha256": "05126af5a65e2b0da4e2b86afb1e2f58544761a91a26d6cdcbc550836608ee15"
+    },
+    {
+      "id": "S3",
+      "sha256": "be0f5a8efbbbafd3e3c69290ceddc6060b4d6db52e6d8711ea21eccf0a3eaec2"
+    },
+    {
+      "id": "S4",
+      "sha256": "af27b7b5c4aaa00e1fa638b4f33186e3e3ecd77e05224a94116bd44342cacca5"
+    },
+    {
+      "id": "S5",
+      "sha256": "f46819748c87ad2326904e51674ab1e36298d33d100715d4ba1142c0c631f8e3"
+    },
+    {
+      "id": "S6",
+      "sha256": "638affedad91fd9f745bc2eb08bf171ca622e243de0b6c29c9fd3f756449c5fd"
+    },
+    {
+      "id": "S7",
+      "sha256": "10a5018dcf3c4690875c930a6bad8df8fef259097baf1e99895856761a323191"
+    },
+    {
+      "id": "S8",
+      "sha256": "b0da996f41ac1f6a5834e57dfb8c7e10c0ac77fd75862e0ffded056ecd5cb938"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007708",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses training discrete diffusion language models whose inference uses non-uniform, planner-selected denoising paths.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify a mismatch between uniformly random training paths and planning-based inference, and state that the standard discrete diffusion ELBO does not accurately describe a denoiser using a non-uniform planner.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Derivation of a planned evidence lower bound (P-ELBO) incorporating planner-based reverse dynamics into the training objective.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduction of Planner Aware Path Learning (PAPL), a training scheme intended to align training and inference under a planned denoiser.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A simple modification of the standard masked discrete diffusion loss designed for broad applicability and adoption.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe PAPL as a novel training scheme for planner-aware path learning.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors theoretically prove that the standard discrete diffusion training ELBO does not accurately describe a denoiser using a non-uniform planner.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report a 40% relative improvement in protein-sequence experiments using PAPL.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report improved text generation with up to 4× relative MAUVE gain and a 23% relative improvement in code-generation HumanEval pass@10.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Diffusion language models enable fast inference through flexible and parallel generation paths.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "Planners exploit this flexibility by iteratively selecting where to denoise rather than sampling denoising locations uniformly at random.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "problem_and_theory",
+        "summary": "Planning changes reverse paths and creates a training–inference mismatch; the authors analyze it and challenge the adequacy of the standard ELBO for non-uniform planners.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The authors derive P-ELBO and use it to introduce PAPL, implemented as a modification to masked discrete diffusion loss.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The authors report gains across protein, text, and code generation domains.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a specific inference-time path-selection change to a mismatch in the training objective, then derives an objective that incorporates the altered reverse dynamics.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "When inference changes the model’s effective trajectory distribution, explicitly analyzing objective–inference alignment can produce a more targeted methodological contribution than modifying inference alone.",
+        "application": "Frame a method paper around the changed inference dynamics, identify which training objective no longer matches them, and derive an objective reflecting the new dynamics before presenting the algorithm.",
+        "exception": "This framing is unsuitable when inference and training distributions are already aligned or when the proposed inference change does not alter the modeled dynamics."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baselines, dataset sizes, statistical variation, or experimental settings for the reported relative improvements.",
+      "The details and assumptions of the theoretical proof and P-ELBO derivation are not provided.",
+      "The scope of “widely applicable” and the conditions under which PAPL improves performance are not established by the abstract alone."
+    ]
+  }
+}

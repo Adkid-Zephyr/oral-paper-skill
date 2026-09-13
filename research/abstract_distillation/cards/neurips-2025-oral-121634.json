@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-121634",
+    "title": "Envisioning Beyond the Pixels: Benchmarking Reasoning-Informed Visual Editing",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/121634"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2893b8ccf05c9876d545c458c38b970258a203fab4b95b27be9b680d36690b68",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "ef62efe6c44f9acc3ff7a3b5c86c3aa6792e2a964b2f562d1f0471bead154d77",
+    "extracted_at": "2026-09-13T00:23:38.003056+00:00",
+    "session_id": "01a09825-ada1-71e0-b255-d5b892d82964",
+    "usage": {
+      "input_tokens": 12757,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 723,
+      "reasoning_output_tokens": 92
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "01bbffbe5248e131bfbf723e872923ad481c4d3376545c2d7c703c02af2986fb"
+    },
+    {
+      "id": "S2",
+      "sha256": "d5cbb067ecb0867275dd82938c7fd2091003de6b607e12ed5775124dad308d17"
+    },
+    {
+      "id": "S3",
+      "sha256": "8faab29942b955fe669698d3e37929a4360a23159e390cfe14ae8c47d4b0e268"
+    },
+    {
+      "id": "S4",
+      "sha256": "7a65f15615d5adab9a622257a85a7608caa7fd231e9a6320c6f6341fb29eff68"
+    },
+    {
+      "id": "S5",
+      "sha256": "7d681b057b8ce8a35b76a14c1f54732e5ffa3cc38077dbcc43a438fcdd6b4a63"
+    },
+    {
+      "id": "S6",
+      "sha256": "6a9ff0db3fc3c59d021b84f0250c5e2424ca46997401b17d3a63333279060625"
+    },
+    {
+      "id": "S7",
+      "sha256": "dea31cc279664756df7dad8c4202b4c97119552a8077bbc84b251f6c8d11fc72"
+    },
+    {
+      "id": "S8",
+      "sha256": "638588fd25c71eacafd3abb71074d8d81983556318c7d486d4e3ae7f5f137e52"
+    },
+    {
+      "id": "S9",
+      "sha256": "cde4d428b326f850073361da600397f96af59bdb1781ddcd286d4fce3a41cb08"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-121634",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate visual editing models on edits requiring temporal, causal, spatial, and logical reasoning.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing models struggle with complex instructions, appearance consistency, and flexible inputs in general visual editing.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "RISEBench, presented as the first benchmark for reasoning-informed visual editing.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "evaluation framework",
+        "claim": "A framework assessing instruction reasoning, appearance consistency, and visual plausibility using human judges and LMM-as-a-judge.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors report releasing RISEBench code and data.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish RISEBench as the first benchmark specifically for reasoning-informed visual editing.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors evaluated nine open-source and proprietary visual editing models.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that current models face significant challenges on reasoning-based editing tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that GPT-image-1, the strongest evaluated model, achieved 28.8% accuracy.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies persistent difficulties in general visual editing, including complex instructions and consistency.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "benchmark introduction",
+        "summary": "The authors introduce RISEBench to study reasoning-informed visual editing across four reasoning categories.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation design",
+        "summary": "They curate category-specific test cases and score reasoning, consistency, and plausibility with human and LMM judges.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "findings and release",
+        "summary": "Experiments on nine models reveal substantial challenges; the authors report 28.8% accuracy for GPT-image-1 and release code and data.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The benchmark separates evaluation into reasoning, appearance consistency, and visual plausibility, while covering four reasoning categories.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Decomposing a compound capability can reveal whether failures arise from instruction interpretation, preservation, or output quality.",
+        "application": "For a new multimodal benchmark, define orthogonal capability dimensions and report them separately alongside any aggregate score.",
+        "exception": "This decomposition may be unsuitable when dimensions cannot be judged independently or when the target task has a single indivisible outcome."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define the 28.8% accuracy metric, task distribution, or benchmark size.",
+      "It does not report agreement between human and LMM judges, per-category results, or evaluation conditions."
+    ]
+  }
+}

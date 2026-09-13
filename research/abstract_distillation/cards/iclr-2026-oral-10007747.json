@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007747",
+    "title": "Neon: Negative Extrapolation From Self-Training Improves Image Generation",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007747"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4beb8a53d2b7fbd5c13681986a1c84bcefdc74e666307d713ccf26c2f78857de",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "7ea9c939988aa1508ba10861f98c29f968f3a0700c7adc425326db91903e349c",
+    "extracted_at": "2026-09-13T00:00:14.908044+00:00",
+    "session_id": "01a09810-3681-7fc0-9e7f-11662caf6d30",
+    "usage": {
+      "input_tokens": 12868,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 898,
+      "reasoning_output_tokens": 136
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b00a63f05d162290b8e3786ba24894aa4449eac822fb0ade38b66049a584b44c"
+    },
+    {
+      "id": "S2",
+      "sha256": "d9859b156a3e351d8acb82cb1dd798aa5313bb5ac96ebd4ed3c020d0cb83bfe1"
+    },
+    {
+      "id": "S3",
+      "sha256": "03edb7180d254224e5054503f419716f00cd3d9296f2b357935508eaccdc6d7c"
+    },
+    {
+      "id": "S4",
+      "sha256": "278a7896a5c17a6a98ef1beacdd9f80ee8d81acb9cd1c0c6496c948144ab2a77"
+    },
+    {
+      "id": "S5",
+      "sha256": "7dcc0f0e95791ad4ffc28a877eab71c685645e103139d8100ce49f866d5a26ba"
+    },
+    {
+      "id": "S6",
+      "sha256": "3d2bf444bb38337997acbc91640d41b4701c24ef30c193e86c8140dfbee94d9f"
+    },
+    {
+      "id": "S7",
+      "sha256": "ede9e12138fc517fee0e5e88655ce53037d6d9b84359ae11f5a71a4eb4e60905"
+    },
+    {
+      "id": "S8",
+      "sha256": "e6bd5600ab94543949c35e45a89f31bc8def07eb7934867f5d57c7736c71d4f0"
+    },
+    {
+      "id": "S9",
+      "sha256": "d7dcbda935453327f3887290f8ce0867965383799be6a20329d01b3e6364526d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007747",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "High-quality training data is scarce, motivating synthetic-data augmentation for generative-model fine-tuning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Self-training with synthetic data can trigger model autophagy disorder/model collapse, rapidly degrading sample quality or diversity.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Neon, which fine-tunes on self-synthesized data and then reverses gradient updates to extrapolate away from degraded weights.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Provides an explanation based on anti-alignment between synthetic and real-data population gradients caused by typical high-probability-favoring samplers.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "system and empirical finding",
+        "claim": "Reports a simple post-hoc merge requiring no new real data, operating with as few as 1k synthetic samples and typically under 1% additional training compute, across multiple model families and datasets.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize Neon as a new learning method that converts self-training degradation into a signal for self-improvement.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Neon works with as few as 1k synthetic samples and typically uses less than 1% additional training compute.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report applicability across diffusion, flow-matching, autoregressive, and inductive moment-matching models on ImageNet, CIFAR-10, and FFHQ.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "On ImageNet 256×256, the authors report an FID of 1.02 for xAR-L with 0.36% additional training compute, described as a new state of the art.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Training-data scarcity motivates augmenting real data with synthetic data.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "failure mode",
+        "summary": "Synthetic self-training can create a positive feedback loop that causes model collapse and harms quality or diversity.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method and explanation",
+        "summary": "Neon reverses post-self-training gradient updates; the authors attribute this to correcting sampler-induced gradient anti-alignment.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "scope and headline result",
+        "summary": "The method is presented as lightweight and broadly applicable, with a reported ImageNet FID of 1.02 for xAR-L.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a counterintuitive optimization operation with a mechanism explaining why degradation may provide a useful signal.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A surprising intervention is more persuasive when its direction and rationale are stated together.",
+        "application": "When presenting an unconventional update rule, connect the operation directly to a measurable failure mode and an explicit explanatory mechanism.",
+        "exception": "This framing is unsuitable when no mechanism is available or when the abstract cannot support the proposed explanation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify proof assumptions or the exact theoretical guarantees.",
+      "Comparative baselines, training protocols, and uncertainty for the reported FID and compute results are not given.",
+      "The meaning of “new state of the art” is author-reported; the comparison set is unspecified."
+    ]
+  }
+}

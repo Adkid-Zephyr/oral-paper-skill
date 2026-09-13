@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006783",
+    "title": "Intrinsic Entropy of Context Length Scaling in LLMs",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006783"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0f162068d8455334dfced5e8b4d79f4714e537f4276f906a17d9b850245435b4",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "9a499d6c3c218c47731b181e3a40c4e8b2feb7315ad72be254661ef836faf3c3",
+    "extracted_at": "2026-09-12T23:58:36.633481+00:00",
+    "session_id": "01a0980e-ba26-7da3-8f02-f6f56b12b355",
+    "usage": {
+      "input_tokens": 12637,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 871,
+      "reasoning_output_tokens": 113
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6baff82203fff3cbc7319c42f5bb6b85dfffc5820936c6dbdb307d7ec6cea8ae"
+    },
+    {
+      "id": "S2",
+      "sha256": "6a9520445def139c4e1593f9f6e5ed3e6ff4ffb9c67fe0c0c9830b84bbb8a4a4"
+    },
+    {
+      "id": "S3",
+      "sha256": "3be3d09d4e6f411f6f3394a2888872c9036921c942e686f636208429911297bb"
+    },
+    {
+      "id": "S4",
+      "sha256": "6bdebc1d9eb84b9408f8dd745b85b0f56b3e6c26430898884c5bff895d3e1391"
+    },
+    {
+      "id": "S5",
+      "sha256": "15bb6a003647f9a6804ddaadb8cb9ecf0c5f1fde1df76d56d1d2a2ac4398366a"
+    },
+    {
+      "id": "S6",
+      "sha256": "50c1faae84129f0545d2bf22b5ba500a9aca44ea914c5fea713fe621d95aa627"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006783",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Understand how context length affects language modeling.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Prior work reports mixed effects of long context, including harm from irrelevant context and loss reduction from relevant context, motivating a more thorough account.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Proposes Intrinsic Entropy as a framework for explaining the impact of context length on language modeling.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical and theoretical analysis",
+        "claim": "Studies natural-language and synthetic data and derives practical implications linking training-dataset size to optimal context length and bounding context-length scaling in certain cases.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work by applying Intrinsic Entropy to explain context-length effects and by combining theoretical assumptions and deductions with experiments on natural and synthetic data.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments on natural-language and synthetic data that validate their proposed theoretical assumptions and deductions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that their framework establishes that training-dataset size dictates an optimal context length and bounds context-length scaling for certain cases.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Long-context language models have attracted substantial attention.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "tension",
+        "summary": "Existing findings differ: irrelevant long context may hurt performance, whereas relevant long context has been associated experimentally with loss reduction summarized as scaling laws.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "response",
+        "summary": "The work proposes Intrinsic Entropy to explain context-length effects and tests its theoretical assumptions on natural and synthetic data.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "implications",
+        "summary": "The framework is reported to connect training-dataset size with an optimal context length and to bound scaling in certain cases, with broader aims for future long-context and language-model physics research.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract frames conflicting empirical observations before introducing a unifying explanatory framework for context-length effects.",
+          "source_ids": [
+            "S2",
+            "S4"
+          ]
+        },
+        "interpretation": "A tension-first framing can make the motivation for a theoretical construct concrete and show which observations it is intended to reconcile.",
+        "application": "When presenting a new explanatory framework, state the opposing observed patterns it targets before defining the framework.",
+        "exception": "This move is unsuitable when prior findings are not genuinely conflicting or when the work addresses a narrowly isolated phenomenon."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a broad framework proposal with specific practical implications involving optimal context length and bounds on scaling in certain cases.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Mapping an abstract construct to explicit operational consequences helps readers see what the theory predicts or informs.",
+        "application": "After introducing a conceptual quantity, name the concrete design implication or bound it is reported to yield, including scope qualifiers.",
+        "exception": "Avoid this framing when the proposed quantity has not yet produced a stated consequence or when the consequence depends on unspecified conditions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define Intrinsic Entropy or specify the theoretical assumptions and deductions.",
+      "It does not report dataset sizes, model configurations, metrics, quantitative results, or comparisons.",
+      "The conditions under which training-dataset size determines an optimum or bounds scaling are unspecified.",
+      "The abstract does not establish priority, independently verified validity, or reproducibility."
+    ]
+  }
+}

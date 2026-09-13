@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31806",
+    "title": "Combatting Dimensional Collapse in LLM Pre-Training Data via Submodular File Selection",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31806"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "207da269301e7e9ef71a7979f9bbac046492c8fc9ee275112b00cb72dc22e3b7",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "ffb2d81b13eae6e4b10165725a2c238e2ea0df44cf93ce67b0165ebf1416725f",
+    "extracted_at": "2026-09-12T23:52:48.878750+00:00",
+    "session_id": "01a09809-6c50-7702-8f8b-42851f422fb8",
+    "usage": {
+      "input_tokens": 12821,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 814,
+      "reasoning_output_tokens": 71
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1c98db40ce457707d98c28f0dd0809a3279702bde594dbf96cab67a3ee91f004"
+    },
+    {
+      "id": "S2",
+      "sha256": "b40d3102afd6736d652be0fbc62b6e712ad7ff4ca7ea8722d9a12e63bcb5cbbe"
+    },
+    {
+      "id": "S3",
+      "sha256": "5303e46e99f23e8acdeefe954cd0a19f349b6d8f8542d317507269b75f9a7377"
+    },
+    {
+      "id": "S4",
+      "sha256": "df57e58630c5772c2798d7dd30c8f15a6cd5379157c4fe70dde313416c7a4845"
+    },
+    {
+      "id": "S5",
+      "sha256": "495442206d171440fb25e835917e333d7e6370f84657be6eb3c9ec35f934b71f"
+    },
+    {
+      "id": "S6",
+      "sha256": "775ee26ed76b0fec2102064bc817e607fb287ba7a5e62c73c2332f98a215e129"
+    },
+    {
+      "id": "S7",
+      "sha256": "0d9f90765be3dbc27559f0f9f46b31ea670acbf47ec06c184cf938ae122d6a44"
+    },
+    {
+      "id": "S8",
+      "sha256": "a1f19a05373ce00b1fbaa10c0c40e89e593c1915d336813eddb616f4b85751cb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31806",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Select high-quality LLM pre-training files under limited computation while preserving broad performance and efficiency.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing proxy-based domain-similarity selection can cause feature-space dimensional collapse: domain-task gains accompany severe generic-performance degradation.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DiSF selects decorrelated text files in feature space to improve diversity.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The method uses greedy selection to make selected-text covariance eigenvalues more uniform and analyzes approximation under a γ-weakly submodular formulation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "benchmark and empirical study",
+        "claim": "The authors establish a benchmark and evaluate DiSF on TinyLlama models ranging from 120M to 1.1B parameters across nine Harness tasks.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present diversified, decorrelation-based file selection as a way to combat dimensional collapse in LLM pre-training data.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report significant overall-performance improvement across nine Harness tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that DiSF retains 1.5% of SlimPajama’s 590M files, outperforms full-data pre-training within a 50B training budget, and achieves about 1.5× training efficiency and 5× data efficiency.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that the method is supported by an approximation analysis for a γ-weakly submodular optimization formulation.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Limited computation makes quality-focused pre-training data selection important.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior limitation",
+        "summary": "Proxy models commonly select files by similarity to a target domain, but this can collapse feature-space diversity and harm generic performance.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method and analysis",
+        "summary": "DiSF selects decorrelated files using greedy optimization aimed at more uniform covariance eigenvalues.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors benchmark DiSF on TinyLlama models and nine Harness tasks, reporting broad gains and strong efficiency numbers.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific failure mode—dimensional collapse—to a measurable selection objective based on decorrelation and covariance eigenvalues.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Naming the failure mode and aligning it with an explicit optimization target makes the method’s rationale testable.",
+        "application": "Frame a data-selection method by first identifying the representation pathology it addresses, then define a selection objective that directly measures or counteracts that pathology.",
+        "exception": "This framing is unsuitable when the target domain is intentionally narrow or when representation diversity conflicts with the task objective."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide numerical baselines, uncertainty, task-wise results, or experimental settings supporting the reported improvements.",
+      "The exact approximation guarantee, γ value, feature representation, and compute/data-efficiency accounting are unspecified.",
+      "The reported results cover TinyLlama and SlimPajama; broader architectures, datasets, and budgets are not established here."
+    ]
+  }
+}

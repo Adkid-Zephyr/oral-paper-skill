@@ -1,0 +1,163 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71083",
+    "title": "Any-Order GPT as Masked Diffusion Model: Decoupling Formulation and Architecture",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71083"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ae30b5e22218b3d19dc1e8f2c41d0be084bd8c5e607399238d1501986b4d0d4d",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "e341e91b97f33962b6957fd69026052359ad8ea87987be3832bed934e2074541",
+    "extracted_at": "2026-09-13T00:13:18.046680+00:00",
+    "session_id": "01a0981c-3b99-79c1-80ab-672d4872bb5a",
+    "usage": {
+      "input_tokens": 12709,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 683,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7c48df0a5774afd2e9c674b3aa1c617ff53160e0f072cc5ea1a16b30987f6fd7"
+    },
+    {
+      "id": "S2",
+      "sha256": "fca0bf642792b1b0caa6353539b5a4e312cb9f480df22ffb1b627161dc76dc4b"
+    },
+    {
+      "id": "S3",
+      "sha256": "c68c3956d29e473b11ab330b9bbaa74a780ff478afcfa2ba4c5394564e5afcc5"
+    },
+    {
+      "id": "S4",
+      "sha256": "b4633e820390cc7f7f57b3864fa68050fa3dd09580545cc05170831d8a20a13a"
+    },
+    {
+      "id": "S5",
+      "sha256": "81f39adbbf20cc7b527553dee5473abcf72bbf386c7a4702165bd078342a4bca"
+    },
+    {
+      "id": "S6",
+      "sha256": "0fb0eef9da943238635bd764096962e44a10e36da84d14111076c5e63029718a"
+    },
+    {
+      "id": "S7",
+      "sha256": "c01d6cff1dc71a9900b998224d5738e95e944dc9c854dce74dd2b8c81b2427de"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71083",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper investigates masked diffusion models within a decoder-only framework to compare them with standard autoregressive models and examine architectural effects on computational efficiency.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Comparisons between autoregressive and masked diffusion paradigms are confounded by their typically different architectures, obscuring algorithmic and efficiency trade-offs.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A decoder-only formulation of masked diffusion models, framed as Any-Order autoregression, for disentangling modeling formulation from architecture.",
+        "source_ids": [
+          "S3",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "An investigation of how masked-diffusion architectural choices affect computational efficiency.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish core modeling choices from architectural influences by evaluating masked diffusion models in a decoder-only framework.",
+      "source_ids": [
+        "S3",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that decoder-only masked diffusion models can achieve approximately 25× inference speedups and comparable perplexity, using techniques such as temperature annealing.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Scaling language models motivates alternatives to dominant autoregressive methods, including masked diffusion models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem framing",
+        "summary": "Existing comparisons are confounded because autoregressive and masked diffusion models commonly use different architectures.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The work places masked diffusion modeling in a decoder-only framework to enable equitable comparison and isolate architectural effects on efficiency.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report substantial inference speedups with comparable perplexity and position the framework as a route toward lower inference compute.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly separates modeling formulation from architecture and evaluates both within a common decoder-only framework before comparing trade-offs.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S6"
+          ]
+        },
+        "interpretation": "A shared architectural setting can make comparisons more diagnostic by reducing a major source of confounding.",
+        "application": "When comparing sequence-modeling paradigms, hold the architecture fixed where feasible and state which factor each experiment is intended to isolate.",
+        "exception": "This move may be unsuitable when the architecture is intrinsic to the paradigm or when deployment requires comparing complete end-to-end systems."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the benchmarks, model scales, inference settings, or baseline details supporting the approximately 25× speedup and comparable perplexity.",
+      "The scope and conditions under which temperature annealing yields the reported outcome are unspecified."
+    ]
+  }
+}

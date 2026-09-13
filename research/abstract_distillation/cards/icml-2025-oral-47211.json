@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47211",
+    "title": "Foundation Model Insights and a Multi-Model Approach for Superior Fine-Grained One-shot Subset Selection",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47211"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4df3cd324234752606b0647ff73f6dd15d2c4468d37b5c9a4f3dfc5a6f055f9c",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "e4abdacb5e50940b6de20d55a0740e2625f6f45260e3d64af325f14fbc646fc9",
+    "extracted_at": "2026-09-13T00:08:52.340334+00:00",
+    "session_id": "01a09818-1c94-7773-870d-0ac427083d02",
+    "usage": {
+      "input_tokens": 12741,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 866,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8ff11851f85302e9d5dbbe0c0413d818d876b7685bc65108ed7c0ef8b090258e"
+    },
+    {
+      "id": "S2",
+      "sha256": "f5b0cddfbb9d61408e7811d97f7d97f4be9a760fa7275e80ff1f68fceb642be8"
+    },
+    {
+      "id": "S3",
+      "sha256": "ddf25eb6fd4c2d514972c44025299295d8b2a50b06c3a5a8d57c5f4060dfca50"
+    },
+    {
+      "id": "S4",
+      "sha256": "b8f47594c0aad823121fae24a7bca1769479e7881121df9df68f796b3b9c9205"
+    },
+    {
+      "id": "S5",
+      "sha256": "1943c344a0a3fbf3fa0e0a2e7992231d5a141e4d26baecdedad9bb31da40a90e"
+    },
+    {
+      "id": "S6",
+      "sha256": "de303b8addad9646ac18b755b17c8b5d0dca7983e9014343a81b9133393d6a18"
+    },
+    {
+      "id": "S7",
+      "sha256": "fb37829f24bc55b1ee19f84a76f13528d4d09787835be360affcf1bbe538e85b"
+    },
+    {
+      "id": "S8",
+      "sha256": "f8f4a7a70cae41b2974e0d54150e3398958fe1fc85ff591b57563068fc319428"
+    },
+    {
+      "id": "S9",
+      "sha256": "b84ac1ad131c30017b768623e442df9768642826dacca730031437af047343dd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47211",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work studies how to select informative one-shot training subsets using foundation-model-based information extractors across datasets of differing granularity.",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Traditional information extractors are dataset-dependent, and it is unclear whether foundation models outperform them broadly or whether all foundation models are equally suitable for subset selection.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "Reports that foundation models consistently outperform traditional information extractors on fine-grained datasets, but their advantage diminishes on coarse-grained datasets with noisy labels.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes RAM-APL, which uses multiple foundation models and their complementary strengths for subset selection on fine-grained image datasets.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present RAM-APL as a foundation-model-based, multi-model approach tailored to fine-grained image subset selection.",
+      "source_ids": [
+        "S7",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report consistent foundation-model gains over traditional information extractors on fine-grained datasets, with reduced gains on coarse-grained datasets with noisy labels.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report state-of-the-art performance for RAM-APL on Oxford-IIIT Pet, Food-101, and Caltech-UCSD Birds-200-2011.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "One-shot subset selection is framed as a way to reduce training costs by identifying informative data through an information extractor.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation and questions",
+        "summary": "Traditional extractors are described as target-dataset-dependent, motivating questions about foundation-model superiority and variation across foundation models.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "empirical insight",
+        "summary": "Experiments are reported to show a granularity- and label-noise-dependent pattern: stronger foundation-model advantages on fine-grained data and weaker advantages on coarse-grained noisy-label data.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "proposed method and result",
+        "summary": "The paper introduces multi-foundation-model RAM-APL for fine-grained images and reports state-of-the-art results on three named datasets.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the reported advantage of foundation models to dataset granularity and label noise, rather than presenting one uniformly favorable result.",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        "interpretation": "Performance claims can be made more informative by stating the data conditions under which the advantage changes.",
+        "application": "When presenting a method comparison, stratify results by salient dataset properties such as granularity and label noise, and state where the advantage weakens.",
+        "exception": "This framing is less suitable when those properties are not measured, are not relevant to the task, or the study design cannot support stratified comparisons."
+      },
+      {
+        "source_observation": {
+          "claim": "RAM-APL is motivated by complementary strengths across multiple foundation models and operationalizes that motivation in a named ranking method.",
+          "source_ids": [
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A multi-model proposal is easier to understand when its design is explicitly tied to an observed limitation or heterogeneity.",
+        "application": "For an ensemble or multi-model method, identify the complementary behavior being exploited and connect it directly to the method's aggregation or ranking rule.",
+        "exception": "Do not use this pattern when models are redundant or when the abstract provides no evidence or rationale for complementarity."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify subset sizes, datasets and baselines used in the broader experiments, metrics, numerical gains, foundation-model identities, or statistical uncertainty.",
+      "The state-of-the-art claim is author-reported; the comparison scope and evaluation conditions are not given.",
+      "The abstract does not establish that RAM-APL's reported gains are caused specifically by model complementarity."
+    ]
+  }
+}

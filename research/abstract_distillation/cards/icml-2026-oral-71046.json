@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71046",
+    "title": "Guaranteed Optimal Compositional Explanations for Neurons",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71046"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "eeccc664e5ab8a95f33f1759540b358e83317ce9c91a2a2a6c02db7e06f58ff7",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "4a709c25f0dc9b3c6033c61f59d7d501c8d05d4131df24a125d47ab197a2b0ed",
+    "extracted_at": "2026-09-13T00:11:58.719144+00:00",
+    "session_id": "01a0981a-fcef-7e43-a286-2d0f1ca5c708",
+    "usage": {
+      "input_tokens": 12741,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 751,
+      "reasoning_output_tokens": 40
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "051e725b5072dfe0c4d676a8a67193755ec48b4c84ea8836397cd4ef5dd8d4ed"
+    },
+    {
+      "id": "S2",
+      "sha256": "3d8c8a6bfb80c6e2ac305faa92deca400c6f191235351cb355b50df9b63ef3f1"
+    },
+    {
+      "id": "S3",
+      "sha256": "42c4450444d774057ad32df0c352ebabde2161de42b2e7535d123107acd45fa5"
+    },
+    {
+      "id": "S4",
+      "sha256": "76fc4260b1e452a336b65053da62784d54144882a8932f9942312349d47c95ae"
+    },
+    {
+      "id": "S5",
+      "sha256": "c2d407a385d75041e324adf8db8f59dcf721e34c6172fc2ae8bb9dc24ad4dc94"
+    },
+    {
+      "id": "S6",
+      "sha256": "f4ff6c6cbb7a11db55a0c2485b965d6be821757b0ebe95f7373a7d0eeef789a5"
+    },
+    {
+      "id": "S7",
+      "sha256": "44c8c2cdfae46d3393e8ba33e19316c956242821de03eee85c21ca13438f8783"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71046",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Compute compositional explanations that describe spatial alignment between neuron receptive-field activations and concepts through logical rules.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Beam search restricts the state space but provides no theoretical optimality guarantee, leaving the distance from the true optimum unclear.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "A framework for computing guaranteed optimal compositional explanations across the state space allowed by adopted assumptions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A decomposition of alignment factors, a search-stage alignment estimator, and an algorithm reported to achieve optimal explanations in time comparable to exhaustive beam search.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "algorithmic variant",
+        "claim": "A beam-search variant guided by the proposed decomposition and heuristic, with flexibility in hyperparameters and computational resources.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe the framework and optimal-explanation algorithm as the first of their kind under the paper’s stated setting.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that 10–40% of explanations previously obtained with beam search are suboptimal when concepts overlap.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that their guided beam-search variant matches or improves runtime over prior methods while offering greater flexibility in hyperparameters and computational resources.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setup",
+        "summary": "Compositional explanations search logical combinations of concepts to characterize spatial alignment with neuron activations.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "computational constraint",
+        "summary": "Because the full state space is infeasible to evaluate, existing work uses combination-structure assumptions and beam search.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "theoretical gap",
+        "summary": "Beam search lacks an optimality guarantee, so the quality gap to the true optimum is unresolved.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed solution",
+        "summary": "The paper introduces a guaranteed-optimal framework built from an alignment decomposition, a heuristic estimator, and an optimal search algorithm.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported findings",
+        "summary": "The authors report substantial beam-search suboptimality with overlapping concepts and favorable runtime for a guided variant.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a decomposition of the objective with a heuristic estimator and then connects both to an optimal algorithm and a guided approximate variant.",
+          "source_ids": [
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "Separating objective structure from search guidance can support both guarantee-oriented and resource-flexible methods.",
+        "application": "When proposing a combinatorial method, explicitly expose the factors driving the objective and show how the same structure guides a practical search variant.",
+        "exception": "This framing may be unsuitable when the objective lacks a useful decomposition or when approximation guidance cannot preserve the desired guarantees."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the adopted assumptions, the exact guarantee, datasets or evaluation protocol, or what “comparable” and “matches or improves runtime” quantify.",
+      "The reported 10–40% suboptimality range is not contextualized by task, model, search settings, or baseline details."
+    ]
+  }
+}

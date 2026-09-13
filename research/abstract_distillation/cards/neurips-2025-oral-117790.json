@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-117790",
+    "title": "An Optimized Franz-Parisi Criterion and its Equivalence with SQ Lower Bounds",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/117790"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "762d37ec31318060b6a19ecc37b84c6a86fd36d76aeca8fae388752cd4e4d699",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "b49a426504c0228a1c739123e4a88427b20d50e72683e763aab556342c30790a",
+    "extracted_at": "2026-09-13T00:22:15.284533+00:00",
+    "session_id": "01a09824-5b4c-7733-a709-29d53e850ebd",
+    "usage": {
+      "input_tokens": 12833,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 891,
+      "reasoning_output_tokens": 158
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "83d156ae9baeb246273bbfde28ed638dda00d9958a9dc44702ef928c3ec7e049"
+    },
+    {
+      "id": "S2",
+      "sha256": "7effdd0f98c84822e794436f343d91613347caf6e4c7020571369e72ed235ef7"
+    },
+    {
+      "id": "S3",
+      "sha256": "a504bb33d3d1ea00190e9ff92c22053ad062e675685139d91bcde6e3d8b12f6e"
+    },
+    {
+      "id": "S4",
+      "sha256": "cb94619a2f028ee4bde313e84010974369f531b2db8eedba0b06a2ed9bb6748a"
+    },
+    {
+      "id": "S5",
+      "sha256": "d28654a862fec5edde1ea28afeb575bd55af01eaa3869f27e590cf3f46d46b5f"
+    },
+    {
+      "id": "S6",
+      "sha256": "76c0fb68e95875c7f37b8392a2640515da724760851ff97f2ef941d28016305e"
+    },
+    {
+      "id": "S7",
+      "sha256": "46d7b88254f513434dec4bc4eed38c739c816b6cb44ba385b1601b94e4e66027"
+    },
+    {
+      "id": "S8",
+      "sha256": "8c01f5863fe8974d823e3727a13f51e818057d1c006ed684cc709ede6cf8dfa6"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-117790",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop a criterion for characterizing computationally hard phases in statistical detection and relate it to SQ lower bounds.",
+        "source_ids": [
+          "S2",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "The earlier FP criterion was based on an annealed potential and was shown equivalent to LDP lower bounds for Gaussian additive models; the paper presents this as insufficiently aligned with overlap geometry and seeks a broader connection.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes a refined, optimized Franz-Parisi criterion intended to better capture the overlap structure of statistical models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Establishes an equivalence between the optimized FP criterion and SQ lower bounds under a mild, verifiable assumption.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "applications",
+        "claim": "Uses the equivalence to unify and simplify several known SQ lower-bound derivations and to obtain additional lower bounds for mixed sparse linear regression and convex truncation.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated new distinction is an optimized FP criterion equivalent to SQ lower bounds across a broad class of models under a mild assumption.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the equivalence applies to Gaussian additive, planted sparse, NGCA, SI, and convex truncation settings.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "For convex truncation, the authors report that the required assumption is equivalent to the Gaussian correlation inequality.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report both simplified derivations of known NGCA and SI SQ lower bounds and new bounds for mixed sparse linear regression and convex truncation.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "prior work",
+        "summary": "An earlier FP criterion characterized hard phases and connected FP analysis with LDP lower bounds for Gaussian additive models.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper refines the criterion to better represent model overlap geometry.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "main result",
+        "summary": "It states equivalence with SQ lower bounds under a mild, verifiable assumption covering several model families.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "implications",
+        "summary": "The equivalence is reported to simplify known derivations and produce new lower bounds in two settings.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a geometric refinement of the criterion with an explicit assumption and then states the model classes covered by that assumption.",
+          "source_ids": [
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "This links a conceptual change to a checkable applicability condition, making the scope of the theorem more assessable.",
+        "application": "When introducing a theoretical framework, state the structural object being improved, the exact assumption needed, and representative settings where it can be verified.",
+        "exception": "This pattern is less suitable when the work is exploratory and no formal applicability condition or model class is yet available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not state the formal optimized FP definition or the precise equivalence theorem.",
+      "The quantitative form and strength of the reported SQ lower bounds are unspecified.",
+      "The assumption’s exact statement and verification details are not provided beyond the convex-truncation connection to the Gaussian correlation inequality."
+    ]
+  }
+}

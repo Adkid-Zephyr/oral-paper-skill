@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97979",
+    "title": "Exploitation of a Latent Mechanism in Graph Contrastive Learning: Representation Scattering",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97979"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8b927aa64edd285ea522e5655123bc50363f90d3717c5978bf110a28ca3bf7c7",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "580a0881bebe2cea8cb15698a94adcdb213eb79e26cf4a8a7e5ddb8b8a69b9fc",
+    "extracted_at": "2026-09-13T00:19:03.342641+00:00",
+    "session_id": "01a09821-71eb-7c22-971c-57128b90d6f4",
+    "usage": {
+      "input_tokens": 12781,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 783,
+      "reasoning_output_tokens": 112
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f6d8105204fbc913127466e49fe3434b7893b5006e25f90a0559d39b2eb0659e"
+    },
+    {
+      "id": "S2",
+      "sha256": "f064c0493089b91e1738fb2f635890b47ff19d2fc1cc2bae2a01f1ab90bb6ea2"
+    },
+    {
+      "id": "S3",
+      "sha256": "b0a0660adf8b82cfa840f9144ab226894f715952ea18a3f3c0846802582319c2"
+    },
+    {
+      "id": "S4",
+      "sha256": "6a638785ba92533f1680bc0ebe139cabd2305669003e0c9d97a4d3656f290224"
+    },
+    {
+      "id": "S5",
+      "sha256": "1704ce2a2238a131ddfaeb433b9a3abe4a722415f80239e6045342934cbf1c4b"
+    },
+    {
+      "id": "S6",
+      "sha256": "2eb5ba19e33f784bf765acf587165bc6eba6dac3cde83b9bbd2f2311fb823a0f"
+    },
+    {
+      "id": "S7",
+      "sha256": "b214460c20e8d8b1305d4dc771f841d50fee2fbf1e52d51d7aa4787738cb06d9"
+    },
+    {
+      "id": "S8",
+      "sha256": "23add0aaa107c4de8f4970caf6430eecfb8092a914ed23ef54a7f06a265bdb03"
+    },
+    {
+      "id": "S9",
+      "sha256": "b58d653022d3d218bc8218a092dab1efd609f516a7261e93db861e1ebac6042d"
+    },
+    {
+      "id": "S10",
+      "sha256": "b877d9c18c803432e0798aa941dbaf6793e5ecd716491297ae6b0f523b66a8fd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97979",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Understand what mechanisms make graph contrastive learning (GCL) frameworks effective and harness them for graph representation learning.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The mechanisms and contributing factors behind the effectiveness of advanced GCL frameworks were not fully understood.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "mechanism",
+        "claim": "Identifies representation scattering as a common mechanism across node-discrimination, group-discrimination, and bootstrapping GCL frameworks.",
+        "source_ids": [
+          "S2",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces SGRL, using a center-away scattering strategy to increase representation diversity and a topology-based constraint intended to prevent excessive scattering.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Provides publicly accessible code for SGRL.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present representation scattering as an essential unifying feature of seemingly disparate GCL methods and introduce a framework built around it.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report extensive evaluation of SGRL on benchmark datasets and various downstream tasks, claiming efficacy and superiority over existing GCL methods.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "GCL produces graph representations without manual annotation, with leading methods organized into three broadly comparable frameworks.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The mechanisms underlying these methods’ effectiveness remain insufficiently understood.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "discovery",
+        "summary": "The paper reports representation scattering as a shared mechanism that enhances performance and unifies the frameworks.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "SGRL operationalizes the discovery through center-away scattering plus a topology-based constraint against excessive scattering.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report broad downstream benchmark evaluation and claim superiority over existing GCL methods.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper links a cross-method mechanism to a new framework, then describes both the intended benefit of the mechanism and a structural constraint addressing a foreseeable failure mode.",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A compact research narrative can connect diagnosis, intervention, and constraint without treating the proposed mechanism as sufficient on its own.",
+        "application": "When proposing a representation-learning mechanism, explicitly map it to the observed common behavior, state the targeted benefit, and add a domain-specific control for likely overextension.",
+        "exception": "This pattern is unsuitable when the common mechanism has not been established across the compared methods or when no meaningful domain constraint exists."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative metrics, baselines, dataset names, task breakdown, or experimental conditions for the claimed superiority.",
+      "The abstract does not provide the detailed analysis establishing how representation scattering causes the reported performance gains or how the topology constraint behaves empirically."
+    ]
+  }
+}

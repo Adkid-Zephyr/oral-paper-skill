@@ -1,0 +1,120 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "targeted synthesis-source checking",
+  "records": [
+    {
+      "paper_id": "icml-2026-oral-71104",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S4明确将flag放在外层，并称该层没有已知漏洞；S6只报告加入漏洞后LLM能够识别和利用漏洞，未说明漏洞加入哪一层。卡片保留了这些限定并将层间关系列为未知。后续综合不得指定易受攻击的层，也不得把“没有已知漏洞”升级为不可突破或安全保证。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71110",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S6报告使用online mirror descent estimator的logistic-bandit方法具有O(1)每轮时间复杂度，但没有给出渐近变量或隐藏的维度依赖。卡片准确保留作者归属、方法范围和每轮单位，并注明条件未知。后续综合不得补称对维度、动作数或所有输入规模均为常数。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71148",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "narrative_sequence[4].summary",
+          "source_ids": [
+            "S7",
+            "S8"
+          ],
+          "issue": "“parameter-matched alternatives”添加了来源未报告的参数匹配实验条件，会使读者误解比较控制。S8报告的是与使用最多五倍更多参数的标准前馈网络或深层残差网络比较。",
+          "severity": "material_error",
+          "replacement_value": "The authors report complementary experiments on 31 tasks spanning online and offline RL: stronger performance with more compute and stronger generalization on longer-horizon test tasks compared with standard feedforward networks or deep residual networks using up to five times more parameters."
+        }
+      ],
+      "resolution": "需要修正该叙述字段；其他相关字段已保留较大参数基线。最多五倍更多参数不证明参数匹配，也不证明训练或推理计算量匹配；不得推断摘要没有报告的实验控制。",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "icml-2026-oral-71152",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S5–S6要求设计实验、收集观察并提交带解释的解答，在14种游戏设置中纳入因果干扰因素，但没有说明对中间决策评分。卡片把评分写在application建议中，没有将其归为作者实践，unknowns也保留评分细节未知。后续综合须将这一评分建议与实际任务要求分开。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71140",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S3直接说明两阶段生成器产生供监督微调使用的高质量并行思维链数据，并分别说明推理引擎兼容性和准确率与并行化的平衡。因此该观察有原始来源支持，不要求其他摘录字段重复这些细节。“障碍”可作为组件设计目标的概括，但后续综合不得声称作者已单独验证训练数据质量是既有方法退化的原因，或已证明三个障碍相互独立。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71150",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "lessons[0].source_observation.claim",
+          "source_ids": [
+            "S5",
+            "S7"
+          ],
+          "issue": "S5将noise sensitivity作为Q函数混合偏导的解释，并将比值用于最优策略敏感度的上界；它没有建立“可测量”的性质。当前简称省略定理对象并添加可测量性，需作局部措辞修正。",
+          "severity": "minor",
+          "replacement_value": "The authors bound optimal-policy sensitivity by the ratio of the Q-function's mixed-partial derivative (described as noise sensitivity) to its action-space curvature (described as signal distinctness), and describe PAVE as minimizing Q-gradient volatility while preserving local curvature."
+        }
+      ],
+      "resolution": "主体理论贡献已保留混合偏导、曲率和上界关系，错误局限于lesson的表述。修正后不得把解释性名称、Q-gradient volatility和定理中的混合偏导直接视为同一量，也不得推断摘要未给出的可估计性或测量程序。",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "icml-2026-oral-71165",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "该疑点不成立：原始S6明确列出12K优化3DGS场景、1.3M二维mask、320K三维框、320K实例caption、1.2M三维grounding实例及1.2M空间QA对。卡片仅压缩为12K场景及已报告标注数量，没有补造计数。后续综合可直接引用S6的分类数量，但不得将4M名称解释为精确总量或4M场景，也不得假定各标注类别互不重叠。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71131",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S7只说明提供了一个远离常规DPO设置的toy experiment，没有报告结果。卡片在叙述中保留其实验存在性，并在unknowns说明没有结果或数量信息；证据数组为空不构成与来源矛盾。后续综合不得写成没有实验，也不得将其存在性升级为成功验证或性能证据。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71166",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "卡片分别保留S3的“无额外3D先验输入或第三方空间编码器”和S5的“使用伪深度与相机信息作为监督”，没有宣称完全不用3D信息。监督用于指导学习；摘要未完整说明训练与推理阶段的数据流。后续综合应保留输入与监督的区别，不得据此补造所有阶段均无3D信息或精确的推理接口保证。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71132",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "stated_novelty准确归属于作者：S2的“所有先前结果”承接S1的扩散模型采样结果；S4的首次性限定为一般log-concave分布、仅用梯度评估以及polylog(1/δ)复杂度。卡片没有声称独立验证优先性。后续综合须保留这些范围和扩散采样所需的L² score精度条件，不得扩大为所有采样问题或端到端计算成本的指数改进；具体比较集合和误差度量仍未知。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71143",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S6写的是平均优于先前robust DD方法2.8%，没有区分相对提升与百分点。卡片保留2.8%及作者报告归属，没有自行转换单位。后续综合必须继续保留这种未决含义，并将比较限定在所述数据集、六种攻击和被比较方法范围内；不得改写为2.8个百分点或已确认的相对增幅。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71170",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S8说明达到相同loss只需原始数据的55/67/86%，并报告相应的可比FLOPs减少；卡片准确保留这些含义。摘要没有明确定义原始数据预算、三个比例的数据集对应关系，或是否计入程序数据及其生成成本。后续综合不得将保留比例写成节省比例，不得仅按S7列举顺序确定映射，也不得声称这些是包含全部成本的端到端节省。",
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "material_error_cards": 1,
+    "minor_cards": 1,
+    "pass_cards": 10,
+    "scope": "targeted flags only"
+  }
+}

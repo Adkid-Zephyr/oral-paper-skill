@@ -1,0 +1,206 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31752",
+    "title": "Scaling and evaluating sparse autoencoders",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31752"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "af0929d6f6207492e8ac062552a3bfaabf89475bbadece9c8023b660089f746b",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "975d311fd4579e1e71e77b7695608b964f0ee9c7fda24af6ec5ca419e9c70700",
+    "extracted_at": "2026-09-12T23:50:32.682666+00:00",
+    "session_id": "01a09807-583e-7d52-9c86-67a480fc5633",
+    "usage": {
+      "input_tokens": 12766,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 845,
+      "reasoning_output_tokens": 78
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e358701080a4bddf6396804a650012b5958f59050985fcf4349277f216cd07cb"
+    },
+    {
+      "id": "S2",
+      "sha256": "6743a59f0eae74867d11b53da0f8c976ed452565b1bc166c7827ea1d40f88c49"
+    },
+    {
+      "id": "S3",
+      "sha256": "e74caff607239542fc24d00805ee5447debd4a615963998adcc36c0a33525079"
+    },
+    {
+      "id": "S4",
+      "sha256": "77fb8162a11183b5acdb5ea1e222caca3d46f4a30608789a7867ee53672033b4"
+    },
+    {
+      "id": "S5",
+      "sha256": "5277bb903ade9338c32932dee099706258e3251d145611b33af74fa933629a1e"
+    },
+    {
+      "id": "S6",
+      "sha256": "841a926289b0e569aa6ada3ec67bb95a28fdbd3beeba7a0ef7d8b6451cb03a3f"
+    },
+    {
+      "id": "S7",
+      "sha256": "b75b6c55b391fe6f04f4d63ff264392591a49c9b3b4d33e9301b2ceb2365f7d2"
+    },
+    {
+      "id": "S8",
+      "sha256": "e4bdcb4d85f70356fa1f325d36190f62dd7551a248e1279aee99d74757dafc6c"
+    },
+    {
+      "id": "S9",
+      "sha256": "bf06a1995dc9a3e9b6e6a1b4345032fe8aa16d282e88ccfb1e52702aeb7cfe3d"
+    },
+    {
+      "id": "S10",
+      "sha256": "3323baa2907962f90df6561aa3d544478565b786659129176fdef4e45538ca81"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31752",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to scale sparse autoencoders to recover interpretable language-model features while managing sparsity and reconstruction.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Understanding autoencoder scaling is complicated by the reconstruction–sparsity tradeoff and dead latents.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes k-sparse autoencoders to directly control sparsity, simplify tuning, and improve the reconstruction–sparsity frontier.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces modifications intended to yield few dead latents at the largest tested scales.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "evaluation and resource",
+        "claim": "Introduces feature-quality metrics and demonstrates large-scale training, alongside released code, autoencoders, and a visualizer.",
+        "source_ids": [
+          "S7",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that they introduce new feature-quality metrics based on hypothesized-feature recovery, activation-pattern explainability, and sparsity of downstream effects.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report clean scaling laws with respect to autoencoder size and sparsity when using their techniques.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that all introduced metrics generally improve with autoencoder size.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "They report training a 16-million-latent autoencoder on GPT-4 activations for 40 billion tokens.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Sparse autoencoders are presented as an unsupervised route to interpretable language-model features, but feature coverage motivates large models.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "Scaling analysis is hindered by balancing reconstruction against sparsity and by dead latents.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The authors use k-sparse autoencoders and additional modifications to control sparsity and reduce dead latents.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "They report clean scaling laws and generally improving feature-quality metrics as autoencoder size increases.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "demonstration and release",
+        "summary": "They demonstrate scale with a 16-million-latent model trained on 40 billion GPT-4-activation tokens and release related artifacts.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs proposed training changes with scaling-law results and separately specifies feature-quality metrics tied to concrete properties such as feature recovery and downstream-effect sparsity.",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "This links methodological choices to measurable claims while distinguishing scaling behavior from feature quality.",
+        "application": "When presenting a scalable representation method, define evaluation metrics by the property they target, then report how those metrics change with the principal scale variables.",
+        "exception": "This framing is less suitable when the task has no meaningful scale variable or when the proposed metrics lack defensible task-specific interpretations."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the functional forms, ranges, or conditions of the reported scaling laws.",
+      "It does not detail the modifications reducing dead latents, the metric implementations, baselines, or quantitative comparisons.",
+      "The 16-million-latent demonstration does not by itself establish reconstruction quality, feature interpretability, or training efficiency."
+    ]
+  }
+}

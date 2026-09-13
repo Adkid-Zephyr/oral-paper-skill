@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97993",
+    "title": "Scale Equivariant Graph Metanetworks",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97993"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a51594b11b316f3a67bdf59ca5a9c3e84fd339e083980dbd3ea562dd74352edf",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "2d0d4c9ec5527a68302a9c13419a82cf2b583547fe293039289118f6e775a946",
+    "extracted_at": "2026-09-13T00:19:40.323044+00:00",
+    "session_id": "01a09821-fe98-7723-ad1a-212536804b13",
+    "usage": {
+      "input_tokens": 12832,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 867,
+      "reasoning_output_tokens": 73
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9b6e5d790405e1c0b63e06ae43c427ae24e6ff1e7d1714276b584cbeb319ec9d"
+    },
+    {
+      "id": "S2",
+      "sha256": "c010f119e974f4d30903bf60bc298b7baadca038d4d5baf4dd64c492ef05ce29"
+    },
+    {
+      "id": "S3",
+      "sha256": "48686a0f510aa912e1444214232527e58af4aa4034c783e3551fa627c26c7a52"
+    },
+    {
+      "id": "S4",
+      "sha256": "c2237a9ba85fd28f0ec0ccdb593e1a2f0bb4f3a35398650665faaaf4e3c6adc5"
+    },
+    {
+      "id": "S5",
+      "sha256": "8f198f357422d3519298adfde508882dd9afb106beafedbbf1a569ae3def2901"
+    },
+    {
+      "id": "S6",
+      "sha256": "c477c4710452ba5ad82c110a0ae02e0f7a8e7e7d9d373b7fa5fa4418a5621f87"
+    },
+    {
+      "id": "S7",
+      "sha256": "49ab145c207da1465fb305e69bf65a248308926e1812f44e21d6b9c3a187abd8"
+    },
+    {
+      "id": "S8",
+      "sha256": "8865d5cbd93276dea88352b82b26c9abfccb7e04fef2ed5484c5701d73b6aa16"
+    },
+    {
+      "id": "S9",
+      "sha256": "a6a6e8985690f45ae415a179a9e5739a50253e340d64becdce629d99a9b3bc4b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97993",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies higher-order functions that process neural networks as inputs, with emphasis on symmetry-aware NN representations.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing NN-processing designs emphasize permutation symmetries, while the paper argues that practical activations also induce scaling symmetries involving non-zero scalar rescaling of weights and biases.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces ScaleGMNs, a message-passing Graph Metanetwork framework whose neuron and edge representations are equivariant to valid neural-network scalings.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "technical building blocks",
+        "claim": "Introduces components supporting equivariance or invariance to individual scalar multipliers or their products, and uses them throughout ScaleGMN.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Proves that, under stated expressivity conditions, ScaleGMN can simulate the forward and backward passes of any input feedforward neural network.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their framework by incorporating scaling symmetries, alongside the field’s recurring focus on permutation symmetries, into Graph Metanetwork processing.",
+      "source_ids": [
+        "S2",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, under certain expressivity conditions, ScaleGMN simulates the forward and backward passes of any input feedforward neural network.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report state-of-the-art performance on several datasets and activation functions, attributing the result to scaling symmetries as an inductive bias for processing neural networks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task context",
+        "summary": "Frames neural networks as inputs to higher-order functions and notes symmetry-aware NN-processing architectures.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "Questions whether permutation symmetries exhaust NN parameterization symmetries, then identifies activation-dependent scaling symmetries.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Presents ScaleGMNs, adapting message passing to make neuron and edge representations equivariant to valid scalings.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "results and release",
+        "summary": "Reports a forward/backward simulation theorem, improved benchmark performance, and publicly available source code.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly connects a previously emphasized symmetry class—permutations—to additional scaling symmetries induced by practical activation functions, then builds the method around both the representation transformation and its invariant/equivariant components.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A useful research framing can expose overlooked structure by testing whether a dominant design principle captures all task-relevant symmetries, then aligning architectural components with the missing transformations.",
+        "application": "For another NN-processing problem, enumerate parameterization symmetries specific to its activation or architecture, and make the proposed representation transformation and core layers respect those symmetries.",
+        "exception": "This move is unsuitable when the proposed symmetry is not valid for the target architectures or when enforcing it removes distinctions needed by the task."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the expressivity conditions or the exact scope of the forward/backward simulation claim.",
+      "Datasets, baselines, metrics, numerical gains, and experimental settings behind the state-of-the-art claim are unspecified.",
+      "The abstract does not identify which activation functions and scaling transformations are valid in each experimental case."
+    ]
+  }
+}

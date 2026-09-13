@@ -1,0 +1,73 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "records": [
+    {
+      "paper_id": "icml-2025-oral-47198",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "narrative_sequence[1].summary",
+          "source_ids": ["S2"],
+          "issue": "The source gives an achievable upper bound for some problems, whereas 'requiring roughly the square root' can sound like a necessary or tight resource requirement. This is a local imprecision in the prior-work narrative; the card's central search-versus-estimation distinction is accurate.",
+          "severity": "minor",
+          "correction": "Describe the prior result as an achievable upper bound for some numerical estimation problems, retaining the cost-only output restriction.",
+          "replacement_value": "Existing results show that some numerical estimation problems can tolerate T queries using Õ(√T) data-structure copies, returning optimization costs rather than solutions."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "icml-2025-oral-40173",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47202",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "unknowns[0]",
+          "source_ids": ["S4", "S6"],
+          "issue": "The unknowns say datasets are unspecified, but S4 explicitly names CIFAR10, FashionMNIST, MNIST, and CelebA for the four reported median r² values, and S6 names CIFAR10 for the attention-enabled UNet result. The evidence field already maps these correctly, so the error is confined to the unknowns summary.",
+          "severity": "minor",
+          "correction": "Acknowledge the named datasets while retaining the genuinely unspecified evaluation details.",
+          "replacement_value": "The abstract names CIFAR10, FashionMNIST, MNIST, and CelebA, but does not specify comparison baselines, the detailed evaluation protocol, sample sizes, or uncertainty for the reported r² values."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "icml-2025-oral-47206",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47265",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47182",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 6,
+    "full_original_abstracts_read": 6,
+    "first_pass_pass": 4,
+    "first_pass_minor": 2,
+    "first_pass_material_error": 0,
+    "material_findings": 0,
+    "minor_findings": 2,
+    "requires_correction": 2,
+    "scope": "Read all six original source-unit sets and all extraction fields in runs/audit-source-review-icml-2025/packet-01.json. Checked entailment, attribution, output and task boundaries, numeric mappings and qualifiers, narrative, unknowns, and lesson observation/inference separation. The diffusion card preserves the four median r²/dataset mappings and the partial attention-model prediction near 0.77; the CIWL card retains the in-their-setup restriction and model-guided persistent-ICL finding; the grokking card preserves initial-iteration test-loss scope and theoretical-evidence wording; ACD Repo preserves nine datasets and explicitly qualifies the 10M example extent in its evidence field. Authenticated delegation remains an outlined position and roadmap, without invented experiments or deployment evidence. Found two local minor issues, no material errors.",
+    "limitations": "AI source checking only, not independent scientific validation or assessment of lesson effectiveness, novelty, reproducibility, or Oral-selection reasons. First-pass random-audit outcomes are retained. No cards were edited and no corpus-wide or gate decision is issued."
+  }
+}

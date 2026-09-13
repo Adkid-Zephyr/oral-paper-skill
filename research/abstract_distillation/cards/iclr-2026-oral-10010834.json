@@ -1,0 +1,169 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010834",
+    "title": "FIRE: Frobenius-Isometry Reinitialization for Balancing the Stability–Plasticity Tradeoff",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010834"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6c958ac367af649bbb82bdbdf3ed60e54e0e69563caec0158bdc5d1ae6edf04c",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "8571d610405fc14a182cb066393e67392138d1d1de89f00f4e144fc95e7c7ae9",
+    "extracted_at": "2026-09-13T00:05:04.203879+00:00",
+    "session_id": "01a09814-aa9f-7173-837d-25e998a111a0",
+    "usage": {
+      "input_tokens": 12746,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 750,
+      "reasoning_output_tokens": 110
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "12ca8faac2f63e978bd52ec162d7fa0e21ceee41d9b7bbb7c1c9167b570b9a68"
+    },
+    {
+      "id": "S2",
+      "sha256": "0fc7acb7c572cf34e21b88caca72eba26f0f5d16931e7c40974424522def53d1"
+    },
+    {
+      "id": "S3",
+      "sha256": "138d5d1caddee97e5443bb8dc5064d1c6c77e4b39369c6a246ca7ff23d809b04"
+    },
+    {
+      "id": "S4",
+      "sha256": "fe10d47a53f4463a77af7a78254dcf54935d1f94422dad415dcd57f438bf3067"
+    },
+    {
+      "id": "S5",
+      "sha256": "15167c1353861662667b0a486e1919c091848925e343f2563b1390629f9f066b"
+    },
+    {
+      "id": "S6",
+      "sha256": "37755e2317e9bd4f20d3e86461ca050bc41f795ac05b2c78089ba35247ee8da8"
+    },
+    {
+      "id": "S7",
+      "sha256": "61c03af88c23ec20e5245d4e20fda8bf30d1b98581f01192a8fafecad67bcff9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010834",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Continual learning requires neural networks to retain prior knowledge while adapting to new tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Standard reinitialization is difficult to tune: conservative settings may not restore plasticity, while aggressive settings may erase useful knowledge.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "FIRE is a reinitialization method designed to balance stability and plasticity.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "FIRE measures stability with Squared Frobenius Error and plasticity with Deviation from Isometry.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "optimization procedure",
+        "claim": "It selects a reinitialization point by minimizing SFE subject to zero DfI, approximated with Newton–Schulz iteration.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize FIRE as a principled method that explicitly balances the stability–plasticity tradeoff.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that FIRE consistently outperforms naive training without intervention and standard reinitialization methods across the evaluated domains.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Nonstationary data creates a stability–plasticity tradeoff.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Standard reinitialization can either preserve too much rigidity or erase useful knowledge, depending on tuning.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "FIRE operationalizes the tradeoff using SFE and DfI, then solves a constrained reinitialization problem with Newton–Schulz approximation.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation and reported outcome",
+        "summary": "The method is evaluated in visual learning, language modeling, and reinforcement learning; the authors report consistent gains over the stated baselines.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract maps each desired property to a quantitative measure and formulates reinitialization as an explicit constrained optimization problem.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Making competing objectives measurable can turn a vague tradeoff into a tunable design target.",
+        "application": "For another continual-learning intervention, define separate retention and adaptation metrics before specifying the update rule or constraint.",
+        "exception": "This framing may be unsuitable when the properties lack reliable proxies or when enforcing one proxy distorts the task objective."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical results, variance estimates, or per-domain breakdowns for the reported performance differences.",
+      "It does not specify how baselines were tuned, how efficiently Newton–Schulz approximates the constraint, or whether zero DfI is achieved exactly.",
+      "The abstract does not establish independent validity, reproducibility, or priority of the reported method."
+    ]
+  }
+}

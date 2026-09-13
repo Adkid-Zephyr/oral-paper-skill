@@ -1,0 +1,163 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97962",
+    "title": "Statistical Efficiency of Distributional Temporal Difference Learning",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97962"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d91b1e400711c2490bab41933511e78486debff26a6fef65f12be6840a2e34ab",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "242ebafa61c8feaf9cd2c245913ba8c1738761fbae67dfb057f6570880c3b830",
+    "extracted_at": "2026-09-13T00:18:27.817130+00:00",
+    "session_id": "01a09820-e391-7a81-ab48-1c308f825424",
+    "usage": {
+      "input_tokens": 12765,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 878,
+      "reasoning_output_tokens": 111
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d91b1e400711c2490bab41933511e78486debff26a6fef65f12be6840a2e34ab"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97962",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Analyze finite-sample performance for distributional policy evaluation using distributional temporal-difference learning in tabular discounted MDPs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Earlier cited results established asymptotic convergence for CTD and QTD, leaving finite-sample performance as the next analysis target.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes non-parametric distributional TD learning (NTD) to facilitate theoretical analysis.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Establishes a novel Freedman inequality in Hilbert spaces for the analysis.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Revisits CTD and reports matching non-asymptotic convergence bounds under p-Wasserstein error.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present NTD, a Hilbert-space Freedman inequality, and a finite-sample analysis extending prior asymptotic results.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that NTD requires \\widetilde O(1/[ε^{2p}(1−γ)^{2p+1}]) iterations to obtain an ε-optimal estimator with high probability under p-Wasserstein error.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report that this sample-complexity bound is minimax optimal up to logarithmic factors for 1-Wasserstein distance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report that CTD satisfies the same non-asymptotic convergence bounds in p-Wasserstein distance.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Distributional policy evaluation estimates a policy’s return distribution, and distributional TD extends classic TD to this task.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Prior cited tabular analyses proved asymptotic convergence for CTD and QTD; the paper targets finite-sample performance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper introduces NTD and a Hilbert-space Freedman inequality to support the theoretical analysis.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "For discounted infinite-horizon tabular MDPs, the authors report p-Wasserstein sample-complexity bounds for NTD, minimax optimality up to logarithmic factors at p=1, and matching bounds for CTD.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract states the estimator’s rate together with its error metric, discount-factor dependence, probability qualifier, and a restricted minimax-optimality claim for p=1.",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        "interpretation": "A theoretical abstract becomes more decision-useful when rate, metric, conditions, and scope of optimality are stated together.",
+        "application": "When presenting a learning-theoretic result, report the complexity scaling alongside the metric, environmental assumptions, probability guarantee, and exact regime of any optimality comparison.",
+        "exception": "This format may be unsuitable when the result is primarily qualitative or when the relevant assumptions cannot be compressed without becoming misleading."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify NTD’s update rule, estimator construction, confidence dependence, state/action-size dependence, or constants.",
+      "The abstract states that CTD has the same reported p-Wasserstein convergence bounds as NTD, but does not detail the assumptions or derivation needed to obtain them.",
+      "The abstract does not provide proof details for the Hilbert-space inequality or the minimax lower bound."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "unknowns[1]",
+      "before": "The precise conditions and meaning of “same” CTD bounds are not given.",
+      "after": "The abstract states that CTD has the same reported p-Wasserstein convergence bounds as NTD, but does not detail the assumptions or derivation needed to obtain them.",
+      "review_file": "reviews/audit-neurips-2024.json",
+      "review_sha256": "e6b9ed59c87d1bd48f24745d3c538ce2afece542286318f65dda012aa779620e",
+      "applied_at": "2026-09-13T00:25:55.410443+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

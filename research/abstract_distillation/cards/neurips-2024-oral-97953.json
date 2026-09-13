@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97953",
+    "title": "HydraLoRA: An Asymmetric LoRA Architecture for Efficient Fine-Tuning",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97953"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "82dbcb1676c1369e898917fddd1119e09759bad3a88aed309dd3c5d34137cb7c",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "f6e90a8cf784ff5224578795a98a465ed4cbde8668bea1458d0bf1b7002864e2",
+    "extracted_at": "2026-09-13T00:18:04.968703+00:00",
+    "session_id": "01a09820-8ffc-7df1-ac3f-2f5bedfbd345",
+    "usage": {
+      "input_tokens": 12700,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 749,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3b12476874e64d38f730742fd4c22d134c4abfae9c00203597d510044e1a6291"
+    },
+    {
+      "id": "S2",
+      "sha256": "3d3adb2b11715ced0a4fb711e21a46b6bdd49be4103d7f5f23189b27b525c3c0"
+    },
+    {
+      "id": "S3",
+      "sha256": "bad7863f1ccf7d41f758879969ae0bc987c5e1921c275b32101403cc7adabaf4"
+    },
+    {
+      "id": "S4",
+      "sha256": "cb5d37af1a23c1124b4bde855b1d332c2262bdf136c63190bf3a4f1c8a0c187f"
+    },
+    {
+      "id": "S5",
+      "sha256": "dddb84f14e15703d64ca2b37e54e55bc86f84654892db501c597bb041b22dd00"
+    },
+    {
+      "id": "S6",
+      "sha256": "1c70d62fd59feb573ac17462b0d22e04db45f147eed50dc7e14fd1f5044cab04"
+    },
+    {
+      "id": "S7",
+      "sha256": "aa2f99ad2964424dbda9951abb18400b139b192783b26e044764370d107bb973"
+    },
+    {
+      "id": "S8",
+      "sha256": "fdb3338f0ff016b6a80486393e78e307dc8c2ce7c9cb5c951442269241e6a0bf"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97953",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve parameter-efficient fine-tuning of LLMs for new tasks while addressing performance demands in complex domains.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing PEFT methods such as LoRA often underperform full fine-tuning, especially on complex datasets and domains.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces HydraLoRA, an asymmetric LoRA framework designed to address LoRA’s reported training and parameter inefficiency without requiring domain expertise.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The abstract states that anonymous code was submitted for future public release, and also states that code is available at the supplied repository URL.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish HydraLoRA by its asymmetric structure and its stated lack of need for domain expertise.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments showing that HydraLoRA outperforms other PEFT approaches, including approaches relying on domain knowledge during training and inference.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report uncovering two insights concerning LoRA’s training and parameter inefficiency through experiments.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "PEFT methods such as LoRA make LLM adaptation more efficient.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The abstract reports that PEFT methods can lag behind full fine-tuning on complex data and domains.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "Experiments are said to reveal two insights about LoRA’s training and parameter inefficiency.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "HydraLoRA is proposed as an asymmetric, domain-expertise-independent LoRA framework.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "The authors report HydraLoRA outperforming other PEFT approaches, including domain-knowledge-dependent ones.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the proposed architecture to two explicitly reported inefficiency insights and then states a comparison against other PEFT approaches.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact research narrative can connect diagnosis, design rationale, and comparative evidence without presenting the method as an unexplained invention.",
+        "application": "When introducing a new adaptation method, state the observed inefficiency, map it to the architectural choice, and report the comparison that tests the resulting claim.",
+        "exception": "This framing is unsuitable when the abstract lacks a concrete diagnosis or does not report evidence tied to the proposed design."
+      }
+    ],
+    "unknowns": [
+      "The two LoRA insights are not described.",
+      "The abstract omits datasets, model or task settings, metrics, baselines, numerical gains, and experimental conditions.",
+      "The extent and precise meaning of “eliminates the need for domain expertise” are unspecified.",
+      "The code’s public availability and reproducibility are not independently verified."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "contributions[1].claim",
+      "before": "Provides anonymous code intended for public release, with a repository URL supplied.",
+      "after": "The abstract states that anonymous code was submitted for future public release, and also states that code is available at the supplied repository URL.",
+      "review_file": "reviews/targeted-neurips.json",
+      "review_sha256": "1c656018f1f64a2fb9c876489b1cda1d0044a6eface408c270c58c88b8069e36",
+      "applied_at": "2026-09-13T00:27:36.273625+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009981",
+    "title": "ThinKV: Thought-Adaptive KV Cache Compression for Efficient Reasoning Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009981"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ae7bd0aa03dd079870b17ff2dff3f1b8922b8db0e719f21137b4bf1ff7218390",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "628a4d2c78ea54ac7aca3396890ec52626394c4c54df27616efea4e3c4aca83c",
+    "extracted_at": "2026-09-13T00:03:53.373633+00:00",
+    "session_id": "01a09813-9965-7a43-b47c-ed30c57e731a",
+    "usage": {
+      "input_tokens": 12684,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 691,
+      "reasoning_output_tokens": 82
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5f9239257efad55952e2872eb30ebade1d167c54b371b889026ee7a7ca79e116"
+    },
+    {
+      "id": "S2",
+      "sha256": "fbd261347acaa447ccdcc55724fff409066cd4b1c7e25f9b0a23b46d2b211018"
+    },
+    {
+      "id": "S3",
+      "sha256": "ea206940b4031cd98f7cd8305ca47a5009ef7514a0ea16ec04c97c3d701289fe"
+    },
+    {
+      "id": "S4",
+      "sha256": "21059c45517a2e0b338400c133b828829871041b47767c8575d7970a1212fbdc"
+    },
+    {
+      "id": "S5",
+      "sha256": "c9be88b39d47ab5c5bc403b0e2aa33a893377a1b1862301b91add301ca019d75"
+    },
+    {
+      "id": "S6",
+      "sha256": "a6b0db9459d6a7f40442884891a87bcdd727497c95a9ea4f86cd62cf4107820a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009981",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Long-output reasoning causes KV-cache growth that can overwhelm GPU memory during extended chain-of-thought generation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "ThinKV is a thought-adaptive KV-cache compression framework that combines importance-based token quantization with progressive eviction from less critical thoughts.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The authors design a kernel extending PagedAttention to reuse memory slots of evicted tokens and avoid compaction overhead.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish ThinKV through thought-adaptive compression based on attention-revealed thought types, together with hybrid quantization–eviction and memory-slot reuse.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report near-lossless accuracy using less than 5% of the original KV cache across DeepSeek-R1-Distill, GPT-OSS, and NVIDIA AceReason on mathematics and coding benchmarks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report up to 5.8× higher inference throughput than stated-of-the-art baselines.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Extended chain-of-thought increases KV-cache memory pressure.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "ThinKV adapts token precision and eviction to thought importance as reasoning evolves.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "implementation",
+        "summary": "A PagedAttention-based kernel reuses evicted-token memory slots without compaction overhead.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "Experiments on reasoning models and mathematics/coding benchmarks report near-lossless accuracy, extreme cache reduction, and higher throughput.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links attention sparsity to distinct thought types, then maps thought importance to precision and eviction decisions.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A resource-management method can become more specific by tying its control policy to an interpretable property of the workload.",
+        "application": "When proposing adaptive inference, identify a measurable workload signal and explicitly map its levels to distinct resource actions.",
+        "exception": "This framing may be unsuitable when the signal is unstable, unavailable at runtime, or not shown to track the target resource need."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the baselines, exact accuracy differences behind “near-lossless,” benchmark sizes, or evaluation settings.",
+      "It does not report separate contributions of quantization, eviction, or the kernel to the stated results."
+    ]
+  }
+}

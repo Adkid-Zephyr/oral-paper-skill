@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71089",
+    "title": "Simultaneous Speech-to-Speech Translation Without Aligned Data",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71089"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "eb7b594db64296f23668ca68d0d51dc03bdf095d783a529ed3fe1181106fbd4a",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "d8e6d6a61af443950c99e4aced4e02c2f088d0b536f89612113153cb69f01146",
+    "extracted_at": "2026-09-13T00:13:37.731441+00:00",
+    "session_id": "01a0981c-797c-7fd3-8fc5-f04a459074f1",
+    "usage": {
+      "input_tokens": 12803,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 803,
+      "reasoning_output_tokens": 66
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "346a484b9a9a499ec3846a326a306863331472f85277855d35121b4e5e704bad"
+    },
+    {
+      "id": "S2",
+      "sha256": "24317dd7bf18cdad4692583dbee28d463a6ea3541afd15fec63a093b313fee24"
+    },
+    {
+      "id": "S3",
+      "sha256": "6bf5d9f00bab8e86b0fa47ceffa187760a1b22ce39d9b16cee684404496ac76a"
+    },
+    {
+      "id": "S4",
+      "sha256": "41a565abe3736001d33c071a6ce5ca0ea0718aef69b18d9b746567cdc7fdd79a"
+    },
+    {
+      "id": "S5",
+      "sha256": "018c359b8325b574630e99b9a6a8daab58358befe44b14ccefaba155f1557ee7"
+    },
+    {
+      "id": "S6",
+      "sha256": "e71f395c8c1eeb6f903661575788caf8ffa0cbfcff7ea4da20d0829a6fafb225"
+    },
+    {
+      "id": "S7",
+      "sha256": "206e6408fb7ac5bb97aa559576bd3be60da7178191fa4e804502b5735021a730"
+    },
+    {
+      "id": "S8",
+      "sha256": "5e14f082b7df38c4ac1a174cb038c8c7572a1549058a52348d6c4121a89a30da"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71089",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Real-time speech-to-speech translation must handle non-monotonic word dependencies while balancing translation quality and latency.",
+        "source_ids": [
+          "S1",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches depend on difficult-to-scale word-level aligned data and language-specific synthetic alignment heuristics described as suboptimal.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Hibiki-Zero removes the need for word-level alignments by combining sentence-level-aligned pretraining with GRPO-based reinforcement learning for latency optimization.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The method is reported to scale across diverse grammatical structures without designing language-specific alignment heuristics.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors release examples, model weights, inference code, and a 45-hour multilingual speech-translation evaluation benchmark.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present eliminating word-level alignments entirely, with GRPO used to optimize latency while preserving translation quality, as their approach.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art translation accuracy, latency, voice transfer, and naturalness across four X-to-English tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report adapting the model to a new input language using less than 1000 hours of speech.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors demonstrate a released benchmark containing 45 hours of multilingual data for speech-translation evaluation.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task_and_context",
+        "summary": "Real-time speech translation must address non-monotonic dependencies and latency-quality tradeoffs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Traditional supervised methods require scarce word-level alignments or synthetic, language-specific heuristics.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Hibiki-Zero first learns translation from sentence-level alignments, then applies GRPO reinforcement learning to optimize latency while preserving quality.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The authors report leading performance on four X-to-English tasks and adaptation to a new language with under 1000 hours of speech.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "release",
+        "summary": "The work provides models, code, examples, and a multilingual evaluation benchmark.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates high-latency translation learning from a later GRPO stage targeting latency while preserving translation quality.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "This staged framing makes the optimization target and its intended tradeoff explicit.",
+        "application": "For a quality-latency system, describe a baseline capability stage and a distinct optimization stage, naming the preserved quality criterion.",
+        "exception": "This framing may be unsuitable when the optimization objective cannot be cleanly separated from representation or task learning."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the four tasks, baselines, metric values, or statistical conditions behind the state-of-the-art claim.",
+      "Details of the GRPO objective, adaptation procedure, and the meaning of “less than 1000h” are unspecified.",
+      "The abstract does not establish independently verified correctness, reproducibility, or priority of the claimed novelty."
+    ]
+  }
+}

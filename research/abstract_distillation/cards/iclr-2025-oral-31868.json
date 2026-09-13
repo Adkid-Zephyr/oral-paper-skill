@@ -1,0 +1,186 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31868",
+    "title": "Simplifying, Stabilizing and Scaling Continuous-time Consistency Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31868"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "25a29c7849c1e35f7eeb620d0cfbdefcd7946935053f7c36a08a14079e598a2c",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "c5d68beeed14e40641e13f08251897910f679d9f7fbe10f2574cbfc3008a8ce7",
+    "extracted_at": "2026-09-12T23:55:07.919183+00:00",
+    "session_id": "01a0980b-8ade-77a1-8fa1-0b940e10b05b",
+    "usage": {
+      "input_tokens": 12697,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 850,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "712d98f762f23935f373386f48fa5cbb7ed8415f67f8e71e3f1f1c578ce8d81f"
+    },
+    {
+      "id": "S2",
+      "sha256": "c925c5af42942e6d94fee6eb1dad8cbd055fa8dcfbc52417d09a20fbb74737ed"
+    },
+    {
+      "id": "S3",
+      "sha256": "2be49398f2b2dec0d9ef1f0e1638caad0eef8a7fe16fd51f6944bfa9e850d51b"
+    },
+    {
+      "id": "S4",
+      "sha256": "84663d7d982aae1849fc879ca4f6e10d97d9e3f9e2393a2b27b844042dd4a992"
+    },
+    {
+      "id": "S5",
+      "sha256": "0eb393d1f88b3a4963f5525dee512cfadb02dd60182e959f32549afaf1f8056e"
+    },
+    {
+      "id": "S6",
+      "sha256": "270c5c6e8ad1cb4fd840fcebfcd4df0d38ce81afdcc577bae23effb8d3fdf7c4"
+    },
+    {
+      "id": "S7",
+      "sha256": "a053432b75d41634457c4b885689fad1715b847b537e470dfc1850269737fecf"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31868",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop continuous-time consistency models (CMs) that support fast sampling without the instability limiting existing formulations.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Discretized-timestep CMs add hyperparameters and may incur discretization errors, while continuous-time approaches have had limited success because of training instability.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A simplified framework unifying prior diffusion-model and CM parameterizations and identifying reported root causes of instability.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Improvements to diffusion-process parameterization, network architecture, and training objectives based on the framework.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "system and empirical finding",
+        "claim": "A continuous-time CM training approach scaled to 1.5B parameters on ImageNet 512×512 and using two sampling steps.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work by combining a simplifying unified theoretical framework with targeted changes that enable continuous-time CM training at the reported scale.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report training a continuous-time CM with 1.5B parameters on ImageNet 512×512.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "Using two sampling steps, the authors report FID scores of 2.06 on CIFAR-10, 1.48 on ImageNet 64×64, and 1.88 on ImageNet 512×512.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report narrowing the FID gap with the best existing diffusion models to within 10%.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background and limitation",
+        "summary": "CMs target fast diffusion-model sampling, but discretized training introduces hyperparameters and possible discretization errors; continuous-time training is limited by instability.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "The paper presents a simplified framework unifying diffusion-model and CM parameterizations and attributes instability to specific root causes.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "intervention",
+        "summary": "It derives changes to process parameterization, architecture, and training objectives.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "scale and results",
+        "summary": "The resulting approach is reported to scale to 1.5B parameters and achieve the listed two-step FID results, within 10% of leading diffusion-model FIDs.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a theoretical unification and instability analysis directly to changes in parameterization, architecture, and objectives, then to scale and benchmark outcomes.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A paper can make its method-to-evidence chain easier to assess by connecting diagnosis, intervention, and measured consequences.",
+        "application": "For a new generative-model method, explicitly map each diagnosed failure mode to a design change and report benchmarks under the same stated operating constraint.",
+        "exception": "This structure is less suitable when the work is primarily exploratory or lacks a concrete mechanistic diagnosis."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baselines, evaluation protocols, statistical variability, or whether all reported FIDs use identical sampling and training conditions.",
+      "The claimed root causes, scale distinction, and comparison gap are author-reported and cannot be independently assessed from the abstract alone."
+    ]
+  }
+}

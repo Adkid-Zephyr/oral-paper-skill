@@ -1,0 +1,206 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47235",
+    "title": "Sundial: A Family of Highly Capable Time Series Foundation Models",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47235"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "88acf5a9d69912b5baaf5f715610256a65698e97aceaa4182355a95be341ff13",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "96b6194a019c109b730d056711311a0effa8f1c8221bf6f4f1d2ebf77b8bd198",
+    "extracted_at": "2026-09-13T00:09:49.048097+00:00",
+    "session_id": "01a09818-f21f-7ec0-8567-2a7472f301df",
+    "usage": {
+      "input_tokens": 12733,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 939,
+      "reasoning_output_tokens": 189
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7b95cff16e38fecf8ea27665483d1ec6d09c92406659cc6aac067305d585418b"
+    },
+    {
+      "id": "S2",
+      "sha256": "225cf29beebab88dfda69328e4b523f5fd396c41d13bb8a6f0ba8b6d9ef286ea"
+    },
+    {
+      "id": "S3",
+      "sha256": "639755e7f497e59e3b59deec578ea536ea8c6bbeed4b7e4b36c715530800fa8e"
+    },
+    {
+      "id": "S4",
+      "sha256": "9a6ad2bd1dbb62b927e92405352a3233d7b85c0b42cd5cc388310a70f89c2a36"
+    },
+    {
+      "id": "S5",
+      "sha256": "2d1c138b4236c1ab005f858bb81be2ab46625d38b2b1d8bf146b16ebd297a054"
+    },
+    {
+      "id": "S6",
+      "sha256": "072917afe435a3fde660431d9ca207141fabecb7562be17ec8e29d8dbdcb5207"
+    },
+    {
+      "id": "S7",
+      "sha256": "35952e92724af36f000ac1a066777829c5a459b3a2ebe692fb22065e788a651e"
+    },
+    {
+      "id": "S8",
+      "sha256": "a0dabb907f4fcde68b2f7ebf2d11fea4c57b611aafa4f8c59c73bfa5f10ab04f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47235",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop flexible, scalable foundation models for time-series representation learning and forecasting.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "The authors target limitations of discrete tokenization for continuous-valued time series and parametric-density approaches for representing multiple probable predictions.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces TimeFlow Loss, based on flow matching, to predict next-patch distributions and pre-train Transformers directly on continuous-valued time series.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Curates TimeBench, containing one trillion time points from mostly real-world datasets plus synthetic data, and uses minimal Transformer adaptations.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "model family",
+        "claim": "Presents the Sundial family of native, flexible, and scalable time-series foundation models.",
+        "source_ids": [
+          "S1",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe Sundial as providing pioneering generative forecasting capability and native pre-training without discrete tokenization or a specified prior distribution.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art results on both point and probabilistic forecasting benchmarks, with zero-shot predictions within a few milliseconds.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that Sundial models achieve unprecedented capacity and generalization performance after pre-training on TimeBench, attributing mode-collapse mitigation to TimeFlow Loss.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report scalability and just-in-time inference speed in addition to benchmark performance.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "model introduction",
+        "summary": "Introduces Sundial as a native, flexible, scalable family of time-series foundation models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "training objective",
+        "summary": "Proposes TimeFlow Loss for continuous-valued next-patch distribution prediction without discrete tokenization.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "representation flexibility",
+        "summary": "The authors describe arbitrary-length time-series conditioning, pre-training without specifying a prior distribution, and generation of multiple probable predictions with greater representational flexibility than parametric densities.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "data and scaling",
+        "summary": "Builds TimeBench and pre-trains Sundial models while addressing mode collapse.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "Reports benchmark state of the art and millisecond-scale zero-shot inference, with possible reliability benefits for real-world decisions.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a continuous-data training objective with the specific representation and forecasting flexibility it seeks, then reports both point and probabilistic benchmark outcomes.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S6"
+          ]
+        },
+        "interpretation": "A claim is easier to assess when the proposed mechanism, intended capability, and matching evaluation dimensions are explicitly connected.",
+        "application": "For a multimodal or structured-data paper, pair each claimed capability with an objective that directly supports it and an evaluation split that measures that capability.",
+        "exception": "This alignment is unsuitable when the contribution is purely theoretical or when the target capability cannot be operationalized by available benchmarks."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide dataset splits, baselines, numerical scores, model sizes, or latency measurement conditions.",
+      "The causal role of TimeFlow Loss in the reported capacity, generalization, and benchmark results is asserted by the authors but not independently verifiable here."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "narrative_sequence[2].summary",
+      "before": "Describes arbitrary-length conditioning, prior-free pre-training, and generation of multiple probable predictions.",
+      "after": "The authors describe arbitrary-length time-series conditioning, pre-training without specifying a prior distribution, and generation of multiple probable predictions with greater representational flexibility than parametric densities.",
+      "review_file": "reviews/flagged-batch-09.json",
+      "review_sha256": "a805d2a838a15720b4e4d927cb99828ba317e8f4b259fa729f5ebd20a0e7ae8c",
+      "applied_at": "2026-09-13T00:35:16.278138+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

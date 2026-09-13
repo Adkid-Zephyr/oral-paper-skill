@@ -1,0 +1,195 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "targeted synthesis-source checking",
+  "records": [
+    {
+      "paper_id": "neurips-2024-oral-97982",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S7 explicitly spells the name Vmamda and groups it with ViT and Swin under Transformer architectures. The card accurately attributes that list to the authors. Preserve the source spelling and classification as reported; this check does not independently establish their technical correctness.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2024-oral-97989",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "author_reported_evidence[1].claim",
+          "source_ids": [
+            "S8"
+          ],
+          "issue": "The source leaves the metric attached to URI's 37% grammatically unspecified. The card resolves it into a win rate, although only the GPT-based agent's 6% is explicitly called a winning rate.",
+          "severity": "material_error",
+          "replacement_value": "In Football, the authors report that URI beat built-in AIs with a reported 37%, without explicitly naming that percentage's metric; a GPT-based agent achieved a 6% winning rate."
+        },
+        {
+          "field": "narrative_sequence[3].summary",
+          "source_ids": [
+            "S7",
+            "S8"
+          ],
+          "issue": "The summary broadly attaches without real data to the results, whereas S8 explicitly attaches it to the at-least-44% net-win-rate claim.",
+          "severity": "minor",
+          "replacement_value": "The authors construct Tic-Tac-Toe and Football benchmarks and report at least a 44% net win rate against GPT-based agents without real data, followed by a separate Football comparison."
+        }
+      ],
+      "resolution": "The first evidence entry correctly preserves at least 44%, net win rate, GPT-based opponents, and without real data. S8 does not define net win rate or specify what real data excludes; do not infer exclusions covering LLM pretraining, books, or evaluation interactions. Preserve the ambiguity of URI's Football percentage and the explicit 6% winning-rate comparator.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "neurips-2024-oral-97983",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "stated_novelty.claim",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "issue": "Post-adjustment uniform randomness removes the source's tendency qualification.",
+          "severity": "material_error",
+          "replacement_value": "The authors state that their evaluation of 43 language models establishes two dominant response patterns: ordering and labeling biases, and a trend toward uniformly random survey responses after randomized answer ordering."
+        },
+        {
+          "field": "author_reported_evidence[2].claim",
+          "source_ids": [
+            "S5",
+            "S7"
+          ],
+          "issue": "Yields uniformly random responses strengthens a reported trend into exact uniformity.",
+          "severity": "material_error",
+          "replacement_value": "The authors report that, after randomized answer ordering, the evaluated models trend toward uniformly random survey responses, irrespective of model size or training data within the evaluated set."
+        },
+        {
+          "field": "narrative_sequence[3].summary",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "issue": "The narrative repeats exact uniformity instead of a tendency.",
+          "severity": "material_error",
+          "replacement_value": "The abstract reports ordering and labeling biases, followed by a trend toward uniformly random survey responses among evaluated models after randomized answer ordering, potentially misleading conclusions about model alignment."
+        },
+        {
+          "field": "unknowns[1]",
+          "source_ids": [
+            "S7"
+          ],
+          "issue": "The unknown restates the source claim as exact uniform randomness.",
+          "severity": "minor",
+          "replacement_value": "The abstract does not report uncertainty estimates, statistical tests, or the precise basis for the reported trend toward uniformly random survey responses."
+        }
+      ],
+      "resolution": "S7 states a trend, not exact uniformity or a quantified approximation. The contribution entry already preserves this tendency. Later synthesis must retain randomized answer ordering, the evaluated-model and survey setting, and author attribution; it must not generalize to all models or surveys.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "neurips-2024-oral-97995",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "lessons[0].source_observation.claim",
+          "source_ids": [
+            "S2",
+            "S3"
+          ],
+          "issue": "The observation attributes a quality-to-evaluation mapping to the abstract, but S3 names neither metrics nor their correspondence to S2's qualities.",
+          "severity": "material_error",
+          "replacement_value": "The abstract names audio synchronization, facial nuances, and natural head motions as capabilities contributing to perceived authenticity and liveliness, and separately reports experiments using unspecified new metrics and improvements across unspecified dimensions."
+        }
+      ],
+      "resolution": "S2 supports the named qualities and their perceptual role; S3 supports reported multidimensional evaluation, without an explicit mapping. The interpretation and application may remain as a proposed presentation practice, not a practice established as performed by these authors.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "neurips-2024-oral-97999",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "The optimal-convergence wording is located in S6, which connects shared-parameter gradient-matrix optimization to ensuring convergence to an optimal fusion detection configuration. The unknown accurately limits missing proof details and conditions to the supplied units. Reuse with S6 and author attribution; do not present an independently verified guarantee. An unknown string lacking a separate locator is not itself an extraction error.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2024-oral-98022",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S2 supplies the restrictive-license motivation, S5 explicitly calls the Mixtral generator permissively licensed, and S7 promises a commercially permissive release of code, models, and dataset. The lesson accurately connects these statements and preserves planned licensing. Retain future-release tense and do not infer a specific license or completed release.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2024-oral-98020",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S6 reports 38.7% accuracy on harder problems and a 24.7% improvement over the no-context baseline, without distinguishing relative percent from percentage points. The card preserves that wording without reconstructing a baseline. Keep the unit interpretation unresolved, the harder-problem condition, and the top-model scope.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2024-oral-97992",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "author_reported_evidence[1].claim",
+          "source_ids": [
+            "S7"
+          ],
+          "issue": "Changing improvement to higher asserts a numerical direction for unspecified spatiotemporal metrics that the source does not establish.",
+          "severity": "material_error",
+          "replacement_value": "The authors report significant improvements over state-of-the-art models across various metrics on a publicly available fMRI-video dataset, including a 128% improvement in SSIM and an 81% improvement in unspecified spatiotemporal metrics."
+        }
+      ],
+      "resolution": "S7 supports both percentages and the state-of-the-art comparator, but gives no underlying scores, denominators, exact comparator identities, or spatiotemporal metric names. Preserve improvement rather than infer higher-is-better behavior or percentage points. The card correctly retains reconstruction up to 6 seconds at 8 FPS; this is not a measured generation-throughput claim.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "neurips-2024-oral-98021",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S6 explicitly states that none of the evaluated models are effective enough for clinical settings. The evidence entry accurately attributes that conclusion and retains evaluated-model scope. The unknown correctly notes absent clinical context, thresholds, and conditions. Later synthesis must not turn this reported judgment into an independently established deployment threshold or a universal conclusion about all LLMs.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2024-oral-97996",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S3 supports the gap's author-attributed statement that traditional frameworks are typically limited to i.i.d. data and do not extend to more general exchangeable processes. The card retains typically, while its problem and scope entries retain exchangeability and independent causal mechanisms from S2. Do not generalize this into a universal impossibility claim about structural causal models or do-calculus.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2024-oral-98017",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "lessons[0].source_observation.claim",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "issue": "The claim that every design choice maps to a named S2S difficulty overstates the source practice. Operational baselines address S3's benchmark-coverage gap rather than an explicitly paired physical difficulty in S2.",
+          "severity": "material_error",
+          "replacement_value": "The abstract connects expanded Earth-system variables to boundary conditions and physics-based metrics to physical consistency and the butterfly effect; it also includes forecasts from four national weather agencies, addressing the separately stated gap in operational baseline coverage."
+        }
+      ],
+      "resolution": "Several explicit connections are supported, but a complete one-to-one mapping is not. Retain the distinction between physical forecasting difficulties and benchmark-coverage gaps. The application can remain a transfer suggestion rather than a claim that the authors explicitly performed every proposed mapping.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "neurips-2025-oral-115716",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S4 explicitly specifies posed RGB-D images for constructing the representation, while S6 reports benchmark performance under monocular settings. The supplied abstract does not explain their relationship, and the card correctly records that uncertainty. Preserve both conditions; do not invent depth estimation, sensor arrangements, or training-versus-inference distinctions to reconcile them.",
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "material_error_cards": 5,
+    "minor_cards": 0,
+    "pass_cards": 7,
+    "scope": "targeted flags only"
+  }
+}

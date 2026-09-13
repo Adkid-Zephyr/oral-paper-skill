@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011204",
+    "title": "Universal Inverse Distillation for Matching Models with Real-Data Supervision (No GANs)",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011204"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0952b08ec8fa59f744aec7053a9da8d864b19551435a87003cf9b3cb49342975",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "42bbce7ddeb0e665c541ee7888ab831917a0dfedfd5cd8bb2ab3b8f96aee7557",
+    "extracted_at": "2026-09-13T00:05:44.106816+00:00",
+    "session_id": "01a09815-405a-7c11-bfeb-d357b0282c35",
+    "usage": {
+      "input_tokens": 12697,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 722,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7f8bbe6f8cc41aad96064019367e534e77eda8f1fa4eacc5988b51870ca58d31"
+    },
+    {
+      "id": "S2",
+      "sha256": "6346c04dab80014e33a51dd03e097a2148a87a21f37fc9849585143d4afe1d64"
+    },
+    {
+      "id": "S3",
+      "sha256": "dec338dafe95a1923a422ab3250bbf3566e629a562ec251e567a525a04a67562"
+    },
+    {
+      "id": "S4",
+      "sha256": "dfc1e0f75c636e6757bb4852b36e384b3f9468a748bafb72b16a9102a998ed18"
+    },
+    {
+      "id": "S5",
+      "sha256": "7068f6c230fed10c8d3ae7ee75b06334ee90b8c0f3ad70b7edafb57fc6023d28"
+    },
+    {
+      "id": "S6",
+      "sha256": "71f589f2e83461d11ee475a465dc464f25424e53c907e2cb87e4242dffb3c5ff"
+    },
+    {
+      "id": "S7",
+      "sha256": "a2edc227bad958c2656623b04fdff28e7d39263500a1e39157e456a6b0fdfeeb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011204",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Modern matching-based generative models produce high-quality samples but require slow, many-step iterative inference; the task is to distill them into efficient one-step generators while using real-data supervision.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing distillation methods are typically limited to a single model framework and are generally data-free; incorporating real data is described as requiring additional adversarial training with a discriminator.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces RealUID, described as a universal distillation framework for matching models that incorporates real data without GANs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Provides a theoretical foundation claimed to cover prior Flow Matching and Diffusion distillation methods and extend to Bridge Matching and Stochastic Interpolants.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Releases implementation code through the cited GitHub repository.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish RealUID as universal across matching models and able to incorporate real data into distillation without GAN-based adversarial training.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that RealUID’s theoretical foundation covers previous distillation methods for Flow Matching and Diffusion models.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that the framework extends to Bridge Matching and Stochastic Interpolants.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors provide a public code repository for RealUID.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "High-quality diffusion, flow, and other matching models are slowed by many iterative inference steps.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "existing_approach",
+        "summary": "Distillation trains efficient one-step generators under pretrained-teacher guidance.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Prior methods are often framework-specific, data-free, and require extra discriminator-based adversarial training to use real data.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "RealUID is presented as a universal, GAN-free framework incorporating real data into matching-model distillation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "scope_and_release",
+        "summary": "The abstract states theoretical coverage of prior and modified matching formulations and points to released code.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a broad method label with explicit scope—Flow Matching, Diffusion, Bridge Matching, and Stochastic Interpolants—and a concrete constraint, real-data use without GANs.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A method claim becomes more assessable when its coverage and the targeted practical constraint are stated together.",
+        "application": "When presenting a general framework, enumerate the model families it covers and state the specific training or deployment constraint it removes.",
+        "exception": "This framing is unsuitable when the work has only been tested or formulated for one narrowly defined model family."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative inference-speed, sample-quality, or real-data performance results.",
+      "It does not specify the exact theoretical assumptions, guarantees, datasets, baselines, or scope of “all matching models.”"
+    ]
+  }
+}

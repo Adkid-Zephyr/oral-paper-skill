@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006575",
+    "title": "World-In-World: World Models in a Closed-Loop World",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006575"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7ff4ec11395b5c3ba9f354f52f11ad93b7bfeb6dd0b5312993ff7481bd98dd60",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "ec72054b1798472c7ec854e370f593ae46a2203cfdb048ede7accbcf085125c2",
+    "extracted_at": "2026-09-12T23:58:06.653429+00:00",
+    "session_id": "01a0980e-425c-7731-a474-1065c798833f",
+    "usage": {
+      "input_tokens": 12752,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 859,
+      "reasoning_output_tokens": 47
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9b90659d2ee6cf5d8a3e699e83caa3a2709283a21355c15f1d3634ab761ea319"
+    },
+    {
+      "id": "S2",
+      "sha256": "cf9e708b53827f147422c27750568e8470b96a11fb28bc57ec20278235e6713d"
+    },
+    {
+      "id": "S3",
+      "sha256": "54635459800d80c537d0602a384f574a082fd361e810a58dd276673f7c6420b8"
+    },
+    {
+      "id": "S4",
+      "sha256": "a14ebbad467d683a6b9359748176b6049d25ba05811e779b76cb0c7528ab3280"
+    },
+    {
+      "id": "S5",
+      "sha256": "b0b0e163dd60009f45c84e77bda3c1046522e8c05eb3d2d92df8db53bb812399"
+    },
+    {
+      "id": "S6",
+      "sha256": "5e7df95316b69d057b17f5aa6955b401179969cbb62c301e3eefbe8e4b1ff855"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006575",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Whether generative world models can provide embodied agents with predictive perception that improves decision making.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing evaluation is fragmented and mostly open-loop, emphasizing visual quality while leaving embodied utility unresolved.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark platform",
+        "claim": "Introduces World-In-World, an open closed-loop platform for benchmarking world models in agent-environment interactions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "evaluation framework",
+        "claim": "Provides unified online planning and a standardized action API for heterogeneous world models, with four closed-loop environments and task success as the primary metric.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports a data scaling law for embodied world models and identifies relationships among controllability, post-training data, inference-time compute, and closed-loop performance.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe World-In-World as the first open platform for closed-loop world-model benchmarking and report the first data scaling law for world models in embodied settings.",
+      "source_ids": [
+        "S2",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The study reports that visual quality alone does not guarantee task success, and that controllability matters more.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The study reports that scaling post-training with action-observation data is more effective than upgrading pretrained video generators.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The study reports that allocating more inference-time compute substantially improves closed-loop performance.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Visual realism in generative world models motivates testing their usefulness for embodied decision making.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "evaluation gap",
+        "summary": "Open-loop, visual-quality-focused benchmarks do not resolve whether world models help agents succeed at embodied tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "platform design",
+        "summary": "World-In-World addresses this gap with closed-loop environments, online planning, and a standardized action interface.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported findings",
+        "summary": "The study reports controllability, action-observation post-training, and inference-time compute as key factors in closed-loop outcomes.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "positioning",
+        "summary": "The authors frame closed-loop outcomes as the basis for systematic world-model assessment.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly separates visual quality from task success and makes task success the primary evaluation metric.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "When a model is intended for interaction, evaluation aligned with the downstream closed-loop objective can reveal limitations hidden by component-level quality metrics.",
+        "application": "Define the agent-environment success measure first, then use visual or intermediate metrics as supporting diagnostics.",
+        "exception": "This is unsuitable when the research question is specifically limited to perceptual fidelity or open-loop generation quality."
+      },
+      {
+        "source_observation": {
+          "claim": "The reported comparisons distinguish upgrading pretrained generators from scaling post-training with action-observation data, and identify inference-time compute as another performance lever.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "A useful abstract can make intervention dimensions explicit rather than treating model improvement as a single undifferentiated axis.",
+        "application": "When presenting an empirical study, separate pretraining, interaction-data post-training, and inference-time compute as distinct experimental factors.",
+        "exception": "The decomposition may be inappropriate when the study cannot vary these factors independently."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, environment descriptions, model list, or evaluation protocol details.",
+      "The reported comparisons do not specify their baselines, compute budgets, statistical uncertainty, or conditions of applicability."
+    ]
+  }
+}

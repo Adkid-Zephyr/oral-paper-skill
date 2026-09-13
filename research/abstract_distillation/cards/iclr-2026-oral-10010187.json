@@ -1,0 +1,172 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010187",
+    "title": "TileLang: Bridge Programmability and Performance in Modern Neural Kernels",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010187"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a39e820896362c5fc8e0d13435ab56ab0ef11ffff3f735e61f327a2c45e506b2",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "476a4126f12527dc226c46c8ceb2f804b68f0f57b711971385cd834bf0729952",
+    "extracted_at": "2026-09-13T00:04:06.282834+00:00",
+    "session_id": "01a09813-c24b-7553-95d9-c879f92c4b7a",
+    "usage": {
+      "input_tokens": 12664,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 729,
+      "reasoning_output_tokens": 70
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ba0df5a90e7858af68dcf45c6772cc59a28f00b4a9b585d67b03c892971a77c4"
+    },
+    {
+      "id": "S2",
+      "sha256": "b8a9133ca036e3a1b3c67b29e5fb144fabf663746b06f92c169ddd5d09eb1e4e"
+    },
+    {
+      "id": "S3",
+      "sha256": "f5f3c4befc6023116252b1c52476b0e40b1ba53e16f759eac035a2e7a052fb2a"
+    },
+    {
+      "id": "S4",
+      "sha256": "609d1fa8a5f23f316487632e07ae6ba29e178168a64a2773842ab53955368bf0"
+    },
+    {
+      "id": "S5",
+      "sha256": "475528c19e2d3f5ab24e67e7bb81a59aa1ebcefd011562456eb5734cc9630ad3"
+    },
+    {
+      "id": "S6",
+      "sha256": "0d6dc96f9dbb5d7c682b715d6fc9be473f5ff36463877d5bd0756141eecc87a2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010187",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Implementing fused neural kernels for modern AI algorithms is complex.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing compilers such as Triton lack fine-grained control needed for kernel implementation.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "system",
+        "claim": "Introduces TileLang, a controllable programming system for fused neural kernels with explicit tile-level primitives for memory placement, data movement, and parallel scheduling.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "technique",
+        "claim": "Adds tile inference, which models tile programs as fused graphs and derives tile configurations from partial annotations, plus tile recommendation based on hardware profiles and heuristics.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports compact expression of diverse fused attention kernels and performance gains over Triton across NVIDIA and AMD GPUs.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish TileLang through controllable tile-level programming together with tile inference and hardware-aware tile recommendation.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that fused attention kernels can be expressed in under 80 lines of Python, with code size reduced by up to 90% versus manual implementations.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report up to 5× speedup over Triton on NVIDIA H100 and up to 6× on AMD GPUs.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Fused kernels are increasingly used for performance, but existing compilers provide insufficient fine-grained control.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "system",
+        "summary": "TileLang is introduced as a controllable system with explicit tile-level operations for fused neural kernels.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "programming guidance",
+        "summary": "Tile inference and tile recommendation provide automatic configuration inference and hardware-aware configuration suggestions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The authors report concise fused-attention implementations and substantial speedups over Triton on NVIDIA and AMD hardware.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs explicit low-level control with automation that infers or recommends tile configurations.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A systems paper can frame programmability and performance as complementary by assigning each to a distinct mechanism.",
+        "application": "When proposing a programmable optimization system, separate user-facing control primitives from automated hardware-aware configuration support.",
+        "exception": "This framing may be unsuitable when the target workload or hardware does not expose meaningful tile-level configuration choices."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluated workloads, exact baselines beyond Triton, measurement methodology, or whether the reported speedups apply broadly across kernels and hardware.",
+      "The abstract does not provide details needed to assess the coverage of fused attention kernels or the conditions behind the code-size reductions."
+    ]
+  }
+}

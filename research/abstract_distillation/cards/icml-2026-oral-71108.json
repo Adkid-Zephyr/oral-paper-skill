@@ -1,0 +1,197 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71108",
+    "title": "Joint Learning in the Gaussian Single Index Model",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71108"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "cb3ba144c7bf7d7a30a693445c97fd9c7b314c5dc1ebba87ce0eef604edd0911",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "c20993132e39b123f483f91ec331940fc015d12670c2ecac82753d9541b3ae1a",
+    "extracted_at": "2026-09-13T00:14:21.962683+00:00",
+    "session_id": "01a0981d-2563-7352-8926-5ca8defd01d5",
+    "usage": {
+      "input_tokens": 12749,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 865,
+      "reasoning_output_tokens": 83
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "66f1aaf70677dd7ffb6c68483dd9126bd182caee975cafa8ea322a445e8391ba"
+    },
+    {
+      "id": "S2",
+      "sha256": "4c82d2b257198c5d741030303abdb3a4b82e8a4d4d38397060c9ae6ee8e0bccb"
+    },
+    {
+      "id": "S3",
+      "sha256": "04819dcf0cb8ec01c5d2c4645dc2e398bd5a77ff6ef9d20bc24fc3597dc0e5c4"
+    },
+    {
+      "id": "S4",
+      "sha256": "423be567f5ecd519412218cee1f2c0b357b50c666aa3a3ef08b309779895a2b8"
+    },
+    {
+      "id": "S5",
+      "sha256": "d7e9701865e61c1e3dfd921451327573b04d2f0ac07847b916026baf0b7fc853"
+    },
+    {
+      "id": "S6",
+      "sha256": "f08a7bbc15e8a4eea5ac3c78c171fcccae1626338e2a689de7315073d21344f7"
+    },
+    {
+      "id": "S7",
+      "sha256": "a503b6bb56de8750ad6bb980dafad773895ca9173c819511c2bb44e631e4d353"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71108",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Jointly learn a one-dimensional projection and a univariate function in a high-dimensional Gaussian single-index model.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Analyzes gradient-flow dynamics for a natural alternating scheme and proves convergence with a rate governed by the function’s information exponent.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theoretical finding",
+        "claim": "Shows that convergence can occur even when the initial direction is negatively correlated with the target direction.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Develops an RKHS-based implementation for efficient and flexible estimation of the univariate function.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper combines convergence analysis for joint projection–function learning, including negatively correlated initialization, with an RKHS implementation adapted to the model structure.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a convergence proof for the alternating gradient-flow scheme, with rate controlled by the information exponent associated with Gaussian regularity.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report convergence even from an initialization negatively correlated with the target direction.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that an adapted RKHS enables efficient and flexible estimation of the univariate function.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem setup",
+        "summary": "Defines joint learning of a sphere-constrained projection and a univariate link function from Gaussian data.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "context",
+        "summary": "Frames the setting as a non-convex problem connecting representation learning and nonlinear regression.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "theoretical analysis",
+        "summary": "Studies an alternating gradient-flow scheme and gives a convergence rate tied to Gaussian regularity.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "robustness result",
+        "summary": "Reports convergence despite negative initial correlation with the target direction.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "practical method",
+        "summary": "Uses an adapted RKHS to estimate the univariate function efficiently and flexibly.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the convergence rate to an explicit function property—the information exponent reflecting Gaussian regularity.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "Making a rate depend on an identifiable structural quantity can explain variation in optimization behavior.",
+        "application": "When presenting a theoretical rate, parameterize it by a clearly named regularity or information measure and state what aspect of the target it represents.",
+        "exception": "This framing is unsuitable when the quantity is undefined, unestimable, or irrelevant to the intended setting."
+      },
+      {
+        "source_observation": {
+          "claim": "The paper separately states a difficult-initialization result and an implementation choice adapted to the model’s low-dimensional structure.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Pairing a robustness claim with a structure-matched computational realization connects theory to use conditions.",
+        "application": "For a proposed learning method, analyze a challenging initialization regime and identify an estimator or representation aligned with the model’s intrinsic structure.",
+        "exception": "Do not use this pairing when the application has no meaningful initialization issue or exploitable low-dimensional structure."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the assumptions, algorithmic details, definition of the information exponent, convergence metric, or rate formula.",
+      "No sample-complexity, runtime, numerical, baseline-comparison, or implementation details are reported.",
+      "The abstract does not establish priority or independently verify the stated proof and demonstrations."
+    ]
+  }
+}

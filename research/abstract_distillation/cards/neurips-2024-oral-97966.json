@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97966",
+    "title": "Guiding a Diffusion Model with a Bad Version of Itself",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97966"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8da358d866053ad09c67ebb800d88d7ffce85fe68bfe5071c4ad0637695bf402",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "a2331e033c83e1f63885277a324e81e4c1b12c811f21cbff9442c14ceacd3557",
+    "extracted_at": "2026-09-13T00:18:36.000614+00:00",
+    "session_id": "01a09821-0536-7550-a404-2a75d0570182",
+    "usage": {
+      "input_tokens": 12661,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 764,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b57530c589bc47324d20a7db6d87218e799a5fc2fa77dd137d3baba1d7577308"
+    },
+    {
+      "id": "S2",
+      "sha256": "5091989584a029ecc83ec6528a185cff475f43c770cce5421dc81994c0fa48fc"
+    },
+    {
+      "id": "S3",
+      "sha256": "f7e100cec923f8285608a5b73505b32becc8fa0e026fa552d7fc339d925c8fc3"
+    },
+    {
+      "id": "S4",
+      "sha256": "5322afdf5d41349eed78592abe70678524c0efee54aceaaf2f2a74fcfb78a120"
+    },
+    {
+      "id": "S5",
+      "sha256": "e67004de38cb799c317fcac6c104c4a58bfecadcf8b505ff1c76dd6ede7e4f5a"
+    },
+    {
+      "id": "S6",
+      "sha256": "e1c7b3a1e63b6c732547fda2ef430fb1bb937fa863e21600c8fbb34d06239dcd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97966",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses how to control image quality, variation, and condition alignment in diffusion-model generation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract states that quality, variation, and alignment appear entangled, making them difficult to control independently.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The authors propose guiding generation with a smaller, less-trained version of the same model instead of an unconditional model, aiming to control quality without reducing variation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report improved ImageNet generation with publicly available networks, including FIDs of 1.01 at 64×64 and 1.25 at 512×512.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "The authors report that the method also applies to unconditional diffusion models and substantially improves their image quality.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize disentangled quality control through a less-trained self-model as a surprising observation.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report record ImageNet FIDs of 1.01 for 64×64 and 1.25 for 512×512 using publicly available networks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report drastic quality improvement when applying the method to unconditional diffusion models.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setup",
+        "summary": "The abstract identifies image quality, output variation, and condition alignment as central generation objectives.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "It describes classifier-free guidance as improving alignment and quality while reducing variation, with these effects difficult to disentangle.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "The authors report that guiding with a smaller, less-trained copy of the model can separate quality control from variation loss.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "They report strong ImageNet FIDs and applicability to unconditional models with substantial quality gains.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract frames the method as replacing an unconditional guide with a deliberately weaker version of the conditional model to target one quality–variation tradeoff.",
+          "source_ids": [
+            "S2",
+            "S4"
+          ]
+        },
+        "interpretation": "A paper can make a method intelligible by tying the design choice directly to a named limitation and desired disentanglement.",
+        "application": "When presenting a new control mechanism, explicitly map each component to the behavior it is intended to decouple, then report metrics for both the target objective and the possible tradeoff.",
+        "exception": "This framing is unsuitable when the abstract cannot specify the controlled dimensions or provide evidence covering the claimed tradeoff."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the guidance algorithm, model sizes, training differences, or experimental protocol.",
+      "It reports FIDs but does not provide variation or prompt-alignment measurements, baselines, or conditions needed to assess the claimed disentanglement.",
+      "The meaning of “record” and “drastically” is not operationalized in the abstract."
+    ]
+  }
+}

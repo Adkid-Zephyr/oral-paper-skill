@@ -1,0 +1,155 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31826",
+    "title": "Spider 2.0: Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31826"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "fc59232650af2cc6b96e39852eb73c9fdf0b53158f73219e9435d4fd8fe59423",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "aa086ac13594e0d5e955d015cb1cdb9fe8e08d7c2e3b19f3c97e77dff71d2ff7",
+    "extracted_at": "2026-09-12T23:53:28.898807+00:00",
+    "session_id": "01a0980a-0b71-7f60-909b-2eecdf38783d",
+    "usage": {
+      "input_tokens": 12772,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 780,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "87c91e0ad336241b8abcf96ef2ab075a9faa44b5e36adbad7399b5cfee21f649"
+    },
+    {
+      "id": "S2",
+      "sha256": "149fd1256167e827fe23b81450707cdf0848ce43fbed2d25a76743dafc9e93a2"
+    },
+    {
+      "id": "S3",
+      "sha256": "b33b84de817465ff1435d796188d0816400df546e54433f2aadc32034cd69858"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31826",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate language models on complex, real-world enterprise text-to-SQL workflows spanning heterogeneous databases, SQL dialects, and operations.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Traditional text-to-SQL benchmarks do not capture the long-context, metadata/code search, multi-query, and intricate reasoning demands of enterprise workflows.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "evaluation framework",
+        "claim": "Introduces Spider 2.0, an evaluation framework with 632 enterprise-level text-to-SQL workflow problems derived from real data applications.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Provides databases, baseline models, and code for the benchmark.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The benchmark targets real-world enterprise workflows, including local or cloud databases, diverse SQL dialects, metadata and documentation search, project-codebase search, and multi-query operations.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that an o1-preview-based code-agent framework solved 21.3% of Spider 2.0 tasks, versus 91.2% on Spider 1.0 and 73.0% on BIRD.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that Spider 2.0 tasks often involve databases with over 1,000 columns and SQL workflows exceeding 100 lines.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Enterprise text-to-SQL involves heterogeneous data systems, dialects, and operations beyond a single query.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "benchmark",
+        "summary": "Spider 2.0 packages 632 workflow problems from enterprise-level use cases and real data applications.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "challenge characterization",
+        "summary": "Tasks require metadata, documentation, and codebase search, long-context processing, intricate reasoning, and multiple SQL queries.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "reported result",
+        "summary": "The evaluated code-agent framework achieves substantially lower task success on Spider 2.0 than on earlier benchmarks, motivating further improvement.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract specifies concrete workflow demands—database scale, search targets, context length, query multiplicity, and comparison scores—instead of describing enterprise difficulty only generally.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A task's difficulty becomes more actionable when decomposed into observable environmental and output requirements.",
+        "application": "Define a benchmark or system claim by listing required information sources, context scale, output structure, and at least one cross-benchmark comparison.",
+        "exception": "Avoid cross-benchmark score comparisons when datasets, metrics, or evaluation protocols are not sufficiently comparable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify Spider 2.0's evaluation metric, task composition, or detailed comparison protocol.",
+      "The reported 21.3% result is tied to an o1-preview-based code-agent framework; performance of other models or agents is not given.",
+      "No per-capability breakdown or error analysis is provided."
+    ]
+  }
+}

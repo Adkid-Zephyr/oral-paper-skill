@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007589",
+    "title": "Mean Flow Policy with Instantaneous Velocity Constraint for One-step Action Generation",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007589"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c7bba2f5a863fb22bb895bfe126724bba8c8d3f32ac48e4cf52ffbd5796c8cf7",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "6da8e17a9b5722f5ab25b17585bf7ead1c6463df67151c16e8b009ce41a41f74",
+    "extracted_at": "2026-09-12T23:59:51.401237+00:00",
+    "session_id": "01a0980f-e32e-7030-aa38-e9101d34c792",
+    "usage": {
+      "input_tokens": 12673,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 763,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "176856cf370ac7235ddf3f9dcadc58ebb63f31fd7b6e3bed9277ba11bc088b22"
+    },
+    {
+      "id": "S2",
+      "sha256": "cbf2cf6551843df20fa8df975c82da1fb0cd586ed58d01dd7da843e665b52ce5"
+    },
+    {
+      "id": "S3",
+      "sha256": "b7026cbd5c88991d7531eab9a0835635eae0714cf26b07bc821829aa0125d96e"
+    },
+    {
+      "id": "S4",
+      "sha256": "6a5fc918fbb5c4cfc7fd43cda47cd95ad81849d3cc0b212e4a0006b5dffde75e"
+    },
+    {
+      "id": "S5",
+      "sha256": "1f6c94192332c97a55d971e57a47935e77663dcfd891630dd49563e5d6aec3ae"
+    },
+    {
+      "id": "S6",
+      "sha256": "4bec1db27e00a2dfaddd365056ccd757ba1776d8bde1854808641de50dafd3b4"
+    },
+    {
+      "id": "S7",
+      "sha256": "a13de49446936ea9d405b8ee6836afc0d7a5e19dc321ae799606f1004c15b4b9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007589",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design expressive and computationally efficient generative policies for reinforcement learning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing flow-based policies trade expressiveness against computational burden, typically through the number of flow steps.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes mean velocity policy (MVP), which models a mean velocity field for one-step action generation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces an instantaneous velocity constraint (IVC) during training to support policy expressiveness.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Authors theoretically prove that IVC acts as a boundary condition that improves learning accuracy and policy expressiveness.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper presents MVP as a new generative policy function and combines it with an instantaneous velocity constraint for one-step action generation.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report state-of-the-art success rates on several challenging robotic manipulation tasks from Robomimic and OGBench.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "Authors report substantial training- and inference-speed improvements over existing flow-based policy baselines.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "Authors report a theoretical proof that the constraint functions as a crucial boundary condition, improving learning accuracy and expressiveness.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Expressive, efficient policy functions are identified as a promising reinforcement-learning direction.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Flow-based policies model complex action distributions with deterministic sampling but face an expressiveness–computation trade-off governed by flow steps.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "MVP models the mean velocity field to generate actions in one step, while IVC is imposed during training to preserve expressiveness.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "support",
+        "summary": "The authors report theoretical, task-performance, and speed results favoring the proposed design.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a one-step generation objective with a training-time constraint intended to recover expressiveness, then aligns theory with robotics and speed results.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A compact abstract can make a method’s central trade-off and its proposed resolution explicit before presenting evidence.",
+        "application": "Frame a new efficient generative method as: computational target, mechanism addressing the associated capability loss, then theory and task-level evidence.",
+        "exception": "This framing is unsuitable when the method has no clearly stated efficiency–capability tension or no corresponding evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical success rates, speedups, task counts, or baseline details.",
+      "The assumptions and scope of the theoretical proof are unspecified.",
+      "It is unclear how MVP and IVC are implemented or how much each contributes separately."
+    ]
+  }
+}

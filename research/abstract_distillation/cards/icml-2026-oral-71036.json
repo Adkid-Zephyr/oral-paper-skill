@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71036",
+    "title": "FLIP2: Expanding Protein Fitness Landscape Benchmarks for Real-World Machine Learning Applications",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71036"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4093562704071d3ffc61e6388765915cb43ff37c96a7098ab10f13600383eb2b",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "72610ae11f3ec87784056973e24b4a4fc37c3a81c99b5a5c80af2b345fe1732f",
+    "extracted_at": "2026-09-13T00:11:39.229455+00:00",
+    "session_id": "01a0981a-afc3-77d3-9f6b-99e4ca60df80",
+    "usage": {
+      "input_tokens": 12662,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 728,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8919fdf92b90db328ae90bd32e52c4e92b1f66e9cd5290f95afc2afefa25058c"
+    },
+    {
+      "id": "S2",
+      "sha256": "f52d88f356d92a1b2e6d6016b5afe4e6f5cf54b138a0e14bc7291930d5ba6eb5"
+    },
+    {
+      "id": "S3",
+      "sha256": "30353ce25b1c3240856769160234288bd8ccb7c416677e8b8c7b10b9ffbe33da"
+    },
+    {
+      "id": "S4",
+      "sha256": "8bc4991984422313367060f578a3ba061b9dd002a1cda5a5b9e87296cf78c521"
+    },
+    {
+      "id": "S5",
+      "sha256": "03fbfc267713e44efc20a8c09a217010108ef2b16aba65d18ebed423ff3a6ab0"
+    },
+    {
+      "id": "S6",
+      "sha256": "9ad1864a896247dcf208ff70a70e4b299c8b70df70e3f274a15b34e39ad89cd6"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71036",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Protein-fitness predictors remain sensitive to distribution shifts, raising questions about their practical utility for protein engineering.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The FLIP benchmark covered only stability, binding, and viral-capsid viability, with limited coverage of engineering-relevant domains and shifts.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces FLIP2, spanning seven new protein-fitness datasets and splits intended to measure generalization relevant to real-world engineering campaigns.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports evaluations of benchmark models across the new datasets and suites, including comparisons between simpler models and fine-tuned protein language models.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Records dataset provenance and redistributes all data under CC-BY 4.0.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish FLIP2 by adding seven datasets—including enzymes, protein-protein interactions, and light-sensitive proteins—and real-world-relevant generalization splits.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that simpler models often matched or outperformed fine-tuned protein language models on FLIP2.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that these results challenge the utility of existing transfer-learning techniques.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Distribution sensitivity limits generalization and leaves protein engineers uncertain about ML utility.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "prior limitation",
+        "summary": "FLIP tested some domain shifts but was restricted to three measurement categories.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "benchmark contribution",
+        "summary": "FLIP2 expands coverage with seven datasets and engineering-relevant splits.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported result",
+        "summary": "Model evaluations indicate that simpler models often perform at least as well as fine-tuned protein language models, challenging transfer-learning utility.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "accessibility",
+        "summary": "Dataset provenance is recorded and the data are redistributed under CC-BY 4.0.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links benchmark expansion to specific real-world generalization splits, then reports model comparisons across those suites.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A benchmark claim is more informative when its task coverage and evaluation splits are explicitly tied to the deployment question.",
+        "application": "Define benchmark splits around the intended operational shifts before comparing model classes.",
+        "exception": "This framing may be unsuitable when deployment shifts or representative datasets cannot be specified credibly."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the seven datasets, split definitions, metrics, model suite, or quantitative margins.",
+      "The reported comparison lacks conditions needed to determine when simpler models match or outperform fine-tuned language models."
+    ]
+  }
+}

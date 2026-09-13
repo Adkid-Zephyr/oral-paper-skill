@@ -1,0 +1,198 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47207",
+    "title": "Sanity Checking Causal Representation Learning on a Simple Real-World System",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47207"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "57f3b8d053a21911ace2b7f09b169ce6ed4e7279a836b2a95dafca687fb9c4b4",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "806f6c21045770c4e48d82e2d9472aaabd376c9b34ad21b3b4fd2ce2443cbdf8",
+    "extracted_at": "2026-09-13T00:08:43.873178+00:00",
+    "session_id": "01a09817-ff32-73e1-84ae-ecd6b81e95ba",
+    "usage": {
+      "input_tokens": 12751,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 817,
+      "reasoning_output_tokens": 109
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b4ab26aba6380a4fd9d5ea08dae527c766832c2d01790d0d24bb77c931babdff"
+    },
+    {
+      "id": "S2",
+      "sha256": "9cf33c554f7a85f8b7d726c307a3904c1388023ac328fb3392a137ca92e4b3ca"
+    },
+    {
+      "id": "S3",
+      "sha256": "852bdfaf462f26c490bb4f0f199b95f6c83da8bf57d86e5a84d623f195ceb6f1"
+    },
+    {
+      "id": "S4",
+      "sha256": "662a441c588c87f705cb0d1b2790210e128d2205b51d871d275c8f078fa9e441"
+    },
+    {
+      "id": "S5",
+      "sha256": "b090675a1af62b741f5ce5741560020147bd4c46e507644f055f59a373d3864d"
+    },
+    {
+      "id": "S6",
+      "sha256": "c6bc503a5962f5e8b66865e55883f9625cb2c54dc91ffd21a5747a7e0e0fdeb4"
+    },
+    {
+      "id": "S7",
+      "sha256": "afed8c6eaa81bbf60beb0e059490297763edc34895ed9c970529abe042b09dee"
+    },
+    {
+      "id": "S8",
+      "sha256": "05e09ed9d0c2e9d6b464377d9c9bf18707f52b68811ae2365e4a0ca0f5616368"
+    },
+    {
+      "id": "S9",
+      "sha256": "9923fcba8092e1783b60567c753738746f6c2eef816d74afcfbe4feb0e2851c3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47207",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate causal representation learning methods on a simple real-world system with known causal factors.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract highlights a gap between the theoretical promise of current CRL methods and their practical application, including failures on a simple benchmark.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "A controlled optical experiment is used as a real-world CRL benchmark with known inputs serving as ground truth.",
+        "source_ids": [
+          "S2",
+          "S8"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Representative CRL methods fail to recover the underlying causal factors on the real system.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "diagnostic analysis and resource",
+        "claim": "A synthetic data ablation diagnoses failure modes, and the authors publicly release code and datasets.",
+        "source_ids": [
+          "S4",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors position the benchmark as a simple real-world sanity check intended to help bridge CRL methodology toward practical methods.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The evaluated representative methods all fail to recover the known causal factors in the controlled optical experiment.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "claim": "Most methods already fail on the synthetic ablation, despite its simple data-generating process; the authors interpret this as a reproducibility problem.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "claim": "Common mixing-function assumptions are crucial for some methods' performance but do not hold in the real data.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "evaluation setup",
+        "summary": "The study evaluates CRL methods on a purpose-built optical system satisfying core CRL assumptions and exposing known causal factors.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "main result",
+        "summary": "Representative methods fail to recover the system's underlying causal factors.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "failure diagnosis",
+        "summary": "A synthetic replacement of the real data-generating process is used to probe algorithmic failure modes.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "implication and resource",
+        "summary": "Failures on the synthetic case and mismatched mixing assumptions expose a theory–practice gap; code and datasets are released for further development and validation.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper tests methods on both a real system with ground truth and a simpler synthetic ablation, then relates failures to mixing-function assumptions.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Pairing a grounded benchmark with a controlled simplification can separate real-world mismatch from failures that persist in simplified settings.",
+        "application": "When introducing a new method, report performance on a real benchmark with known factors alongside an ablation that isolates the assumed generative structure.",
+        "exception": "This pairing is unsuitable when no credible ground truth or meaningful simplification exists."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative metrics, baselines, method names, sample sizes, or detailed failure criteria.",
+      "It does not specify which methods depend on which mixing assumptions or how the synthetic equivalent is constructed.",
+      "The public-release location in S9 is omitted."
+    ]
+  }
+}

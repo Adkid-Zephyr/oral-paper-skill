@@ -1,0 +1,158 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97997",
+    "title": "Convolutional Differentiable Logic Gate Networks",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97997"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2644b96048148ae9bf8fe6ca806c9b88aa1c18940717685d4c0a15cc1024cc0c",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "034f865025f8eba2b5cd167d1a706b025f57b1623c825c2464b949686fdbe3eb",
+    "extracted_at": "2026-09-13T00:19:46.185515+00:00",
+    "session_id": "01a09822-2357-78a3-802b-501df6c6c9b9",
+    "usage": {
+      "input_tokens": 12631,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 720,
+      "reasoning_output_tokens": 120
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b8c73b17f49ff830bd979fd2549ea14d48169a7e40ca0e9e2e6d87448ccf914e"
+    },
+    {
+      "id": "S2",
+      "sha256": "9b14470942f46d1eef86ed210f615807584a47f8d8184ea9148722ab6d85dc6a"
+    },
+    {
+      "id": "S3",
+      "sha256": "2409a24377349bef996d21de54880992377f29f99ea7ebd9e3532b46dacbde71"
+    },
+    {
+      "id": "S4",
+      "sha256": "df2064ffcb928702534924725f9624eba927688fcdf747be3fc04050fcf3d09f"
+    },
+    {
+      "id": "S5",
+      "sha256": "1f75690a83a5d8261007556cd00c40a7bc4e7df613ed174198f0e028111c651f"
+    },
+    {
+      "id": "S6",
+      "sha256": "f18642ef0dea58f03a77b1234d66a89e1c70adb47fa736c9eaa35d20b537a9cd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97997",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop logic-gate-based models with fast, efficient inference as machine-learning inference costs increase.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Extends differentiable logic-gate networks with deep logic-gate-tree convolutions, logical OR pooling, and residual initializations.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      {
+        "type": "scaling approach",
+        "claim": "Uses these components to scale logic-gate networks by over one order of magnitude and incorporate convolution.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by extending differentiable logic-gate learning with convolutional and residual architectural components, including logical OR pooling.",
+      "source_ids": [
+        "S2",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report 86.29% accuracy on CIFAR-10 using 61 million logic gates, described as improving over the SOTA while being 29× smaller.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Rising machine-learning inference costs motivate interest in faster, more efficient models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior approach",
+        "summary": "Differentiable relaxation had enabled direct learning of logic-gate networks, whose inference uses hardware-efficient logic operators.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "extension",
+        "summary": "The authors add deep logic-gate-tree convolutions, logical OR pooling, and residual initializations.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported result",
+        "summary": "They report scaling by over one order of magnitude and achieving 86.29% CIFAR-10 accuracy with 61 million gates and a 29× smaller size than the stated SOTA.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links specific architectural additions to a scaling claim, then reports accuracy together with a model-size comparison.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Pairing a mechanism-level change with task performance and resource measurements makes an efficiency claim more concrete.",
+        "application": "When presenting an efficient architecture, name the scaling mechanism and report task quality alongside an explicit computational or size budget and comparison.",
+        "exception": "This framing is insufficient when the key deployment metric is runtime, energy, or hardware throughput rather than gate count or model size."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the SOTA baseline, its exact metric or size definition, or whether the 29× comparison uses matching conditions.",
+      "It does not report runtime, energy, hardware details, training procedure, or results beyond CIFAR-10."
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71032",
+    "title": "daVinci-Dev: Agent-native Mid-training for Software Engineering",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71032"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "33056bc6d94e1f3e895cdbd9e5f4dd6007ca4149e302cda09b05749c98e0a605",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "8fe5b3e90ad202316412e094344c7cdee7d467cf25b6b0ff9e447235cabcd2de",
+    "extracted_at": "2026-09-12T23:40:22.190412+00:00",
+    "session_id": "01a097fe-0464-7bb2-80ca-ca76427c13d4",
+    "usage": {
+      "input_tokens": 12746,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 852,
+      "reasoning_output_tokens": 77
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3ed46fe36695d64edba6bdcaa396186718bb099470c012ae65ef08cffed2f957"
+    },
+    {
+      "id": "S2",
+      "sha256": "9525f2bde790620f34fc7ddedf1fbdc30ce04ff5c496f81d0c22bb361b303fac"
+    },
+    {
+      "id": "S3",
+      "sha256": "4bacc29a170d9b9bc3438d6bb2180745257b0270f2cd303213adbe85e5672ff7"
+    },
+    {
+      "id": "S4",
+      "sha256": "384cd52be8d10f026f937126e7d5dd2f25a3aad8ef9712743211efa94df56d58"
+    },
+    {
+      "id": "S5",
+      "sha256": "d743870ee6f918f124722d4c4eb1236a5afd6d3ebf0a20886e25a2eb83bae1a8"
+    },
+    {
+      "id": "S6",
+      "sha256": "a97690b567fe644664f2605fe3c9d11b166fb2308aad0ace151634accc228840"
+    },
+    {
+      "id": "S7",
+      "sha256": "49430b9499289f1d940b769489211b41cd9e8c70aba6ca5d2590f99e59d8f775"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71032",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper examines how to adapt software-engineering models to dynamic, agentic deployment environments.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that post-training alone does not fully resolve the distribution mismatch between static pre-training and dynamic deployment.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "An agentic mid-training approach using agent-native data.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "data design",
+        "claim": "A two-part data formulation combining contextually-native trajectories for information-flow coverage and environmentally-native trajectories grounded in tool use and test execution.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Open-sourcing a substantial portion of the datasets, recipes, and model checkpoints.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish agentic mid-training as a scalable complement to post-training and center it on agent-native data with contextual and environmental components.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their recipe outperforms Kimi-Dev on SWE-Bench Verified under two post-training settings, using the same base model and agentic scaffold, with fewer than half as many mid-training tokens: 73.1B.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report state-of-the-art resolution rates among open agentic recipes using agentic scaffolds: 56.1% for the 32B model and 58.5% for the 72B model, despite non-coder Qwen2.5 starting models.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors also report gains on general code-generation and scientific benchmarks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Post-training is presented as insufficient for the mismatch between static pre-training and dynamic deployment.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The paper investigates scalable agentic mid-training as a complementary approach.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "data mechanism",
+        "summary": "Agent-native data combines complete-information-flow trajectories with trajectories generated through actual tool invocations and test executions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported outcomes and release",
+        "summary": "The recipe is reported to outperform Kimi-Dev, reach the stated open-recipe resolution rates, improve broader benchmarks, and release substantial research resources.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates agent-native data into contextual coverage/diversity and environmental interaction authenticity, then reports comparisons under matched base-model and scaffold conditions.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Separating broad information-flow coverage from authentic interaction data can make a training-data argument more explanatory and its comparison more interpretable.",
+        "application": "When proposing training data for tool-using agents, define distinct data roles and report comparisons while holding the base model and scaffold fixed.",
+        "exception": "This framing may be unsuitable when the task has no meaningful tool interaction or when the data sources cannot be assigned distinct roles."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the dataset composition, training procedure, statistical uncertainty, or per-setting results behind the reported comparisons.",
+      "The meaning of “state-of-the-art” is limited here to the described open agentic recipes using agentic scaffolds; the comparison set and evaluation protocol are unspecified.",
+      "The abstract does not establish why the reported gains occur or whether they generalize beyond the named benchmarks and model scales."
+    ]
+  }
+}

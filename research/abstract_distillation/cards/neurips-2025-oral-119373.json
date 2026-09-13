@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-119373",
+    "title": "Why Diffusion Models Don’t Memorize: The Role of Implicit Dynamical Regularization in Training",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/119373"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a3aeb0e7f818fea188d64d0e194d7eaaeab6b1fcac5aa23f736d17da99a38926",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "ce23d855de53d0e1c4f67c62a1f3a5a4700d7830ac5308ecabeaaac276dc2c54",
+    "extracted_at": "2026-09-13T00:23:04.866798+00:00",
+    "session_id": "01a09825-20df-7001-8d4c-a7f65d5f8d0a",
+    "usage": {
+      "input_tokens": 12787,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 820,
+      "reasoning_output_tokens": 95
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b506263c4f0cd6aaf53f4cb12a27e13f39860feca613da483e766ef38a75b405"
+    },
+    {
+      "id": "S2",
+      "sha256": "4a9ec383cf39f3457976c2b6b127e3f50e4929d18fae45d534ebf90054b9faa5"
+    },
+    {
+      "id": "S3",
+      "sha256": "be145108755d633a0364dc7ae712703e34b571ef55d6649a18f6bfa65de9995a"
+    },
+    {
+      "id": "S4",
+      "sha256": "cdeea0ffaaf0fa5483f9d9d997178156b66a58d2a5fee235e484b52d37896ba9"
+    },
+    {
+      "id": "S5",
+      "sha256": "973968fd0689db0062e226a5f3750d196aecf22eba15a88b309b2be4fe07368e"
+    },
+    {
+      "id": "S6",
+      "sha256": "f3f27c4ce1f09286508276a179b6f4cd85271fa04291b36496fd02ce36dec489"
+    },
+    {
+      "id": "S7",
+      "sha256": "e0b44ee4a06c5697ebd88a974e03481d565bec66fe498adcf48958139d7e2c64"
+    },
+    {
+      "id": "S8",
+      "sha256": "33a886b0afcdc1231d0dc6318ff2a716a62f565a6906683f7d614c2f30931a1b"
+    },
+    {
+      "id": "S9",
+      "sha256": "65a3452feef9c3a3889d22d87d66d8de3a83b11b318146bf6424d7c2aeff3d84"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-119373",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Understand how diffusion-model training dynamics govern the transition between generalization and memorization.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The mechanisms preventing memorization while enabling generalization remain insufficiently understood.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory and empirical finding",
+        "claim": "Identify distinct generation and memorization timescales, with memorization delayed proportionally to training-set size while generation onset stays constant.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "mechanistic interpretation",
+        "claim": "Characterize the resulting training-time window as implicit dynamical regularization that can avoid memorization in highly overparameterized settings.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      },
+      {
+        "type": "analysis framework",
+        "claim": "Support the findings with experiments on standard U-Nets and realistic and synthetic datasets, alongside a high-dimensional random-features analysis.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work presents implicit dynamical regularization through distinct generation and memorization timescales as an explanation for diffusion models’ resistance to memorization.",
+      "source_ids": [
+        "S4",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that high-quality generation begins at an early time τ_gen, whereas memorization emerges only after a later time τ_mem.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that τ_mem grows linearly with training-set size n while τ_gen remains constant, producing a widening effective-generalization window.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that overfitting disappears at infinite training times only when n exceeds a model-dependent threshold.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames the unresolved question of why diffusion models generalize without memorizing training data.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "investigation",
+        "summary": "It examines whether training dynamics control the transition from generalization to memorization.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "core result",
+        "summary": "It identifies early generation and later memorization timescales, with only the latter scaling linearly with dataset size.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "implication and support",
+        "summary": "The scaling creates a dataset-size-dependent training window and is interpreted as implicit dynamical regularization, supported by experiments and tractable theory.",
+        "source_ids": [
+          "S6",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates generation onset from memorization onset and explicitly relates their scaling behavior to training-set size.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Separating when desired behavior appears from when failure behavior emerges can make a mechanistic claim more precise.",
+        "application": "Report separate onset metrics and their scaling with dataset size when studying training-time tradeoffs.",
+        "exception": "This framing is unsuitable when the relevant behaviors lack identifiable onset times or cannot be measured consistently."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the numerical slopes, definitions, or measurement procedures for τ_gen and τ_mem.",
+      "The model-dependent threshold in S7 is not quantified, and the scope across architectures or datasets beyond those tested is unclear.",
+      "The abstract does not provide detailed experimental results or theoretical assumptions needed to assess the strength of the reported claims."
+    ]
+  }
+}

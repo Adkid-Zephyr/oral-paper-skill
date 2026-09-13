@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-98016",
+    "title": "DevBench: A multimodal developmental benchmark for language learning",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/98016"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "17d171fac429da88d3aeffe1d942ef9fa0fe8a2bcf7e821f44661cd346cd9a33",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "8b2b794e1727154cfc43b3bb898d642a1f608daf6aa09ea7dd1aee163a64f8df",
+    "extracted_at": "2026-09-13T00:20:04.979045+00:00",
+    "session_id": "01a09822-65a3-7ff1-9706-5ee5828a76e5",
+    "usage": {
+      "input_tokens": 12741,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 753,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1b808de89ad625930c5c04f78b1277f6f8854cde62a23ac6253106167f6d4b16"
+    },
+    {
+      "id": "S2",
+      "sha256": "988d8721c7301cb8a9baee4e22d1b73605fa9a4928dbad085d7079d9a8052b12"
+    },
+    {
+      "id": "S3",
+      "sha256": "82a48b59c923a624491092692a3fbb381eb128ae00dd5e23c736fca8810672b2"
+    },
+    {
+      "id": "S4",
+      "sha256": "ff753f1cedae3fb8c892d7e56a67be35d0fd38cf4762588c8704942d5ada4836"
+    },
+    {
+      "id": "S5",
+      "sha256": "f61532efc873953aa8ed7bda167599f3eeb73d342cdcb4213122197bd2663bfe"
+    },
+    {
+      "id": "S6",
+      "sha256": "0437a766fc1113b8a9c1c4ccb43e0dc633e7abdb879a79510d307fe87d31af16"
+    },
+    {
+      "id": "S7",
+      "sha256": "985b644518d3a79572bbede487347e78f891b17ef4930a8c4379c9cdfeb2a34a"
+    },
+    {
+      "id": "S8",
+      "sha256": "5cd1ffb9012f11d6fc2e98aa321ed43b2168da8360cf50dba448dc2b5fcd5dd6"
+    },
+    {
+      "id": "S9",
+      "sha256": "b3571484031556e8fd687b99cc4a26ca5e04a4f4f82101e7a386dab2c25b60c2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-98016",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks how similar the learning trajectories of vision–language models and children are.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing models trained on reduced multimodal naturalistic data are often assessed with adult-level benchmarks, narrow language coverage, and no direct behavioral comparison.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces DevBench, a multimodal benchmark with seven lexical, syntactic, and semantic language tasks and behavioral data from children and adults.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical comparison",
+        "claim": "Evaluates vision–language models by comparing their response patterns with human behavioral response patterns rather than absolute performance.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "developmental analysis",
+        "claim": "Examines how OpenCLIP’s behavioral resemblance to adults changes over training.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "DevBench provides a benchmark specifically for comparing models with human language development.",
+      "source_ids": [
+        "S4",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Across tasks, models vary in how closely their response patterns match humans; higher task performance is associated with closer behavioral resemblance.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "For OpenCLIP, more training is reported to produce closer approximations to adult response patterns.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The comparisons reveal divergences between model and human language-learning processes and suggest possible improvement entry points.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "question",
+        "summary": "Frames the comparison between vision–language-model and child learning trajectories.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation_and_gap",
+        "summary": "Notes efforts to study model–human data efficiency while identifying limitations in benchmark breadth and behavioral comparison.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "resource_and_method",
+        "summary": "Introduces DevBench and evaluates models against child and adult response patterns across seven language tasks.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "findings_and_implication",
+        "summary": "Reports task-dependent human resemblance, increasing adult resemblance for OpenCLIP with training, and divergences relevant to model improvement.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The study evaluates response-pattern similarity separately from absolute performance and spans lexical, syntactic, and semantic abilities with child and adult behavioral data.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This separates behavioral alignment from score matching and makes developmental comparisons more targeted.",
+        "application": "When studying human-like learning, report pattern-level alignment across multiple ability domains alongside conventional performance.",
+        "exception": "This framing is unsuitable when the research question concerns only task accuracy or when behavioral data are unavailable or not comparable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluated model set, datasets, similarity measures, task details, or training conditions.",
+      "The reported association between task performance and human resemblance is not quantified, and the abstract does not establish causal effects of training or improvement strategies."
+    ]
+  }
+}

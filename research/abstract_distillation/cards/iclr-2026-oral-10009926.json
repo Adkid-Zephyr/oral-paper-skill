@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009926",
+    "title": "WAVE: Learning Unified & Versatile Audio-Visual Embeddings with Multimodal LLM",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009926"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5c1e302fffe81f5a18f9115e4d0d56eab2ca9181e6fe7098e2d05cd3c4278785",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "a3784b0ef790d51e49172e23046faa8668d1da7fc6eb4be30cb2521953651896",
+    "extracted_at": "2026-09-13T00:03:39.876462+00:00",
+    "session_id": "01a09813-5ef2-76d1-9273-a4d46d411c9a",
+    "usage": {
+      "input_tokens": 12774,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 730,
+      "reasoning_output_tokens": 63
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5d6c890df9a54a97c345b0ee81f9b3b0867dd1a93b01acbdd1bda186b50a081c"
+    },
+    {
+      "id": "S2",
+      "sha256": "b587a6c3e02203a3fc45dc3f5f592969b183c63f7f9541fbd6883a114bb215ab"
+    },
+    {
+      "id": "S3",
+      "sha256": "d47b51905bfb1f6364597052d56f8e8679a2a0c4b353004be2c4265dc5a6cf59"
+    },
+    {
+      "id": "S4",
+      "sha256": "5ecc7239929eb4bf05182745bdc8fc3d028f4e99c68686b4dbd9bf9279e0210a"
+    },
+    {
+      "id": "S5",
+      "sha256": "f4e371082c1720f4eb88fcdeab7dce36cb57625565789676bdb1c3e47a157bac"
+    },
+    {
+      "id": "S6",
+      "sha256": "bbea9442784e8f35df3c5eeaf4330332a71e4e93c948d7e7fb1463cb8152e649"
+    },
+    {
+      "id": "S7",
+      "sha256": "7be08e6bfb6e1aef1523de3c443f15dee89aa49b82ec6ac752d15d4131eb6d85"
+    },
+    {
+      "id": "S8",
+      "sha256": "8f45391ebaf57cf8af034b654be3c2d6123c7d4c0bc2f89b8d01bd658db3382e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009926",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop unified, versatile embeddings spanning text, audio, and video, supporting cross-modal retrieval and instruction-conditioned representations.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Although multimodal LLM embeddings are strong general-purpose representations, their use for dynamic audio and video modalities remains underexplored.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "WAVE combines hierarchical feature fusion with joint multimodal, multitask training to support any-to-any retrieval and prompt-aware embeddings.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "benchmark/resource",
+        "claim": "The authors introduce a benchmark for versatile audio-visual learning and release code and checkpoints.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe WAVE as the first LLM-based embedding designed to create a unified representation space for text, audio, and video.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art performance on the MMEB-v2 video benchmark and superior audio and video-to-audio retrieval results.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that prompt-aware WAVE embeddings significantly outperform existing embedding models on multimodal question answering.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report ablations showing improved performance across all modalities from their joint training strategy.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper identifies limited exploration of multimodal LLM embeddings for dynamic audio and video.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It introduces WAVE as a unified text-audio-video embedding and describes hierarchical fusion plus joint multimodal, multitask training.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The authors report gains on video benchmarking, audio/video-to-audio retrieval, and multimodal question answering.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "analysis_and_release",
+        "summary": "Ablations are reported to support joint training; the authors also present a benchmark and release implementation artifacts.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links each major capability to an explicit design choice: hierarchical fusion and joint training are presented as enabling retrieval and prompt-aware embeddings.",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "interpretation": "This makes the method narrative easier to evaluate because architectural choices are connected directly to intended functions.",
+        "application": "When presenting a multimodal system, map each claimed capability to the mechanism intended to produce it, then test that mapping with targeted ablations.",
+        "exception": "This framing is less suitable when the contribution is primarily a dataset, theoretical result, or an exploratory system without separable mechanisms."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no metrics, dataset sizes, baseline identities, or detailed evaluation conditions for the reported comparisons.",
+      "The specific protocol and results for the newly introduced benchmark are not stated.",
+      "The ablation design and the meaning of improvement across all modalities are not quantified."
+    ]
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31762",
+    "title": "Linear Representations of Political Perspective Emerge in Large Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31762"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "aedf22df4c9e2c615b57e5991bbe3ca46a5e37bf5d981d44c7526c065b3b71cf",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "69f41764cc49efe7f67a497fee3c87b0e7d259f76ee9997489441b5dae39909d",
+    "extracted_at": "2026-09-12T23:50:57.914563+00:00",
+    "session_id": "01a09807-a684-7351-9297-fef43c149dce",
+    "usage": {
+      "input_tokens": 12880,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 909,
+      "reasoning_output_tokens": 95
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d8821179ac2a97760dfc2cdfac3114043af71fe47dbe250d2af761570ad4ee6f"
+    },
+    {
+      "id": "S2",
+      "sha256": "481112857419ab325a7a6a3746f5e981946853ff116283c86cca8625acfef477"
+    },
+    {
+      "id": "S3",
+      "sha256": "0604dc91123a3b2011f4a036b87d3489ae7e4568855d1506ebf4097ca167e06b"
+    },
+    {
+      "id": "S4",
+      "sha256": "8e608ea7219b56c05213c075419f38b9699ac9fb0b37310a51f871089ea39c0d"
+    },
+    {
+      "id": "S5",
+      "sha256": "ede72c888fd31f66b75f8729f2c0c188554c0966b5ac41e7728c3e378800158c"
+    },
+    {
+      "id": "S6",
+      "sha256": "c0d61c1827497a5ac7a9767fa8cc7307f7d747aeccf67167f599fe0640522f09"
+    },
+    {
+      "id": "S7",
+      "sha256": "89498a5a2f6111bf400bba97707104fa70b301248ccc961578f037bf6ed208bc"
+    },
+    {
+      "id": "S8",
+      "sha256": "c77ccb0dfa54995b75872027ae09a6c2a726cc1558040c3b9d79afa531e3cd77"
+    },
+    {
+      "id": "S9",
+      "sha256": "9edf1dcad54e2247baf58e8b443e63b63ed024e6f05fb5b8756f7eefb1468854"
+    },
+    {
+      "id": "S10",
+      "sha256": "86de25b725341f4c45b7ef4937b572f3998093d6595b415e59caed20ed5f85d4"
+    },
+    {
+      "id": "S11",
+      "sha256": "0d4b356acda37b4cc3de0fe2c11e9e9cda2d7f2072a13df437dd8dfcbb5736a4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31762",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how LLMs reflect liberal, conservative, and other political perspectives in American politics.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A probing approach identifies attention heads whose activations linearly predict lawmakers’ DW-NOMINATE ideology scores.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report that political perspectives have a linear structure in activation space, with more similar perspectives represented closer together.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Linear probes and interventions are used to visualize, monitor, and steer ideological stances in generated text.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by using mechanistic interpretability to identify, monitor, and steer a high-level linear representation of American political ideology in LLMs.",
+      "source_ids": [
+        "S3",
+        "S11"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Across three open transformer-based LLMs, the authors report that highly predictive attention heads are primarily in middle layers.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "claim": "Probes trained only on lawmakers’ ideology reportedly also predict news-outlet slant from activations produced while simulating those outlets.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that linear interventions on the identified attention heads can steer outputs toward more liberal or conservative stances.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setup",
+        "summary": "The paper frames LLM perspective generation as a question about political viewpoints in American politics.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "representation claim",
+        "summary": "It proposes that political perspectives form a linear geometry in activation space.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "measurement",
+        "summary": "The authors probe three models, generate lawmakers’ perspectives, and identify heads predicting DW-NOMINATE scores; predictive heads are mainly middle-layer heads.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "transfer and control",
+        "summary": "Lawmakers-trained probes transfer to news slant, while linear head interventions are reported to steer ideological stance.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The same probes trained on lawmakers’ ideology are reported to predict news-outlet slant in a different prompted setting.",
+          "source_ids": [
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "Cross-source transfer can make a representation claim more informative than evaluation on only the original subject type.",
+        "application": "When proposing a latent attribute probe, test it on a related but distinct source or context and state exactly what training labels are reused.",
+        "exception": "This move is unsuitable when the target domains are not conceptually aligned or when transfer cannot be interpreted without new labels."
+      },
+      {
+        "source_observation": {
+          "claim": "The paper connects localization, probing, visualization, monitoring, and intervention of the same attention heads.",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "A coherent chain from measurement to control can clarify how an interpretability result may support an operational use.",
+        "application": "Structure a paper so each control mechanism explicitly depends on the measured representation and identify the intervened components.",
+        "exception": "Do not imply controllability from localization alone when intervention evidence is absent."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative prediction, transfer, or steering metrics, baselines, sample sizes, or intervention details.",
+      "It does not specify how linear similarity in activation space is measured or which conditions determine when steering succeeds.",
+      "The abstract does not establish whether the findings generalize beyond the three listed models, American political ideology, or the prompted settings."
+    ]
+  }
+}

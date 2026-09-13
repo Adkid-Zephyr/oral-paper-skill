@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31734",
+    "title": "OLMoE: Open Mixture-of-Experts Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31734"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ce7af4eae5ab271d1cb64dfb6b51e1a906bace8a55ac6fa859153d82e1e9e140",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "08597dfc8f219b0ea4f2fb2d8ba85ff35bbdf3c7d91bb3c77d8cba90b03f2f6c",
+    "session_id": "01a09806-bb6e-7cf2-b681-bed3cbc86af3",
+    "extracted_at": "2026-09-12T23:49:50.535920+00:00",
+    "usage": {
+      "input_tokens": 14147,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 705,
+      "reasoning_output_tokens": 123
+    },
+    "normalizations": [
+      {
+        "field": "problem_and_gap.problem.claim",
+        "before": "null",
+        "after": null,
+        "reason": "Serialized null string with empty locators; no semantic claim added."
+      },
+      {
+        "field": "problem_and_gap.gap.claim",
+        "before": "null",
+        "after": null,
+        "reason": "Serialized null string with empty locators; no semantic claim added."
+      }
+    ],
+    "validation": "schema_and_locators_passed_after_null_normalization_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "248e67a0ba5f061ba4b9a6d1d3a2fac4af1121d8da0218ad69fd385ec9775e41"
+    },
+    {
+      "id": "S2",
+      "sha256": "41c68c16c09531b28587e7b679c4c74f8e7961da37f00c9ca1b8434f5493293b"
+    },
+    {
+      "id": "S3",
+      "sha256": "96f9ba207793c3a33ce886e2a904c55b8fee26ad66bbbe0d1df46137d24816df"
+    },
+    {
+      "id": "S4",
+      "sha256": "9872c3addb2fa387ad45185733057e6c3ba8b9a1b0e98f3088fba2d1ddbb57cb"
+    },
+    {
+      "id": "S5",
+      "sha256": "b0c669b3c33627a5b846d19153dee8240c13a3d906788a9df5d4f44058785839"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31734",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": null,
+        "source_ids": []
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "model",
+        "claim": "Introduces OLMoE, a fully open sparse Mixture-of-Experts language model.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Releases the model weights, training data, code, and logs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "Defines and analyzes routing properties, reporting high specialization in the model.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe novel findings on MoE training and new routing properties, alongside a fully open release.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that OLMoE models outperform available models with similar active-parameter counts and surpass Llama2-13B-Chat and DeepSeekMoE-16B.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report high specialization under their analyzed routing properties.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "model introduction",
+        "summary": "The paper introduces a fully open sparse-MoE language model.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "scale and training",
+        "summary": "OLMoE-1B-7B contains 7B total parameters but uses 1B per token; it is pretrained on 5T tokens and adapted into an instruction model.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "comparison and analysis",
+        "summary": "The authors report strong comparisons against similar-active-parameter and larger models, then present MoE-training findings and routing analysis.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "open release",
+        "summary": "The work releases weights, data, code, and logs.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a concrete active-parameter claim with broad comparison targets and identifies the released artifacts.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This links efficiency, comparative positioning, and inspectability in a compact contribution narrative.",
+        "application": "Authors of a systems paper could state total versus per-input compute, name comparison targets, and enumerate the artifacts needed to inspect the result.",
+        "exception": "This framing is unsuitable when active parameters do not meaningfully represent the relevant cost or when artifact release is restricted."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not state an explicit problem or limitation in prior approaches.",
+      "The reported comparisons do not specify datasets, metrics, evaluation settings, or statistical details.",
+      "The routing analysis does not define the properties or quantify specialization."
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010220",
+    "title": "InfoTok: Adaptive Discrete Video Tokenizer via Information-Theoretic Compression",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010220"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b78f357e5db26a2645aadbdf89fbad210daa879ef67e6b40db64288e84f9cf75",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "6042ea6fcb8fe2a1cef1a2d6e49ca6e7fbaaa912917c3c0bb29424f82d4311c4",
+    "extracted_at": "2026-09-13T00:04:08.967003+00:00",
+    "session_id": "01a09813-d15a-7133-b2c0-7008e864c8f7",
+    "usage": {
+      "input_tokens": 12692,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 771,
+      "reasoning_output_tokens": 101
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "08742946969b2b58ab83b7b16599746e0f097f544df39e0377a540c7f0aa8248"
+    },
+    {
+      "id": "S2",
+      "sha256": "78dcdc90092ef0d957c0f63b1c5ddb141a0e262281cc67c3b0c2fb9a2d84c003"
+    },
+    {
+      "id": "S3",
+      "sha256": "21fe163580318d9d64c8a87f6913f947e349fcf64bded481325d7d151367c316"
+    },
+    {
+      "id": "S4",
+      "sha256": "f7b0b4703d471b24616836346a6838a51ef6a59545dbf91ef6f84e6965cafc32"
+    },
+    {
+      "id": "S5",
+      "sha256": "dc63706d407fb02fad2cf89ea591afe5dcddaa4ab2e10e5a8907725904b5fbd9"
+    },
+    {
+      "id": "S6",
+      "sha256": "038b0fd25bfc352d4ce48b8e3565c4d961f860f44b2e6204f6b51575317766cc"
+    },
+    {
+      "id": "S7",
+      "sha256": "bdf81297a7daa080904c89d4b4d2d054dc7a44687c0a33052b290c7fefe12658"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010220",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses accurate and efficient discrete video tokenization for processing long video sequences.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Current tokenizers compress all video content at a fixed rate despite variable information density, causing redundancy or information loss.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Introduces an information-theoretic framework for adaptive video tokenization.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory and algorithm",
+        "claim": "Reports a proof that existing data-agnostic training methods are suboptimal in representation length and presents an ELBO-based algorithm intended to approach theoretical optimality.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Develops a transformer-based adaptive compressor that implements adaptive tokenization.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach as a principled, information-theoretic framework with a novel ELBO-based adaptive tokenization algorithm and transformer compressor.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art compression performance, including 20% token savings without performance influence.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report achieving 2.3× compression rates while outperforming prior heuristic adaptive approaches.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report a theoretical result that existing data-agnostic training methods are suboptimal in representation length.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Long-video processing requires accurate and efficient discrete video tokenization.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem framing",
+        "summary": "Fixed-rate compression fails to reflect videos’ variable information density, producing redundancy or information loss.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper proposes an information-theoretic adaptive framework, an ELBO-based algorithm, and a transformer compressor.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The authors report token savings and stronger compression performance than prior heuristic adaptive methods.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links variable information density to fixed-rate compression, then motivates allocating tokens according to informational richness.",
+          "source_ids": [
+            "S2",
+            "S7"
+          ]
+        },
+        "interpretation": "Making the failure mode structurally match the proposed allocation rule gives the method rationale a direct problem-to-design connection.",
+        "application": "When presenting an adaptive representation method, explicitly map the measured or hypothesized source variability to the mechanism that changes resource allocation.",
+        "exception": "This framing is unsuitable when the task requires uniform-rate representations or when information density cannot be operationalized reliably."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the datasets, evaluation tasks, baselines, or conditions behind the reported compression and performance figures.",
+      "The abstract does not define how informational richness, performance influence, or theoretical optimality are measured.",
+      "The symbol used for the proposed method is unresolved in the abstract text, although the paper title identifies InfoTok."
+    ]
+  }
+}

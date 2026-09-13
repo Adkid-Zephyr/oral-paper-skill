@@ -1,0 +1,103 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "records": [
+    {
+      "paper_id": "iclr-2025-oral-31728",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31744",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31761",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "contributions[0].claim",
+          "source_ids": ["S2"],
+          "issue": "The decomposition is of the time derivative of relative entropy, not relative entropy itself. The narrative section already states this correctly.",
+          "severity": "minor",
+          "correction": "A decomposition of the time derivative of relative entropy separates a dominant negative term proportional to N times expected KSD squared from a smaller positive term, starting from a regular initial distribution."
+        },
+        {
+          "field": "unknowns[0]",
+          "source_ids": ["S3"],
+          "issue": "The abstract explicitly explains near optimal as matching corresponding i.i.d. rates; the unknowns incorrectly say its meaning is unspecified.",
+          "severity": "minor",
+          "correction": "The abstract does not specify the exact assumptions, constants, time horizons, or precise meaning of the double-exponential improvement; it defines near optimal by comparison with corresponding i.i.d. rates."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31776",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006417",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "unknowns[0]",
+          "source_ids": ["S3", "S4"],
+          "issue": "The abstract does specify late-stage concentration and a final-step global merge, so an unqualified statement that synchronization schedules are unspecified is inaccurate.",
+          "severity": "minor",
+          "correction": "The abstract does not specify datasets, empirical comparator identities, numerical communication budgets, full synchronization schedules, or quantitative performance gains."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006532",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006549",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "narrative_sequence[3].summary",
+          "source_ids": ["S6", "S7", "S8"],
+          "issue": "Presenting 7.6% to 42.9% as the frontier-CUA ASR range makes 42.9% an unsupported upper bound. S6 reports two named models and identifies only the lower endpoint as most secure; it does not identify the maximum ASR across evaluated CUAs.",
+          "severity": "material_error",
+          "correction": "The authors report ASRs of 7.6% for Operator and 42.9% for Claude 3.7 Sonnet | CUA, attempts up to 92.5%, and end-to-end ASRs up to 50%."
+        },
+        {
+          "field": "unknowns[0]",
+          "source_ids": ["S6"],
+          "issue": "Two evaluated CUAs are named; the missing information is the complete evaluated set, not all information about the CUA sample.",
+          "severity": "minor",
+          "correction": "The abstract does not specify the complete evaluated CUA set, detailed benchmark construction or splits, statistical uncertainty, or defense baselines."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006563",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 8,
+    "first_pass_pass": 5,
+    "first_pass_minor": 2,
+    "first_pass_material_error": 1,
+    "material_findings": 1,
+    "minor_findings": 4,
+    "requires_correction": 3,
+    "scope": "Read all eight supplied abstracts and corresponding extraction fields. Findings concern source fidelity only; no cards were edited and no gate was issued. This AI review does not establish experimental validity, lesson effectiveness, or Oral selection causes."
+  }
+}

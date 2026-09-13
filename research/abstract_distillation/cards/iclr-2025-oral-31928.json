@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31928",
+    "title": "Towards Understanding Why FixMatch Generalizes Better Than Supervised Learning",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31928"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "55450f2c1ffdd5bfcca0219d975ec64487e5d6cef945f7389ba973df1a75f009",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "31b56c95e83ac0bea10601be41e9c6eca90cb272b662c4a1123f2943519e2b66",
+    "extracted_at": "2026-09-12T23:57:28.539876+00:00",
+    "session_id": "01a0980d-b804-7fd3-ae29-a056e4287737",
+    "usage": {
+      "input_tokens": 14277,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 734,
+      "reasoning_output_tokens": 72
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f836295dbbc291e8c2fbef2b138f2458ded7641f1336ce8640a0919de41ba21f"
+    },
+    {
+      "id": "S2",
+      "sha256": "5a8d98a759c84474a98a9bd4ff4f1da0c68092511f9b39f41d01878576c7975d"
+    },
+    {
+      "id": "S3",
+      "sha256": "ca516f34c97725949e15590c1fa0b954acd55f794fe8f2d885fc4d33516bb018"
+    },
+    {
+      "id": "S4",
+      "sha256": "81518b36d3bea434a1c73715622cf4e9460e24e3340a997c57b3343e0d6aca88"
+    },
+    {
+      "id": "S5",
+      "sha256": "0ce5d5af716fe38df8431b22e3b6d94036cb5c8df9c70ff0736697399f07961d"
+    },
+    {
+      "id": "S6",
+      "sha256": "7698e8192df69a984416dddca2bb3a752d706e1fbf62ee0bb563cabec2193a7b"
+    },
+    {
+      "id": "S7",
+      "sha256": "6a4e87a24c88a61c02ae9c2daee46e67a7e0a929505ef714a66c4791106e524b"
+    },
+    {
+      "id": "S8",
+      "sha256": "29d8d6ab2112ae7c1de6571d48e206f19af22df7771462060a857c02426d5d1f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31928",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain why FixMatch-like semi-supervised learning generalizes better than supervised learning on deep neural networks.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The theoretical reason for this generalization difference remains unclear.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Provides a theoretical justification for the reported test-accuracy advantage of FixMatch-like SSL, using CNN classification as an example.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "comparative analysis",
+        "claim": "Characterizes different semantic feature-learning processes: FixMatch learns all discriminative features of each class, whereas SL randomly captures a subset under the stated lottery-ticket account.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces Semantic-Aware FixMatch (SA-FixMatch), inspired by the theoretical analysis.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present their analysis as the first theoretical justification of enhanced test accuracy for FixMatch-like SSL on DNNs.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their analysis framework applies to FlexMatch, FreeMatch, Dash, and SoftMatch in addition to FixMatch.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report experimental results that corroborate their theoretical findings and SA-FixMatch's enhanced generalization capability.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "FixMatch-like SSL is reported to generalize better than SL, but the theoretical explanation is unclear.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "The paper presents a CNN-classification theory and contrasts semantic feature learning in FixMatch and SL.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "The authors state that the framework extends to several other FixMatch-like methods.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "method and evidence",
+        "summary": "The analysis motivates SA-FixMatch, whose reported experiments support the theory and improved generalization claim.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a mechanistic theoretical distinction—coverage of class-discriminative features—to a generalization comparison, then uses that analysis to motivate a named method.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A mechanism-to-method chain can make a proposed improvement's rationale explicit.",
+        "application": "Frame a new algorithm around a specific analyzed failure mode, and state how the modification targets that mechanism before presenting results.",
+        "exception": "This framing is unsuitable when the proposed change is not derived from an explicit mechanism or the abstract lacks evidence connecting the mechanism to outcomes."
+      }
+    ],
+    "unknowns": [
+      "No quantitative accuracy, dataset, architecture, or experimental protocol is provided.",
+      "The abstract does not specify the formal assumptions, theorem statements, or limits of the claimed analysis.",
+      "The authors' priority claim is reported but cannot be independently assessed from the supplied units."
+    ]
+  }
+}

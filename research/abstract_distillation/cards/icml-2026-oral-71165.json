@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71165",
+    "title": "Holi-Spatial: Evolving Video Streams into Holistic 3D Spatial Intelligence",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71165"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8de30f58a55ca41f205fab2c21c421951f53ee11463539220896d2ccbb87886b",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "d22db8abea7d95e5ae32ee59eddae0c049d5a20734fa29ca4a10bc3418e2deef",
+    "extracted_at": "2026-09-13T00:16:42.151644+00:00",
+    "session_id": "01a0981f-4caf-75d0-ab68-4c4faee3de99",
+    "usage": {
+      "input_tokens": 12863,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 831,
+      "reasoning_output_tokens": 65
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7df40a5c9ed34beb5deb9abe681ff79ed586f5db4a81b880526eb3f118143611"
+    },
+    {
+      "id": "S2",
+      "sha256": "fb5882e2620ef0391d529045e444619e9e197945a1b5aa643847fd34b3c5749a"
+    },
+    {
+      "id": "S3",
+      "sha256": "d07e90b617936a8c675e154dac984050ad019f4abd611e6852a750eea5fa0f1a"
+    },
+    {
+      "id": "S4",
+      "sha256": "11d4a31ad255c0faec937163ec296d1c9f44f1902546a7062a1115fc268b5b9a"
+    },
+    {
+      "id": "S5",
+      "sha256": "1c744ca287d60f458f7a5e6c3e55ccbae2659c3483fdbdd9984874f0cc3eaaea"
+    },
+    {
+      "id": "S6",
+      "sha256": "b67e4e5ec94176903fcced636d79cabec0228d77c8acc8683cd8251d92d0c8a6"
+    },
+    {
+      "id": "S7",
+      "sha256": "94c6f39329407befb3cb78debc9c7d270a385af41f62053905420c922b605ce5"
+    },
+    {
+      "id": "S8",
+      "sha256": "e63371fb122bfb7bce1c29d8547a53b442f21995a0a8bc397bcc2c19e1ce8554"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71165",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Scaling spatial intelligence requires large-scale, fine-grained 3D data.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing benchmarks mainly derive QA pairs from a small set of manually annotated datasets, limiting scalability and leaving domain gaps from narrowly curated data.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "dataset and method",
+        "claim": "The authors propose Holi-Spatial, an automated pipeline for constructing a large-scale spatially aware multimodal dataset from raw videos without human intervention.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "They construct Holi-Spatial-4M with multi-level geometric, object, relational, semantic, grounding, and QA supervision across 12K scenes and the reported annotation counts.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "They report improved data-curation results over existing feed-forward and per-scene optimized methods, plus improved VLM performance after fine-tuning on spatial reasoning tasks.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe Holi-Spatial as the first fully automated, large-scale spatially aware multimodal dataset from raw video, and Holi-Spatial-4M as the first large-scale, high-quality 3D semantic dataset.",
+      "source_ids": [
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Holi-Spatial outperforms existing feed-forward and per-scene optimized methods on ScanNet, ScanNet++, and DL3DV for data-curation quality.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report substantial VLM performance improvements after fine-tuning on spatial reasoning tasks with the dataset.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Spatial intelligence is framed as dependent on abundant fine-grained 3D data.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Manually annotated, narrowly curated benchmark construction is presented as a scalability and domain-gap bottleneck.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Holi-Spatial is introduced as an automated raw-video curation pipeline with geometric and semantic supervision.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "resource",
+        "summary": "The pipeline yields Holi-Spatial-4M, combining 3DGS scenes, masks, boxes, captions, grounding instances, and spatial QA pairs.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report stronger curation quality and gains from VLM fine-tuning.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects the dataset’s scale to a specific inventory of supervision types and counts, then separately reports curation and downstream VLM outcomes.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "Enumerating concrete resource components before outcome claims makes the proposed data-to-capability pathway easier to assess.",
+        "application": "Structure a dataset abstract by listing supervision modalities and scale, followed by benchmark comparisons and downstream adaptation results.",
+        "exception": "This structure is less suitable when the work has no concrete resource inventory or downstream evaluation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the curation-quality metrics, numerical comparison margins, VLM baselines, or fine-tuning settings.",
+      "The reported 'first' and 'high-quality' distinctions are author claims; the abstract provides no comparative substantiation for them."
+    ]
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011644",
+    "title": "Visual symbolic mechanisms: Emergent symbol processing in Vision Language Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011644"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e167979761138afeba8932ee811485dbd1e1f975ba07c1c35225f0114fdf11b9",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "128354e7ebbedc8150690c07e2dca103997ae39066215c0324ac50dee6bbfcaa",
+    "extracted_at": "2026-09-13T00:06:13.859782+00:00",
+    "session_id": "01a09815-bf8e-7bd1-bd96-c5a87f507769",
+    "usage": {
+      "input_tokens": 12681,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 630,
+      "reasoning_output_tokens": 90
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2e2fbee88eae73e11e1da0d828622de3fed64df369c9d387f50e6d91789009fe"
+    },
+    {
+      "id": "S2",
+      "sha256": "feb096c8b0e2ca7504e5ca05a60431017d9a5276f7ce6831cd821def0cd4000a"
+    },
+    {
+      "id": "S3",
+      "sha256": "1e0124028a27cdc5524e20822a75758406396af77547c6ffcf143b34bf373462"
+    },
+    {
+      "id": "S4",
+      "sha256": "5348f40b2ced303a53292f3ae17c49f54bece6cb29a050e8b5265088c8d2dbaf"
+    },
+    {
+      "id": "S5",
+      "sha256": "8d7956d715a6da2b08e4a7e2657f374a7fa2dfc00691f03321ac9a75ae51ec7f"
+    },
+    {
+      "id": "S6",
+      "sha256": "cb56d3ec52335a88a5e10777000e2ba369be404ed2e45a8aae65751a7dca77b8"
+    },
+    {
+      "id": "S7",
+      "sha256": "5f6193241ebd95a8b772b70fccd1779773bdba5dd469bd351e208d719e6047e8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011644",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain how Vision Language Models bind visual features to individual objects, such as correctly pairing colors and shapes.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "It is unclear whether VLMs use the symbol-like, content-independent indices reported in language models, despite persistent binding-task failures.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "mechanism",
+        "claim": "Identifies emergent symbolic mechanisms supporting binding in VLMs through content-independent spatial indexing.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "diagnosis",
+        "claim": "Reports that binding errors can be directly traced to failures in these mechanisms.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe the identified VLM mechanisms as previously unknown and specifically characterize them as a spatial indexing scheme.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that binding errors, when present, trace directly to failures of the identified mechanisms.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task motivation",
+        "summary": "Visual perception requires binding features into object representations, including distinguishing crossed color-shape pairings.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "open question",
+        "summary": "Prior work attributes binding in language models to content-independent symbolic indices, but whether VLMs use analogous mechanisms remains unclear amid binding failures.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed account and implication",
+        "summary": "The authors identify VLM-specific spatial indexing mechanisms, link binding errors to their failures, and suggest avenues for reducing such failures.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a model failure mode—binding errors—to failure of a specific internal mechanism rather than only reporting task-level performance.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Mechanism-level diagnosis can make a capability claim more explanatory and point toward targeted interventions.",
+        "application": "Frame a study by mapping observed errors to failures in an explicitly hypothesized internal representation or operation.",
+        "exception": "This framing is unsuitable when the abstract lacks evidence linking the internal mechanism to the observed errors."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the VLMs, binding tasks, analysis methods, error frequencies, or scope of the reported mechanisms.",
+      "The suggested avenues for reducing binding failures are not demonstrated as interventions in the supplied text."
+    ]
+  }
+}

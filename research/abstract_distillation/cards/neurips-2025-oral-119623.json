@@ -1,0 +1,209 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-119623",
+    "title": "A Clean Slate for Offline Reinforcement Learning",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/119623"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3913832d915406d0252b97c3a48d326022bc782d9236b8754a7f49d3ae68908f",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "07fd36f733f6dc0d617eac87a425970c099746e8f47c48d42c8ae7d7270c252e",
+    "extracted_at": "2026-09-13T00:23:09.778153+00:00",
+    "session_id": "01a09825-3a10-7f93-9007-9aba02a8154e",
+    "usage": {
+      "input_tokens": 12725,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 798,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3c29fb74c9e1f503e1859cb849928a5cec93840a910909014382855a76ed7e4a"
+    },
+    {
+      "id": "S2",
+      "sha256": "cba59b5284c82f3d9ea2c30ca37d662f608268de59ed58d5a36c9d7a177e715a"
+    },
+    {
+      "id": "S3",
+      "sha256": "91549f9a8b5b807c2cc8edce9df3ef7578e8598932c1bfb9582d82c59bd6b731"
+    },
+    {
+      "id": "S4",
+      "sha256": "8022ef1bdfe5a2b75b57c7952ac6ff8aff72fa113ffbd392ec52de69c4e9452b"
+    },
+    {
+      "id": "S5",
+      "sha256": "c87d511a50c55f3bf3d0d10dc5e3e52c2be6bd11b2c5530545c3ab3748cbac65"
+    },
+    {
+      "id": "S6",
+      "sha256": "1d52228fc775166b7cce2f8add94444dcfa149d6a805efe2960a86a24fd698b4"
+    },
+    {
+      "id": "S7",
+      "sha256": "d56bb6f7245353d9f97c250c992c5729fb021e94ebb660ca43f8352c7560e1fc"
+    },
+    {
+      "id": "S8",
+      "sha256": "3ca33bccd5203e563957b8c83efb14cf3b0efa7bf7227945456a86522e3f1dc6"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-119623",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses ambiguous offline-RL definitions, entangled designs, opaque implementations, and evaluation practices that hinder fair method comparison.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Prior methods often used extensive undocumented online tuning, while differing boilerplate obscured core algorithmic contributions.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "evaluation framework",
+        "claim": "A taxonomy and transparent protocol that explicitly quantifies online tuning budgets.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system and unified method",
+        "claim": "Clean single-file implementations and Unifloral, a unified algorithm spanning diverse prior approaches within one hyperparameter space.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "algorithms",
+        "claim": "Two algorithms developed using Unifloral and the protocol: model-free TD3-AWR and model-based MoBRAC.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state the introduction of Unifloral and the development of TD3-AWR and MoBRAC as new contributions, alongside their taxonomy, protocol, and streamlined implementations.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the streamlined implementations achieve substantial speed-ups.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that TD3-AWR and MoBRAC substantially outperform established baselines under their protocol.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report publicly releasing the implementation.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper identifies ambiguous definitions and entangled designs as causes of inconsistent implementations, weak ablations, and unfair evaluations.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "evaluation critique",
+        "summary": "It highlights undocumented online hyperparameter tuning and boilerplate differences as barriers to comparison and attribution.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "infrastructure",
+        "summary": "It introduces a taxonomy, tuning-budget-aware protocol, and minimal single-file implementations.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "unification and results",
+        "summary": "It proposes Unifloral, then uses it with the protocol to develop TD3-AWR and MoBRAC, which the authors report outperforming established baselines.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "release",
+        "summary": "The implementation is reported as publicly available.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper links fair comparison to explicit online-tuning budgets and separates core algorithmic code from boilerplate through minimal implementations.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Making evaluation overhead and implementation boundaries visible can improve the interpretability of comparisons.",
+        "application": "When presenting a benchmark, report online tuning budgets explicitly and isolate the method-specific logic in a minimal reference implementation.",
+        "exception": "This may be unsuitable when production integration, complex infrastructure, or online adaptation is itself the object of study."
+      }
+    ],
+    "unknowns": [
+      "No quantitative speed-up figures, baseline identities, task coverage, or tuning-budget values are given.",
+      "The abstract specifies that the evaluation protocol quantifies online tuning budgets, but does not give the detailed protocol, statistical treatment, or conditions underlying the reported performance gains."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "unknowns[1]",
+      "before": "The abstract does not specify the evaluation protocol, statistical treatment, or conditions underlying the reported performance gains.",
+      "after": "The abstract specifies that the evaluation protocol quantifies online tuning budgets, but does not give the detailed protocol, statistical treatment, or conditions underlying the reported performance gains.",
+      "review_file": "reviews/audit-neurips-2025.json",
+      "review_sha256": "079eb7ffb690a0165c91f704b9564c45997aabb0a7be4169da64e04491f044d4",
+      "applied_at": "2026-09-13T00:27:36.271895+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-115789",
+    "title": "Generalized Gradient Norm Clipping & Non-Euclidean $(L_0,L_1)$-Smoothness",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/115789"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5253cd737fd937d0427255cdde740df7fd1459e367de86b85dc12ec65bff6e7f",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "1248a929db476d0a3e51710f54b2576d70c2b73c5da1ca0e313da73c58fd26a8",
+    "extracted_at": "2026-09-13T00:20:57.016588+00:00",
+    "session_id": "01a09823-3499-77c2-ad71-0e08a6a562cf",
+    "usage": {
+      "input_tokens": 12639,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 773,
+      "reasoning_output_tokens": 82
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "98a77c5f711b3b85d7f2a5ba67aa9a3b1d7a9aaef847fdd32df1d8655e70da6f"
+    },
+    {
+      "id": "S2",
+      "sha256": "4eb1eabc7e7c7edcaf7819b40d017bcc5ac45cb8b50c45057d55e6a829451b14"
+    },
+    {
+      "id": "S3",
+      "sha256": "9c5788b7dd5874a755f250b6a601ab228f00f1a972d660ba6ff00fba83096233"
+    },
+    {
+      "id": "S4",
+      "sha256": "f7687260ef03a5984c5b99893d5eb8db9770c7ae8367bf50096e945b48ae6a4d"
+    },
+    {
+      "id": "S5",
+      "sha256": "a8dbd8699cbe488ba6558c357f3e651ad10b48999cafc25fbe62b94c638ffb65"
+    },
+    {
+      "id": "S6",
+      "sha256": "8ed4e9f517ac1ee33adcad1b86ba48caf3e9d77d8327a8ec27803099ad2525a3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-115789",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": null,
+        "source_ids": []
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces a hybrid non-Euclidean optimization method combining steepest descent with conditional-gradient approaches to generalize gradient norm clipping.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Establishes a descent property under generalized (L0,L1)-smoothness and connects weight decay to the Frank–Wolfe short step.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "algorithm and application",
+        "claim": "Develops a momentum-based stochastic variant and deep-learning instantiations called Clipped Scion.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by combining steepest descent and conditional-gradient methods within a generalized non-Euclidean gradient-clipping framework.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report an order-optimal O(n^-1/4) convergence rate in the stochastic case using a momentum-based gradient estimator.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report demonstrations of the algorithms' properties on image-classification and language-modeling tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors provide implementation code through the stated GitHub repository.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "method proposal",
+        "summary": "Introduces a hybrid non-Euclidean method that combines steepest descent and conditional-gradient approaches.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "theoretical basis",
+        "summary": "States a descent property under generalized (L0,L1)-smoothness and explains weight decay through the Frank–Wolfe short step.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "stochastic result",
+        "summary": "Reports an O(n^-1/4) convergence rate for the stochastic setting with a momentum-based gradient estimator.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "deep-learning instantiation",
+        "summary": "Names the deep-learning algorithms Clipped Scion and demonstrates their properties on image classification and language modeling.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reproducibility resource",
+        "summary": "Points to an available code repository.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each major design element with a corresponding claim: hybrid updates with generalized smoothness, weight decay with a Frank–Wolfe step, and stochastic convergence with momentum estimation.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This pairing makes the method's conceptual components and claimed guarantees easier to track.",
+        "application": "When presenting a new optimizer, explicitly map each mechanism to the theoretical or empirical property it is intended to support.",
+        "exception": "This framing is less suitable when the work has no modular mechanisms or when the abstract cannot state the supporting result precisely."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact algorithm, assumptions behind the descent and convergence claims, constants, datasets, baselines, or reported empirical metrics.",
+      "The meaning of “properties” in the image-classification and language-modeling demonstrations is unspecified."
+    ]
+  }
+}

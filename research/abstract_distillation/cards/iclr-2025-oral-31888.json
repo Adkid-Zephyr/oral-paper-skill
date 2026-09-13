@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31888",
+    "title": "Turning Up the Heat: Min-p Sampling for Creative and Coherent LLM Outputs",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31888"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d943de4eca5f7dabdd818df92a9a199dc8525cf7939f0c1764db997a5f3b82a8",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "b55152bcaf3b354d5744a96c394fbf49949be747ac11537e9a016e64f4506282",
+    "extracted_at": "2026-09-12T23:55:57.376419+00:00",
+    "session_id": "01a0980c-54d4-79a3-9154-940e9b774a96",
+    "usage": {
+      "input_tokens": 12664,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 727,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ff5e899700de4dd2a6f28e45b37803921d825ae59d7ff19321e2a3f1d6f2893e"
+    },
+    {
+      "id": "S2",
+      "sha256": "9f1ede51cf0ecf46a9d1e8214c0a6392bf4e9536502650447051c9d5443aafad"
+    },
+    {
+      "id": "S3",
+      "sha256": "0fa26bd26018b10b7f603fd2836a401e4bedd1393f14320899afc0fe3c4c8370"
+    },
+    {
+      "id": "S4",
+      "sha256": "aecdb4933c5c705ac93f533ab9b0ba739071d20d2017aae94c267a14b15e4861"
+    },
+    {
+      "id": "S5",
+      "sha256": "5082d3174e754bf6d935f808f502efb7e062ad233591270f89e46ee8ff92abe2"
+    },
+    {
+      "id": "S6",
+      "sha256": "07816af7bd44d202cafcfc1aa8a44371f34c5ef95ec7d4b9191f92f7e94348bd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31888",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses how to sample next tokens from LLM vocabulary distributions while balancing generated-text quality and diversity, especially at high temperatures.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "It identifies that popular top-p sampling often fails to maintain this balance at higher temperatures, producing incoherent or repetitive outputs.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes min-p sampling, a dynamic truncation method whose threshold scales with the probability of the top token to reflect model confidence.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports improved generated-text quality and diversity with min-p sampling, particularly at high temperatures, across GPQA, GSM8K, and AlpacaEval Creative Writing.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system adoption",
+        "claim": "Reports adoption of min-p sampling in Hugging Face, VLLM, and other open-source LLM implementations.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present confidence-scaled dynamic truncation as the defining feature of min-p sampling.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report benchmark results showing improved quality and diversity, especially at high temperatures, on GPQA, GSM8K, and AlpacaEval Creative Writing.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that human evaluators preferred min-p sampling for both text quality and diversity.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report implementation adoption by Hugging Face, VLLM, and other open-source systems as evidence of practical utility and potential impact.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "LLMs sample each next token from a vocabulary probability distribution during decoding.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Top-p sampling is described as struggling to balance quality and diversity at high temperatures, with incoherent or repetitive outputs as consequences.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Min-p sampling dynamically adjusts truncation using the top token's probability as a confidence-scaled threshold.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Experiments and human evaluations are reported to favor min-p on quality and diversity, especially at high temperatures.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "practical impact",
+        "summary": "The abstract reports adoption in major open-source LLM implementations.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific failure mode—high-temperature incoherence or repetition—to a method mechanism that adapts truncation to top-token confidence.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A compact problem–mechanism pairing can make a sampling proposal's motivation and design rationale easy to assess.",
+        "application": "When presenting a decoding method, explicitly connect the targeted generation failure to the parameter or rule that changes in response to it.",
+        "exception": "This framing is unsuitable when the method's mechanism does not directly address the stated failure mode or when the abstract lacks evidence connecting them."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical effect sizes, baselines beyond top-p, evaluation protocols, sample sizes, or statistical uncertainty.",
+      "The reported adoption does not establish effectiveness, causal impact, or independently verified novelty."
+    ]
+  }
+}

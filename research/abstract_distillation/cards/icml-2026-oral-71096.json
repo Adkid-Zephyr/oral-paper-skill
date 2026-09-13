@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71096",
+    "title": "DroneDINO: Towards Heterogeneous Routed Mixture of Experts for Drone-based Unified Object Detection",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71096"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "53d33306393b24d1431b4705195cf3dd42309da4bf31353c4c198c92cec3f93b",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "13a6fb656d1ce2ed40d3df449296e8e2ed93edf991571749cd1c297f88495ff1",
+    "extracted_at": "2026-09-13T00:13:55.878789+00:00",
+    "session_id": "01a0981c-c1fc-73d2-8e96-7b4565b6e92b",
+    "usage": {
+      "input_tokens": 12755,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 739,
+      "reasoning_output_tokens": 53
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "73e0f2ed668a5466a054af411a9e23426f63e836b7a9db9d3f073120e7b76a93"
+    },
+    {
+      "id": "S2",
+      "sha256": "c9e98e927c2b3e0710c62c41fcf9f149195e4e70c756333aa4f56dc3ee8e81f3"
+    },
+    {
+      "id": "S3",
+      "sha256": "415ec776b1f78625e501b79b51945ec5ece412b7080f382cc91d44c8c726349b"
+    },
+    {
+      "id": "S4",
+      "sha256": "204d86b84b58cef513a53dcfb1086f78adc0d251b3ee443682be94e3e8a90f4c"
+    },
+    {
+      "id": "S5",
+      "sha256": "a7341816697ea9f8d8b140fa672ffe51a48e076ec0857c6309d6b18d14ad06d9"
+    },
+    {
+      "id": "S6",
+      "sha256": "af637cb47a86dca7d73ca688b5b5e672b11e0809a359736b88d0f1016b996b35"
+    },
+    {
+      "id": "S7",
+      "sha256": "9796b01d3662c6bcf6f59f58b913bfdedf6444f0af2954cd746bf291847c44e6"
+    },
+    {
+      "id": "S8",
+      "sha256": "03f78b8a136737696da2948f415081b286363400cbe363d82bccbc4de0f0247c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71096",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Build a unified detector for drone-based RGB, infrared, and RGB-IR detection across diverse scenarios.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Imbalanced multi-task data can over-activate experts for dominant tasks and under-activate them for other tasks in existing unified MoE detectors.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DroneDINO extends DINO with heterogeneous routed MoEs containing shared, task-specific, and dynamic expert groups.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It introduces a task-recognition auxiliary training strategy that penalizes low task-discriminability in features.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "It unifies RGB, IR, and RGB-IR detection paradigms in one framework.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish DroneDINO through heterogeneous expert routing: shared experts process all inputs, task-specific experts process matching tasks, and dynamic experts provide routed specialization.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments show effectiveness and generalizability across multiple drone-based detection benchmarks.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report consistent outperformance of state-of-the-art unified and task-specific detectors.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Drone applications create demand for unified detection across diverse scenarios.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing unified MoE detectors face expert-activation imbalance from imbalanced multi-task data.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "DroneDINO combines RGB, IR, and RGB-IR detection and adds heterogeneous routed expert groups.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "routing strategy",
+        "summary": "Shared experts are always active, task-specific experts match tasks, and auxiliary training promotes task-discriminative features.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Experiments reportedly show broad benchmark performance gains and generalizability.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a specific failure mode—dominant-task expert over-activation—with differentiated routing roles and an auxiliary task-recognition objective.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This makes the method rationale traceable from data imbalance to architectural and training choices.",
+        "application": "When presenting a multi-task model, map each stated failure mode to an explicit component and explain the component’s activation or optimization behavior.",
+        "exception": "This framing is less suitable when the abstract lacks a clearly identified failure mode or the proposed component addresses several unrelated issues."
+      }
+    ],
+    "unknowns": [
+      "No benchmark names, dataset sizes, metrics, numerical gains, or ablation results are provided.",
+      "The abstract does not specify how dynamic experts are routed or how the auxiliary penalty is implemented.",
+      "The reported outperformance and generalizability are author claims without details needed for independent assessment."
+    ]
+  }
+}

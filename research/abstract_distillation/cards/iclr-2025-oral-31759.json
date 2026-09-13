@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31759",
+    "title": "Tractable Multi-Agent Reinforcement Learning through Behavioral Economics",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31759"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "63ebe5e5ccb74a1f59a39780367217917589976e4dd298407270d7199162e8d5",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "3aeb645f7afff4b362e671aff85e12ea724cd1bb77ce54b6cf43bd5f1d157ac6",
+    "extracted_at": "2026-09-12T23:50:52.438709+00:00",
+    "session_id": "01a09807-a0ac-70f1-8d3b-b55084491de6",
+    "usage": {
+      "input_tokens": 12711,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 827,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ce2958217c673bfc245256602d36956af7c64d5f71b0b95f3a9fcb73aebd5db9"
+    },
+    {
+      "id": "S2",
+      "sha256": "86648001fecac472da55538dd6d69fc906420b3a9a6a549903cd52df930ab457"
+    },
+    {
+      "id": "S3",
+      "sha256": "c9f035b8e0dc47c721b547a22ed7e7cc935be7c6d43aa00c0f84aa6f8e8681fe"
+    },
+    {
+      "id": "S4",
+      "sha256": "7e544869ba555b004f9fb945c13082eb083a054604c866c6b1cfbecb7a523fbb"
+    },
+    {
+      "id": "S5",
+      "sha256": "d9f3bf64253e300a1d6b4a2b93d809c7f53c7fc300a68cda033736762155e7d8"
+    },
+    {
+      "id": "S6",
+      "sha256": "ffffab5afa71690a0d2c72b07312f8e3830dec7a8b50b16baa2ae2ae81fe6654"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31759",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop principled multi-agent reinforcement learning solution concepts that are computationally tractable in matrix and finite-horizon Markov games.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Desired concepts such as Nash equilibria may be intractable to compute.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method/theory",
+        "claim": "Introduces a class of risk-averse quantal response equilibria that the authors report is tractable to compute in all n-player matrix and finite-horizon Markov games.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "learning characterization",
+        "claim": "Shows that these equilibria emerge as endpoints of no-regret learning in suitably adjusted games.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "sample-complexity analysis",
+        "claim": "Provides an initial analysis of the sample complexity of computing these equilibria in finite-horizon Markov games with access to a generative model.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their tractable RQE class by making computational tractability depend on agents' risk aversion and bounded rationality rather than the underlying game structure.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the tractable RQE class captures people's play patterns in several previously studied two-player matrix games from experimental economics.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report validating their sample-complexity findings on a simple multi-agent reinforcement learning benchmark.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that the equilibria arise as endpoints of no-regret learning in suitably adjusted versions of the games.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Computational intractability of desired multi-agent solution concepts, including Nash equilibrium, is identified as a roadblock.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The paper uses risk aversion and bounded rationality from behavioral economics to define tractable RQE.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "structural result",
+        "summary": "The tractable class is reported to depend on agent properties rather than game structure and to arise through adjusted no-regret learning.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "validation and analysis",
+        "summary": "The authors report behavioral validation in two-player games, then analyze finite-horizon Markov-game sample complexity and test it on a benchmark.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a proposed equilibrium concept to both a learning dynamic and behavioral-game evidence, while separately reporting a sample-complexity analysis.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A learning-theoretic proposal is easier to assess when its computational, behavioral, and algorithmic implications are stated as distinct evidence strands.",
+        "application": "For a new multi-agent solution concept, organize the abstract around its computational characterization, learning interpretation, and at least one domain-relevant validation or complexity result.",
+        "exception": "This structure may be unsuitable when the work is purely theoretical or lacks meaningful behavioral or algorithmic evaluation."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative tractability or sample-complexity bounds.",
+      "It does not specify the adjustments to the games, the benchmark, or the number and identity of the experimental-economics games.",
+      "The reported behavioral and benchmark validations lack methodological details and decisive comparison conditions."
+    ]
+  }
+}

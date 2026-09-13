@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011897",
+    "title": "Efficient Resource-Constrained Training of Transformers via Subspace Optimization",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011897"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "152aa6e96f2d22a3f2e173cd9ea9d2795b477f4e50f8c89f426f60a4fd368e9d",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "44018b7bcceff163522a04f770e8bc650459d09de7123cd2ad912f22812acc10",
+    "extracted_at": "2026-09-13T00:06:35.028050+00:00",
+    "session_id": "01a09816-089b-77f2-a64f-f94ca36c20a2",
+    "usage": {
+      "input_tokens": 12720,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 782,
+      "reasoning_output_tokens": 79
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e151b0e1fc0dcd0a92cb6d2bf40d4ba029415159faab26a22b9c971f1a87535e"
+    },
+    {
+      "id": "S2",
+      "sha256": "0ecb8723453b17915fdc44c54fd4a071548362b3631ad63bad6cebabd68a6f81"
+    },
+    {
+      "id": "S3",
+      "sha256": "4b6c559670ffd48e2dda32c11cd17577ac75bcbed2b09944e088c7e733a44f6c"
+    },
+    {
+      "id": "S4",
+      "sha256": "171aab750f094714ffaf2ae111976480096e98ca859259e4684c4c5f7b0609b3"
+    },
+    {
+      "id": "S5",
+      "sha256": "8834a0ce0399f84119234b62b01ba19bb3d9546ee8268acbf4a6869c22338640"
+    },
+    {
+      "id": "S6",
+      "sha256": "85f338f3b39a85d4ff168aad604612ba6f0a399884d283dd56729191f2f53530"
+    },
+    {
+      "id": "S7",
+      "sha256": "7dd51b5a85a4e12fc2b8a5770bc2b7df5185f57565caf3e2f2065206b735a2a9"
+    },
+    {
+      "id": "S8",
+      "sha256": "97850a6027fad28c41ff28d2f3c26abd7688654d79a0b2956b2caacef9afcebb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011897",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable more resource-efficient transformer training and inference on edge devices while preserving accuracy.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Prior work emphasized compact convolutional architectures, leaving subspace-based training for transformers as the authors’ targeted gap.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Weight-Activation Subspace Iteration (WASI), which restricts transformer training to a fixed subspace to mitigate backpropagation memory costs and improve inference efficiency.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports accuracy comparable to vanilla training with substantial reductions in memory use and FLOPs, plus faster execution on a Raspberry Pi 5.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work by applying subspace-based training to transformer models rather than focusing on compact convolutional architectures, and propose WASI for this setting.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report accuracy comparable to vanilla training, memory reduction of up to 62×, and FLOPs reduction of up to 2×.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "On a Raspberry Pi 5, the authors report roughly 1.4× faster training and inference than vanilla training.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors provide code through the linked GitHub repository.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Energy consumption and data privacy are framed as pressing concerns, motivating on-device learning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "The scale of modern neural networks is identified as a major obstacle to on-device training.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The authors move from prior convolution-focused work to transformer subspace training and introduce WASI.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "WASI is reported to preserve comparable accuracy while reducing resource use and accelerating Raspberry Pi 5 execution.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a resource-constrained problem with a concrete mechanism—restricting training to a subspace—and then reports accuracy, memory, FLOPs, and device-level speed outcomes.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A compact abstract can align the proposed mechanism with multiple outcome dimensions relevant to the deployment constraint.",
+        "application": "For an edge-learning paper, explicitly map the bottleneck, the architectural or optimization restriction, and separate resource and accuracy outcomes in that order.",
+        "exception": "This framing is unsuitable when the work has no deployment constraint or when the proposed mechanism cannot be linked to measurable resource outcomes."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, transformer architectures, baselines beyond vanilla training, evaluation protocols, or statistical variability.",
+      "The conditions behind the reported maxima (62× memory, 2× FLOPs) and the Raspberry Pi 5 speedup are unspecified.",
+      "“Accuracy comparable” lacks a metric, tolerance, and task-specific values."
+    ]
+  }
+}

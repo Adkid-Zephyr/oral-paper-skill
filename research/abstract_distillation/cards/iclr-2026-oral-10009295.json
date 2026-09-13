@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009295",
+    "title": "Characterizing the Discrete Geometry of ReLU Networks",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009295"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4eb0ee3848f188be9df19066a239be2d14bc6bf5b5e375d38fa49d81de69c4ca",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "3a03376a70cae7443fe7f41be799a8874f7c32ce61557d760e2598ac4f6f6605",
+    "extracted_at": "2026-09-13T00:02:41.546100+00:00",
+    "session_id": "01a09812-6f87-7ce3-8265-04b9ebed7028",
+    "usage": {
+      "input_tokens": 12751,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 877,
+      "reasoning_output_tokens": 122
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "23d51752ec0fcf2926d3c5089a84766eced1f2f0937677af0267669c103966ee"
+    },
+    {
+      "id": "S2",
+      "sha256": "20fbfff93f89911760fbe240f739ef5ea9626fdc9bbafd0f5b2bdbcb0592a06d"
+    },
+    {
+      "id": "S3",
+      "sha256": "df92a8d7bb060a060526b80999889f7b4429c4ac2a3fb40c738c2fc3d7be77e6"
+    },
+    {
+      "id": "S4",
+      "sha256": "9088e5987de0a134856e8cbaaba1af64f80a1f55ff7cb37db8364ce02461aca6"
+    },
+    {
+      "id": "S5",
+      "sha256": "2d3bfc0e190f6bdb82af56bcbdd4f12c1aee3359f58ff03b8ac33513b05c2893"
+    },
+    {
+      "id": "S6",
+      "sha256": "234a71b024e5b8124d09b1ccd1de505eb6cdc665d2c36285217089bfda8872d0"
+    },
+    {
+      "id": "S7",
+      "sha256": "521430484ce05cbd0a9cac4d35e34cd1fd490261910faf8b4b99b427dd2fa902"
+    },
+    {
+      "id": "S8",
+      "sha256": "db2d1ad42573e01377bec16f06a8db1044a393f2044a9983f46a4ded73218741"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009295",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize the discrete geometry of the polyhedral linear-region complexes induced by fully connected ReLU networks.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Beyond total-region-count bounds, little is known about the geometry of these complexes, and exact calculation is generally intractable.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Proves results for connectivity graphs whose nodes are regions and whose edges join regions sharing a face, applying to all fully connected ReLU networks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theoretical finding",
+        "claim": "Establishes an average-degree upper bound of twice the input dimension, independent of network width and depth, and a diameter upper bound independent of input dimension.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical corroboration",
+        "claim": "Reports experiments on networks trained with synthetic and real-world data to provide additional geometric insight.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish the work by providing new theoretical results about ReLU-region connectivity complexes for all fully connected networks.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that average graph degree is at most twice the input dimension regardless of width and depth.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report a dimension-independent diameter upper bound despite exponentially increasing region counts with input dimension, and say experiments on synthetic and real-world data corroborate the findings.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors provide code intended to reproduce their results.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "ReLU networks induce continuous piecewise-linear functions whose polyhedral regions partition input space.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "Because nonlinearities occur at region boundaries, how regions connect is behaviorally important, yet geometric understanding is limited and exact computation is usually intractable.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "The work studies connectivity graphs of regions and derives graph-theoretic bounds valid for fully connected ReLU networks.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "corroboration",
+        "summary": "Experiments on synthetic and real-world trained networks are reported as additional geometric support and insight.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "reproducibility",
+        "summary": "A code repository is provided for reproducing the reported results.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a local structural quantity (average graph degree) to input dimension while explicitly noting independence from width and depth, and separately states a diameter bound independent of input dimension.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Separating which architectural variables a bound depends on can make a theoretical claim more informative than reporting a single complexity measure.",
+        "application": "When presenting a new network-geometry result, state each bound together with explicit dependence and independence on architecture and input variables.",
+        "exception": "This framing is unsuitable when the omitted variables are essential to the theorem or when the abstract cannot establish the relevant independence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not state the exact diameter bound, theorem assumptions beyond fully connected ReLU networks, or proof details.",
+      "Experimental architectures, datasets, metrics, baselines, and quantitative results are not specified, so the extent of corroboration cannot be assessed from the abstract."
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31756",
+    "title": "Classic but Everlasting: Traditional Gradient-Based Algorithms Converges Fast Even in Time-Varying Multi-Player Games",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31756"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c92896eec43f61699c90b6d8b3806283a54f3338c11a60a55cde05708f682a62",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "9c6bd3c7bbb045232873a62ecb01250145b4f9581a98060c9a3461ce0786e9ff",
+    "extracted_at": "2026-09-12T23:50:49.749223+00:00",
+    "session_id": "01a09807-9965-7b61-a53d-61b22e69446b",
+    "usage": {
+      "input_tokens": 12779,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 828,
+      "reasoning_output_tokens": 115
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e7628908413657517bc53632dda3e5e96a860f1ad521bd7e075c17a5e50c342a"
+    },
+    {
+      "id": "S2",
+      "sha256": "325641365389a5ae90f711c87c64b4b6d200737a07ef60c327bfa51c786fe4f8"
+    },
+    {
+      "id": "S3",
+      "sha256": "27180f43af8e72dfd38c72e7e0cd5e0035fc21e91b8d19ea10a3699ee24cbe15"
+    },
+    {
+      "id": "S4",
+      "sha256": "b3adb19eedb049e77039b720e8c4eaf4fe358f7d11fe1b205bde10c96af2527b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31756",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine last-iterate convergence behavior and rates for EG and OG in constrained, time-varying multi-player games.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing results largely assume time-invariant payoffs; limited time-varying analyses focus on two-player bilinear zero-sum or strictly monotone games, leaving EG/OG behavior in other settings—especially multi-player convergence rates—understudied.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Analyzes EG and OG on convergent perturbed games, using tangent residuals or modifications as a game potential and Nash-equilibrium proximity measure.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "convergence result",
+        "claim": "Proves an O(1/√T) last-iterate convergence rate on bounded convex closed sets when the perturbed games approach monotone games sufficiently quickly, with the result also holding for certain unconstrained perturbed games.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper addresses the open question of last-iterate convergence rates for EG and OG in constrained and time-varying settings.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report proving O(1/√T) last-iterate convergence rates for EG and OG under the stated perturbed-game conditions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report that these rates are similar to known tight results for corresponding time-invariant games.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Prior last-iterate convergence analyses commonly rely on time-invariant game payoffs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Time-varying results are limited, and EG/OG rates in broader settings—particularly multi-player games—remain insufficiently studied.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework_and_result",
+        "summary": "The paper studies EG and OG in convergent perturbed games using tangent residual-based measures and derives O(1/√T) rates under sufficiently fast convergence toward monotonicity.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "comparison",
+        "summary": "The authors relate the resulting rates to known tight rates in analogous time-invariant games.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a broader time-varying model—perturbed games—to a structural condition, namely sufficiently fast convergence toward monotone games, before stating its rate guarantee.",
+          "source_ids": [
+            "S2"
+          ]
+        },
+        "interpretation": "A useful theory-paper pattern is to express a difficult general setting through an explicit path-to-structure assumption, making the scope of the result legible.",
+        "application": "When extending an algorithmic theorem to dynamic environments, state the limiting structural class and quantify the required approach rate before presenting the convergence bound.",
+        "exception": "This framing is unsuitable when no meaningful limiting structure exists or when the dynamics cannot be summarized by a single convergence-to-class condition."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify what “fast enough” means, the precise perturbed-game assumptions, or the constants and interpretation of the last-iterate rate.",
+      "The particular unconstrained perturbed games covered by the result are not identified."
+    ]
+  }
+}

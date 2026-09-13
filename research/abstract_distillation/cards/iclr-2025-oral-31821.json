@@ -1,0 +1,197 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31821",
+    "title": "BigCodeBench: Benchmarking Code Generation with Diverse Function Calls and Complex Instructions",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31821"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6654f4b2ec7c96c70a2182ff3c57c54ca2dc8d74d21f1854e8a6e13fa5cf710b",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "3342601202ac3b7a3eca90034fbcab4496ad22b5d99fa2b8c1083ca2fd24e158",
+    "extracted_at": "2026-09-12T23:53:17.295011+00:00",
+    "session_id": "01a09809-e0c3-76f1-95af-688f7bdc5e0f",
+    "usage": {
+      "input_tokens": 12837,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 790,
+      "reasoning_output_tokens": 51
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e8e074c33063a1b30156a4e4c289e94196bc93decc13c3da0a3cf4ded686f18e"
+    },
+    {
+      "id": "S2",
+      "sha256": "a944e5cd00d0333a4fbf57ab86edc318f53a6fb083dddf943056f77026290bfd"
+    },
+    {
+      "id": "S3",
+      "sha256": "fb632e2f16a2264ff0a87ce40aafa9ca8c28a80d652226086db546e90ddbb531"
+    },
+    {
+      "id": "S4",
+      "sha256": "559aba414fc85e73b4d8bb401feb2f0ef749b89a697dd4a1319c69e24fa2c284"
+    },
+    {
+      "id": "S5",
+      "sha256": "6d876dded0a44be851b7580eb8e46e496e6f754091256f0dc9b505e1c3f2b485"
+    },
+    {
+      "id": "S6",
+      "sha256": "6285ae02002dbc746c495a970e6afeb489c16692347a3713266be267d55c6944"
+    },
+    {
+      "id": "S7",
+      "sha256": "122baeb26d4616efd9edbf1add2fc7869b931fa949648d65639eb58c2f642082"
+    },
+    {
+      "id": "S8",
+      "sha256": "bdf87ab749b8e21d0960f0aac1bec1fac72cc5590d7862b62a3287ef747fd7b6"
+    },
+    {
+      "id": "S9",
+      "sha256": "685a21b149acafd52de20012343efd00b461424d4f59dbda36228e19d9c3817d"
+    },
+    {
+      "id": "S10",
+      "sha256": "e50ff5658226e2e1512a3c86957145433bc1be4b0c57cda52f640553e9c45889"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31821",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess whether LLMs can solve challenging, practical programming tasks requiring multiple tool/function calls and compositional understanding of complex instructions.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Existing benchmarks mostly evaluate short, self-contained algorithmic tasks or standalone function calls, leaving broader multi-tool, instruction-heavy capability less assessed.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces BigCodeBench: 1,140 fine-grained tasks using multiple function calls from 139 libraries across 7 domains.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "evaluation design",
+        "claim": "Defines tasks with an average of 5.6 test cases and 99% branch coverage, and proposes BigCodeBench-Instruct, which converts docstrings into concise essential-information instructions.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports evaluation results across 60 LLMs showing difficulty with precise function calling under complex instructions.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their benchmark through diverse multi-library function calls, broad domain coverage, fine-grained tasks, and a natural-language-oriented instruction variant.",
+      "source_ids": [
+        "S6",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that evaluated LLM scores reach at most 60%, compared with reported human performance of 97%.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that LLMs are not yet capable of precisely following complex instructions while using function calls.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "LLMs increasingly automate tasks through Python code, spanning software engineering and general reasoning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Prior benchmarks largely focus on short algorithmic tasks or standalone calls, while practical tasks require diverse tools and compositional reasoning over complex instructions.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "benchmark",
+        "summary": "The paper introduces BigCodeBench and its high-coverage task design, plus the BigCodeBench-Instruct variant.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "result",
+        "summary": "Evaluation of 60 LLMs is reported to show a substantial gap from human performance, motivating further advances.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The benchmark explicitly aligns task construction with practical requirements—multiple tool calls and complex instructions—and reports both test-case counts and branch coverage.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A capability claim is more informative when the evaluation structure directly represents the capability and exposes its testing coverage.",
+        "application": "When proposing a benchmark, map each target capability to concrete task requirements and report coverage-oriented diagnostics alongside aggregate scores.",
+        "exception": "This framing may be unsuitable when the research question concerns a narrowly defined primitive or when coverage metrics do not represent real-world use."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify how human performance was measured or whether the 60% and 97% figures are directly comparable.",
+      "Per-model scores, task-level error patterns, and details of the 139 libraries and 7 domains are not provided.",
+      "The abstract does not establish independent validity, reproducibility, or priority of the benchmark."
+    ]
+  }
+}

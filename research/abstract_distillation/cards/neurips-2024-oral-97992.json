@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97992",
+    "title": "NeuroClips: Towards High-fidelity and Smooth fMRI-to-Video Reconstruction",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97992"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "21c8b39b3bf6c81d8e692de0ef6abe4f463f491eefac4d9276ab42806866b407",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "6a13cd81ad261c34584b560d2b97fc955c1f88b51e835d27c8d5a158ad58d480",
+    "extracted_at": "2026-09-13T00:19:36.644353+00:00",
+    "session_id": "01a09821-f72c-7c02-a887-50044c58d3f8",
+    "usage": {
+      "input_tokens": 12775,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 807,
+      "reasoning_output_tokens": 98
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ec16ff0a991206ae4aa3e49069a87057269c9bc0bfb516cee847ecf6318d364a"
+    },
+    {
+      "id": "S2",
+      "sha256": "54ea412a3dfbb4e20cfd8bd822e9202f046e03392ca43a1ecd304378fd6c81b6"
+    },
+    {
+      "id": "S3",
+      "sha256": "65f8c211f98fc8438bae1c85db4823bce32dffd052f626952fd21b928e496e1b"
+    },
+    {
+      "id": "S4",
+      "sha256": "830230a5a261c56c3cd62d08acad5e4a505e6c8314e0257db73b9f0fefd7dc69"
+    },
+    {
+      "id": "S5",
+      "sha256": "5e60b9257b74c30bd4e00580b69b8c0596603f4387a57bde7230e1552a582825"
+    },
+    {
+      "id": "S6",
+      "sha256": "59a45d944c5004806ffe9efcbff46d24616bff89717b0a8c426e2612e1e2cf79"
+    },
+    {
+      "id": "S7",
+      "sha256": "7a92324251efbd22cf2a11bdab81427eedb1324116a69b463df511dff6d3c59a"
+    },
+    {
+      "id": "S8",
+      "sha256": "87f7eed547e2dfdeb4ffb4f6f277b72b19fba3cfdcf1b4bdbe2e329c83d2d6d0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97992",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reconstruct continuous video stimuli from non-invasive fMRI while preserving semantic content, perceptual detail, fidelity, and temporal smoothness.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Compared with static visual reconstruction, fMRI-to-video research remains limited because decoding spatiotemporal perception from continuous experiences is highly challenging.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "NeuroClips combines a semantics reconstructor for video keyframes with a perception reconstructor for low-level perceptual details and flows.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The framework injects reconstructed keyframes and low-level perception flows into a pre-trained text-to-video diffusion model during inference.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present NeuroClips as an innovative framework targeting high-fidelity and smooth video reconstruction from fMRI by jointly decoding semantic and low-level perceptual information.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report reconstruction of videos up to 6 seconds at 8 FPS on a publicly available fMRI-video dataset.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report significant improvements over state-of-the-art models across various metrics on a publicly available fMRI-video dataset, including a 128% improvement in SSIM and an 81% improvement in unspecified spatiotemporal metrics.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Static visual reconstruction from fMRI has achieved substantial progress with deep learning models such as CLIP and Stable Diffusion.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "Video reconstruction remains limited because continuous visual experiences require decoding spatiotemporal perception.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "design rationale",
+        "summary": "The authors argue that both high-level semantics and low-level perceptual flows must be decoded accurately.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "NeuroClips reconstructs semantic keyframes and perceptual details, then conditions a pre-trained T2V diffusion model with both signals.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported result",
+        "summary": "On a public dataset, the authors report smooth, high-fidelity reconstruction up to 6 seconds at 8 FPS and gains over existing models.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates semantic reconstruction of keyframes from low-level perception-flow reconstruction, assigning each to a stated target: semantic accuracy and consistency versus smoothness.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "Decomposing a difficult generation objective into components aligned with distinct perceptual properties can make the design rationale more traceable.",
+        "application": "For another multimodal reconstruction task, define separate intermediate representations for content identity and temporal or perceptual continuity, and connect each explicitly to its intended evaluation dimension.",
+        "exception": "This decomposition may be unsuitable when the target properties cannot be represented independently or when separate modules introduce incompatible errors."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dataset size, stimulus composition, baselines, metric definitions, or statistical testing details.",
+      "The reported percentage improvements lack the underlying scores and comparison conditions."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "author_reported_evidence[1].claim",
+      "before": "The authors report significant improvements over state-of-the-art models across various metrics, including 128% higher SSIM and 81% higher spatiotemporal metrics.",
+      "after": "The authors report significant improvements over state-of-the-art models across various metrics on a publicly available fMRI-video dataset, including a 128% improvement in SSIM and an 81% improvement in unspecified spatiotemporal metrics.",
+      "review_file": "reviews/flagged-batch-14.json",
+      "review_sha256": "ff9c3edd278c3f414d5a8ebc4a74177286b64d696386f76cb1a334980eb249a7",
+      "applied_at": "2026-09-13T00:42:27.404469+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

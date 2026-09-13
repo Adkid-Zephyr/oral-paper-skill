@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31781",
+    "title": "WizardMath: Empowering Mathematical Reasoning for Large Language Models via Reinforced Evol-Instruct",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31781"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9d10a28c235470e09b2d673eabdda4860d395dbd15ef7fb9d64f36183168554a",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "e2cd68a2f91e941d02b2e6a7ee6f4e8f1d05af3b2f9e3c4c016df4c8a836b808",
+    "extracted_at": "2026-09-12T23:51:45.755187+00:00",
+    "session_id": "01a09808-7d10-7b92-b913-6924a541018d",
+    "usage": {
+      "input_tokens": 12685,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 723,
+      "reasoning_output_tokens": 56
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "453a4788216692b7eaae15c6c7794ee2af1cc6b6cc8decb56e89bb7d9d67a962"
+    },
+    {
+      "id": "S2",
+      "sha256": "2075b27dabb796c68c7217493a89beb16f9e761c584094eaf64086c8b7770baa"
+    },
+    {
+      "id": "S3",
+      "sha256": "45f9f72be222cd6dcadf074be4b43c9c86d1e16acc2e2d7bd61661946d85b451"
+    },
+    {
+      "id": "S4",
+      "sha256": "1a627e185452e94d738875d5a0554dea0313c448ce14f72dc1f7c0052bc43a05"
+    },
+    {
+      "id": "S5",
+      "sha256": "64c1374f2dc3d5c2be67ce2e1f8cf8b54e9ff5edb0a1da95b2655975d6490773"
+    },
+    {
+      "id": "S6",
+      "sha256": "95dc01e45e890f7864e58a11adbba8fceb85bb6a0a3556247d0977ef0655281d"
+    },
+    {
+      "id": "S7",
+      "sha256": "89b085b1c71c46bdd0bc868db40a47f844881afdaf2e328de0a89236ac72c02f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31781",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve large language models’ mathematical reasoning abilities.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Most existing open-source models are pretrained on large-scale internet data without math-related optimization.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces WizardMath, applying Reinforcement Learning from Evol-Instruct Feedback (RLEIF) to mathematics.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports strong performance for WizardMath across the GSM8k and MATH mathematical reasoning benchmarks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "Preliminarily identifies instruction evolution and process supervision as important to exceptional math performance.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper’s stated distinction is applying the proposed RLEIF method to the math domain to enhance LLM mathematical reasoning.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that WizardMath-Mistral 7B surpasses all other open-source LLMs by a substantial margin.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that WizardMath 70B outperforms ChatGPT-3.5, Claude Instant, Gemini Pro, and Mistral Medium.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "A preliminary exploration reported by the authors highlights instruction evolution and process supervision as pivotal for exceptional math performance.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "LLMs have shown strong performance on challenging mathematical reasoning tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Most open-source models lack math-related optimization after internet-scale pretraining.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "WizardMath applies RLEIF to the mathematics domain.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Experiments on GSM8k and MATH report strong results, including open-source and broader model comparisons.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "Preliminary exploration emphasizes instruction evolution and process supervision.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a domain-specific training method with a preliminary account of which components support performance: instruction evolution and process supervision.",
+          "source_ids": [
+            "S3",
+            "S7"
+          ]
+        },
+        "interpretation": "A concise abstract can connect the proposed intervention to an explanatory decomposition, while distinguishing preliminary analysis from benchmark evidence.",
+        "application": "When presenting a specialized training method, separately report task performance and an explicitly qualified analysis of which design components may matter.",
+        "exception": "This framing is unsuitable when the study contains no component analysis or when the abstract cannot support a qualified explanation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark scores, evaluation protocols, baselines beyond named models, or statistical uncertainty.",
+      "The meaning and implementation of RLEIF, instruction evolution, and process supervision are not detailed.",
+      "The basis and scope of the reported model comparisons are unspecified."
+    ]
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009352",
+    "title": "How Learning Rate Decay Wastes Your Best Data in Curriculum-Based LLM Pretraining",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009352"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "110790aa138aaec21c7b4edf820662527414cffa8bcece49a773c8527c2b6c54",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "8d566228f22af506854b1f956ae1ca29efd23bf5a1a04b67eafadf72cd4ba477",
+    "extracted_at": "2026-09-13T00:02:42.169907+00:00",
+    "session_id": "01a09812-7788-7081-ab88-3e8a947e71c9",
+    "usage": {
+      "input_tokens": 12792,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 842,
+      "reasoning_output_tokens": 76
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "17bf141c3fca77ca8263ae8fb0c4c3569061de59bc7edb5d1b075d1f31014c4f"
+    },
+    {
+      "id": "S2",
+      "sha256": "81fbb91a0ddda0c6224ea5fe6c4ded96244b08c9f692f567b7ce76a57d632df2"
+    },
+    {
+      "id": "S3",
+      "sha256": "7228e4b6d69413c6313ec68e515aca5e1cafe2b01608e5bfa3e4782b76e88505"
+    },
+    {
+      "id": "S4",
+      "sha256": "5bb886f32c63800b474b6ebef3b59ae7ea98ae3cad4621865e8b00aa823c0a03"
+    },
+    {
+      "id": "S5",
+      "sha256": "d8825a3a922f7d8d7595ae512e442d51bfbfcb8e4c87a6f4a09b7382ca57f5b5"
+    },
+    {
+      "id": "S6",
+      "sha256": "b29de06a838ce44c0b9a0191ec1406d85605cb4e67bc063e289d5d711f010d98"
+    },
+    {
+      "id": "S7",
+      "sha256": "1d657e9ad065136a9be48bcd4df9278c1e296241ae41ac472711e2b85d3c8813"
+    },
+    {
+      "id": "S8",
+      "sha256": "6a8a34fd682f140d1bb17d9369865a9735c3f74dd5759525f57cb0b47b183899"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009352",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to better exploit scarce high-quality data in LLM pretraining mixtures using quality-ordered curricula.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Prior curriculum-pretraining studies reported limited improvements; the authors attribute a key constraint to incompatibility between ascending data quality and decaying learning rates.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "diagnosis",
+        "claim": "Identifies learning-rate decay as a factor that can suppress the benefit of ascending-quality curricula.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes moderate learning-rate decay or weighted averaging of the final checkpoints to mitigate this incompatibility.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Combining the strategies improves average standard-benchmark scores by 1.64% over random shuffling without additional data refinement.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish curriculum performance by the interaction between data-quality ordering and the learning-rate schedule, and introduce simple mitigation strategies based on that interaction.",
+      "source_ids": [
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that curriculum training substantially outperforms random shuffling with a constant learning rate, but its advantage diminishes under standard decay schedules.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report a 1.64% average benchmark-score improvement over random shuffling when combining the proposed strategies, without additional data refinement.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report validation on 1.5B-parameter models trained for 30B tokens with various data-quality metrics.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "LLM pretraining uses mixed-quality data because high-quality data is scarce.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "approach and limitation",
+        "summary": "Quality-ordered curriculum pretraining is a natural strategy, but prior work reported limited gains.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The paper identifies a mismatch between ascending data quality and learning-rate decay as a critical constraint.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "mitigation and result",
+        "summary": "Moderate decay and final-checkpoint averaging recover curriculum benefits, with a reported 1.64% combined improvement over random shuffling.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "The findings are reported for 1.5B-parameter models, 30B training tokens, and multiple quality metrics, motivating co-design of curricula and optimization.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly links the usefulness of a data curriculum to the learning-rate schedule and reports different curriculum outcomes under constant versus decaying learning rates.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A method's data-ordering component may need to be framed jointly with optimization dynamics rather than evaluated in isolation.",
+        "application": "When presenting a curriculum method, state and test the optimizer-schedule assumptions that define when its advantage is expected.",
+        "exception": "This framing may be less suitable when data order is fixed, optimization is not schedule-sensitive, or the claim concerns only the data metric."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark identities, statistical uncertainty, exact schedules, checkpoint weights, or per-metric/per-model results.",
+      "It does not quantify the baseline improvement under constant learning rate or establish which mitigation contributes most to the combined gain."
+    ]
+  }
+}

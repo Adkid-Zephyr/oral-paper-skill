@@ -1,0 +1,159 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71176",
+    "title": "Learning to Theorize the World from Observation",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71176"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e361f1f791615d3ef03ed8940fbf290db6d439035377bb5bd57d95c976c967fa",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "de54cbe1679fe640f86b6a88365dc7c600ff989e9b5fe88352b2b896230aab86",
+    "extracted_at": "2026-09-13T00:17:04.815574+00:00",
+    "session_id": "01a0981f-a945-7cf3-b02e-c4b83e9b2339",
+    "usage": {
+      "input_tokens": 12658,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 643,
+      "reasoning_output_tokens": 75
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b710556803b9b6f301d7712fb0584d11376d39051c147854aef0b503f69d6981"
+    },
+    {
+      "id": "S2",
+      "sha256": "31cd9688b851fbee143898bed165a2631e713551cafa4fa05ceb63bd8d899c1f"
+    },
+    {
+      "id": "S3",
+      "sha256": "7234e38390213f668b1352f10f6d2e68c1c3882b0e3d3470c5f299f53e3659e2"
+    },
+    {
+      "id": "S4",
+      "sha256": "99c44adaf86d072981f72543f2ca380ad1ffd74ae4a7291837c8449e28f35ee6"
+    },
+    {
+      "id": "S5",
+      "sha256": "bb11aafe71e6c2261223e6732990dcb2d616590d5b76618b9fd37fc39c20af96"
+    },
+    {
+      "id": "S6",
+      "sha256": "3c4960aa45a9965c834c504334d33374bc66c316552ec1edb38eb952a8e7a579"
+    },
+    {
+      "id": "S7",
+      "sha256": "7c19f20db9557df4903adba1c5eedec47c05bacab98fbcbcbc2e143d36964801"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71176",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks whether understanding the world should mean constructing internal theories from observation, rather than merely predicting future video frames.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that it remains unclear how to give AI systems theory-building capability from raw, non-textual observation alone.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "learning paradigm",
+        "claim": "Introduces Learning-to-Theorize (L2T), in which systems construct theories as executable programs directly from observation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "model",
+        "claim": "Proposes the Neural Language-of-Thought Programmer, which induces and executes latent programs as explanations rather than task-specific predictors or policies.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by treating executable, induced programs as theories and explanations learned directly from observation alone.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the formulation enables explanation-driven generalization, allowing observations to be understood through the programs that generate them.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivating question",
+        "summary": "Questions whether world understanding is simply future-frame prediction.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "conceptual framing and gap",
+        "summary": "Frames understanding as constructing internal theories and identifies the unresolved challenge of achieving this from non-textual observation.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposal and reported result",
+        "summary": "Introduces L2T and its neural programmer, then reports explanation-driven generalization.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns its proposed representation—executable programs—with its stated account of understanding as theories that explain how observations are generated.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A claim can be made more concrete by matching the central conceptual distinction to an explicit representational mechanism and an aligned outcome.",
+        "application": "When proposing a new notion of understanding, define its internal representation and state an outcome that directly tests or demonstrates that representation’s explanatory role.",
+        "exception": "This framing is unsuitable when the target capability is intentionally narrow prediction or when executable representations are not appropriate to the domain."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify experimental tasks, baselines, quantitative results, or the conditions under which explanation-driven generalization was observed.",
+      "It does not establish priority or independently verify the claimed novelty or effectiveness."
+    ]
+  }
+}

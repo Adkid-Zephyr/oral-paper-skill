@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97984",
+    "title": "Decompose, Analyze and Rethink: Solving Intricate Problems with Human-like Reasoning Cycle",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97984"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "59605363d153fc0ae7fff7a49133856408cc4e921b63ee180dfc82d98f1f7573",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "3c0ffe52e006c6b825dd7e242b7eaa810631a054b3733bb378680f112b34cc95",
+    "extracted_at": "2026-09-13T00:19:17.893338+00:00",
+    "session_id": "01a09821-afc6-7222-b204-2d7021443fc8",
+    "usage": {
+      "input_tokens": 14314,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 800,
+      "reasoning_output_tokens": 107
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0a777dba262fabc4b34fc4cb7016def8aefd08ba7984b988cbf231dac12f5cd5"
+    },
+    {
+      "id": "S2",
+      "sha256": "8103f45e8980b42e5087f6d6e6e5e95f8ffb6e1ea53d030715b10fe085f930db"
+    },
+    {
+      "id": "S3",
+      "sha256": "90b5509f796d1a7778c2670abb7760b9f606272a9b2a8058eadde185f1d41ed9"
+    },
+    {
+      "id": "S4",
+      "sha256": "7ba7c64f2c831e694061472ee1b49ec74f40dc3fd0c675a5cb96cc38b8648a74"
+    },
+    {
+      "id": "S5",
+      "sha256": "73776d997839d05c364f9c854b19dccd21fca890deb063fa25ff2be38e084d66"
+    },
+    {
+      "id": "S6",
+      "sha256": "9b57a5ae7addef6fb76b81439fe6754c334a14d5690771f2e94378f96fcec8be"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97984",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses solving intricate problems with iterative reasoning inside a single large language model.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces DeAR, which builds a reasoning tree through Decompose, Analyze, and Rethink stages.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "type": "methodological distinction",
+        "claim": "Uses tree-based question decomposition and globally updates rationales through natural-language feedback at each reasoning step.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports improved accuracy, fewer logical errors, and a better accuracy–reasoning-time trade-off than ToT and GoT across evaluated settings.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish DeAR from rationale-extension and search-based methods by combining tree-based question decomposition with global rationale updating.",
+      "source_ids": [
+        "S2",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments on ScienceQA, StrategyQA, and GSM8K across various LLMs, with reduced logical errors and enhanced performance.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that DeAR achieves a superior trade-off between accuracy and reasoning time compared with Tree-of-Thoughts and Graph-of-Thoughts.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "framework introduction",
+        "summary": "DeAR is presented as an iterative reasoning-tree framework for intricate problems within one LLM.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "design distinction",
+        "summary": "Its planning uses tree-based question decomposition and global natural-language feedback to update rationales.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "stage mechanics",
+        "summary": "Decompose creates sub-question nodes, Analyze generates and self-checks node rationales, and Rethink updates parent rationales from child feedback.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "claimed comparison",
+        "summary": "The authors position the global update process as enabling adaptive structures and timely error correction relative to ToT and GoT.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Experiments are reported on three reasoning benchmarks, including an accuracy–reasoning-time comparison with ToT and GoT.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract maps named reasoning stages to concrete state changes: adding sub-question nodes, checking local rationales, and revising parent rationales from child feedback.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "This makes the mechanism easier to connect to the claimed error-correction behavior.",
+        "application": "When presenting a multi-stage reasoning method, specify each stage's input, persistent state, update operation, and information flow.",
+        "exception": "This structure may be unsuitable when the method has no iterative state or hierarchical dependencies."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no benchmark scores, baselines beyond ToT and GoT, model identities, statistical details, or definitions of logical error and reasoning time.",
+      "The claimed superiority and causal link between global updating and error correction are author-reported and not independently verified here."
+    ]
+  }
+}

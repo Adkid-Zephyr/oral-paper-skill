@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007832",
+    "title": "Exploratory Diffusion Model for Unsupervised Reinforcement Learning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007832"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f87ad501c2a55d29849fc9bfa37c649e52e6d60461b5eab2b7f81ad6fa2c0b58",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "c04b8dcb60a724e1f6d0ad1c1fc4edcd9d7b7296ee602452996488ca0d91e761",
+    "extracted_at": "2026-09-13T00:00:30.274561+00:00",
+    "session_id": "01a09810-7249-7743-8a1e-46f505896590",
+    "usage": {
+      "input_tokens": 12709,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 856,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fb3f19b0dc5aa867a5b08bdf84256fd1afc44a49137fffe203c1fca9802c7454"
+    },
+    {
+      "id": "S2",
+      "sha256": "d159352cb43715ed4665818c1c8dac9857de9c8da94fc8ebf018b3631bf900f5"
+    },
+    {
+      "id": "S3",
+      "sha256": "83558f104d3cf1206940e7af4cae5796eed69e58936f3bdd60764327b1a57c49"
+    },
+    {
+      "id": "S4",
+      "sha256": "ae64fafe613ae9f1ff9d750356d3ecf0ee388e6bd18cfac173491fef3c5107a3"
+    },
+    {
+      "id": "S5",
+      "sha256": "117ec16192c3345c4e86d38273a970063b093c58812e39d8a9b7596ae717c99c"
+    },
+    {
+      "id": "S6",
+      "sha256": "f9418a1382e2c976f051057dcb9d5861753a3fb74d6516997c06c2dc1ae714f7"
+    },
+    {
+      "id": "S7",
+      "sha256": "8f1bb33b688e5d7f446f694066e077993be31a6780c5e9eb83c2f53b059fdf09"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007832",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable efficient downstream adaptation by pre-training reinforcement-learning agents through diverse, reward-free exploration.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Prior intrinsic-objective methods face a modeling-capacity challenge because heterogeneous exploration data must support both intrinsic-reward design and policy learning.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces ExDM, using diffusion models to fit diverse replay-buffer distributions and derive density-based, score-driven intrinsic rewards for under-visited regions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory_and_algorithm",
+        "claim": "Provides theoretical guarantees and practical algorithms for fine-tuning diffusion policies with limited interactions, addressing multi-step-sampling instability and computational overhead.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical_finding",
+        "claim": "Reports broader state coverage, robust pre-trained policies, and faster downstream adaptation across benchmark settings.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish ExDM by combining diffusion-based replay-distribution modeling and score-based exploration rewards with limited-interaction diffusion-policy fine-tuning.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that ExDM substantially broadens state coverage and yields robust pre-trained policies.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report superior exploration and faster downstream adaptation on Maze2d and URLB, with claimed state-of-the-art results especially for complex-structure and cross-embodiment environments.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report theoretical guarantees and practical algorithms for limited-interaction diffusion-policy fine-tuning.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task_and_limitation",
+        "summary": "URL seeks reward-free exploratory pre-training, while heterogeneous data strain prior intrinsic-objective methods.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "proposed_mechanism",
+        "summary": "ExDM models replay-buffer distributions with diffusion models and uses score-based intrinsic rewards to target under-visited regions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "exploration_outcome",
+        "summary": "The mechanism is reported to broaden state coverage and produce robust pre-trained policies.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "policy_fine_tuning",
+        "summary": "The paper adds guarantees and algorithms for limited-interaction fine-tuning while targeting sampling instability and overhead.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "benchmark_report",
+        "summary": "Experiments on Maze2d and URLB report stronger exploration, faster adaptation, and claimed state-of-the-art performance in selected settings.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a concrete data-distribution property—heterogeneous replay data—to a joint modeling requirement for rewards and policies, then matches it with diffusion-based density estimation.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A method can be framed more convincingly when the representation or model choice directly answers the stated structural difficulty.",
+        "application": "When presenting a new learning architecture, explicitly map each major component to a diagnosed property of the data or objective.",
+        "exception": "This framing is unsuitable when the proposed component is motivated mainly by deployment constraints or lacks a source-grounded problem mechanism."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact density estimator, intrinsic-reward formula, theoretical assumptions, or guarantee statements.",
+      "Reported superiority and state-of-the-art claims lack metrics, baselines, statistical details, interaction budgets, and per-environment results in the supplied units.",
+      "The abstract does not establish reproducibility beyond stating that source code is provided."
+    ]
+  }
+}

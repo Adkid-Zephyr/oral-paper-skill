@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-115716",
+    "title": "Dynam3D: Dynamic Layered 3D Tokens Empower VLM for Vision-and-Language Navigation",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/115716"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "069eeb0848d23e0a839bce57d1667528d2c783f6b5d09693ba9162f6cc65f13a",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "0c2feec68d250db8f81604cd9079dff168497dfe423771168f9ad151fbe6eb3a",
+    "extracted_at": "2026-09-13T00:20:48.238339+00:00",
+    "session_id": "01a09822-ff28-7053-b07d-d1553bb9f82f",
+    "usage": {
+      "input_tokens": 12831,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 908,
+      "reasoning_output_tokens": 125
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7e9a16d89b905fe64268a8da2df6e88d68112cbd6624f1455095c6de2cc29208"
+    },
+    {
+      "id": "S2",
+      "sha256": "3324e03e70d5e3b1a793fc8442b34619cfcc1e6b636ea25ef444ee335eb465ff"
+    },
+    {
+      "id": "S3",
+      "sha256": "bb8e74bcb822002b554ce4f7482e5dee3f0e8bd548ea74773d269b202fce4755"
+    },
+    {
+      "id": "S4",
+      "sha256": "f1e8cf786b16ef8d55802c09a9d04525a354b0aa95c2f5cfa7cc81fbf17776c6"
+    },
+    {
+      "id": "S5",
+      "sha256": "8a98d46a4adc147ca1329df80893a02fd0421726ec266ab4ca6d542ad7519cc5"
+    },
+    {
+      "id": "S6",
+      "sha256": "5b4e7cc325b62ba5952beb49f825ce200457ff0fadb5d0a3d5c514890f21eac0"
+    },
+    {
+      "id": "S7",
+      "sha256": "1bb552939dcab74d2222179cd6381742a5f4842d75a5994c19f86625b7fb9de5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-115716",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable embodied agents to navigate 3D environments toward language-specified destinations.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies insufficient 3D geometry and spatial semantics, limited large-scale exploration and long-term memory, and poor adaptability to changing environments in existing Video-VLM applications to real-world 3D navigation.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A dynamic layered 3D representation model that supplies language-aligned, hierarchical 3D representations as visual input for training a 3D-VLM to predict navigation actions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "representation",
+        "claim": "A pipeline projecting 2D CLIP features into 3D and constructing patch-instance-zone representations with dynamic, layer-wise updates.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Online encoding and localization of 3D instances, with dynamic updates intended to support exploration and long-term memory in changing environments.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present Dynam3D as a dynamic layered 3D representation model combining language-aligned, generalizable, and hierarchical 3D representations for navigation-oriented 3D-VLM training.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report new state-of-the-art performance on R2R-CE, REVERIE-CE, and NavRAG-CE under monocular settings, using large-scale 3D-language pretraining and task-specific adaptation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report experiments involving pre-exploration, lifelong memory, and a real-world robot as validating practical deployment effectiveness.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "VLN uses spatially mobile embodied agents to follow natural-language instructions toward destinations in 3D environments.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "context_and_gap",
+        "summary": "Video-VLMs bring generalization and commonsense knowledge to VLN, but the abstract lists weaknesses in 3D understanding, exploration and memory, and dynamic-environment adaptation.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Dynam3D projects 2D CLIP features into 3D and builds multi-level patch-instance-zone representations updated dynamically by layer.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The authors report benchmark-leading performance and deployment-oriented experiments covering exploration, lifelong memory, and a real-world robot.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract maps three identified navigation limitations to a representation with geometric-semantic structure, online instance localization, dynamic updates, and memory-oriented capabilities.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This is a useful claim-to-design alignment pattern: make each stated limitation correspond to an explicit mechanism or capability.",
+        "application": "When presenting a multimodal navigation method, pair each motivating failure mode with the representation or update operation intended to address it, then report evidence using the same categories.",
+        "exception": "Do not use this structure when the proposed mechanisms cannot be tied to independently measurable task requirements."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no benchmark metric values, baselines, statistical details, or per-benchmark comparison scope for the reported state-of-the-art claims.",
+      "It does not explain how posed RGB-D inputs in the method description relate to the reported monocular settings.",
+      "The deployment experiments and the meaning of “validate the effectiveness” are not specified in detail."
+    ]
+  }
+}

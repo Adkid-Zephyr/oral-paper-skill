@@ -1,0 +1,229 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31890",
+    "title": "Retrieval Head Mechanistically Explains Long-Context Factuality",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31890"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "af70edec3b9426604b3c88ea7e943b7dc09f6c671ab0afd87f478a767fc26e26",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "e82b977a5c0fcb1b4725cc7e873153b21ee1551031e67ae6a443aaae4ba71a1b",
+    "extracted_at": "2026-09-12T23:56:02.751278+00:00",
+    "session_id": "01a0980c-5c3b-7630-a9ca-f5ce54b418ec",
+    "usage": {
+      "input_tokens": 12892,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 878,
+      "reasoning_output_tokens": 64
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cffdbaae56aea199893663d7fe38463968c872ac7b0257c74a06b2a4d85da9ad"
+    },
+    {
+      "id": "S2",
+      "sha256": "37423f1cbb444ebd863ed823c5cfe366bd0a408c754ab74cf062bfd0cc3489c7"
+    },
+    {
+      "id": "S3",
+      "sha256": "44b7889e0af835b55851f111351d14a66c15bd986c66b2d4a84d6ce7aa34aea4"
+    },
+    {
+      "id": "S4",
+      "sha256": "9c190e3fbe90dc491561abaf7b57ef2bf42cbbb8c7f785eadb9df3be8255c2c5"
+    },
+    {
+      "id": "S5",
+      "sha256": "92a2c889016a7799df4d5a2ec3417e93fac00292af7a4178216dd10b2fceeb97"
+    },
+    {
+      "id": "S6",
+      "sha256": "644d37f555c1b57c1f9c13bb9555c229929d7bbb5d4affcf8e275afa95dae279"
+    },
+    {
+      "id": "S7",
+      "sha256": "bf74dcfccf1d2a091ff2a2308c9b047d55b6d454c29f61ddc89519b545ed302e"
+    },
+    {
+      "id": "S8",
+      "sha256": "f8d6a889aa488cec4cdfdf55748e7b702b16869b494e3f900f483f938840d89b"
+    },
+    {
+      "id": "S9",
+      "sha256": "1b2667b4efacb59446263e234552e5d6bb62d0a4b75089130c5da3a758fc3b8d"
+    },
+    {
+      "id": "S10",
+      "sha256": "7e675f0c57060e6444e33b4286f2e3f47f9f8633689a0f67467a214362ccf549"
+    },
+    {
+      "id": "S11",
+      "sha256": "c4636e7dc02365ff75dd4efea53fec5479cfda8c33ff7195c420e0b470c9853e"
+    },
+    {
+      "id": "S12",
+      "sha256": "f318ea45e985286387282adef653343a743d99acd1085dabc240a86d657c0d25"
+    },
+    {
+      "id": "S13",
+      "sha256": "a3f27b74c055cfb799ed322f2a7e81deffbac2661f081ad1c71d1831ceddf1dc"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31890",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain how transformer-based long-context models retrieve relevant information from arbitrary context locations.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The mechanism underlying this retrieval capability remains elusive.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "mechanistic finding",
+        "claim": "A systematic investigation identifies a special attention-head type, termed retrieval heads, as largely responsible for information retrieval.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "characterization",
+        "claim": "The paper reports that retrieval heads are universal, sparse, intrinsic to short-context pretraining, and dynamically activated across contexts.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "causal analysis",
+        "claim": "The paper examines retrieval-head influence on retrieval, hallucination, chain-of-thought reasoning, and intrinsic-knowledge answering.",
+        "source_ids": [
+          "S9",
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce and characterize the concept of retrieval heads as the internal component responsible for seeking information from input tokens.",
+      "source_ids": [
+        "S3",
+        "S12"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Across a wide spectrum of explored models, all models with long-context capability reportedly contain retrieval heads, comprising less than 5% of attention heads.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "claim": "For Llama-2 7B, the authors report that 12 retrieval heads always attend to required information despite context changes, while other retrieval heads activate in different contexts.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that pruning retrieval heads causes retrieval failure and hallucination, whereas pruning random non-retrieval heads does not affect retrieval ability; masking retrieval heads also more strongly impacts CoT than intrinsic-knowledge answering.",
+        "source_ids": [
+          "S9",
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Long-context models can retrieve information, but the underlying mechanism is unclear.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "discovery",
+        "summary": "A systematic model investigation identifies sparse attention heads associated with retrieval.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "property mapping",
+        "summary": "The heads are reported to persist from short-context pretraining, remain involved after context extension, and vary in activation by context.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "causal and behavioral link",
+        "summary": "Pruning and masking results connect retrieval heads to retrieval, hallucination, and CoT reasoning, with weaker impact on intrinsic-knowledge answering.",
+        "source_ids": [
+          "S9",
+          "S10",
+          "S11"
+        ]
+      },
+      {
+        "role": "implications",
+        "summary": "The observations are presented as a mechanistic explanation and motivation for future work on hallucination, reasoning, and KV-cache compression.",
+        "source_ids": [
+          "S12",
+          "S13"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a proposed internal mechanism with both structural properties and targeted interventions, including pruning retrieval versus random non-retrieval heads.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S9"
+          ]
+        },
+        "interpretation": "Mechanistic claims become more informative when identification and intervention are presented together.",
+        "application": "For a mechanism paper, pair a component-discovery analysis with an intervention that selectively tests the component against a matched control.",
+        "exception": "This framing may be unsuitable when interventions are unavailable, confounded, or cannot isolate the proposed component."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the full model set, retrieval tasks, pruning protocol, or quantitative effect sizes.",
+      "The stated causal effects and broad mechanistic interpretation are author-reported and cannot be independently assessed from the abstract alone.",
+      "It is unclear how retrieval heads were operationally identified and how CoT and intrinsic-knowledge tasks were controlled or measured."
+    ]
+  }
+}

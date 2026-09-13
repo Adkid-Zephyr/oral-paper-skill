@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007385",
+    "title": "Latent Fourier Transform",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007385"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b64c3dc123d4094099f07407793fbe05a078265d54c40154ac3459e1910c6976",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "20d2855a2f0059e52b70bd5d17549d7bc9c3ec9aa4b836bd07fde06b081f426c",
+    "extracted_at": "2026-09-12T23:59:24.769669+00:00",
+    "session_id": "01a0980f-77e8-79d2-bbeb-446f6a0a5b6f",
+    "usage": {
+      "input_tokens": 12713,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 700,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "290f86287ba4991ac0f3481124d17eac77c3624c3a17b973801678fbdec68f50"
+    },
+    {
+      "id": "S2",
+      "sha256": "721b6c411e3e8756b984e979c8f58c6449152d781c2badc27563e4fe142c4ca3"
+    },
+    {
+      "id": "S3",
+      "sha256": "f48c8ec17ac5bcf5cf176caefbb40fc9b9469e9294c66d3aba2aa9465efa37ee"
+    },
+    {
+      "id": "S4",
+      "sha256": "504e12d3b46819c5e0aff60e8ca408ac5db01499b2b9d6dd8b62b9dd55d75cf7"
+    },
+    {
+      "id": "S5",
+      "sha256": "57981d13b215b61019dcbdaf65fb37bd1b497ebf9d1d8bfe9756b6a896bd3a25"
+    },
+    {
+      "id": "S6",
+      "sha256": "3272ac1a04a7397664d52660da088c6e332ebbc4424f19667b31d55e14725acf"
+    },
+    {
+      "id": "S7",
+      "sha256": "1d95f8158af6ae48f23586fdac4b57565a77c730a946a8eeb155a3de442d91f5"
+    },
+    {
+      "id": "S8",
+      "sha256": "1920bf3063862ea20d4f3333b7d8a7eeea913f45ac076c919ac186864d8e4418"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007385",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable frequency-domain control over musical structure in generative music models.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "LatentFT combines a diffusion autoencoder with a latent-space Fourier transform to separate musical patterns by timescale and support coherent latent manipulation.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "control mechanism",
+        "claim": "The framework enables reference-based musical variations and blends while preserving characteristics at frequencies corresponding to desired timescales.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "analysis and interface",
+        "claim": "The authors introduce isolated latent-frequency listening and report that different musical attributes occupy different regions of the latent spectrum.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present latent-space frequency-domain controls for generative music models, analogizing them to an equalizer for musical structure rather than audible timbre.",
+      "source_ids": [
+        "S1",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments and listening tests show improved condition adherence and quality versus baselines.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that isolated latent-frequency listening reveals different musical attributes in different spectral regions.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report an intuitive, continuous latent-frequency axis for conditioning and blending.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "proposal",
+        "summary": "Introduces LatentFT for frequency-domain control in generative music.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "Combines a diffusion autoencoder with a latent Fourier transform and frequency masking to organize and manipulate patterns by timescale.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "capability",
+        "summary": "Generates reference-based variations and blends while preserving selected timescale characteristics.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation and interpretation",
+        "summary": "Reports better adherence and quality than baselines, and analyzes attribute localization across latent frequencies.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a control mechanism, an intuitive production analogy, and concrete user-facing operations such as variation and blending.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact conceptual analogy can clarify how a technical representation maps to practical controls.",
+        "application": "When presenting a controllable generative system, pair the representation with a familiar domain operation and name the resulting user actions.",
+        "exception": "Avoid the analogy when the mapped operations or preserved properties are not explicitly demonstrated."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baseline identities, evaluation metrics, dataset or test design, or the magnitude of reported improvements.",
+      "It does not provide details sufficient to assess how latent frequencies map to particular musical attributes or timescales."
+    ]
+  }
+}

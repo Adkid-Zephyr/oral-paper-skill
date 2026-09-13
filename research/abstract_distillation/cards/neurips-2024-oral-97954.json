@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97954",
+    "title": "Span-Based Optimal Sample Complexity for Weakly Communicating and General Average Reward MDPs",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97954"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7e325ffc613099ce6e1280ef18989f6ca1180caac188bdb5193ab7dc5950c7c6",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "4e95212a4a48d342bdd11dfec03fd2d0d3b96fe4f8f44869c4caa4fe64fcfb83",
+    "extracted_at": "2026-09-13T00:18:07.348988+00:00",
+    "session_id": "01a09820-90bd-74e0-868a-49e849852e14",
+    "usage": {
+      "input_tokens": 12997,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 897,
+      "reasoning_output_tokens": 58
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "10982d3791af813bfedf653b28a9951bb519dd2f7cf18f32a5ba4cba5da83500"
+    },
+    {
+      "id": "S2",
+      "sha256": "59cf2a15d5ee5a42d0654c5d825825b5298964a91e6b5e2442d5f626a96087f5"
+    },
+    {
+      "id": "S3",
+      "sha256": "519fd4b720cb4cae0cb0782e826edd8310b41035b23ac4640cd42a048fb64342"
+    },
+    {
+      "id": "S4",
+      "sha256": "f7235d0b7094ca86671543487284d7f3ea1104e850e1e32025328e04aab96ec6"
+    },
+    {
+      "id": "S5",
+      "sha256": "ce67d9ab038ff732f666c2961639fa0c2f2237aa591d162eb52cc4772d737342"
+    },
+    {
+      "id": "S6",
+      "sha256": "c46b26c851cbdc23cf960fe4c9ea5ead0205d4fba51104f6a2c55b4367ee87d0"
+    },
+    {
+      "id": "S7",
+      "sha256": "ada8d53186d10575d2a013df9f52c69ff76f5c771ffe7562bab578d825e505ef"
+    },
+    {
+      "id": "S8",
+      "sha256": "cf33fc62a7f430efcaee6e0adf3f304a6913c9508b0b99f274c477c1fab7213f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97954",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine the sample complexity of learning an ε-optimal policy in average-reward MDPs under a generative model.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing weakly communicating MDP results either assume uniformly bounded mixing times for all policies or have suboptimal parameter dependence.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Establishes a weakly communicating MDP bound of Õ(SA H/ε²), claimed minimax optimal up to logarithmic factors in S, A, H, and ε.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Initiates general multichain average-reward analysis by introducing transient-time parameter B, with an Õ(SA(B+H)/ε²) upper bound and matching up-to-logs minimax lower bound.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method and theory",
+        "claim": "Reduces average-reward problems to discounted MDPs and derives discounted bounds with quadratic rather than cubic horizon dependence for a fixed instance.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their weakly communicating result is the first minimax-optimal result up to logarithmic factors in all listed parameters, and that the general setting requires a new transient-time parameter and new reduction ideas.",
+      "source_ids": [
+        "S3",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report an Õ(SA H/ε²) complexity bound for weakly communicating MDPs.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report an Õ(SA(B+H)/ε²) bound and a matching up-to-logarithmic-factors minimax lower bound for general MDPs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "For discounted MDPs, the authors report bounds Õ(SA H/((1−γ)²ε²)) for weakly communicating instances and Õ(SA(B+H)/((1−γ)²ε²)) for general instances, yielding quadratic horizon dependence for a fixed MDP instance rather than contradicting the general cubic minimax lower bound.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The paper studies learning ε-optimal policies in average-reward MDPs with a generative model.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "weakly communicating result",
+        "summary": "It gives an Õ(SA H/ε²) bound and presents it as minimax optimal up to logarithmic factors across S, A, H, and ε.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "generalization",
+        "summary": "It extends the discussion to multichain MDPs, argues that transient time B is necessary, and reports matching upper and lower bounds.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "technical basis",
+        "summary": "Both results use an average-to-discounted reduction, supported by improved discounted-MDP bounds with quadratic horizon dependence.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract ties each complexity bound to explicit structural parameters: bias span H, and in the general setting transient time B in addition to H.",
+          "source_ids": [
+            "S2",
+            "S5"
+          ]
+        },
+        "interpretation": "Making the parameters governing difficulty explicit can clarify both scope and why a stronger guarantee is needed.",
+        "application": "When presenting a learning-theoretic result, define the instance-dependent quantities in the bound and explain which additional parameter appears when assumptions are relaxed.",
+        "exception": "This framing is less suitable when the relevant structural parameters are unavailable, unobservable, or not central to the intended use."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the precise definitions of H and B, the generative-model assumptions, or the logarithmic factors.",
+      "The discounted lower-bound comparison and the sense in which the bounds circumvent it are not detailed beyond the stated fixed-instance quadratic scaling."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "author_reported_evidence[2].claim",
+      "before": "For discounted MDPs, the authors report sufficient sample bounds scaling with (1−γ)⁻² and state that these circumvent the known (1−γ)⁻³ minimax lower bound.",
+      "after": "For discounted MDPs, the authors report bounds Õ(SA H/((1−γ)²ε²)) for weakly communicating instances and Õ(SA(B+H)/((1−γ)²ε²)) for general instances, yielding quadratic horizon dependence for a fixed MDP instance rather than contradicting the general cubic minimax lower bound.",
+      "review_file": "reviews/flagged-batch-13.json",
+      "review_sha256": "3abcd28c7d9cb76d6ddb30e86464f912a2fe3b250e3563cbc8d8841465a8664d",
+      "applied_at": "2026-09-13T00:42:27.396198+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006717",
+    "title": "EmotionThinker: Prosody-Aware Reinforcement Learning for Explainable Speech Emotion Reasoning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006717"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9652d2d7562a9c646976d8b179c287a960c9829c5b6e0cdea1e71c216f79f935",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "5ef81914cd7f77409ac4a8b2de5b12bb8ebd060e8cb49e9c3f63913c9f3f1ba1",
+    "extracted_at": "2026-09-12T23:58:25.093379+00:00",
+    "session_id": "01a0980e-915c-7413-981b-02d81f7c8572",
+    "usage": {
+      "input_tokens": 12856,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 734,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "21b8a8979f73be3a76d73cbf3e294bd5c47b7065f9f57fd98b33769d25f68101"
+    },
+    {
+      "id": "S2",
+      "sha256": "fc7cef56b0f4cbee53501370d069958acd3ac3bead5b4d95c5a094f53680d20b"
+    },
+    {
+      "id": "S3",
+      "sha256": "3e9d7d99f13ef28eb2b6d809d6a5c83318f5595ee41c4cfbe81de2330d2e70de"
+    },
+    {
+      "id": "S4",
+      "sha256": "cce837f62359fc2cac4b3a45d009808dffa56428849eb38843b01d473e7c8a0f"
+    },
+    {
+      "id": "S5",
+      "sha256": "55936d2bcf51e6d67247de55ee8f0c4cc6a34c0b64a4095d850de0bddce874b4"
+    },
+    {
+      "id": "S6",
+      "sha256": "edf8538c0e4023b06ead7c6dd24281eeec9e4c2c1d92c8eb611de456adc91544"
+    },
+    {
+      "id": "S7",
+      "sha256": "a554f6bec257ffbc1a401076bbad3dacc80dfc41502255e393806be6e06ad05e"
+    },
+    {
+      "id": "S8",
+      "sha256": "5583eb00a88bafbdfb4abc11698e6d35373ea1845828b8c1863dc9f6bbc1eeb5"
+    },
+    {
+      "id": "S9",
+      "sha256": "9b74a2006dbdab2270d7d967bd18bf29e81cbfe896eb2ed617d8c0f4ff28e587"
+    },
+    {
+      "id": "S10",
+      "sha256": "905b2e43bb55ba6b539fdd53a6370c2827983a0e9398752dc811ff966b180aea"
+    },
+    {
+      "id": "S11",
+      "sha256": "dd2048959ee275cee504d1bffdfd67e5acffe4fbcf4cf0b0a7419c6ef17b116c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006717",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work addresses speech emotion recognition as a deep reasoning task rather than simple emotion classification.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing SpeechLLMs and SER systems provide limited interpretability and underuse language models’ expressive and reasoning capabilities; current SpeechLLMs also have weak prosody perception despite prosodic cues being fundamental to emotion interpretation.",
+        "source_ids": [
+          "S3",
+          "S7"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "EmotionThinker generates emotion predictions with explanations grounded in fine-grained acoustic cues.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "EmotionCoT-35K is an emotional reasoning dataset with Chain-of-Thought annotations and detailed captions.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The authors introduce the prosody-enhanced EmotionThinker-Base and the GRPO-PTR reinforcement-learning approach, which progressively weights reasoning rewards using reasoning–outcome alignment and evaluates reasoning quality with a multidimensional reward model.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize the work as a first step toward reformulating speech emotion recognition as deep reasoning through reinforcement learning.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that prosody enhancement improves emotion understanding.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that EmotionThinker outperforms prior state-of-the-art evaluation models in both emotion accuracy and explanation quality.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Speech emotion carries distinctive information, but existing systems reduce emotion understanding to classification, limiting interpretability and reasoning use.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "reframing",
+        "summary": "The work recasts speech emotion recognition as deep reasoning trained through reinforcement learning.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "resource_and_model",
+        "summary": "The authors build EmotionCoT-35K and address weak prosody perception with EmotionThinker-Base.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reinforcement_learning",
+        "summary": "They introduce GRPO-PTR to combine outcome and progressively trust-weighted reasoning rewards with multidimensional reasoning-quality assessment.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      },
+      {
+        "role": "reported_outcome",
+        "summary": "The authors report gains over previous state-of-the-art evaluation models in emotion accuracy and explanation quality.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a capability gap—weak prosody perception—to a targeted model intervention, then separately specifies how the reward design aligns reasoning quality with outcomes.",
+          "source_ids": [
+            "S7",
+            "S8",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "A useful research narrative can connect each diagnosed failure mode to an explicit architectural or training mechanism.",
+        "application": "Frame a new method by pairing each observed limitation with one named intervention and stating the signal used to judge alignment.",
+        "exception": "This framing is unsuitable when the proposed components address the same limitation or when the abstract lacks evidence tying an intervention to that limitation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, evaluation protocols, numerical results, or whether explanation gains hold across emotion categories and acoustic conditions.",
+      "The claim of being a first step is author-stated and is not independently verified here."
+    ]
+  }
+}

@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31828",
+    "title": "Dynamic Multimodal Evaluation with Flexible Complexity by Vision-Language Bootstrapping",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31828"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1bb1b2f9bccb3490e2970b141131396085f592881cb5d1d72f52f851d3b70af7",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "9d5f7eb3266ab1916c67ee9f6c08aecabd198ad653c4c4f789b1f88a973135d5",
+    "extracted_at": "2026-09-12T23:53:32.660809+00:00",
+    "session_id": "01a0980a-1ecf-7c53-a049-efb4841d44d6",
+    "usage": {
+      "input_tokens": 12735,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 766,
+      "reasoning_output_tokens": 79
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cc257039f3b4d3ae2ebf0176f4e9bffa88fd24136e7e9c2144637e97d18cb114"
+    },
+    {
+      "id": "S2",
+      "sha256": "a9938ba3af72f1fd4beb8950014f367022c65ee0bc456e1d22b083d2d42195c5"
+    },
+    {
+      "id": "S3",
+      "sha256": "7c619921fed3ab6f6a5f7b0f360896af673549b9e9ef6ea4e25c0cb066a89ad1"
+    },
+    {
+      "id": "S4",
+      "sha256": "27128868002c02fd41101f0fbc73c57a3bba02676516f42bb8709b6b4a00e3a0"
+    },
+    {
+      "id": "S5",
+      "sha256": "1512be383f4bb282229caaffff4e082ffacc5e89efa7ea759b384b79b83c8ad4"
+    },
+    {
+      "id": "S6",
+      "sha256": "d10374154f2c6c5006d7b221f8e7548d051baf824e19c44a2bf6e21d728b1c21"
+    },
+    {
+      "id": "S7",
+      "sha256": "9c434a38e6a351a84d1f74e7c5353c33d54b6ec02dd2745ffaf10c838446349b"
+    },
+    {
+      "id": "S8",
+      "sha256": "01127b0ad85b74fbe19b5cc44e885da77580a175c3bf50e1ec22a634590b2f12"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31828",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate LVLMs under changing task instances and complexity while limiting contamination from pre-training data.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing multimodal benchmarks are static, impose fixed complexity constraints, and overlap with pre-training data, raising concerns about evaluation validity.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "protocol",
+        "claim": "Introduces Vision-Language Bootstrapping (VLB), a dynamic multimodal evaluation protocol for LVLMs.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Generates new visual question-answering samples by modifying images and language, then uses a judge module to maintain consistency with the originals.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "evaluation framework",
+        "claim": "Composes bootstrapping strategies to produce benchmark variants with diverse complexities that can co-evolve with LVLM capabilities.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish VLB as a dynamic evaluation protocol combining multimodal bootstrapping, consistency judging, and flexible-complexity benchmark variants.",
+      "source_ids": [
+        "S4",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report extensive experiments across SEEDBench, MMBench, and MME showing that VLB significantly reduces data contamination and exposes LVLM performance limitations.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "LVLMs perform well on multimodal tasks and existing evaluation benchmarks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "The authors identify static benchmarks, fixed complexity, and pre-training overlap as threats to evaluation validity.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "They introduce VLB, which dynamically alters images and language and judges consistency with original samples.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "role": "capability",
+        "summary": "Multiple bootstrapping strategies create benchmark variants with diverse complexities that can evolve with model capabilities.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "evidence",
+        "summary": "Experiments on SEEDBench, MMBench, and MME are reported to reduce contamination and reveal LVLM limitations.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links each evaluation concern to a protocol mechanism: dynamic generation addresses static data, flexible variants address fixed complexity, and a judge module preserves consistency.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A strong method description can make the design rationale traceable from identified failure modes to components.",
+        "application": "When proposing an evaluation protocol, map each stated threat to a named mechanism and explain what property that mechanism is intended to preserve.",
+        "exception": "This mapping is unsuitable when the abstract lacks a clearly specified threat or when a mechanism’s role cannot be distinguished."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative contamination reductions, performance changes, baselines, or experimental conditions.",
+      "Details of the bootstrapping strategies, judge module, and consistency criterion are unspecified.",
+      "The abstract does not establish independently verified robustness, comprehensiveness, or novelty."
+    ]
+  }
+}

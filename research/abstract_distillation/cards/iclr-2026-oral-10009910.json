@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009910",
+    "title": "One for Two: A Unified Framework for Imbalanced Graph Classification via Dynamic Balanced Prototype",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009910"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0feb98f45f6268740952d241add5ff73c13330c2df872cc939b4db369422052d",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "7a15c29a3349e5113ef234b61ee87cf0c0343297ee820d926c2d9cc4a224c843",
+    "extracted_at": "2026-09-13T00:03:36.396240+00:00",
+    "session_id": "01a09813-4fb4-7350-825d-c3900a613751",
+    "usage": {
+      "input_tokens": 12690,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 782,
+      "reasoning_output_tokens": 152
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7199bcb2d2e4867c6fe4520d3b619b5a7aa8e78a6a222f52a1b7fae6bd16927e"
+    },
+    {
+      "id": "S2",
+      "sha256": "491f9c5f9eb9978a35420d1f573fb766f9b9714efa1227fabe461507439f4ef5"
+    },
+    {
+      "id": "S3",
+      "sha256": "152810cfa8a46b4fd44ca7fe260d89a2f696bcdaae949d7e0f4c8d31a260fd8a"
+    },
+    {
+      "id": "S4",
+      "sha256": "3c33abfbef480fe0120088740dab7ab1f242403f717fba2f375d7c2661019106"
+    },
+    {
+      "id": "S5",
+      "sha256": "6e839ce025b9cc39f626c984ad711691bf5ee883fb7676bd2c075a00ad37e675"
+    },
+    {
+      "id": "S6",
+      "sha256": "4f4f4b7efc981944655c4c8c47d81730b49a8ae57aa73ad93d10d4c96d721d4a"
+    },
+    {
+      "id": "S7",
+      "sha256": "ff3c0072372c8f744bf60e0da857f68a4eefea649b01d220fc67a814e5c74205"
+    },
+    {
+      "id": "S8",
+      "sha256": "1e1f8556e5dd7327c46e793c8cf0f93f5322285d3c2ae55c3e40f9585065146f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009910",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Graph classification remains vulnerable to graph-level class and topological imbalance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "UniImb unifies treatment of class and topological imbalance through personalized graph perturbations, dynamic balanced prototypes, and prototype load balancing.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The abstract reports an Information Bottleneck-based theoretical justification for these design choices.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors report releasing AirGraph, a large-scale imbalanced air-pollution graph dataset.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated distinction is a unified framework addressing both class and topological graph-level imbalance.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report dominant performance across various imbalanced scenarios on 19 datasets against 23 baselines, including AirGraph.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that AirGraph was released with the work.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem",
+        "summary": "GNN-based graph classification is described as vulnerable to class and topological imbalance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "UniImb is introduced as a unified response to both imbalance types.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The framework combines multi-scale topology, learnable personalized perturbations, dynamic balanced prototypes, and load-balancing optimization.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "justification_and_evaluation",
+        "summary": "The design is theoretically motivated by Information Bottleneck, then reported experiments span 19 datasets and 23 baselines.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "availability",
+        "summary": "The authors state that code is available on GitHub.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract names two imbalance sources and maps them to distinct mechanisms within one framework: topology-aware perturbation, balanced prototypes, and majority-dominance mitigation.",
+          "source_ids": [
+            "S1",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Explicitly aligning each problem dimension with a mechanism can make a unified-method claim easier to evaluate conceptually.",
+        "application": "For a multi-factor learning problem, state the factors separately and identify which module or objective addresses each one.",
+        "exception": "This framing is unsuitable when the factors are not independently characterized or when one mechanism genuinely handles all factors without meaningful specialization."
+      }
+    ],
+    "unknowns": [
+      "The abstract provides no quantitative performance values, dataset-wise results, or statistical details behind “dominant performance.”",
+      "The theoretical justification’s assumptions and conclusions are unspecified; the abstract does not establish proof correctness."
+    ]
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009360",
+    "title": "Huxley-G\\\"odel Machine: Human-Level Coding Agent Development by an Approximation of the Optimal Self-Improving Machine",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009360"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ae4ce05158c7072dc96c107d0e69f164b720eafd68a523384f78e45c7839e271",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "cb12a93c9ba1c01ae81229e87017151abb70f4f4572a0646d091b759d1bd2c8a",
+    "extracted_at": "2026-09-13T00:02:44.098028+00:00",
+    "session_id": "01a09812-8268-79d0-b1d3-32fa10a1ef1e",
+    "usage": {
+      "input_tokens": 12850,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 814,
+      "reasoning_output_tokens": 78
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3d3e94b3d547b135cbb77324e16ef92f15e5edb27606f70e8f810acc2522233d"
+    },
+    {
+      "id": "S2",
+      "sha256": "bf6b855129adffc2330d81ce8968cb4c1d32eda613648bd6bc4fdb936d859ce0"
+    },
+    {
+      "id": "S3",
+      "sha256": "8b0566695c5bd9ea1b33d73b35a2877e3ec790c58a28d1f5e63191db929df327"
+    },
+    {
+      "id": "S4",
+      "sha256": "f4a4aa5f41c082160b238462a450fad059b5af02b65c0e0585b6a9562b4aa707"
+    },
+    {
+      "id": "S5",
+      "sha256": "346e07a715139d0bf79f6a074f2800b9a93daeb108f6e038a1302c04413f9dc5"
+    },
+    {
+      "id": "S6",
+      "sha256": "52335014c13b15849132f7681639758020d87c836c282f7b23f760eaedb8ecda"
+    },
+    {
+      "id": "S7",
+      "sha256": "ee422ead4fa34fbef5925e96f57e8f0f7590d127fbbf8771912ec23af85b4c55"
+    },
+    {
+      "id": "S8",
+      "sha256": "6d8717a0a46a18d83460c0ff556c99ba228c0a44b2dc3313b4c577d5bcf1a279"
+    },
+    {
+      "id": "S9",
+      "sha256": "fb123e6783d810f251e91857d295ad6adb6a89bfb04ec8ed0712643f208827c0"
+    },
+    {
+      "id": "S10",
+      "sha256": "509ca38118d1eebff01e89160df2906c48d4afdf15e0b6481100256586c1259a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009360",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop self-improving coding agents that search trees of self-modifications.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Benchmark performance can mismatch an agent’s potential for further self-improvement, termed the Metaproductivity-Performance Mismatch.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "metric",
+        "claim": "Proposes CMP, which aggregates descendants’ benchmark performances as an indicator of self-improvement potential.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Reports that access to true CMP is sufficient to simulate Gödel Machine behavior in the stated setting under certain assumptions.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces Huxley-Gödel Machine, which estimates CMP to guide self-modification-tree search.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by guiding self-modification search with an estimated descendant-performance aggregate rather than relying only on current benchmark performance.",
+      "source_ids": [
+        "S2",
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that HGM outperforms prior self-improving coding-agent development methods on SWE-bench Verified and Polyglot while using fewer allocated CPU hours.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report strong transfer to other coding datasets and LLMs.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report human-level performance when an agent optimized on SWE-bench Verified with GPT-5 mini is evaluated on SWE-bench Lite with GPT-5, matching the best officially checked human-engineered-agent results.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Self-improvement is operationalized through agents that edit their own codebases.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "existing_approach",
+        "summary": "Methods expand modification trees by favoring higher coding-benchmark performance as a proxy for promising future modifications.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "The paper identifies a mismatch between benchmark performance and metaproductivity.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "It proposes CMP and HGM, using estimated descendant performance to guide tree search.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "HGM is reported to outperform prior methods with fewer CPU hours, transfer across datasets and LLMs, and reach the stated human-level result.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly separates current coding-benchmark performance from self-improvement potential and introduces a descendant-based metric to represent the latter.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "When a proxy may conflate present capability with future improvement capacity, modeling downstream performance can sharpen search guidance.",
+        "application": "Define and evaluate a proxy based on descendants or later-stage outcomes when selecting among iterative system improvements.",
+        "exception": "This move may be unsuitable when descendants are too costly to generate or when downstream performance is unavailable or unreliable."
+      }
+    ],
+    "unknowns": [
+      "The assumptions required for the Gödel Machine simulation are not specified.",
+      "The abstract does not give CMP’s exact aggregation formula, benchmark scores, CPU-hour counts, baselines, or statistical details.",
+      "The transfer claim does not specify which datasets or LLMs were used."
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31922",
+    "title": "Exploring The Loss Landscape Of Regularized Neural Networks Via Convex Duality",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31922"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "53072c520383ce0c8378d9bdc46d5528bef7cdfcfc9df9786f9753feb8ac8a51",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "8a304cf8ef96667bf0a819bc2ceb9754f99d81a21680c0578adac87695a92191",
+    "extracted_at": "2026-09-12T23:57:19.077720+00:00",
+    "session_id": "01a0980d-8ed6-7eb2-be03-8a8ccb59d680",
+    "usage": {
+      "input_tokens": 12613,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 740,
+      "reasoning_output_tokens": 92
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d8f98ba4d7224910ff1f553de776a19c90616597084191d90d65ccc3aa923b9e"
+    },
+    {
+      "id": "S2",
+      "sha256": "9ba7676d6b6ce111e939d957a4977d89fcaab3d2146fdbb3d13ce524346e0a6d"
+    },
+    {
+      "id": "S3",
+      "sha256": "17b2e36afe37dd24b0f9140107a2549d749b9a6e6a8761d2a4b641fda793140d"
+    },
+    {
+      "id": "S4",
+      "sha256": "16dab4d14b9cacc01ba940253bcf2004f4fd1fe6f3c3858b69db3a5920a60d16"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31922",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Analyze stationary points, global-optimum connectivity, non-increasing-loss paths, and nonuniqueness in regularized neural-network loss landscapes.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Recasts the neural-network landscape problem as an equivalent convex problem and studies its dual.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "For scalar-output two-layer networks, characterizes the convex solution set and all stationary points, then identifies width-dependent topology changes and continuum-valued optima.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "extension",
+        "claim": "Extends solution-set and connectivity results to vector-valued two-layer and parallel three-layer architectures.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors' stated approach is to use convex duality to characterize landscape structure and extend the resulting connectivity analysis across architectures.",
+      "source_ids": [
+        "S1",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a phase transition in the topology of global optima as network width changes.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report counterexamples with a continuum of optimal solutions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that their characterization and connectivity results extend to two-layer vector-valued and parallel three-layer networks.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "scope",
+        "summary": "The paper frames four landscape properties: stationary points, optimal-solution connectivity, non-increasing-loss paths to arbitrary global optima, and nonuniqueness.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "reduction",
+        "summary": "It casts the analysis as an equivalent convex problem and examines its dual.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "core analysis",
+        "summary": "For scalar-output two-layer networks, it characterizes the convex solution set and all stationary points.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "consequences",
+        "summary": "It reports width-driven topology phase transitions, continuum-optimum counterexamples, and extensions to several architectures.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a dual characterization of an equivalent convex problem to claims about stationary points, topology, connectivity, and nonuniqueness.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A structural representation can align several landscape claims under one analytical object.",
+        "application": "When presenting a theory paper, introduce the representation first, then map each claimed consequence explicitly to the part of the representation that supports it.",
+        "exception": "This framing is unsuitable when the proposed reformulation is not shown to preserve the property being analyzed."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the regularizer, data assumptions, activation functions, width thresholds, or formal definitions of connectivity and phase transition.",
+      "It does not provide the conditions or constructions underlying the reported extensions and counterexamples."
+    ]
+  }
+}

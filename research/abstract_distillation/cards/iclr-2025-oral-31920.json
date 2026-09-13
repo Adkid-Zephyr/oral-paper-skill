@@ -1,0 +1,200 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31920",
+    "title": "Prioritized Generative Replay",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31920"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "de7fe862b0d9c2792f32dfa4bfa4dc5da943ca51c49f12dbc03dc2145203336c",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "a4309586fe9eb6d410e41bfbbf6ff7ca5335b4149ef96584e4d4e208d470ef00",
+    "extracted_at": "2026-09-12T23:57:10.458250+00:00",
+    "session_id": "01a0980d-7117-7510-bcec-7ae292269ca9",
+    "usage": {
+      "input_tokens": 12742,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 785,
+      "reasoning_output_tokens": 71
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a36c99416436458b8f453fad5a9778f6b0cefbbeeabf2cd7d74d3e77fdc8c97c"
+    },
+    {
+      "id": "S2",
+      "sha256": "dde2836a78771716e8ad6f9ce81efc21119d0a2912a5c4ae102d83ba61f95b9c"
+    },
+    {
+      "id": "S3",
+      "sha256": "00f6e2477f97b978a5feb3c5477499ef4541155a78ff9d2878b6ba5f2ffae464"
+    },
+    {
+      "id": "S4",
+      "sha256": "718aad1cde30e7399be1e8e3d368debe5cdd524dedad7ed7ae369d63cec380bf"
+    },
+    {
+      "id": "S5",
+      "sha256": "0b2b2ee75d9db81ca6a7a0b4a486389b688f0404bf9c58986ac568a1c192d153"
+    },
+    {
+      "id": "S6",
+      "sha256": "15c8e243d394cf5e191bcffb07d11fb444e82e36dffc295b99d834deb403ac20"
+    },
+    {
+      "id": "S7",
+      "sha256": "946b1e166f7b5c26deceaf0731b21ad047831015f28abbac35b9993a0b21a4a8"
+    },
+    {
+      "id": "S8",
+      "sha256": "93513ced04592bdc18760ec32107e47fe01909c6a8de9e7e527ba3da17133058"
+    },
+    {
+      "id": "S9",
+      "sha256": "aa19ffd3381eeb97a8d6c74bd41471713c4d9fcb3db23df194c250b59c3ce7bb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31920",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve the efficiency of online reinforcement learning updates that reuse stored experience through replay buffers.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Uniform replay wastes updates on less relevant transitions, while prioritizing rare useful samples can promote overfitting.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A prioritized parametric agent memory that uses generative models to capture online experience, densify past experience, and guide generations toward relevant history.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "instantiation",
+        "claim": "An implementation using conditional diffusion models and curiosity- or value-based relevance functions.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "mechanistic analysis",
+        "claim": "An account of how guidance promotes diversity in generated transitions and reduces overfitting.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work replaces sample-only prioritization with a prioritized, generative, parametric version of agent memory that both densifies and guides replayed experience.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report consistent improvements in performance and sample efficiency across state-based and pixel-based domains.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that the approach can train policies at higher update-to-data ratios than prior methods.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that guidance increases diversity in generated transitions and reduces overfitting.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Online RL commonly reuses experience through replay buffers for value-function updates.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Uniform replay may be inefficient, but prioritizing useful rare samples can overfit.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "The paper proposes prioritized parametric memory with generative experience densification and relevance-guided generation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "implementation",
+        "summary": "The recipe is instantiated with conditional diffusion and curiosity- or value-based relevance metrics.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report gains across state and pixel domains, diversity and overfitting mechanisms, and support for higher update-to-data ratios.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a relevance-guided generation mechanism with an explicit diversity and overfitting account, rather than describing prioritization only as a performance heuristic.",
+          "source_ids": [
+            "S5",
+            "S8"
+          ]
+        },
+        "interpretation": "A method claim becomes more informative when the abstract links the intervention to a proposed mechanism and its tradeoff.",
+        "application": "When introducing a selective data-generation method, state both the selection signal and the mechanism by which it is expected to avoid concentration on rare examples.",
+        "exception": "This framing is unsuitable when the work has no supported mechanistic analysis or when selection is not central to the method."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, numerical effect sizes, statistical uncertainty, or the exact update-to-data ratios.",
+      "It does not establish whether the reported improvements hold uniformly across all tested settings or quantify the separate effects of densification and guidance."
+    ]
+  }
+}

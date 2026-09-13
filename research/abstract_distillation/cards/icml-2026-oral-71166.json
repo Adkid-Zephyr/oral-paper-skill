@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71166",
+    "title": "SpatioLM: Towards General Physical Spatial Intelligence in Vision-Language Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71166"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c9c83c252bec01f5689ea407f02e8edcf1cb9515e432215c7dda816d5f22ab7c",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "f85aaa4c7fab6a14f2db46422779d34228d41b79bf3585e79dfe172f91d920b3",
+    "extracted_at": "2026-09-13T00:16:42.286215+00:00",
+    "session_id": "01a0981f-4fdf-78e2-9511-e8ad148e4235",
+    "usage": {
+      "input_tokens": 12737,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 790,
+      "reasoning_output_tokens": 66
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cfee93682cf285327f586033f426bc252ad361097f76a12df3368665f93fab8e"
+    },
+    {
+      "id": "S2",
+      "sha256": "f8a16d9f9024d81c25548f885c7c34205c8b9af14f6559e637d47366b50b493e"
+    },
+    {
+      "id": "S3",
+      "sha256": "c85d64c05cefc274dc79010c40bc4de0484ca748df1f3b3fe6c53942ed1fbd28"
+    },
+    {
+      "id": "S4",
+      "sha256": "d6a84641933308c93530f9f432cfd9b30da74aa3297808b5223c4485cbbd270e"
+    },
+    {
+      "id": "S5",
+      "sha256": "014a558626e8f7c4fdbbfe86e42709ffeed9c5439d06aad34b25ad886a09224d"
+    },
+    {
+      "id": "S6",
+      "sha256": "8fa92cf19430039ec14b68c3dc604023fe06128bca69d7ac4b766d7c2c7973c9"
+    },
+    {
+      "id": "S7",
+      "sha256": "1d54f1b6673db1bd8d9386b15c324f90d2abe891608dcba220e8222009c70b24"
+    },
+    {
+      "id": "S8",
+      "sha256": "4fc1c339d4b9beebb999f0583988c1222274f8c0fcf228c6147faec335574233"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71166",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve visual spatial reasoning and physical spatial intelligence in vision-language models while preserving general-purpose capabilities.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches commonly rely on extra 3D priors or external spatial encoders, adding complexity and reportedly degrading general capabilities after spatial fine-tuning.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A parameter-efficient SpatioLM that enhances spatial intelligence without extra 3D prior inputs or third-party spatial encoders.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "architecture",
+        "claim": "A plug-and-play, non-invasive spatio-vision module intended to elicit spatial knowledge already inherent in VLMs.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "supervision",
+        "claim": "Use of pseudo depth and camera information as supervision to guide learning of physically coherent representations.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe their use of pseudo depth and camera information as an innovative form of supervision for physical spatial representation learning.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report significant improvements across diverse spatial perception and understanding tasks, while effectively limiting degradation of general capabilities.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report a score of 71.6 on VSI-Bench and identify the model as the first to surpass 70.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report competitive performance after transfer to embodied manipulation tasks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "VLMs perform well on commonsense reasoning but struggle with visual spatial reasoning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing solutions add 3D priors or external spatial encoders, increasing complexity and reportedly harming general capabilities after spatial fine-tuning.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "SpatioLM combines a parameter-efficient design with a non-invasive spatio-vision module and pseudo depth/camera supervision.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The authors report gains across spatial tasks, limited general-capability degradation, a 71.6 VSI-Bench score, and competitive embodied-manipulation transfer.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a targeted spatial module and physically oriented supervision with a preservation goal for general capabilities, then reports both spatial-task and transfer results.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "This suggests framing a specialized capability method around both the target gain and the collateral capability it aims to protect.",
+        "application": "State the added module, supervision signal, target capability, and preservation objective together, then report evidence for each objective separately.",
+        "exception": "This framing is unsuitable when the proposed system has no meaningful capability-preservation constraint or no evidence relevant to transfer."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baselines, dataset protocols, statistical variability, or how general-capability degradation was measured.",
+      "The conditions and metrics underlying the embodied-manipulation transfer claim are not given.",
+      "The claimed first-to-surpass-70 status on VSI-Bench is author-reported and not independently verified here."
+    ]
+  }
+}

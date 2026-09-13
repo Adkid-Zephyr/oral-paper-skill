@@ -1,0 +1,416 @@
+{
+  "batch_id": "icml-2026-04",
+  "covered_ids": [
+    "icml-2026-oral-71171",
+    "icml-2026-oral-71172",
+    "icml-2026-oral-71173",
+    "icml-2026-oral-71174",
+    "icml-2026-oral-71175",
+    "icml-2026-oral-71176",
+    "icml-2026-oral-71177",
+    "icml-2026-oral-71178",
+    "icml-2026-oral-71179",
+    "icml-2026-oral-71180",
+    "icml-2026-oral-71181",
+    "icml-2026-oral-71182",
+    "icml-2026-oral-71183",
+    "icml-2026-oral-71184",
+    "icml-2026-oral-71185",
+    "icml-2026-oral-71186",
+    "icml-2026-oral-71187",
+    "icml-2026-oral-71188",
+    "icml-2026-oral-71189",
+    "icml-2026-oral-71190",
+    "icml-2026-oral-71191",
+    "icml-2026-oral-71192",
+    "icml-2026-oral-71193",
+    "icml-2026-oral-71194"
+  ],
+  "candidate_practices": [
+    {
+      "name": "Map each design change to a diagnosed failure",
+      "source_observation": "These abstracts connect particular mechanisms to identified failures instead of presenting components only as a feature list.",
+      "why_it_may_help": "Interpretation: this lets readers assess why a component belongs in the proposed solution.",
+      "application": "Replace a component inventory with failure → proposed intervention pairs; distinguish a motivating diagnosis from a demonstrated mechanism.",
+      "when_not_to_use": "Do not invent independent component roles when the method works through inseparable interactions.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71175",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Repeated incorrect answers motivate separating recognition from relational reasoning; small-sample stability motivates the vMF metric."
+        },
+        {
+          "paper_id": "icml-2026-oral-71178",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Span aggregation addresses multi-token computation, while recursive tracing addresses attribution absorbed by intermediate reasoning."
+        },
+        {
+          "paper_id": "icml-2026-oral-71188",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Recoverable static signatures motivate input-conditioned signatures intended to prevent cross-input transfer."
+        },
+        {
+          "paper_id": "icml-2026-oral-71189",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "A geometric account of additive-update interference motivates multiplicative orthogonal editing and preservation claims."
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "Whether diagnoses are established, components isolate the stated failures, and security or geometric claims hold under the evaluated conditions."
+    },
+    {
+      "name": "Define resources by the work they enable",
+      "source_observation": "Resource abstracts describe construction or interface choices alongside the evaluation, training, or programming capability they provide.",
+      "why_it_may_help": "Interpretation: capability-linked descriptions can establish a resource contribution without requiring algorithmic priority.",
+      "application": "State what becomes constructible, executable, or comparable; attach coverage and validation to that capability rather than listing artifacts alone.",
+      "when_not_to_use": "Do not promise downstream improvements when the contribution only supplies infrastructure.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71171",
+          "source_ids": [
+            "S1",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Dual control changes passive users into tool-using participants; task generation and constrained simulation support testing coordination."
+        },
+        {
+          "paper_id": "icml-2026-oral-71173",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6",
+            "S7",
+            "S8",
+            "S9"
+          ],
+          "specific_example": "Metadata-to-executable-task automation supports LiveCVEBench and training environments, with expert-reproduction comparisons and reported training gains."
+        },
+        {
+          "paper_id": "icml-2026-oral-71182",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "SoftJAX and SoftTorch consolidate fragmented relaxations into drop-in operator families and report benchmarks and a case study."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71172",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S7"
+          ],
+          "contrast": "MAP contributes first-hand deployment knowledge; its resource value does not depend on an executable pipeline."
+        }
+      ],
+      "full_text_needed_for": "Resource quality, maintenance, coverage definitions, interface compatibility, and whether downstream comparisons isolate resource effects."
+    },
+    {
+      "name": "Challenge the proxy before choosing the evaluation target",
+      "source_observation": "These abstracts distinguish a familiar signal or objective from the property the work actually concerns.",
+      "why_it_may_help": "Interpretation: this can change what authors measure, rather than merely improving a score on an inherited proxy.",
+      "application": "Name the target property, explain the proxy mismatch, and specify whether the replacement is a proposed criterion, implemented measure, or tested association.",
+      "when_not_to_use": "Retain the existing proxy when it directly answers the research question; normative criteria still require operationalization.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71177",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "specific_example": "DSF measures definition alignment; its reported partial correlation is +0.41, whereas three memorization proxies show no positive association."
+        },
+        {
+          "paper_id": "icml-2026-oral-71183",
+          "source_ids": [
+            "S1",
+            "S5"
+          ],
+          "specific_example": "The position advocates informed, representative, friction-robust discourse as evaluation targets instead of engagement."
+        },
+        {
+          "paper_id": "icml-2026-oral-71187",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "The landscape argument distinguishes viewer authenticity concerns from depicted subjects' dignity harms, which detection may leave unresolved."
+        },
+        {
+          "paper_id": "icml-2026-oral-71190",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Facial-attribute suppression is paired with joint privacy and anomaly-detection assessment."
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "Metric construction, validity, stakeholder evidence, and privacy scope; position-paper recommendations do not establish intervention effectiveness."
+    },
+    {
+      "name": "Separate local speed, system speed, and quality",
+      "source_observation": "These systems abstracts distinguish execution bottlenecks and evaluation levels, with different forms of quality qualification.",
+      "why_it_may_help": "Interpretation: separating levels prevents a local acceleration from silently becoming a whole-system claim.",
+      "application": "Identify the optimized operation and hardware condition, then report system consequences separately. Preserve qualifiers such as 'up to' and 'geometric mean' and name the quality criterion.",
+      "when_not_to_use": "For a component-only contribution, bound the claim to that component instead of inventing an end-to-end result.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71179",
+          "source_ids": [
+            "S3",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "Activation approximations have platform-level speed claims; ConvNeXt separately supplies end-to-end gains and an accuracy qualification."
+        },
+        {
+          "paper_id": "icml-2026-oral-71180",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S6"
+          ],
+          "specific_example": "IO-aware reformulation supports fused kernels; A100 results distinguish up to 32× forward and 161× end-to-end speedups."
+        },
+        {
+          "paper_id": "icml-2026-oral-71181",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Sketch–kernel co-design exposes an efficiency–robustness parameter, states OSE guarantees, and reports Pareto gains plus roughly 1.7× geometric-mean speedup."
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "Timing boundaries, baseline configurations, hardware comparability, numerical behavior, quality matching, and aggregation procedures."
+    },
+    {
+      "name": "Make capability boundaries the theoretical contribution",
+      "source_observation": "These abstracts distinguish guarantees by assumptions, strategy classes, or architecture, sometimes adding counterexamples and remedies.",
+      "why_it_may_help": "Interpretation: readers can identify which change permits a result and which broader claim remains unsupported.",
+      "application": "Write the successful domain and guarantee together; separately state the obstruction and the exact assumption, strategy, or architecture change used to address it.",
+      "when_not_to_use": "Do not manufacture a counterexample or imply a converse when only sufficient conditions are established.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71184",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Uniform-pricing nonexistence motivates richer pricing; the reported factor-2 protection specifically concerns deviations to uniform prices."
+        },
+        {
+          "paper_id": "icml-2026-oral-71185",
+          "source_ids": [
+            "S2",
+            "S5",
+            "S7"
+          ],
+          "specific_example": "Existence under playerwise concavity is separated from potential-game computation with exact gradients, feasible initialization, and O(epsilon^-3) iterations."
+        },
+        {
+          "paper_id": "icml-2026-oral-71186",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "A necessary implication becomes an equivalence for subgames; a three-player counterexample and leaklessness delimit broader stability claims."
+        },
+        {
+          "paper_id": "icml-2026-oral-71194",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "Sufficient learnability conditions accompany MPNN impossibilities, richer architectures, and a Bellman–Ford-specific refinement."
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "Exact quantifiers, definitions, deviation classes, approximation notions, proof correctness, and whether proposed remedies cover all stated obstructions."
+    },
+    {
+      "name": "Turn an explanatory label into a concrete account",
+      "source_observation": "Explanation-oriented abstracts name representations, governing factors, or temporal stages rather than stopping at a phenomenon label.",
+      "why_it_may_help": "Interpretation: concrete accounts suggest what evidence would distinguish the explanation from a restatement.",
+      "application": "After naming the phenomenon, specify its proposed representation or mechanism and an observable implication; distinguish formal scope from empirical extension.",
+      "when_not_to_use": "Do not impose mechanistic claims on descriptive findings or present a representation as a validated explanation.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71176",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Theory-building is instantiated as induced executable programs, with explanation-driven generalization reported but no tasks specified."
+        },
+        {
+          "paper_id": "icml-2026-oral-71191",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5",
+            "S7"
+          ],
+          "specific_example": "Cross-split consistency is linked to shared Gaussian statistics and variance factors; linear-model predictions are checked on UNet and DiT outside memorization."
+        },
+        {
+          "paper_id": "icml-2026-oral-71193",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "Focus–dilution is unpacked into condensation, frequency-driven focus, redistribution, and restart, with named corroborating datasets."
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "Discriminating predictions, mechanism evidence, approximation error, and transfer beyond the formal setting."
+    },
+    {
+      "name": "Show the bridge from a local construction to broader scope",
+      "source_observation": "Two abstracts distinguish a smaller construction from an integration or generalization step.",
+      "why_it_may_help": "Interpretation: this makes a broad framework claim inspectable without treating breadth as self-evident.",
+      "application": "Identify the local procedure first, then state what additional algorithm or structural condition supports expansion.",
+      "when_not_to_use": "Do not imply that combining modules automatically establishes generality.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71174",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "OMAC distinguishes optimization along one of five dimensions from a separate joint-optimization algorithm."
+        },
+        {
+          "paper_id": "icml-2026-oral-71192",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Gemma-style patches precede a multi-layer construction and input/output controllability conditions for broader applicability."
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "The actual optimization dimensions, integration interactions, controllability definitions, and scope of perfect patch equivalence."
+    }
+  ],
+  "unusual_but_useful": [
+    {
+      "paper_id": "icml-2026-oral-71172",
+      "source_ids": [
+        "S3",
+        "S5",
+        "S6"
+      ],
+      "practice": "Use deployment prevalence to surface a research agenda.",
+      "application": "Pair study coverage—20 interviews and 86 surveyed practitioners across 26 domains—with reported workflow, adaptation, and evaluation patterns, then distinguish practitioner challenges from validated solutions.",
+      "limit": "The 68%, 70%, and 74% figures need denominator and sampling checks; they do not establish best practices or deployment-success causes."
+    }
+  ],
+  "discarded_generalizations": [
+    {
+      "generalization": "Every abstract needs one method and a benchmark victory.",
+      "reason": "Position, resource, and theoretical contributions support different evidence structures and multiple coherent contributions.",
+      "paper_ids": [
+        "icml-2026-oral-71182",
+        "icml-2026-oral-71183",
+        "icml-2026-oral-71185"
+      ]
+    },
+    {
+      "generalization": "A named replacement metric proves the intended property.",
+      "reason": "Association, proposed normative criteria, and reported privacy filtering establish different and limited claims.",
+      "paper_ids": [
+        "icml-2026-oral-71177",
+        "icml-2026-oral-71183",
+        "icml-2026-oral-71190"
+      ]
+    },
+    {
+      "generalization": "These patterns explain Oral selection or validate ORAL.",
+      "reason": "Selected abstracts supply neither selection evidence nor comparative evidence for a writing framework.",
+      "paper_ids": [
+        "icml-2026-oral-71171",
+        "icml-2026-oral-71194"
+      ]
+    }
+  ],
+  "source_checks_needed": [
+    {
+      "paper_id": "icml-2026-oral-71174",
+      "field": "lessons.source_observation",
+      "issue": "Calls five dimensions explicit, but unknowns say they are not specified; check S5 before recommending enumeration as observed."
+    },
+    {
+      "paper_id": "icml-2026-oral-71184",
+      "field": "contributions",
+      "issue": "Generic 2-approximate Nash wording may obscure S5's restriction to uniform-price deviations; S3 also needs nonexistence quantifiers checked."
+    },
+    {
+      "paper_id": "icml-2026-oral-71186",
+      "field": "lessons.application",
+      "issue": "The extraction reports a three-player counterexample, not its minimality; do not promote the suggested minimal-counterexample move to evidence."
+    },
+    {
+      "paper_id": "icml-2026-oral-71191",
+      "field": "lessons.source_observation",
+      "issue": "Detailed S4 claims about noise renormalization and low-variance overshrinkage need original-abstract checking before reuse."
+    },
+    {
+      "paper_id": "icml-2026-oral-71187",
+      "field": "narrative_sequence",
+      "issue": "Check S2's 'dominant' abuse characterization and S5's exacerbation claim; neither has quantified scope here."
+    },
+    {
+      "paper_id": "icml-2026-oral-71173",
+      "field": "author_reported_evidence",
+      "issue": "Check S5's success-rate subject and denominator, and S9's Claude comparison conditions before using either as a comparison template."
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47172",
+    "title": "SWE-Lancer: Can Frontier LLMs Earn $1 Million from Real-World Freelance Software Engineering?",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47172"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3bfcbfe54d134d4c22c8d5952ae8f279564503ff07664b14127adeca5b226c64",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "0ab0a2ca25f529a8d65be148f1153f73632267efcd7a2e737d4b8335a8aaa60f",
+    "extracted_at": "2026-09-13T00:07:22.406073+00:00",
+    "session_id": "01a09816-be50-70e1-b0db-0d0acaf5db53",
+    "usage": {
+      "input_tokens": 12646,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 789,
+      "reasoning_output_tokens": 132
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2841ee793c11d31d23b6cde574362d5006e736b6f9091758a22f6be3d975ff49"
+    },
+    {
+      "id": "S2",
+      "sha256": "dbdbb6baed436db9a13906954fe1e262c982608b4b6f598839588b5804c1b484"
+    },
+    {
+      "id": "S3",
+      "sha256": "59e303d56abf1f94ed07313c53134fa4e354fb3aa45e3af300b057aa5a6862a5"
+    },
+    {
+      "id": "S4",
+      "sha256": "acb38da39db9fb46eba77c0bf9945222165d2077b43a390b823398378b1b8b5c"
+    },
+    {
+      "id": "S5",
+      "sha256": "cdff5a64839ebc9a0b5d923976c7d51a0dbd1e2753bf4829efdd1d3af6a9df2c"
+    },
+    {
+      "id": "S6",
+      "sha256": "5876daf4b25765cf9619b9d749c9c200bdaed17a87d9898e4c6c14201fb0bdbf"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47172",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks whether frontier LLMs can perform real-world freelance software engineering tasks and generate substantial monetary value.",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces SWE-Lancer, a benchmark of over 1,400 Upwork software-engineering tasks worth $1 million in aggregate payouts, spanning independent engineering and managerial decisions.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "evaluation",
+        "claim": "Defines task-specific assessment using end-to-end tests for engineering tasks and comparison with original hired managers’ choices for managerial tasks.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Releases a unified Docker image and public evaluation split to support subsequent research.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present SWE-Lancer as a benchmark grounded in real freelance software-engineering tasks and mapped to monetary value.",
+      "source_ids": [
+        "S1",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that frontier models remain unable to solve a majority of the benchmark tasks.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "benchmark introduction",
+        "summary": "The paper introduces a benchmark built from over 1,400 real Upwork tasks with $1 million in total stated value.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "task scope",
+        "summary": "The benchmark covers independent work from $50 bug fixes to $32,000 feature implementations, plus managerial proposal-selection tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "assessment design",
+        "summary": "Independent tasks use end-to-end tests triple-verified by experienced software engineers; managerial tasks are assessed against original managers’ decisions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported result",
+        "summary": "The authors report that frontier models cannot solve most tasks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "research enablement",
+        "summary": "The authors release evaluation infrastructure and frame monetary mapping as a way to study AI development’s economic impact.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns task types with distinct evaluation targets: executable tests for implementation and human-manager decisions for managerial judgment.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "When a benchmark spans qualitatively different work, matching each task category to its real-world success criterion can make claims more interpretable.",
+        "application": "For a mixed-role benchmark, define separate outcome measures tied to the operational criterion of each role before reporting aggregate performance.",
+        "exception": "This approach may be unsuitable when task categories lack stable, observable success criteria or comparable reference decisions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the evaluated models or report exact per-task, per-category, or monetary performance figures.",
+      "It does not specify the construction, coverage, or public availability details of the full dataset beyond the stated evaluation split and Docker image.",
+      "The abstract does not establish how monetary value is converted into an aggregate earning estimate."
+    ]
+  }
+}

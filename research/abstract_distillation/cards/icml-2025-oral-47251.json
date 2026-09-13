@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47251",
+    "title": "Train for the Worst, Plan for the Best: Understanding Token Ordering in Masked Diffusions",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47251"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "da3ea0922bee2ed279363b1b5977567aeec5f841a181ff65eb9bae7d7bc4b472",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "fb9af864fc8aac9eff8a75c8bc4d542d74ac176136f8ae260151f46a6340c0b9",
+    "extracted_at": "2026-09-13T00:10:29.257302+00:00",
+    "session_id": "01a09819-9243-7da1-a46e-9c9cdc28cbd1",
+    "usage": {
+      "input_tokens": 12707,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 760,
+      "reasoning_output_tokens": 73
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "67ea99486e37df11c81c01da4e682ca7c62278e3b39fbe99e1be5ae5ab3f7bfe"
+    },
+    {
+      "id": "S2",
+      "sha256": "fb5bdee5b79cad2fc5624d64253b2bb1d30818d58544e3a40bc1dc3c8b1e2c9a"
+    },
+    {
+      "id": "S3",
+      "sha256": "b230337137f8d66652ff6244579d6bab5842304bf1d869b151df3979dfcf2778"
+    },
+    {
+      "id": "S4",
+      "sha256": "6f0d1a6c66433340c2cdfb37eb23ac6ff7f34c9aee5b71bc21eea3d09d496a6b"
+    },
+    {
+      "id": "S5",
+      "sha256": "2420ccbc98d329d294b1e2a374fa5a977497bfbf4054d47f5cf50cfca71b4865"
+    },
+    {
+      "id": "S6",
+      "sha256": "b5b6c902305aadb2a83cc7e8845f41746411825f85ca0997f97f30312e81f8f5"
+    },
+    {
+      "id": "S7",
+      "sha256": "389ad79bb5092e0132e72f8b9ea12ff7ac40354b2e26cbfe7a4f3d60724ddf7e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47251",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work examines the tradeoff between masked diffusion models’ difficult training subproblems and their flexible inference-time token ordering.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory and empirical analysis",
+        "claim": "Analyzes the computational difficulty of the infilling subproblems MDMs face during training relative to autoregressive models.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "inference strategy",
+        "claim": "Introduces adaptive token-order selection at inference to help MDMs avoid hard subproblems.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Shows that adaptive decoding can substantially improve pretrained MDM performance on logic puzzles.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors frame MDM behavior through a joint examination of training-time computational difficulty and inference-time decoding-order flexibility.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical and empirical evidence that MDMs train on computationally intractable subproblems compared with autoregressive counterparts.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that adaptive token ordering significantly enhances MDM capabilities by sidestepping hard subproblems.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "On Sudoku, the authors report that adaptive inference raises pretrained MDM solving accuracy from below 7% to approximately 90%, exceeding autoregressive models explicitly teacher-forced to learn the decoding order.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "MDMs exchange greater training complexity for flexible inference-time token ordering compared with autoregressive models.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "The work examines the two sides of this tradeoff and reports that MDM training contains computationally intractable subproblems.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "intervention and result",
+        "summary": "Adaptive inference selects token orders to bypass difficult subproblems, with a reported Sudoku improvement from below 7% to about 90%.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links an identified training bottleneck to an inference strategy that changes token ordering, then reports a task-specific performance comparison.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A paper can make a stronger mechanistic case when its intervention directly targets the stated source of difficulty.",
+        "application": "When presenting a difficult training or computation problem, connect the proposed inference or algorithmic choice explicitly to that bottleneck and evaluate the matched mechanism on a concrete task.",
+        "exception": "This framing is less suitable when the intervention does not address the proposed bottleneck or when the task has no meaningful ordering or adaptive-decision structure."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the theoretical assumptions, empirical setup, model sizes, datasets beyond Sudoku, or statistical uncertainty.",
+      "It does not explain the adaptive decoding rule or establish whether the reported gains generalize beyond the stated logic-puzzle setting."
+    ]
+  }
+}

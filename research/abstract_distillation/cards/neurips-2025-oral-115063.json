@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-115063",
+    "title": "Discovering Opinion Intervals from Conflicts in Signed Graphs",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/115063"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e4cbd980c696551894350f272110456815851f389f113152dd0b1faf71e56d0f",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "2d29e9b665f3da1af757467e1f9492bc82f88f04ab36ffc378df1c2c76c139b4",
+    "extracted_at": "2026-09-13T00:20:34.170816+00:00",
+    "session_id": "01a09822-dce9-70f2-b285-df1063024fa0",
+    "usage": {
+      "input_tokens": 12698,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 734,
+      "reasoning_output_tokens": 87
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "dff76611b3013564ea1306f0198c29803cfe37081dd8f7b9f2656146a0096ed4"
+    },
+    {
+      "id": "S2",
+      "sha256": "8b2cff381a521c94bf24680a217f3ab1f58f2252aad2567996aab8e53ae82d18"
+    },
+    {
+      "id": "S3",
+      "sha256": "810461fd2bd4da0c35883325d2b9cd8bf67fea3e8a905e9c3a6aed14c37e621d"
+    },
+    {
+      "id": "S4",
+      "sha256": "c11d82f401e4c0ce707d943db549f2f05fa2e5c1361679063dabfdb4df084313"
+    },
+    {
+      "id": "S5",
+      "sha256": "9390ba76ad1531d8f8373c935127a9496de8fb4a32d70b83716aae1f3ba7a73b"
+    },
+    {
+      "id": "S6",
+      "sha256": "77d9deddf33add07ea1252b851583fa482de8f28b4b4cf8b655cc02ccb55ea36"
+    },
+    {
+      "id": "S7",
+      "sha256": "4d9f002d3b4247f68391119b0083470fd07f2561aa734bb31db2aaccb4afb7ca"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-115063",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Infer a small, interpretable set of opinion intervals in signed graphs whose relationships are consistent with positive and negative interactions.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method and theory",
+        "claim": "Introduces an optimization formulation for opinion-interval inference, with hardness results and a polynomial-time approximation scheme linked to interval graphs and Correlation Clustering.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Provides scalable heuristics for computing opinion-interval solutions.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Applies the algorithms to German parliamentary co-voting data to recover parties’ political leaning.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper’s stated distinction is to formulate opinion-interval discovery from signed-graph conflicts and combine its analysis with interval-graph and Correlation Clustering connections.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their heuristics produce more expressive solutions than Correlation Clustering baselines in experiments.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "In a German parliament case study, the authors report recovering political leaning from parties’ co-voting behavior using their algorithms.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Social-network conflicts are framed as potentially reflecting differing views and opinions.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "research question and formulation",
+        "summary": "The paper asks whether conflicts reveal a small, interpretable set of opinion ranges and formalizes this through signed graphs and sign-consistent intervals.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "theory, algorithms, and application",
+        "summary": "It presents an optimization problem with hardness results, a PTAS, scalable heuristics, comparative experiments, and a German parliament case study.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the inferred object, the graph-sign consistency requirement, the optimization formulation, and the empirical comparison around one precise question.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A tightly matched chain from interpretable target to formal constraint to evaluation criterion can make a methodological contribution easy to assess.",
+        "application": "Define the desired latent structure and its observable consistency constraint before introducing the optimization objective, then evaluate with a baseline that represents the nearest competing formulation.",
+        "exception": "This pattern is unsuitable when the target cannot be operationalized by a defensible observable constraint or when no meaningful baseline exists."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the hardness assumptions, approximation guarantee, heuristic details, or computational scales.",
+      "The experiments’ datasets, metrics, statistical results, and definition of “more expressive” are unspecified.",
+      "The German dataset’s size, construction, and validation of recovered political leaning are not reported."
+    ]
+  }
+}

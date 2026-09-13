@@ -1,0 +1,159 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71140",
+    "title": "ThreadWeaver: Adaptive Threading for Efficient Parallel Reasoning in Language Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71140"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e1ae0e6d4d449f2082cd40b99720788b0f24bcf01ecb10128f2ed7820fad5d84",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "4b5ff93ee96edc4f98d8a3ba365a2760c6625fb00c594eb490d932ba397c5710",
+    "extracted_at": "2026-09-13T00:15:41.887599+00:00",
+    "session_id": "01a0981e-66dd-72f1-a114-027e75f79107",
+    "usage": {
+      "input_tokens": 12686,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 746,
+      "reasoning_output_tokens": 64
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "59ac273aab2b9cb7f5fd0ed94a64155d4edcc6237895b849de79afa7da5df2a6"
+    },
+    {
+      "id": "S2",
+      "sha256": "be6c32df95e3d1431e8925d1e0d7749cbc98d936302ed6551860dd6468d66611"
+    },
+    {
+      "id": "S3",
+      "sha256": "000b5856711d9e659ee567bd5e11f43c162734d3f8ca1430897343c5f3236a05"
+    },
+    {
+      "id": "S4",
+      "sha256": "7f7b56d95e49b1ddb3f2279f5a70f490385bf318b9888dd174dc94f372c81862"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71140",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reduce the latency of inference-time reasoning in language models by parallelizing generation without sacrificing reasoning accuracy.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing parallel reasoning methods reportedly degrade performance relative to sequential methods and often require specialized inference engines.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "ThreadWeaver adaptively parallelizes reasoning through trajectory generation, trie-based rollouts, and parallelization-aware reinforcement learning.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "system design",
+        "claim": "Its trie-based rollout design is intended to support parallel reasoning on off-the-shelf autoregressive inference engines.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "On six math reasoning benchmarks, the Qwen3-8B-based system reportedly combines sequential-model-level accuracy with reduced token latency.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present ThreadWeaver as establishing a new accuracy–efficiency Pareto frontier through adaptive parallel reasoning.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that ThreadWeaver trained on Qwen3-8B reached 79.9% on AIME24 and 71.9% average performance across six challenging math reasoning benchmarks, described as on par with cutting-edge sequential reasoning models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report up to 1.53× speedup in token latency while maintaining the stated accuracy comparison.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Inference-time scaling improves reasoning, but sequential decoding creates substantial latency.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Prior parallel reasoning approaches reportedly lose performance and may depend on specialized inference engines.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "ThreadWeaver combines a two-stage trajectory generator, trie-based rollouts, and reinforcement learning that balances accuracy with parallelization.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Across six math benchmarks, the authors report sequential-model-level performance alongside up to 1.53× lower token-latency cost, framing the result as a new Pareto frontier.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links each major system component to a distinct obstacle: training data quality, inference-engine compatibility, and the accuracy–parallelization trade-off.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "This component-to-obstacle alignment makes the method rationale compact and inspectable.",
+        "application": "When presenting a systems method, map each design choice explicitly to one identified bottleneck before reporting aggregate results.",
+        "exception": "This framing is less suitable when the method is primarily theoretical or when components do not address separable bottlenecks."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baseline models, statistical variation, benchmark splits, or the conditions under which the 1.53× speedup was measured.",
+      "It does not clarify whether the reported accuracy is exactly matched, statistically comparable, or merely close to the sequential baselines."
+    ]
+  }
+}

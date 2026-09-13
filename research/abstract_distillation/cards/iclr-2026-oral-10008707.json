@@ -1,0 +1,201 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008707",
+    "title": "Exploring Synthesizable Chemical Space with Iterative Pathway Refinements",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008707"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "53df97183295bc8ea861dd97aea42fce5c87ccb72564c4fae5ef8b5fa44add48",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "b814b53b58ebb572282665b564a33af3d5efe82f9c1a571f8bffa798d29333d1",
+    "extracted_at": "2026-09-13T00:01:40.041958+00:00",
+    "session_id": "01a09811-894e-7ae1-811a-91786a71bf4c",
+    "usage": {
+      "input_tokens": 12817,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 798,
+      "reasoning_output_tokens": 78
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "454840f49f56c9fe28152588e174f84ca060625c50d65f794dcb9066d3a8a01e"
+    },
+    {
+      "id": "S2",
+      "sha256": "3088be1f6e6ba9fd7fad0426a51a0e1471e11b069595495337192c2a18d12cbe"
+    },
+    {
+      "id": "S3",
+      "sha256": "0961f2e17798636d162131b051b3268ef600b81348c559e248de6b849eaf8182"
+    },
+    {
+      "id": "S4",
+      "sha256": "d4fbcf8ba1cae72dc37ac1b0b8c5daec9afb37ed2ec9312756248bdea99d93bb"
+    },
+    {
+      "id": "S5",
+      "sha256": "e5b06c43e44cc2d4f93c29416980db59a88af64b86a47fdfc9f87a5abda01109"
+    },
+    {
+      "id": "S6",
+      "sha256": "eefb507d6d7437a04d3f9153bfb5ab9aead66cc878b56d94c3893d8286db55d6"
+    },
+    {
+      "id": "S7",
+      "sha256": "e32ea2588178145b3f6dd1ff021c797614328c503d17b1aa147d09d6c3229244"
+    },
+    {
+      "id": "S8",
+      "sha256": "431fb088299e75add14c477f3d7fd3938dbf331e9bab6c2570d98cc0bb455bfd"
+    },
+    {
+      "id": "S9",
+      "sha256": "2ac0bb523af7cca1da5b965ac8806c99a296f1b3e3857aa31d45e7cd199d1e40"
+    },
+    {
+      "id": "S10",
+      "sha256": "bb368fb956dad88f454938c96d905ab691ec8f63154394c359158c33b9e385d6"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008707",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Molecular generative models may produce molecules without guaranteed synthesizability.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches often navigate the exponentially large synthesizable-molecule space poorly and provide limited coverage.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "ReaSyn projects input molecules onto synthesizable space to obtain synthesizable analogs through iterative pathway refinement.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "representation and model",
+        "claim": "It uses a pathway representation supporting bottom-up and top-down synthetic-tree traversal, sampled by one unified autoregressive model for bidirectional subtree refinement.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "refinement strategy",
+        "claim": "It adds discrete flow-based whole-pathway editing through insertion, deletion, and substitution, combined with iterative decoding.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present ReaSyn as an iterative, bidirectional pathway-refinement framework combining unified traversal modeling with discrete holistic pathway editing.",
+      "source_ids": [
+        "S3",
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that ReaSyn attains the highest reconstruction rate and pathway diversity for synthesizable-molecule reconstruction.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report the highest optimization performance in synthesizable goal-directed molecular optimization.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report significant outperformance over previous synthesizable projection methods in synthesizable hit expansion.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies lack of guaranteed synthesizability and poor coverage of existing methods as the central challenge.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "ReaSyn projects inputs into synthesizable space using a pathway representation and a unified model for bottom-up and top-down traversal.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "iterative mechanism",
+        "summary": "Bidirectional subtree refinement is combined with whole-pathway discrete edits in an iterative reasoning cycle.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report leading reconstruction, diversity, optimization, and hit-expansion results relative to prior projection methods.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a stated search-space limitation with a multi-stage refinement cycle that separately supports local subtree changes and holistic pathway edits.",
+          "source_ids": [
+            "S2",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A useful design pattern is to map a broad failure mode to complementary operations at different structural scales.",
+        "application": "For a structured generation task, specify one local refinement operation and one global edit operation, then describe how they form an explicit iteration cycle.",
+        "exception": "This pattern may be unsuitable when global edits violate hard validity constraints or when the task has no meaningful hierarchical structure."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical results, datasets, baselines, statistical details, or evaluation conditions for the reported comparisons.",
+      "It does not specify how synthesizability, pathway diversity, optimization performance, or hit expansion are operationalized.",
+      "The abstract does not establish independently verified correctness, effectiveness, reproducibility, or priority of the claimed novelty."
+    ]
+  }
+}

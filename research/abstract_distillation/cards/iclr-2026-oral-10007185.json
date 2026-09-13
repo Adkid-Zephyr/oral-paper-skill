@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007185",
+    "title": "mCLM: A Modular Chemical Language Model that Generates Functional and Makeable Molecules",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007185"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9cacb1696d02fb2bd95546f3d9cd75cc80791f1064f049fc26cf9ba72707102b",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "4ac652c4ba9c453b45b4280d59648e47693cdeb84ac010ca45017ea18d3b06fe",
+    "extracted_at": "2026-09-12T23:59:14.261817+00:00",
+    "session_id": "01a0980f-4870-7130-a4a0-295bb5137a83",
+    "usage": {
+      "input_tokens": 12853,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 882,
+      "reasoning_output_tokens": 129
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d7db106cc85b7480c6df7d986f5a56f14dcdcc74895e82cb7fec60cd7b11b16d"
+    },
+    {
+      "id": "S2",
+      "sha256": "6d87859c454e665073195b8ca2435ee9fa754a64646c279fd37a4d240e259ddb"
+    },
+    {
+      "id": "S3",
+      "sha256": "ff158987f5d3e2430c2134de3f3d7a0b81644e1c09b19ecb2779026e1219be79"
+    },
+    {
+      "id": "S4",
+      "sha256": "8abba5a95d7fdc3ed6ceb7271cd9d5b5ec0c114a606e703f52a81447b1ac9a60"
+    },
+    {
+      "id": "S5",
+      "sha256": "7d6c09c7d22c2b723b7b6260ad7aaeebccaaa40e91a4ea0bde09dd9811e1222f"
+    },
+    {
+      "id": "S6",
+      "sha256": "7ffe152cff0b4456de82121b9812e1e01efa6ee339b0c07e94f6fe6c470f659f"
+    },
+    {
+      "id": "S7",
+      "sha256": "bfe73d1ae285a69c29bc7920d89fbec8ff4e6cb5d4bc408dbcc79a6563a1d717"
+    },
+    {
+      "id": "S8",
+      "sha256": "6cda4bc3608e6cfb107363b9efacd2313eb6a66ce6bf7e75ab128396acd18dc1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007185",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable LLMs to generate small molecules with desired functions that are also compatible with automated synthesis.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing molecule LLMs represent molecules at the atom level, limiting functional and synthesis-aware generation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes mCLM, a modular chemical-language model using functional building blocks and a bilingual model for natural-language function descriptions and molecular blocks.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Front-loads synthesizability considerations while aiming to improve predicted molecular functions.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports improvements in molecular function, synthetic accessibility, and property scores across in-distribution and out-of-distribution medicine settings.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish mCLM through functional-building-block tokenization, analogous to meaning-bearing subword tokenization, and modular synthesis alignment.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments on 430 FDA-approved drugs significantly improved chemical functions relevant to drug potential.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that the 3B-parameter mCLM improved synthetic accessibility relative to seven other generative AI methods, including GPT-5.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "On 122 out-of-distribution medicines restricted to blocks compatible with automated modular synthesis, the authors report that mCLM outperformed all baselines in property scores and synthetic accessibility; they also report multi-function reasoning and iterative self-improvement for failed clinical candidates.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLMs understand chemical knowledge but struggle to propose functional molecules that are practical to synthesize.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "design rationale",
+        "summary": "The paper argues for a new molecular language based on functional building blocks rather than atoms, aligned with automated synthesis.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "proposed system",
+        "summary": "mCLM combines modular molecular blocks with natural-language function descriptions and incorporates synthesizability early.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "Experiments report gains on approved drugs, competing generative methods, out-of-distribution medicines, and iterative rescue of failed candidates.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a representational change—functional-block tokenization—to both molecular function prediction and synthesis compatibility.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A domain-specific representation can make a model's output constraints explicit while linking them to the target objective.",
+        "application": "When proposing a generative scientific model, define units that jointly encode task-relevant semantics and downstream feasibility, then align the architecture with both.",
+        "exception": "This framing may be unsuitable when atomic-level detail is itself essential or no stable functional decomposition exists."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical effect sizes, statistical details, datasets beyond the stated drug counts, or evaluation protocols.",
+      "The seven baselines are not individually identified, and the basis of the reported outperformance is unspecified.",
+      "The mechanism and evidence for iterative rescue of “fallen angels” are not detailed."
+    ]
+  }
+}

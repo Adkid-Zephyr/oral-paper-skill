@@ -1,0 +1,36 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "scope": "direct original-abstract check of 14 selected publication examples",
+  "records": [
+    {"practice_id":"P1","paper_id":"iclr-2025-oral-31728","status":"pass","issue":null,"source_ids":["S3","S4","S5","S6"],"replacement_observed_practice":null,"replacement_source_ids":null},
+    {"practice_id":"P1","paper_id":"icml-2025-oral-47202","status":"pass","issue":null,"source_ids":["S2","S3","S4"],"replacement_observed_practice":null,"replacement_source_ids":null},
+    {"practice_id":"P2","paper_id":"icml-2025-oral-47198","status":"pass","issue":null,"source_ids":["S2","S3","S5"],"replacement_observed_practice":null,"replacement_source_ids":null},
+    {"practice_id":"P2","paper_id":"neurips-2024-oral-97963","status":"pass","issue":null,"source_ids":["S3","S4","S5","S6"],"replacement_observed_practice":null,"replacement_source_ids":null},
+    {"practice_id":"P3","paper_id":"iclr-2026-oral-10006549","status":"pass","issue":null,"source_ids":["S6","S7"],"replacement_observed_practice":null,"replacement_source_ids":null},
+    {
+      "practice_id":"P3",
+      "paper_id":"neurips-2025-oral-118143",
+      "status":"requires_correction",
+      "issue":"The example says all networks without naming the restricted network class. S5's polynomial-time check concerns best-fit multi-head linear-attention networks, not arbitrary networks. Preserve that class next to the guarantee.",
+      "source_ids":["S5"],
+      "replacement_observed_practice":"Describes a polynomial-time check of whether all multi-head linear-attention networks best-fitting a given dataset perform an identical computation. The dataset determines the solution set; identical computation is not restricted to observed inputs.",
+      "replacement_source_ids":null
+    },
+    {"practice_id":"P4","paper_id":"iclr-2025-oral-31791","status":"pass","issue":null,"source_ids":["S6","S7","S8"],"replacement_observed_practice":null,"replacement_source_ids":null},
+    {"practice_id":"P4","paper_id":"icml-2026-oral-71032","status":"pass","issue":null,"source_ids":["S4"],"replacement_observed_practice":null,"replacement_source_ids":null},
+    {"practice_id":"P5","paper_id":"icml-2026-oral-71052","status":"pass","issue":null,"source_ids":["S3","S4","S5","S6"],"replacement_observed_practice":null,"replacement_source_ids":null},
+    {"practice_id":"P5","paper_id":"neurips-2024-oral-97962","status":"pass","issue":null,"source_ids":["S1"],"replacement_observed_practice":null,"replacement_source_ids":null},
+    {"practice_id":"P6","paper_id":"icml-2025-oral-47182","status":"pass","issue":null,"source_ids":["S3","S4","S5","S6"],"replacement_observed_practice":null,"replacement_source_ids":null},
+    {"practice_id":"P6","paper_id":"iclr-2026-oral-10008786","status":"pass","issue":null,"source_ids":["S3","S4","S7","S8"],"replacement_observed_practice":null,"replacement_source_ids":null},
+    {"practice_id":"P7","paper_id":"icml-2025-oral-47206","status":"pass","issue":null,"source_ids":["S5","S7","S9","S10"],"replacement_observed_practice":null,"replacement_source_ids":null},
+    {"practice_id":"P7","paper_id":"icml-2025-oral-40120","status":"pass","issue":null,"source_ids":["S5","S6"],"replacement_observed_practice":null,"replacement_source_ids":null}
+  ],
+  "summary": {
+    "reviewed":14,
+    "pass":13,
+    "requires_correction":1,
+    "finding":"Restore the multi-head linear-attention network class in the P3 formal-check example. Its current S5 locator remains valid. All other selected observations are supported by their cited original units with the relevant qualifications preserved.",
+    "review_boundary":"Checked the exact publication examples directly against the supplied original abstracts, not by trusting prior card reviews. Proposed author actions were evaluated as recommendations, not attributed source actions. This does not establish scientific correctness, general prevalence, or practical effectiveness. No other files were edited."
+  }
+}

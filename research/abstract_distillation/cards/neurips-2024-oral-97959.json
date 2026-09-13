@@ -1,0 +1,216 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97959",
+    "title": "Aligner: Efficient Alignment by Learning to Correct",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97959"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f300d1f8e969ab325ddadec5c8864a2cb327579c107bb9d86ef09467c4b7f527",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "faf6cf4b168a5240b8fc843ebfd124db7dc00cc71897788a8a3b348ab6910242",
+    "extracted_at": "2026-09-13T00:18:22.130225+00:00",
+    "session_id": "01a09820-c78c-7d73-8626-dbcf38be577d",
+    "usage": {
+      "input_tokens": 12826,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 930,
+      "reasoning_output_tokens": 60
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7fe1f3146259302847c87a50f8b76f82ab7452caf60d72856e3f9cb21fada6fb"
+    },
+    {
+      "id": "S2",
+      "sha256": "4a71baaf1fd7c7e5b7c5935b7862a02a081df202ad19bbe0985bcaf1409de853"
+    },
+    {
+      "id": "S3",
+      "sha256": "a6f974f75f716eaa99107cec66b50a7bea3fd2fffb4fdec24832f807cabf1462"
+    },
+    {
+      "id": "S4",
+      "sha256": "20cb5eae8be46736c02aaa2f74e2d5e28a76fd8f046751edbbbf23f912125a16"
+    },
+    {
+      "id": "S5",
+      "sha256": "b01aeb6fd36402d78df01ae6e93afb20d3eb985ba3804acd4d1da5ac9227647b"
+    },
+    {
+      "id": "S6",
+      "sha256": "5d35da1993588442bbdb898c0a507e34728451249161c1d79ed6b9ad625faa3b"
+    },
+    {
+      "id": "S7",
+      "sha256": "93bcb94d6c15af0f3d8a0bb1ce566a8cf12108ca5f594c513df0f54fc98e1bad"
+    },
+    {
+      "id": "S8",
+      "sha256": "57d82051d57a65f4600d846f490a50103d3a5b8b8da411667356d259a550ada6"
+    },
+    {
+      "id": "S9",
+      "sha256": "321137d84402bec481cf65c7a54398c29b306cd09d04edf267d82badc7ceac5e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97959",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop an efficient alignment method for evolving LLM deployment requirements and rapid iteration.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing alignment methods are portrayed as too complex for rapid deployment iteration, motivating a model-agnostic approach.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Aligner, a small-model paradigm that learns correctional residuals between preferred and dispreferred answers.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Presents Aligner as a one-off-trained, model-agnostic plug-and-play module for open-source and API-based upstream models.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method extension",
+        "claim": "Describes iterative bootstrapping of upstream models with corrected responses used as synthetic preference data.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize Aligner as a novel and simple alignment paradigm that separates correction learning into a small, reusable module.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report improvements when deploying the same Aligner model across 11 LLMs evaluated on helpfulness, harmlessness, and honesty.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that Aligner-7B produced average gains of 68.9% in helpfulness and 22.8% in harmlessness across tested LLMs, while reducing hallucination.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "A community-reported Alpaca-Eval result states that stacking Aligner-2B on GPT-4 Turbo raised LC Win Rate from 55.0% to 58.3%, above GPT-4 Omni's 57.5%.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Rapidly changing LLM requirements create pressure for efficient alignment and fast deployment iteration.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "core proposal",
+        "summary": "Aligner learns answer-correction residuals with a small model and is intended to plug into varied upstream models after one-off training.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "extension",
+        "summary": "The proposed module can iteratively bootstrap upstream models using corrected responses as synthetic preference data.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report cross-model 3H improvements, including average gains for Aligner-7B; separately, a community report describes a leaderboard gain from stacking Aligner-2B on GPT-4 Turbo.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a modular design claim with a cross-model test using the same Aligner model across 11 LLMs.",
+          "source_ids": [
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "Testing reuse across heterogeneous targets directly supports the proposed model-agnostic deployment story.",
+        "application": "When claiming portability, evaluate one fixed module across multiple target models and report the shared training/setup conditions.",
+        "exception": "This framing is unsuitable when the method is intentionally specialized to one architecture or domain."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract reports both aggregate dimension-specific gains and a concrete leaderboard comparison with named baselines and win rates.",
+          "source_ids": [
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "Pairing broad summary metrics with an externally recognizable comparison makes the claimed impact easier to contextualize.",
+        "application": "Report aggregate task or dimension changes together with a concrete benchmark comparison, preserving metric definitions and provenance.",
+        "exception": "Avoid leaderboard comparisons when scores use incompatible protocols or the comparison source is not clearly identified."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, evaluation protocols, sample sizes, statistical uncertainty, or baseline details for the 11-model experiments.",
+      "The hallucination-reduction claim has no quantified result in the supplied units.",
+      "The Alpaca-Eval comparison is explicitly identified as a community report; its evaluation conditions are not given.",
+      "The abstract does not report evidence for the iterative bootstrapping or performance-ceiling claim."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "narrative_sequence[3].summary",
+      "before": "Experiments report cross-model 3H improvements, including substantial average gains for Aligner-7B and a leaderboard gain from stacking Aligner-2B on GPT-4 Turbo.",
+      "after": "The authors report cross-model 3H improvements, including average gains for Aligner-7B; separately, a community report describes a leaderboard gain from stacking Aligner-2B on GPT-4 Turbo.",
+      "review_file": "reviews/flagged-batch-13.json",
+      "review_sha256": "3abcd28c7d9cb76d6ddb30e86464f912a2fe3b250e3563cbc8d8841465a8664d",
+      "applied_at": "2026-09-13T00:42:27.397401+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

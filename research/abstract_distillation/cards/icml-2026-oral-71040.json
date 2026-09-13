@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71040",
+    "title": "LASER: Learning Active Sensing for Continuum Field Reconstruction",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71040"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6cbf8999920df71039549969863bfc5b2fb51ff86db6ed46c92ace083f6ece5d",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "166b8a1b89da35b56d6607e81720be8cc11011d2c3abcc7981e12011e0e81d31",
+    "extracted_at": "2026-09-13T00:11:44.809989+00:00",
+    "session_id": "01a0981a-c3dc-7991-9a76-dc4e2e3bd1bc",
+    "usage": {
+      "input_tokens": 12651,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 746,
+      "reasoning_output_tokens": 85
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3750a36124a37a39aa77dce252c65c57199886f53b212fa7cd927c69f0973700"
+    },
+    {
+      "id": "S2",
+      "sha256": "df2060147919dd082a88d398327eb33ee0bdbfaac5722d54756b8f8616636115"
+    },
+    {
+      "id": "S3",
+      "sha256": "083c0b1c5d9837ea680fe2ba313d3235587473cced612107afcbaed8201b1237"
+    },
+    {
+      "id": "S4",
+      "sha256": "d7d0fa0394f488db0b7e0019e260aec8610ab4507c5b4c4578e02669d264b127"
+    },
+    {
+      "id": "S5",
+      "sha256": "f365035fbdb039dc1d610d94f2bb5e9f8985bfe999d18619127f321115c89cf9"
+    },
+    {
+      "id": "S6",
+      "sha256": "2b002d7bf231d122c924e833042c8e6f76ba51e6c75a74a3b22555e86903bde8"
+    },
+    {
+      "id": "S7",
+      "sha256": "fde588c0969e168ab7a7e758acf27b96d840c29a13584642005d08a8e5376c0d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71040",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reconstruct high-fidelity continuum physical fields under sparse and constrained sensing.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Conventional methods typically use fixed sensor layouts and cannot adapt to evolving physical states.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "LASER is proposed as a unified closed-loop active-sensing framework formulated as a POMDP.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It uses a continuum-field latent world model to represent physical dynamics and provide intrinsic reward feedback.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It enables reinforcement-learning policies to simulate counterfactual sensing scenarios and move toward potentially informative regions using predicted latent states.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish LASER as a unified, closed-loop POMDP formulation of active sensing built around a continuum-field latent world model.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that LASER consistently outperforms static and offline-optimized strategies in experiments.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report high-fidelity reconstruction under sparse sensing across diverse continuum fields.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "High-fidelity continuum-field measurement is important but difficult when sensing is sparse and constrained.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Fixed sensor layouts used by conventional reconstruction methods do not adapt to changing physical states.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "LASER formulates active sensing as a closed-loop POMDP using a latent world model, intrinsic rewards, and latent-space what-if simulation.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "The authors report that latent-state-conditioned sensor movement reaches potentially informative regions and outperforms static and offline-optimized strategies across diverse fields.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the proposed sensing policy to an explicit latent world model, intrinsic reward, counterfactual simulation, and predicted-state-conditioned movement.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A method claim becomes more intelligible when its internal mechanism is connected to the decision it is intended to improve.",
+        "application": "When presenting an adaptive data-collection method, map each modeling component to the sensing or reconstruction decision it informs, including the feedback path.",
+        "exception": "This framing may be unsuitable when the method has no sequential decisions, latent-state model, or feedback loop."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative reconstruction metrics, dataset or field details, sensing budgets, or statistical variability.",
+      "The scope and implementation of the POMDP, latent world model, intrinsic reward, and reinforcement-learning policy are unspecified.",
+      "The reported comparisons do not establish independently verified effectiveness or explain whether all strategies used matched sensing constraints."
+    ]
+  }
+}

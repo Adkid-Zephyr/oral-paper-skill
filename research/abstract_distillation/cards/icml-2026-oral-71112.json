@@ -1,0 +1,165 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71112",
+    "title": "POET-X: Memory-efficient LLM Training by Scaling Orthogonal Transformation",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71112"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "dbf9d50fdb7d235f16549fdd9a7ae9982795c10212fc6325c4a6ccd9a3089e9b",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "a04ce99e1852661b9b87db06de5af53ae8fe8b5608707a9c768754005230c59a",
+    "extracted_at": "2026-09-13T00:14:32.986923+00:00",
+    "session_id": "01a0981d-5c03-7f10-8a23-fc8e0383e73d",
+    "usage": {
+      "input_tokens": 14190,
+      "cached_input_tokens": 9984,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 714,
+      "reasoning_output_tokens": 57
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "82a0bce9a91e69c309f2a1227f21d98609847833d30ad5fa86b9986380bb5524"
+    },
+    {
+      "id": "S2",
+      "sha256": "5e78b3719bb12ade68bf01a1aab03c46a72c174fa93959f88f633535509290c5"
+    },
+    {
+      "id": "S3",
+      "sha256": "c195a076af9677e05d5d07a011f0874b1856ae2e39672bd94e696e56be37137b"
+    },
+    {
+      "id": "S4",
+      "sha256": "313249919add136bb6aa25c93d8014b4e440567a4124e295b8b611cd55da1562"
+    },
+    {
+      "id": "S5",
+      "sha256": "2dbb3c438c046d7b60607cfe7269e9ae811e86d762684275e5ef2bc80cc0d0da"
+    },
+    {
+      "id": "S6",
+      "sha256": "a616426d33217389b9530b376760f18738d5967305a011760e50a38d553c0676"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71112",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Efficient and stable training of large language models remains a core systems challenge.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "POET improves training stability but its original implementation has high memory and computational costs from intensive matrix multiplications.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces POET-X, a scalable variant that performs orthogonal equivalence transformations at substantially lower computational cost.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system benefit",
+        "claim": "Reports that POET-X preserves POET’s generalization and stability benefits while improving throughput and memory efficiency.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish POET-X from POET as a more scalable and memory-efficient implementation of orthogonal equivalence transformations.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that POET-X pretrained billion-parameter LLMs on a single Nvidia H100 GPU, whereas AdamW ran out of memory under the same settings.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report substantial gains in throughput and memory efficiency while retaining POET’s stated stability and generalization benefits.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Efficient, stable LLM training is identified as a continuing systems challenge.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior approach and limitation",
+        "summary": "POET is presented as a spectrum-preserving orthogonal-equivalence framework with strong stability, but costly matrix multiplications create memory and computation overhead.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "POET-X reduces the computational cost of those transformations while targeting scalability and memory efficiency.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report retained stability and generalization benefits, improved throughput and memory efficiency, and single-H100 pretraining that AdamW could not fit under the same settings.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a precise implementation bottleneck—matrix-multiplication overhead—with a corresponding method change, then reports outcomes in both efficiency and capability terms.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A contribution is easier to assess when the proposed mechanism, targeted bottleneck, and reported evidence are explicitly aligned.",
+        "application": "Frame a systems method by linking its computational bottleneck to the changed operation and report both resource outcomes and preserved task-relevant properties.",
+        "exception": "This framing is unsuitable when the work does not modify the bottleneck or lacks evidence covering both efficiency and the claimed preserved properties."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative throughput, memory, stability, or generalization measurements.",
+      "Details of model sizes, training settings, baselines beyond AdamW, and the meaning of “same settings” are unspecified.",
+      "The abstract does not provide evidence independently verifying the reported claims."
+    ]
+  }
+}

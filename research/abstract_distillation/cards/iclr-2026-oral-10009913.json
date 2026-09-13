@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009913",
+    "title": "Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009913"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e85a7265733f00696c5203855e72e2eccbfda3798fca271145934cf0f13ff05b",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "8d64ec2fd26ecf5c63283afbfd81e7f958ccba35fc483fe5361f3bcf370fb9c6",
+    "extracted_at": "2026-09-13T00:03:37.674076+00:00",
+    "session_id": "01a09813-54a4-78a2-93c8-2560cae3526e",
+    "usage": {
+      "input_tokens": 12821,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 780,
+      "reasoning_output_tokens": 90
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "784c4a6a6440e2c7a16298d7d504a1ae61dad225e66183df302d56a5816a1a90"
+    },
+    {
+      "id": "S2",
+      "sha256": "df0ee6605a656b6859639986beaaf94596dc5c8947324f90e3d205bf9d10562d"
+    },
+    {
+      "id": "S3",
+      "sha256": "43f296c324ef84204789dd5f66fedeaf711485cc22b7940ac8d585c52bf38b85"
+    },
+    {
+      "id": "S4",
+      "sha256": "488b2a1e6e96c685ef6152a2fd2076300489d263d92d20b719ca5452de227005"
+    },
+    {
+      "id": "S5",
+      "sha256": "55161a915ee36495551ce1ad2bab41f9f63925b1c6db9b647e2500c8643ba64f"
+    },
+    {
+      "id": "S6",
+      "sha256": "e02dbfc2784079b48dcb375b089749cbfe6f7b93806f3b2ed9d2bc8ded4674f2"
+    },
+    {
+      "id": "S7",
+      "sha256": "edae57d0eb92067a9cd524f913847963768cb0b3da1cd1f20b25c050f90805a0"
+    },
+    {
+      "id": "S8",
+      "sha256": "692551a994682d83ecb6b3b0a7420f65c5098d19104fa6726db57aa1fa718ebb"
+    },
+    {
+      "id": "S9",
+      "sha256": "6ca8f81c189d6f28f4a889b48c99d953cddda7ca6783be80a0bc1f91b76d043e"
+    },
+    {
+      "id": "S10",
+      "sha256": "49977ac4f62ae1496094ffbec165b7615b538526bece4ca69692b11c6fef1e83"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009913",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Aligning MoE router decisions with expert capabilities.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "MoE models lack explicit constraints enforcing this alignment, which the authors say limits performance.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces expert-router coupling (ERC), a lightweight auxiliary loss using perturbed router embeddings as proxy tokens and two-way activation constraints.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "efficiency",
+        "claim": "Uses only n² activations, yielding a fixed cost independent of batch size, unlike token-scaling prior coupling methods as characterized by the authors.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "analysis tool",
+        "claim": "Provides flexible control and quantitative tracking of expert specialization during training.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish ERC by tightly coupling router decisions with expert capabilities at fixed n² activation cost.",
+      "source_ids": [
+        "S2",
+        "S7",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report demonstrating ERC effectiveness through pre-training MoE language models from 3B to 15B parameters and analysis over trillions of tokens.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that ERC enables specialization control and quantitative tracking during training.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem",
+        "summary": "MoE routing lacks explicit alignment constraints between router decisions and expert capabilities.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "ERC represents each expert with a router-embedding proxy token and evaluates perturbed proxies through the experts.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "constraints",
+        "summary": "The loss imposes reciprocal preference constraints: experts favor their own proxy, and proxies favor their corresponding expert.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "implications",
+        "summary": "The stated constraints target faithful router representations, expert specialization, and fixed n² computational cost.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported_evaluation",
+        "summary": "The authors report large-scale pre-training and specialization analysis, including models from 3B to 15B parameters and trillions of tokens.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract defines alignment through two reciprocal, testable activation inequalities rather than a single router-side objective.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A concrete decomposition can make an alignment claim more operational and expose whether both sides of a relationship are covered.",
+        "application": "When proposing an alignment objective, specify complementary directional constraints and identify the measurable signal each one compares.",
+        "exception": "This framing may be unsuitable when the system has no meaningful paired entities or when one-directional alignment is the intended objective."
+      }
+    ],
+    "unknowns": [
+      "The abstract reports effectiveness but gives no quantitative results, baselines, or evaluation metrics.",
+      "The computational comparison with prior coupling methods is stated qualitatively; implementation and constant-factor costs are unspecified.",
+      "The abstract does not establish independently verified correctness, reproducibility, or priority over prior work."
+    ]
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007608",
+    "title": "Causal Structure Learning in Hawkes Processes with Complex Latent Confounder Networks",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007608"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "dbe44a900420a4c7737b64845e1f46cd029034bed2873ce34452710002753454",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "eba6328474e9d790aa827e86bcc03a758ba0d7a9e725821d0b32b1325794754e",
+    "extracted_at": "2026-09-12T23:59:49.956455+00:00",
+    "session_id": "01a0980f-e5ad-7610-a7ad-411224cf3fe9",
+    "usage": {
+      "input_tokens": 12630,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 669,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "01ccd3b456d80cf317de9ecb468b2f6e7ff679917ba1c229eef7b92af2e1e6ea"
+    },
+    {
+      "id": "S2",
+      "sha256": "53e3bb1d7a55a1c2dc9356325fc9d3f60063f0f56c43488c562a357cf4ea0c85"
+    },
+    {
+      "id": "S3",
+      "sha256": "852d3370acb9e1abbe9e180c70d20d604a65a342e681da410b3aed83030f2e48"
+    },
+    {
+      "id": "S4",
+      "sha256": "c21f127360febebb79ee49a007fdc99b4f62e2f15c077d48b505ab2c553ef5a3"
+    },
+    {
+      "id": "S5",
+      "sha256": "01618a9f1b8d1ea7b2a2ea8f2b6f8228b8c60fde17ab4c03c426356646a877a3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007608",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Infer causal structures and latent subprocesses in partially observed multivariate Hawkes systems.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods primarily target causal structures among observed subprocesses, leaving latent subprocesses as a significant challenge.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Shows that continuous-time event sequences approach a discrete-time causal representation as the interval shrinks, and derives necessary and sufficient identification conditions for latent subprocesses and causal influences.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes a two-phase iterative algorithm alternating between causal-relation inference and discovery of new latent subprocesses, guided by path-based identifiability conditions.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper combines a shrinking-interval discrete-time causal representation with identifiability conditions and an alternating discovery-and-inference algorithm for latent-confounded Hawkes processes.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that experiments on synthetic and real-world datasets recover causal structures despite latent subprocesses.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context_and_gap",
+        "summary": "Hawkes processes model temporal dependencies, but existing causal-structure methods mainly assume observed subprocesses while real systems may be partially observed.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "theoretical_bridge",
+        "summary": "The paper relates shrinking-interval continuous-time event sequences to a discrete-time causal model and states necessary and sufficient identification conditions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It introduces an iterative two-phase procedure that alternates causal inference with latent-subprocess discovery under path-based conditions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_evaluation",
+        "summary": "Experiments on synthetic and real-world data are reported to recover causal structures under latent subprocesses.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links an algorithmic procedure to explicit necessary-and-sufficient and path-based identifiability conditions.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A method claim becomes easier to assess when its operational steps are tied to conditions specifying when the target is identifiable.",
+        "application": "For a new latent-variable method, state the representation or assumptions first, then connect each algorithmic phase to the corresponding identification condition.",
+        "exception": "This framing is less suitable when the contribution is exploratory and no formal identifiability conditions are available."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative metrics, baselines, dataset details, or experimental conditions for the reported recovery.",
+      "The scope and assumptions of the identifiability guarantees are not specified in the abstract."
+    ]
+  }
+}

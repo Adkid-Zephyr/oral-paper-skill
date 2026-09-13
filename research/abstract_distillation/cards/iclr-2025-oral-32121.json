@@ -1,0 +1,222 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-32121",
+    "title": "DSPO: Direct Score Preference Optimization for Diffusion Model Alignment",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/32121"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4544d7014154d57edaf92ea1014a8d8b8414016de66edff0012ea4564d662dfc",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "8db339273ac88281bba2a33a425b28260a8769d7e6b2bfbe999f15ecf7a0c7b1",
+    "extracted_at": "2026-09-12T23:57:46.427118+00:00",
+    "session_id": "01a0980d-f5b4-7f03-979c-0a6187d51c97",
+    "usage": {
+      "input_tokens": 12785,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 750,
+      "reasoning_output_tokens": 72
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d2c7e817be1e943781298239b098c00960606eac6f91478a3d075f46776105b0"
+    },
+    {
+      "id": "S2",
+      "sha256": "1d7fd5054da164d7da0b2b5d7309c982febc52568097a013cf231317e733915a"
+    },
+    {
+      "id": "S3",
+      "sha256": "30ee1605929df171b757e54a5a31ddc45b113ba7d70a5d2d47e0744b194470e3"
+    },
+    {
+      "id": "S4",
+      "sha256": "7e3830c59b3ec5bdd8633bb3abafc354411de5b6aa7e92ec15d0791e8c4cde5b"
+    },
+    {
+      "id": "S5",
+      "sha256": "fa3f838cc9796d41f0cb13740a0330078be81c56eb4fea6de25a96c40c430622"
+    },
+    {
+      "id": "S6",
+      "sha256": "78222e32e2f3e05947b3c9c741e4905b91e158dbe8b4b3dae9183bc60e4bca7c"
+    },
+    {
+      "id": "S7",
+      "sha256": "7264def098b8ec36ee6a8ae312ef74505735ceeeca18c3967ef9d2adacca5cb2"
+    },
+    {
+      "id": "S8",
+      "sha256": "557ff24e57c500b4274928c399eebffb93e1e41c3b64fe1490d2e41f837c7820"
+    },
+    {
+      "id": "S9",
+      "sha256": "87d4ab44642f5a3317d30c6c98c68ba67726e4ebc7b9d2fa2e57f9d18fc4faf0"
+    },
+    {
+      "id": "S10",
+      "sha256": "62453855d23ee9c9bcce265e56873dbbb09dd46cd55f7e87e7e1a4f05fea4731"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-32121",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Align pretrained text-to-image diffusion models with human image preferences.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      },
+      "gap": {
+        "claim": "Diffusion-model preference learning has been less explored than LLM DPO, and directly adapting LLM techniques introduces a T2I-specific estimated loss that may yield suboptimal performance.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Direct Score Preference Optimization (DSPO), aligning pretraining and fine-tuning through score matching.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Distills the score function of human-preferred image distributions into pretrained diffusion models.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Shows that, under certain conditions, DSPO has the same optimization direction as diffusion-model reinforcement-learning algorithms.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize DSPO as a novel algorithm and a new perspective on preference learning for diffusion models.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that DSPO outperforms preference-learning baselines on T2I human-preference evaluation tasks.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report improvements in both visual appeal and prompt alignment of generated images.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Diffusion-based T2I models generate high-quality images from text prompts.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "LLM DPO avoids reward models, but diffusion-model preference learning remains less explored; direct technique transfer introduces an estimated T2I-specific loss.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "DSPO uses score matching to align diffusion pretraining and fine-tuning, distilling preferred-image score functions into pretrained models.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      },
+      {
+        "role": "theory_and_results",
+        "summary": "Under certain conditions, DSPO shares reinforcement-learning optimization direction; experiments report stronger baseline performance and improved visual appeal and prompt alignment.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract identifies a potentially suboptimal estimated loss introduced by directly adapting LLM preference methods, then proposes score matching to align diffusion pretraining and fine-tuning objectives.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Objective alignment can provide a concrete bridge between a model's pretraining mechanism and preference fine-tuning.",
+        "application": "When adapting a preference method across modalities, explicitly compare its loss with the target model's pretraining objective and design the adaptation around a shared training signal.",
+        "exception": "This move may be unsuitable when the pretraining objective is unavailable, inappropriate for preference representation, or lacks a meaningful correspondence to the target feedback."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the conditions for the theoretical result, the baselines, datasets, evaluation protocol, or quantitative effect sizes.",
+      "The reported empirical results do not establish independent experimental validity from the abstract alone."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "lessons[0].source_observation.claim",
+      "before": "The paper motivates its method by identifying a mismatch between transferred preference-learning objectives and the diffusion pretraining objective, then resolves it by using score matching.",
+      "after": "The abstract identifies a potentially suboptimal estimated loss introduced by directly adapting LLM preference methods, then proposes score matching to align diffusion pretraining and fine-tuning objectives.",
+      "review_file": "reviews/flagged-batch-03.json",
+      "review_sha256": "c93f283691d24c7af3478546edc7fc47e416bced6cee4ba8298ba8291f36aa01",
+      "applied_at": "2026-09-13T00:27:36.276651+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "lessons[0].source_observation.source_ids",
+      "before": [
+        "S3",
+        "S4",
+        "S6"
+      ],
+      "after": [
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "review_file": "reviews/flagged-batch-03.json",
+      "review_sha256": "c93f283691d24c7af3478546edc7fc47e416bced6cee4ba8298ba8291f36aa01",
+      "applied_at": "2026-09-13T00:27:36.277611+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

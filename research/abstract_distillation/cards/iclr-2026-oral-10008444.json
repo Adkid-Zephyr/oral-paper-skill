@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008444",
+    "title": "Multimodal Aligned Semantic Knowledge for Unpaired Image-text Matching",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008444"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1a3d171c7b9df9da83ab42f4c4906adf3ca096dd3c3574d8b9838a08860e8d24",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "e201acf48c7905861268672f96de4f345089afecea67897805e3a3b81364b3b9",
+    "extracted_at": "2026-09-13T00:01:03.203577+00:00",
+    "session_id": "01a09811-0293-7052-a980-4e7a0fa926bd",
+    "usage": {
+      "input_tokens": 12648,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 647,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c744cb2fcbb800abafadab8cd2f08350c1f95f455123846e57baa17c4b2a60dd"
+    },
+    {
+      "id": "S2",
+      "sha256": "ceefed66948baa67f996281cafa779ae811588aed517785cef48cafeef2b97ee"
+    },
+    {
+      "id": "S3",
+      "sha256": "7a23973c579170d5984a2824b5e14ed706c8131c50a91c08d7c1920bcd1979cc"
+    },
+    {
+      "id": "S4",
+      "sha256": "b407a5d6d5dd9d33f243bcf84f92d993b32123745b64cef034488aa742ece72d"
+    },
+    {
+      "id": "S5",
+      "sha256": "dead691b5bff9a2040f5e641270f7285221e03cba97bb1bbefbb2e5d040725de"
+    },
+    {
+      "id": "S6",
+      "sha256": "c1722b1e136df59f099032e3af0d936ec8cef5149d518228a45c7c94ee610f8b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008444",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Unpaired image-text matching must associate images and text despite the absence of paired training examples.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing cross-modal aligned-knowledge approaches often miss semantically corresponding visual representations for OOD words, while word-associated visual representations can have substantially different variance that harms matching accuracy.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces MASK, using word embeddings as bridges between words and visual prototypes to align semantic knowledge across image and text modalities.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Constructs representative prototypes for OOD words from semantic relationships encoded in word embeddings and adds a prototype consistency contrastive loss to regularize feature-space structure against variance effects.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present MASK as a novel method combining embedding-based prototype association and prototype-consistency contrastive regularization for unpaired image-text matching.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments on Flickr30K and MSCOCO show MASK achieves superior performance in unpaired matching.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Existing methods struggle with OOD-word visual representations and unequal representation variance, which harms matching.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "MASK uses word embeddings to connect words with prototypes and align multimodal semantic knowledge.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "OOD handling",
+        "summary": "For OOD words, prototypes are derived from semantic relations in word embeddings.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "regularization",
+        "summary": "A prototype consistency contrastive loss structurally regularizes the feature space to mitigate variance effects.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report superior unpaired-matching performance on Flickr30K and MSCOCO.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links two distinct failure modes—OOD semantic correspondence and representation-variance imbalance—to separate design choices: embedding-based prototype construction and consistency contrastive regularization.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact abstract can make a method’s rationale more traceable by mapping each identified limitation to an explicit mechanism.",
+        "application": "When presenting a multimodal method, pair each diagnosed failure mode with the component intended to address it, then state the scope of the reported evaluation.",
+        "exception": "This mapping may be unsuitable when a component addresses several interacting causes that cannot be cleanly separated."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report dataset splits, baselines, metrics, numerical gains, or statistical uncertainty for the claimed superiority.",
+      "It does not specify how word embeddings or prototypes are obtained, nor the exact form of the consistency contrastive loss."
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31917",
+    "title": "NeuralPlane: Structured 3D Reconstruction in Planar Primitives with Neural Fields",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31917"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a8d4e397863b1f461040787b6a098064b429c5a311a84c909caad9152bf13bcd",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "a725b415be75b155db2ac250fbb7da1870fdfd98d518843f267dc5bbb2d0c218",
+    "extracted_at": "2026-09-12T23:57:02.477508+00:00",
+    "session_id": "01a0980d-5320-7442-b697-51bcbea60bc5",
+    "usage": {
+      "input_tokens": 12708,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 707,
+      "reasoning_output_tokens": 76
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bf684734c635f6850a1b6c7b5764c6dd8f30fd94ce06ed05f3ab65f2c273be53"
+    },
+    {
+      "id": "S2",
+      "sha256": "2d47a9921885999e55d643bb031e51909def624901cdec6e6d6fb718345d4382"
+    },
+    {
+      "id": "S3",
+      "sha256": "81a0008752cdcb6e3fbcb35624e5f3300f9c58a2f2e6a680ef4507aadade442a"
+    },
+    {
+      "id": "S4",
+      "sha256": "11bd84d0d3d2ea38ba639aa08806ec34b023f9d4a42020564775bf0934221145"
+    },
+    {
+      "id": "S5",
+      "sha256": "5de67b1ce0920f7f73e671dc776f391baccf1d1e9ffdefd016c3a1c745bbc89e"
+    },
+    {
+      "id": "S6",
+      "sha256": "6dd1759239f987e0aab1fcba52e80c3f7e7a20b6e5b9dd2ac1c474fc06c8955e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31917",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reconstruct multi-view 3D scenes as compact, semantically aligned planar primitives using neural fields.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "NeuralPlane distills inconsistent 2D plane observations into a unified 3D neural representation.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The approach combines monocular plane-observation generation with plane-guided training for implicit 3D geometry learning.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A self-supervised Neural Coplanarity Field models scene semantics alongside geometry.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper presents a neural-field approach specifically for multi-view 3D plane reconstruction.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report high-fidelity reconstructions with crisp planar primitives aligned with semantic content, without prior plane annotations.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that experiments on ScanNetv2 and ScanNet++ demonstrate superiority in both geometry and semantics.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Planar primitives are presented as compact and expressive representations for man-made environments.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "NeuralPlane applies neural fields to multi-view 3D plane reconstruction.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "core mechanism",
+        "summary": "The method unifies inconsistent 2D plane observations by distilling geometric and semantic cues into a 3D neural representation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "designs",
+        "summary": "Its components generate monocular plane observations, learn geometry through plane-guided training, and model semantics with a self-supervised feature field.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report annotation-free, high-fidelity reconstruction and superiority on ScanNetv2 and ScanNet++.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links each major design component to a distinct target: observations, geometry, or semantics, then reports results for geometry and semantics.",
+          "source_ids": [
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "This creates a visible correspondence between method components and evaluation dimensions.",
+        "application": "When presenting a multi-component method, map each component to an explicit capability and evaluate those capabilities separately.",
+        "exception": "This framing is less suitable when components are inseparable or the evaluation cannot isolate their intended roles."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluation metrics, baselines, quantitative gains, or experimental conditions behind the reported superiority.",
+      "It does not state a limitation of existing approaches or establish priority beyond the authors' stated description of NeuralPlane."
+    ]
+  }
+}

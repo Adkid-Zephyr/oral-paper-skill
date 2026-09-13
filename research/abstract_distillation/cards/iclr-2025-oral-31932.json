@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31932",
+    "title": "TimeMixer++: A General Time Series Pattern Machine for Universal Predictive Analysis",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31932"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "02bb3481b15e1774bfc92aa56cfc4e1f7d3c69e26df08c7b9e37fe1042165c0e",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "07cae967169282917d6c7cc3edac420724e19cc734bb3bc6a3d991a12c783e5d",
+    "extracted_at": "2026-09-12T23:57:40.682416+00:00",
+    "session_id": "01a0980d-e3f2-72a1-9a3c-147ee1983b7e",
+    "usage": {
+      "input_tokens": 12818,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 680,
+      "reasoning_output_tokens": 50
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "94e5069b2335b584e0a9999d294f868272e007b736c035dce1a0b02202d0bca6"
+    },
+    {
+      "id": "S2",
+      "sha256": "beb69a5f19f60fa692dad8a995abb5115425c46283f9d6f147e1c8c7f537de7d"
+    },
+    {
+      "id": "S3",
+      "sha256": "24ea86bcaddb0aaeab43e2dc8d7f3ba8a5024bfbfce0edfbf3146c781ec00790"
+    },
+    {
+      "id": "S4",
+      "sha256": "822a098243fc57ebb318ab0e01a59b8a4ee1c708f70a75648f4f7b35c7c00fc2"
+    },
+    {
+      "id": "S5",
+      "sha256": "4a2991ae5f5097f5c57be7c7951d0f94bf8536f8b349280f6ecb57077180c2ed"
+    },
+    {
+      "id": "S6",
+      "sha256": "3add3d531e68775018894e7d84274cbf14cd40ff043ebc7c2baaca5ebd6f4b76"
+    },
+    {
+      "id": "S7",
+      "sha256": "c2db1d91cb6125a02ea49021ffde6941af6b9f9da08d79586ce5b5e08042fe10"
+    },
+    {
+      "id": "S8",
+      "sha256": "66aa619f1ff134eeb77fb03a8187997d4ad757380985edd2f42e03ab1db71971"
+    },
+    {
+      "id": "S9",
+      "sha256": "f82b70282ba0228acc3b1244926612d08d9c29e28747fdd36d4974d87d0b2ee5"
+    },
+    {
+      "id": "S10",
+      "sha256": "9dc1109677969fdf5671964de2af4a9fb6501fb4ce5ab897c98e35fefda04702"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31932",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop a general-purpose model for predictive analysis across diverse time-series tasks, including forecasting, classification, anomaly detection, and imputation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Traditional time-series models often struggle to capture universal patterns, limiting performance across diverse tasks.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces TimeMixer++, a general-purpose time-series pattern machine using multi-resolution time imaging, time-image decomposition, multi-scale mixing, and multi-resolution mixing.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Defines temporal scales, frequency-domain resolutions, and mixing strategies to extract task-adaptive patterns.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present TimeMixer++ as a general-purpose time-series pattern machine designed to extract comprehensive temporal patterns across tasks and resolutions.",
+      "source_ids": [
+        "S2",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art performance across eight time-series analytical tasks, consistently surpassing both general-purpose and task-specific models.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Time-series analysis supports multiple application tasks, including forecasting, classification, anomaly detection, and imputation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Traditional models are described as struggling to capture universal patterns across diverse tasks.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The paper proposes temporal scales, frequency resolutions, and mixing strategies for task-adaptive pattern extraction.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "MRTI creates multi-resolution time images; TID extracts seasonal and trend patterns; MCM aggregates across scales; MRM integrates representations across resolutions.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "The authors report state-of-the-art results across eight analytical tasks against general-purpose and task-specific models.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract maps each named module to a specific representation or aggregation role, from time-frequency imaging through cross-resolution integration.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A modular mechanism-to-function mapping can make a broad model proposal easier to understand and evaluate.",
+        "application": "When presenting a multi-task architecture, pair every major component with its intended pattern type, transformation, or aggregation function.",
+        "exception": "This framing may be unsuitable when component functions are inseparable or the paper’s main contribution is theoretical rather than architectural."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the eight tasks, datasets, evaluation metrics, numerical gains, baselines, or experimental conditions.",
+      "The abstract does not provide theoretical proofs or details sufficient to assess the claimed state-of-the-art comparisons."
+    ]
+  }
+}

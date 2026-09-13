@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011845",
+    "title": "MrRoPE: Mixed-radix Rotary Position Embedding",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011845"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "594963ce6ec35f8b2dc837eca0ca8ee2376a3f5e603576613e9e68b06da62812",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "589cb59f627adb4e3126a27ebc86837485e33a900eed2a1b84a48683010f8de6",
+    "extracted_at": "2026-09-13T00:06:25.780092+00:00",
+    "session_id": "01a09815-e799-7b12-98cf-439cb7f4737f",
+    "usage": {
+      "input_tokens": 12720,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 772,
+      "reasoning_output_tokens": 70
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8ea3daa71a69bd5ebead1ce36d986987b276c29da17042fd1e2001e0d4c803f7"
+    },
+    {
+      "id": "S2",
+      "sha256": "bcdbbd9a91c96541c46bf40e466827c06a09de848c48d733e2094d5b5a716ef6"
+    },
+    {
+      "id": "S3",
+      "sha256": "501f694ad39f68926b27e2c4ea88f303836965261a894abada55875b1dd96660"
+    },
+    {
+      "id": "S4",
+      "sha256": "7e3cd0c2aec561cefa9814db3c4c0b146733165b20c593125d46ed264f28e487"
+    },
+    {
+      "id": "S5",
+      "sha256": "fe6ac6d788c7affced00e90b22a9e1fbcc092c903d7572f70b81348873c4e793"
+    },
+    {
+      "id": "S6",
+      "sha256": "916ad53f564f5366ab237bba739ba31956ce96023efac7e7dbb8da07f615da95"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011845",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Extend RoPE to support sequences longer than those used during pre-training.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing RoPE-extension strategies are diverse and lack a unified theoretical foundation.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory and formulation",
+        "claim": "MrRoPE provides a generalized mixed-radix encoding formulation that unifies RoPE-extension approaches as radix-conversion strategies.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The paper introduces two training-free extensions, MrRoPE-Uni and MrRoPE-Pro, using uniform and progressive radix conversion for “train short, test long” generalization.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed distinction is a radix-system conversion perspective that treats varied RoPE extensions as different radix-conversion strategies.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, without fine-tuning, MrRoPE-Pro maintains over 85% recall on the 128K-context Needle-in-a-Haystack test.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that MrRoPE-Pro achieves more than twice YaRN’s accuracy on Infinite-Bench retrieval and dialogue subsets.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report theoretical analysis indicating that MrRoPE-Pro raises the upper bound of RoPE’s attainable encoding length.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "RoPE extension modifies or generalizes RoPE to handle sequences longer than pre-training sequences.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Existing extension strategies are diverse without a unified theoretical foundation.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "MrRoPE reframes extension methods through mixed-radix encoding and radix conversion.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "methods",
+        "summary": "MrRoPE-Uni and MrRoPE-Pro instantiate uniform and progressive radix conversion without training.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The authors report strong long-context retrieval results and a higher theoretical encoding-length upper bound for MrRoPE-Pro.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract first identifies a fragmented strategy landscape, then introduces a unifying theoretical lens and derives two concrete variants from it.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A unifying abstraction can make a method contribution easier to connect to both prior approaches and instantiated designs.",
+        "application": "When presenting a family of techniques, define the shared formal perspective before introducing variants, and state which design choice differentiates each variant.",
+        "exception": "This structure may be unsuitable when the proposed variants do not share a meaningful formal basis or when the paper’s contribution is purely empirical."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluation setup, dataset sizes, competing methods beyond YaRN, or statistical uncertainty for the reported results.",
+      "The theoretical claim is reported by the authors; the abstract does not provide the analysis details needed to assess its assumptions or derivation.",
+      "The abstract does not establish whether the reported gains generalize beyond the named tests and subsets."
+    ]
+  }
+}

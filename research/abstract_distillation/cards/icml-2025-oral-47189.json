@@ -1,0 +1,168 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47189",
+    "title": "Learning Time-Varying Multi-Region Brain Communications via Scalable Markovian Gaussian Processes",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47189"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "66cbc3bba7b06acdc6b948ff05575fbe799eb4ee29289ca0d76700fe5a8545db",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "3988b3011b79a5609d3fcda5541ed6ff1a220d7925ebe964c3d98520d0909fc4",
+    "extracted_at": "2026-09-13T00:08:02.831651+00:00",
+    "session_id": "01a09817-66e3-7831-ae3a-7583cf16534c",
+    "usage": {
+      "input_tokens": 12677,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 735,
+      "reasoning_output_tokens": 101
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f2f991a96f4eb51cd964f3551aab6de08a072d31121bde7403f1121c45f0e865"
+    },
+    {
+      "id": "S2",
+      "sha256": "e1cae563ce094ed4c84ccf5704c7c07cb11a78bea48a478e932e18f4a01dfce1"
+    },
+    {
+      "id": "S3",
+      "sha256": "92eedfbfb124eb6c4d8a7ca61a6f49864627388e59039f4445978d0a82d7b815"
+    },
+    {
+      "id": "S4",
+      "sha256": "f5e357e146212a8b8d272dbecec6a108a20536f852600b401be941e513babfb0"
+    },
+    {
+      "id": "S5",
+      "sha256": "3e18d6c2f521f24df36df9a3fc990ece8f32da43c619183d48af5835f97be1e2"
+    },
+    {
+      "id": "S6",
+      "sha256": "8ea57c9c4fd4a47582651a3f854e88274e5f51dfb0d580b3a729314300337a92"
+    },
+    {
+      "id": "S7",
+      "sha256": "837498c42387230dfecda922b90b0591665aac1c787dd272390c2e355dbf0827"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47189",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Infer dynamic, region-level brain communications and their temporal delays from multi-region neural recordings.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods reportedly struggle to recover time-varying regional communications and to scale to large neural datasets with long recordings.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces the Adaptive Delay Model, a Markovian Gaussian-process framework for learning communications with time-varying temporal delays.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "scalable inference",
+        "claim": "Combines Gaussian Processes, State Space Models, and parallel-scan inference to support scalable analysis and identify evolving concurrent communication patterns.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Provides a tool for analyzing dynamic multi-region brain networks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe ADM as a novel framework using Markovian Gaussian Processes to learn time-varying brain communications and delays.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report validation on synthetic and multi-region neural-recording datasets, where the approach discovers communication directionality and temporal dynamics.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames dynamic multi-region brain communication as important and identifies difficulties with time variation and scale.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "It introduces ADM, combining Markovian Gaussian Processes with State Space Models and parallel-scan inference.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "capability",
+        "summary": "The proposed time-varying approach is intended to capture interaction shifts during cognitive processes.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported validation",
+        "summary": "The authors report recovering communication directionality and temporal dynamics on synthetic and multi-region recordings.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a specific modeling choice—time-varying delays—to the target phenomena, then separately names the inference components supporting scale and reports validation on synthetic and recorded data.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "This creates a compact alignment between scientific target, computational mechanism, scalability rationale, and evidence setting.",
+        "application": "When presenting a method for dynamic data, explicitly map each architectural component to the target property and state which data settings were used to assess it.",
+        "exception": "This framing is less suitable when the abstract cannot identify distinct mechanism-to-property links or when evaluation settings are intentionally not yet fixed."
+      }
+    ],
+    "unknowns": [
+      "No quantitative results, baselines, dataset sizes, recording durations, or comparative outcomes are supplied.",
+      "The abstract does not specify how directionality and temporal dynamics were measured or distinguish synthetic from real-data findings.",
+      "The claimed scalability and cognitive-process capability are not supported by detailed conditions or metrics in the supplied units."
+    ]
+  }
+}

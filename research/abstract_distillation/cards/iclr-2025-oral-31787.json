@@ -1,0 +1,163 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31787",
+    "title": "Feedback Schrödinger Bridge Matching",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31787"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e75a645592665fb3a2698f6bf76abbc0edba5330f443e5b92872981f5b12fd48",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "3fe92b3dc52d500172bf18b434cb341ce4712d5ec42362456cdc3e8e4ef18802",
+    "extracted_at": "2026-09-12T23:51:53.694270+00:00",
+    "session_id": "01a09808-9b5c-7e51-a455-ebb5f8894874",
+    "usage": {
+      "input_tokens": 12696,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 731,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a6d06238d35f6a22d93dcc5fc9d641d287c363122a5dbe754bcd0dd6b582c3ce"
+    },
+    {
+      "id": "S2",
+      "sha256": "2f17f28cd31fd34153f3849a9fa2caeeddf0ba88b890d22212599cce73da8405"
+    },
+    {
+      "id": "S3",
+      "sha256": "2ee9406eb8f2e3433a231c229177f3cc688e58172be7a29e9cc453b5a8e57292"
+    },
+    {
+      "id": "S4",
+      "sha256": "bd2cafb13124825490ceba1dbf0e964945a3a284572860fb4fa8a9aa9f7faf3a"
+    },
+    {
+      "id": "S5",
+      "sha256": "ef5413240ad029ebe6eba725f0c08c3a7d625d761d60143d4dcd3db82b90fc92"
+    },
+    {
+      "id": "S6",
+      "sha256": "fa352741874426daf66b1edb4944a3c965b2dc36191385456a6f00397ffc2eb7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31787",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Diffusion-bridge distribution transport methods must balance scalable training with access to optimal pairings.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Unsupervised matching is computationally costly, whereas fully supervised optimal pairing is often infeasible; a practical middle ground is needed.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Feedback Schrödinger Bridge Matching, a semi-supervised framework using fewer than 8% pre-aligned pairs as state feedback for non-coupled samples.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory/formulation",
+        "claim": "Formulates semi-supervised guidance as an additional term in a static Entropic Optimal Transport objective and recasts it dynamically for scalable matching.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize FSBM as a novel semi-supervised matching framework for partially aligned datasets.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive experiments show faster training and improved generalization when coupled-pair guidance is used.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that using a small portion of pre-aligned pairs—under 8% of the dataset—significantly improves efficiency.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Existing diffusion-bridge matching methods trade off scalability against access to optimal training pairings.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "design",
+        "summary": "FSBM uses fewer than 8% pre-aligned pairs to guide transport for non-coupled samples.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "formulation",
+        "summary": "The method adds semi-supervised guidance to static EOT and converts the objective to a dynamic formulation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_outcome",
+        "summary": "Experiments are reported to show accelerated training and enhanced generalization.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a supervision trade-off to a concrete design: a small fraction of aligned pairs provides feedback for otherwise non-coupled data.",
+          "source_ids": [
+            "S1",
+            "S3"
+          ]
+        },
+        "interpretation": "A resource constraint can be framed as an intermediate regime rather than a binary supervised-versus-unsupervised choice.",
+        "application": "When writing a method paper, define the limiting extremes, then specify the smallest informative supervision signal and how it enters the objective.",
+        "exception": "This framing is unsuitable when no reliable aligned subset exists or when partial supervision cannot be operationalized."
+      }
+    ],
+    "unknowns": [
+      "No datasets, baselines, quantitative speedups, generalization metrics, or experimental conditions are specified.",
+      "The abstract does not explain how pre-aligned pairs are obtained, selected, or used during training.",
+      "The reported efficiency and generalization improvements are author claims from the abstract and are not independently verified here."
+    ]
+  }
+}

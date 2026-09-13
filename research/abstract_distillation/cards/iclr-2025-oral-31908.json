@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31908",
+    "title": "The Complexity of Two-Team Polymatrix Games with Independent Adversaries",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31908"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9137091721b923d85b3f7df822f891ef4da3708b8e1fc606a3e466c4a9b5cbf3",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "d86babae5ce183e98e32e20123f18d705ac74b7d42a041292f8299e62a315ad0",
+    "extracted_at": "2026-09-12T23:56:44.899747+00:00",
+    "session_id": "01a0980d-0483-7430-a7cc-68be7a0eb3c3",
+    "usage": {
+      "input_tokens": 12713,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 852,
+      "reasoning_output_tokens": 102
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1787077fd8499c9541a6b04b198022629f5d1550aa03680c451762304b014e57"
+    },
+    {
+      "id": "S2",
+      "sha256": "33fc830906af8d8ee5beeaf7b7dae237e2636695991546af441b81fe45a47d19"
+    },
+    {
+      "id": "S3",
+      "sha256": "dc63ffb37b0cf830ef99926c5f9b927af395a18a2957c2ad213a441094dd4772"
+    },
+    {
+      "id": "S4",
+      "sha256": "11fcba29caaea78e1722dd01302ff3cd69430d16122eaedf7a3974ab19026988"
+    },
+    {
+      "id": "S5",
+      "sha256": "57296bc3e789b9adba878d76f7d0f5cdbf2817fe5e58043139558d11cd9de55a"
+    },
+    {
+      "id": "S6",
+      "sha256": "6a27e508bdcdec3f2c06743790fcad99dd6d5813f74dd54495ceb9fa84fd50e7"
+    },
+    {
+      "id": "S7",
+      "sha256": "30e38230ea8cae4b6686b736f52fe617fe18bbb2bad1f49165c7c7c94a5897c5"
+    },
+    {
+      "id": "S8",
+      "sha256": "70186eb17c1db955afde2353530005fd46e83922f93314285e87e318cbf66ecc"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31908",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies computing Nash equilibria in polymatrix games with pairwise zero-sum or coordination interactions, especially when players form a small number of identical-interest teams.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Although the three-team case is known to be PPAD-complete, the complexity of the two-team case had remained open.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Proves that computing equilibria in the two-team version is CLS-hard.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "complexity characterization",
+        "claim": "Shows the lower bound is tight when one team contains multiple independent adversaries.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Proves hardness of finding any stationary point for a class of bilinear polynomial objectives in the simplest stated non-convex-concave min-max constrained setting.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors identify CLS-hardness for the previously open two-team version and report tightness in the independent-adversary setting.",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a CLS-hardness result for the two-team equilibrium-computation problem.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that this lower bound is tight when one team consists of multiple independent adversaries.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report stationary-point hardness for a class of bilinear polynomial min-max objectives.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Polymatrix zero-sum games provide a multiplayer setting with efficiently computable Nash equilibria.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "problem_setup",
+        "summary": "The study extends attention to pairwise zero-sum-or-coordination games with players grouped into identical-interest teams.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "open question",
+        "summary": "The three-team case is known to be PPAD-complete, while the two-team complexity was open.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "main_result",
+        "summary": "The paper reports CLS-hardness for two teams and tightness when one team has multiple independent adversaries.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "auxiliary_result",
+        "summary": "A related route establishes stationary-point hardness for a bilinear polynomial min-max class.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract moves from a known tractable case and an open complexity boundary to a precise hardness classification, then states the condition under which the bound is tight.",
+          "source_ids": [
+            "S2",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This makes the significance of the result legible by anchoring it to both prior tractability and the unresolved boundary.",
+        "application": "When presenting a complexity result, explicitly state the nearest known benchmark, the open regime, the exact hardness class, and any condition yielding matching tightness.",
+        "exception": "This framing is unsuitable when the work has no meaningful prior benchmark or when tightness depends on details unavailable in the intended summary."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal game input, reduction, complexity assumptions, or the precise meaning of “tight” and “independent adversaries.”",
+      "It does not provide quantitative details or conditions for the stationary-point hardness result beyond the stated objective class."
+    ]
+  }
+}

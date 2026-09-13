@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71082",
+    "title": "How Many Different Outputs Can a Transformer Generate?",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71082"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9ce33937dbe3fdc2f7fc42cfe844047aba02673839eb0c747f13e268b73b4ec7",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "4306995d2951295ae7e50a571555c3056574d872dfa41f7c80932adef6db6b6a",
+    "extracted_at": "2026-09-13T00:13:21.937757+00:00",
+    "session_id": "01a0981c-350e-7300-b3b5-9d4dca262707",
+    "usage": {
+      "input_tokens": 12638,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 834,
+      "reasoning_output_tokens": 155
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8b4b4346a099f4afe5586da7ffab24b7446f2767d6a3d0589b5a553c25d5234c"
+    },
+    {
+      "id": "S2",
+      "sha256": "157fe56b16e71344b39cfcf71bca4a8418f8909c7b1aad9204580949d39d218f"
+    },
+    {
+      "id": "S3",
+      "sha256": "02dbc94275155d199f7b06ab01fd673d76826d1698243ad1dfe1a1b313b5c6cb"
+    },
+    {
+      "id": "S4",
+      "sha256": "76788290bf635b828b9bab898679a1cba1d65217001f065b72012dd08f33f9b7"
+    },
+    {
+      "id": "S5",
+      "sha256": "54fe29b198e7e7d30c7dab35291769ce8cb1e9f09e3e79f21343ca96a3e20f6d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71082",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Predict how many distinct output sequences a transformer can generate from a small set of architectural characteristics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Proves linear growth of maximal accessible-sequence length with prompt length, exponential decay in accessible-sequence proportion beyond a threshold, and an upper bound on the linear coefficient.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports an upper bound depending on prompt length that is empirically tight within a factor below 10 across architectures and model sizes.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "explanation",
+        "claim": "Uses the analysis to theoretically explain reported transformer failures on copying and cramming tasks.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The results are presented as applying even when context and computation time are unbounded.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report empirical tightness of the prompt-length-dependent upper bound to within a factor less than 10 across architectures and model sizes.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report theoretical explanations for previously observed failures on copying and cramming.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report proofs of the three formal accessibility results.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Studies prediction of a transformer's number of distinct output sequences using a handful of architectural characteristics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "bound and comparison",
+        "summary": "Introduces a prompt-length-dependent upper bound and reports empirical tightness within a factor below 10 across architectures and model sizes.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "interpretation",
+        "summary": "Connects the analysis to previously observed failures on copying and cramming.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "formal results",
+        "summary": "States linear accessible-length growth, exponential proportion decay after a threshold, and a bound on the linear coefficient.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "States that these results hold even with unbounded context and computation time.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a compact architectural predictor with both a quantitative bound and formal scaling laws for accessibility.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S4"
+          ]
+        },
+        "interpretation": "This pairing can make a capacity claim more interpretable by linking prediction, formal mechanism, and observable scale.",
+        "application": "Structure a theory paper around one measurable quantity, then connect its predictor to a bound and explicit asymptotic laws.",
+        "exception": "This framing is unsuitable when the target quantity cannot be defined consistently across model architectures or sequence lengths."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify which architectural characteristics enter the predictor or the bound’s formula.",
+      "The empirical protocol, datasets, exact architectures, and meaning of “factor less than 10” are unspecified.",
+      "The critical threshold and linear coefficient are not quantified, and proof details are unavailable.",
+      "The abstract does not establish whether the proposed predictor is practically accurate beyond the reported bound comparison."
+    ]
+  }
+}

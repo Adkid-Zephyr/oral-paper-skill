@@ -1,0 +1,172 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009442",
+    "title": "Pareto-Conditioned Diffusion Models for Offline Multi-Objective Optimization",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009442"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c12d65e4699a102388a9cb12a9cef21cc3eefed0a3999dcd14372b9935ee3d31",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "ce8dc7b7b5fc1f62084886dd82b4beb2cb3f86df3be855b574fd257ba42bf72e",
+    "extracted_at": "2026-09-13T00:02:59.248611+00:00",
+    "session_id": "01a09812-baa9-7fe3-8472-b3eeee4af739",
+    "usage": {
+      "input_tokens": 12639,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 729,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d77c96095e266851d0e5014b5fc619ef1db92792fb7039abc723acf6ba8f3b10"
+    },
+    {
+      "id": "S2",
+      "sha256": "5cfe568252c45dc416ffaafc61ef33b3865288d6677babd1bdf02434fc150cd7"
+    },
+    {
+      "id": "S3",
+      "sha256": "dbc64da36e397e33ccde7b92c8fb0e021c6490d093a044e49298327bc465a810"
+    },
+    {
+      "id": "S4",
+      "sha256": "6d8b862203c58bf00b6c3d7f638bd2629fbf64e2375c372ab3db1aea6f998e38"
+    },
+    {
+      "id": "S5",
+      "sha256": "5f07afbb5b743684de2e0a4deec7f8a3270a68ce6689abdb76ba71c07161588a"
+    },
+    {
+      "id": "S6",
+      "sha256": "dfe1fce5ccf3e2b866df8215a516838cf8818c0fbc29a13aa315aa46da3d77c6"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009442",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Offline multi-objective optimization must balance competing objectives using only a static dataset.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The central challenge is generalizing beyond the observed data, especially when exploring the Pareto front.",
+        "source_ids": [
+          "S2",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Pareto-Conditioned Diffusion (PCD), framing offline multi-objective optimization as conditional sampling.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses direct trade-off conditioning to avoid explicit surrogate models, with reweighting and reference directions to guide exploration.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe PCD as a novel framework that conditions diffusion-based sampling directly on desired objective trade-offs.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments on standard offline multi-objective optimization benchmarks show highly competitive performance.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report greater consistency across diverse tasks than existing offline multi-objective optimization approaches.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Multi-objective optimization involves balancing competing objectives.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "In offline settings, a static dataset makes generalization beyond observed data the main challenge.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposed framework",
+        "summary": "PCD recasts the task as conditional sampling and conditions on desired trade-offs, avoiding explicit surrogate models.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "exploration mechanism",
+        "summary": "Reweighting emphasizes high-performing samples, while reference directions steer sampling toward novel, promising regions beyond training data.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "On standard offline benchmarks, the authors report competitive performance and greater cross-task consistency than existing approaches.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links its core design choices—trade-off conditioning, sample reweighting, and reference directions—to the stated offline generalization and Pareto-front exploration challenges.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact problem-to-mechanism mapping can make a proposed method's rationale easier to assess.",
+        "application": "When presenting a new optimization method, explicitly pair each component with the specific failure mode or exploration need it is intended to address.",
+        "exception": "This framing is less suitable when component purposes are empirical or emergent rather than motivated by a clearly stated challenge."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative benchmark results, task details, statistical tests, or definitions of “highly competitive” and “greater consistency.”",
+      "It does not establish whether the claimed novel regions are feasible, how far they extend beyond training data, or the conditions under which surrogate-free sampling is advantageous."
+    ]
+  }
+}

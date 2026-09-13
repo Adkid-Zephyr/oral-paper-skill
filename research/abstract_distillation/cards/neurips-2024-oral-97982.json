@@ -1,0 +1,178 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97982",
+    "title": "DenoiseRep: Denoising Model for Representation Learning",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97982"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ddc46513d13ebb7276a26f5ea067336731680841062ba75b787bd81e0d7e166d",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "d61789f8dc0ce1450a93f9ecd9b384873270fe94996d9968c74230f7b4465b89",
+    "extracted_at": "2026-09-13T00:19:11.338860+00:00",
+    "session_id": "01a09821-9580-7382-b0f8-721e908b4784",
+    "usage": {
+      "input_tokens": 12824,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 759,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f8ff4c62a79d69e71d0400226d7b4bf51567d69cb70c4f755ac00fe186b1e384"
+    },
+    {
+      "id": "S2",
+      "sha256": "d5c9ca52bf231ba9b076b4df7256da89986e10650e03360ab168f2f4ba8e06a8"
+    },
+    {
+      "id": "S3",
+      "sha256": "e9f4a985c5505681e171de7dd55f14ccea6ef6c815cc6ebf4847c2ca5154fd87"
+    },
+    {
+      "id": "S4",
+      "sha256": "19d91356ec53de724fd657cb389f1357f67ca7f387f40da6ecb9516948b05412"
+    },
+    {
+      "id": "S5",
+      "sha256": "dbafabd9e24052dfba9c7349640082519ca7e04097e8001f1bdb2ec96d5dc7bf"
+    },
+    {
+      "id": "S6",
+      "sha256": "c0c6c516bf75a69f794c0f9ab1844796eb1144340e2ec4f334fef9a3990e4676"
+    },
+    {
+      "id": "S7",
+      "sha256": "62fb725dd3f25a04d142023fbf4758abc620e6edb095dcd404b30b7582a62772"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97982",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve representations for discriminative tasks through joint feature extraction and denoising.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Denoising models had been explored substantially as generative models but little for discriminative tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DenoiseRep treats cascaded backbone embedding layers as recursive denoising steps, unifying feature extraction and denoising.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory and method",
+        "claim": "It fuses feature-extraction and denoising parameters and theoretically demonstrates equivalence before and after fusion, making denoising computation-free.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "It provides a label-free, incremental feature-improvement procedure that can also complement available labels.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present DenoiseRep as a novel denoising model for representation learning and as a unified feature-extraction/denoising framework.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report stable and impressive improvements across re-identification, classification, detection, and segmentation tasks on the listed datasets.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report validating effectiveness on CNN architectures (ResNet) and Transformer architectures (ViT, Swin, Vmamda).",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Denoising models are established as generative models but are little explored for discriminative tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "DenoiseRep jointly extracts and denoises features by interpreting successive embedding layers as recursive denoising stages.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "unification and theory",
+        "summary": "The method unifies the two processes and fuses their parameters, with a theoretical equivalence claim enabling computation-free denoising.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Reported experiments span multiple discriminative vision tasks, datasets, and CNN/Transformer backbones.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a structural interpretation of backbone layers with a parameter-fusion argument, then connects the resulting method to broad task and architecture coverage.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This suggests a useful way to frame a representation method: connect its architectural view to a concrete computational consequence and test scope.",
+        "application": "When presenting a new backbone reinterpretation, pair the conceptual mapping with an explicit equivalence or cost argument, then organize evidence by task and architecture.",
+        "exception": "This framing is unsuitable when no formal equivalence or implementation-level consequence is available."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical improvements, baselines, statistical details, or experimental conditions.",
+      "The theoretical demonstration’s assumptions and scope are unspecified.",
+      "The abstract does not clarify how label-free training and optional label use are combined."
+    ]
+  }
+}

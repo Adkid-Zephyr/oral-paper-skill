@@ -1,0 +1,165 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71154",
+    "title": "Rare Event Analysis of Large Language Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71154"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5b1c9b4a38f4cfbef5415f4b051efddf7fed0f4095eb15bd7da82fd88c4b16ce",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "39e59ea95585ba73de4f6e5223c829a7f48979ecef58353801641eb19e3f6b05",
+    "extracted_at": "2026-09-13T00:16:09.599051+00:00",
+    "session_id": "01a0981e-d5da-7a72-946c-94f1cfe9a547",
+    "usage": {
+      "input_tokens": 12583,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 669,
+      "reasoning_output_tokens": 118
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0a0b2680798d75abc4eacf2793079b058953095cbe04261365fef0fab85e8938"
+    },
+    {
+      "id": "S2",
+      "sha256": "d887a782277f2b726b1164bfc0aefd1349a94246de49be8298d1fc2f79c4b520"
+    },
+    {
+      "id": "S3",
+      "sha256": "f239d822ec451bdc85cf1337f59554c2a082bac0fa4101f2ffe8b346f999145d"
+    },
+    {
+      "id": "S4",
+      "sha256": "653c1c84c08b3cddf37f0858713f35e66a7c490eb9c79744da286af589c4de1f"
+    },
+    {
+      "id": "S5",
+      "sha256": "8632a78ba617c993dbfc9ca154695b999bf8c7399c9d1e8cc767d3a40bab3947"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71154",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses systematic analysis of rare, highly significant LLM behaviors during inference.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Rare events are difficult to observe, and large-scale deployment can make behaviors unseen during development prominent.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "An end-to-end framework for analyzing rare events in LLMs.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A practical implementation covering theory, efficient generation, probability estimation, and error analysis.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "extensions",
+        "claim": "Proposed extensions and applications to other models and contexts.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their contribution as an end-to-end, systematic framework spanning the listed analysis components.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report illustrating the implementation with concrete examples.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLM inference can produce atypical but consequential rare events.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "deployment challenge",
+        "summary": "Such events are hard to observe, while usage scale may amplify development-unseen behaviors in deployment.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper presents an end-to-end framework for systematic rare-event analysis.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "implementation",
+        "summary": "The framework combines theory, generation, probability estimation, and error analysis, illustrated by examples.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "The authors outline applications beyond the immediate model and context.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects rare-event analysis to deployment scale and presents a pipeline spanning generation, probability estimation, and error analysis.",
+          "source_ids": [
+            "S2",
+            "S4"
+          ]
+        },
+        "interpretation": "A rare-behavior study benefits from aligning its detection strategy with deployment-scale exposure and tracing uncertainty across the analysis pipeline.",
+        "application": "Frame the evaluation around deployment-relevant event frequencies, then report how generation and probability-estimation errors affect identified cases.",
+        "exception": "This framing may be unsuitable when deployment scale or event probabilities cannot be meaningfully estimated."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the concrete examples, models, generation algorithms, probability estimators, error metrics, or quantitative results.",
+      "No comparative baselines or validation conditions are reported."
+    ]
+  }
+}

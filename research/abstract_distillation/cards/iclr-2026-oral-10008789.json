@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008789",
+    "title": "Hubble: a Model Suite to Advance the Study of LLM Memorization",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008789"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "21f3fe146b51c03acdae9de83807fa4e1e238b44e07144ee0888b04c97e4b714",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "3262dcd092f029f2160dc6b20e90c74e558b79f0f722f7979d1cc409a4ec8ca9",
+    "extracted_at": "2026-09-13T00:01:54.000482+00:00",
+    "session_id": "01a09811-bda2-7df1-9190-5222dd33bbab",
+    "usage": {
+      "input_tokens": 12793,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 872,
+      "reasoning_output_tokens": 82
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "64dffc27498aace4d304b5b760247348470ca0b9e5ecd6d79a3e65f4d90ef2f0"
+    },
+    {
+      "id": "S2",
+      "sha256": "f8a8b827458cac6f85ed31095b7b09d358cc51462e396d786f2dacd33e10c112"
+    },
+    {
+      "id": "S3",
+      "sha256": "ceb4fc419d03939c26f0f6969eb7b42cbde6a830ad26ca867161285db940b05f"
+    },
+    {
+      "id": "S4",
+      "sha256": "4b17ea7c2d4dadc03e11bdb128a693f1e81d8466c5cf92c7432bf8c9d4ad95a5"
+    },
+    {
+      "id": "S5",
+      "sha256": "b48219e8fdf5ee5209692116b780e6d52278196130cb3d95f0d30b15ef7428e5"
+    },
+    {
+      "id": "S6",
+      "sha256": "40a42a82ebd4d11cf7e691a1a29af8ba15887bc0c5daed8e0e418e3521aa1f32"
+    },
+    {
+      "id": "S7",
+      "sha256": "c058580c3cfb88ef2ab32f2525318038725a12a867033ea6d1c0e2d54dfd5f19"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008789",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable scientific study of LLM memorization and associated risks.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "Hubble is a fully open-source suite with standard and controlled-perturbation LLM variants for memorization research.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The release studies memorization across model sizes, corpus sizes, and insertion phases, including 8 core models and 6 additional perturbed models.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "research testbed",
+        "claim": "Randomized insertions support membership-inference and machine-unlearning research.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Hubble as a fully open-source model suite designed specifically for scientific study of LLM memorization, with controlled sensitive-text insertions.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that memorization risk depends on sensitive-data frequency relative to corpus size; a password appearing once is memorized better in a smaller corpus than in a larger one.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that sensitive data inserted at different pretraining phases can be forgotten when it lacks continued exposure.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that biography analysis reveals differences in how readily types of private information are memorized.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "resource introduction",
+        "summary": "The paper presents Hubble as a fully open-source suite for studying LLM memorization.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "experimental design",
+        "summary": "It provides standard and perturbed models, with controlled insertions of materials such as book passages, biographies, and test sets.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "scaling and timing findings",
+        "summary": "Across the core and phase-varied releases, the authors report effects of corpus-relative frequency and continued exposure on memorization.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "research applications",
+        "summary": "The suite is presented as a testbed for private-information analysis, membership inference, and machine unlearning.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract varies both the relative frequency of inserted sensitive data and the phase at which it is inserted, then links these factors to memorization outcomes.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Separating risk dimensions can make a memorization study more diagnostically useful than reporting a single aggregate score.",
+        "application": "Design controlled variants that independently manipulate data prevalence, model scale, corpus scale, and training phase.",
+        "exception": "This design may be unsuitable when the target deployment cannot support controlled retraining or synthetic perturbations."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract connects one released resource to multiple downstream evaluations, including private-information analysis, membership inference, and machine unlearning.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A reusable resource can motivate broader evaluation by exposing a common controlled substrate.",
+        "application": "State concrete downstream research uses and provide resource variants aligned with each use case.",
+        "exception": "Multiple use cases should not be claimed if the release lacks the corresponding data or controls."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify memorization metrics, evaluation protocols, insertion frequencies, or statistical uncertainty.",
+      "It does not provide quantitative results for the reported findings or detail how the models and inserted texts are randomized.",
+      "The abstract does not establish that the proposed best practices generalize beyond the described models and training settings."
+    ]
+  }
+}

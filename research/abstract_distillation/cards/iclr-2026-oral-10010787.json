@@ -1,0 +1,213 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010787",
+    "title": "Generative Universal Verifier as Multimodal Meta-Reasoner",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010787"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9c378a3d3fee1af89335a75ba98df3377b84916e906a65bfb101d7be4219cba8",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "595f60bfbe5372c4e91295b5b82f6ee9afff6f5269536ddeda0c3466ef45eb70",
+    "extracted_at": "2026-09-13T00:05:03.865138+00:00",
+    "session_id": "01a09814-97b0-7d90-bd4b-949ff71c1665",
+    "usage": {
+      "input_tokens": 12851,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 932,
+      "reasoning_output_tokens": 89
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "25e23d2fe9d265e9a762f96e77d269b146fdcaf0666f891caf01192cdbdf4b06"
+    },
+    {
+      "id": "S2",
+      "sha256": "c5fddb2df007697e9489e004e9e5c93e0c80a69b073ff7e37cb018433abe2040"
+    },
+    {
+      "id": "S3",
+      "sha256": "504983641d5027a90a8cc9833a4ea444df5c1941470541ebc9388082a0ecb0c8"
+    },
+    {
+      "id": "S4",
+      "sha256": "40ffcf554efd0887c6eaaa234c2a786c6915fad5d05e5348e5ae04ca1a1a380f"
+    },
+    {
+      "id": "S5",
+      "sha256": "603ed4221f53e5c9ee8c7b5816296d7eb9df3be2831c2f0fa9b5927fbac5ac17"
+    },
+    {
+      "id": "S6",
+      "sha256": "1bf957b7abdac5cff9de58e96e0e2ae0c345230ee7d1772003e15bef0d607013"
+    },
+    {
+      "id": "S7",
+      "sha256": "9a7dc3257a84137d45706ee6c39758704c1a9f21867aa09d3f43e1d536b7611a"
+    },
+    {
+      "id": "S8",
+      "sha256": "c1899d3f8dea2c21d2c9ce537c7ab9b34646f36c47615e02bee00d286b48a7d4"
+    },
+    {
+      "id": "S9",
+      "sha256": "7d0e47a32d70c085d8710d0a0298b6d212c2203537cd682d5d9920313b84ba88"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010787",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable multimodal models to reflect on and refine visual outcomes during reasoning and generation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The authors report that existing VLMs underperform consistently across 16 visual-verification task categories, remaining substantially below human-level reliable visual verification.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "ViVerBench, a benchmark covering 16 categories of critical visual-verification tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method and model",
+        "claim": "Two automated pipelines for large-scale visual-verification data, plus OmniVerifier-7B for universal visual verification.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "test-time scaling paradigm",
+        "claim": "OmniVerifier-TTS, a sequential test-time refinement approach connecting image generation and editing through iterative fine-grained optimization.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe Generative Universal Verifier as a novel concept and plugin, and OmniVerifier-7B as the first omni-capable generative verifier trained for universal visual verification.",
+      "source_ids": [
+        "S1",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that OmniVerifier-7B gains 8.3 points on ViVerBench.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that training reveals three atomic visual-verification capabilities that generalize and interact synergistically.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that OmniVerifier-TTS improves T2I-ReasonBench by 3.7 points and GenEval++ by 4.3 points, outperforming parallel test-time scaling methods such as Best-of-N.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "concept and motivation",
+        "summary": "Introduces a universal generative verifier to support visual reflection and refinement in multimodal reasoning and generation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "benchmark and diagnosis",
+        "summary": "Builds ViVerBench across 16 categories and reports consistent underperformance of existing VLMs on reliable visual verification.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "training and capability analysis",
+        "summary": "Constructs verification data, trains OmniVerifier-7B, and identifies three interacting atomic capabilities.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "test-time extension and results",
+        "summary": "Proposes OmniVerifier-TTS for sequential refinement, reports gains on two benchmarks, and extends the verifier to broader interleaved world-modeling scenarios.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a benchmark exposing a capability gap with a trained verifier and reports gains on that benchmark.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A task-specific diagnostic can make a capability claim more concrete by linking the problem definition, measured gap, and proposed intervention.",
+        "application": "When introducing a new capability, define a multi-category benchmark before presenting the method, then report method gains on the same diagnostic.",
+        "exception": "This framing is less suitable when no stable task taxonomy or evaluation measure exists."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract reports identifying three atomic capabilities in visual verification and states that they generalize and interact synergistically, without naming the capabilities.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "Decomposing a broad capability into components can provide a more explanatory account than reporting only an aggregate score.",
+        "application": "For a composite task, identify candidate atomic abilities and analyze their generalization and interactions alongside overall performance.",
+        "exception": "Avoid this decomposition when the abstract or evidence cannot distinguish the components reliably."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify ViVerBench task definitions, datasets, baselines, statistical details, or the meaning and scale of the reported point gains.",
+      "The conditions and evidence supporting the claimed first-of-its-kind distinction, three-capability analysis, and broader world-modeling extension are not detailed."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "lessons[1].source_observation.claim",
+      "before": "The abstract names three atomic capabilities and states that they generalize and interact synergistically.",
+      "after": "The abstract reports identifying three atomic capabilities in visual verification and states that they generalize and interact synergistically, without naming the capabilities.",
+      "review_file": "reviews/flagged-batch-07.json",
+      "review_sha256": "da8130c13e152fce85f706ec0ec78e55cbb147ff44895d96357f9c6af2b9eea4",
+      "applied_at": "2026-09-13T00:35:16.272927+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

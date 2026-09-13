@@ -1,0 +1,161 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31897",
+    "title": "Progressive Compression with Universally Quantized Diffusion Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31897"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d58d318c60d123460b6cb748b0f04c8786156fd6869e01b56182272f98521350",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "33d76a510701adee77dfa19929a5743ef1123666c009830491c0fb616e5a587f",
+    "extracted_at": "2026-09-12T23:56:17.821305+00:00",
+    "session_id": "01a0980c-a58f-7331-a913-cd9e0d43f57d",
+    "usage": {
+      "input_tokens": 12669,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 711,
+      "reasoning_output_tokens": 90
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2f5773ac02fc3e998302a9418b42e0ad36d796e82637c64723dd84da3c4387dd"
+    },
+    {
+      "id": "S2",
+      "sha256": "90568f6c43c73b325846b590f3b53563229882b8969e4f9da9d35ae43c53fb6c"
+    },
+    {
+      "id": "S3",
+      "sha256": "17afaeb9d083fd11beadb0fe8d579935c94fe7e808e2cf80c7cd5bd7c217f9bc"
+    },
+    {
+      "id": "S4",
+      "sha256": "99469f7f64c4f90205a95c663f9960956f0b30e41283d1022a362a397f816842"
+    },
+    {
+      "id": "S5",
+      "sha256": "e372199f4a1dc657bc317bc682dc393f79fe46b840ffc93ccff179511550157b"
+    },
+    {
+      "id": "S6",
+      "sha256": "562645f813a0f106ad51d5e143858954fcf7fcbc9359a6447f7ea8df97836164"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31897",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explore diffusion models for progressive image coding, where bits can be transmitted incrementally and decoded with improving reconstruction quality.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Prior progressive-coding work considered Gaussian or conditional diffusion models; the abstract motivates a different forward-noise design for compression.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A diffusion model with uniform forward-process noise whose negative ELBO corresponds to end-to-end compression cost under universal quantization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "A progressive coding approach producing an incrementally transmissible bit sequence with progressively improving reconstructions.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their uniform-noise diffusion formulation differs from prior Gaussian- and conditional-diffusion approaches and links its negative ELBO to universal-quantization compression cost.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report competitive rate-distortion-realism results across a wide range of bit-rates using a single model for image compression.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors characterize these results as a step toward practical deployment of neural codecs.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Diffusion models are presented as hierarchical latent-variable models optimized through an ELBO.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framing",
+        "summary": "The paper connects likelihood modeling with compression to motivate progressively decodable bitstreams.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It proposes uniform forward noise and interprets the negative ELBO as universal-quantization compression cost.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "result",
+        "summary": "The authors report competitive image-compression rate-distortion-realism performance over many bit-rates with one model.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the model objective directly with an end-to-end compression cost and then reports results across bit-rates for a single model.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Making the training objective correspond to the deployment metric can give a method description a clear mechanism-to-evidence thread.",
+        "application": "When presenting a compression method, explicitly map the optimized objective to coding cost and evaluate the same model across the intended operating-rate range.",
+        "exception": "This framing may be unsuitable when the deployment objective is not expressible through the training objective or when operating conditions require separate models."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide numerical rate-distortion-realism values, baselines, datasets, or evaluation details.",
+      "It does not specify how progressive decoding quality changes across transmission stages.",
+      "The claimed correspondence between negative ELBO and compression cost is stated but not established here beyond the abstract."
+    ]
+  }
+}

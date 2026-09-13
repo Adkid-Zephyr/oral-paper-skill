@@ -1,0 +1,165 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47166",
+    "title": "Beyond Matryoshka: Revisiting Sparse Coding for Adaptive Representation",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47166"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9515e203381b4d7e9855b839f4ad088902f6fe603c0553aa203431ea43bd5ab9",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "7cb1284766def835b1dde58142ef94a8b21ed322b2bcad3ea36d356f1d7a2034",
+    "extracted_at": "2026-09-13T00:07:06.631492+00:00",
+    "session_id": "01a09816-8f39-7bd1-a361-35ae9650ec4f",
+    "usage": {
+      "input_tokens": 12745,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 659,
+      "reasoning_output_tokens": 85
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "408485c7c3a0d3ec8b7b60635a7906fded1b865581dda438de74bc85ea7e9b78"
+    },
+    {
+      "id": "S2",
+      "sha256": "e5b07b6d77d3003b353c4a02f964e7b30cdfc9d83967aa341382df0a3816bfac"
+    },
+    {
+      "id": "S3",
+      "sha256": "2226cd7b339e6b9770fc4f543e6e98829f7ebd5ddfe0cc9e650224d70853b10d"
+    },
+    {
+      "id": "S4",
+      "sha256": "3d9bad57ebeb59136d6c931e7eddb6315cfd3c412658d864ce8e0924f6abc22f"
+    },
+    {
+      "id": "S5",
+      "sha256": "c3d4748fa38395abcc49a26c775f40f517a6cdb62e695053e30530f0e5f6513e"
+    },
+    {
+      "id": "S6",
+      "sha256": "47358fba4461cec123e3048cab3deb4647132567d728602a6ea7f8f6fde9e3cf"
+    },
+    {
+      "id": "S7",
+      "sha256": "4f88aadd5f0d6a135cacf638cbe4863e484296961ece251201c60209e8139be9"
+    },
+    {
+      "id": "S8",
+      "sha256": "e6d5ce93808d744a9d67d2daa3c0da59029d599c49fd58081ca689cc1da7dbef"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47166",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Adaptive-length representations are needed for efficient retrieval, search, and generative modeling while retaining embedding quality.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "MRL requires full model retraining and has noticeable quality degradation at short lengths.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Contrastive Sparse Representation (CSR), which maps pre-trained embeddings into a high-dimensional selectively activated feature space.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Combines lightweight autoencoding with task-aware contrastive objectives to support flexible inference across sparsity levels.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present sparse coding, specifically CSR, as an alternative paradigm for adaptive representation with minimal overhead and higher fidelity.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that CSR outperforms MRL on image, text, and multimodal benchmarks in accuracy and retrieval speed, often by large margins.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that CSR reduces training time to a fraction of MRL's requirement.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Large-scale systems use deep representations for retrieval, search, and generative modeling.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "MRL enables adaptive embedding lengths but requires full retraining and degrades at short lengths.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal_and_results",
+        "summary": "The paper proposes CSR using sparse coding, autoencoding, and contrastive objectives, then reports gains over MRL across modalities and efficiency measures.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly connects the representation mechanism—selective activation and sparsity levels—to both semantic preservation and inference cost.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact method description is more informative when it links design choices to the deployment trade-offs they target.",
+        "application": "When presenting an adaptive representation method, map each architectural component to a specific quality or efficiency objective and state how users control the trade-off.",
+        "exception": "This framing is insufficient when the application requires detailed ablations or guarantees about behavior at particular operating points."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify benchmark datasets, exact metrics, numerical margins, sparsity levels, or the reported training-time fraction.",
+      "The abstract does not specify the conditions under which semantic quality is preserved or retrieval speed improves."
+    ]
+  }
+}

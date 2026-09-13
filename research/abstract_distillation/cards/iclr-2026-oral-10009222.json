@@ -1,0 +1,146 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009222",
+    "title": "Let Features Decide Their Own Solvers: Hybrid Feature Caching for Diffusion Transformers",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009222"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0fdc5bcf1b1b0bc55faf24d5b2d5943d066f2f60bd4bb773f63e4e03ce4ba14b",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "a8ab0e52a2409a1339c7fed1aefd18e17d241eb28952b592dbfd4abfbe0c9a0d",
+    "extracted_at": "2026-09-13T00:02:28.215637+00:00",
+    "session_id": "01a09812-47ce-7613-a40f-a3a6115b36a1",
+    "usage": {
+      "input_tokens": 12657,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 646,
+      "reasoning_output_tokens": 58
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d128730362643f0ab811e566e52f186a16ef0ca144516a8182eae8e0e0b476ee"
+    },
+    {
+      "id": "S2",
+      "sha256": "451455b47499e27cf79139c4dadaa0d966587092f6791d1521942b120d07570f"
+    },
+    {
+      "id": "S3",
+      "sha256": "f25289136843e61316f2c569424334811bf0cc9ae79f91b0728a638716d97cd7"
+    },
+    {
+      "id": "S4",
+      "sha256": "208da7fee4de6a9cd2fa801d92f2bcf7c9f4708fdad88f3c2dc98c01b85d94e0"
+    },
+    {
+      "id": "S5",
+      "sha256": "a37e3d98f03c2eef7857b65bc24cb8c072a94df2a641689f66d33fc49c89d028"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009222",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Diffusion Transformers face a sampling-time bottleneck because each timestep requires an expensive transformer forward pass.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing feature-caching methods often use one uniform strategy across feature dimensions, overlooking their heterogeneous dynamics.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces HyCa, a training-free hybrid caching framework that models hidden-feature evolution as dimension-wise mixtures of ODEs and selects caching strategies per dimension.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports near-lossless acceleration across diverse tasks and models without retraining.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish HyCa through dimension-wise caching derived from a mixture-of-ODEs view of hidden-feature evolution.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report speedups of 5.55× on FLUX, 5.56× on HunyuanVideo, and 6.24× on both Qwen-Image and Qwen-Image-Edit, without retraining.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Diffusion Transformer sampling is costly because of repeated forward passes at every timestep.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "context_and_gap",
+        "summary": "Feature caching offers training-free acceleration, but existing approaches commonly treat all feature dimensions uniformly despite differing dynamics.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method_and_reported_result",
+        "summary": "HyCa models feature evolution as dimension-wise ODE mixtures, applies hybrid caching strategies, and is reported to provide near-lossless multi-model acceleration.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links heterogeneous feature dynamics to a dimension-wise mixture-of-ODEs model and then to dimension-wise caching strategies.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A method can become more targeted when its design explicitly reflects heterogeneity in the object being approximated.",
+        "application": "When proposing an approximation method, partition components by their observed or modeled dynamics and assign specialized approximation rules rather than imposing one global policy.",
+        "exception": "This move may be unsuitable when component-level dynamics are unavailable, too costly to estimate, or do not support stable specialization."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the baseline caching methods, evaluation protocol, or the quantitative meaning of “near-lossless.”",
+      "It does not report task-level quality metrics, latency measurement conditions, or whether all listed speedups use comparable hardware and settings."
+    ]
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71027",
+    "title": "Do We Need Adam? Surprisingly Strong and Sparse Reinforcement Learning with SGD in LLMs",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71027"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7b20fc0d42b27da9d406fdc1ceef492689000a647144072424d12b8c44f8635f",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "ebf80e2cda3a67613ae5332303b89255928502170e57d9a811126f8a183dd564",
+    "extracted_at": "2026-09-13T00:11:20.870555+00:00",
+    "session_id": "01a0981a-672c-7ab2-b163-26d0595d9bde",
+    "usage": {
+      "input_tokens": 12776,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 799,
+      "reasoning_output_tokens": 65
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "932814aa3b18812f5f626f0038e5e7fcda9b1201578c7632feb16109da649ea9"
+    },
+    {
+      "id": "S2",
+      "sha256": "952001c603cfbe6a258ee76f04d5ba25b6484095ac96a7e872686f2cc09f6e73"
+    },
+    {
+      "id": "S3",
+      "sha256": "877c365a03c56abf3d04ef487373b51c01b50733cf0253c459583ba2668cf330"
+    },
+    {
+      "id": "S4",
+      "sha256": "aa489c192c44111fc0064b24581a374d530a94504c9a895a962ea20f264d44bf"
+    },
+    {
+      "id": "S5",
+      "sha256": "9644317f633cc105357a3fcd8567ce959c21e46dbf7d1e48c007e39650bb14f7"
+    },
+    {
+      "id": "S6",
+      "sha256": "926e7142d11ead2d53241cd4169cf0749786538e08582f1dc3f2247d249d981e"
+    },
+    {
+      "id": "S7",
+      "sha256": "4663c4259657c384e096c12555140d387ad147be4749cac9563111a2ea6197ae"
+    },
+    {
+      "id": "S8",
+      "sha256": "5d91a07d149c89d79161eb8fe36052d98819329558ec3557f2ef1f08cf2963f5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71027",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine whether RL training of LLMs requires AdamW’s momentum and per-parameter adaptive learning rates, and assess a more memory-efficient alternative.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "RL optimization largely inherits practices from pretraining and SFT despite differences between these stages; the relative importance of AdamW’s components in RL was unclear.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "analysis",
+        "claim": "Analyzes the roles of momentum and adaptive learning rates in AdamW for RL versus SFT.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that SGD, despite poor performance in supervised large-transformer learning, matches or outperforms AdamW for LLM RL.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "optimization insight",
+        "claim": "Reports extremely sparse parameter updates under full SGD fine-tuning and offers potential explanations for this sparsity.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present RL in LLMs as substantially more parameter-efficient than previously recognized, based on their optimizer analysis and experiments.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that AdamW’s momentum and adaptive learning rate are less influential in RL than in SFT.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that SGD matches or outperforms AdamW in LLM RL while using substantially less memory.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that full fine-tuning with SGD updates fewer than 0.02% of model parameters, over 1,000 times fewer than AdamW, without sparsity-promoting regularization.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "RLVR is framed as an important LLM-training phase, while RL optimization practices largely follow pretraining and SFT.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "AdamW is identified as widely used but memory-intensive, motivating examination of whether its adaptive learning rates and momentum matter in RL.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "empirical result",
+        "summary": "Experiments report that memory-efficient SGD matches or exceeds AdamW for LLM RL.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "SGD produces fewer than 0.02% parameter updates, leading to proposed explanations for sparsity and a claim of greater RL parameter efficiency.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects an optimizer-component analysis to a targeted comparison and then to an observed update-sparsity statistic.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This alignment makes the motivation, test, and mechanistic implication traceable within a compact abstract.",
+        "application": "When proposing an optimization simplification, pair component-level motivation with a direct baseline comparison and a measurable account of how updates differ.",
+        "exception": "This framing is unsuitable when no interpretable component hypothesis or comparable baseline is available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify RL tasks, model sizes, training budgets, evaluation metrics, or the conditions under which SGD matches or outperforms AdamW.",
+      "The basis for the proposed explanation of update sparsity is not detailed."
+    ]
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31879",
+    "title": "Data Shapley in One Training Run",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31879"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a5a382072c0323edc4b255b358ddfd0a372fce780d8f06753b5cbf88ac3b7cb1",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "db1d18cc813cd257976fa707146df0ca149936b5ab874e9ab07d89df0279c86f",
+    "extracted_at": "2026-09-12T23:55:38.473654+00:00",
+    "session_id": "01a0980c-045c-7193-b086-6a3ce000bc64",
+    "usage": {
+      "input_tokens": 12739,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 794,
+      "reasoning_output_tokens": 51
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3849c920cfa985ee6ed42987c762323a30539f5a8f574b61a27014aa5e12318f"
+    },
+    {
+      "id": "S2",
+      "sha256": "99b02c53d233e5c53a957ba42ea06becd780a64b383d68f034b5d220f9faea1e"
+    },
+    {
+      "id": "S3",
+      "sha256": "97a8da71f63d5b5a32cf8c86fce7c535c3990e278df11087619c964af67ce9d1"
+    },
+    {
+      "id": "S4",
+      "sha256": "1cac8fb306f68cae3995046d7585e782d4df9ecf4096d3552dbb514a82fce416"
+    },
+    {
+      "id": "S5",
+      "sha256": "eedc6999c47553ebdcad579e19ae6fedb06bae6c9b161d66880df8aa80d30e71"
+    },
+    {
+      "id": "S6",
+      "sha256": "c86b1f699b1791f6f303697c421d8c883ce8437fb2c7a4fd52449505536c5919"
+    },
+    {
+      "id": "S7",
+      "sha256": "287c12b6ee53d2922a9c5838d67f3b7a9c615b038c342f766cceee24088feaa7"
+    },
+    {
+      "id": "S8",
+      "sha256": "52e23c31ef1d08c333ce7771154047823d8663a88795f0d0a757f55400ae401a"
+    },
+    {
+      "id": "S9",
+      "sha256": "1a1e8dd015ebe38239c1529a5a8f391c9d7266d4015fd67a3fed86ac8a851176"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31879",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Attribute the contribution of data to a particular model training run, including foundation-model pretraining.",
+        "source_ids": [
+          "S3",
+          "S8"
+        ]
+      },
+      "gap": {
+        "claim": "Traditional Data Shapley requires retraining on many data subsets, making it computationally infeasible at scale and unsuitable for evaluating a specific training run.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces In-Run Data Shapley, which avoids model retraining by calculating Shapley values for each gradient-update iteration and accumulating them during training.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "scaling technique",
+        "claim": "Presents techniques for scaling In-Run Data Shapley to foundation-model size.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "case studies",
+        "claim": "Reports case studies examining pretraining-data contribution and implications for copyright in generative AI and data curation.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe In-Run Data Shapley as a new concept designed to assess data contribution for a particular model without retraining.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the most optimized implementation adds negligible runtime overhead relative to standard model training.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that the efficiency improvement enables data attribution during foundation-model pretraining.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report fresh insights from case studies on pretraining-data contribution and discuss copyright and curation implications.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Data Shapley provides a principled framework for attributing data contribution.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Retraining-based Data Shapley is costly at large scale and cannot assess a specific training run.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper introduces In-Run Data Shapley, accumulating per-iteration Shapley values without retraining.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "scaling and efficiency",
+        "summary": "The authors present scaling techniques and report negligible overhead in the most optimized implementation.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "application",
+        "summary": "The method is applied through case studies of pretraining-data contribution, copyright, and data curation.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a practical limitation—retraining cost and inability to target one run—to an iteration-level attribution mechanism that accumulates values throughout training.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A method can be framed more compellingly when its computational design directly addresses both scalability and the concrete evaluation target.",
+        "application": "When introducing a new attribution method, explicitly map each operational limitation to a corresponding algorithmic mechanism and state the intended unit of analysis.",
+        "exception": "This framing is unsuitable when the proposed mechanism does not directly resolve the stated limitation or when the target use case is not a specific training run."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the scaling techniques, model sizes, datasets, runtime measurements, or quantitative case-study findings.",
+      "The basis and scope of the reported copyright and curation implications are not detailed.",
+      "The abstract does not provide comparisons beyond standard model training overhead."
+    ]
+  }
+}

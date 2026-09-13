@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47257",
+    "title": "Partition First, Embed Later: Laplacian-Based Feature Partitioning for Refined Embedding and Visualization of High-Dimensional Data",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47257"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3227d1a5559fb80f0add488942db136f5e5ad864415d245739956983440abba3",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "fa6499e51b4e7ba784c3145cb85c69b75c50abb41e9f9c766484bbc571595d4e",
+    "extracted_at": "2026-09-13T00:10:43.628242+00:00",
+    "session_id": "01a09819-d1c6-70d2-b5f7-54737c3cae44",
+    "usage": {
+      "input_tokens": 12693,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 716,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8bbc0c803af30a5b9750d2f7aa4384d2b7fb2a86aaab99605d98e0f33cbedc7e"
+    },
+    {
+      "id": "S2",
+      "sha256": "1e3d1e4c9dff97c457986ff3fa73500f795fd028f976a7849e88d6ef82aaeb0c"
+    },
+    {
+      "id": "S3",
+      "sha256": "64354f8c4bbf0123a6672b0801b068693d239c6e2a1435cfc8aa1f9320b56b51"
+    },
+    {
+      "id": "S4",
+      "sha256": "674c9c427f3689ee9f2984b2f01512ceb48e7f6f3888abcb0cf3b497b4209bfc"
+    },
+    {
+      "id": "S5",
+      "sha256": "09caecaad9c1078526699e5c3b27bee7100f8d6d84381079c4bd0c906f86314e"
+    },
+    {
+      "id": "S6",
+      "sha256": "96b81679e8bd928c0bb9c4cb1289ca181ba8e284b3c70ec39d65a358600932bc"
+    },
+    {
+      "id": "S7",
+      "sha256": "d581819bec0e57bb52b07fc48054c7ea835324332c07e11d51bc941f71b06ef3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47257",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses how to partition observed high-dimensional features into mutually exclusive subsets, each representing a different smooth substructure, so that each subset can support a more interpretable embedding and visualization.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing embedding and visualization techniques can struggle with data governed by multiple latent variables and may distort important structural characteristics; the abstract does not state a more specific limitation of prior approaches.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "An optimization method that partitions features by promoting graph-Laplacian smoothness within each subset, favoring simpler geometric structures.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "A generalization of traditional embedding and visualization methods that learns multiple embeddings simultaneously.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory and empirical demonstration",
+        "claim": "The framework is reported to identify correct feature subsets under specified manifold conditions with theoretical guarantees, and to extract multiple low-dimensional structures and partially independent processes from simulated and real data.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present Laplacian-based feature partitioning as a way to generalize embedding and visualization toward simultaneous learning of multiple embeddings.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical guarantees for reliably identifying correct subsets when independent or partially dependent manifolds occupy distinct feature subsets in high-dimensional space.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report demonstrations on simulated and real data that extract multiple low-dimensional structures and partially independent processes.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "High-dimensional embedding and visualization may distort structure when multiple latent variables govern the data.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "setting",
+        "summary": "The paper focuses on features partitionable into mutually exclusive subsets, each capturing a different smooth substructure.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "It proposes graph-Laplacian-smooth feature partitioning and extends visualization to simultaneous multiple embeddings.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The authors report subset-identification guarantees under manifold assumptions and demonstrations on simulated and real data.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a structural assumption—feature subsets carrying distinct smooth substructures—to a method objective that promotes Laplacian smoothness within each partition.",
+          "source_ids": [
+            "S2",
+            "S4"
+          ]
+        },
+        "interpretation": "Making the data-generating assumption and the corresponding optimization bias explicit can clarify why a proposed decomposition should be appropriate.",
+        "application": "When presenting a structured representation method, state the assumed decomposition first, then show how its objective encodes that structure.",
+        "exception": "This framing is unsuitable when the assumed partitions or smooth substructures are not meaningful or cannot be justified for the target data."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the optimization objective in detail, partition-selection procedure, or meaning of “reliably” and the theoretical guarantee conditions.",
+      "No quantitative comparison, metrics, baselines, dataset details, or ablation results are provided.",
+      "It is unclear how partial dependence affects identifiability and how “improved interpretability” is operationalized."
+    ]
+  }
+}

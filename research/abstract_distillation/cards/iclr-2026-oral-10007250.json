@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007250",
+    "title": "AdAEM: An Adaptively and Automated Extensible Measurement of LLMs' Value Difference",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007250"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "382679f95ef2172009b6de205868644f2ff2a3a6b5fd922cb1046e467546f02e",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "f26acaaecc47e4c998e1e08ca6de62e27b6d55633e6789341cca61c09434b8e4",
+    "extracted_at": "2026-09-12T23:59:15.791688+00:00",
+    "session_id": "01a0980f-58e1-7813-9e77-0f29849d1170",
+    "usage": {
+      "input_tokens": 12794,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 794,
+      "reasoning_output_tokens": 89
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ecf63d5d1bf2d04cc7f0206389c653e9431cea6231da8c89304c0dd71acc4654"
+    },
+    {
+      "id": "S2",
+      "sha256": "2156995cc1a4e657793ff6eb0e02701b90b0f256a69b9581ebc896bef50e2de1"
+    },
+    {
+      "id": "S3",
+      "sha256": "3ab3ad6a54f92152a86f602f333561d2bd19922955d89ac026788e51cd8a7f92"
+    },
+    {
+      "id": "S4",
+      "sha256": "733c8ffdcab07233f45116c81424fe75bd7a877f65ff1e3d96725e4ac84824cb"
+    },
+    {
+      "id": "S5",
+      "sha256": "510e2b8732cf8cf646c495e3ea9e434a32a6317e2e47b76e9150c58620687bfe"
+    },
+    {
+      "id": "S6",
+      "sha256": "04231ee47073e8269090eb503dc93bb91aa9c0ceba7ada32796789c53d114689"
+    },
+    {
+      "id": "S7",
+      "sha256": "a7c7d5726f5b07e79ee2bc654a37ebb314d75ca72da4b9c9bf34c55a36a93d09"
+    },
+    {
+      "id": "S8",
+      "sha256": "7e08d222f475bcc9631965486d9500854b7b67a3786a18064a838713d91b2872"
+    },
+    {
+      "id": "S9",
+      "sha256": "431592f75900279ba69d3227c63c4fa1a760cf2db987861c3fc67d3430f9d769"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007250",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Measure differences in LLM values to compare misalignment, cultural adaptability, and biases.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods often use outdated, contaminated, or generic questions that mainly capture shared safety orientations, producing indistinguishable results.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces AdAEM, a self-extensible evaluation algorithm that automatically and adaptively generates test questions by probing value boundaries across diverse LLMs.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Frames question generation as maximizing an information-theoretic objective intended to surface controversial topics that distinguish models’ value differences.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Releases the implementation and generated evaluation questions.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish AdAEM from static benchmarks through automatic, adaptive, and extensible question generation that can co-evolve with LLM development.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that AdAEM generated novel questions and supported an extensive analysis demonstrating the method’s validity and effectiveness.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors state that the question-generation process theoretically maximizes an information-theoretic objective for extracting diverse, controversial topics.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Value differences are relevant for comparing LLM misalignment, cultural adaptability, and biases.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Static or generic question sets may fail to distinguish models because they measure orientations shared across LLMs.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "AdAEM adaptively generates and extends questions by probing value boundaries across culturally and temporally diverse models.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "mechanism_and_scope",
+        "summary": "Its information-theoretic framing targets diverse controversial topics and aims to track changing model values over time.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported_use",
+        "summary": "The authors report an extensive analysis using generated questions and release code and questions.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a measurement failure—indistinguishable results—to an adaptive question-generation mechanism designed around information gain.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "This alignment makes the proposed method directly responsive to the stated informativeness gap.",
+        "application": "When presenting an evaluation method, map the failure mode to an explicit design objective and mechanism, then state how the mechanism addresses it.",
+        "exception": "This framing is less suitable when the task requires fixed, stable questions for longitudinal comparability or regulatory auditing."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report datasets, model counts, evaluation metrics, baselines, quantitative results, or details of the claimed validity and effectiveness.",
+      "The assumptions and formal conditions behind the information-theoretic maximization are unspecified.",
+      "It is unclear how consistently the approach tracks value dynamics or how generated questions are quality-controlled."
+    ]
+  }
+}

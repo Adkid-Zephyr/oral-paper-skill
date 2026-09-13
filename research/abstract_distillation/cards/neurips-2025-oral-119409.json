@@ -1,0 +1,166 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-119409",
+    "title": "EvoLM: In Search of Lost Training Dynamics for Language Model Reasoning",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/119409"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f66e9c2b97f212903f30981948a104de363160b74c325ab2454872154777b4ae",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "272382771a0a2be06725652ea0e699b8928e50119fda613bca68037d5a295b07",
+    "extracted_at": "2026-09-13T00:23:06.975316+00:00",
+    "session_id": "01a09825-31fc-76e0-8b90-aad4d728bb09",
+    "usage": {
+      "input_tokens": 12671,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 747,
+      "reasoning_output_tokens": 93
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4808413957054c87c60081acf5e54371721317f6ce9db46242f98ec5968d94f8"
+    },
+    {
+      "id": "S2",
+      "sha256": "f0fa065710ff236509077338fbcce087ba53346418ff997ad58a99edd2a395c8"
+    },
+    {
+      "id": "S3",
+      "sha256": "12cab0e808e3b07a17eaa8e4910ff6425f9b1a0dad626b9afc66b8f5eb303c8c"
+    },
+    {
+      "id": "S4",
+      "sha256": "6c7bafd980c25b4fd438f2c9e6bd7c10f31f6c69e99c503bf3f99f9e585e6ff4"
+    },
+    {
+      "id": "S5",
+      "sha256": "f99a8cb206db269741e78aa849196ee0c431bd56deb82a6245dd1c58c7175398"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-119409",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Downstream developers need to evaluate how training-stage design choices affect language models, but multi-stage training makes this difficult.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "model suite",
+        "claim": "EvoLM enables systematic and transparent analysis of training dynamics across pre-training, continued pre-training, supervised fine-tuning, and reinforcement learning.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "empirical study",
+        "claim": "The authors train over 100 1B- and 4B-parameter language models to study upstream and downstream reasoning, including in-domain and out-of-domain generalization.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "open resource",
+        "claim": "The authors release models, stage-specific training datasets, and the complete training and evaluation pipeline.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish EvoLM as a model suite for systematic and transparent cross-stage analysis of language-model training dynamics.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report diminishing returns from excessive pre-training and post-training.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that mitigating forgetting matters during domain-specific continued pre-training and that continued pre-training helps bridge pre-training and post-training.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report intricate trade-offs in configuring supervised fine-tuning and reinforcement learning.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Multi-stage LM training complicates evaluation of stage-specific design choices.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "resource proposal",
+        "summary": "EvoLM is introduced as a transparent suite for analyzing dynamics across four training stages.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "study design",
+        "summary": "More than 100 1B- and 4B-parameter models are trained from scratch and evaluated on upstream, downstream, in-domain, and out-of-domain reasoning.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported insights and release",
+        "summary": "The study reports stage-specific trade-offs and releases models, datasets, and the full pipeline for open research and reproducibility.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links stage-specific training choices to both upstream and downstream reasoning, while explicitly distinguishing in-domain from out-of-domain generalization.",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "interpretation": "Separating capability levels and generalization regimes can make training-dynamics claims more diagnostically useful.",
+        "application": "When presenting a training intervention, report its effects separately on modeling, task reasoning, and in-domain versus out-of-domain tests.",
+        "exception": "This decomposition may be unsuitable when the study targets only one capability or has no meaningful domain shift."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, evaluation-task details, or precise training configurations.",
+      "The reported trade-offs and forgetting-mitigation practices are not specified in enough detail to reproduce from the abstract alone."
+    ]
+  }
+}

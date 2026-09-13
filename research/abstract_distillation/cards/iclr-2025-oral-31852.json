@@ -1,0 +1,161 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31852",
+    "title": "RM-Bench: Benchmarking Reward Models of Language Models with Subtlety and Style",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31852"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b7e27fa883e79abc48fbf10bc32cc57e8364d48f1e7084a2ecdfca4be56349ff",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "677b489af7dd870eda5c5fa7868c58e3a4b81f3b4180516782ae8fecd25003f2",
+    "extracted_at": "2026-09-12T23:54:29.039407+00:00",
+    "session_id": "01a0980a-feed-7440-8857-7743f18fb5df",
+    "usage": {
+      "input_tokens": 12673,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 709,
+      "reasoning_output_tokens": 100
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "25c89bee6d616eeb5baba6223187da94cd19ecaa6234d385b24e3f18dddf3d61"
+    },
+    {
+      "id": "S2",
+      "sha256": "2a61596205edca0e3d1e6e3f943d19bfed065961f5d0ff78f6e13897767b7091"
+    },
+    {
+      "id": "S3",
+      "sha256": "909bf433309777c30697360948cc09a8d5e3e06ce53b71ecd13a8cb1b8e57748"
+    },
+    {
+      "id": "S4",
+      "sha256": "ae3ec2841e5b50f3f85376ac08ee128c2c6f96c8fbe98319a6e39d4c95b07225"
+    },
+    {
+      "id": "S5",
+      "sha256": "36f94d874c5d9490b32bb0a792c6732805760bd372858b12c321eb63eb02dfe0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31852",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reward models must guide alignment and response selection, but their evaluation should capture sensitivity to subtle content changes and style variation.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing benchmarks often compare responses from models of different power, overlooking subtle content and style effects and showing low correlation with policy-model performance.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces RM-Bench for evaluating sensitivity to subtle content differences and resistance to style biases.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical study",
+        "claim": "Evaluates nearly 40 reward models and reports their performance under subtlety and style-bias conditions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize RM-Bench as a novel benchmark distinguished by its focus on subtle content differences and resistance to style biases.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that RM-Bench strongly correlates with policy-model performance and serves as a reference for reward-model selection.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that even state-of-the-art reward models average 46.6% under style-bias interference, below the stated 50% random-level accuracy.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Reward models are used to guide language-model alignment and select responses.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Common benchmarks emphasize distinguishing outputs from models of varying power, missing subtle content and style effects.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "RM-Bench is introduced to test subtle-content sensitivity and resistance to style bias.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Nearly 40 reward models are evaluated; the authors report correlation with policy performance and substantial weakness under style bias.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links benchmark performance to policy-model performance while separately exposing style-bias interference.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Evaluation can be more informative when its test dimensions reflect downstream use and isolate specific failure modes.",
+        "application": "Design benchmark splits that separately test task-relevant judgment and systematic nuisance biases, then report their relationship to downstream performance.",
+        "exception": "This framing may be unsuitable when the target application has no identifiable downstream metric or relevant nuisance variation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the correlation metric, benchmark construction, model identities, or evaluation protocol.",
+      "It does not state whether the 46.6% versus 50% difference is statistically significant or how style-bias interference is operationalized."
+    ]
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009426",
+    "title": "RefineStat: Efficient Exploration for Probabilistic Program Synthesis",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009426"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "026b67a01c387f06c2dd34b7fad802a492ea6ee1ec60e38fc2f5cb2a7138649d",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "7982589fd7cc3c8a5c28f61516b1ba8a34e48f5c9967547ee2e429b86b59be17",
+    "extracted_at": "2026-09-13T00:02:50.181339+00:00",
+    "session_id": "01a09812-9b9f-7451-84b0-c94ca74cd5cd",
+    "usage": {
+      "input_tokens": 12635,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 730,
+      "reasoning_output_tokens": 100
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "72c6324c7f2d73e72cec74ee3b946cafa86cd5dad41ede725e95314bd429521f"
+    },
+    {
+      "id": "S2",
+      "sha256": "b0a6fbd35c64bd84998b8d09e9f9fb35cf28d7c694cd8a2d904299e1403cdf48"
+    },
+    {
+      "id": "S3",
+      "sha256": "20ff8f3cee3d7f26ddd0985ccd1d8c19ee6db5cfea65196352cdc18678520cce"
+    },
+    {
+      "id": "S4",
+      "sha256": "ee6285daa494d330da16a40076d5f7c59a7ed24b7058a3922854bf794f151d40"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009426",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Statistical model discovery and probabilistic-program generation require navigating a large, domain-constrained search space while avoiding syntactic and semantic errors.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Small language models frequently generate probabilistic programs with syntactic or semantic flaws, including invalid inference constructs.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces RefineStat, a language-model-driven framework that enforces semantic constraints and diagnostically refines programs by resampling prior or likelihood components when reliability checks fail.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports evaluation of RefineStat on multiple probabilistic-programming code-generation tasks using smaller language models.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish RefineStat by combining semantic validity constraints with diagnostic-aware component resampling, motivated by probabilistic programmers’ expertise and debugging strategies.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that RefineStat produces syntactically sound and statistically reliable programs on the evaluated tasks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that RefineStat often matches or surpasses outputs from closed-source large language models, including OpenAI o3.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Probabilistic-program statistical model discovery involves a large search space and strict domain-specific constraints.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "failure mode",
+        "summary": "Small language models frequently produce probabilistic programs with syntactic and semantic errors, including flawed inference constructs.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "RefineStat enforces valid distributions and well-formed parameters, then uses reliability diagnostics to resample prior or likelihood components.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "Across multiple code-generation tasks with smaller language models, the authors report syntactic soundness, statistical reliability, and frequent parity or advantage over closed-source large models.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The framework pairs explicit semantic constraints with failure-triggered, component-level refinement rather than relying only on initial generation.",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "interpretation": "Separating validity checks from targeted repair can align a method’s intervention with the specific failure signal.",
+        "application": "For a constrained generation task, define checkable invariants and resample or revise only the component implicated by a failed diagnostic.",
+        "exception": "This move is unsuitable when failures cannot be localized reliably or when component changes have strongly coupled effects."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluated tasks, datasets, model configurations, reliability metrics, or statistical test conditions.",
+      "The frequency and magnitude of cases where RefineStat matches or surpasses OpenAI o3 are unspecified."
+    ]
+  }
+}

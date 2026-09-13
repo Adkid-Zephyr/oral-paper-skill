@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008351",
+    "title": "Revela: Dense Retriever Learning via Language Modeling",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008351"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "fa69112b4a26cc0c4d5c362ee2c301ab30bef589c843dbf948bf548938a4d190",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "e030b70f3c1f514ef5ddaa5890dff5762e3ef941ea4afaaa8b8d76d7cff1defb",
+    "extracted_at": "2026-09-13T00:00:57.737996+00:00",
+    "session_id": "01a09810-e123-7fa2-84aa-0087af5af266",
+    "usage": {
+      "input_tokens": 12868,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 815,
+      "reasoning_output_tokens": 97
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7be82a68938545317658dae4faf57bdeaef98b2416b4c76c79dc1c8bfd96d302"
+    },
+    {
+      "id": "S2",
+      "sha256": "60aff946f73ce1ba1f3cb8f5034ec05a60ed8ed298026af1ba44608191529ba5"
+    },
+    {
+      "id": "S3",
+      "sha256": "8fe233c9e8125303b403b9eea05a2b2594ecf6f3ab5ce9497cc2954caf26e211"
+    },
+    {
+      "id": "S4",
+      "sha256": "49665ffc9766315bd7300615e52f31011d5806736d0e09842140170ad7a17c8a"
+    },
+    {
+      "id": "S5",
+      "sha256": "189fd826355d7752ebbda1352ff9436db1dddd5e5d28df467d42a67e446b739e"
+    },
+    {
+      "id": "S6",
+      "sha256": "74bd59d1ed109e23afaf7409e8dcd2214880ed5c225b5b39097a53bd23a42f96"
+    },
+    {
+      "id": "S7",
+      "sha256": "120b624991ae1d3f20ebabc418ffd926027099f60b7d517bdb2ae1a5334d37b5"
+    },
+    {
+      "id": "S8",
+      "sha256": "fff5f9b670ebf0c6d89b695012cb3b95846de00a259ece5b6a6c0e26ab67994e"
+    },
+    {
+      "id": "S9",
+      "sha256": "9cc2b3c71c0333e571b1845535336dbadb64f476dd907d214a29ee2e3e04eb1d"
+    },
+    {
+      "id": "S10",
+      "sha256": "4b319a7e4070f0e1a009c7db3851bde6bf0a00473ce42cfe60c06aefeff58f60"
+    },
+    {
+      "id": "S11",
+      "sha256": "9f2b2c3d7a0c1ffc77e90ff69dad9a4275c9d8f43dcf2e58de2fb72fb96ca9e8"
+    },
+    {
+      "id": "S12",
+      "sha256": "d467a8cff8e45563458918d936d106ad123f182c5e0e2f485ba2fb5042481332"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008351",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks how language-model-style self-supervised objectives can train dense retrievers without relying on costly, scarce annotated query-document pairs.",
+        "source_ids": [
+          "S2",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Revela, a unified and scalable framework that trains retrievers through language modeling over local and cross-document context.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses retriever-weighted in-batch attention so similarity computation participates in next-token-prediction training.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present Revela as a unified framework for self-supervised retriever learning via language modeling.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, without annotated or synthetic query-document pairs, Revela surpasses larger supervised models and proprietary APIs on CoIR and BRIGHT.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report achieving BEIR's unsupervised state of the art with approximately 1000× less training data and 10× less compute.",
+        "source_ids": [
+          "S9",
+          "S11"
+        ]
+      },
+      {
+        "claim": "The authors report that performance increases with batch size and model size across their evaluation, which they interpret as evidence of scalability.",
+        "source_ids": [
+          "S9",
+          "S12"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Dense retrievers support access to external knowledge, but annotated training pairs are costly and scarce in specialized or reasoning-intensive settings.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "conceptual-question",
+        "summary": "The paper connects next-token prediction with learning dependencies among token chunks and asks how to adapt this idea to retriever training.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "Revela learns document dependencies by conditioning next-token prediction on local and cross-document context through retriever-weighted in-batch attention.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported-results",
+        "summary": "Across domain-specific, reasoning-intensive, and general-domain benchmarks, the authors report strong comparisons, data/compute efficiency, and scaling with batch and model size.",
+        "source_ids": [
+          "S9",
+          "S10",
+          "S11",
+          "S12"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly links the proposed retriever objective to next-token prediction and specifies how similarity-weighted attention implements that link.",
+          "source_ids": [
+            "S4",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A concrete analogy can make a new objective easier to motivate when the mechanism translating the analogy is also stated.",
+        "application": "When introducing a self-supervised objective, pair the motivating learning principle with the exact conditioning, weighting, or optimization mechanism that operationalizes it.",
+        "exception": "This framing is less suitable when the analogy does not yield a well-defined training mechanism or when the target task lacks a meaningful dependency structure."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide benchmark scores, statistical details, baseline identities, or the exact training-data and compute accounting behind the reported comparisons.",
+      "It does not specify which retriever backbones, batch sizes, model sizes, or data subsets produced the reported scaling and efficiency results."
+    ]
+  }
+}

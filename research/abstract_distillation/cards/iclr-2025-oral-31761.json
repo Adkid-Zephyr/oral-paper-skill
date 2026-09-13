@@ -1,0 +1,206 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31761",
+    "title": "Improved Finite-Particle Convergence Rates for Stein Variational Gradient Descent",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31761"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "62f7450d65fdb845aec68916407eb9ec9290249d94391e1bfb30b39f48a62d8c",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "d35dde5dc8f14ebf55bc1ad1149b858cedb03e75fd522dbedb07d78c41fd4cd5",
+    "extracted_at": "2026-09-12T23:39:13.747152+00:00",
+    "session_id": "01a097fc-fe75-7f70-93b3-6989f46fa057",
+    "usage": {
+      "input_tokens": 14303,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 852,
+      "reasoning_output_tokens": 70
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5643fd70596efe83780b60b4c2b4e36814c20908e6a7dc3c001561f594ae6fc7"
+    },
+    {
+      "id": "S2",
+      "sha256": "13bd380f6e3f57ca0561ecc0d125a0157dd9aafde35fd3970ab569c260d11656"
+    },
+    {
+      "id": "S3",
+      "sha256": "e2becfa27d63bb32383f99074fe2606ead64e5593059145d27d44f2deefccefc"
+    },
+    {
+      "id": "S4",
+      "sha256": "5aedf01c4c5474f0b0a3b4586410b01cbbd0a7cca7e9b84843459bc61a1ac1ec"
+    },
+    {
+      "id": "S5",
+      "sha256": "f2a9fe801578c998b5f805eca9fa1e4ff9233e06485c6d350684143c7002526d"
+    },
+    {
+      "id": "S6",
+      "sha256": "bbf824c925e11c7e8eb8a5b31b307ff5713b61088c7d8758f4e115e78ac5d961"
+    },
+    {
+      "id": "S7",
+      "sha256": "a2fc145a07b27493eae4c8aa04fcfbbb18e9c1fbd632effdba9e964ef832a3c9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31761",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Derive finite-particle convergence rates for SVGD in KSD and Wasserstein-2 metrics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies a recent result whose KSD rate is improved by a double-exponential factor, but does not separately state a broader limitation of prior approaches.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A decomposition of the time derivative of relative entropy separates a dominant negative term proportional to N times expected KSD squared from a smaller positive term, starting from a regular initial distribution.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The approach yields KSD rates of order 1/√N in continuous and discrete time, with polynomial dimension dependence under mild kernel and potential assumptions.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Adding a bilinear kernel component gives continuous-time Wasserstein-2 convergence, alongside marginal convergence and long-time propagation of chaos for time-averaged particle laws.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their result by obtaining near-optimal KSD rates matching corresponding i.i.d. rates and by extending the approach to Wasserstein-2 convergence with bilinear kernels.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report KSD rates of order 1/√N in both continuous and discrete time, described as a double-exponential improvement over a recent result.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "For bilinear plus Matérn kernels, the authors report Wasserstein-2 rates with a curse of dimensionality similar to the i.i.d. setting.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report marginal convergence and long-time propagation of chaos for time-averaged particle laws.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "objective",
+        "summary": "Finite-particle SVGD convergence is analyzed in KSD and Wasserstein-2 metrics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "The analysis uses a relative-entropy derivative decomposition into a dominant negative KSD² term and a smaller positive term.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "KSD_result",
+        "summary": "This yields order-1/√N KSD rates in continuous and discrete time, with polynomial dimension growth and a stated improvement over prior work.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "Wasserstein_and_dynamics",
+        "summary": "A bilinear kernel component enables continuous-time Wasserstein-2 convergence; further results concern Matérn-kernel dimensional dependence and time-averaged particle laws.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a technical decomposition directly to rate consequences, then states metric-specific extensions and dimensional qualifications.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This makes the chain from mechanism to claims and their scope easy to audit.",
+        "application": "When presenting a theoretical method, pair each central analytic device with the exact rate or guarantee it enables, followed immediately by assumptions and dimension dependence.",
+        "exception": "This structure is less suitable when the work has no single mechanism linking its main claims or when assumptions are still unsettled."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact assumptions, constants, time horizons, or precise meaning of the double-exponential improvement; it defines near optimal by comparison with corresponding i.i.d. rates.",
+      "It does not provide proof details, empirical validation, or the precise form of the Wasserstein-2 rates."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "contributions[0].claim",
+      "before": "A relative-entropy decomposition separates a dominant negative term proportional to N times expected KSD² from a smaller positive term.",
+      "after": "A decomposition of the time derivative of relative entropy separates a dominant negative term proportional to N times expected KSD squared from a smaller positive term, starting from a regular initial distribution.",
+      "review_file": "reviews/pilot-01.json",
+      "review_sha256": "b548b6b21cf5cc87e15a0fb065b4980eb113634df49f0ca4263694767799715c",
+      "applied_at": "2026-09-12T23:46:38.297094+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "unknowns[0]",
+      "before": "The abstract does not specify the exact assumptions, constants, time horizons, or meanings of “double exponential” and “near optimal.”",
+      "after": "The abstract does not specify the exact assumptions, constants, time horizons, or precise meaning of the double-exponential improvement; it defines near optimal by comparison with corresponding i.i.d. rates.",
+      "review_file": "reviews/pilot-01.json",
+      "review_sha256": "b548b6b21cf5cc87e15a0fb065b4980eb113634df49f0ca4263694767799715c",
+      "applied_at": "2026-09-12T23:46:38.298121+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

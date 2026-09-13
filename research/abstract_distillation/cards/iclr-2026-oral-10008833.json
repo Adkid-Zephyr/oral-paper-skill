@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008833",
+    "title": "Energy-Based Transformers are Scalable Learners and Thinkers",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008833"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e01a7eb93ee8c3fdda4b799e7e119c6eeb22e1dab1fe24458ddb468a79eadde4",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "dfadbbec9feb7a1c742555741894df74b03ee6a0b44f658195b093a7d563ed73",
+    "extracted_at": "2026-09-13T00:01:57.345610+00:00",
+    "session_id": "01a09811-c51e-7061-ae95-3c562fd4ac00",
+    "usage": {
+      "input_tokens": 12887,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 869,
+      "reasoning_output_tokens": 83
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4e298f1ccb4849bef1992a4e5343dea7bb77e1233a6a4bc944d83a4a530b706a"
+    },
+    {
+      "id": "S2",
+      "sha256": "6540488e91dcca73a0d379d36ec2e6c57836135dda9a599b602c029d0fc5b40f"
+    },
+    {
+      "id": "S3",
+      "sha256": "472683e6f900c8b7839b3d78c2d9ddd024d3375ab780afd3364a9f46edc1d162"
+    },
+    {
+      "id": "S4",
+      "sha256": "e6bcf36c2beacdef6d70c97db8a0d81e335820b5219ee178873dbd7869bc0adb"
+    },
+    {
+      "id": "S5",
+      "sha256": "980fe781b73b1b830e71d3b406251a0530daf8348d712050a098bb6667cad9bd"
+    },
+    {
+      "id": "S6",
+      "sha256": "c77c83145654b375d4375d9e9ec70372fbcbd1522d9f8a55e5f174990a571bcb"
+    },
+    {
+      "id": "S7",
+      "sha256": "d908ce2e07f4dbc07e23cdc87fd8865fb648529bea495400e2dd0c8fe1426a8d"
+    },
+    {
+      "id": "S8",
+      "sha256": "bf2c2611222912987fb78afc285aeed22c0a4f67d5686d1167dc650b46172dbb"
+    },
+    {
+      "id": "S9",
+      "sha256": "0dda758a2b56c953f99da807d4d6b59038bcaebd2de6c4e61e7fba19019add4d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008833",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Can System 2 Thinking approaches generalize across modalities and tasks while being learned solely from unsupervised learning?",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches are often modality-specific, problem-specific, or dependent on additional supervision beyond unsupervised pretraining.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Energy-Based Transformers (EBTs), which assign energy to input–candidate-prediction pairs and produce predictions through energy minimization.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "training technique",
+        "claim": "Introduces techniques intended to make EBT training stable and parallelizable, supporting scalable energy-based models and System 2 Thinking capabilities.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports advantages across discrete and continuous modalities, including faster pretraining, improved inference-time performance, and reduced image-denoising computation.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "EBTs are presented as a new class of energy-based models that explicitly verify input–prediction compatibility and reframe prediction as optimization with respect to that verifier.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that EBTs outperform Transformer++ across discrete and continuous modalities, with up to 35% faster pretraining scaling and up to 29% better inference-time performance.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that EBTs surpass Diffusion Transformers on image denoising while requiring 99% fewer forward passes.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report larger gains farther out of distribution and better results than existing models on most downstream tasks, despite equal or worse pretraining performance.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation and gap",
+        "summary": "Inference-time computation is framed as System 2 Thinking, but existing methods have modality, task, and supervision limitations.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "research question and mechanism",
+        "summary": "The paper asks whether unsupervised learning can produce general System 2 Thinking, proposing compatibility verification and verifier-based optimization.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "model and training",
+        "summary": "EBTs assign energies to input–prediction pairs, with techniques designed for stable, parallelizable training.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported results and implication",
+        "summary": "The authors report speed, inference, denoising, out-of-distribution, and downstream-task advantages, positioning EBTs as a flexible scaling approach.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a broad limitation, a precise mechanism—compatibility verification—and an optimization formulation before reporting modality-spanning comparisons.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A mechanism-centered reframing can make a generalization claim more concrete and align it with targeted evidence.",
+        "application": "For a cross-domain method, state the shared decision mechanism first, then organize evidence by modality, computation, and distribution shift.",
+        "exception": "This structure is unsuitable when the method lacks a common mechanism or the available evidence covers only one narrow setting."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines beyond Transformer++ and Diffusion Transformers, metrics, statistical variation, or the conditions behind the reported percentage improvements.",
+      "The meaning of “scaling up to 35% faster” and the scope of “most downstream tasks” are not operationally defined."
+    ]
+  }
+}

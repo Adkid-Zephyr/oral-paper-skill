@@ -1,0 +1,199 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006689",
+    "title": "Extending Sequence Length is Not All You Need: Effective Integration of Multimodal Signals for Gene Expression Prediction",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006689"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f2638c3e383ea3e1ab4ca133da7ad4b84860c4954e51e95c4aa5627dba6f762b",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "8e150cd16b202db484aa4b85a040f0bb24b8d0742559739531463bbd96948c4f",
+    "extracted_at": "2026-09-12T23:58:24.087554+00:00",
+    "session_id": "01a0980e-8ad8-7230-9e94-c39e93f07367",
+    "usage": {
+      "input_tokens": 12755,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 815,
+      "reasoning_output_tokens": 101
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e6bcf6b12825d270cec123891890a7a1335e9a7afc860eb3ba583214c2a60da5"
+    },
+    {
+      "id": "S2",
+      "sha256": "9f920318aab332ebb36efee2a71a954fa894dfdc3d4a5e86e532e337170bec60"
+    },
+    {
+      "id": "S3",
+      "sha256": "70ea613260ef8f8b0f24c32c0159a3e37c77de73d43d63f11fd67a594eeaf78c"
+    },
+    {
+      "id": "S4",
+      "sha256": "299fbf4d3af4d7085c6e03fa61a5f4a124fb2a8c964a5d4afa4e7df0f261c71f"
+    },
+    {
+      "id": "S5",
+      "sha256": "5546f006ff837e04a86f930dfb58e540fa3696ece7b4c3976b9a6b715032f1a3"
+    },
+    {
+      "id": "S6",
+      "sha256": "86dde379f69ffd2d04926e394796595770d9206a6272b5ce399322282ed7c712"
+    },
+    {
+      "id": "S7",
+      "sha256": "e91cc3f06f906c44af4c112eeda53d5ffa203424fa1551b4743382dfa81e188f"
+    },
+    {
+      "id": "S8",
+      "sha256": "a73ff5950abe225d007b6ee6d3972d2adaa817cf6563b6802957cd7c25cdd895"
+    },
+    {
+      "id": "S9",
+      "sha256": "acb4c00d1309cf6fca2559a5de635beecae62c8944fdb658edcc5770d59b2cfa"
+    },
+    {
+      "id": "S10",
+      "sha256": "64374928444264c562719c29673e7ae3617caf9161c7f4e232454553eece768d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006689",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve gene expression prediction from DNA sequences by integrating multimodal epigenomic signals effectively.",
+        "source_ids": [
+          "S1",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Prior work emphasizes longer sequences for distal enhancers, while better integration of proximal multimodal signals has been overlooked; current models may lose performance on long sequences.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "Reports that long-sequence modeling can decrease performance for current gene-expression prediction models, and that proximal multimodal epigenomic signals are more essential.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes Prism, which models combinations of high-dimensional epigenomic features as background chromatin states and applies backdoor adjustment to mitigate confounding.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their work is the first to reveal performance degradation from long-sequence modeling in current models.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that proper multimodal epigenomic-signal modeling achieves state-of-the-art performance using only short sequences.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report that carefully designed algorithms only mitigate, rather than eliminate, degradation caused by long sequences.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that signal types have distinct biological roles and that background chromatin patterns may introduce confounding effects.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Frames gene expression prediction from DNA sequences as challenging.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior emphasis",
+        "summary": "Notes that earlier work often extends sequences to capture distal enhancers.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "Reports that long sequences can reduce performance and that proximal multimodal signals are more important but under-integrated.",
+        "source_ids": [
+          "S3",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "mechanism and method",
+        "summary": "Attributes risk to spurious associations with background chromatin patterns and introduces Prism with backdoor adjustment.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Reports state-of-the-art performance with short sequences when multimodal signals are properly modeled.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links distinct signal roles and background-pattern confounding to a specific integration design using state representations and backdoor adjustment.",
+          "source_ids": [
+            "S7",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "Separating biologically meaningful signals from nuisance structure can make the method rationale more explanatory than treating all modalities uniformly.",
+        "application": "When proposing multimodal integration, explicitly characterize each modality’s role, identify possible nuisance patterns, and align the architecture or adjustment strategy with that distinction.",
+        "exception": "This framing may be unsuitable when signal roles or confounding pathways cannot be meaningfully specified from the available data."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, metrics, baselines, sequence lengths, or the magnitude and statistical conditions of the reported performance results.",
+      "It does not provide details sufficient to assess Prism’s implementation, backdoor assumptions, or the scope of the state-of-the-art comparison."
+    ]
+  }
+}

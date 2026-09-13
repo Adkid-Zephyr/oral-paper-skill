@@ -1,0 +1,221 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31795",
+    "title": "Second-Order Min-Max Optimization with Lazy Hessians",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31795"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d081a1eba5c2937c698f8dcc62d9f3803d6ccdb30af59789b48de8e84f8156e6",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "a59166a27a65a9f96f9f5586c1d024935a9492ab8a28d6453960e8a3aa6a0c07",
+    "extracted_at": "2026-09-12T23:52:15.020268+00:00",
+    "session_id": "01a09808-e8be-7602-9fbd-0b39ec5890d4",
+    "usage": {
+      "input_tokens": 12833,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 775,
+      "reasoning_output_tokens": 63
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7cf49e95f8237b811aa9a624acb5c7fa52bf61e9c2ca04d52eb1672c5a492dac"
+    },
+    {
+      "id": "S2",
+      "sha256": "3843e289a706639112e9b579faef7091eff8bdb885729ec04cbf7a911374324c"
+    },
+    {
+      "id": "S3",
+      "sha256": "348f9da71e7a4cb1526d4bbbca15b8f6f737bf801dc2e49e0a0f14bdf1ff22b9"
+    },
+    {
+      "id": "S4",
+      "sha256": "90872779d1134381c957cd15b72ec0576b8c3259c47d3d369f7f94967b569d8a"
+    },
+    {
+      "id": "S5",
+      "sha256": "a332728f6abe5ccdffdc8d743b52cc0473101807482d8809b7f8a4c9e6302351"
+    },
+    {
+      "id": "S6",
+      "sha256": "cd2c31f6a2e2fdaf71b35361909f9752cc89a01916d284c21d3a2a2c80e8adc5"
+    },
+    {
+      "id": "S7",
+      "sha256": "ca097353191df74a3c7e1297c451fb680c945000a5e197051c61eda2e13c2ca7"
+    },
+    {
+      "id": "S8",
+      "sha256": "b9c18d9e6c92040ab5aa18fb5a059e1561860e07a4b301775d8be1bf977cd7f7"
+    },
+    {
+      "id": "S9",
+      "sha256": "912568ccda15010ac9d706046d21033ffb640520c06277e6998d376393e6d143"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31795",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop second-order methods for convex-concave minimax optimization, including its strongly-convex-strongly-concave variant.",
+        "source_ids": [
+          "S1",
+          "S8"
+        ]
+      },
+      "gap": {
+        "claim": "It remains unclear whether the stated computational complexity can be improved.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A method reuses Hessians across iterations to reduce computation cost.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Assuming first-order oracle cost N and second-order oracle cost dN, the authors report Õ((N+d²)(d+d^(2/3)ε^(-2/3))) for convex-concave problems and Õ((N+d²)(d+d^(2/3)κ^(2/3))) for strongly-convex-strongly-concave problems with condition number κ.",
+        "source_ids": [
+          "S5",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Numerical experiments cover real and synthetic datasets.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated distinction is reducing computation by reusing Hessians across iterations, with a reported d^(1/3) improvement over previous methods.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report an overall complexity improving previous methods by a factor of d^(1/3).",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "For strongly-convex-strongly-concave problems, the authors report a similar speedup over the state-of-the-art method.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that numerical experiments on real and synthetic datasets verify the method's efficiency.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "scope",
+        "summary": "The paper studies second-order methods for convex-concave minimax optimization.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "context",
+        "summary": "Prior work is reported to achieve optimal iteration complexity O(ε^(-3/2)) for finding an ε-saddle point, while improvement of the associated computational complexity is unclear.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The proposed methods reduce computation by reusing Hessians across iterations.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The abstract reports a d^(1/3) speedup, an extension to strongly-convex-strongly-concave problems, and supporting numerical experiments.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly separates iteration complexity from oracle-based computational complexity and states the oracle-cost assumptions used.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "This framing makes the computational bottleneck and the basis of the comparison explicit.",
+        "application": "When presenting an optimization method, define the cost model and report iteration and total computational complexity separately.",
+        "exception": "This separation may be unnecessary when all oracle calls have essentially identical, fixed cost."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact previous methods or baselines underlying the reported speedups.",
+      "The numerical datasets, metrics, implementation details, and experimental conditions are not provided.",
+      "The meaning and hidden factors in the Õ bounds are unspecified."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "contributions[1].claim",
+      "before": "The paper reports complexity bounds of approximately Õ((N+d²)(d+d^(2/3)ε^(-2/3))) for the convex-concave setting and Õ((N+d²)(d+d^(2/3)κ^(2/3))) for the strongly-convex-strongly-concave setting.",
+      "after": "Assuming first-order oracle cost N and second-order oracle cost dN, the authors report Õ((N+d²)(d+d^(2/3)ε^(-2/3))) for convex-concave problems and Õ((N+d²)(d+d^(2/3)κ^(2/3))) for strongly-convex-strongly-concave problems with condition number κ.",
+      "review_file": "reviews/flagged-batch-01.json",
+      "review_sha256": "b7ba5492b24b672d551bcb1ba390c5351017aa8b3168c19950ca75f30a878af4",
+      "applied_at": "2026-09-13T00:20:52.604994+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "contributions[1].source_ids",
+      "before": [
+        "S7",
+        "S8"
+      ],
+      "after": [
+        "S5",
+        "S7",
+        "S8"
+      ],
+      "review_file": "reviews/flagged-batch-01.json",
+      "review_sha256": "b7ba5492b24b672d551bcb1ba390c5351017aa8b3168c19950ca75f30a878af4",
+      "applied_at": "2026-09-13T00:20:52.606084+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

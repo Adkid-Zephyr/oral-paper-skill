@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47236",
+    "title": "Expected Variational Inequalities",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47236"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "eaf59cde69175b97915783f193ab43a27beebe4c31e3fd1f0332d4d403a7c09a",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "17ca16117a165646dc24b0892c5bd8a8cd7c94c70afce02be2021975bfdf9761",
+    "extracted_at": "2026-09-13T00:09:47.827704+00:00",
+    "session_id": "01a09818-f726-72e0-95eb-5f3bd5f8d19f",
+    "usage": {
+      "input_tokens": 12629,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 855,
+      "reasoning_output_tokens": 160
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "89688298423a8812577f9c4b2ee3111a4fd14d92c4011dd9e8ff58412b31048e"
+    },
+    {
+      "id": "S2",
+      "sha256": "de1d17e497f34db2823a3485c418aea7af349e4a88141e8cff3fd3eb420496a8"
+    },
+    {
+      "id": "S3",
+      "sha256": "5ff0ed6bc639907aed03009c0fa1184b3d4a2f414279af0bb9145bed1fdcff60"
+    },
+    {
+      "id": "S4",
+      "sha256": "f76852f1b3832c531496bd27cbb999ef66813b1a458e0c3a9ca6ca2f32953219"
+    },
+    {
+      "id": "S5",
+      "sha256": "4237f8fc085ec85f580d38db759e2ee42c14b95db3974b179673d39bdd689836"
+    },
+    {
+      "id": "S6",
+      "sha256": "0fee8539a486399f6a8f603db0b3d3f828a4fe9923801999dee58282726ea378"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47236",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses computationally tractable relaxations of variational inequalities, whose goal is to find a distribution satisfying the VI constraint in expectation.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces expected variational inequalities (EVIs), a distributional relaxation requiring the VI constraint to hold in expectation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Analyzes EVIs using techniques adapted from game theory and reports polynomial-time solvability under general nonmonotone operators.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "unification",
+        "claim": "Relates EVIs to correlated equilibria and uses the framework to capture or generalize results from smooth games and games with coupled constraints or nonconcave utilities.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present EVIs as a natural expectation-based relaxation of VIs with applicability extending beyond games.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that EVIs can be solved in polynomial time under general, nonmonotone operators, unlike VIs.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that EVIs capture correlated equilibria while reaching beyond game settings.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that their framework captures and generalizes disparate prior results involving smooth games, coupled constraints, and nonconcave utilities.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "VIs are broadly applicable, but their expressivity is associated with computational intractability.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "relaxation",
+        "summary": "The paper introduces EVIs, requiring a distribution to satisfy the VI constraint in expectation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "tractability",
+        "summary": "Game-theoretic techniques are adapted to report polynomial-time solvability for EVIs with general nonmonotone operators.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "The framework is connected to correlated equilibria and extended to settings beyond games, including several game variants.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract defines a relaxation, states a tractability contrast with the original problem, and then identifies conceptual coverage and generalizations.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact research narrative can align a formal relaxation with both a computational payoff and a broader unifying scope.",
+        "application": "When proposing a relaxation, explicitly state its constraint, the resulting computational claim, and which known concepts or cases it subsumes.",
+        "exception": "This framing is unsuitable when no formal relaxation, computational comparison, or concrete coverage claims are available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the algorithm, polynomial runtime dependence, or precise assumptions beyond general nonmonotone operators.",
+      "It does not detail how EVIs extend beyond games or which exact prior results are generalized.",
+      "No empirical setup, benchmarks, or independently verifiable proof details are provided."
+    ]
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-98003",
+    "title": "The Road Less Scheduled",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/98003"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ebc73e5156d69377a0baf5277764329207f141d604dd2385a14a6fc4a8536539",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "45a26f2cc879cfa9f1ebfab861dc2f77b26ad1f07357d989d4694db5337d7a53",
+    "extracted_at": "2026-09-13T00:20:00.785814+00:00",
+    "session_id": "01a09822-5ba2-7bb2-ae51-ea25207b36bb",
+    "usage": {
+      "input_tokens": 14164,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 718,
+      "reasoning_output_tokens": 96
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f35a99420cca71fe1b372e4904e60be75771c1ea8f4ba6bfc3c9054854a67349"
+    },
+    {
+      "id": "S2",
+      "sha256": "6d66bdb0887817f1dd8cd31cb3c83e85a1ca2b58347a74a881e6bd8ae235e502"
+    },
+    {
+      "id": "S3",
+      "sha256": "b259868e2e0a1cb01e0a3a7e531ae13fbe9980b3825129d091c2b899da877983"
+    },
+    {
+      "id": "S4",
+      "sha256": "5a89fafecd05355d20857baac74a1b80bdb16b05f088853367d18b66c3c60377"
+    },
+    {
+      "id": "S5",
+      "sha256": "981ea4c1948cf3a76a0f23e603a2aee8057da16f19ada51117a76fe543b373bf"
+    },
+    {
+      "id": "S6",
+      "sha256": "a5dd21fd064ab3e2415af49769b344cfbf903bf23a86eeb039b62933a4bc48be"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-98003",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Learning-rate scheduling without knowing the optimization stopping step T is difficult.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Schedules that avoid specifying T are reported to perform substantially worse than T-dependent schedules.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Schedule-Free optimization removes learning-rate schedules and the need to specify T, while adding no hyperparameters beyond standard momentum optimizers.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The approach is derived from a theory unifying scheduling and iterate averaging.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors provide an open-source implementation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Schedule-Free optimization by eliminating schedules through a theory that connects scheduling with iterate averaging.",
+      "source_ids": [
+        "S2",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art performance versus schedules across problems from convex optimization to large-scale deep learning.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report that Schedule-Free AdamW powered their winning entry in the MLCommons 2024 AlgoPerf Algorithmic Efficiency Challenge Self-Tuning track.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Existing schedules that do not require T are reported to underperform T-dependent schedules.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "The paper proposes removing schedules entirely to avoid requiring T.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "design",
+        "summary": "The approach is presented as requiring no extra hyperparameters over momentum optimizers and as following from a scheduling/iterate-averaging theory.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evidence_and_artifact",
+        "summary": "The authors report broad comparative performance, a competition result, and an open-source implementation.",
+        "source_ids": [
+          "S2",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the schedule-free method to a unifying theory and explicitly states its hyperparameter cost relative to a standard optimizer.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Pairing a conceptual derivation with an operational complexity statement can make a proposed optimization method easier to assess.",
+        "application": "When presenting a new algorithm, connect its mechanism to a concise theoretical principle and state precisely what tuning burden it adds or removes.",
+        "exception": "This framing is unsuitable when the theory or tuning comparison cannot be stated accurately from the available results."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative performance values, baselines, datasets, or experimental protocols for the state-of-the-art claim.",
+      "The scope and formal guarantees of the proposed theory are unspecified.",
+      "The competition result does not identify the margin, setting details, or independently verified outcome."
+    ]
+  }
+}

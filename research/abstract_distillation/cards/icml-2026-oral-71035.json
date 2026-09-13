@@ -1,0 +1,198 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71035",
+    "title": "dnaHNet: A Scalable and Hierarchical Foundation Model for Genomic Sequence Learning",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71035"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c1ca4387db713aa1e31f71d236d9f0ee528a47e35d1204782a2b32a9e55de071",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "0c0d58991e70faf8c46cab5a9c759cae02ec1df58920bb976a43bb22621a0470",
+    "extracted_at": "2026-09-13T00:11:33.839789+00:00",
+    "session_id": "01a0981a-902c-74a2-b439-2759331d0134",
+    "usage": {
+      "input_tokens": 12707,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 854,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "34f7d3c4be44a48fe15e5b8e9bf6915d835fbe58a03c206023a8241029bfad3f"
+    },
+    {
+      "id": "S2",
+      "sha256": "1aa1dc01c9c453d078306124db75d2f0ece744b93733fd1d7a3ef8deb820de88"
+    },
+    {
+      "id": "S3",
+      "sha256": "e7f6e7b9ef149a237fa0f4a0a18d4a0526fae15023495c76b7fae5071ac70c06"
+    },
+    {
+      "id": "S4",
+      "sha256": "6c304dd11710d840f86b03ff13cc0278103319347f6a7969bd248568caf34c22"
+    },
+    {
+      "id": "S5",
+      "sha256": "cf932b2fed6e3f3b25fa8588a42ab52a7899e5ab39e803e761479182dc1f2322"
+    },
+    {
+      "id": "S6",
+      "sha256": "3af50b2d34e6fbe4b3f97635de0392a5ed5c77074592941c2dbd08773d390551"
+    },
+    {
+      "id": "S7",
+      "sha256": "af8f9c4beacb6ff9823d41fc8d332a13f7924c1a305a4701136513fd3ed8c5dc"
+    },
+    {
+      "id": "S8",
+      "sha256": "9c2bd2b8c1a2df1107355d712f7ef885b5d50c6777e55467a232b52e73eef2c7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71035",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop genomic sequence models that preserve biologically meaningful structure while remaining computationally practical for long contexts.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Subword tokenization can fragment meaningful genomic motifs, whereas nucleotide-level modeling preserves coherence but is prohibitively expensive for long contexts.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "dnaHNet is a tokenizer-free autoregressive model that segments and models genomic sequences end to end using differentiable dynamic chunking.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "efficiency result",
+        "claim": "The model adaptively compresses nucleotides into latent tokens and uses recursive chunking to reduce quadratic FLOPs.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "On zero-shot protein variant fitness and gene essentiality tasks, dnaHNet is reported to outperform leading architectures and discover hierarchical biological structures without supervision.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish dnaHNet as a tokenizer-free model that learns adaptive, hierarchical sequence chunking end to end.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that recursive chunking yields quadratic FLOP reductions and over 3× inference speedup versus Transformers.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report superior zero-shot performance on protein variant fitness and gene essentiality prediction.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report better scaling and efficiency than leading architectures including StripedHyena2 after pretraining on prokaryotic genomes.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Genomic foundation models face a tradeoff between motif-preserving tokenization and the cost of nucleotide-level modeling.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "dnaHNet addresses the tradeoff with end-to-end tokenizer-free modeling and differentiable adaptive chunking.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "efficiency comparison",
+        "summary": "Recursive chunking is reported to reduce quadratic FLOPs and accelerate inference relative to Transformers, with scaling and efficiency advantages over leading architectures.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "downstream results",
+        "summary": "Zero-shot predictions of protein variant fitness and gene essentiality are reported to improve, alongside unsupervised discovery of hierarchical biological structures.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "positioning",
+        "summary": "The authors characterize dnaHNet as a scalable and interpretable framework for future genomic modeling.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links an architectural mechanism—adaptive latent-token chunking—to both computational savings and downstream zero-shot genomic tasks.",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A compact abstract can make a method’s rationale legible by connecting mechanism, efficiency, and task-level outcomes.",
+        "application": "When presenting a sequence architecture, explicitly map each distinctive mechanism to the resource constraint it addresses and the reported tasks where it matters.",
+        "exception": "Avoid this mapping when the abstract lacks task results or when the mechanism-to-outcome relationship is only speculative."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report dataset sizes, baseline configurations, numerical task scores, or evaluation uncertainty.",
+      "The scope of the reported scaling, efficiency, and zero-shot advantages beyond prokaryotic pretraining is unspecified.",
+      "The abstract does not provide evidence independently verifying the claimed interpretability or hierarchical discoveries."
+    ]
+  }
+}

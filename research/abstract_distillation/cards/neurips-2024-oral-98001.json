@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-98001",
+    "title": "You Only Cache Once: Decoder-Decoder Architectures for Language Models",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/98001"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0ee2cdecdd5ba98774b6f31e16d8d9d3e081b65686e5bede57dcc5cec7687522",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "84a085753b843b049a2c811118a9bc355f329778f10a8a4031efecbfc9268f5f",
+    "extracted_at": "2026-09-13T00:19:59.122376+00:00",
+    "session_id": "01a09822-4ec3-78e1-b184-125202f60267",
+    "usage": {
+      "input_tokens": 12706,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 770,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f9ff31d0d9c8f58e6ad4e1828b678245a90fd84bd00b8b94b0c138ce906ee3bf"
+    },
+    {
+      "id": "S2",
+      "sha256": "474e193c401c1a5ddaf880fbdf6267b641845724d8a84ed972ccc0cbc24dba33"
+    },
+    {
+      "id": "S3",
+      "sha256": "9f64b92488e170e051b0ee5ba467c424ae744f8449acd4b3ab2f6f2fe127552e"
+    },
+    {
+      "id": "S4",
+      "sha256": "8f4207d461e9f657a200ee6d627f54cb6095577664311f5b060438b24b3cdd56"
+    },
+    {
+      "id": "S5",
+      "sha256": "d0515eb93a135e95eafa4c4b395319f35b10dcc24563499672b7c5a0b29e819e"
+    },
+    {
+      "id": "S6",
+      "sha256": "8279d0789046581686b7775419e1208f48fadbdaaac3e2688597fc2cb5a8bfd9"
+    },
+    {
+      "id": "S7",
+      "sha256": "1807367cd231f4818ed02d9960071852fcd97d0cb5483d3490066e0ae86e5c48"
+    },
+    {
+      "id": "S8",
+      "sha256": "7c3386e4b9337594f569bcf515e1e415852a3f45c8772560692ab28eb2d354c7"
+    },
+    {
+      "id": "S9",
+      "sha256": "c6e060c9b1da3f4bfa9c4f603650933142f7d3df495a77d98571ac1645b85e08"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-98001",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": null,
+        "source_ids": []
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "architecture",
+        "claim": "Introduces YOCO, a decoder-decoder language-model architecture with a self-decoder encoding global KV caches and a cross-decoder reusing them through cross-attention.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "design",
+        "claim": "Provides single-cache operation while retaining decoder-only Transformer behavior and global attention capability.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "extension",
+        "claim": "Extends YOCO to 1M-token context length.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish YOCO by caching key-value pairs only once, while its overall behavior remains like a decoder-only Transformer.",
+      "source_ids": [
+        "S1",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report favorable performance versus Transformer across settings that scale model size and training-token count.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report near-perfect needle-retrieval accuracy at 1M context length.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "Profiling reportedly shows orders-of-magnitude improvements in inference memory, prefill latency, and throughput across context lengths and model sizes.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "architecture introduction",
+        "summary": "YOCO is introduced as a decoder-decoder architecture that caches KV pairs once.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "component mechanism",
+        "summary": "A self-decoder encodes global KV caches, which a stacked cross-decoder reuses through cross-attention.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "system behavior and efficiency",
+        "summary": "The model is described as behaving like a decoder-only Transformer while reducing GPU memory demands; its computation flow also permits prefilling to exit early without changing the final output.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report favorable scaling comparisons, 1M-context needle retrieval, and orders-of-magnitude profiling gains in memory, latency, and throughput.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific architectural decomposition—global KV encoding plus cross-attention reuse—to both memory reduction and preserved global attention, and separately links computation flow to early-exit prefilling.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Separating representation construction from later reuse can make a systems claim easier to explain by tying each benefit to a distinct mechanism.",
+        "application": "When presenting an architecture, map each claimed efficiency benefit to the component or execution-path change intended to produce it.",
+        "exception": "This framing is unsuitable when the abstract or paper cannot identify a plausible mechanism for each claimed benefit."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical values, experimental settings, baselines beyond Transformer, or definitions for “favorable,” “near-perfect,” and “orders of magnitude.”",
+      "The conditions and scope of early-exit prefilling, including how output equivalence is established, are unspecified."
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31782",
+    "title": "LLM-SR: Scientific Equation Discovery via Programming with Large Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31782"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7cd1845ee24d4a601e5e56efd46f7e69c72c49f4c7eaf6715ff7797ded0c24b5",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "6347fc4b20893ea6fab1875d405f8d85fe26dcddacf28101e7df7a475591da53",
+    "extracted_at": "2026-09-12T23:51:49.104194+00:00",
+    "session_id": "01a09808-8207-7c43-b3ca-13b291339265",
+    "usage": {
+      "input_tokens": 12813,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 777,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3c573ffb1f23d839874ba22871b43e16c9313b3941507aae797fc1b8c0cfb850"
+    },
+    {
+      "id": "S2",
+      "sha256": "0c66326102b8d0e92039a60b5d430235709c6af2443fb6992af424a5e889573d"
+    },
+    {
+      "id": "S3",
+      "sha256": "3f21f1d99f268d29a63b4199fe13a81d624b7776b4414acba7e55aa29172af56"
+    },
+    {
+      "id": "S4",
+      "sha256": "85cea51d55455b3512ee21dd5496bdbd9b6e5846c073530dddf7846a0211772c"
+    },
+    {
+      "id": "S5",
+      "sha256": "74a321757a8d0cd03a9056970055e9df336d4186bae54f3d7098c4680fad1b75"
+    },
+    {
+      "id": "S6",
+      "sha256": "fdce0055892a98280566405d007300940237df92a4eea3d691d07408a5f4c512"
+    },
+    {
+      "id": "S7",
+      "sha256": "f941ccc6da59994db949bc8afe0c2073c8b3cf9bd19a9d75ee8e3d78e78075b3"
+    },
+    {
+      "id": "S8",
+      "sha256": "e5b4945c0ddbeb2f49f9416679404a63d4f4e028c2fd9473e409a3060650a664"
+    },
+    {
+      "id": "S9",
+      "sha256": "51a92dbdaec84d44259cf5eaa19055b231fd8baea087d7aba787632e5b64bb12"
+    },
+    {
+      "id": "S10",
+      "sha256": "0f319eed80524fb2804e1a503ba084d00359bce51edfbe3581cbbb887091f9ab"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31782",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Discovering insightful scientific equations from data requires navigating extremely large combinatorial hypothesis spaces.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing symbolic-regression methods often neglect scientists’ domain-specific prior knowledge and use limited expression-tree representations that constrain search and expressiveness.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "LLM-SR represents equations as programs and combines LLM-generated scientific priors with evolutionary search and parameter optimization.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "evaluation",
+        "claim": "The authors evaluate LLM-SR on four benchmark problems spanning scientific domains including physics and biology, designed to simulate discovery while preventing LLM recitation.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present LLM-SR as a novel approach using LLM scientific knowledge and code-generation capabilities to discover equations from data.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that LLM-SR discovers physically accurate equations and significantly outperforms state-of-the-art symbolic-regression baselines, particularly on out-of-domain tests.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that incorporating scientific priors enables more efficient equation-space exploration than the baselines.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Scientific equations describe complex natural phenomena, but discovering them from data involves a very large hypothesis space.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The abstract identifies insufficient use of domain knowledge and restricted expression-tree representations in symbolic regression.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "LLM-SR treats equations as programs; an LLM proposes equation skeletons from scientific knowledge, while evolutionary search and data-based parameter optimization refine them.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "evaluation_and_results",
+        "summary": "Across four domain-diverse benchmarks designed to limit recitation, the authors report stronger physical-equation discovery and more efficient exploration, especially out of domain.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The approach explicitly links LLM-generated equation skeletons to subsequent data-based parameter optimization and evolutionary search.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "Separating structural proposal from parameter fitting can make a large scientific search problem more tractable while retaining domain-informed structure.",
+        "application": "For a scientific discovery method, define which component proposes hypothesis structure and which component fits or tests its parameters, then evaluate their interaction.",
+        "exception": "This decomposition may be unsuitable when the target structure and parameters must be inferred jointly or when domain priors are unreliable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the four benchmark tasks, baseline identities, evaluation metrics, or the quantitative meaning of “significantly outperform.”",
+      "It does not provide the conditions or measurements underlying the claims of physical accuracy and more efficient exploration.",
+      "The abstract does not establish whether the reported advantages generalize beyond the selected benchmarks or out-of-domain settings."
+    ]
+  }
+}

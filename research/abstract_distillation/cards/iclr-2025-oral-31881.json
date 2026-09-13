@@ -1,0 +1,165 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31881",
+    "title": "Restructuring Vector Quantization with the Rotation Trick",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31881"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c93e7be1e30f558d4a10a24a0d82145d35af8cc72c61c0be5ec0e6a509475257",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "b1c565a2a63569a50b207301de66224dbe8f9d0e76c7d0d546c5c9ad857d5b7a",
+    "extracted_at": "2026-09-12T23:55:40.094486+00:00",
+    "session_id": "01a0980c-1086-7092-b481-3dda3a36812a",
+    "usage": {
+      "input_tokens": 12708,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 727,
+      "reasoning_output_tokens": 62
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2bc8641b239d4baf3785320f5e622bb01ce2f6112be7cf6cdbb1422f0a93e79d"
+    },
+    {
+      "id": "S2",
+      "sha256": "e93663a915486f42d17d0c72bd8024306913c009f30f70ac07c044903098822e"
+    },
+    {
+      "id": "S3",
+      "sha256": "070bbea58c11092a8902815464d2b8831c8dea4ae4bb8788b2a4882ee82276bc"
+    },
+    {
+      "id": "S4",
+      "sha256": "6ccf48e4b0dbb828596dacbafee81319049d44c9ab4b34f31c469748810b53f9"
+    },
+    {
+      "id": "S5",
+      "sha256": "016a2cd58e7d6cebd70b92504aa175b2810872e3285a6802965eef0563d30892"
+    },
+    {
+      "id": "S6",
+      "sha256": "0f73f76f307594cf5a9a0578c95e9c674711f220765cf53e1aa222a9cbbca8e9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31881",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "VQ-VAEs must compress continuous inputs into discrete latents and reconstruct them with minimal distortion.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Straight-through approximation routes gradients around the non-differentiable quantization layer, potentially discarding information from the quantization operation.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The authors propose propagating gradients through VQ-VAE vector quantization using a rotation-and-rescaling transformation treated as constant during backpropagation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "mechanism",
+        "claim": "The proposed restructuring encodes the relative magnitude and angle between encoder outputs and selected codebook vectors into gradients reaching the encoder.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Across 11 VQ-VAE training paradigms, the authors report improvements in reconstruction metrics, codebook utilization, and quantization error.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by smoothly transforming encoder outputs into corresponding codebook vectors with a rotation-and-rescaling linear transformation for gradient propagation.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the restructuring improves reconstruction metrics, codebook utilization, and quantization error across 11 VQ-VAE training paradigms.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "VQ-VAEs compress continuous inputs into discrete latents and reconstruct them with low distortion using nearest-codebook-vector quantization.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Because quantization is non-differentiable, the straight-through approximation sends gradients around the layer and may lose quantization information.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "The work propagates gradients through quantization by applying a rotation-and-rescaling transformation held constant during backpropagation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report gains in reconstruction metrics, codebook utilization, and quantization error across 11 training paradigms.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific gradient-path limitation to a mechanism that preserves relative magnitude and angle information, then reports outcomes across multiple training paradigms.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A strong abstract can align a concrete failure mode, an interpretable mechanism, and condition-scoped evidence.",
+        "application": "Frame a method claim by naming what information a baseline loses, how the proposed operation restores or preserves it, and where the reported comparison was conducted.",
+        "exception": "This framing is unsuitable when the abstract lacks a concrete baseline limitation, interpretable mechanism, or clearly stated evaluation scope."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the datasets, baseline implementations, metric values, statistical variation, or whether all 11 paradigms improved on every metric."
+    ]
+  }
+}

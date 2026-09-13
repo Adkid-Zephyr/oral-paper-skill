@@ -1,0 +1,178 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-116754",
+    "title": "Does Stochastic Gradient really succeed for bandits?",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/116754"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ecd53b3c03dbebb4bda4283faf5a3903e53bd490c032e5cbd0b23660043d54eb",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "ef396885c92b578e30c7c6565ab571c538ecf9793838a3b458f920aed2b20ac5",
+    "extracted_at": "2026-09-13T00:21:29.244780+00:00",
+    "session_id": "01a09823-ad26-7ee1-bd0e-56240d6f52df",
+    "usage": {
+      "input_tokens": 12737,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 767,
+      "reasoning_output_tokens": 75
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8ca71d778c48c4da1874245d8430e925eb0f581ee35fb19d999694064ed71302"
+    },
+    {
+      "id": "S2",
+      "sha256": "2fcb20152780bf55d162493f55b72e4517cb0f858a88b3cc691fc0658631ff3a"
+    },
+    {
+      "id": "S3",
+      "sha256": "51d0125b5007d55dd987da07e3fb76ba0e7d0deec1b2c130990d69309b700744"
+    },
+    {
+      "id": "S4",
+      "sha256": "ec64a5691fb97bfa05c298eea2f573e67f3b86e976c38f6e8e179610b6928542"
+    },
+    {
+      "id": "S5",
+      "sha256": "0a1d059f6e7b1dd2ee8c0b01e004047aec1944f10f029b2db1e822108fbc4960"
+    },
+    {
+      "id": "S6",
+      "sha256": "ebd946700f49ad1decef509d56e25d223520a5a770695e0946233156a1d03173"
+    },
+    {
+      "id": "S7",
+      "sha256": "87b4a3e4471baf954f1205a159571cd7837d9faeb1074c972ec46781d46c1499"
+    },
+    {
+      "id": "S8",
+      "sha256": "fbe5a4d34c3cdfd647bd60ba73860752615e98913cac751417512338994f7cba"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-116754",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize the regret regimes of the Stochastic Gradient Bandit policy as a function of its learning rate.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "It remains unclear whether logarithmic regret extends beyond sufficiently small learning rates.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "For two-armed bandits, identifies a gap-dependent threshold separating logarithmic-regret behavior on all instances from possible polynomial regret on some instances.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Shows that for general K-armed bandits, the learning rate must scale inversely with K to avoid polynomial regret.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces techniques for deriving regret upper bounds for Stochastic Gradient Bandit policies.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that they introduce novel techniques for Stochastic Gradient Bandit regret upper bounds.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, for two-armed bandits, learning rates below a sharp sub-optimality-gap-scaled threshold yield logarithmic regret on all instances, whereas rates above it can yield polynomial regret on some instances.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that avoiding polynomial regret in general K-armed bandits requires inverse-K learning-rate scaling.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "prior understanding",
+        "summary": "Earlier work is described as establishing asymptotic convergence with a constant learning rate and logarithmic regret for sufficiently small rates.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "open question",
+        "summary": "The abstract identifies uncertainty about logarithmic regret beyond small learning rates.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "two-arm characterization",
+        "summary": "A gap-dependent threshold is reported for two-armed bandits, separating all-instance logarithmic regret from possible polynomial regret on some instances.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "generalization and outlook",
+        "summary": "For K arms, inverse-K scaling is reported as necessary to avoid polynomial regret, alongside techniques intended to support future theory.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper organizes its main two-armed result around a sharp threshold whose scale depends on the sub-optimality gap, and explicitly connects that threshold to the need to know or estimate the gap.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Parameter-regime boundaries can make theoretical guarantees more actionable than a single undifferentiated rate statement.",
+        "application": "When presenting a learning-rate guarantee, state the governing instance parameter, identify the boundary between regret regimes, and explain whether that parameter must be known or estimated.",
+        "exception": "This framing may be unsuitable when no meaningful instance parameter or regime transition has been established."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not give the threshold's exact formula or constants.",
+      "It does not specify how the sub-optimality gap could be estimated, nor the conditions and proof details behind the reported bounds.",
+      "“Some instances” with polynomial regret are not characterized in the abstract."
+    ]
+  }
+}

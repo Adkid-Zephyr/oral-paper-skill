@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71106",
+    "title": "When the Prompt Becomes Visual: Vision-Centric Jailbreak Attacks for Large Image Editing Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71106"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f79ce7b6b574eaf4c397fb50d4d3ee3d770e644ace36e4986c67efb61c777127",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "39faed21fe510b2322ef0f49884b2e1c9d2302afb45132f65cd06a68e2323e5b",
+    "extracted_at": "2026-09-13T00:14:18.753958+00:00",
+    "session_id": "01a0981d-1663-7331-8ed0-ad5c88d4379c",
+    "usage": {
+      "input_tokens": 12730,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 884,
+      "reasoning_output_tokens": 97
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6c8d51cb4a8ed6657692aa87f915183a96de7a04cc31a587a0415371eb9f2822"
+    },
+    {
+      "id": "S2",
+      "sha256": "07ee2689ed4eb7951921a42dbec84445943e2b01dd65c2a897aff8863ed086e4"
+    },
+    {
+      "id": "S3",
+      "sha256": "a9858ff970bfcf5c592701356ab9fc354891a6f29b85d3142023ec909b838705"
+    },
+    {
+      "id": "S4",
+      "sha256": "6ffd07175a4c25980090b26ff82b44c89ac2ec437139a4ffbc9b35cdefa60717"
+    },
+    {
+      "id": "S5",
+      "sha256": "8f2aefe41078b8875b12d4431215cf2cb1fe3e55bfab86671f9ba7ed9a56cfc6"
+    },
+    {
+      "id": "S6",
+      "sha256": "bd98c04db1be75fc5ab451f27b4a20c4cf33b76fcd7e6eea5ef93510955201d8"
+    },
+    {
+      "id": "S7",
+      "sha256": "214a8c120b80d670bdf45ac784f62e1ab8cadf0802734e25aee22d2ef6a24146"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71106",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how malicious instructions can be delivered through visual inputs to large image editing models.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The safety risk created when the attack surface becomes visual is described as critical and underexplored.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The authors propose Vision-Centric Jailbreak Attack (VJA), a visual-to-visual jailbreak attack using purely visual inputs.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors introduce IESBench, a safety-oriented benchmark for image editing models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "defense",
+        "claim": "The authors propose a training-free defense based on introspective multimodal reasoning, without auxiliary guard models.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe VJA as the first visual-to-visual jailbreak attack that conveys malicious instructions purely through visual inputs.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that VJA reaches attack success rates up to 80.9% on Nano Banana Pro and 70.1% on GPT-Image-1.5 on IESBench.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that their defense substantially improves the safety of poorly aligned models to a level comparable with commercial systems.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report negligible computational overhead and no need for auxiliary guard models for the defense.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Image editing has shifted toward inferring intent from visual inputs and visual–text prompts.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "risk",
+        "summary": "This shift makes the attack surface itself visual, creating an underexplored safety concern.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "attack_and_benchmark",
+        "summary": "The authors introduce VJA and the IESBench benchmark to study the threat systematically.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "results_and_mitigation",
+        "summary": "They report high attack success on commercial models and present a low-overhead, training-free defense.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper pairs a newly defined attack with a dedicated safety benchmark before reporting model-specific attack rates.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Threat claims become more concrete when the attack mechanism, evaluation resource, and reported metric are introduced together.",
+        "application": "For a new attack modality, define the threat mechanism and release or specify a modality-matched benchmark before presenting comparative success rates.",
+        "exception": "This may be unsuitable when a validated standard benchmark already measures the exact threat or when benchmark construction is outside the work's scope."
+      },
+      {
+        "source_observation": {
+          "claim": "The proposed defense is characterized by alignment improvement, comparable safety level, absence of auxiliary guard models, and negligible overhead.",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        "interpretation": "Defense contributions can be framed through both safety outcome and deployment costs.",
+        "application": "Describe a defense using its target safety change together with model dependencies and computational overhead.",
+        "exception": "Avoid this framing when those deployment constraints are not measured or are irrelevant to the intended use case."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define IESBench, the attack-success criterion, tested configurations, or comparison baselines.",
+      "The abstract does not report the defense's absolute safety metrics, statistical uncertainty, or generalization beyond the mentioned model categories.",
+      "The abstract does not provide enough detail to assess the authors' priority claim that VJA is first."
+    ]
+  }
+}

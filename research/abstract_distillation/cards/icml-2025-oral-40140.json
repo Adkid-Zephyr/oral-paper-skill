@@ -1,0 +1,173 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-40140",
+    "title": "Position: AI Competitions Provide the Gold Standard for Empirical Rigor in GenAI Evaluation",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/40140"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "f3d6984f0a0eba317ed17d2bbc4dc4aa729f8441dea1b55eda48be0c7fe8e605",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "682e2798a68a1ef9e180863638a70dbdeb244548814fba1e1e2c09b7fe41289f",
+    "extracted_at": "2026-09-12T23:40:07.186895+00:00",
+    "session_id": "01a097fd-d934-7301-811d-695262ff7bd3",
+    "usage": {
+      "input_tokens": 12687,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 678,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5ddaa0d289e1e951c5cbb06393861ce728ce1af466c55fa977f9cd03ce1d52d2"
+    },
+    {
+      "id": "S2",
+      "sha256": "524ad53f09057ef838c3020e9bc19aa2fd3a3f4471bfcc2709e40ddaffdfcf0e"
+    },
+    {
+      "id": "S3",
+      "sha256": "e48431ddcec7a65e363aa1a960358c0d8901ad598db52dbe31bea41fcc782823"
+    },
+    {
+      "id": "S4",
+      "sha256": "e057dca11eddc721e565a627cc539c028a3fafc99e38196ba6a17b5557a252ad"
+    },
+    {
+      "id": "S5",
+      "sha256": "508ef7f26f9498a76eab469a93e3d126fcdf62b2941ee8e24f358992665a5183"
+    },
+    {
+      "id": "S6",
+      "sha256": "e13192f1a351b280fcfdf72276da051843b7a04ff9c53d3f41fd032255ad3a2b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-40140",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "GenAI evaluation faces challenges from typically nearly unbounded input/output spaces, unclear ground truth, feedback loops, context-dependent predictions, leakage, and contamination.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Traditional ML evaluation and benchmarking are described as insufficient for modern GenAI, while AI Competitions’ relevant practices remain underutilized.",
+        "source_ids": [
+          "S1",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "position",
+        "claim": "Argues that AI Competitions should serve as a gold standard for empirical rigor in GenAI evaluation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "framing",
+        "claim": "Identifies leakage and contamination as the most important and difficult GenAI evaluation issues to address.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": null,
+      "source_ids": []
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that AI Competitions have developed effective anti-leakage measures and practices to counter cheating in competition settings.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that these competition practices constitute an especially valuable but underutilized resource for GenAI evaluation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "diagnosis",
+        "summary": "The paper characterizes GenAI empirical evaluation as being in crisis because traditional evaluation and benchmarking strategies are insufficient.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "technical rationale",
+        "summary": "It attributes the difficulty to open-ended spaces, weakly defined targets, feedback loops, and context-dependent prediction.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "priority claim",
+        "summary": "It presents leakage and contamination as the most important and difficult issues to address.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed direction",
+        "summary": "It points to AI Competitions’ anti-leakage practices and calls for treating competitions as a gold standard and using their results accordingly.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract isolates leakage and contamination as priority problems, then connects them to concrete anti-cheating practices developed in AI Competitions.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A persuasive position can align a prioritized failure mode with an existing practice that directly targets it.",
+        "application": "When proposing an evaluation framework, name the dominant threat explicitly and map it to an established mitigation procedure or resource.",
+        "exception": "This move is unsuitable when the proposed threat or mitigation does not match the evaluation setting’s data-generation and feedback dynamics."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify which competition measures, datasets, models, or evaluation results support the gold-standard claim.",
+      "It does not establish that competition practices transfer successfully to all GenAI evaluation settings."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "problem_and_gap.problem.claim",
+      "before": "GenAI evaluation faces challenges from unbounded input/output spaces, unclear ground truth, feedback loops, context-dependent predictions, leakage, and contamination.",
+      "after": "GenAI evaluation faces challenges from typically nearly unbounded input/output spaces, unclear ground truth, feedback loops, context-dependent predictions, leakage, and contamination.",
+      "review_file": "reviews/pilot-02.json",
+      "review_sha256": "c9e1dc2a2b1b9cf5da4c272566b234e853aac460dbe9a2ef30fd633c4351a569",
+      "applied_at": "2026-09-12T23:46:38.300672+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

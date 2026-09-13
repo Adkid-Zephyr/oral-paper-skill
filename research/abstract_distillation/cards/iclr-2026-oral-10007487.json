@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007487",
+    "title": "BIRD-INTERACT: Re-imagining Text-to-SQL Evaluation via Lens of Dynamic Interactions",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007487"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1846b301520caa3ea482b7edf076dfe06a5b68f3988777677de8df906d8cd675",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "de572c0e3fe8597e98139a24b9350c5cc0584b433fca7667bda919c228821452",
+    "extracted_at": "2026-09-12T23:59:33.783780+00:00",
+    "session_id": "01a0980f-9f72-7db2-a9ec-bfebfd8db767",
+    "usage": {
+      "input_tokens": 12922,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 800,
+      "reasoning_output_tokens": 60
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "48b5a8eb6e6624f00582f6d9165c8bf0c34c430178185322a850db8982a138d5"
+    },
+    {
+      "id": "S2",
+      "sha256": "58568bbd823038feee163b1e7d1114de939372f9a30bba14696dea322225670f"
+    },
+    {
+      "id": "S3",
+      "sha256": "314a9770b885a0af024723e0f499bae1cec6afdd9bac339b778b614f3b3222fc"
+    },
+    {
+      "id": "S4",
+      "sha256": "d97107f7e6becabbccd20c9ac444896256be047bbd0ac5aa7f394a7467ace0df"
+    },
+    {
+      "id": "S5",
+      "sha256": "95bf1d3ca8e14dd16a49e74ae249537b1b336e5d2c2ed514fcab09b51034ae1f"
+    },
+    {
+      "id": "S6",
+      "sha256": "3abdea04bb01e76cae506e4f45012aa9ec6f42eb7604d4b93ca269c0bafcd27c"
+    },
+    {
+      "id": "S7",
+      "sha256": "b2c9566f4135f5b8a63a72572d45c35f10eec83593c3218e0af53392e9a463df"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007487",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate text-to-SQL models in realistic multi-turn database interactions involving ambiguity, execution errors, and changing requirements.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing multi-turn benchmarks either treat conversation history as static context or restrict evaluation to read-only SELECT operations, missing aspects of production database assistance.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces BIRD-INTERACT, an interaction environment combining databases with hierarchical knowledge bases, metadata, and a function-driven user simulator for clarification, knowledge retrieval, and error recovery.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "evaluation framework",
+        "claim": "Defines c-Interact with a prescribed conversational protocol and a-Interact, where models autonomously choose whether to query the simulator or explore the database environment.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "task suite",
+        "claim": "Provides executable-test-guarded CRUD tasks spanning business-intelligence and operational use cases, in full and lite sets of 600 and 300 tasks respectively.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present BIRD-INTERACT as restoring realism to text-to-SQL evaluation through dynamic interaction, broader database operations, and an environment supporting autonomous interaction.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that GPT-5 completes 8.67% of full-suite tasks in c-Interact and 17.00% in a-Interact.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that memory grafting and Interaction Test-time Scaling analyses validate the importance of effective interaction for success on dynamic text-to-SQL tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Single-turn text-to-SQL performance does not address the multi-turn ambiguity, errors, and evolving requirements of real database applications.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "benchmark gap",
+        "summary": "Prior multi-turn benchmarks are described as static-context or SELECT-only evaluations that omit production-relevant complexity.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark design",
+        "summary": "BIRD-INTERACT adds an interactive environment, protocol-driven and agentic settings, and CRUD tasks with executable tests.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "dataset organization",
+        "summary": "The benchmark offers a 600-task full set with up to 11,796 dynamic interactions and a 300-task lite set for behavioral analysis and faster method development.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported findings",
+        "summary": "The authors report low GPT-5 completion rates and analyses emphasizing effective interaction.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs benchmark capabilities with explicit evaluation settings and reports separate completion rates for each setting.",
+          "source_ids": [
+            "S3",
+            "S6"
+          ]
+        },
+        "interpretation": "Separating interaction protocols can expose how performance changes with the model’s control over interaction.",
+        "application": "When introducing an interactive benchmark, define fixed-protocol and autonomous variants and report results separately.",
+        "exception": "This split may be unsuitable when the target deployment has only one fixed interaction policy."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify how tasks, executable tests, interaction success, or the reported analyses are implemented and measured.",
+      "The reported GPT-5 rates are given without baselines, uncertainty estimates, or comparisons to other models."
+    ]
+  }
+}

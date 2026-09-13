@@ -1,0 +1,154 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "targeted synthesis-source checking",
+  "records": [
+    {
+      "paper_id": "iclr-2026-oral-10010220",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S2 supports the fixed-rate compression limitation, and S7 explicitly describes token allocation according to informational richness. A source may legitimately support only a lesson. S3 and S7 contain the unresolved symbol \\alg; the card correctly distinguishes that unresolved abstract symbol from the title's InfoTok name. Later synthesis must preserve this distinction and keep the proposed application separate from author-reported observations.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010608",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "unknowns[0]",
+          "source_ids": [
+            "S5"
+          ],
+          "issue": "The source lacks the numbering marker (2), but includes an intervening substantive observation about compute efficiency. Describing an omitted item implies missing content that cannot be established.",
+          "severity": "minor",
+          "replacement_value": "S5 lacks the numbering marker (2), but includes an intervening observation about design choices primarily affecting compute efficiency; the supplied abstract does not establish whether any substantive content is missing."
+        }
+      ],
+      "resolution": "The evidence statements retain all supplied substantive observations, including different recipe asymptotes, efficiency effects, and extrapolation for stable, scalable recipes. Repair only the characterization of the numbering defect; do not reconstruct an absent observation. Preserve more than 400,000 GPU-hours for the overall study and a single run scaled up to 100,000 GPU-hours.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010680",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "unknowns[0]",
+          "source_ids": [
+            "S8",
+            "S9"
+          ],
+          "issue": "S9 completes the sentence split at S8. The supplied source therefore identifies both win-rate comparisons and the stated cost comparator; this is a source-unit boundary, not missing abstract content.",
+          "severity": "minor",
+          "replacement_value": "S8–S9 jointly report win-rate increases for weaker LMs such as Llama-4-Scout from 8% to 82% against humans and from 0% to 67% against GPT-5, at approximately 1% of GPT-5's cost; detailed comparison protocols and the cost calculation are not specified in the abstract."
+        }
+      ],
+      "resolution": "The current evidence summary correctly cites S8 and S9 together. The recoverable comparisons are against humans and GPT-5, with approximately 1% of GPT-5's cost. Keep these as author-reported task results; the cost accounting and experimental conditions remain unspecified.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010387",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S2 explicitly links replacing cost volume with high-resolution warping to better accuracy and lower memory cost. The lesson accurately describes this author claim even though memory cost is not repeated in the evidence list. Later synthesis must not turn that linkage into an independently isolated causal effect or invent a numerical memory reduction.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010053",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S5 explicitly states that each of the four categories includes both feasible and infeasible requests, so per-category coverage is established in the supplied abstract. The application is also clearly a recommendation. Preserve the source's feasibility distinction: the application's broader valid/invalid wording must not be attributed to the authors as a claim about malformed requests. S8 remains a proposed pre-validation use, not demonstrated real-world deployment.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010787",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "lessons[1].source_observation.claim",
+          "source_ids": [
+            "S5"
+          ],
+          "issue": "S5 reports identifying three capabilities but does not name or enumerate them. The lesson overstates what the abstract explicitly supplies.",
+          "severity": "minor",
+          "replacement_value": "The abstract reports identifying three atomic capabilities in visual verification and states that they generalize and interact synergistically, without naming the capabilities."
+        }
+      ],
+      "resolution": "Replace 'names' with the supported identification claim and explicitly retain the absence of names. The interpretation and application may recommend capability decomposition, but later synthesis must not invent the three components or imply their definitions are supplied here.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009932",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S5 explicitly supplies both a single, verifiable trajectory-level outcome and stabilization through group-normalized advantages, so neither phrase is an unsupported addition. S6 reports 14.9%, 14.0%, 14.5%, and 4.1% average accuracy gains without specifying relative percentages versus absolute percentage-point changes. The card preserves that notation; later synthesis must leave its interpretation unresolved and retain the ten-benchmark, 7B-scale context and stated baseline comparisons.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010431",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "unknowns[0]",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "issue": "The abstract names LLaVA-OneVision and Qwen2.5-VL. Only the complete three-model roster is unavailable, rather than all model identities.",
+          "severity": "minor",
+          "replacement_value": "The abstract names LLaVA-OneVision and Qwen2.5-VL but does not provide the complete roster of three evaluated VLLMs, the identities of the five benchmarks, baseline methods, or detailed evaluation protocols."
+        }
+      ],
+      "resolution": "Correct the scope of the missing roster. Preserve the separate conditions: 10% token retention and 99.1% performance preservation concern LLaVA-OneVision; 10× frame input and 8.6% relative improvement under the same computational budget concern Qwen2.5-VL.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10010192",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S4 explicitly makes the no-annotated-or-synthetic-data claim, while S5 specifies RL starting from a base model and S6 introduces specialized reward models. The card retains these facts and already marks reward-model construction as unspecified. Later synthesis must attribute the data claim to the authors' proposed RL approach, not extend it to reward-model provenance or base-model pretraining. 'From scratch' must remain contextualized by the stated base-model initialization.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011760",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "contributions[1].claim",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "issue": "Removing the distribution-matching relation makes 'distillation from ... 3D-oriented ... to ... MV-oriented' read as reversed knowledge transfer. S6 describes matching the 3D-oriented distribution to the high-quality MV-oriented distribution to improve 3D-oriented quality, consistent with the narrative.",
+          "severity": "material_error",
+          "replacement_value": "It combines dual-mode pre-training with cross-mode post-training distillation that matches the consistent 3D-oriented mode's distribution to the high-quality MV-oriented mode's distribution, aiming to improve 3D-oriented visual quality while maintaining 3D consistency."
+        }
+      ],
+      "resolution": "The contribution requires correction because its direction wording can misidentify which mode is improved. The narrative's transfer of MV-oriented quality to the 3D-oriented mode agrees with S6–S7. Preserve the distinction between distribution-matching direction and quality-transfer direction without inventing implementation details.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011716",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S6 explicitly says chi-square-distributed radius, and the card faithfully retains it; replacing it with a square root would import outside knowledge. S6 claims exact Gaussian recovery, whereas S7 separately reports preservation up to third-order moments and empirical statistical indistinguishability. The card preserves those evidentiary limits and identifies losslessness as undefined. Later synthesis must not equate the moment guarantee or empirical tests with proof of exact distributional equality, nor silently repair the authors' wording.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011189",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S9 supports model-generated maturation predictions assessed through hippocampal-recording analysis. Prospective predictions and independent biological measurements appear in the application as recommendations, not as claims about the authors' protocol. No correction is required. Later synthesis must not infer preregistration, prospective data collection, held-out recordings, or measurement independence from the reported confirmation.",
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "material_error_cards": 1,
+    "minor_cards": 4,
+    "pass_cards": 7,
+    "scope": "targeted flags only"
+  }
+}

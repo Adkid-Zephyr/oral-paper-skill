@@ -1,0 +1,77 @@
+{
+  "reviewer_model":"gpt-6-astra","effort":"medium","review_type":"AI source checking: targeted synthesis-source flags",
+  "records":[
+    {
+      "paper_id":"icml-2026-oral-71174","first_pass_status":"minor",
+      "findings":[{"field":"lessons[0].source_observation.claim","source_ids":["S5","S6","S7"],"issue":"The abstract states the count and broad coverage of five dimensions but does not enumerate them. Calling them explicit overstates the source's granularity, as the card's unknowns already recognize.","severity":"minor","correction":"Distinguish reporting five dimensions from listing their identities.","replacement_value":"The abstract reports five optimization dimensions spanning agent functionality and collaboration structure, without enumerating them, then describes separate single-dimension and joint-optimization algorithms."}],
+      "final_disposition":"requires_correction","synthesis_boundary":"Enumeration remains a suggested application, not an observed list of five named dimensions."
+    },
+    {
+      "paper_id":"icml-2026-oral-71184","first_pass_status":"material_error",
+      "findings":[
+        {"field":"contributions[1].claim","source_ids":["S4","S5"],"issue":"An unrestricted 2-approximate Nash guarantee over the expanded pricing strategy space is stronger than S5: the stable profile uses piecewise-linear convex prices but deviations are restricted to uniform prices. Dropping that distinction changes the theorem's strategic scope.","severity":"material","correction":"State both the pricing-profile class and the restricted deviation class.","replacement_value":"Introduces piecewise-linear convex pricing and reports existence of a pricing profile in which no seller can improve revenue by a factor of two by deviating to any uniform price."},
+        {"field":"narrative_sequence[3].summary","source_ids":["S6"],"issue":"'Approximation guarantees exceeding the worst-case factor of 2' can imply a numerically larger factor, whereas S6 says empirical guarantees outperform the bound. A smaller approximation factor is the intended direction.","severity":"minor","correction":"Use better than rather than exceeding the factor.","replacement_value":"Simulations reportedly converge quickly and achieve empirical approximation guarantees better than the worst-case factor of 2."}
+      ],"final_disposition":"requires_correction","synthesis_boundary":"The impossibility establishes that equilibrium cannot be guaranteed under uniform pricing; do not infer nonexistence in every market. Conditions of the 1.364 construction are absent. The positive result controls uniform-price deviations, not arbitrary deviations to the richer pricing family."
+    },
+    {
+      "paper_id":"icml-2026-oral-71186","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"S5 supplies a three-player counterexample. The observation calls it a counterexample without asserting minimality; minimal appears only in the separate proposed application.",
+      "synthesis_boundary":"Do not call the authors' counterexample minimal. Preserve subgame sufficiency, the general-case failure, and the additional payoff-based leaklessness condition."
+    },
+    {
+      "paper_id":"icml-2026-oral-71191","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"S4 explicitly states effective-noise renormalization, low-variance overshrinkage and mean attraction; S5 explicitly supplies the three variance factors. These are supported even though not repeated in every contribution field.",
+      "synthesis_boundary":"Retain the linear-theory setting and validation on UNet/DiT in the non-memorization regime. Do not extend the decomposition to all nonlinear or memorizing models."
+    },
+    {
+      "paper_id":"icml-2026-oral-71187","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"Dominant abuse is S2's characterization; possible exacerbation is expressly qualified in S5 and in the card. The card does not add quantitative prevalence or harm estimates.",
+      "synthesis_boundary":"Attribute dominance and harm claims to the position paper. The analysis covers unspecified highly cited works, and exacerbation is only possible in some cases; prevalence, effect size and conditions remain unknown."
+    },
+    {
+      "paper_id":"icml-2026-oral-71173","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"S5's subject is CVE-Factory, following the task-construction quality checks; the card does not assign 66.2% to Qwen or Claude. The separate fine-tuned Qwen and Terminal Bench values match S9, and comparison conditions are explicitly unknown.",
+      "synthesis_boundary":"The 66.2% refers to reported verified success of CVE-Factory on recent vulnerabilities, with denominator and success definition unspecified. Do not recast it as agent exploit success. Keep Qwen's 5.3-to-35.8% and 12.5-to-31.3% changes separate from the Claude comparison, whose score and matched conditions are absent."
+    },
+    {
+      "paper_id":"neurips-2024-oral-97991","first_pass_status":"material_error",
+      "findings":[
+        {"field":"problem_and_gap.gap.claim","source_ids":["S3"],"issue":"The card assigns incomparability to 1-WL here but to the r-loopy hierarchy in stated_novelty. S3's compressed clause is ambiguous about the subject; these conflicting resolved readings cannot both be retained as established source claims. The hierarchy relation materially affects the theoretical contribution.","severity":"material","correction":"Retain the unambiguous tree-homomorphism limitation and omit the unresolved incomparability subject.","replacement_value":"The abstract identifies that 1-WL can count homomorphisms of trees, while the proposed extension counts cactus-graph homomorphisms."},
+        {"field":"problem_and_gap.gap.source_ids","source_ids":["S2","S3"],"issue":"The corrected gap also refers to the proposed cactus-graph result in S2.","severity":"minor","correction":"Include the source for the cactus comparison.","replacement_value":["S2","S3"]},
+        {"field":"stated_novelty.claim","source_ids":["S1","S3"],"issue":"This field resolves the same ambiguous incomparability clause to a different subject from the gap. Omit that disputed component rather than silently choose a reading without further source evidence.","severity":"minor","correction":"Keep the explicit novelty and extension claims only.","replacement_value":"The authors describe r-ℓWL as a novel hierarchy and position it as extending 1-WL."},
+        {"field":"narrative_sequence[2].summary","source_ids":["S3"],"issue":"The narrative repeats the disputed assignment of incomparability to 1-WL.","severity":"minor","correction":"Retain only the unambiguous relation.","replacement_value":"Frames the cactus-homomorphism result as extending 1-WL, which is described as limited to tree homomorphisms."},
+        {"field":"unknowns","source_ids":["S3"],"issue":"The ambiguous subject needs to remain explicit after omission, so synthesis cannot restore either unsupported resolution.","severity":"minor","correction":"Preserve existing unknowns and record the unresolved clause.","replacement_value":["The abstract does not specify the formal definitions, parameter ranges, dataset identities, metrics, baselines, or experimental conditions.","The reported real-world performance is not quantified, and the basis of the comparison to prior methods is unspecified.","S3's wording is ambiguous about the subject of incomparability to fixed-order k-WL; the exact hierarchy comparison requires clarification from the full paper."]}
+      ],"final_disposition":"requires_correction","synthesis_boundary":"Do not assert either 1-WL or a fixed-r test is incomparable to every fixed k-WL on this ambiguous abstract alone. Preserve the novel hierarchy, r+2 cycle scope, cactus homomorphisms, and sparse-graph evaluation separately."
+    },
+    {
+      "paper_id":"neurips-2024-oral-97972","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"S5 expressly states a critical examination of benchmarks and difficulties consolidating and interpreting task results. The lesson's benchmark-interpretation component is therefore supported despite omission from the shorter contribution list.",
+      "synthesis_boundary":"Do not infer particular benchmark defects or recommendations, nor measured effects of data balancing or SVA ablations that the abstract does not provide."
+    },
+    {
+      "paper_id":"neurips-2024-oral-97953","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"The current card has already been corrected to preserve both S7's future public release and S8's author assertion that code is available. No current-card error remains for this flag.",
+      "synthesis_boundary":"Keep both source statements and no independent availability verification. This pass on the corrected card must not erase the earlier targeted minor finding or count as new full-review coverage."
+    },
+    {
+      "paper_id":"neurips-2024-oral-97954","first_pass_status":"minor",
+      "findings":[{"field":"author_reported_evidence[2].claim","source_ids":["S7","S8"],"issue":"The evidence item compares quadratic and cubic horizon dependence without retaining the fixed-instance qualifier or structural H/B dependence. Those restrictions are present elsewhere in the card, but need to accompany this lower-bound comparison to avoid suggesting a general minimax contradiction.","severity":"minor","correction":"State the fixed-instance and structural-parameter scope next to the comparison.","replacement_value":"For discounted MDPs, the authors report bounds Õ(SA H/((1−γ)²ε²)) for weakly communicating instances and Õ(SA(B+H)/((1−γ)²ε²)) for general instances, yielding quadratic horizon dependence for a fixed MDP instance rather than contradicting the general cubic minimax lower bound."}],
+      "final_disposition":"requires_correction","synthesis_boundary":"Keep H and B dependence and the fixed-instance qualifier. Do not describe the result as disproving the cubic worst-case lower bound or improving it uniformly over all MDP instances."
+    },
+    {
+      "paper_id":"neurips-2024-oral-97959","first_pass_status":"minor",
+      "findings":[{"field":"narrative_sequence[3].summary","source_ids":["S7","S8","S9"],"issue":"The narrative groups the leaderboard result under experiments without preserving S9's explicit community-report attribution. The evidence field correctly separates it; the compact narrative should too.","severity":"minor","correction":"Separate author experiments from the community-reported leaderboard comparison.","replacement_value":"The authors report cross-model 3H improvements, including average gains for Aligner-7B; separately, a community report describes a leaderboard gain from stacking Aligner-2B on GPT-4 Turbo."}],
+      "final_disposition":"requires_correction","synthesis_boundary":"The 68.9%/22.8% average-gain denominators and scoring protocols are unspecified; do not convert them to points or win rates. Preserve community provenance for the 55.0-to-58.3 LC Win Rate and 57.5 comparator, without implying live leaderboard status or identical evaluation protocols."
+    },
+    {
+      "paper_id":"neurips-2024-oral-97987","first_pass_status":"pass","findings":[],"final_disposition":"pass",
+      "no_error_resolution":"The evidence preserves S8's ambiguous 'outperform ... by 1.9 mE_h' wording, and unknowns explicitly record that its direction and meaning are unspecified. The separate up-to-order-of-magnitude error reduction has a distinct prior-generalized-wave-function comparator.",
+      "synthesis_boundary":"Do not interpret 1.9 mE_h as a signed energy decrease or a reference-error reduction without further evidence. Keep the CCSD(T) CBS comparison distinct from the prior neural-wave-function error comparison and do not conflate antisymmetry scope with demonstrated accuracy on all systems."
+    }
+  ],
+  "summary":{
+    "targeted_records_checked":12,"first_pass_pass":7,"first_pass_minor":3,"first_pass_material_error":2,"material_findings":2,"minor_findings":8,"requires_correction":5,
+    "scope":"Resolved supplied flags against all original units and current card fields. Two material issues concern the pricing theorem's restricted deviation class and contradictory subject attribution of an ambiguous WL hierarchy comparison. Three other cards need local precision or provenance repairs. Seven flags resolve without current-card error, including a previously corrected HydraLoRA record. Exact replacements are supplied; ambiguous source content is omitted and retained as unknown rather than guessed.",
+    "limitations":"Targeted first-check counts for this packet only, not random-audit counts or full semantic-validation coverage. This review does not independently validate theorems, experiments, public release status or scientific claims. No cards were edited and no additional model calls were made."
+  }
+}

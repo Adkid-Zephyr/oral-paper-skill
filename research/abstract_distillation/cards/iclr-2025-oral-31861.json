@@ -1,0 +1,161 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31861",
+    "title": "FlexPrefill: A Context-Aware Sparse Attention Mechanism for Efficient Long-Sequence Inference",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31861"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a37d756ff067df0c8512536043fe517190ed3ea6571b197bdfb7d5e66f86b0ec",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "5fdc575ffea6ef104f1a68eea10029cc0540bca01df354b145c67f22032c9a03",
+    "extracted_at": "2026-09-12T23:54:54.223554+00:00",
+    "session_id": "01a0980b-6691-72e2-8a96-c62eabe56a96",
+    "usage": {
+      "input_tokens": 12743,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 570,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "716dd51ddf34143a769ecbfc4e8dfc710b7f80624b30c6c8409648f9b5525946"
+    },
+    {
+      "id": "S2",
+      "sha256": "b1ec0353d7369603792a405a4170d4f2a5611cfcbe28bd7e5a4c4a9180a67a93"
+    },
+    {
+      "id": "S3",
+      "sha256": "de56cb094291e215e0b43347d8457f20880f62f9092d576b2dbc43f9d6073c19"
+    },
+    {
+      "id": "S4",
+      "sha256": "46b394470553014bde1931be690850ed14253c1b9e3ecda61f5a4d0ef0206a2f"
+    },
+    {
+      "id": "S5",
+      "sha256": "e5132595b1188adad74ac70f37f660410a6820305cda3ba21dcf79e00866c68a"
+    },
+    {
+      "id": "S6",
+      "sha256": "14eb0335a6918424cd490b662f564b7a564c66a03f4a5118d16fc539d9465f19"
+    },
+    {
+      "id": "S7",
+      "sha256": "7f48542a29a3290bfa692f14b9888a5f63a7591e3c96ef7e34274e196c0c6887"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31861",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Long-sequence LLM inference faces quadratic attention prefill cost as prompt length grows.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Prior fixed or limited-case sparse attention methods do not flexibly adapt to varying input demands.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "FlexPrefill dynamically adjusts sparse attention patterns and computational budget for each input and attention head.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method innovation",
+        "claim": "It combines query-aware pattern switching using Jensen–Shannon divergence with cumulative-attention-based query-key index selection under a predefined attention-score threshold.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present FlexPrefill as a flexible sparse pre-filling mechanism that adapts patterns and computational allocation in real time to input-specific and head-specific requirements.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report significant improvements in speed and accuracy over prior methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Long-sequence inference makes attention prefill computationally costly because complexity grows quadratically with prompt length.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior limitation",
+        "summary": "Existing approaches use fixed patterns or patterns inferred from limited cases and consequently adapt poorly to varying inputs.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed mechanism",
+        "summary": "FlexPrefill dynamically selects sparse patterns, ratios, and computational budgets per prompt and attention head.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report improved speed and accuracy relative to prior methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects each component to a concrete adaptation decision: divergence selects between pattern types, while cumulative attention controls which indexes are computed under a threshold.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Mapping mechanisms to explicit runtime decisions makes an adaptive method's claimed flexibility easier to understand.",
+        "application": "When presenting an adaptive system, name the measured signal, the branch or allocation it controls, and the constraint it must satisfy.",
+        "exception": "This framing is less useful when the method has no runtime adaptation or when the abstract lacks enough implementation detail to identify the decision rule."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide the magnitude of the reported speed or accuracy improvements, benchmarks, baselines, or evaluation conditions.",
+      "It does not specify the predefined threshold, divergence decision rule, sparse ratios, or computational overhead of adaptation."
+    ]
+  }
+}

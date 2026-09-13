@@ -1,0 +1,201 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008405",
+    "title": "In-Place Test-Time Training",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008405"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5d98f8a78b222dfcb73aaceb25bcf2ff79032addaab4348c753618506913c44e",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "3370c862c86b1474281adb29176789b73c4d955ca3afa8ee24f557d8a1b25344",
+    "extracted_at": "2026-09-13T00:00:58.832170+00:00",
+    "session_id": "01a09810-e679-7f43-ba64-4c844cdbd058",
+    "usage": {
+      "input_tokens": 12827,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 818,
+      "reasoning_output_tokens": 60
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ed237285b0bb5ce22c44dd45a0d09fc5a66b0b31d5e144ca4867b8cb678058c1"
+    },
+    {
+      "id": "S2",
+      "sha256": "34f15370749dfa329f0246459d06e5393fe273392bd0776bc10df6bb200dac11"
+    },
+    {
+      "id": "S3",
+      "sha256": "3058bc8b2c1f38df7987fdee4c8b4f87d3374a7b5ae7eb4a04e097048260510d"
+    },
+    {
+      "id": "S4",
+      "sha256": "3044fe1039be72c149db0e051875c369291d6f0d6dc14fdb039240aadc32678c"
+    },
+    {
+      "id": "S5",
+      "sha256": "86292e3231979e55a4481f5d053c8b06c048836ae43575aab6643ac1f71ba2e5"
+    },
+    {
+      "id": "S6",
+      "sha256": "f08542703034db39862b863216de2a53ac3e1a4cf853cd635db67749f98434d8"
+    },
+    {
+      "id": "S7",
+      "sha256": "198c64769331efc266555ac0d6a65c579cd63cc8548bdf2d6c7e9e4a76440bfb"
+    },
+    {
+      "id": "S8",
+      "sha256": "5137d3b1a19f8d2577b782cb8a3b73dec94099eded44ab161395570e8d8c959e"
+    },
+    {
+      "id": "S9",
+      "sha256": "2cdfedf7328dff0da60c96745e37500cf06edb75ab607661e813d4a04cb6cb54"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008405",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable LLMs to adapt their weights dynamically to continuous streams of new information during real-world tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing Test-Time Training is hindered for current LLMs by architectural incompatibility, computational inefficiency, and fast-weight objectives misaligned with language modeling.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces In-Place TTT, using the final projection matrix in MLP blocks as adaptable fast weights for a drop-in LLM enhancement.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory-informed objective",
+        "claim": "Replaces generic reconstruction with an objective aligned with autoregressive next-token prediction.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "Combines the objective with efficient chunk-wise updates designed to scale with context parallelism.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish In-Place TTT as a seamless, in-place way to add Test-Time Training to LLMs, including a language-modeling-aligned objective and scalable update mechanism.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, as an in-place enhancement, a 4B-parameter model achieves superior performance on tasks with contexts up to 128k.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report consistent outperformance over competitive TTT-related approaches when pretrained from scratch.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report ablations providing insight into their design choices.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Static train-then-deploy LLMs cannot dynamically adapt to continuous new information.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "TTT offers fast-weight adaptation but faces compatibility, efficiency, and objective-alignment barriers in LLMs.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "In-Place TTT adapts MLP final projections and aligns its objective with next-token prediction.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "scaling",
+        "summary": "Chunk-wise updates are presented as scalable and compatible with context parallelism.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "Experiments and ablations are reported for long-context enhancement, comparison with TTT methods, and design analysis.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly connects the adaptable parameter location, training objective, and update mechanism to distinct deployment barriers.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact method narrative can make design choices persuasive by mapping each component to a named bottleneck.",
+        "application": "When presenting a systems method, state each major component together with the specific limitation it is intended to address.",
+        "exception": "This framing is less suitable when component-to-bottleneck mappings are speculative or not supported by the reported setup."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact objective, update rule, baselines, metrics, datasets, or statistical margins behind the reported comparisons.",
+      "The conditions and scope of “superior performance,” “consistently outperforms,” and “highly scalable” are not detailed.",
+      "The abstract does not establish whether the reported gains generalize beyond the described models, tasks, and context lengths."
+    ]
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008474",
+    "title": "Pre-training under infinite compute",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008474"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b09538266f8bbb1a893d0523486cbe8a9d7a959cb3916233f56bf6ebe5e9a586",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "f4f2a87e19445e283b95da8b75b5993526435af4727d306c0b2fb8eedd0bd3e7",
+    "extracted_at": "2026-09-13T00:01:08.081711+00:00",
+    "session_id": "01a09811-0904-7070-88fe-70f4de862149",
+    "usage": {
+      "input_tokens": 12786,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 847,
+      "reasoning_output_tokens": 82
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9a1313e49deb2fa8f487fc818d94ae875c38e9f693389c329aff63b58dad2616"
+    },
+    {
+      "id": "S2",
+      "sha256": "6defeeb7f4a66173d6ec0211f97674f0ce76e7160eaa49709dc62519907c835f"
+    },
+    {
+      "id": "S3",
+      "sha256": "2f1eb1f723d66a111a969a6b3d4366399598153308b9f0d0b5eef849ee71603c"
+    },
+    {
+      "id": "S4",
+      "sha256": "21bfbcbface16ac5930e93caf103ac65e910ddf1403f48eb7a4daae933590e03"
+    },
+    {
+      "id": "S5",
+      "sha256": "c152c1875009f09be25c13685ca061f9b47cc245af27c8ddbce24c041df0831f"
+    },
+    {
+      "id": "S6",
+      "sha256": "35c34db2fef484cd50f6369ce2d0465992be178c21b95ed106f6549e30f66052"
+    },
+    {
+      "id": "S7",
+      "sha256": "cac7cc1e617be271294f07eea27bb96365f312a96c36aa3220db0622ee15f021"
+    },
+    {
+      "id": "S8",
+      "sha256": "ab8f37927855566cf738c771413f1733bac1197766728c7902503d167eee1336"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008474",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to pre-train language models with fixed data when compute is effectively unlimited.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The authors report that existing data-constrained strategies based on more epochs and parameters overfit, motivating improved recipes.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A data-efficient pre-training recipe combining epoching, regularization, parameter scaling, and ensemble scaling.",
+        "source_ids": [
+          "S2",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Ensemble distillation into a student model that is 8× smaller while retaining 83% of the ensembling benefit.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Interventions targeting validation loss are reported to transfer to downstream benchmarks.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by tuning substantially stronger regularization and combining multiple scaling interventions, then evaluating best possible performance through scaling-law asymptotes.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The optimal weight decay is reported as 30× larger than standard practice, improving on epoch- and parameter-increase recipes that overfit.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The combined intervention reaches a 200M-token asymptote using 5.17× less data than the baseline; the authors’ data-scaling laws predict persistence at higher token budgets.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report a 9% improvement on pre-training evaluations and retention of 83% of the ensembling benefit after distillation to an 8× smaller student.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "question",
+        "summary": "Frames pre-training when data is fixed and compute is unconstrained.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "Reports overfitting from increasing epochs and parameter count, then introduces stronger regularization.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "evaluation principle",
+        "summary": "Uses the asymptote of a parameter-count scaling law, rather than fixed-budget performance, to estimate best possible performance.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "intervention",
+        "summary": "Finds that independently trained ensembles have a lower loss asymptote and combines ensemble scaling with other interventions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "transfer",
+        "summary": "Reports smaller-model distillation and gains on downstream pre-training evaluations.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract evaluates a regularized recipe through its scaling-law asymptote because its loss monotonically decreases with parameter count, and separately identifies ensemble asymptotes as lower.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "When fixed-budget measurements obscure the eventual behavior of a compute-rich method, an explicitly stated extrapolation target can align the evaluation with the paper’s deployment question.",
+        "application": "Define the relevant asymptotic or scaling target before comparing interventions, and report the observed trend that supports using it.",
+        "exception": "This framing is unsuitable when scaling trends are non-monotonic, extrapolation is unsupported, or the practical decision is tied to a fixed compute budget."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify model architectures, datasets, baseline details, ensemble sizes, benchmark identities, or uncertainty around the reported percentages and asymptotes.",
+      "The conditions and validation range for the claimed persistence at higher token budgets are not given."
+    ]
+  }
+}

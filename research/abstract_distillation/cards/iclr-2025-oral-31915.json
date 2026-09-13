@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31915",
+    "title": "Safety Alignment Should be Made More Than Just a Few Tokens Deep",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31915"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5de512a8fec21722a090e5aa3386f3c912111af46700e05e5177e05902bbe611",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "11772e03cfca701ad8f63daf3e63e4863bc820541fee76c268d1ddb09ec99dc0",
+    "extracted_at": "2026-09-12T23:57:02.523683+00:00",
+    "session_id": "01a0980d-4bd8-78b3-a6e7-7f5117dc8b84",
+    "usage": {
+      "input_tokens": 12745,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 742,
+      "reasoning_output_tokens": 78
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "55e879a6005fadc3f5573f0053ab6dc954c68d7a2811127c66a83f1b96ff04d5"
+    },
+    {
+      "id": "S2",
+      "sha256": "1d632551b7cba0798f807c2a91a5e16fa533fbe1ee3f13dfab4ef73e4d6caf0a"
+    },
+    {
+      "id": "S3",
+      "sha256": "d624d81e7f7b17c563036d24608287e912c7c9cb4143d998744113105c3af1b0"
+    },
+    {
+      "id": "S4",
+      "sha256": "7792e3ca230f268cd77cecf0cc2340d8f7f3e449246ee76c131659f64639b9f2"
+    },
+    {
+      "id": "S5",
+      "sha256": "bd1ecba0c045fa0e352139fc6064842163d2cd5f12bf79d44feb34b331c0b763"
+    },
+    {
+      "id": "S6",
+      "sha256": "14208d5efd591399c2c9df3bea30fba7b0a410bba33949990a5597bae88f5021"
+    },
+    {
+      "id": "S7",
+      "sha256": "6da52b1b240cece824765809a21550bb29d34436c7ac643d4ae486e93f99f0f3"
+    },
+    {
+      "id": "S8",
+      "sha256": "ce124be27cfa21430c005f010a358c5d817d4a60c5a415f2c5299eb1d611336d"
+    },
+    {
+      "id": "S9",
+      "sha256": "bb67dd228e82d50f2fb76ae7cb8374c6da08bee7c70e0626538006cbe6aa280d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31915",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain and mitigate vulnerabilities in LLM safety alignment, including jailbreaks from simple attacks or benign fine-tuning.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Existing safety alignment can take a shortcut by adapting generation mainly over the first few output tokens, a shared issue the authors call shallow safety alignment.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "conceptual framework",
+        "claim": "Introduces the consolidated notion of shallow safety alignment to explain multiple LLM vulnerabilities.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "case studies",
+        "claim": "Presents case studies linking shallow safety alignment to adversarial suffix, prefilling, decoding-parameter, and fine-tuning attacks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "mitigation methods",
+        "claim": "Investigates deeper alignment and proposes a regularized fine-tuning objective that constrains updates on initial tokens.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors' stated key contribution is using shallow safety alignment as a consolidated notion that reveals promising mitigation directions.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that deepening safety alignment beyond the first few tokens meaningfully improves robustness against some common exploits.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report designing a regularized fine-tuning objective intended to make safety alignment more persistent against fine-tuning attacks by constraining initial-token updates.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that shallow safety alignment contributes to several recently discovered vulnerabilities across four listed attack types.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem",
+        "summary": "Safety alignment is described as vulnerable, including to simple attacks and benign fine-tuning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The paper identifies a shortcut focused on the first few output tokens and names it shallow safety alignment.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "Case studies connect the notion to multiple attack vulnerabilities.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "mitigation",
+        "summary": "The paper reports deeper alignment and a regularized objective as mitigation directions.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper groups several attack vulnerabilities under one mechanism-level diagnosis: alignment concentrated in the first few output tokens.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "A unifying mechanism can make a scattered vulnerability landscape easier to analyze and connect to targeted interventions.",
+        "application": "When presenting multiple failure modes, define a shared mechanism and map each failure mode to it before proposing mitigations.",
+        "exception": "Do not use this structure when the abstract does not support a common mechanism across the cases."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify which exploits improve, the magnitude of improvement, or evaluation conditions.",
+      "It does not report comparative baselines, model details, or quantitative results for the regularized objective."
+    ]
+  }
+}

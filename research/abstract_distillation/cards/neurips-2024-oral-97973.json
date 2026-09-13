@@ -1,0 +1,200 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97973",
+    "title": "Maximum Entropy Inverse Reinforcement Learning of Diffusion Models with Energy-Based Models",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97973"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7070c5c41afd288bf9001736f85f09697881c81f9a4587d30cdd1b2ba4524af5",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "2f00d52038d42336862196b4d5fd22d2dd4325774c950d9a449ff5d3a6b3c414",
+    "extracted_at": "2026-09-13T00:18:54.974091+00:00",
+    "session_id": "01a09821-49cc-75c0-a4f5-0ed79cfc77e9",
+    "usage": {
+      "input_tokens": 12797,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 838,
+      "reasoning_output_tokens": 114
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c6f2d95d6ed4a15d75c6839ed0afef2a2dda4b0953677d0f39c4f3e6461ed4e8"
+    },
+    {
+      "id": "S2",
+      "sha256": "49e9e13f29f4760031a5f590d17d9527d8d9499b197da6ff87c173a73987c42c"
+    },
+    {
+      "id": "S3",
+      "sha256": "4d82b1e730d4464b032835e7f2621c703f8f8286931883435c5cdbc0f6b3501f"
+    },
+    {
+      "id": "S4",
+      "sha256": "6712a53b5295cb47eda86ecbdcc0adce9f1bb74e819cb9bf0b1e3039321978b6"
+    },
+    {
+      "id": "S5",
+      "sha256": "184cbed5eb415aa75c6702884146cdb514006f2fd1a5c40bad24de8b293a8b82"
+    },
+    {
+      "id": "S6",
+      "sha256": "f9e83fb133bfa4fc8da4780078fedeb1c501794a54dc0bf66113a970758920b4"
+    },
+    {
+      "id": "S7",
+      "sha256": "6b3f816c452fb559d5aa37ac3b909d5884f21a160fdd1c3abfb3e977d3862a3e"
+    },
+    {
+      "id": "S8",
+      "sha256": "3942e99ca5cdefad0530a713d382361b6975ae59d718e23620c3f83b0f116f3a"
+    },
+    {
+      "id": "S9",
+      "sha256": "61496336fec124944b469fdcc3b4ddfb7871f8125f28e55a9c552c27b69d4c81"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97973",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve diffusion-model sample quality when generation uses few time steps.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DxMI jointly trains a diffusion model and an energy-based model using a maximum-entropy IRL formulation based on estimated training-data log density.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "DxDP is proposed as a reinforcement-learning subroutine that converts diffusion-model updating into an optimal-control problem, replacing back-propagation through time with value functions.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "training method",
+        "claim": "DxMI trains an energy-based model without MCMC.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe DxDP as a novel reinforcement-learning algorithm for diffusion models.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that DxMI-fine-tuned diffusion models generate high-quality samples in as few as 4 and 10 steps.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that MCMC-free EBM training with DxMI stabilizes training dynamics and improves anomaly-detection performance.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors state that the DxMI minimax formulation reaches equilibrium when both models converge to the data distribution.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper targets improved diffusion sample quality under a small generation-step budget.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "formulation",
+        "summary": "It adapts the IRL analogy by learning a log-density reward from training data and jointly training a diffusion model with an EBM.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "theory and mechanism",
+        "summary": "DxMI is formulated as a minimax game; entropy maximization is presented as supporting diffusion-model exploration and EBM convergence.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "algorithmic component",
+        "summary": "DxDP makes diffusion updates efficient through an optimal-control reformulation using value functions.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report high-quality generation at 4 or 10 steps and MCMC-free EBM training with improved stability and anomaly detection.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a named objective, its equilibrium condition, an entropy mechanism, and a specialized optimization subroutine before reporting generation and EBM outcomes.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "This alignment makes it possible to trace how the proposed mechanism is intended to produce each reported benefit.",
+        "application": "When presenting a new generative-model method, map each claimed outcome to the objective, mechanism, and computational procedure that supposedly enables it.",
+        "exception": "This structure is less suitable when the work is primarily empirical and no mechanism or optimization rationale is asserted."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, quality metrics, baselines, or the conditions behind the 4- and 10-step results.",
+      "It gives no proof details or quantitative evidence for the equilibrium, convergence, stabilization, or anomaly-detection claims."
+    ]
+  }
+}

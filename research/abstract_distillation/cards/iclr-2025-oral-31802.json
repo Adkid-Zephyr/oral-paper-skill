@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31802",
+    "title": "A Computational Framework for Modeling Emergence of Color Vision in the Human Brain",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31802"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b63b74613d0dfc4943922615b2e4fb58d35e00ba2ea0ae2060a2d4a35b64cc5f",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "bc00c350ddde0916467060567ff3a75c790d2d8b274cf3cf76d19aea660bdb10",
+    "extracted_at": "2026-09-12T23:52:36.280364+00:00",
+    "session_id": "01a09809-32fe-7433-adac-ee8f8cc9bfc5",
+    "usage": {
+      "input_tokens": 12790,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 899,
+      "reasoning_output_tokens": 100
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5d662c423ad156804f63ea8d20780e3966174e43f033392c4971159677704cc4"
+    },
+    {
+      "id": "S2",
+      "sha256": "bb76b4795662f27bc6c80a86365f74f7f7c2e9221ec0bd03e1677f015cedaf03"
+    },
+    {
+      "id": "S3",
+      "sha256": "0dab1a63855a2f1969362a2c47194330d8b526ee63c70d0debb8c6819f4bb261"
+    },
+    {
+      "id": "S4",
+      "sha256": "84022dd68ecab81b0a06c4de7297b93b7f0e460a029e7a167b0d27febac4b783"
+    },
+    {
+      "id": "S5",
+      "sha256": "02f10016cb5cd2c0ec522137730cb10c569bd3fb3f13d7b4148b6df253e8a178"
+    },
+    {
+      "id": "S6",
+      "sha256": "371622ab55057ded092353b34664d513b0ca07dbd5af2372432a15b2d9e2f9ff"
+    },
+    {
+      "id": "S7",
+      "sha256": "f6d8ff9bf5228d98a77ef1c643bbe5fc70fd07514f49cf37f5e0695dc1da906d"
+    },
+    {
+      "id": "S8",
+      "sha256": "96ba337694dee4f2d898a3667687afb00ba795f38e5e3752bbd80e92b5872667"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31802",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain how the brain infers color vision and its dimensionality from optic-nerve signals despite unknown eye encoding properties.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing work often assumes color dimensionality is known in advance and overlooks cortical development and internal color-space representation.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "A computational framework jointly simulating the eye and cortex to model the emergence of human color vision.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "system_and_method",
+        "claim": "A biologically grounded eye simulation engine producing optic-nerve signals from natural images, paired with cortical self-supervised prediction under natural eye motions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory_and_demonstration",
+        "claim": "A model in which color dimensionality emerges from disentangling retinal invariants from sensory signals.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe their work as the first simulation that boosts color dimensionality in a way observed in squirrel-monkey gene therapy, and as demonstrating the possibility of increasing human color vision from 3D to 4D.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the cortical model naturally learns color vision by disentangling retinal invariants from sensory signals.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that simulations with N color-photoreceptor types yield N-dimensional color vision, with the result verified through formal colorimetry.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report a simulation reproducing boosted color dimensionality observed in squirrel-monkey gene therapy and indicating possible enhancement of human color vision from 3D to 4D.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames color decoding from optic-nerve signals as an inferential mystery involving unknown retinal encoding and color dimensionality.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap_and_framework",
+        "summary": "It identifies a priori dimensionality assumptions in existing research and introduces a joint eye–cortex computational framework.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "model_construction",
+        "summary": "The authors build an eye simulation driven by natural images and propose cortical self-supervised learning from signal fluctuations during eye motion.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "They report emergent color vision, N-to-N dimensionality matching under formal colorimetry, and simulated dimensionality enhancement from 3D to 4D.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each modeling component with a specific biological signal source or learning condition: eye simulation generates optic-nerve inputs, while cortical learning predicts fluctuations under natural eye motions.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This component-to-mechanism alignment makes the proposed explanation easier to evaluate conceptually.",
+        "application": "When presenting a biologically motivated model, explicitly map each module to its biological input, constraint, and learning signal.",
+        "exception": "This framing is less suitable when the work is intentionally abstract and does not claim biological plausibility."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify simulation parameters, datasets or natural-image coverage, training details, baselines, quantitative colorimetry results, or statistical analyses.",
+      "The reported 3D-to-4D enhancement is described as a possibility; the abstract does not establish performance in humans or clinical feasibility.",
+      "The abstract does not provide details of the formal colorimetry protocol or how closely the simulation matches gene-therapy observations."
+    ]
+  }
+}

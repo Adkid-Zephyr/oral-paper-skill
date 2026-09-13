@@ -1,0 +1,210 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31866",
+    "title": "SANA: Efficient High-Resolution Text-to-Image Synthesis with Linear Diffusion Transformers",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31866"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f786961c029bc1733225f64ccd352999ab0b3642e22d1768dcb71fb999dd2b20",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "8160048c5b11015f6c4a670405438d3df71cfe15c184c75b943a98fce5e02c6c",
+    "extracted_at": "2026-09-12T23:55:06.452642+00:00",
+    "session_id": "01a0980b-8289-73e2-be07-8dc416bc9460",
+    "usage": {
+      "input_tokens": 12835,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 941,
+      "reasoning_output_tokens": 133
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2c176dcf5a8606210f592868eeab814f1044c86606ccf64b3c3223d307da4986"
+    },
+    {
+      "id": "S2",
+      "sha256": "7d43a8e49917d8c88c74989dd3bc1f9c200acc0a8a89c08b9fda7391be4897a5"
+    },
+    {
+      "id": "S3",
+      "sha256": "766b708743802ae5127a26f473b428d9b65cb78481b116a58698f816c05fce77"
+    },
+    {
+      "id": "S4",
+      "sha256": "229140aac1329db1572d95351800b4604e9a0e1214058dcc51a05f34dd00cd69"
+    },
+    {
+      "id": "S5",
+      "sha256": "c86687dafd42d89d5cbf9efe585255cc1655b744db05965e708744064120ce9d"
+    },
+    {
+      "id": "S6",
+      "sha256": "31b647537d6ba8a036eb6b0b156d482431c6f57c16f2e4963efb86cfdb03e41e"
+    },
+    {
+      "id": "S7",
+      "sha256": "a36abaecc6433ab28763a0d77fc02386f00dca60971d58126f6aa2d8f3830ab0"
+    },
+    {
+      "id": "S8",
+      "sha256": "5fae681d6f42f794faa1210b844be5c7f3ef334ac6676c47ced6c82f3a47829a"
+    },
+    {
+      "id": "S9",
+      "sha256": "002bd488cee8439fd76161100cd56f4237dc9fc4104f5a267c13cc196de1de61"
+    },
+    {
+      "id": "S10",
+      "sha256": "061457f12ce6a28c09b888416b21ea521d983828aedef9b5cded6d080d6281fa"
+    },
+    {
+      "id": "S11",
+      "sha256": "3d77536eb5cef3db402768d9d3912a0da464a403769af719b59a4a7665436e62"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31866",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Efficiently synthesize high-resolution text-to-image outputs, including up to 4096×4096 resolution, while maintaining quality and text-image alignment.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify conventional 8× image compression and vanilla attention as inefficient for reducing latent tokens and operating at high resolutions.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Sana combines a 32× deep-compression autoencoder, Linear DiT with linear attention, a decoder-only LLM text encoder with in-context instruction design, and Flow-DPM-Solver plus efficient caption processing.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The framework targets high-resolution generation with deployment on laptop GPUs.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S9"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors state that code and models will be publicly released upon publication.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present Sana as a text-to-image framework built around linear diffusion transformers and the listed efficiency-oriented design combination.",
+      "source_ids": [
+        "S1",
+        "S3",
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Sana-0.6B is competitive with Flux-12B while being 20 times smaller and over 100 times faster in measured throughput.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that Sana-0.6B runs on a 16GB laptop GPU and generates a 1024×1024 image in under one second.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report high-resolution, high-quality images with strong text-image alignment and fast speed, including laptop-GPU deployment.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "objective",
+        "summary": "Introduces Sana for efficient text-to-image synthesis at resolutions up to 4096×4096.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "architecture",
+        "summary": "Reduces latent-token count with 32× autoencoding and improves high-resolution efficiency by replacing vanilla attention with linear attention.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "conditioning_and_efficiency",
+        "summary": "Uses a decoder-only small LLM text encoder with instruction-based in-context learning, plus Flow-DPM-Solver and caption processing for alignment and faster convergence.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_outcomes",
+        "summary": "Reports competitive size and throughput against Flux-12B, sub-second 1024×1024 generation on a 16GB laptop GPU, and low-cost content creation.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract maps distinct efficiency bottlenecks to separate design choices: compression addresses latent-token count, linear attention addresses high-resolution computation, and solver changes address sampling steps.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "This decomposition makes the method's efficiency rationale easier to trace from problem to component.",
+        "application": "When presenting an efficiency-oriented system, explicitly pair each bottleneck with the architectural or algorithmic intervention intended to address it.",
+        "exception": "This framing is less suitable when improvements cannot be meaningfully isolated or when the work centers on a single inseparable mechanism."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide benchmark protocols, quality or alignment metrics, hardware details beyond the laptop-GPU claim, or the conditions behind the throughput comparison.",
+      "It does not report ablations establishing the individual effects of the proposed components.",
+      "The stated public release is prospective, not evidence that code or models were released."
+    ]
+  }
+}

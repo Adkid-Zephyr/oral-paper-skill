@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31933",
+    "title": "ProtComposer: Compositional Protein Structure Generation with 3D Ellipsoids",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31933"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a156a70b460ae5132b7a3b2959e548832fc45b179de0fab31a4b46f0c638fd70",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "c3d80d3e41bb71b882708cfd9fcdafa9a0a69ba4e7a3cdf4ac1d0fa05a51a5be",
+    "extracted_at": "2026-09-12T23:57:42.993097+00:00",
+    "session_id": "01a0980d-ea9d-7910-84bb-26838fb5001d",
+    "usage": {
+      "input_tokens": 12687,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 772,
+      "reasoning_output_tokens": 114
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f1b7f2af43d35ff4ad1d70c47464e095b4486f7288fb7a70b071e9e326962123"
+    },
+    {
+      "id": "S2",
+      "sha256": "a870f6a3f9e3501aaa0d27a81bc7c2331258b048285bccf7e2b211ae4e05a176"
+    },
+    {
+      "id": "S3",
+      "sha256": "cd0d9de954f3701a190995507cb32ba9837681541fc195b25684268bfb047e52"
+    },
+    {
+      "id": "S4",
+      "sha256": "a2094b50486ede19ec67c711884b7627cb831aa1f5d0dd517f51e13514b32849"
+    },
+    {
+      "id": "S5",
+      "sha256": "65cbf57ad120ab3538c23ef78c57ebb0e790ac76cb15ff1f98825b6f85147e07"
+    },
+    {
+      "id": "S6",
+      "sha256": "6b5b08277e9084e2f14268759d7fdca209133171d42674a52aa129bfb20e0f05"
+    },
+    {
+      "id": "S7",
+      "sha256": "9da6613820a29d245d4a632635ab1bc42cd3e7a057304657dacc9ca5c3cb89cc"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31933",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate protein structures conditioned on spatial layouts describing substructure shapes and semantics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing generative models commonly oversample conceptually simple helix bundles, limiting matching of PDB-like helix fractions.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "ProtComposer conditions protein-structure generation on layouts represented by 3D ellipsoids.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The method supports ellipsoids that are hand-constructed, extracted from existing proteins, or sampled from a statistical model, enabling distinct control, redesign, and generation uses.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report improved Pareto frontiers across designability, novelty, and diversity, plus sampling of designable proteins with PDB-matching helix fractions.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce compositional protein generation through 3D ellipsoids that encode substructure shape and semantics.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report improved trade-off frontiers among designability, novelty, and diversity when conditioning on novel, diverse layouts from a simple statistical model.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that the approach can sample designable proteins whose helix fraction matches that of PDB proteins, unlike commonly observed behavior in existing generative models.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setup",
+        "summary": "ProtComposer is introduced for protein generation conditioned on spatial layouts encoded by 3D ellipsoids.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "capability",
+        "summary": "Different ellipsoid sources provide user control, redesign of existing structures, or statistically generated layouts.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Statistical-model layouts are reported to expand designability–novelty–diversity trade-offs and better match PDB helix fractions.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract maps three conditioning-data sources to distinct capabilities: manual control, existing-protein editing, and statistical-layout exploration.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Separating input provenance from the capability it enables makes a compositional method's use cases concrete.",
+        "application": "When presenting a controllable generative system, organize the method around a small set of input-construction modes and state the capability unlocked by each.",
+        "exception": "This framing is unsuitable when input modes do not produce meaningfully different behaviors or use cases."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify evaluation datasets, baselines, metric values, or the conditions under which the reported improvements were measured.",
+      "The abstract does not describe the statistical model or how ellipsoid layouts are extracted and converted into generated structures."
+    ]
+  }
+}

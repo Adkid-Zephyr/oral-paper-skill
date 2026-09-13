@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009920",
+    "title": "Exploratory Causal Inference in SAEnce",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009920"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d30e2b7c3e4c11ac75fdc0502d238ae6871b7ba0696052d66a4745910fd6c59e",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "1cb4b000ae95fb2a64dc8cda3b3018e879edb98d7ed7bb95e4e39280a6e8bf0b",
+    "extracted_at": "2026-09-13T00:03:38.962501+00:00",
+    "session_id": "01a09813-57e6-7030-8144-f5834d8a4859",
+    "usage": {
+      "input_tokens": 12652,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 795,
+      "reasoning_output_tokens": 104
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7ff49baabb9fa2ea240a1a41aacad46311966c654aa80ede4ea259e42596c414"
+    },
+    {
+      "id": "S2",
+      "sha256": "1ec0f90fe6f4418c522b103c54357ca7e10fcf53a9b0a87c7c4cfa3ee980304e"
+    },
+    {
+      "id": "S3",
+      "sha256": "7f0ecdb30db88e148dab126052e39cea4d3e40487f236f34ad71881caad12480"
+    },
+    {
+      "id": "S4",
+      "sha256": "c9ee59cefba40dcf84bad11ec56aa651edbd865b7484d88b9896f4ea7c742f2b"
+    },
+    {
+      "id": "S5",
+      "sha256": "f5a04ef50e046ca364082d06fef669564975cd3d4258c07e0c5a397d7bbcf5f5"
+    },
+    {
+      "id": "S6",
+      "sha256": "221144fc3db4bb3c987e8f57e0939704ab4d0c0880e60b192cb6d1cefe8d9470"
+    },
+    {
+      "id": "S7",
+      "sha256": "b20cbc49d4939e466dfa5556eed08bb38172734813316ed778f07cd6c7dc41b2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009920",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Discover unknown treatment effects directly from trial data, using representations of unstructured trial data interpreted through a Sparse Auto Encoder.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Hand-crafted hypotheses, expensive analysis, multiple-testing issues, and entangled effects limit causal-effect estimation at scale and may anchor discovery on incomplete hypotheses.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Neural Effect Search, a recursive procedure based on progressive stratification to address multiple testing and effect entanglement.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Combines pretrained foundation-model representations of unstructured trial data with Sparse Auto Encoder interpretation for exploratory causal inference.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical demonstration",
+        "claim": "Applies the approach to experimental ecology and reports unsupervised causal-effect identification on a real-world scientific trial.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe Neural Effect Search as a novel procedure and the real-world demonstration as the first successful unsupervised causal-effect identification in a scientific trial.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report assessing algorithm robustness on semi-synthetic experiments.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report successful unsupervised causal-effect identification on a real-world experimental-ecology trial.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "RCT-based science depends on hand-crafted hypotheses and costly analysis, constraining causal discovery at scale.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "representation",
+        "summary": "The proposal converts unstructured trial data into foundation-model representations and interprets them with a Sparse Auto Encoder.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "methodological challenge",
+        "summary": "Neural-level effect discovery is complicated by multiple testing and entangled effects.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "proposed solution and demonstration",
+        "summary": "Neural Effect Search uses progressive stratification; the authors report semi-synthetic robustness assessment and a real-world ecology-trial demonstration.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly links the representation pipeline to two named statistical or structural obstacles and presents progressive stratification as the mechanism addressing both.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact abstract can make a method’s rationale auditable by pairing each technical component with a specific challenge.",
+        "application": "When presenting a new discovery pipeline, map each major component to an explicitly named failure mode and state the mechanism intended to address it.",
+        "exception": "Avoid this framing when the component-to-challenge mapping is speculative or unsupported by the reported method."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no semi-synthetic datasets, metrics, robustness criteria, sample sizes, or quantitative results.",
+      "The identified effects, trial details, comparison methods, and conditions for the real-world demonstration are unspecified.",
+      "The abstract does not establish independently verified correctness, reproducibility, or priority of the stated novelty."
+    ]
+  }
+}

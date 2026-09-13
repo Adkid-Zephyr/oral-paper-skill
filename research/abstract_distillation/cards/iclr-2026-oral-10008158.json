@@ -1,0 +1,160 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008158",
+    "title": "A Representer Theorem for Hawkes Processes via Penalized Least Squares Minimization",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008158"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8dfd18ac3215ce9d7dd67fe2ca70d1207b03982625b34afe59574b06a298f624",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "a4d9cae35d9e4496e10f317bd53d8569d7a22ba0f7964c55a920d747ab67e071",
+    "extracted_at": "2026-09-13T00:00:46.711476+00:00",
+    "session_id": "01a09810-c25f-73d1-824f-c08a0fa8517a",
+    "usage": {
+      "input_tokens": 12744,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 672,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7042c26f54bd2dd354274bd7733393b3fdc0fe2ef487f6444a83c3979b4111e9"
+    },
+    {
+      "id": "S2",
+      "sha256": "84363871114c34b642625248c32cc99aea497ca7681aacdc2eceb73014c1ae01"
+    },
+    {
+      "id": "S3",
+      "sha256": "6009f4ee36a409a07beec344a5707d42ec82c55705b16a2f0ef8fc26cad323eb"
+    },
+    {
+      "id": "S4",
+      "sha256": "0e3d56ccaa4ff7e618bf408830c8ae79e75a1e1b070c1e47d7b05b209349e1b8"
+    },
+    {
+      "id": "S5",
+      "sha256": "e85225ebe4a9f833fb8223daa2e8915bbc7f29b5c4f1d78e340b66d6f49cf4cc"
+    },
+    {
+      "id": "S6",
+      "sha256": "8c69838bb89838ad7de134a04299a3e3fbf1e587c792a37ab5444705e26bf0e2"
+    },
+    {
+      "id": "S7",
+      "sha256": "8549f4b1eb0eaac644fdd1dbf84512df5bacd9e7219468ed7dc3af8f4912e9d0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008158",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Estimate latent triggering kernels for linear multivariate Hawkes processes from observed event sequences in an RKHS framework.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Derives a representer theorem for penalized least-squares estimation in which transformed kernels satisfy simultaneous integral equations and optimal triggering-kernel estimators are data-point expansions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Fixes all dual coefficients analytically to unity, avoiding coefficient optimization and yielding an efficient estimator for large-scale data.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper reports a novel representer-theorem form based on transformed kernels defined through simultaneous integral equations, with analytically unit dual coefficients.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report competitive predictive accuracy and substantially improved computational efficiency on synthetic and real-world datasets versus state-of-the-art kernel-method estimators.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that unit dual coefficients eliminate the need to solve a costly optimization problem for those coefficients.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Representer theorems reduce infinite-dimensional RKHS optimization to finite-dimensional dual-coefficient problems.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "task",
+        "summary": "The paper targets estimation of Hawkes-process triggering kernels from observed event sequences.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "result",
+        "summary": "It introduces transformed kernels governed by simultaneous integral equations, unit dual coefficients, and reported accuracy-efficiency results on synthetic and real-world data.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a structural theorem to an implementation simplification: transformed-kernel expansions are paired with analytically fixed unit coefficients.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A theoretical characterization can be especially actionable when it removes a computational subproblem.",
+        "application": "When presenting a new estimator, identify whether the derived structure analytically fixes or eliminates any learned quantities, and state the resulting computational consequence.",
+        "exception": "This framing is unsuitable when the supposedly fixed quantities depend on data, tuning choices, or conditions not established in the available evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not state the assumptions under which the simultaneous integral equations, representer form, or unit coefficients hold.",
+      "Dataset sizes, computational metrics, baselines, and statistical uncertainty for the reported empirical comparison are unspecified.",
+      "The abstract does not detail the transformed kernels or the estimator’s limitations and tuning procedure."
+    ]
+  }
+}

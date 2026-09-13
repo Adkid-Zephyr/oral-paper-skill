@@ -1,0 +1,161 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31811",
+    "title": "Emergence of meta-stable clustering in mean-field transformer models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31811"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "227df2890aa95deb5c6606d3e176089c13baae79d5b348972e73a482a9fcda83",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "a05b108b9e43d2cd42317287299cd16ac31459d0965373a19aab6353591d81a7",
+    "extracted_at": "2026-09-12T23:52:54.495086+00:00",
+    "session_id": "01a09809-86d9-7e00-a1f6-99b552a91495",
+    "usage": {
+      "input_tokens": 12668,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 762,
+      "reasoning_output_tokens": 151
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "55f10431a9e62748ad45feaed5e3e3c9872b4ec70bac166f1f3c372fde3940bf"
+    },
+    {
+      "id": "S2",
+      "sha256": "7d56e6eed3ee48cfc746e96749d528d454981ce420786b601a4d57ccc07c02dd"
+    },
+    {
+      "id": "S3",
+      "sha256": "023ea6fa38eaf6fb597a0517acbd34a60089cd03a66db6ea2791ee28e506ff2d"
+    },
+    {
+      "id": "S4",
+      "sha256": "ba7b03bf3b03a1aa5a37219d0709079d9eeeea9f540fd8aa16a302f6888b8aba"
+    },
+    {
+      "id": "S5",
+      "sha256": "dc7bc6fd45536cdfa66218b431e7e8ab98ae52a2df4bcdc38d82990e16d56577"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31811",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize the long-term evolution, meta-stable phases, and clustering of tokens in a mean-field Transformer model.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A perturbative analysis of the mean-field PDE around iid uniform initialization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theoretical result",
+        "claim": "A large-token result showing closeness to a structured meta-stable solution manifold, including periodic structures.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "characterization",
+        "claim": "An explicit identification of the manifold’s structure through the index maximizing a rescaled Gegenbauer polynomial, parameterized by inverse temperature.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper presents a mathematical investigation focused on the emergence and persistence of meta-stable phases and clustering in this system.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, as the number of tokens becomes large, the model remains close to a meta-stable manifold around iid uniform initialization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that the manifold’s structure is determined explicitly by an index maximizing a rescaled Gegenbauer polynomial as a function of inverse temperature.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "modeling",
+        "summary": "Tokens across Transformer layers are modeled as a continuous-time spherical flow governed by a mean-field interacting particle system.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "objective",
+        "summary": "The corresponding Wasserstein-gradient-flow PDE is studied for long-term meta-stability and clustering behavior.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "Perturbation around iid uniform initialization yields large-token closeness to a structured meta-stable manifold.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "identification",
+        "summary": "The manifold structure is linked explicitly to an inverse-temperature-dependent Gegenbauer-polynomial index.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a perturbative regime—around iid uniform initialization—with a precise parameter-dependent structural characterization.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This links where the analysis is anchored to how the resulting states are classified.",
+        "application": "When presenting a theoretical dynamics result, state both the reference configuration for the analysis and the explicit rule that identifies the resulting structure.",
+        "exception": "This framing may be unsuitable when the result is not local to a reference state or lacks an interpretable parameterization."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the quantitative meaning of “remains close,” the time horizon, or the assumptions required for the large-token limit.",
+      "It does not report empirical experiments, numerical details, or comparisons with alternative analyses."
+    ]
+  }
+}

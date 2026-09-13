@@ -1,0 +1,157 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97958",
+    "title": "Generalization Error Bounds for Two-stage Recommender Systems with Tree Structure",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97958"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1555f884e1ec8c37059dcef6730e4f31711fd22a9f7ac402176aec6bf53d8c9e",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "166b91db8084e3303f5e165f93cc26e13cc6edf8dcb5787d4f7a2f8435e24d1c",
+    "extracted_at": "2026-09-13T00:18:17.153272+00:00",
+    "session_id": "01a09820-c682-76d3-9e01-09bdbada5ad2",
+    "usage": {
+      "input_tokens": 12594,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 728,
+      "reasoning_output_tokens": 74
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a4ce3ae64538e54b2b239390e1010c1d668daf2a130496ac0d7eafe7da9cd168"
+    },
+    {
+      "id": "S2",
+      "sha256": "6471e43cd8a88acc6f61d7e181d08133feb1a68f4e7e713e66b565e3903aa75e"
+    },
+    {
+      "id": "S3",
+      "sha256": "bb80b847d9d5ccd1d081830237c383f923683e34eed14aac25cf10e74413c968"
+    },
+    {
+      "id": "S4",
+      "sha256": "8e6ea71403c3108d3c11ae58abecba2ac2fcd83cf14de641d7862f8f2fe2bfce"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97958",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Analyze generalization error in tree-structured two-stage recommender systems combining a fast tree-based retriever with a more precise ranker.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "An error-decomposition analysis of generalization error for tree-structured two-stage recommenders.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Rademacher-complexity upper bounds for beam-search tree retrievers and rankers trained under shifted distributions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The abstract reports theoretical and real-world experimental indications that more retriever branches and better cross-stage distribution alignment improve generalization performance.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work combines error decomposition with Rademacher-complexity bounds covering both beam-search tree retrievers and rankers under distribution shift.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical insights and practical experiments on real-world datasets supporting improved generalization with increased retriever branching and harmonized stage distributions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report established generalization upper bounds for multiple tree-based retrievers using beam search and different ranker models under shifted training distributions.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Two-stage recommenders are presented as a way to identify and personalize relevant items efficiently from large candidate sets.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper analyzes tree-structured systems through error decomposition, distinguishing an efficient retriever from a slower, more precise ranker.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "bounds",
+        "summary": "Rademacher complexity is used to derive upper bounds for beam-search retrievers and rankers under shifted training distributions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported implication",
+        "summary": "Theory and real-world experiments indicate benefits from increasing retriever branches and aligning distributions across stages.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links its analysis to an explicit error decomposition and separately models retriever complexity, ranker complexity, and cross-stage distribution shift.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "Decomposing a system-level claim into stage-specific error sources can make theoretical analysis and practical interventions correspond more directly.",
+        "application": "For another multi-stage learning system, define an error decomposition first, then map each component to a measurable design variable or bound.",
+        "exception": "This framing may be unsuitable when stage errors cannot be meaningfully separated or when the system is trained and evaluated as a fully coupled model."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact error decomposition, model classes, bound forms, datasets, metrics, or experimental magnitudes.",
+      "It does not establish which intervention contributes more, or whether the reported indications hold beyond the studied real-world datasets."
+    ]
+  }
+}

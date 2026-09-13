@@ -1,0 +1,199 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97965",
+    "title": "Divide-and-Conquer Meets Consensus: Unleashing the Power of Functions in Code Generation",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97965"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "14da734db2e0711ecb63b68c94201ec9cef18db5b1a29fe97be3122baacb5e4f",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "7a87a62d8935d987113549f99c3a839c2c199c64edb9b7ecfca084a3f4424f4a",
+    "extracted_at": "2026-09-13T00:18:33.510834+00:00",
+    "session_id": "01a09821-0120-7d70-a85b-1565ee72840a",
+    "usage": {
+      "input_tokens": 12792,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 788,
+      "reasoning_output_tokens": 63
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cf888aaf57a41ae0be799f27d2bb9ed54edea1d19a3a2c6309f4aebf9854f0e7"
+    },
+    {
+      "id": "S2",
+      "sha256": "55e637e985a92be0b92417d337864d6b58f091ae4bd40d3b668ce994b7bbc832"
+    },
+    {
+      "id": "S3",
+      "sha256": "69210116f5cee72f8efd5e6d7449610bffae1c9f17ac407b6285bd41a1cd4130"
+    },
+    {
+      "id": "S4",
+      "sha256": "a475351215e518d930e99d2e9b534365e6414fe3c3046cd76c4893b4c8bdbdb6"
+    },
+    {
+      "id": "S5",
+      "sha256": "155338419af70b9c94124d8525de04c1b34d613697ae69bf0ebbbc167479a304"
+    },
+    {
+      "id": "S6",
+      "sha256": "d4018c029ce4dcf7f2e9890472aac05a2ed8537934b3aa95e7cc8d1fc95bb403"
+    },
+    {
+      "id": "S7",
+      "sha256": "271a45c0d612120513305f81100f2c5a287d7a578dacae81481ae752303881dc"
+    },
+    {
+      "id": "S8",
+      "sha256": "e640ba7300476b2df4facd138a437b6d1a288412f35683c8e8073d7b4afd3dae"
+    },
+    {
+      "id": "S9",
+      "sha256": "7d0026b91b763c05737886b75e13be639c23ef9876b93d7df111305c691fba36"
+    },
+    {
+      "id": "S10",
+      "sha256": "c9675b33bdd5790e7b624c81f7e7b990fa56d91f32823cc0cd7fb358ba85571d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97965",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Code-generation models struggle with programs requiring complex requirements.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing plan-and-solve methods face difficulty planning deeply nested requirements, while self-testing depends on accurate tests for refinement.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "FunCoder combines divide-and-conquer code generation with functional consensus.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It recursively decomposes generation into tree-structured sub-functions, then composes them into more complex objectives.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It selects functions through consensus over similar program behaviors to mitigate error propagation.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish FunCoder through dynamic function decomposition and functional consensus within code generation.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that FunCoder outperforms state-of-the-art methods by an average of 9.8% across HumanEval, MBPP, xCodeEval, and MATH with GPT-3.5 and GPT-4.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that StableCode-3b with FunCoder exceeds GPT-3.5 by 18.6% and reaches 97.7% of GPT-4's HumanEval performance.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that dynamic function decomposition handles complex requirements and that functional consensus outperforms self-testing in correctness evaluation.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Code-generation models remain challenged by complex requirements.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior-approach limitation",
+        "summary": "Plan-and-solve decomposition and self-tests reduce complexity, but deep planning and test accuracy remain difficult.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed framework",
+        "summary": "FunCoder recursively branches into sub-functions, composes them, and uses behavioral consensus to designate functions.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported results and analysis",
+        "summary": "The authors report gains across four benchmarks and model scales, attributing the behavior to dynamic decomposition and functional consensus.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each proposed mechanism with a named failure mode: dynamic decomposition addresses complex requirements, while functional consensus is intended to mitigate error propagation and prevail over self-testing in correctness evaluation.",
+          "source_ids": [
+            "S3",
+            "S7",
+            "S10"
+          ]
+        },
+        "interpretation": "Separating mechanisms by the specific bottleneck they target can make a method's rationale and evidence easier to assess.",
+        "application": "For a multi-stage generation method, map each component to an explicit failure mode and report component-level comparisons against the corresponding baseline.",
+        "exception": "This framing is less suitable when components cannot be isolated without changing the task or introducing confounding interactions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify per-benchmark scores, evaluation protocol, sample sizes, or variance, so the reported percentage improvements cannot be independently assessed here.",
+      "The claim that consensus mitigates error propagation is not accompanied by its detailed mechanism or ablation conditions in the abstract."
+    ]
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47241",
+    "title": "Roll the dice & look before you leap: Going beyond the creative limits of next-token prediction",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47241"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "90fe1375cc62b1161bcb200a8a3a3bed88bfac7b21669b734b135ae5c77b4af6",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "d3dbada3bddd8e918fef3518963d23d45492767ea4a02df002a140b673e8c2ac",
+    "extracted_at": "2026-09-13T00:10:07.361139+00:00",
+    "session_id": "01a09819-3c91-7e23-9e61-7be1a4834d20",
+    "usage": {
+      "input_tokens": 12736,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 892,
+      "reasoning_output_tokens": 89
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5125bb9827e58b363aeb20caae67809816d990f13d536b0e75ea3f38b05796a5"
+    },
+    {
+      "id": "S2",
+      "sha256": "5287ea0db6cdb9ae225647815f38d7e42a84bd971ecde0559b66bb798a2c9cde"
+    },
+    {
+      "id": "S3",
+      "sha256": "db9cae69107207fc7bf114c6e337f92c74cbe92bd188bc2850936452c3a55969"
+    },
+    {
+      "id": "S4",
+      "sha256": "4ffc31949ad34ce9e70b589acad7671bb44f62878093a541d234a7c1ea2cb598"
+    },
+    {
+      "id": "S5",
+      "sha256": "4e316cc9c790a23b65679cb55499f60ab4e9c249a7d49cba81e5c46817b9d631"
+    },
+    {
+      "id": "S6",
+      "sha256": "79619c411dabe98f10e3270200a339f72a4818dceb76be4fb1fb97683e8c0094"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47241",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper develops controlled minimal tasks for analyzing open-ended creative skills involving stochastic planning, discovering connections, or constructing patterns.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors argue that next-token learning is myopic and excessively memorizing for these open-ended tasks.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "test-bed",
+        "claim": "A suite of minimal algorithmic tasks loosely abstracting open-ended real-world tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "comparative finding",
+        "claim": "An empirical and conceptual comparison arguing that teacherless training and diffusion models produce more diverse and original outputs than next-token learning on these tasks.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Seed-conditioning injects input-layer noise to elicit randomness while preserving coherence, matching or sometimes outperforming output-layer temperature sampling under stated conditions.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work presents a principled minimal test-bed and new arguments for moving beyond next-token learning and temperature sampling.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that multi-token approaches—teacherless training and diffusion models—comparatively excel in diversity and originality.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that seed-conditioning works surprisingly as well as temperature sampling, and better in some conditions, for eliciting randomness without hurting coherence.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report partial code availability for the algorithmic-creativity test-bed.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task design",
+        "summary": "The paper introduces minimal algorithmic tasks as loose abstractions of open-ended real-world tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "evaluation target",
+        "summary": "It frames the tasks as controllable probes of creative limits, requiring stochastic planning to discover connections or construct patterns.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "comparative argument",
+        "summary": "It argues that next-token learning is myopic and memorizing, while multi-token approaches yield more diverse and original outputs.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "sampling intervention",
+        "summary": "It introduces seed-conditioning and reports parity or conditional gains over temperature sampling for randomness and coherence.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "resource",
+        "summary": "Part of the code is made available.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a minimal, controllable task suite with explicit creative operations such as graph-connection discovery and pattern construction.",
+          "source_ids": [
+            "S1",
+            "S2"
+          ]
+        },
+        "interpretation": "Separating creative capabilities into algorithmic operations can make an otherwise vague evaluation target more measurable.",
+        "application": "When introducing a broad capability, define a small task family whose required operation is explicit and controllable.",
+        "exception": "This approach may not capture social, contextual, or domain-specific aspects of real-world creativity."
+      },
+      {
+        "source_observation": {
+          "claim": "The paper compares where randomness is injected—input-layer seed-conditioning versus output-layer temperature sampling—while tracking randomness and coherence together.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "A sampling intervention is better framed through the intended trade-off rather than diversity alone.",
+        "application": "Describe stochastic-generation changes by naming both the diversity objective and the coherence constraint, then compare intervention locations.",
+        "exception": "The abstract does not establish that this comparison generalizes beyond the reported conditions or task suite."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no task inventory, metrics, sample sizes, quantitative results, or detailed conditions for the reported comparisons.",
+      "It does not specify the teacherless-training procedures, diffusion-model configurations, or baselines beyond temperature sampling.",
+      "Only partial code availability is stated; the extent of the released implementation is unclear."
+    ]
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009550",
+    "title": "It's All Just Vectorization: einx, a Universal Notation for Tensor Operations",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009550"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ae3884743ae2d8b66c5d7d565043230af04abc0b1c5f37e50cd6a1ee2dc37fb7",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "c1bdbfb1e49bd62ceac9f30b87ca8b23410fa4f4e2f1622c273399328a9f54af",
+    "extracted_at": "2026-09-13T00:03:00.947444+00:00",
+    "session_id": "01a09812-c593-7db0-8af6-1be11da3b5fd",
+    "usage": {
+      "input_tokens": 12745,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 789,
+      "reasoning_output_tokens": 85
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bdcf8879bfc61f16ebf6cb0f03094bb8b0ab2883507e90451df14e9d6e67c48e"
+    },
+    {
+      "id": "S2",
+      "sha256": "5236396b3bf96626953e48e851d8992c99dff9239324e318de8f5dc0d299332d"
+    },
+    {
+      "id": "S3",
+      "sha256": "be915b4e53b3ec74d01e91da3d075e78bbd9e15545ef55671a07e10e9a6b1d15"
+    },
+    {
+      "id": "S4",
+      "sha256": "4e3943551ffc264b197f86409c5ba4420b9e121bc7c7fe0e250c62c8bf393aa0"
+    },
+    {
+      "id": "S5",
+      "sha256": "44314424ea8ebee8c2b54b96eda2e7039804ec9aa818a9971791d9270dd76c8b"
+    },
+    {
+      "id": "S6",
+      "sha256": "4781a23e71b6d06a6b2f3fdc60ed56f863c10016c7b2341d39ede746037d00fa"
+    },
+    {
+      "id": "S7",
+      "sha256": "3627189ba3b688cd8424543c51bc28a54658a47431d079d418e5653795218524"
+    },
+    {
+      "id": "S8",
+      "sha256": "86f719bf820d718b6962a378c369c7267bfa889df4ec44a0f779a43db82b3a78"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009550",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Make tensor operations easier to express and less prone to shape errors through a more general notation.",
+        "source_ids": [
+          "S2",
+          "S5",
+          "S7"
+        ]
+      },
+      "gap": {
+        "claim": "Existing Numpy-like frameworks are difficult to read and write and use inconsistent rules, while einsum and einops are restricted to relatively few operations and lack a universal programming model.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Reframes vectorization as a function that lifts lower-order operations and decomposes higher-order operations into lower-order operations plus vectorization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "notation",
+        "claim": "Introduces einx, a universal tensor-operation notation using declarative, pointful expressions defined by analogy with loop notation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Provides a Python-embedded implementation that integrates with existing tensor frameworks and reduces their APIs to elementary operations with consistent rules.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish einx as a universal notation for tensor operations grounded in vectorization.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that einx reduces existing frameworks' large APIs to a small set of elementary operations and applies consistent rules across operations.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report a Python implementation that integrates with existing tensor frameworks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Tensor operations are central to scientific computing, but prevailing Numpy-like notation is difficult to use and vulnerable to shape errors.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "einsum and einops improve the landscape but remain limited in operation coverage and generality.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "conceptual approach",
+        "summary": "The paper revisits vectorization as both an operation-lifting mechanism and a decomposition principle.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "It introduces einx as declarative, pointful notation analogous to loop notation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "systemization",
+        "summary": "The implementation aims to provide compact, consistent, readable tensor code while integrating with existing frameworks.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explains the proposed notation through a dual role for vectorization: lifting lower-order operations and decomposing higher-order ones.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "A dual-use conceptual primitive can make a notation's design rationale easier to connect to both abstraction and implementation.",
+        "application": "When introducing a programming notation, define one central transformation and show how it supports both constructing complex operations and explaining their decomposition.",
+        "exception": "This framing may be unsuitable when the proposed system does not have a single transformation that genuinely covers both directions."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative evaluation, user study, or direct comparison demonstrating reduced shape errors, readability, or writability.",
+      "The scope of operations covered and the meaning of “seamlessly” integrated are not specified.",
+      "The abstract does not establish priority or independently verify the stated universality."
+    ]
+  }
+}

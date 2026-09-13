@@ -1,0 +1,163 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47178",
+    "title": "Can MLLMs Reason in Multimodality? EMMA: An Enhanced MultiModal ReAsoning Benchmark",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47178"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a4bafb95f1867b9a7659aa8ac6cb96bb0d41201b1a3d4c26a10bc88f09cd038c",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "1c6cd2aa94cb5140bb17c707c5d14e9b0bbeb5a5732e0a4e2c39823b9932f8c1",
+    "extracted_at": "2026-09-13T00:07:34.548895+00:00",
+    "session_id": "01a09816-fd77-7091-9756-3322dde1026f",
+    "usage": {
+      "input_tokens": 12687,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 677,
+      "reasoning_output_tokens": 79
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "717069b522bf8db8da674b6cc852ccfdd5425b0919977df140a9004d4a05f3e8"
+    },
+    {
+      "id": "S2",
+      "sha256": "693a19f86c80886c183681a7ecdafdae8cd1d33a137c7e35ab231f40916d44a8"
+    },
+    {
+      "id": "S3",
+      "sha256": "e237c50fc7266b4a14ba8958f898326d43fc03490b8334463f97896816ecc6ff"
+    },
+    {
+      "id": "S4",
+      "sha256": "9e98d50c16a5e78e208bbb0413647ca8ef3a3cb315d883ffa1668089d0e899a0"
+    },
+    {
+      "id": "S5",
+      "sha256": "1bba123d3e7808c6436f59a3440070e2054b386f0c8c9b6e63f0c6a2da748a2a"
+    },
+    {
+      "id": "S6",
+      "sha256": "7f855c695c7fa6efc11c307bbd7347095d05123e47106b50e7d72dc76b26c06c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47178",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess whether MLLMs can perform integrated reasoning over text and images across mathematics, physics, chemistry, and coding.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing benchmarks often emphasize text-dominant reasoning or shallow visual cues, inadequately testing integrated visual-textual reasoning.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces EMMA, a benchmark for organic multimodal reasoning across four technical domains.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "evaluation finding",
+        "claim": "Reports that current MLLMs remain limited on complex multimodal, multi-step reasoning, including under advanced prompting and test-time scaling.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "EMMA targets cross-modal reasoning that cannot be solved by reasoning independently within each modality.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report significant limitations of state-of-the-art MLLMs on EMMA's complex multimodal and multi-step tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Authors report that Chain-of-Thought prompting and test-time compute scaling still underperform on these tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Multimodal reasoning is described as important but under-explored in MLLMs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "benchmark gap",
+        "summary": "Existing evaluations are characterized as overly text-dominant or dependent on shallow visual cues.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "resource",
+        "summary": "EMMA is introduced to test organic cross-modal reasoning in mathematics, physics, chemistry, and coding.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "empirical implication",
+        "summary": "Evaluation is reported to expose substantial limitations even with advanced reasoning techniques, motivating architectural and training improvements.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The benchmark explicitly requires joint cross-modal reasoning and spans multiple technical domains.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A benchmark's task constraints can make the intended capability testable rather than allowing modality-by-modality shortcuts.",
+        "application": "Define evaluation items whose solution requires information from both modalities, then state which shortcut the item prevents.",
+        "exception": "This design is unsuitable when the target capability is intentionally unimodal or when cross-modal dependency cannot be specified reliably."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no dataset size, task composition, metrics, model list, or numerical results.",
+      "The abstract does not specify which EMMA domains or subtasks drive the reported limitations.",
+      "The claim that EMMA offers an enhanced test suite is author-reported; independent benchmark validity is not established here."
+    ]
+  }
+}

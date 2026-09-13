@@ -1,0 +1,156 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007614",
+    "title": "Optimistic Task Inference for Behavior Foundation Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007614"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "71f10db16bafee0ce3ba91088d164a2fbed72c64cf3d0654afacc6608af4d89d",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "a8284df4d38d3b21b98b37f8e1c1ac3b5802bcc53f69037afda7a2081a4105ec",
+    "extracted_at": "2026-09-12T23:59:54.464941+00:00",
+    "session_id": "01a0980f-f3ae-7e03-891f-dcdf2e231dab",
+    "usage": {
+      "input_tokens": 12681,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 733,
+      "reasoning_output_tokens": 112
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "eb012cf70a3ad4240207163d20cb25964d73edefe2ed9f0d80ec5b01f7b3bc39"
+    },
+    {
+      "id": "S2",
+      "sha256": "caf291008ae7a281050cb7134c4ce01ec78d7046cce21abc823281d618e3f4fe"
+    },
+    {
+      "id": "S3",
+      "sha256": "d223231c9b36dc29346445ecad7d857c001de7b5cae3d77bc7cc84860faa30c0"
+    },
+    {
+      "id": "S4",
+      "sha256": "1732196463981500754d5098acbf8d9ca55bdef9b956073fb919b74629e05921"
+    },
+    {
+      "id": "S5",
+      "sha256": "36810fc18dde1898385b9d02a284712a2a9c8bb49edc8611b624feeb2a6f047f"
+    },
+    {
+      "id": "S6",
+      "sha256": "35260910e037ab70c4687a84fb712d5459e89f6c4c49f1e49e3c063247f2cd9e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007614",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Infer and optimize a task at test time through interaction with the environment, without directly specified rewards or extensive reward labeling.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "OpTI-BFM models uncertainty over reward functions and uses an optimistic decision criterion to guide data collection for task inference.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The authors provide a regret bound for well-trained BFMs by connecting the analysis to upper-confidence algorithms for linear bandits.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed approach performs task inference purely through test-time environment interaction while directly modeling reward-function uncertainty.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, on established zero-shot benchmarks, OpTI-BFM enables successor-features-based BFMs to identify and optimize an unseen reward function within a handful of episodes, with minimal compute overhead.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "BFMs can retrieve a high-performing policy for a reward function specified at test time, enabling zero-shot RL.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "This process may require computing rewards on a non-negligible inference dataset, assuming a usable reward function or substantial labeling effort.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach_and_theory",
+        "summary": "The paper proposes interaction-only task inference with OpTI-BFM, using optimistic uncertainty-guided collection and a linear-bandit-based regret bound.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "empirical_report",
+        "summary": "The authors report benchmark results showing rapid unseen-reward identification and optimization with minimal compute overhead.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the proposed decision rule with both an explicit uncertainty model and a formal regret connection, then reports a benchmark outcome under a stated BFM class.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This pairing makes the method's decision principle, theoretical framing, and reported scope easier to relate.",
+        "application": "When introducing a task-inference method, state what uncertainty it models, how that uncertainty changes data collection, and which model class and evaluation setting support the claim.",
+        "exception": "This framing is less suitable when uncertainty is not central to the method or when the work has no meaningful theoretical or empirical scope conditions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not quantify “a handful of episodes” or “minimal compute overhead,” nor specify baseline comparisons or benchmark names.",
+      "The assumptions and exact conditions behind the regret bound are not given beyond well-trained BFMs and its connection to linear-bandit algorithms."
+    ]
+  }
+}

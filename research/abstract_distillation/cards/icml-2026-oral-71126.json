@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71126",
+    "title": "On the Identifiability of Poisson Branching Structural Causal Model Under Latent Confounding",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71126"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a7b19a3a51b48b97b1893d42a49290254fbf1261c0cb2394bfd0f6b0952537dd",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "f5117570aeba2113d45ba90c10bf4a9486bbdd05f02454ec02b7dcaf953d881f",
+    "extracted_at": "2026-09-13T00:15:06.616185+00:00",
+    "session_id": "01a0981d-de0d-7042-82f1-8679e004a704",
+    "usage": {
+      "input_tokens": 12743,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 737,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6e35ad86a56153b107afd6b12c0dcbca3faebce9658d206e6fb43d36ec72853a"
+    },
+    {
+      "id": "S2",
+      "sha256": "99a66e357556209cc168aecc1b59240a618e14a7bcf7b45efbd039f3a72c798c"
+    },
+    {
+      "id": "S3",
+      "sha256": "41ce4ce3dfe4d0bb8ae1551d7cfa8dff5f0acf4fc0ecbd4882d3cb4bbd070e35"
+    },
+    {
+      "id": "S4",
+      "sha256": "a0d61599536b38769e2307ed973d5e1e88dd4dd54f33a3256372686a3e13fe49"
+    },
+    {
+      "id": "S5",
+      "sha256": "80ea798a3c4461e9a8f7e470b6cff3f6ba64106a62a9cc8f27b52f445598dc98"
+    },
+    {
+      "id": "S6",
+      "sha256": "d9c59844694309ab5ab34c588848d3bb2fac48328046929ac233dff836e709e9"
+    },
+    {
+      "id": "S7",
+      "sha256": "b8859b44e50d777d5e7198d34e9ba3ecd14a88bfa9ce8071e18805b2aa249c7b"
+    },
+    {
+      "id": "S8",
+      "sha256": "54d1522d2f56df3fb719810a05a30b3a7ecdeeb378459ec637d308caebf0ca90"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71126",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies causal discovery from observational count data with branching dynamics, modeled by Poisson Branching Structural Causal Models.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing PB-SCM approaches assume causal sufficiency and therefore do not account for latent confounders.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "model",
+        "claim": "Proposes a Latent Confounding Poisson Branching Structural Causal Model (LC-PB-SCM).",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Uses PGFs to characterize latent-confounding dependencies and establishes a Trie representation theorem linking branching structure to algebraic properties of PGF monomials.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "theory and algorithm",
+        "claim": "Establishes a complete local identifiability condition for three variables, covering causal patterns distinguishable up to monomial equivalence, and proposes an algorithm for learning causal structures under latent confounding.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated new contribution is an LC-PB-SCM framework addressing latent confounding in branching count-data causal discovery, together with associated representation, identifiability, and learning results.",
+      "source_ids": [
+        "S4",
+        "S6",
+        "S7",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments on synthetic and real-world datasets demonstrating the effectiveness of their proposed learning algorithm.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Branching relationships in observational count data create causal-discovery challenges.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "modeling context",
+        "summary": "Thinning operators and independent Poisson exogenous noise define the PB-SCM setting.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "gap and proposal",
+        "summary": "Because existing approaches assume causal sufficiency, the paper introduces LC-PB-SCM for latent-confounded settings.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "PGFs and a Trie representation connect latent-confounded branching dependencies with algebraic monomial structure.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "identifiability and evaluation",
+        "summary": "The paper gives a local three-variable identifiability condition, proposes a learning algorithm, and reports synthetic and real-world experiments.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a proposed model with successive formal objects—a PGF characterization, a Trie representation theorem, and a local identifiability condition—before describing an algorithm and experiments.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "This provides a traceable progression from modeling assumptions to algebraic structure, theoretical distinguishability, and practical learning.",
+        "application": "For a structured causal-discovery paper, explicitly map each algorithmic design choice to the formal representation and identifiability result that supports it.",
+        "exception": "This progression may be unsuitable when the task is primarily empirical or lacks a meaningful intermediate formal representation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not state the algorithm’s quantitative results, baselines, dataset sizes, or experimental conditions.",
+      "The scope and assumptions of the global learning algorithm beyond the local three-variable identifiability condition are unspecified.",
+      "The exact meaning and operational criteria of monomial equivalence are not provided."
+    ]
+  }
+}

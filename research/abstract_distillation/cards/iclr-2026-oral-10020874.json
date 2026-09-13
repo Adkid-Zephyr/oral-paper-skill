@@ -1,0 +1,155 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10020874",
+    "title": "Transformers are Inherently Succinct",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10020874"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7ab2e30b531f1ca3b44641daab02df8774dcfb62148891ff7c548412f2086a94",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "78143ab37c6bc2b2069092b59b57e95374044256bb4a80b5af2071d8fbeb86ff",
+    "extracted_at": "2026-09-13T00:06:42.159441+00:00",
+    "session_id": "01a09816-2c5a-7643-b214-bc86a81db2fd",
+    "usage": {
+      "input_tokens": 12536,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 682,
+      "reasoning_output_tokens": 108
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8dc22c3b93edf4ba0edfc4417550b36f423330e9fab312f66cc65b813b231122"
+    },
+    {
+      "id": "S2",
+      "sha256": "04ea9e1300da3e0b0632586d2e3c116db66415f4f111abbebad4be6ab3b454a0"
+    },
+    {
+      "id": "S3",
+      "sha256": "f917dabbb2053ce560b3ad76623cbe4f148657140762d3f7f030ffbc0855959b"
+    },
+    {
+      "id": "S4",
+      "sha256": "2a7bf74e8af2a720e238fb40418c85ae6674210633e3697167901954d6cb6310"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10020874",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks how to measure a transformer's expressive power in describing concepts.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "measure",
+        "claim": "It proposes succinctness as a measure of transformer expressive power.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "It reports a proof that transformers can represent formal languages substantially more succinctly than finite automata and LTL formulas.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "complexity result",
+        "claim": "It reports that verifying even simple transformer properties is EXPSPACE-complete.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their expressivity analysis through succinctness relative to standard formal-language representations.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a proof of substantially more succinct representation of formal languages by transformers than by finite automata and LTL formulas.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report EXPSPACE-completeness for verifying even simple transformer properties.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "framing",
+        "summary": "Introduces succinctness as a measure of transformer expressive power.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "expressivity result",
+        "summary": "Reports that transformers represent formal languages more succinctly than finite automata and LTL formulas.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "complexity consequence",
+        "summary": "Reports provable intractability of verifying even simple transformer properties, characterized as EXPSPACE-complete.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract defines a proposed measure, uses concrete representation baselines, and connects the resulting expressivity to a verification-complexity consequence.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A compact abstract can align its conceptual framing, comparison target, and downstream implication in one progression.",
+        "application": "When presenting a theoretical measure, define it first, compare it against named established representations, then state a direct complexity or operational consequence.",
+        "exception": "This sequence is unsuitable when no defensible comparison baseline or logically connected consequence is available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal definition of succinctness, the transformer model or encoding assumptions, or the proof conditions behind the comparison.",
+      "The verification problem and meaning of “even simple properties” are not defined; the supplied S3 text is syntactically truncated before S4 completes the complexity statement."
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "scope": "Targeted resolution of synthesis flags, not random or full semantic audit",
+  "records": [
+    {
+      "paper_id": "icml-2025-oral-47201",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S5 and the card both state 6–45% of comparator inference costs, not a 6–45% saving. Performance margins retain the source's percent notation and their meaning is marked unspecified. Synthesis must not convert the margins to percentage points, conflate cost fraction with saving, or include unreported training costs.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47213",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "The 43% V* Bench and 19% HR-Bench gains are stated in S6 and preserved for LLaVA-v1.5-13B. The card explicitly leaves relative versus absolute interpretation unknown. No numeric conversion or additional benchmark claim is justified.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47231",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S4 supplies all four benchmark/gain pairs and the card preserves their order. It explicitly leaves absolute versus relative gains unspecified. Synthesis must retain that ambiguity and cannot infer matched distillation budgets or a formal diversity guarantee from the reported comparison.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47255",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S3 explicitly restricts the claimed thirty-year improvement to an off-diagonal variant; the card's novelty and narrative preserve this scope. Constraint preservation is a proposed interpretation of a faithful surrogate, with an exception requiring candidates to be checked. The abstract supplies no construction or verification procedure. Synthesis must not claim the original Hadwiger–Nelson problem is solved, a six-coloring exists for its full constraints, or the surrogate is independently proved constraint-preserving.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47256",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S7 is a genuine stated limitation, so its inclusion in the gap field is supported. The narrative correctly places it after the singleton-BK listing result as a broader-regime boundary; the card does not call it the original or sole motivation. Synthesis must keep polynomial delay separate from unresolved completeness under general BK and must not equate polynomial delay with polynomial total enumeration time.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47267",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S7 explicitly bases the two-layer design on the preceding factor analysis. The card links the factors and layers collectively without assigning a specific factor to each layer; individual mapping appears only in application advice. S8 directly claims better privacy protection and utility, while budgets and comparison conditions remain unknown. No stronger privacy level or matched-budget advantage is established.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47264",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "unknowns[2]",
+          "source_ids": ["S7"],
+          "issue": "S7 presents the merger effect as a finding of the effective theory and the finite-automaton reading as its interpretation. The unknown incorrectly labels the merger itself as the interpretation, although the evidence field distinguishes them correctly.",
+          "severity": "minor",
+          "replacement_value": "The authors report a representational merger effect and interpret it as finite-automaton construction; the abstract does not clarify whether that correspondence is formally proved or empirically inferred."
+        }
+      ],
+      "flag_resolution": "The infinite-generalization claim is directly author-reported in S6. The abstract does not establish the theorem/empirical status of that claim or an executable automaton extraction. Preserve those unknowns while distinguishing the reported effect from its interpretation.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "icml-2025-oral-47270",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S5 itself says unbiased samples and near-zero variance. The card faithfully attributes that wording and leaves conditions and guarantees unspecified. The abstract cannot distinguish finite-sample unbiasedness, estimator properties, and asymptotic variance; synthesis must not choose one or claim independent exact samples from the target distribution.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47258",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "author_reported_evidence[1].claim",
+          "source_ids": ["S3"],
+          "issue": "The source gives +4.5% over o1-preview without defining the convention; the card converts it to 4.5 percentage points. That specific numerical interpretation is unsupported by the supplied abstract.",
+          "severity": "material_error",
+          "replacement_value": "The authors report improving Qwen2.5-Math-7B on MATH from 58.8% to 90.0%, surpassing o1-preview by a stated +4.5%, whose relative-versus-percentage-point interpretation is unspecified."
+        },
+        {
+          "field": "author_reported_evidence[2].claim",
+          "source_ids": ["S4"],
+          "issue": "The card drops average and broadens the source's selectively described student reference population. Preserve both qualifications without implying a verified ranking against all high-school students.",
+          "severity": "minor",
+          "replacement_value": "The authors report solving an average of 53.3% (8/15) of AIME problems and describe this as among the top 20% of the brightest high-school math students; the comparison basis is unspecified."
+        }
+      ],
+      "flag_resolution": "S1 says built from scratch but does not define initialization; the named Qwen model in S3 prevents inferring training an entire base LM from random weights. The broad o1 ambition in S1 and concrete o1-preview comparison in S3 must remain distinct. Student-percentile validity is not established by the abstract.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "icml-2025-oral-47261",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S2 uses pipeline significance, while S6 explicitly names false-positive feature selection probability. The card retains both and scopes the method to predefined-component feature-selection pipelines. The abstract cannot identify whether the controlled error is per-feature, family-wise, or another selective quantity; synthesis must not substitute FDR/FWER or imply a test of every possible pipeline's global significance.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47262",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S5 distinguishes samples and dataset access from any future code/model releases. The contribution and unknowns preserve that distinction, and the narrative claims only sample/dataset access. No code/model availability is asserted or externally verified.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71027",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S6 directly supplies fewer than 0.02% updated and over 1,000 times fewer than AdamW, without defining the update threshold or measurement interval. The card does not add per-step, whole-run, or frozen-parameter semantics. Synthesis must treat this as a reported update-sparsity statistic, not guaranteed sparse trainability, total-training support size, or a corresponding compute speedup.",
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "first_pass_pass": 10,
+    "first_pass_minor": 1,
+    "first_pass_material_error": 1,
+    "material_findings": 1,
+    "minor_findings": 2,
+    "requires_correction": 2,
+    "scope": "All 12 supplied flags checked against originals and current cards. The rStar card makes an unsupported percentage-point conversion and loses two comparison qualifiers; streaming parity needs a local distinction between the reported merger and its interpretation. Ten other flags are resolved without changes, with per-record limits for final synthesis. These targeted checks do not establish random-sample error rates, complete semantic validity, mathematical correctness, or real resource availability. No cards or other files were edited."
+  }
+}

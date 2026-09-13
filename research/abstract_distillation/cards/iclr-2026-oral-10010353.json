@@ -1,0 +1,209 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010353",
+    "title": "Mamba-3: Improved Sequence Modeling using State Space Principles",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010353"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9d68873cd708cc54ed89538bc3043db0bae61324c53b0492211e42f9d1c41879",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "01a84618df13da768a976fbb716fbea7e78ba3cc1af2f650433b4222dd5af020",
+    "extracted_at": "2026-09-13T00:04:17.556837+00:00",
+    "session_id": "01a09813-eaa7-79e3-b88d-433fa072a48f",
+    "usage": {
+      "input_tokens": 12852,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 903,
+      "reasoning_output_tokens": 72
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a78909b535aca4702077ffee9e8423af4e9cc0ebecd914e5d61d6507aef34f3a"
+    },
+    {
+      "id": "S2",
+      "sha256": "7aa734cae4f89113e9e9443d26eba773b41992dc7d75d18081fce4e9470e4868"
+    },
+    {
+      "id": "S3",
+      "sha256": "ca6c3891100fba3d3881d9d1a897df58d3b2fb56214288640166e9e417e95312"
+    },
+    {
+      "id": "S4",
+      "sha256": "067a82a178ca4ea5b9af22eb54391be88a3ddfbe202ffcf8bd699c8e394595a6"
+    },
+    {
+      "id": "S5",
+      "sha256": "e41d78069d6a43ab6e386c9e5c50eec93951528cc7c92af067975c739783f1d8"
+    },
+    {
+      "id": "S6",
+      "sha256": "a42fa5cd6757a795bdb32d461c28b12e0487e800491bfc204edfc9dd606fe8c7"
+    },
+    {
+      "id": "S7",
+      "sha256": "a179b2172d9971aa7f832ac3e6360aa01e14ebd5a7cfcf8b7dba40e9dcf3759d"
+    },
+    {
+      "id": "S8",
+      "sha256": "01243b31a3635a7df48e47918c0ee816f7a4027246e0ad4a97c18da18f1987c5"
+    },
+    {
+      "id": "S9",
+      "sha256": "c4ca7a32dded33e9522e8df0778fc702f9cae25c8b1d92941c7d7010712a7a70"
+    },
+    {
+      "id": "S10",
+      "sha256": "80c7674903ea13ce0569f744db03c9f31912d84ee4ccf8b7a4803e8a4e4b223c"
+    },
+    {
+      "id": "S11",
+      "sha256": "4ec5d9e2563250fe7ea70639300aa9de16c2d45a42127cf7bfe0394428a0ee7e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010353",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop sequence models that retain strong quality while reducing inference compute, memory, and decode-latency costs.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing linear models are described as sacrificing quality or capabilities on tasks such as state tracking, while their theoretically linear inference can remain hardware-inefficient in practice.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces three state-space-inspired improvements: a more expressive discretization-derived recurrence, a complex-valued state update for richer state tracking, and a MIMO formulation intended to improve performance without increasing decode latency.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Combines these improvements with architectural refinements in Mamba-3.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports gains across retrieval, state-tracking, and downstream language-modeling tasks, including improved accuracy and reduced state size at comparable perplexity.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Mamba-3 through the combination of three inference-first, SSM-inspired methodological improvements and architectural refinements.",
+      "source_ids": [
+        "S6",
+        "S7",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "At 1.5B parameters, the authors report 0.6 percentage points higher average downstream accuracy than Gated DeltaNet; the MIMO variant adds 1.2 points, for a total reported gain of 1.8 points.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "Across state-size experiments, the authors report comparable perplexity to Mamba-2 while using half the state size.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report significant gains across retrieval, state-tracking, and downstream language-modeling tasks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Inference-time compute has become important for LLM performance, making inference efficiency a central design concern.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Transformers are costly in compute and memory, while many linear models trade away quality or state-tracking capability and may be hardware-inefficient.",
+        "source_ids": [
+          "S2",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "Mamba-3 applies three SSM-inspired changes: expressive recurrence, complex-valued updates, and MIMO processing, alongside architectural refinements.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The abstract reports downstream accuracy gains, comparable perplexity with half the state size, and an improved performance–efficiency frontier.",
+        "source_ids": [
+          "S9",
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each proposed mechanism with a distinct constraint—expressiveness, state tracking, or performance without added decode latency—and then reports accuracy and state-size outcomes.",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "A compact mechanism-to-constraint mapping can make a systems contribution easier to evaluate conceptually.",
+        "application": "Frame each architectural change as addressing one explicitly named quality, memory, or latency bottleneck, followed by the metric most relevant to that bottleneck.",
+        "exception": "This framing is less suitable when one intervention affects several coupled bottlenecks and cannot be cleanly attributed to a single metric."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define the retrieval, state-tracking, or downstream task suites, baselines beyond Gated DeltaNet and Mamba-2, or statistical uncertainty.",
+      "It reports hardware inefficiency as a motivation but provides no concrete hardware measurements or latency results.",
+      "The meaning of “significant gains” and the conditions of the state-size experiments are unspecified."
+    ]
+  }
+}

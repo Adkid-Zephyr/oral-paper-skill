@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47203",
+    "title": "CodeIO: Condensing Reasoning Patterns via Code Input-Output Prediction",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47203"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "cd0371ed8f31eb79ee0c0bdabfdab73b6e47820823dd47cb96d9ca6555d9c5ca",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "162be03a2c39ba99acca6901e668c5e7846bfbb3bebd82ee4c86974e267fd5c8",
+    "extracted_at": "2026-09-13T00:08:30.935586+00:00",
+    "session_id": "01a09817-d0aa-7140-89a9-ffe6cde39086",
+    "usage": {
+      "input_tokens": 12719,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 752,
+      "reasoning_output_tokens": 95
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9f8f26b64c0b50b060332e4185726b7815072e129876f3ff55e6759bbbe67908"
+    },
+    {
+      "id": "S2",
+      "sha256": "b30abdbdfa4b7297a13ff400fc79db6c3cd5b0b0a4b3ec24c668ca8fb4459e63"
+    },
+    {
+      "id": "S3",
+      "sha256": "888d954ecc8cb27ba4f178736000a4b3d5d6ef7109bb97e02ad4705817a60878"
+    },
+    {
+      "id": "S4",
+      "sha256": "0fe4e047969cb0f069a03c6466dbc25a6c463b57fa440c405457e77ae79989c5"
+    },
+    {
+      "id": "S5",
+      "sha256": "bf49de3cb081f24d8b163ba7ffc5e03f457031a67b5c75d8e3ea139c652630e2"
+    },
+    {
+      "id": "S6",
+      "sha256": "35883a1b8ac822052859ca4d17990c34fdafb46e51093266e8f1f1c0e650fc27"
+    },
+    {
+      "id": "S7",
+      "sha256": "12e21bb1d1f3270e46d7c837ccc18d5be4ed607180b7b249d8cd042e5f3256e6"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47203",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve reasoning across diverse tasks beyond narrow math or code-generation skills.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Progress on many reasoning tasks is limited by sparse and fragmented training data.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "CodeI/O systematically converts contextually grounded code into code input-output prediction formats to condense diverse reasoning patterns.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "training approach",
+        "claim": "It trains models to predict code inputs and outputs in natural-language CoT rationales, exposing general reasoning primitives while decoupling structured reasoning from code syntax.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "extension",
+        "claim": "CodeI/O++ verifies predictions through ground-truth matching or code re-execution and uses multi-turn revision to enhance CoTs.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe CodeI/O as a novel approach for systematically condensing reasoning patterns embedded in contextual code.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report consistent improvements across symbolic, scientific, logic, math and numerical, and commonsense reasoning tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that CodeI/O++ achieves higher performance after prediction verification and multi-turn CoT revision.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies broad reasoning improvement as difficult when training data are sparse and fragmented outside narrow skills.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "core method",
+        "summary": "CodeI/O transforms original code into input-output prediction tasks to condense diverse reasoning patterns.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "Natural-language CoT prediction exposes planning, search, traversal, and decomposition while preserving procedural structure without code-specific syntax.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported results and extension",
+        "summary": "The authors report cross-domain gains, then introduce verified, revised CoTs in CodeI/O++ with higher reported performance.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly links the representation change—code to natural-language input-output prediction—to several named reasoning primitives and then reports gains across varied task families.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A representation can make the intended transferable reasoning structure explicit while reducing dependence on domain-specific surface form.",
+        "application": "When proposing a cross-task reasoning method, map the training representation to named reasoning operations and evaluate it across multiple task families.",
+        "exception": "This framing may be unsuitable when performance depends essentially on exact domain syntax or when broad cross-task evaluation is unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide metrics, dataset sizes, baselines, statistical variation, or task-by-task results.",
+      "It does not specify how prediction verification and multi-turn revision are implemented or how much each contributes.",
+      "Public availability is promised, but release timing and exact contents are unspecified."
+    ]
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31755",
+    "title": "Learning Dynamics of LLM Finetuning",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31755"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "868b128b9a53182ac7912d722f8fa3839a20360bd5fabcaebe615827ea3ef756",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "b3ea85ca7010722cad7665f0ae835e585667dac97ec4d7c15f1207db301c3fc2",
+    "extracted_at": "2026-09-12T23:50:52.663539+00:00",
+    "session_id": "01a09807-98b4-7c63-afb1-c586a1230afb",
+    "usage": {
+      "input_tokens": 12719,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 945,
+      "reasoning_output_tokens": 113
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7f549fa716d98d8ca894789f7b37d34d880e1836cbaec0719a0b4994c9a6b388"
+    },
+    {
+      "id": "S2",
+      "sha256": "a261f294376412f206b3947d24f61731fb48aeb8800961caaf5ef199250db1eb"
+    },
+    {
+      "id": "S3",
+      "sha256": "7cb3a7e6c57f67a1fb4a156b19709e5fe9f38631088e7555e89751658d537df1"
+    },
+    {
+      "id": "S4",
+      "sha256": "bd2f96e3a2cc16c20b555c7fb202ac0d3be058cb5128a0ee9ffd0c6b69fc29c6"
+    },
+    {
+      "id": "S5",
+      "sha256": "ed22fc94624ae7be90562e886049c91a134886e03b9f8d9a1852370c1fbb0df8"
+    },
+    {
+      "id": "S6",
+      "sha256": "b563bf9dfdfc5a39af07f024e5d4af74e7de6c0913b9bdb99bf145a0509990e9"
+    },
+    {
+      "id": "S7",
+      "sha256": "bd3ca5efbf560053a2162b3a3083c1ace6d5f939fc6440e5314c6036faf7fc55"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31755",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Analyze how individual training examples influence predictions on other examples during LLM instruction and preference finetuning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "A step-wise framework decomposes how influence accumulates among potential responses across finetuning types.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "interpretive analysis",
+        "claim": "The framework offers a uniform interpretation of observations from instruction tuning and preference tuning, including hallucination strengthening and off-policy DPO behavior.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method insight",
+        "claim": "The analysis inspires a proposed simple method intended to improve alignment performance.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize the analysis as providing a novel perspective on LLM finetuning and identify a unique “squeezing effect” in off-policy DPO.",
+      "source_ids": [
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors propose a hypothetical explanation for some strengthened hallucinations: responses to one question may reuse phrases or facts associated with another, or repeat simple phrases.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that extended off-policy DPO can make desired outputs less likely and use their framework to explain this previously observed phenomenon through a “squeezing effect.”",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that the framework provides insight into the sources of benefits from on-policy DPO and related variants.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Learning dynamics is introduced as a way to understand how training examples affect predictions on other examples.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper studies instruction and preference finetuning by decomposing influence accumulation step by step across potential responses.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "interpretations",
+        "summary": "The framework is applied uniformly to observations involving instruction tuning, preference tuning, and strengthened hallucinations.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "DPO analysis",
+        "summary": "An extension identifies a proposed “squeezing effect” for overly long off-policy DPO and examines benefits of on-policy DPO and variants.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The analysis is presented as a novel perspective that motivates a simple alignment-improvement method.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects one influence-decomposition framework to several finetuning observations, including hallucinations and DPO behavior.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A shared explanatory mechanism can make diverse behavioral effects comparable and expose common dynamics.",
+        "application": "When presenting a finetuning analysis, define a single decomposition and trace how it accounts for multiple concrete behaviors.",
+        "exception": "This framing is unsuitable when the behaviors require genuinely different variables or when the abstracted decomposition hides task-specific mechanisms."
+      },
+      {
+        "source_observation": {
+          "claim": "The authors distinguish a hypothetical hallucination explanation from a previously observed DPO phenomenon and describe the alignment method as inspired by the analysis.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "Explicitly separating explanation status, observation status, and proposed intervention calibrates claims.",
+        "application": "Label each result as observed, hypothesized, or proposed when moving from behavioral evidence to mechanism and method.",
+        "exception": "Use stronger labels only when the paper supplies direct validation or formal guarantees."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the proposed alignment method, its evaluation setting, or quantitative results.",
+      "The hallucination account is explicitly hypothetical; supporting experiments or validation are not reported here.",
+      "The decomposition’s formal details, comparison baselines, and conditions for the DPO effects are unspecified."
+    ]
+  }
+}

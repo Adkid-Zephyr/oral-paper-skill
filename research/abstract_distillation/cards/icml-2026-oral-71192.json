@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71192",
+    "title": "Equivalence of Context and Parameter Updates in Modern Transformer Blocks",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71192"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a3ec91137ffd14416eee85dfa176904d344952ee5ea8a56d7771effddfbdec55",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "5cf353a51e28da5e89e1294e23394d958c41b4df2c18b15f8ed41584e8d29d3d",
+    "extracted_at": "2026-09-13T00:17:44.651404+00:00",
+    "session_id": "01a09820-3a6f-7fa0-a308-23a9fb82118d",
+    "usage": {
+      "input_tokens": 12714,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 859,
+      "reasoning_output_tokens": 129
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "af0b7594aa8116dbd71c593386257a01f37710065d036ef50501d1d08e1c8815"
+    },
+    {
+      "id": "S2",
+      "sha256": "c9f5de89a22becc7f9b37f868f9a232aa1606d6ba07251c655957f42257ff6da"
+    },
+    {
+      "id": "S3",
+      "sha256": "a0f57cd0661a34c879ea6ee7eceff55ee8250d8fe062f1533afd353945c47efc"
+    },
+    {
+      "id": "S4",
+      "sha256": "eaa78650398440e09cc56a7e22278dec322cbc5d3377af4a6c7fdad0e1b52367"
+    },
+    {
+      "id": "S5",
+      "sha256": "0d09052ee9a526c52a46dfa85d61cff49fc2ceb868b7b0f7fe005e7511bcd3c6"
+    },
+    {
+      "id": "S6",
+      "sha256": "a1c27e013b349d4f5eb01c80fb79ab55170c32c9c23c40654d7cb2cf3fc4c3c3"
+    },
+    {
+      "id": "S7",
+      "sha256": "065f4042d7b490ececb87c5b3824c4b0727dbf14ea9a393d5198ad97da98f700"
+    },
+    {
+      "id": "S8",
+      "sha256": "e1d7ee8feb37b83b732c08afaf9aa7d659e04336ab679bbade1dee1250ad748b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71192",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize how context effects in modern transformer blocks can be represented as implicit parameter updates.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Prior theory described this equivalence for vanilla transformers, while its applicability to diverse modern LLM architectures was not addressed in the supplied abstract.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "analytical theory",
+        "claim": "An analytical result for Gemma-style blocks mapping context effects to rank-1 MLP weight patches and an RMSNorm-scale patch.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "constructive theory and algorithm",
+        "claim": "A constructive proof and algorithm extending the mapping to multi-layer models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "general framework",
+        "claim": "A controllability-based framework using input controllability and output controllability to characterize when perfect implicit weight patches are possible.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work by extending context–parameter equivalence from vanilla transformers to modern architectures and unifying it through controllability properties.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S5",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report proving that Gemma-style block context effects can be perfectly represented by rank-1 MLP patches plus an RMSNorm-scale patch.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report a constructive proof and algorithm for multi-layer models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that perfect implicit weight patching is possible for any MLP whose inner function is input-controllable and outer function is output-controllable.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "prior foundation",
+        "summary": "Context effects in vanilla transformers had been represented as token-dependent rank-1 MLP weight patches.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "architecture-specific extension",
+        "summary": "The work first analyzes a Gemma-style block and adds an RMSNorm-scale patch to the rank-1 MLP patches.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "multi-layer generalization",
+        "summary": "It next supplies a constructive proof and algorithm for multi-layer models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "unifying abstraction and scope",
+        "summary": "It introduces input/output controllability and states applicability across gating, normalization, mixture-of-experts, and sequential/parallel blocks.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract moves from a concrete Gemma-style construction to a multi-layer algorithm and then to controllability conditions intended to cover multiple architectures.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "A concrete derivation can motivate a reusable abstraction when the abstraction preserves explicit sufficient conditions.",
+        "application": "Present one architecture-specific mapping first, then state the general structural conditions and identify which model variants satisfy them.",
+        "exception": "This sequence may be unsuitable when the abstraction lacks clearly stated conditions or when architecture-specific details are themselves the main contribution."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide the definitions of input/output controllability or the algorithmic procedure.",
+      "No quantitative experiments, baselines, computational costs, or independent verification of the claimed proofs are supplied.",
+      "The meaning and scope of “perfect” mapping across the listed architectures are not detailed."
+    ]
+  }
+}

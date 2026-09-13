@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71172",
+    "title": "Measuring Agents in Production",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71172"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5bd87fee93d1cf75b1897ba55f048993dfd49d5f94e91af77507ec241cf9fba6",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "a0722442ec237bcb823571ee4a2c836ddbc9685a50a00c85b5a16789e4addb8b",
+    "extracted_at": "2026-09-13T00:16:59.086110+00:00",
+    "session_id": "01a0981f-91c6-7b12-847b-21cf02ba95b0",
+    "usage": {
+      "input_tokens": 12679,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 777,
+      "reasoning_output_tokens": 75
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "67a9d639c014d95b930afb52be7f56fb35fb9e2a9d743179090fc4582faf3e45"
+    },
+    {
+      "id": "S2",
+      "sha256": "0084bf5a48bfb8fa50f4d8ffb3a7023e0ec26cdc6515c3dc946bbbf6abe2ac3b"
+    },
+    {
+      "id": "S3",
+      "sha256": "6dfcec4c0db98444d04ef6dbb8adc678e65578191e6ffa3d1ca6e8b15fa95a03"
+    },
+    {
+      "id": "S4",
+      "sha256": "b1a96dc42dfd1950b4e0f432586213b0b465719b3cc46aa9250fad6d75a336fb"
+    },
+    {
+      "id": "S5",
+      "sha256": "a341d07229ced1e480d4ad6d8ef4027ffe050e27282d2babbddabacd9c18e0d4"
+    },
+    {
+      "id": "S6",
+      "sha256": "89169facd244703feaa289c86849c3657a8aebce8997af94f3f1d166bfae8247"
+    },
+    {
+      "id": "S7",
+      "sha256": "38d14ca655c52a7f3b0392368e25a388fde2191861186ecb33365b708a3d014e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71172",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The study asks what methods support successful production deployment of LLM-based agents and examines why and how organizations build and evaluate them.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing understanding lacks visibility into the technical methods and deployment realities associated with successful production agents.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical study",
+        "claim": "Introduces MAP, a systematic study based on first-hand data from agent developers.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Documents the current state of production agents and identifies underexplored research avenues.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe MAP as the first systematic study of measuring agents in production.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report 20 in-depth interview case studies and a survey of 86 practitioners covering 26 domains.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that 68% of production agents execute at most 10 steps before human intervention, 70% use prompting rather than weight tuning, and 74% rely primarily on human evaluation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report reliability as the top development challenge, addressed by practitioners through systems-level design.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Production agents are widespread, but the methods behind successful deployments are poorly understood.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "study",
+        "summary": "MAP investigates organizational motivations, construction methods, evaluation practices, and development challenges using interviews and a practitioner survey.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "Reported deployments favor short, controllable workflows, prompting of off-the-shelf models, and human evaluation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "Reliability remains the leading challenge, while MAP exposes deployment realities and possible research directions.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns deployment-characterization claims with explicit study coverage and concrete prevalence figures.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact empirical framing can make an operational landscape legible when it connects sampling scope to quantified patterns.",
+        "application": "State the data sources and coverage first, then attach each major deployment pattern to a clearly defined percentage and condition.",
+        "exception": "Avoid percentage-based generalization when the sample, domain coverage, or denominator is not adequately described."
+      },
+      {
+        "source_observation": {
+          "claim": "The study defines reliability as consistent correct behavior over time and links it to systems-level design responses.",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        "interpretation": "Defining an abstract engineering challenge and naming the current response can sharpen a research agenda.",
+        "application": "Define the target property operationally and distinguish the deployment layer where practitioners currently intervene.",
+        "exception": "This framing may be unsuitable when the target property or intervention is primarily model-internal rather than systems-level."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify sampling procedures, survey questions, or how representative the 26 domains are.",
+      "It does not identify which systems-level designs address reliability or provide outcome measures for deployment success."
+    ]
+  }
+}

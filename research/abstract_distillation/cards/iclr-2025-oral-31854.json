@@ -1,0 +1,162 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31854",
+    "title": "Steering Protein Family Design through Profile Bayesian Flow",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31854"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8e44cf8fcd7961b66aa883949ffc2520c8da28231fae2f6c14404e2c038af47e",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "62f457ee8497e9895473d9a47d8ee74d4ef2a05e411156de477d0318b7d4bfbe",
+    "extracted_at": "2026-09-12T23:54:39.088470+00:00",
+    "session_id": "01a0980b-1aa6-7b03-bdb0-0f2e7860b6da",
+    "usage": {
+      "input_tokens": 12615,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 803,
+      "reasoning_output_tokens": 169
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "416e135580251e99852efba9ab710a11a3bd48372a019a75f21bd311310fdac7"
+    },
+    {
+      "id": "S2",
+      "sha256": "c30a205fd60b1a8370e9d628f23dae81ee114391331fa1290db774763bf62aec"
+    },
+    {
+      "id": "S3",
+      "sha256": "76679ab02d538becff263d043047f5474e1dd2863c2128da543ac2bef584bc50"
+    },
+    {
+      "id": "S4",
+      "sha256": "718b0dbe646c268a39b742f0d0505f3602485b317c85e3c4a957e615ae3dca7a"
+    },
+    {
+      "id": "S5",
+      "sha256": "f924a6f4ba3cfa85522b493467bd44d66bbf9c7944169a609190b2f23a7b8bdd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31854",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses generative modeling for protein family design.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "ProfileBFN, a Bayesian Flow Network for protein-family generation, models families from an MSA-profile perspective.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The approach treats a single protein sequence as a degenerate profile, avoiding large-scale MSA construction and training.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated distinction is extending the discrete Bayesian Flow Network through an MSA-profile formulation that also supports training on single sequences.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that ProfileBFN captures family structural characteristics when generating diverse and novel family proteins.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "Authors report that its generated enzyme is more likely than the previous approach to have the corresponding function, improving the odds of diverse proteins with desired functionality.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Authors report that ProfileBFN has a profound understanding of proteins.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Protein family design is presented as combining advantages of de novo design and mutation-based directed evolution.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "ProfileBFN is proposed as a generative model for protein families and extends discrete Bayesian Flow Networks using MSA profiles.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "efficiency",
+        "summary": "Single sequences can be treated as degenerate profiles, avoiding large-scale MSA data construction and training.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The authors report structural capture for diverse novel family proteins and higher odds than a previous approach of producing an enzyme with the corresponding function.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a profile-based representation with single-sequence training by treating a sequence as a degenerate profile, while explicitly connecting this design to avoiding large-scale MSA preparation.",
+          "source_ids": [
+            "S2"
+          ]
+        },
+        "interpretation": "A unified representation can make a method's data-efficiency mechanism concrete and explain how it broadens usable training inputs.",
+        "application": "When proposing a structured generative model, define the degenerate or simpler input case explicitly and tie it to the claimed reduction in data-preparation burden.",
+        "exception": "This framing is unsuitable when the simpler input cannot preserve the structural or relational information required by the target task."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no datasets, quantitative metrics, baseline details, or experimental conditions for the reported comparisons.",
+      "The functional claim does not specify how enzyme function was measured or the magnitude and uncertainty of the improvement.",
+      "The abstract does not establish independent proof of the method's stated understanding or novelty."
+    ]
+  }
+}

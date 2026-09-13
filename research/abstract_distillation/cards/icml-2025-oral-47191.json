@@ -1,0 +1,198 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47191",
+    "title": "Controlling Underestimation Bias in Constrained Reinforcement Learning for Safe Exploration",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47191"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4e577d954580af1955c799a5dc18597cb29f85b592a4aacad53fa9696f697937",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "6171cd397eba2e0431b2b549d09b15403d9e4edd5358b4b235976489ddf7bd0e",
+    "extracted_at": "2026-09-13T00:08:06.645778+00:00",
+    "session_id": "01a09817-6fc5-7e52-acd7-aa25a2cb9acf",
+    "usage": {
+      "input_tokens": 12765,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 812,
+      "reasoning_output_tokens": 100
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e670b7fa3391c7708783a17d87a6cea5e5da35797aee82df1d7383ca8af29c14"
+    },
+    {
+      "id": "S2",
+      "sha256": "5475497822db22f702027be9a753f3cb52d813e92b9b27639ec9046dc238cf7c"
+    },
+    {
+      "id": "S3",
+      "sha256": "db4a9325a825d6102796a93db05b18a4483626fca228bc9ac33789a16d9533ef"
+    },
+    {
+      "id": "S4",
+      "sha256": "ccf00bf6b6171ab93e9599d55a6eefb66726139f6eeaafe1b0feb20aeced888a"
+    },
+    {
+      "id": "S5",
+      "sha256": "65cecb887534d69603913b181a8aa4e164a359b6129a288a533ba3f2356f2393"
+    },
+    {
+      "id": "S6",
+      "sha256": "84e36acbe9c555545ed55ab523ba8e319a8f2c359e78a99239bee292f681e262"
+    },
+    {
+      "id": "S7",
+      "sha256": "0c7bc5dbea9843fc823b7b07cf7e89a6cc09c6798e9cecf22d32d78d7a7d915c"
+    },
+    {
+      "id": "S8",
+      "sha256": "fe047756d4cbb7581d2c496309262cf9d655366559e14918ca79f1fe846138db"
+    },
+    {
+      "id": "S9",
+      "sha256": "aab52ba4d8198b7ae8e1656c80f9ca88dff9b20d700147a3a3278ff59dc97f8e"
+    },
+    {
+      "id": "S10",
+      "sha256": "c616fe34af113782955e94e9d949fbb333d66da7c6b0da5d54e8a36671943f65"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47191",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Constrained reinforcement learning seeks to maximize cumulative reward while satisfying constraints.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing CRL algorithms often incur substantial training-time constraint violations; the authors identify cost-value underestimation as a contributing factor.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "MICE introduces intrinsic costs based on remembered unsafe states and applies bias control to mitigate cost-value underestimation during exploration.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "An extrinsic-intrinsic cost value function combines intrinsic costs with a bias-correction strategy and supports a trust-region optimization objective with corresponding optimization methods.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The paper reports convergence guarantees for the proposed cost value function and a worst-case constraint-violation result for the MICE update.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish MICE through memory-driven unsafe-state identification, pseudo-count intrinsic costs, and bias-corrected extrinsic-intrinsic cost estimation.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive experiments significantly reduce constraint violations while preserving policy performance comparable to baselines.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report convergence guarantees for the proposed cost value function and establish the worst-case constraint violation for the MICE update.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task and limitation",
+        "summary": "CRL balances reward maximization with constraint satisfaction, but existing methods often violate constraints during training.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The paper attributes these violations in part to underestimation of the cost value function.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "MICE remembers previously explored unsafe states, identifies high-cost regions, assigns pseudo-count intrinsic costs, and uses bias-corrected cost estimation.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "analysis and evaluation",
+        "summary": "The paper reports trust-region optimization methods, theoretical guarantees, and experiments showing fewer violations with baseline-comparable policy performance.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a concrete failure mode—cost-value underestimation—to a targeted mechanism that remembers unsafe states and adds intrinsic costs.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A method narrative is more diagnostically useful when it maps an identified error source to an explicit intervention.",
+        "application": "Frame a safety-oriented contribution as failure mode → measurable surrogate or memory signal → corrected objective, and preserve that mapping in the abstract.",
+        "exception": "This framing is unsuitable when the failure mode is not empirically or theoretically tied to the proposed intervention."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify environments, violation metrics, baseline identities, or experimental conditions behind the reported comparison.",
+      "The assumptions for the convergence and worst-case violation claims are not stated.",
+      "The abstract does not quantify the reported reduction in violations or define what policy performance is preserved."
+    ]
+  }
+}

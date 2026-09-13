@@ -1,0 +1,209 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011760",
+    "title": "FlashWorld: High-quality 3D Scene Generation within Seconds",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011760"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0c7912d9c1127d6bb71b453eaf9278cee723542f8d501f02519d0b55fb6dde60",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "44e80b19e950a9606b544473baeb0681891139613410c07ea980ae6f36929c40",
+    "extracted_at": "2026-09-13T00:06:26.224599+00:00",
+    "session_id": "01a09815-e011-7003-9a38-ad325362c818",
+    "usage": {
+      "input_tokens": 12820,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 848,
+      "reasoning_output_tokens": 93
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "361eb58d17671cdec2153fdc468b1be8c1ccbd6801fe3d38807964f62f9b0897"
+    },
+    {
+      "id": "S2",
+      "sha256": "4250f23deecf7d55d1de342b06af38b684c98c3435b40fa7fc22c07bfa8a48f9"
+    },
+    {
+      "id": "S3",
+      "sha256": "818c70f045eb2873d81c60e56d4bf0f4524be2f2f459d5c4da248736c708de93"
+    },
+    {
+      "id": "S4",
+      "sha256": "fb629cfb9cb2e8c76fa101901b667d35082e2909f50a2d2f830950fdff8d70ab"
+    },
+    {
+      "id": "S5",
+      "sha256": "b0a303ea1919dbebc9ed84df029e3e414bcd0a46423c40b33486fc1fc0e631cd"
+    },
+    {
+      "id": "S6",
+      "sha256": "ccea0f9c8163205ab2646bb4b71aaea3afc23320bb465118fdb5e80289c34752"
+    },
+    {
+      "id": "S7",
+      "sha256": "0850aac21de1ba9803dbfcafcfd74e0be053649ed783e153db989c73056d7c60"
+    },
+    {
+      "id": "S8",
+      "sha256": "cce569798bba40111fc415f2b966513906c127a8ba69df698b1939009da83b0e"
+    },
+    {
+      "id": "S9",
+      "sha256": "f619e1ed99661378d670566d661ce8fedf1273ee21beb7e55584f848db11c0fe"
+    },
+    {
+      "id": "S10",
+      "sha256": "26dac1e30679e9f5157b1a01dc849128c231ee7a49639731222978ef59ed1147"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011760",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate high-quality 3D scenes from a single image or text prompt within seconds.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Although 3D-oriented generation typically preserves 3D consistency, it suffers from poor visual quality.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "FlashWorld directly produces 3D Gaussian representations during multi-view generation through a 3D-oriented paradigm.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "training method",
+        "claim": "It combines dual-mode pre-training with cross-mode post-training distillation that matches the consistent 3D-oriented mode's distribution to the high-quality MV-oriented mode's distribution, aiming to improve 3D-oriented visual quality while maintaining 3D consistency.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "generalization strategy",
+        "claim": "It uses massive single-view images and text prompts during training to improve generalization to out-of-distribution inputs.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a cross-mode distillation strategy intended to bridge the visual-quality gap between 3D-oriented and MV-oriented generation while retaining 3D consistency.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that FlashWorld generates scenes 10–100× faster than previous works while having superior rendering quality.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report that cross-mode post-training enhances visual quality, maintains 3D consistency, and reduces the denoising steps required for inference.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report extensive experiments demonstrating the method’s superiority and efficiency.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task and limitation",
+        "summary": "The paper targets rapid, high-quality single-image or text-to-3D scene generation and identifies poor visual quality as a typical weakness of 3D-oriented methods.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "role": "paradigm shift",
+        "summary": "FlashWorld moves from generating multi-view images for later reconstruction to directly producing 3D Gaussian representations during multi-view generation.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "training design",
+        "summary": "A dual-mode model is pre-trained using video-diffusion priors, then cross-mode distillation transfers quality from MV-oriented generation to the consistent 3D-oriented mode.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcomes and release",
+        "summary": "The authors report improved quality, consistency, inference efficiency, and out-of-distribution generalization, and provide code.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly aligns each training phase with a distinct limitation: dual-mode pre-training integrates paradigms, while cross-mode distillation addresses the 3D-oriented quality gap.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A staged method narrative can make design choices legible by connecting each component to a named failure mode.",
+        "application": "For a multi-component method, state the limitation targeted by each component before reporting its claimed effect.",
+        "exception": "This framing is less suitable when components are inseparable or their roles cannot be isolated from the available evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative rendering-quality, consistency, denoising-step, or out-of-distribution metrics.",
+      "The basis and evaluation protocol for the comparisons with previous works are unspecified.",
+      "The abstract does not establish independently verified correctness, reproducibility, or priority of the novelty claim."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "contributions[1].claim",
+      "before": "It combines dual-mode pre-training with cross-mode post-training distillation from consistent 3D-oriented generation to high-quality MV-oriented generation.",
+      "after": "It combines dual-mode pre-training with cross-mode post-training distillation that matches the consistent 3D-oriented mode's distribution to the high-quality MV-oriented mode's distribution, aiming to improve 3D-oriented visual quality while maintaining 3D consistency.",
+      "review_file": "reviews/flagged-batch-07.json",
+      "review_sha256": "da8130c13e152fce85f706ec0ec78e55cbb147ff44895d96357f9c6af2b9eea4",
+      "applied_at": "2026-09-13T00:35:16.274548+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

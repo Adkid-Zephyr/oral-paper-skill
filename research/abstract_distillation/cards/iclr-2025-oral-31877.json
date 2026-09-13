@@ -1,0 +1,205 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31877",
+    "title": "MMIE: Massive Multimodal Interleaved Comprehension Benchmark for Large Vision-Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31877"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a1c9a7170a31791fa5c6e8b824b08f9e01eccb68e49f324dba8c4a6933a99989",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "ce0e7225b5966fcab8aa5a0c5d8b13b5706240cac2f819e22c601d8aa8a88abb",
+    "extracted_at": "2026-09-12T23:55:32.179654+00:00",
+    "session_id": "01a0980b-eb4e-7f23-b07a-2bd351913e46",
+    "usage": {
+      "input_tokens": 12814,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 868,
+      "reasoning_output_tokens": 88
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7004177d68075d4ea6cbfd2e640fd07be85c21040a735a19b87b2773b26b1eaf"
+    },
+    {
+      "id": "S2",
+      "sha256": "a2a71a9f2160d1fca37ea8c1db16a1c1cbeb61136a5388d8e97e67494de90f16"
+    },
+    {
+      "id": "S3",
+      "sha256": "473c889eb0024a845bbf9a6acce8ba3dedc179a5a5a31d560d87fc5185efd648"
+    },
+    {
+      "id": "S4",
+      "sha256": "74a2e592b6be1c2ab871f2d5aa3fdeac79d869663789eacd1ceff413479d9955"
+    },
+    {
+      "id": "S5",
+      "sha256": "b3b569cf4b428eb145f1850aab4596e140f276c12a64b60638dfc34d51c719ac"
+    },
+    {
+      "id": "S6",
+      "sha256": "7d64de5830c635cc02fb1f2ba1700ff80d0ee69c815c118b338de806e6ac609a"
+    },
+    {
+      "id": "S7",
+      "sha256": "6ed0678804f8a420902bd8ea8b7ac8ab4115a718c1de9dd2c5efb90489229c2f"
+    },
+    {
+      "id": "S8",
+      "sha256": "d2becd3f238945a26f49cd489c9798633c79193a0625b29707cdf4bbbe003ed9"
+    },
+    {
+      "id": "S9",
+      "sha256": "ae286fa28be5b83ac26b9b7daa92dbd8d7d7c28c3de415cf3464b61e8dc0ee30"
+    },
+    {
+      "id": "S10",
+      "sha256": "10fbf01dfb35485a4c385f8553deb02c0370f7d42c81ce2eebc02aa273b0ff59"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31877",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate interleaved multimodal comprehension and generation in large vision-language models.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing evaluation is limited in scale, scope, and depth, and metrics may be costly, biased, and insufficiently reliable for practical use.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces MMIE, a knowledge-intensive benchmark with 20K curated queries across 3 categories, 12 fields, and 102 subfields.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "evaluation design",
+        "claim": "Supports interleaved inputs and outputs with both multiple-choice and open-ended formats.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "metric",
+        "claim": "Proposes an automated metric based on a scoring model fine-tuned on human annotations and systematic criteria, aimed at reducing bias and improving accuracy.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a large-scale, broad-coverage interleaved LVLM benchmark together with a human-annotated-data-based automated evaluation metric.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that experiments found the benchmark and metrics effective for comprehensive evaluation of interleaved LVLMs.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "Authors report evaluating eight LVLMs; even the best showed substantial room for improvement, and most achieved only moderate results.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Interleaved multimodal understanding and generation are framed as an important multimodal-learning capability.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The abstract identifies insufficient evaluation, citing limitations in benchmark scale, scope, depth, and metric reliability.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "artifact",
+        "summary": "MMIE is introduced with broad knowledge coverage, interleaved input/output support, and mixed question formats.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "A human-annotation-informed automated metric is proposed, followed by experiments on eight LVLMs showing moderate performance and remaining improvement room.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The benchmark combines broad domain coverage, interleaved inputs and outputs, and multiple question formats.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A capability claim becomes more informative when the evaluation dimensions are made explicit rather than represented by one task format.",
+        "application": "Define an evaluation matrix covering domains, modality order, output modality, and response format before reporting aggregate results.",
+        "exception": "This may be unsuitable when the target deployment has a narrowly defined domain or interaction format."
+      },
+      {
+        "source_observation": {
+          "claim": "The proposed metric uses human-annotated data and systematic criteria to address bias and accuracy concerns.",
+          "source_ids": [
+            "S3",
+            "S7"
+          ]
+        },
+        "interpretation": "Automated evaluation can be framed around an explicit human-grounded scoring protocol.",
+        "application": "Document annotation criteria and use them to fine-tune or calibrate an automated judge for open-ended multimodal outputs.",
+        "exception": "This is unsuitable when annotation coverage is too sparse or the scoring criteria cannot capture essential task-specific qualities."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark splits, dataset sources, contamination controls, or per-category results.",
+      "The reported metric effectiveness lacks quantitative comparisons, uncertainty estimates, and detailed validation conditions.",
+      "The abstract does not establish priority or independently verify the authors' novelty, experimental claims, or metric reliability."
+    ]
+  }
+}

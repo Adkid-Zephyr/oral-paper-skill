@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010258",
+    "title": "$p\\textrm{-less}$ Sampling: A Robust Hyperparameter-Free Approach for LLM Decoding",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010258"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2ce9816a05475bcabb178e8ec3a8b82273e4926ed1298216126840976d12b9a6",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "3b641791960a2fd6540bc688ca8c87bc3fed4d1cff0248d0ec97f15eea271ad0",
+    "extracted_at": "2026-09-13T00:04:12.882342+00:00",
+    "session_id": "01a09813-e242-7f41-9ac9-1e9b4ed7d8a0",
+    "usage": {
+      "input_tokens": 12782,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 779,
+      "reasoning_output_tokens": 78
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ede450a945a727a305732325e3822456d9ed63d278878e840cf260450281bf49"
+    },
+    {
+      "id": "S2",
+      "sha256": "dfcb8e781f2345f811f3a26c7ad3023a8c278a5c1c52e8869a2acef68e260748"
+    },
+    {
+      "id": "S3",
+      "sha256": "582c0162a75aa8e75399f8cc3c8007afcfecf13553992c1a0078950edaa8282d"
+    },
+    {
+      "id": "S4",
+      "sha256": "29efd76a10a8b18959b57f87d492edd4c432ec5ee52c3ff57140046292f5b07f"
+    },
+    {
+      "id": "S5",
+      "sha256": "11ae0690bd7c4a9c82cc375bcb8c4a8ccccadcae9fad639e0406a106099f66c3"
+    },
+    {
+      "id": "S6",
+      "sha256": "60ed99cea139b855c847238eeed0bc64d7cb7b9985878c2ca761504c47f30e60"
+    },
+    {
+      "id": "S7",
+      "sha256": "6ec28fa3f6d19bfb8c99693ca520a92db823b1483ec499bc7b3b9ed8a3e381cd"
+    },
+    {
+      "id": "S8",
+      "sha256": "3de4beacd07ed09c58fd6b5dbf96b6befcd647628f59b916de888971f8893be9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010258",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "LLM output quality depends on choosing a sampling-based decoding strategy, with settings potentially varying by task and temperature.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing sampling methods can be sensitive to hyperparameter choices, limiting robustness across generation conditions.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces p-less sampling, which dynamically sets a truncation threshold from the full token probability distribution at each decoding step.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Provides theoretical perspectives intended to ground the proposed sampling method.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical analysis",
+        "claim": "Evaluates p-less across math, logical reasoning, and creative writing tasks, including efficiency, qualitative, case-study, and diversity analyses.",
+        "source_ids": [
+          "S5",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish p-less from existing methods by proposing a hyperparameter-free sampler whose threshold adapts to the entire token distribution.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that p-less consistently outperforms existing sampling approaches and degrades less in text quality as temperature rises.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report lower average token sampling times and shorter generation lengths than alternatives, without sacrificing accuracy.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report empirical validation across math, logical reasoning, and creative writing tasks, supported by qualitative examples, case studies, and diversity assessments.",
+        "source_ids": [
+          "S5",
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Sampling-based decoding affects LLM output quality, but existing methods may require condition-specific hyperparameter settings.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper introduces p-less, dynamically deriving a truncation threshold from the full token distribution without hyperparameters.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "theory_and_evaluation",
+        "summary": "It presents theoretical perspectives and evaluates the method across mathematical, reasoning, and creative-writing tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "results_and_analysis",
+        "summary": "The authors report quality, high-temperature robustness, inference-time efficiency, and supporting qualitative and diversity analyses.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a decoding decision to the entire token probability distribution and separately reports quality, temperature robustness, efficiency, and diversity outcomes.",
+          "source_ids": [
+            "S3",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A method claim becomes more informative when its decision rule and multiple evaluation dimensions are explicitly connected.",
+        "application": "When presenting an adaptive algorithm, state the observable signal driving adaptation, then align evaluation with quality, robustness, cost, and behavior.",
+        "exception": "This framing is less suitable when the method has no interpretable adaptive signal or when some evaluation dimensions are outside the intended use case."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark datasets, baselines, numerical effect sizes, temperature ranges, or statistical uncertainty.",
+      "The reported efficiency and accuracy comparisons lack implementation and evaluation-condition details in the abstract."
+    ]
+  }
+}

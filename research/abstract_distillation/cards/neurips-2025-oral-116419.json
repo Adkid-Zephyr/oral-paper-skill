@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-116419",
+    "title": "Deep Compositional Phase Diffusion for Long Motion Sequence Generation",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/116419"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e236705b3e68a4ddcbd2cd797f4f6fd6719c2583346019398dcbf9a069f20cc4",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "06773ad2c1638c1b7bff1ffd107d31dbfc8fa5074874637773e8e5f09929d4ed",
+    "extracted_at": "2026-09-13T00:21:13.281341+00:00",
+    "session_id": "01a09823-7199-7da3-9544-432f67e5b94a",
+    "usage": {
+      "input_tokens": 12755,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 765,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ce0e8e7a7cce5dfa4ef1173e56fdee491d5279437787986b39028b86add8b4b0"
+    },
+    {
+      "id": "S2",
+      "sha256": "a068ecc96ba405acaec41db6e43929ed5c492c2ac2684d1defc8768964d17adf"
+    },
+    {
+      "id": "S3",
+      "sha256": "c988f0d154e16e5c94fd6dc6d3bf38ea519fd4e631abdfda73cae451b4738174"
+    },
+    {
+      "id": "S4",
+      "sha256": "e9ca9d10dae063cc949680dbdd0a4246c6802c296943b28382c464957f620147"
+    },
+    {
+      "id": "S5",
+      "sha256": "d6ab2b6eea4fa2cda37952b5d684ca1ac9f2d6e4d26808ead38073d2df714d65"
+    },
+    {
+      "id": "S6",
+      "sha256": "566059c268d0a8d834f9c98aa1f1cf3481bea12973f897082e643643d98f6d3c"
+    },
+    {
+      "id": "S7",
+      "sha256": "bb226ca1e1b203d404cde2a5ce4ef98d95f9edca9544b882820045513735a645"
+    },
+    {
+      "id": "S8",
+      "sha256": "aa759553f3ee29ddfcb9f2fa66900f137fc430e99d5f36629c72e1e854f50349"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-116419",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate composite motion sequences from multiple semantic motion clips while maintaining continuous dynamics at clip boundaries.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing motion-generation models often produce awkward transitions and abrupt artifacts when composing multiple clips.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Compositional Phase Diffusion, combining Semantic Phase Diffusion and Transitional Phase Diffusion modules to incorporate semantic guidance and adjacent-clip phase details during diffusion.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "representation and training approach",
+        "claim": "The modules operate in the latent motion-frequency domain of a pretrained ACT-PAE and learn semantic and transition-aware phase information from variable-length clips.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "application extension",
+        "claim": "The framework supports motion inbetweening by fixing input phase parameters throughout diffusion.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a compositional diffusion framework that progressively combines semantic guidance with transition-aware phase information from adjacent clips.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report competitive performance for semantically aligned compositional motion generation while preserving phase continuity between preceding and succeeding clips.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that fixing input phase parameters enables the motion-inbetweening task, indicating potential for broader application scenarios.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Prior work generates motion aligned with individual semantic conditions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Composing multiple clips often disrupts motion-dynamic continuity at transitions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The proposed framework uses SPDM and TPDM in an ACT-PAE latent frequency domain to learn semantic and transition-aware phase information.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported results and extension",
+        "summary": "The authors report competitive semantic alignment with transitional continuity and describe motion inbetweening as an enabled extension.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract identifies disrupted continuity at clip boundaries and introduces modules combining semantic guidance with phase details from adjacent clips in a transition-aware representation.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "Separating semantic composition from boundary continuity can make a method's design rationale easier to trace from problem to mechanism.",
+        "application": "When presenting a compositional generation method, map each major module to a specific composition failure and state where the relevant information is represented.",
+        "exception": "This framing is less suitable when a single mechanism genuinely addresses all failure modes or when module roles cannot be independently identified."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report datasets, metrics, baselines, numerical results, or experimental conditions behind the claim of competitive performance.",
+      "It does not specify how motion-inbetweening performance was evaluated; the wording presents it as a capability and potential extension rather than quantified evidence.",
+      "The abstract does not establish priority or independently verify the claimed novelty."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "lessons[0].source_observation.claim",
+      "before": "The abstract connects each module to a distinct failure mode: semantic guidance is handled alongside phase details from adjacent clips, and the representation is explicitly transition-aware.",
+      "after": "The abstract identifies disrupted continuity at clip boundaries and introduces modules combining semantic guidance with phase details from adjacent clips in a transition-aware representation.",
+      "review_file": "reviews/flagged-batch-15.json",
+      "review_sha256": "f1eaeba916feff5cb775cc2af0cb450a65216607f4ecabdc228052b8db188965",
+      "applied_at": "2026-09-13T00:42:27.406478+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

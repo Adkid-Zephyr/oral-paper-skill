@@ -1,0 +1,208 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97963",
+    "title": "Return of Unconditional Generation: A Self-supervised Representation Generation Method",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97963"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "23faf8aaa9f223c98e660a6fd910922a6a67444ff9cba09e612d9083f514bd88",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "b181c2cc132354c4c4d304d14ff8b850625d05302d2c0d2206fbed4a17d30523",
+    "extracted_at": "2026-09-12T23:40:59.201965+00:00",
+    "session_id": "01a097fe-9cc5-7092-90f4-5f8ad2da2728",
+    "usage": {
+      "input_tokens": 12784,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 807,
+      "reasoning_output_tokens": 76
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6a7e7c1d45667e3bcf82cc86cb4918e5b38da4bf82aaaf833d4af0dac2116d3d"
+    },
+    {
+      "id": "S2",
+      "sha256": "b12b491bf55490f81fe70b056e109463a26495ae400785412498b0e0c4e7f2ef"
+    },
+    {
+      "id": "S3",
+      "sha256": "f762e26d414e75fc9a2be7cf9e9d2e0d781b75ddbff52a4083aaa84715294bb9"
+    },
+    {
+      "id": "S4",
+      "sha256": "fbbfb30f9b75ad5643566d04a83559788d1f61598fd094c9eaba560cb6d4a211"
+    },
+    {
+      "id": "S5",
+      "sha256": "4c1c46f8d29850920d4bcb9ef8612dd4b6ffd2c28568c7d0fd6ae154887714db"
+    },
+    {
+      "id": "S6",
+      "sha256": "b27bb30449e497479971c9161cc94d30ad9ec11c48fd74c23503895cd2b48577"
+    },
+    {
+      "id": "S7",
+      "sha256": "e2c544fbc548b3ddd38ffe7e68cc1f3ae80c500c55abcb03fed4961920b72258"
+    },
+    {
+      "id": "S8",
+      "sha256": "67ea4da292ce8a12abede1873ac6e0f1e4b13fa657a4f6a7ef57509cb1702292"
+    },
+    {
+      "id": "S9",
+      "sha256": "070e81a2e7b75a36aede4c04cf833696e8438e76d601d390f44aec065a1bea22"
+    },
+    {
+      "id": "S10",
+      "sha256": "57d2f19a385d282b3d1c022321467da86f0bacf88585d90d43a7ad4efb8e78a2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97963",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Model data distributions without human-annotated labels, enabling learning from large-scale unlabeled data.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Unconditional generation quality has been much worse than conditional generation, which the authors attribute to missing label-provided semantic information.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Representation-Conditioned Generation (RCG), which generates semantic representations in a self-supervised encoder’s representation space and uses them to condition an image generator without labels.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that RCG substantially improves unconditional generation quality, including an ImageNet 256×256 FID of 2.15.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "comparison",
+        "claim": "Reports unconditional results in the same tier as leading class-conditional results.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish RCG as a label-free framework that closes the unconditional–conditional quality gap by generating semantic representations for conditioning.",
+      "source_ids": [
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a 2.15 FID on ImageNet 256×256, reducing the previous best of 5.91 by a relative 64%.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that their unconditional results are in the same tier as leading class-conditional results.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem",
+        "summary": "Frames unconditional generation as label-free distribution modeling with potential for large-scale unlabeled-data learning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "States that unconditional methods have substantially lower generation quality than conditional methods and links the gap to absent semantic label information.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "Proposes generating semantic representations in a self-supervised encoder's representation space and using them to condition the image generator.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "Names this label-free approach Representation-Conditioned Generation (RCG).",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "Reports a 2.15 ImageNet 256×256 FID and parity in tier with leading class-conditional results.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract identifies missing semantic information as the central explanation for the unconditional-generation gap, then operationalizes semantics through self-supervised representations used for conditioning.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A useful design pattern is to replace unavailable labels with a learned semantic intermediate that can still guide generation.",
+        "application": "For another label-free generation task, define a self-supervised representation space and test whether sampling or generating representations before conditioning the generator addresses the stated semantic bottleneck.",
+        "exception": "This move may be unsuitable when the representation space does not capture task-relevant semantics or when conditioning introduces unacceptable computational or architectural complexity."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets beyond ImageNet, experimental protocols, baselines, statistical variation, or how the reported FID was obtained.",
+      "The abstract does not establish whether the reported quality gap is closed across resolutions, datasets, or generator families."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "narrative_sequence[2].summary",
+      "before": "Proposes generating semantic representations with a self-supervised encoder and using them to condition the image generator.",
+      "after": "Proposes generating semantic representations in a self-supervised encoder's representation space and using them to condition the image generator.",
+      "review_file": "reviews/pilot-03.json",
+      "review_sha256": "aab51adc33d4ff3aa16c1bb2c38822a46393e25c71ee181cc183e90ffc7b1e64",
+      "applied_at": "2026-09-12T23:46:38.303484+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

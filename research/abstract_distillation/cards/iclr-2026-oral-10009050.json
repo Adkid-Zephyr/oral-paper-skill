@@ -1,0 +1,220 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009050",
+    "title": "Reliable Weak-to-Strong Monitoring of LLM Agents",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009050"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "85f7f1c1282fa088017d14c20aa429beacfc8a44835b241f6c31b3f19a06758c",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "fafc0e553f7dd4aa9e8a5344ac2828334802f33b4878e5cfa57185387c5cb3bf",
+    "extracted_at": "2026-09-13T00:02:20.216813+00:00",
+    "session_id": "01a09812-228f-72b3-8e0e-fe85ac00c477",
+    "usage": {
+      "input_tokens": 12729,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 843,
+      "reasoning_output_tokens": 150
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "dfa1e366b997be8d941c00f0adeee5095ebd0e2d355d10bbac1d3c3005618ddf"
+    },
+    {
+      "id": "S2",
+      "sha256": "1af7d95462eca66d4bbdc8bd6d913dbfad8e7bed3943b979a5f2aaa64fbe7099"
+    },
+    {
+      "id": "S3",
+      "sha256": "2c8a5f3310619220da78940a3e34901be2b56c68f3112f3b30478b6c6119a1bf"
+    },
+    {
+      "id": "S4",
+      "sha256": "1d921f43919cc1ef1fffc166cb811c2dff8df49d84bb26c7ea112ed783231b29"
+    },
+    {
+      "id": "S5",
+      "sha256": "900a62d3d0160002d27bd057878913a145bc3917ed20c3f2193be15ee190941e"
+    },
+    {
+      "id": "S6",
+      "sha256": "11b5c443de9b171ac86e4c2dd8c53d6f0acc91148863cc4dd4ee777db0938f6d"
+    },
+    {
+      "id": "S7",
+      "sha256": "5411cfc4f876a4f130c4ee970566b40e45eb984644b8405849a8afc8fae38ab6"
+    },
+    {
+      "id": "S8",
+      "sha256": "99c0b55db26fcd7877231a7a4b0e85f77e10dce2f01b4eeab3a1dbe24e099dbf"
+    },
+    {
+      "id": "S9",
+      "sha256": "8cac881677d28b924f67c5a8ab1568b7858856ca8985d9adb81e66ff1d6b2f6d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009050",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper stress-tests monitoring systems for detecting covert misbehavior in LLM agents, such as secret data exfiltration.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The authors report robustness gaps in both LLM-based and human-based monitoring that require systematic stress-testing.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "workflow",
+        "claim": "A monitor red teaming workflow varying agent and monitor awareness, evasion strategies, and evaluation environments.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A hybrid hierarchical-sequential monitor scaffolding benchmarked against standard scaffoldings.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Code, data, and logs released to support further research.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce monitor red teaming as a workflow and a hybrid hierarchical-sequential monitoring design for weak-to-strong oversight.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S6",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that agent awareness substantially degrades detection, whereas increasing monitor awareness helps less; agent awareness dominates monitor awareness.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Authors report that their hybrid design consistently outperforms baselines and enables weaker monitors to oversee stronger agents.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "Authors report that escalating only pre-flagged cases improves true-positive rate by 15% at a false-positive rate of 0.01.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The work stress-tests detection of covert agent misbehavior.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "workflow",
+        "summary": "It proposes MRT, varying awareness, evasion, and evaluation across tool-calling and computer-use environments.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "monitor design",
+        "summary": "It benchmarks standard scaffoldings and introduces a hybrid hierarchical-sequential design.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "The reported findings concern awareness, scaffolding, and targeted human escalation.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "research support",
+        "summary": "The authors position MRT as a standard oversight stress-test workflow and release code, data, and logs.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates agent awareness, monitor awareness, scaffolding, and targeted human escalation as distinct monitoring factors, with different reported effects.",
+          "source_ids": [
+            "S2",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "Factorizing oversight conditions can make robustness failures and intervention benefits easier to diagnose.",
+        "application": "When presenting an oversight study, vary agent awareness, monitor design, evasion strategy, and escalation policy as separate experimental axes.",
+        "exception": "This decomposition may be unsuitable when the deployment setting fixes these factors or when factorial evaluation is infeasible."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baseline identities, model sizes, sample counts, confidence intervals, or the precise meaning of “consistently.”",
+      "The scope and generality of the reported 15% TPR improvement and weak-to-strong effect are unspecified."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "stated_novelty.source_ids",
+      "before": [
+        "S2",
+        "S3",
+        "S8"
+      ],
+      "after": [
+        "S2",
+        "S3",
+        "S6",
+        "S8"
+      ],
+      "review_file": "reviews/audit-iclr-2026.json",
+      "review_sha256": "9db1d33092aee5a803b7d3ad220b1081bba29d55a6d0042abe64e06eecb72248",
+      "applied_at": "2026-09-13T00:10:20.794176+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

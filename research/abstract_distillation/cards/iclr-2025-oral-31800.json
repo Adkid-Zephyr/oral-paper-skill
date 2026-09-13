@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31800",
+    "title": "Learning stochastic dynamics from snapshots through regularized unbalanced optimal transport",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31800"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "20bf4743fa8d0714bb27d5c3435bf554287eb29b89c6861c6fd1ed9c56de3e2f",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "e5b0145c39b313148c03d7213870c9f59fc1029e2fa42c282830ed305de2b622",
+    "extracted_at": "2026-09-12T23:52:31.960855+00:00",
+    "session_id": "01a09809-29b4-7862-b3a7-6c986657b6c6",
+    "usage": {
+      "input_tokens": 12693,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 758,
+      "reasoning_output_tokens": 102
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "773b2e39e70d8f8fb2e79b5126fb48b23595de7cdf035c284fee9c6c34535984"
+    },
+    {
+      "id": "S2",
+      "sha256": "26ab1fc179359633302a722d2cd0fec42f7230392173607b84d8a536de01e428"
+    },
+    {
+      "id": "S3",
+      "sha256": "e37f4fab127b2a14df37630d9c78fe90b71abb3ab3de6811904b74db4543e0f7"
+    },
+    {
+      "id": "S4",
+      "sha256": "f65f746cad6b2e1e831f828ce07f48d84249dcd421f79a7491d82591df38331e"
+    },
+    {
+      "id": "S5",
+      "sha256": "a606de7bdeba400be007b28e89db9c10fba5f7035252732cbfc352fdecf07196"
+    },
+    {
+      "id": "S6",
+      "sha256": "944cb651a074530c1d5e998d75c3e9be65cd7d5550b5c6eacdc6048ae384d6eb"
+    },
+    {
+      "id": "S7",
+      "sha256": "18cbfa181b29f7e9db51aee97dbb97b8e8e828bba9529bc44bf7d987c24d65a3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31800",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reconstruct continuous stochastic dynamics from sparsely time-resolved snapshot samples.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces a deep-learning approach for regularized unbalanced optimal transport (RUOT) and inference of continuous unbalanced stochastic dynamics from snapshots.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "modeling approach",
+        "claim": "Learns growth and death processes directly from data without prior process knowledge or additional information.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Explores connections between RUOT and the Schrödinger bridge problem, including challenges and potential solutions.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present their approach as a new deep-learning method for RUOT-based stochastic-dynamics inference.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report demonstrations on a synthetic gene regulatory network, a high-dimensional Gaussian mixture model, and blood-development single-cell RNA-seq data.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Compared with other methods, the authors report accurate identification of growth and transition patterns, elimination of false transitions, and construction of the Waddington developmental landscape.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Snapshot-based reconstruction of dynamics is framed as an important problem in natural sciences and machine learning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper introduces a deep-learning RUOT approach for inferring continuous unbalanced stochastic dynamics.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "modeling premise",
+        "summary": "The method is described as learning growth and death processes directly from data without prior process knowledge or extra information.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "The authors examine RUOT–Schrödinger bridge connections and associated challenges and solutions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "demonstration",
+        "summary": "Experiments span synthetic, high-dimensional mixture-model, and blood-development single-cell data, with reported advantages over other methods.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a modeling claim—learning growth and death directly from data—with demonstrations across synthetic, generic high-dimensional, and biological datasets.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "This links an assumptions claim to tests across progressively more application-specific settings.",
+        "application": "When proposing a data-driven dynamics model, state which prior information is removed and test the claim across synthetic, abstract high-dimensional, and real biological settings.",
+        "exception": "This framing is unsuitable when domain-specific prior knowledge is essential for identifiability or safety."
+      }
+    ],
+    "unknowns": [
+      "No quantitative metrics, baseline identities, dataset sizes, or experimental conditions are given.",
+      "The abstract does not specify how “accurately” or “eliminates” were measured.",
+      "The scope of the theoretical connections and proposed solutions is not detailed."
+    ]
+  }
+}

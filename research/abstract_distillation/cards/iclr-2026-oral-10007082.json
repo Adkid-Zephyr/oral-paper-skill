@@ -1,0 +1,205 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007082",
+    "title": "What's In My Human Feedback? Learning Interpretable Descriptions of Preference Data",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007082"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "cb5a58eb0bad3c3000d2a8777d9a9bf07347354d57aae6df73db4a127128cb84",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "724816880fd0c0cd6b4b82d2c23754fbac8c75888bb5df5f37df7a46ac7be4bd",
+    "extracted_at": "2026-09-12T23:59:03.538543+00:00",
+    "session_id": "01a0980f-24f9-7aa0-bf53-ec0d0d49ad4e",
+    "usage": {
+      "input_tokens": 12825,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 813,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b8e2642a5cef1795068fb0e11726f0aa25cbb7986303da60f8a2f160c09303f0"
+    },
+    {
+      "id": "S2",
+      "sha256": "a4159ca0ea77a34a3c01d55cbe5356253cad1af956c37011097bd155e9f32960"
+    },
+    {
+      "id": "S3",
+      "sha256": "b0d651ceddb2f35f0af10ce51dd4a903455410c79e9aa393136abce56d223b43"
+    },
+    {
+      "id": "S4",
+      "sha256": "fc04d120821c89a172c080f01528c865c40c829a213b4d8467e42db5226728ab"
+    },
+    {
+      "id": "S5",
+      "sha256": "f38cd2d01b09878d3b9f0a7753535a59cb8e930915565c29303615873247f45d"
+    },
+    {
+      "id": "S6",
+      "sha256": "6ac12d373a58ed70fc4808e8cdf291653329ce0b57a5bc5659fce48766389e9e"
+    },
+    {
+      "id": "S7",
+      "sha256": "4d8bc947f05b0e10b9df1c4cb54b37096c4649a787d089c29e0392f10fa72eb8"
+    },
+    {
+      "id": "S8",
+      "sha256": "9be8434894b7a61ec617b557cc043f6247d23ab164025c1f2798e0fb4127ea99"
+    },
+    {
+      "id": "S9",
+      "sha256": "3451b46a54b306bdbb6bf1d30c4e4e1ed27e7c767fbe0a55ac73994491ec5216"
+    },
+    {
+      "id": "S10",
+      "sha256": "7d6016bf0c207be33dee003010a8ecce04a3fb91859e951ee6882fed360cd669"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007082",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Practitioners need to understand what human-feedback data encodes so they can interpret and use it safely.",
+        "source_ids": [
+          "S1",
+          "S10"
+        ]
+      },
+      "gap": {
+        "claim": "Automatically extracting relevant preference features without pre-specified hypotheses remains challenging.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces WIMHF, which uses sparse autoencoders to explain preference data.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "Characterizes both the preferences a dataset can measure and those annotators actually express.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "applications",
+        "claim": "Uses learned interpretable features for data curation and annotator-specific personalization.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present WIMHF as a human-centered method for analyzing preference data through sparse-autoencoder-derived, interpretable features.",
+      "source_ids": [
+        "S3",
+        "S10"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Across 7 datasets, a small number of human-interpretable features account for most of the preference-prediction signal achieved by black-box models.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The analysis reports strong dataset-context differences: Reddit users prefer informality and jokes, whereas HH-RLHF and PRISM annotators disprefer them.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that relabeling harmful Arena examples produces a +37% safety gain with no cost to general performance, and that annotator-specific feature weights improve preference prediction on Community Alignment.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Human feedback can change language models unpredictably, while its encoded preferences are difficult to understand.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Existing studies examine selected attributes, but hypothesis-free feature extraction remains challenging.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "WIMHF applies sparse autoencoders and separates measurable dataset preferences from expressed annotator preferences.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "Across seven datasets, sparse interpretable features capture most black-box prediction signal and expose diverse, context-dependent and potentially unsafe preferences.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "applications",
+        "summary": "The features support safety-oriented data curation and fine-grained personalization.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract distinguishes what a dataset is capable of measuring from what annotators actually express, then demonstrates both curation and personalization uses.",
+          "source_ids": [
+            "S4",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "Separating measurement capacity from observed behavior can connect interpretability analysis to concrete operational decisions.",
+        "application": "When presenting a preference-data method, explicitly report these two layers and map each to a downstream intervention.",
+        "exception": "This framing may be unsuitable when the data cannot support a meaningful distinction between measurement capacity and annotator behavior."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify how features, prediction signal, safety gains, or preference-prediction improvements were measured.",
+      "The +37% safety result lacks baseline, evaluation scope, statistical uncertainty, and relabeling details.",
+      "The abstract does not establish whether the reported findings generalize beyond the named datasets."
+    ]
+  }
+}

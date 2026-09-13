@@ -1,0 +1,163 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010392",
+    "title": "Exchangeability of GNN Representations with Applications to Graph Retrieval",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010392"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1610cf9ebda5f43aaae46bfb755a7232d7ece484169fa7a7f97caf35adf7a0f0",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "4115a1d940e26fd52fa18d45af77a08d21c3f27907a72eaa32b7336071cd85f4",
+    "extracted_at": "2026-09-13T00:04:22.792019+00:00",
+    "session_id": "01a09814-0e99-7340-860a-d51f35748c2b",
+    "usage": {
+      "input_tokens": 12641,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 627,
+      "reasoning_output_tokens": 61
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "702bd364a9df282fec5c61d69f66e30524430b7ef5e55fc544741fbd244981dc"
+    },
+    {
+      "id": "S2",
+      "sha256": "c5600a30ba8ea1c290c8590da1e18fe06550613bc091409fd3350f1b38889322"
+    },
+    {
+      "id": "S3",
+      "sha256": "a8a97459f31bfd41297a29e37196f734369df5a0c79df6da917501f91c6149fd"
+    },
+    {
+      "id": "S4",
+      "sha256": "ed9f707f934e1d745c5692f6d069e2040ceef08e0b7ef21f3a9bfb5f22c31bae"
+    },
+    {
+      "id": "S5",
+      "sha256": "03c89f10afa5bbec2e1de50bd949343aec406fd5ebb62eb7f5b7fae437f0f64d"
+    },
+    {
+      "id": "S6",
+      "sha256": "ccccc2539d7996c10b748ac6d11e20d7773a8e61d0d771aa12175d5d2aac1b53"
+    },
+    {
+      "id": "S7",
+      "sha256": "48227b921222421f0af3a331a482f9eb3d1c048907eb4efec451fb8160533a3d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010392",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses efficient approximation of transportation-based graph similarities and locality-sensitive hashing for graph retrieval.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Characterizes exchangeability in trained node embeddings produced by a large family of GNNs under standard optimization tools.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses order-statistic Euclidean similarities to approximate transportation-based graph similarities and proposes a unified LSH framework covering measures such as subgraph matching and graph edit distance.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that they discover a probabilistic symmetry, exchangeability, in GNNs and derive a unified LSH framework from it.",
+      "source_ids": [
+        "S1",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their method performs LSH more effectively than baselines in experiments.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "discovery",
+        "summary": "Introduces exchangeability as a probabilistic symmetry in GNNs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "characterization",
+        "summary": "States that trained node embeddings are exchangeable, yielding permutation-invariant embedding densities and identical distributions across representation elements.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "application",
+        "summary": "Reduces transportation-based similarity approximation to Euclidean comparisons of order statistics and builds a multi-measure LSH framework.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Reports more effective LSH than baselines in experiments.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a representation-level symmetry to a retrieval method by first stating the invariance, then describing the resulting similarity reduction and its LSH application.",
+          "source_ids": [
+            "S2",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A structural property becomes a persuasive method motivation when its operational consequence is stated explicitly.",
+        "application": "When proposing a retrieval algorithm, connect each representation property to a concrete distance or indexing reduction before presenting the system.",
+        "exception": "This framing is unsuitable when the proposed representation property has no demonstrated computational consequence or the reduction requires unstated assumptions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the GNN architectures, optimization assumptions, approximation guarantees, datasets, metrics, baseline identities, or the magnitude of experimental improvements.",
+      "The conditions under which the claimed exchangeability and similarity approximation hold are not detailed."
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "targeted synthesis-source checking",
+  "records": [
+    {
+      "paper_id": "iclr-2026-oral-10020874",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S3与S4连接后构成完整句子，EXPSPACE-complete对应作者所称的验证“甚至简单的transformer属性”。卡片同时引用两段，并明确具体验证问题未在摘要中定义。后续综合不得将其扩展为所有属性验证问题均EXPSPACE-complete，也不能自行补充模型、编码或证明条件。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011092",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "卡片忠实保留S4的“trades accuracy and speed for cost”，没有自行确定成本类别或各指标变化方向。原文不足以进一步量化或消除该表述的歧义；综合应保留为作者报告的权衡，不改写成明确的降本、提速或准确率变化结论。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011137",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S1批评固定二元偏好训练的表达局限；S2将free-form用于整体奖励建模目标及基准的偏好支持，并未说数据不再以pairs组织。卡片保留九项任务、五种模态、248K general preference pairs及69K instruction-tuning pairs，没有制造矛盾。综合不得推断所有数据对的偏好格式、自由形式偏好的实现方式，或将pairs计数等同于固定二元偏好限制。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011638",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "lessons[0].source_observation.claim",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "issue": "“each design choice”将摘要对整体设计与两类瓶颈的联系写得过于逐项明确；摘要没有分别说明三个组件与独立瓶颈的一一对应关系。这是表述精度问题，当前句子并未声称完成组件消融。",
+          "severity": "minor",
+          "replacement_value": "The abstract presents space-time separation, random features in place of gradient-descent training, and built-in temporal causality in response to optimization and non-causal time-treatment bottlenecks, then reports overall performance across nine PDE benchmarks with varied challenges."
+        }
+      ],
+      "resolution": "应收窄逐组件对应的观察。S4报告的是九个PDE基准上的整体效率和准确率表现，并非九类挑战，也未在摘要中提供组件作用的独立验证。application属于迁移建议，不代表作者已进行相应测试；综合须保留这一边界。",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011886",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "problem将合法使用和数据安全合规表述为S2–S3提出的需求；contributions仅转述S4–S5的开放资源、约两万亿tokens及无版权或宽松许可来源，没有断言已证明全面合规。“Ethical”来自原题，卡片没有将其扩展成独立验证的伦理结论。综合应保留作者归属，不能由许可来源自动推出所有法律、数据安全或伦理要求均获满足；摘要未给详细证据不等于全文没有。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011956",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "卡片整体明确区分新提出的ε-Gaussian certifiability与先前的ε-certifiability，并将步数差异的解释归于作者。一步结论包含随后加入校准高斯噪声及本文高维设定；旧工作被转述为至少需要两步。综合不得将这些写成同一认证保证下对旧结论的反证；单独摘引一步结论时须携带认证概念、噪声和设定限制，不能补齐摘要未给的证明条件。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47173",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S7明确支持潜在地避免存储大型中间状态，lesson保留了“potentially”；该观察无需在其他字段重复出现。S9仅表示探索不量化条件下在Nvidia 3090等消费级GPU上训练7B/8B模型的可行性，卡片保留explores及配置、端到端完成状态未知。综合不得升级为已证明所有相关配置均可完成训练，也不得把潜在存储收益写成无条件保证。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47183",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S1合法包含完整多句摘要，明确将低频时间分配对应减轻周期振荡、对角布局对应维持空间对称、可调时间间距对应解耦时空索引，lesson的细分解释有直接支持。其隔离失效模式的application是建议，不能转述为作者已完成独立因果验证。四项特征的逐项清单仍不明确，不能自行拼出；代码和权重仅承诺将公开，不能称已发布。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47188",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "提供的identity标题确为Inductive Moment Matching，而S2–S4明确使用Moment Matching Self-Distillation（MMSD）；卡片分别忠实保留二者，不构成抽取命名错误。材料没有版本历史，无法确定差异缘由，也不能擅自改名或断言旧摘要。综合应注明标题与摘要方法名的差异，并保留ImageNet-256x256的8步2.13 FID、CIFAR-10从头训练的2步2.05 FID及作者报告属性。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47169",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S1本身将较低维表示与可完全刻画生成分布并列，narrative_sequence忠实转述，未自行引入截断表示。摘要没有说明维数、截断方式或完全刻画的条件，卡片也将相关范围列为未知。不能用外部理论修补作者措辞；综合应将其保留为摘要陈述，而非任意有限截断张量都足以刻画分布的已验证结论。鞅条件仍须限定后续估计器修改及其效果。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47195",
+      "first_pass_status": "pass",
+      "findings": [],
+      "resolution": "S6仅使用7.9%和1.3% performance gain，没有界定相对百分比或百分点；卡片原样保留%，无需修正。原句将VersaPRM的weighted majority voting明确与majority voting基线比较，并在同一语境比较Qwen2.5-Math-PRM的增益，支持当前写法，但不足以确认全部实验配置完全相同。综合不得换算百分点、绝对分数或跨域平均收益，也不得补充未给出的共同基线数值。",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2025-oral-47164",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "author_reported_evidence[2].claim",
+          "source_ids": [
+            "S7",
+            "S8",
+            "S9"
+          ],
+          "issue": "将整体缓解措施分析拆成“implemented and planned defenses”并共同断言效果，模糊了原文的状态区分；S7报告总体分析，S9为正在集成，并未逐类报告效果。",
+          "severity": "minor",
+          "replacement_value": "The authors report that their analysis indicates the mitigations substantially increase attack cost; Cloudflare bot protection, malicious-user detection, and rate limiting predated the collaboration, while reCAPTCHA and login were being integrated."
+        },
+        {
+          "field": "narrative_sequence[3].summary",
+          "source_ids": [
+            "S7",
+            "S8",
+            "S9"
+          ],
+          "issue": "“proposed reCAPTCHA and login integration”将正在集成降为拟议，且未完整区分合作前已有的防御。",
+          "severity": "minor",
+          "replacement_value": "The authors collaborated with Chatbot Arena developers to identify, propose, and implement mitigations; Cloudflare bot protection, malicious-user detection, and rate limiting were already present before the collaboration, while reCAPTCHA and login were being integrated."
+        }
+      ],
+      "resolution": "总体合作实施缓解措施的贡献有S7支持，但具体防御须保留合作前已有与正在集成的区别，不能全部归为作者新实施或已部署。成本提升属于作者分析，不是每项措施的独立实测效果。综合还须保留缺乏防御的攻击前提，以及约一千票结果来自模拟离线Chatbot Arena；这些状态均以摘要叙述时点为限。",
+      "final_disposition": "requires_correction"
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "material_error_cards": 0,
+    "minor_cards": 2,
+    "pass_cards": 10,
+    "scope": "targeted flags only"
+  }
+}

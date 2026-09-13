@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008865",
+    "title": "Generative Human Geometry Distribution",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008865"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7ddef620736cf77577ba7eec0229f55402d065013b65d6241f87ae3d629bdbdd",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "7544c31420e40647afc055770727b720fa6aba837a96a4082d2708924b363984",
+    "extracted_at": "2026-09-13T00:02:01.484340+00:00",
+    "session_id": "01a09811-da27-7932-a018-b21ef2e05cb9",
+    "usage": {
+      "input_tokens": 12730,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 793,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e36b4febc6624d12300a436bd7665eb211efb590e2db983009e063cef939d566"
+    },
+    {
+      "id": "S2",
+      "sha256": "cf75746278d3633dcb10cc6d10750eb8160aee0ee414363c74225fabb4381861"
+    },
+    {
+      "id": "S3",
+      "sha256": "b4e5518d9dc4089c248c7230f22ceaddb00cc46b55fbe5426805538e37c76198"
+    },
+    {
+      "id": "S4",
+      "sha256": "1499fe7819145b754a4dc6a1b8bd67fb8955235c17628cb6a33d74cf7ffa7998"
+    },
+    {
+      "id": "S5",
+      "sha256": "75ca7976a8fdb7de32d72f4b7a76624b8781d14bc008c420b123ce8b5f1b1d79"
+    },
+    {
+      "id": "S6",
+      "sha256": "28debc2200934f41df651594540c08a1a574ba678e165a9becd3d52b04ffd979"
+    },
+    {
+      "id": "S7",
+      "sha256": "52e0c1d10aa83c150238e5e37cb18f1527431eb3990e5156d633613821a82de0"
+    },
+    {
+      "id": "S8",
+      "sha256": "a2cec8347fd42955d10571fdc831c3a04fdbf40c041f5c4041829f91386665aa"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008865",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate realistic human geometry while preserving fine clothing details and modeling clothing–body interactions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Extending single-geometry distributions to datasets is described as non-trivial and inefficient for large-scale learning.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A geometry distribution model that encodes distributions as 2D feature maps, uses SMPL as the domain instead of Gaussian, and refines the flow velocity field.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "generative framework",
+        "claim": "A two-stage framework that first compresses geometry distributions into a latent space with a diffusion flow model, then trains another flow model in that latent space.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "Validation on pose-conditioned random avatar generation and avatar-consistent novel-pose synthesis.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach through feature-map distribution encoding, an SMPL-domain formulation with refined flow velocity, and two-stage latent-space generation.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their method outperforms existing state-of-the-art methods and achieves a 57% improvement in geometry quality.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Realistic human geometry generation must preserve clothing detail and clothing–body interactions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior representation and gap",
+        "summary": "The work builds on a high-fidelity single-human-geometry distribution, but dataset-scale extension is non-trivial and inefficient.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The proposed model changes the distribution representation and domain, refines flow velocity, and uses two-stage latent-space training.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The approach is tested on random avatar generation conditioned on pose and synthesis of novel poses consistent with an avatar.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report a 57% geometry-quality improvement over existing state-of-the-art methods.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly connects the dataset-scale limitation to representation, domain, flow-field, and staged-training choices.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A concise limitation-to-design mapping can make a technical proposal's rationale easier to assess.",
+        "application": "For a generative-model paper, pair each stated scalability bottleneck with the specific representation or training change intended to address it.",
+        "exception": "This framing is less suitable when the abstract's method is exploratory and does not claim to target a clearly identified bottleneck."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define the geometry-quality metric, improvement calculation, datasets, baselines, or statistical conditions behind the reported 57% result.",
+      "It does not specify how pose conditioning or avatar consistency is measured, nor provide ablations separating the proposed techniques.",
+      "The abstract-only text does not establish independent validity, reproducibility, or priority of the claimed method."
+    ]
+  }
+}

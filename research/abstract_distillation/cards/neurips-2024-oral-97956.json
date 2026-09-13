@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97956",
+    "title": "DuQuant: Distributing Outliers via Dual Transformation Makes Stronger Quantized LLMs",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97956"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "fb7369fb5cbe9ce40365fbc8dea14cc3996bbe661a378deded7798c3b07ea58d",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "7fe0d6687f94e173c52358f8b01a5926ec5a7a7fc03a0309e85ff3cb163e2ed9",
+    "extracted_at": "2026-09-13T00:18:14.910680+00:00",
+    "session_id": "01a09820-bb56-7942-a3ad-4555c590ed5e",
+    "usage": {
+      "input_tokens": 14289,
+      "cached_input_tokens": 9984,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 790,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "644232306db865fc2dbdb79a411efd69cd9b1c48fd99a25ac943d0ed05ae8aeb"
+    },
+    {
+      "id": "S2",
+      "sha256": "87710eca90322e209b9dbc850c089d6b41a8cc2bfccee5375d8359037fdaf073"
+    },
+    {
+      "id": "S3",
+      "sha256": "11d7905a16880719501afacde920fb2a73a8fcb10998d482da74f8d736f8367d"
+    },
+    {
+      "id": "S4",
+      "sha256": "32eaca49d4ad2005ad125ccde5d50a5311961349c75369540d5b5c3c69a7348f"
+    },
+    {
+      "id": "S5",
+      "sha256": "e78808d04965b0255d9340900a1506418c11a83ec5b7188e243209f853e9c621"
+    },
+    {
+      "id": "S6",
+      "sha256": "90f9859eb08f7b3d9a6e38b490358a622d6247bbb7f3919efd82d0fc2f0b29d9"
+    },
+    {
+      "id": "S7",
+      "sha256": "5bde8005255266d1694a3c2a9f43806992f9d2cbe7607e7eba06ad33e8f637c3"
+    },
+    {
+      "id": "S8",
+      "sha256": "3da2c40741d6d487fb247ff01b9b4ac0be5d5c931f8a8a99e2972b21e5060477"
+    },
+    {
+      "id": "S9",
+      "sha256": "0e39d8881e96fe9d2d8162a7ff34bb92b15436de1e4965ec03a4ccfbfa2aae3a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97956",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Low-bit LLM quantization is hindered by outlier activations that are difficult to represent efficiently.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches mainly handle normal outliers but struggle to smooth massive outliers, causing performance degradation in low-bit quantization.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DuQuant combines block-wise rotation, zigzag permutation, and a subsequent rotation to mitigate both massive and normal outliers.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report that DuQuant outperforms state-of-the-art baselines across LLM sizes and types, multiple tasks, and 4-bit weight-activation quantization.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors provide an implementation of DuQuant publicly.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe DuQuant as a novel rotation-and-permutation approach for mitigating both massive and normal outliers.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report superior performance to state-of-the-art baselines across various LLM sizes and types on multiple tasks, including 4-bit weight-activation quantization.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem framing",
+        "summary": "The paper identifies outlier activations as a major obstacle to efficient low-bit LLM quantization.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation of prior approaches",
+        "summary": "It distinguishes normal outliers from massive outliers and states that conventional methods primarily address the former.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "DuQuant uses prior outlier dimensions to construct a block-wise rotation that redistributes outliers to adjacent channels.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "method refinement",
+        "summary": "A zigzag permutation balances outliers across blocks, reducing block-wise variance, followed by another rotation to smooth activations.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report improved results over state-of-the-art baselines across model varieties, tasks, and 4-bit weight-activation quantization.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates normal and massive outliers, then assigns distinct distribution-smoothing operations within a multi-stage transformation pipeline.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A method can be framed more precisely when it maps distinct failure modes to explicit processing stages.",
+        "application": "When presenting a quantization method, classify the problematic activation patterns first and explain which transformation addresses each pattern.",
+        "exception": "This framing may be unsuitable when failure modes cannot be reliably distinguished or when the stages are not independently motivated."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical results, datasets, model names, baseline names, or experimental conditions.",
+      "It does not quantify the reduction in block-wise variance or specify how outlier dimensions are selected.",
+      "The abstract does not provide theoretical guarantees or implementation details beyond the code link."
+    ]
+  }
+}

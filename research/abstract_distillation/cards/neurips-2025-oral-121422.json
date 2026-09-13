@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-121422",
+    "title": "Artificial Hivemind: The Open-Ended Homogeneity of Language Models (and Beyond)",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/121422"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "907746d33fbb415d789fc2d3f1913de96ff9026b28da138859bd34645518c207",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "ea5e3725c3b9a421ba5f37f3fd1e7c2e77f66b0975fba76b2dbe9bf7e2965207",
+    "extracted_at": "2026-09-13T00:23:24.117289+00:00",
+    "session_id": "01a09825-6dc4-7480-9937-a2ef8f1c84f7",
+    "usage": {
+      "input_tokens": 12882,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 802,
+      "reasoning_output_tokens": 70
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "350aeb932025178e41e0a79cab5daa398976239b0d32a6d9a0a343f845fe3bed"
+    },
+    {
+      "id": "S2",
+      "sha256": "877dc6f961da9a717afd6cf420b6e23a18640dd702b0cb1bce8d2b1b61fc0e34"
+    },
+    {
+      "id": "S3",
+      "sha256": "619e8eb88e8365dfd52b941dbf57400be964b207a56ad38168fd7805d92157ad"
+    },
+    {
+      "id": "S4",
+      "sha256": "ddb2255e874bea1aac3dff689999c4746d699a01e5ea45f3971b0ca93d4b98d6"
+    },
+    {
+      "id": "S5",
+      "sha256": "0aa8c5c6a89631807b2dc3907dcced7b6543190180ab4e0d2f63d43931bc4d61"
+    },
+    {
+      "id": "S6",
+      "sha256": "fa815ab2cc354dcd004adfee8c559425d4037cf016ec918c6111014b460a4423"
+    },
+    {
+      "id": "S7",
+      "sha256": "f3949706ff6c96e4d20ef991c52f6df935f96a79049d1629443494b7f90b234f"
+    },
+    {
+      "id": "S8",
+      "sha256": "5c349297b48b782b982fbb0671d6f7f829bb1b81046ff5bbd449f791a62942f8"
+    },
+    {
+      "id": "S9",
+      "sha256": "86ae5a60f6cd7eb9051b4ac093f9b13ab891fadf351e14630368e885dc1380d8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-121422",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Language models often generate insufficiently diverse, human-like creative content, creating concern about homogenization of human thought.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Scalable evaluation of language-model output diversity remains limited, particularly for broad open-ended tasks and comparisons beyond repeated sampling from one model.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "Introduces Infinity-Chat, a dataset of 26K diverse real-world open-ended queries without a single ground-truth answer.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "taxonomy",
+        "claim": "Introduces a taxonomy spanning 6 top-level categories and 17 subcategories of open-ended prompts.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical study",
+        "claim": "Uses Infinity-Chat to study mode collapse and characterize intra-model repetition and stronger inter-model homogeneity in open-ended generation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe Infinity-Chat as the first large-scale resource for systematically studying real-world open-ended queries, and their taxonomy as the first comprehensive taxonomy of the full prompt spectrum.",
+      "source_ids": [
+        "S4",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report pronounced Artificial Hivemind effects: one model repeatedly produces similar responses, while different models produce strikingly similar outputs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that Infinity-Chat contains 31,250 human annotations, including absolute ratings and pairwise preferences, with 25 independent annotations per example.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report poorer calibration of state-of-the-art language models, reward models, and language-model judges to human ratings when annotator preferences are idiosyncratic, despite comparable overall quality.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies limited creative diversity and possible thought homogenization as the motivating concern.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "It notes that scalable diversity evaluation is especially limited for open-ended prompts and cross-model comparisons.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "resource_and_framework",
+        "summary": "The authors introduce Infinity-Chat and a 6-category, 17-subcategory taxonomy, with extensive human annotations.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "The resource supports reported analyses of Artificial Hivemind effects and calibration gaps around idiosyncratic human preferences.",
+        "source_ids": [
+          "S5",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a broad open-ended query resource with a structured taxonomy and both absolute and pairwise human judgments.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "This combination makes diversity, preference variation, and evaluation alignment distinct but jointly analyzable.",
+        "application": "For a broad-generation study, define a prompt taxonomy and collect multiple judgment formats per example so diversity and evaluator alignment can be reported separately.",
+        "exception": "This may be unsuitable when prompts have objective ground truth or when annotation budgets cannot support repeated judgments."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluated models, diversity metrics, statistical analyses, or calibration procedure.",
+      "It does not quantify the reported homogeneity, calibration differences, or the evidence connecting these findings to long-term AI safety risks."
+    ]
+  }
+}

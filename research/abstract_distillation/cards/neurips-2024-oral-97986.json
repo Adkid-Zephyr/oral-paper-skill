@@ -1,0 +1,163 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97986",
+    "title": "Stochastic Taylor Derivative Estimator: Efficient amortization for arbitrary differential operators",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97986"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "79e9b4b5dc1e489d261449656537622bc81899bfb0e889899f6f79918f986b0f",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "652a722cffad6b1b9d1585c120ba2d56e1b3941efd4a7de5004e580c912ff3f1",
+    "extracted_at": "2026-09-13T00:19:21.114007+00:00",
+    "session_id": "01a09821-b8e8-7de1-b9f1-711203aac630",
+    "usage": {
+      "input_tokens": 12762,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 811,
+      "reasoning_output_tokens": 109
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e4c3ae4b16f9222753d342746a34e2c2597323e2e43d7f2a981adc5474388cbb"
+    },
+    {
+      "id": "S2",
+      "sha256": "4d3e1b513380705ac732c7ec394d1ea7d4cf54b8f07aef295c13c4d1cf8de9d1"
+    },
+    {
+      "id": "S3",
+      "sha256": "d8ec4abc5f7f6f9585126f652a02ac7bcb20ff27e92a5f50d86810d0b0d2e695"
+    },
+    {
+      "id": "S4",
+      "sha256": "65a7825b712eb42608b00588fcc4e35c16cfa0ae6f1b1eac14841b4b5902f4e9"
+    },
+    {
+      "id": "S5",
+      "sha256": "b19aae9f931207e632202f56fa52a0c5e9ef4de4d01556b0e40a93342c3887ab"
+    },
+    {
+      "id": "S6",
+      "sha256": "d0a1b1a300d5e581cb4eb1b7ba151f65538a60934ebaefa9594478f51c66b2e1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97986",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Efficiently evaluate high-dimensional, high-order differential operators in neural-network optimization, whose back-propagation costs scale as O(d^k) in derivative-tensor size and O(2^{k-1}L) in the computation graph.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Prior approaches described in the abstract address dimension scaling through randomized amortization or address order scaling for univariate functions through high-order AD, leaving their combination for arbitrary multivariate contractions unspecified.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Constructs input tangents for univariate high-order automatic differentiation to efficiently contract arbitrary-order derivative tensors of multivariate functions and randomize arbitrary differential operators.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "Applies the estimator to Physics-Informed Neural Networks and enables solving 1-million-dimensional PDEs on a single GPU, as reported by the authors.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state a method for arbitrary derivative-tensor contraction in multivariate functions by properly constructing tangents for univariate high-order AD.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report over 1000× speed-up and over 30× memory reduction versus randomization with first-order AD for PINNs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report solving 1-million-dimensional PDEs in 8 minutes on a single NVIDIA A100 GPU.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "High-dimensional and high-order differential operators create polynomial derivative-tensor and exponential computation-graph costs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior approaches",
+        "summary": "Randomization is described as addressing dimension scaling, while high-order AD addresses order scaling for univariate functions.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The work combines these directions by constructing tangents that support arbitrary multivariate tensor contractions and operator randomization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported application",
+        "summary": "For PINNs, the authors report large speed and memory gains and a million-dimensional PDE solution on one A100.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract frames the method by separating two scaling bottlenecks, then states how one tangent construction addresses arbitrary multivariate contractions and operator randomization.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A bottleneck-by-bottleneck framing can make a technical contribution's scope and mechanism easier to assess.",
+        "application": "When presenting a computational method, identify distinct scaling costs, map each prior technique to the cost it addresses, and explicitly state the mechanism that joins them.",
+        "exception": "This framing is unsuitable when the costs are inseparable or when the proposed method does not directly target each identified bottleneck."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluation operators, PDE details, hardware settings beyond one A100, or measurement methodology behind the reported speed and memory comparisons.",
+      "It does not state whether the reported million-dimensional result applies broadly across PDE classes or to a particular case."
+    ]
+  }
+}

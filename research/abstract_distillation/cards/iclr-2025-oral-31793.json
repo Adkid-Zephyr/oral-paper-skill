@@ -1,0 +1,180 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31793",
+    "title": "Can Neural Networks Achieve Optimal Computational-statistical Tradeoff? An Analysis on Single-Index Model",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31793"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "904e045f8dedeaa61e561088d312ae6f9d5426da69f525f0b8e1251053fbc16d",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "d0a22aef12a3677bc954e3f0ba2f01d725b4bb4e915126a0558ff975ca412b1a",
+    "extracted_at": "2026-09-12T23:52:14.309032+00:00",
+    "session_id": "01a09808-e074-7a33-bb3e-d656d92d4c1c",
+    "usage": {
+      "input_tokens": 12803,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 933,
+      "reasoning_output_tokens": 71
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e86b0f2247943bf907895959696db3f0cd3bf37be4b93f0255b5e8a5f62a75c1"
+    },
+    {
+      "id": "S2",
+      "sha256": "89b44f2ca5055991b0aeb6c2e28429b2c7e1a040135e652a071d206be2e0bb83"
+    },
+    {
+      "id": "S3",
+      "sha256": "92dc43f220e4c85ffb4f012becfab87a96ce376f577c3cc748c7a4c78d486b93"
+    },
+    {
+      "id": "S4",
+      "sha256": "de8debc54fc7bcbb2e20f54f6c5b388862ed7c9c577bc5beeb415740e8d807d1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31793",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Whether gradient-trained neural networks can attain the optimal statistical–computational tradeoff for Gaussian single-index models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "It was unknown whether neural networks could achieve the sample complexity implied by the SQ lower bound.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A unified polynomial-time gradient-based algorithm for training two-layer neural networks across multiple loss and activation functions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "An extension using weight perturbation for learning signals that are k-sparse with k=o(√d).",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "A corresponding SQ lower bound for the sparse setting, matched by the proposed method up to polylogarithmic factors.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors identify the weight perturbation technique as novel and present the framework as potentially applicable beyond this problem, including sparse tensor PCA.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their algorithm learns a feature representation strongly aligned with the unknown signal and uses Õ(d^(s⋆/2)∨d) samples, matching the SQ lower bound up to a polylogarithmic factor for all s⋆≥1.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "For k-sparse signals with k=o(√d), the authors report an SQ lower bound of Õmega(k^s⋆), matched by their method up to a polylogarithmic factor.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "question",
+        "summary": "The paper asks whether gradient-based neural-network training can achieve the optimal tradeoff for Gaussian single-index models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "Existing SQ results give a polynomial-time sample lower bound, but neural networks' ability to attain it was unresolved.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "general method",
+        "summary": "The authors propose a unified gradient-based two-layer-network algorithm adaptable to varied losses and activations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported guarantee",
+        "summary": "They report signal-aligned representations and near-SQ-optimal sample complexity, then extend the approach to sparse signals via weight perturbation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "sparse result",
+        "summary": "The sparse extension is paired with a corresponding SQ lower bound that the method reportedly matches up to logarithmic factors.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs an unresolved benchmark question with an explicit lower bound and then states the proposed method's complexity relative to that bound.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "This makes the target of the method and the meaning of the reported rate easy to evaluate from the abstract alone.",
+        "application": "Frame a theory contribution by naming the open benchmark, stating the relevant lower bound, and directly comparing the proposed rate under the same regime.",
+        "exception": "This framing is unsuitable when no meaningful lower bound or common complexity measure exists."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract separates the dense result from a sparse extension and identifies the additional technique used for sparsity.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Explicitly connecting a structural assumption to a tailored mechanism helps distinguish the core method from its adaptation.",
+        "application": "When extending a method to a structured regime, state the structural condition, the added mechanism, and the separate guarantee in sequence.",
+        "exception": "Avoid this separation when the extension changes the problem so substantially that the guarantees are not comparable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact losses, activations, optimization procedure, or conditions behind the reported guarantees.",
+      "It does not provide experimental results, proof details, constants, or the precise polylogarithmic factors.",
+      "The claimed alignment is not quantified in the abstract, and the proposed relevance to sparse tensor PCA is presented only as a suggestion."
+    ]
+  }
+}

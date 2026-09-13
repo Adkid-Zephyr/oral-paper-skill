@@ -1,0 +1,203 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97989",
+    "title": "Policy Learning from Tutorial Books via Understanding, Rehearsing and Introspecting",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97989"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "de93fed8f3deadd58d71c8cb64884188ffc0c77b035373c6e55bc38980b7377a",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "7e0becab40a4254e1f4605d40b9de417ed7c3ff6fa7d714d3515bce5add84a30",
+    "extracted_at": "2026-09-13T00:19:29.155073+00:00",
+    "session_id": "01a09821-dd88-7703-8ae1-c5ba42048a07",
+    "usage": {
+      "input_tokens": 12806,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 762,
+      "reasoning_output_tokens": 71
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1c832461ce9f1a96474937d49452f9df669faa68cd743987db8a312b16fc87dc"
+    },
+    {
+      "id": "S2",
+      "sha256": "60c9685fe1f8971cc662f8b439093c43bf3897d6fbf8d18a3457713238790722"
+    },
+    {
+      "id": "S3",
+      "sha256": "ce8c5c09bfea022038e955493fe39f936e3a152d4df0aa95260e944fd2eb6e28"
+    },
+    {
+      "id": "S4",
+      "sha256": "a9263fb0e0cde10305684fed43745d40c8a8e6941a3ce38bfbe0eba53086838f"
+    },
+    {
+      "id": "S5",
+      "sha256": "858e5f781eb179a0ba3504c145a327d6fbee01c221e3af3f47ea1a2cbc19e79c"
+    },
+    {
+      "id": "S6",
+      "sha256": "aba10118eba86669f5b64a202dde89bbd14a9f6de079e480a9b56a36162426ed"
+    },
+    {
+      "id": "S7",
+      "sha256": "a09235f3c5568688fb320303cb1fabc2f3f19ccc360b4390f7997eaf8385faf4"
+    },
+    {
+      "id": "S8",
+      "sha256": "9a1cf266780329d66f0b6faac86a36eaefa3c0e616c25bb8ba0801b8a40b4d68"
+    },
+    {
+      "id": "S9",
+      "sha256": "40af7ee79b081682860732722b1e1340468c37710a8de2ddbbfab83c0a2b6ae1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97989",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Policy Learning from tutorial Books (PLfB) aims to derive a policy network from tutorial books using LLM-based systems.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing decision-making research such as reinforcement learning primarily relies on numerous real-environment interactions and does not use knowledge summarized in text.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "problem formulation",
+        "claim": "Introduces the PLfB problem for leveraging tutorial books to derive policy networks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes the three-stage Understanding, Rehearsing, and Introspecting (URI) framework: understand books, rehearse decision trajectories, and distill a policy network through introspection on imaginary data.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "benchmark",
+        "claim": "Builds PLfB benchmarks based on Tic-Tac-Toe and Football games.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper presents PLfB as a new policy-learning problem centered on deriving policies from tutorial books with LLM-based systems.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that URI achieved at least a 44% net win rate against GPT-based agents without real data.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "In Football, the authors report that URI beat built-in AIs with a reported 37%, without explicitly naming that percentage's metric; a GPT-based agent achieved a 6% winning rate.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Humans can acquire skills from written books, but decision-making research has mainly depended on real-environment interaction.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framing",
+        "summary": "The paper formulates PLfB to use tutorial-book knowledge for policy derivation, drawing on LLM systems.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "URI understands books, rehearses imagined decision trajectories, and introspects over the resulting imaginary data to distill a policy network.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors construct Tic-Tac-Toe and Football benchmarks and report at least a 44% net win rate against GPT-based agents without real data, followed by a separate Football comparison.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly aligns each URI stage with a learning activity: book understanding, trajectory rehearsal, and introspection-based policy distillation.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A staged mapping from an informal learning analogy to concrete computational operations can make a framework's mechanism easier to follow.",
+        "application": "When proposing an analogy-inspired method, map each conceptual stage to a specific data transformation or model operation and state the sequence explicitly.",
+        "exception": "This framing is unsuitable when the analogy does not correspond to distinct, testable computational steps."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the benchmark sizes, baselines beyond those named, evaluation protocol, or uncertainty around the reported win rates.",
+      "It does not describe the tutorial books, policy architecture, or how imaginary trajectories and introspection are implemented."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "author_reported_evidence[1].claim",
+      "before": "In Football, the authors report that URI beat built-in AIs with a 37% win rate, while a GPT-based agent achieved a 6% winning rate.",
+      "after": "In Football, the authors report that URI beat built-in AIs with a reported 37%, without explicitly naming that percentage's metric; a GPT-based agent achieved a 6% winning rate.",
+      "review_file": "reviews/flagged-batch-14.json",
+      "review_sha256": "ff9c3edd278c3f414d5a8ebc4a74177286b64d696386f76cb1a334980eb249a7",
+      "applied_at": "2026-09-13T00:42:27.398874+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "narrative_sequence[3].summary",
+      "before": "The authors construct Tic-Tac-Toe and Football benchmarks and report win-rate results without real data.",
+      "after": "The authors construct Tic-Tac-Toe and Football benchmarks and report at least a 44% net win rate against GPT-based agents without real data, followed by a separate Football comparison.",
+      "review_file": "reviews/flagged-batch-14.json",
+      "review_sha256": "ff9c3edd278c3f414d5a8ebc4a74177286b64d696386f76cb1a334980eb249a7",
+      "applied_at": "2026-09-13T00:42:27.399989+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

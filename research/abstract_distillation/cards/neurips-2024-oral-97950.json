@@ -1,0 +1,132 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97950",
+    "title": "Optimal Parallelization of Boosting",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97950"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "0bc23c7c2d5c5065f14fd961857ba51796db8dbfd4e206dc924c11da5516116b",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "b85917f00401aca280cba0b99db9b88680292acd6925c84cd6bdf5eedbd5c8ef",
+    "extracted_at": "2026-09-12T23:40:55.767816+00:00",
+    "session_id": "01a097fe-98cc-7df3-ad15-54623a7c20f2",
+    "usage": {
+      "input_tokens": 12565,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 676,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0bc23c7c2d5c5065f14fd961857ba51796db8dbfd4e206dc924c11da5516116b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97950",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize the parallel complexity of boosting, including the tradeoff between training rounds p and parallel work per round t, for nearly sample-optimal algorithms.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing parallel boosting algorithms fell short of established theoretical lower bounds across much of the p-versus-t tradeoff space.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Provides improved lower bounds on the parallel complexity of weak-to-strong learners.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces a parallel boosting algorithm whose performance matches the stated lower bounds across the full p-versus-t compromise spectrum up to logarithmic factors.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "theoretical resolution",
+        "claim": "Reports settling the parallel complexity of boosting algorithms that are nearly sample-optimal.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish the work by jointly improving lower bounds and supplying a matching parallel boosting algorithm across the entire tradeoff spectrum, up to logarithmic factors.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their algorithm matches the improved lower bounds across the entire p-versus-t spectrum up to logarithmic factors.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report that the resulting bounds settle the parallel complexity of nearly sample-optimal boosting algorithms.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "prior landscape",
+        "summary": "Prior work established strong round-versus-work lower bounds and algorithms covering different regions of the tradeoff.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap and resolution",
+        "summary": "The authors report closing the remaining gap with improved lower bounds and a matching algorithm across the full spectrum, up to logarithmic factors.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a lower-bound improvement with an algorithm claimed to match it across a stated parameter spectrum, while preserving the logarithmic-factor qualification.",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        "interpretation": "This creates direct alignment between the problem's theoretical limitation, the proposed construction, and the scope of the resolution.",
+        "application": "When presenting a complexity result, explicitly pair the strengthened bound with a construction and state the exact parameter region and approximation-factor caveat.",
+        "exception": "This framing is unsuitable when the work has no matching construction or when its guarantees apply only to isolated parameter regimes."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal computational model, the exact lower-bound and algorithmic expressions, or the meaning of nearly sample-optimal.",
+      "The constants and dependence hidden by the logarithmic factors are not reported.",
+      "No experimental or empirical evaluation details are provided."
+    ]
+  }
+}

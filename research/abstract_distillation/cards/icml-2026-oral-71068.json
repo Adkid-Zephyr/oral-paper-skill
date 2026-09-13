@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71068",
+    "title": "ReViT: Rotational-equivariant Vision Transformers for Neural PDE Solvers",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71068"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "91adc458bc8241eac627c4507a9cfc356e901463a9b11db5d6045b826a693099",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "6d312b71a5f3585db0051dd63db657fcc95f7b240dc7e1c6af1811d6339c5623",
+    "extracted_at": "2026-09-13T00:12:45.213535+00:00",
+    "session_id": "01a0981b-ab02-75f0-a5a1-5c2617e86643",
+    "usage": {
+      "input_tokens": 12720,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 817,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "eb493e2b0d6ff665bbf6e8236ac2fe52d80bac9baf797a936cca08fb8e62f73b"
+    },
+    {
+      "id": "S2",
+      "sha256": "b367d6b58c90a560f97f57f10c06a2dff9a2e5ea02fd8c4662a9c4bef4dad8dc"
+    },
+    {
+      "id": "S3",
+      "sha256": "01beda6d2967385e6515192aa81ba38482c884aac320b1bc8cb223ec63af03f5"
+    },
+    {
+      "id": "S4",
+      "sha256": "cd76f1036ccaa399ec83d40734329c0392df172690edd319ba8a07a1a36807a6"
+    },
+    {
+      "id": "S5",
+      "sha256": "1f0619e664732ac1e820c47b1a3c4c1f50b74913c65c6be7933c28d6974ac10b"
+    },
+    {
+      "id": "S6",
+      "sha256": "95924d9d7da3a975b80e21630556e724ed697b82ca818ba366c416d3decd9785"
+    },
+    {
+      "id": "S7",
+      "sha256": "7632b6172702ae6e15a2efe11f1452663d90fab2ee6572acf6f91d1592ea68c3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71068",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop neural PDE solvers for grid-based physical fields that respect rotational symmetries.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Standard Transformer architectures used in physics foundation models do not enforce these physical symmetry constraints by construction.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "ReViT is a rotationally equivariant Vision Transformer framework with exact equivariance for discrete groups C4 in 2D and O in 3D, plus bounded approximate SO(d) equivariance for continuous rotations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It converts scalar and vector inputs into locally invariant representations using physics-based canonical bases, allowing standard self-attention without symmetry violations.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "architecture",
+        "claim": "A hierarchical Swin-style backbone with a precomputed reference-basis pyramid preserves equivariance across multi-scale operations.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present ReViT as a framework combining rotational equivariance with Vision Transformer-based neural PDE solvers, covering exact discrete and bounded approximate continuous rotational settings.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report evaluation across a wide range of 2D and 3D PDE benchmarks, including Magnetohydrodynamics and Turbulent Channel Flows, with significant gains over state-of-the-art baselines.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report strong generalization and up to a 65% MSE reduction versus the best-performing alternatives.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Physical systems obey strict symmetries, while commonly used standard Transformers do not enforce them by construction.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "ReViT introduces exact discrete rotational equivariance and bounded approximate continuous rotational equivariance for grid-based neural PDE solvers.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "representation_and_architecture",
+        "summary": "Physics-based canonical bases produce locally invariant inputs for standard attention, while a reference-basis pyramid maintains equivariance through hierarchical multi-scale processing.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report broad 2D/3D PDE benchmarking, strong generalization, and substantial MSE reductions against alternatives.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a formal symmetry guarantee to concrete architectural mechanisms: canonical-basis representations and a reference-basis pyramid.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A method claim is more informative when the abstract links the claimed structural property to identifiable design components.",
+        "application": "When presenting a constrained neural architecture, pair each invariance or equivariance claim with the representation and operation that enforce or preserve it.",
+        "exception": "This framing may be unsuitable when the constraint is only empirical or cannot be localized to specific model components."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark counts, data regimes, baseline identities, statistical variation, or the conditions behind the reported 65% MSE reduction.",
+      "The meaning of “strong generalization” and the error comparison protocol are not defined.",
+      "No details are given about the bounds for approximate SO(d) equivariance or how equivariance was measured."
+    ]
+  }
+}

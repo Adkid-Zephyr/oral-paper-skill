@@ -1,0 +1,215 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008786",
+    "title": "AgentGym-RL: An Open-Source Framework to Train LLM Agents for Long-Horizon Decision Making via Multi-Turn RL",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008786"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2f698245313b47445df148687a736b8e255c3324dafd12c6e670c8e1df8ef739",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "a7585b23d2a30737c6f288c4242572a3aefeb20332082d930860961292e85896",
+    "extracted_at": "2026-09-13T00:01:48.331890+00:00",
+    "session_id": "01a09811-a79c-7b50-8a0e-1d089da2ba02",
+    "usage": {
+      "input_tokens": 12832,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 773,
+      "reasoning_output_tokens": 71
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1d584c5e9fd2a6da2fac92cbd46355d6a9e9a52aee5a955e96c21a0106414775"
+    },
+    {
+      "id": "S2",
+      "sha256": "6c785446022ac40491a1bb2e74989afaa82e9fffee7cbb2c386244a98490a4c0"
+    },
+    {
+      "id": "S3",
+      "sha256": "15aa0f18895f391cef4001e4b727f4431e922067b537404ec93f7c6769ccd67f"
+    },
+    {
+      "id": "S4",
+      "sha256": "4ed1af983530add12e595a428ec39a117b1aeef0c562bd5a59f09dd83fcce6e4"
+    },
+    {
+      "id": "S5",
+      "sha256": "ea01613ac4965e4d146c00619c2fddd0b5711d7bc6ed7b51e0b6f85153b13927"
+    },
+    {
+      "id": "S6",
+      "sha256": "3a2e6e778e2c94b75bb6029f306869b328e62762b384cad33445f7338b952675"
+    },
+    {
+      "id": "S7",
+      "sha256": "d12437aca4dfc3910cb6ec556858d1efa3fc21a3e1adccdf5b147468bc95cef0"
+    },
+    {
+      "id": "S8",
+      "sha256": "8df4f8b37bfe9d6137276dbfc43b2358b13b803aa5e7fc2f691bdc13aac2f783"
+    },
+    {
+      "id": "S9",
+      "sha256": "869b816040947af4a02dcc4918b4a4b6b22b47138a81563e850020585eea61a0"
+    },
+    {
+      "id": "S10",
+      "sha256": "8da4644c3a0bed41e2dd6278065ff7807fbe3b29365759d9a1286a278d405b13"
+    },
+    {
+      "id": "S11",
+      "sha256": "eab38fac55d0d570d78f9e911393676215d13b5c5beb370dbf8df9e56e43194c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008786",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Train LLM agents for complex, multi-turn and long-horizon decision-making through extensive environment exploration and reinforcement learning.",
+        "source_ids": [
+          "S1",
+          "S5",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Open-source tooling lacks a unified framework for training agents from scratch across diverse, realistic environments; vanilla long-horizon training also encounters instability.",
+        "source_ids": [
+          "S2",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Introduces AgentGym-RL, a modular, decoupled framework supporting mainstream RL algorithms across broad real-world scenarios.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes ScalingInter-RL, which stages training from short-horizon interactions toward progressively deeper exploration for more stable long-horizon RL training.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Releases the framework, code, and datasets for community use.",
+        "source_ids": [
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their framework by combining modularity and decoupling with broad environment coverage, and distinguish their training approach through staged horizon expansion.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S7",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their trained agents perform on par with or surpass commercial counterparts including OpenAI o3 and Gemini-2.5-Pro across 27 tasks in diverse environments.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Complex multi-turn decision-making requires extensive environmental exploration, making RL a natural training route.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The open-source community lacks a unified framework spanning from-scratch training and diverse realistic environments; long-horizon vanilla training is also unstable.",
+        "source_ids": [
+          "S2",
+          "S6"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper introduces AgentGym-RL as a flexible, extensible framework and ScalingInter-RL as a staged strategy that expands interaction horizons.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "The authors report parity with or superiority to named commercial systems on 27 diverse tasks, alongside a code-and-dataset release.",
+        "source_ids": [
+          "S9",
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a concrete training challenge—long-horizon instability—with a specific staged intervention that begins at short horizons and expands them progressively.",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "This makes the proposed mechanism legible by mapping the intervention directly to the stated failure mode.",
+        "application": "When presenting a long-horizon training method, explicitly pair each difficulty with the corresponding training-stage change and its intended role.",
+        "exception": "This framing is less suitable when the method has no staged mechanism or when the abstract cannot identify a specific target failure mode."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide algorithmic details, baselines beyond the named commercial systems, task-level results, statistical variation, or ablations.",
+      "The reported comparison conditions and the meaning of “performance” are unspecified.",
+      "The abstract does not establish independently verified effectiveness, novelty, or reproducibility."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "problem_and_gap.problem.source_ids",
+      "before": [
+        "S1",
+        "S5"
+      ],
+      "after": [
+        "S1",
+        "S5",
+        "S6"
+      ],
+      "review_file": "reviews/audit-iclr-2026.json",
+      "review_sha256": "9db1d33092aee5a803b7d3ad220b1081bba29d55a6d0042abe64e06eecb72248",
+      "applied_at": "2026-09-13T00:10:20.792732+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47253",
+    "title": "Theoretical Limitations of Ensembles in the Age of Overparameterization",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47253"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f2acaf0a3c07202f971abfe54f3b2f4ce8f92e138517397b5179eebd6de01e54",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "1bee20d7d5cd6a812531db52e1bb3eebbc3657dfbbb53a9ce6c02bfde340645f",
+    "extracted_at": "2026-09-13T00:10:32.135179+00:00",
+    "session_id": "01a09819-a1c4-7661-b508-00c716019d1a",
+    "usage": {
+      "input_tokens": 12732,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 902,
+      "reasoning_output_tokens": 52
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0e2495c889b83a0456f6d15b3df5d723cfc192aecef522ce440be141dcddd7f7"
+    },
+    {
+      "id": "S2",
+      "sha256": "5e1afb7486b4bc3438e5beec7c160fd415e3c46c2f541eea32d8c2be74143005"
+    },
+    {
+      "id": "S3",
+      "sha256": "6fadd76f41689f281bdf23a27657748cca0b4cc5c1e9ede665e539834c979a6d"
+    },
+    {
+      "id": "S4",
+      "sha256": "0b06f5de2712ad7e406542818c5a77a997cd088d8e14ef1de90be38256358215"
+    },
+    {
+      "id": "S5",
+      "sha256": "03ac2f53390bd4f091e1342b413aede4d5a34143e26a6e73da4d7f419a16be0a"
+    },
+    {
+      "id": "S6",
+      "sha256": "c8db97975d5b1ab4527f2d69c74e1ed43609c5199f87fdce93a041f598c12001"
+    },
+    {
+      "id": "S7",
+      "sha256": "5532ed429fa8b3f27ef9a7e33f63bbdd9d62d8fc934643d70a13e4e59f6100e9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47253",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks why overparameterized neural-network ensembles may lack the generalization advantage associated with classic ensembles.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing underparameterized-ensemble intuitions do not explain how modern overparameterized ensembles differ from classic counterparts.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S7"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Develops a theory of overparameterized ensembles using random-feature regressors.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theoretical finding",
+        "claim": "Proves that infinite overparameterized random-feature ensembles are pointwise equivalent to infinite-width single regressors, while finite ensembles rapidly approach single models with the same parameter budget.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "predictive-variance analysis",
+        "claim": "Characterizes ensemble-member predictive variance as reflecting expected capacity-increase effects rather than conventional uncertainty.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish modern overparameterized ensembles from classic underparameterized ensembles through an RF-regressor theory showing near-equivalence to suitably large single models.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report exact equivalence for ridgeless models and approximate equivalence for small ridge penalties.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that overparameterized ensembles and single large models therefore exhibit nearly identical generalization.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that ensemble predictive variance quantifies expected capacity effects, not conventional uncertainty.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Classic ensembles are described as generalizing better than individual component models, whereas recent studies report no inherent advantage for modern overparameterized neural-network ensembles.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "theoretical setup",
+        "summary": "The paper uses random-feature regressors to clarify the distinction between underparameterized and overparameterized ensembles.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "main result",
+        "summary": "Under minimal assumptions, infinite overparameterized ensembles become pointwise equivalent to infinite-width single models, and finite ensembles rapidly converge to same-budget single models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "qualification and implication",
+        "summary": "The equivalence is exact without ridge and approximate for small ridge; the reported consequence is nearly identical generalization and a challenge to transferred ensemble intuitions.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      },
+      {
+        "role": "uncertainty interpretation",
+        "summary": "Predictive variance among members is characterized as a capacity-effect measure rather than conventional uncertainty.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract states the model-regime conditions and regularization qualification alongside the equivalence result.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A theoretical claim becomes more informative when its scope and approximation conditions are attached directly to the result.",
+        "application": "State any ensemble-versus-single-model comparison together with parameterization regime, width, ridge setting, and whether the claim is exact or approximate.",
+        "exception": "This framing is less suitable when the result is deliberately regime-agnostic or when those conditions are unavailable."
+      },
+      {
+        "source_observation": {
+          "claim": "The paper separates predictive variance from conventional uncertainty and assigns it a capacity-related interpretation.",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        "interpretation": "Naming what a statistic measures—and what it does not—can prevent an attractive but unsupported interpretation.",
+        "application": "When introducing an uncertainty-like quantity, explicitly identify its reported target and distinguish it from competing meanings.",
+        "exception": "Do not impose this distinction when the quantity has been independently validated for the intended uncertainty notion."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report datasets, numerical results, or experimental details.",
+      "It does not establish whether the RF theory quantitatively predicts behavior for deep neural-network ensembles.",
+      "The assumptions and convergence rates behind the theoretical claims are not specified in the abstract."
+    ]
+  }
+}

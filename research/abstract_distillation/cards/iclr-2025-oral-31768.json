@@ -1,0 +1,206 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31768",
+    "title": "On Scaling Up 3D Gaussian Splatting Training",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31768"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7293df5acb92d84bab4f46d74905c0877ee3d2dac9e5be323c57f7f7753a2ac0",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "a4495b50cb187d124b479adcf13e989b352379ebfefa6f82756a260fab1b762a",
+    "extracted_at": "2026-09-12T23:51:15.401472+00:00",
+    "session_id": "01a09807-f3c4-7f82-b771-61e130a16731",
+    "usage": {
+      "input_tokens": 12791,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 904,
+      "reasoning_output_tokens": 124
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "50ccb3fe0ed2015e27085efa2bbcfca71b4a33f50bb3f18faa0193f8d3692937"
+    },
+    {
+      "id": "S2",
+      "sha256": "7b93d5a54d2f0ad5fc73f78adb1203889dfed622b9ab5cacbfc7af37d9c1b1fa"
+    },
+    {
+      "id": "S3",
+      "sha256": "edb64c0439ae948abaee00e5d5b1203417decf467d86e19010588bc98d684e47"
+    },
+    {
+      "id": "S4",
+      "sha256": "9a88bf826112cb64eecf4fc093cad0d2dbfdd250afb38d8389d74a6658f4a764"
+    },
+    {
+      "id": "S5",
+      "sha256": "9d281ef954d417a7a36abdc4081a33a7daeb1579d7626e2cb8a766b1c4d939d0"
+    },
+    {
+      "id": "S6",
+      "sha256": "2aad7ac7189a85ad120d8d327acc7a822d03470e463f7f1f1289b97950a007a3"
+    },
+    {
+      "id": "S7",
+      "sha256": "24254669287256c3a16d58148c60a7fb5626387d5b9fe80a671091f4a85ca2d6"
+    },
+    {
+      "id": "S8",
+      "sha256": "fe0a4195cc7bcac2441abc541df01cbc53205fbe4a23f31b837322a2a3824ad1"
+    },
+    {
+      "id": "S9",
+      "sha256": "e66e3d9482c844aaa0f76238a6cb2bdaf1c130678f9257642a5d12ef0693ba36"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31768",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable 3D Gaussian Splatting training for high-resolution and large-scale 3D reconstruction beyond single-GPU memory limits.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing 3DGS training is described as single-GPU and single-view at a time, limiting parameter scale and batched multi-view training.",
+        "source_ids": [
+          "S2",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "distributed system",
+        "claim": "The authors introduce Grendel, which partitions 3DGS parameters and parallelizes computation across multiple GPUs using sparse all-to-all communication and dynamic load balancing.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "training method",
+        "claim": "Grendel supports batched multi-view training and the authors report that square-root batch-size scaling is highly effective for optimization hyperparameters.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "open-source resource",
+        "claim": "The project is released as open source.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Grendel from existing 3DGS systems through multi-GPU parameter scaling, sparse communication, dynamic load balancing, and batched multi-view training.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report improved rendering quality on large-scale, high-resolution scenes when 3DGS parameters are scaled across multiple GPUs.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "On the 4K Rubble dataset, the authors report test PSNR 27.28 using 40.4 million Gaussians across 16 GPUs, versus 26.28 using 11.2 million Gaussians on one GPU.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that a square-root batch-size hyperparameter scaling rule is highly effective.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "3DGS offers high visual quality and fast rendering, but single-GPU training limits scale because of memory constraints.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "system",
+        "summary": "The authors introduce Grendel to partition parameters and parallelize computation across GPUs.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "Grendel routes dynamically relevant Gaussians with sparse all-to-all communication, balances load dynamically, and enables batched multi-view training.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "optimization_and_results",
+        "summary": "The authors examine hyperparameter scaling and report square-root batch-size scaling, improved scene rendering quality, and the Rubble PSNR comparison.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a systems bottleneck with a mechanism tailored to sparse, dynamically changing pixel influence, then reports a quality comparison at different GPU and Gaussian counts.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S8"
+          ]
+        },
+        "interpretation": "This links the proposed architecture to the stated bottleneck and makes the scale change concrete.",
+        "application": "When presenting a scalable system, connect each communication or balancing mechanism to the workload structure and include a direct resource-scale comparison with the reported outcome.",
+        "exception": "This framing is less suitable when the workload lacks exploitable sparsity or when resource changes cannot be isolated from other experimental changes."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify training time, memory use, convergence behavior, or comparisons against distributed baselines.",
+      "The reported PSNR comparison changes both GPU count and Gaussian count, so the abstract does not isolate the contribution of distribution alone.",
+      "Evaluation scope, scene count, and experimental conditions are not provided."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "lessons[0].source_observation.claim",
+      "before": "The abstract pairs a systems bottleneck with a mechanism tailored to sparse, dynamically changing pixel influence, then reports a scale-matched quality comparison.",
+      "after": "The abstract pairs a systems bottleneck with a mechanism tailored to sparse, dynamically changing pixel influence, then reports a quality comparison at different GPU and Gaussian counts.",
+      "review_file": "reviews/flagged-batch-01.json",
+      "review_sha256": "b7ba5492b24b672d551bcb1ba390c5351017aa8b3168c19950ca75f30a878af4",
+      "applied_at": "2026-09-13T00:20:52.602249+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

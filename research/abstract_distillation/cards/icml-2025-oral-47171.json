@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47171",
+    "title": "AffectGPT: A New Dataset, Model, and Benchmark for Emotion Understanding with Multimodal Large Language Models",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47171"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "85746f88042d4f1dc739020c580a544fb13b181cb849d53613cacb353ce3cc74",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "9628afb516cb425db18231000dfc7b01fef0ee01d0608bae4a9afe97f59a4d9d",
+    "extracted_at": "2026-09-13T00:07:20.442455+00:00",
+    "session_id": "01a09816-be35-7442-af67-5185382295e2",
+    "usage": {
+      "input_tokens": 12760,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 760,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "63253b0d34386a4d18130eb008c95b32961c24a42d239a3f9e439eda9001cbc0"
+    },
+    {
+      "id": "S2",
+      "sha256": "e21d7c1a154a1b38fff48c6eaaf8e4ea4afb0c8378d4ae9b0c5fac94baa40585"
+    },
+    {
+      "id": "S3",
+      "sha256": "1a9bf3f3ea2b859b9073dce17daccfa53b241b49f53620a40be84eaa02b20206"
+    },
+    {
+      "id": "S4",
+      "sha256": "058f84e28c701494c7d9f1cc4462a98c59e41350eed5e2355058b7e93792a7f0"
+    },
+    {
+      "id": "S5",
+      "sha256": "123366531008b948fa5222733559cea165ea08745f94a98583f230759b6922b2"
+    },
+    {
+      "id": "S6",
+      "sha256": "6b4e2cccb5ccfb2bf37e1cb840f888eaaa258aa44483aa51102ca236f3ae2690"
+    },
+    {
+      "id": "S7",
+      "sha256": "4f41ec51b5feef240d7fa6d8950568e2a438514198bab8c82ae6095f1eaff516"
+    },
+    {
+      "id": "S8",
+      "sha256": "d404495e505b90f093a02ec79991e0dd795db0c387a65d14cd3f99d6771f46d3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47171",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Advance multimodal emotion recognition toward complex emotion understanding with video-based and natural-language outputs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing work lacks large-scale descriptive emotion annotations and a multimodal-centric framework for maximizing MLLMs in emotion understanding.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "MER-Caption, described as the largest descriptive emotion dataset to date, contains over 2K fine-grained emotion categories across 115K samples and is constructed through model-based crowdsourcing.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "model",
+        "claim": "AffectGPT uses pre-fusion operations designed to improve multimodal integration.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "type": "benchmark",
+        "claim": "MER-UniBench unifies evaluation for typical MER tasks and MLLM-style free-form natural-language outputs, with tailored metrics.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a combined new dataset, model, and unified benchmark for MLLM-based emotion understanding.",
+      "source_ids": [
+        "S3",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that AffectGPT performs robustly across various MER tasks in extensive experiments.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report releasing the code and dataset to support further emotion-understanding research and development.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "MLLMs expand MER from discriminative recognition toward complex understanding with video abilities and natural-language description.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The field is reported to lack large-scale intensive descriptive annotations and a multimodal-focused framework.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The paper establishes a benchmark comprising MER-Caption and AffectGPT, then adds MER-UniBench for unified task evaluation.",
+        "source_ids": [
+          "S3",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report robust AffectGPT performance across various MER tasks and release the code and dataset.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns three linked artifacts—a dataset, a model, and a benchmark—with the stated annotation, integration, and evaluation gaps.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Bundling complementary resources can make a research agenda easier to evaluate and extend.",
+        "application": "When addressing a capability gap, pair the proposed method with task-relevant data and evaluation that matches its output form.",
+        "exception": "This is unsuitable when the task already has adequate data and evaluation infrastructure, or when adding artifacts would obscure a narrowly scoped contribution."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the comparison systems, task-by-task metrics, or what “robust performance” quantitatively means.",
+      "The basis and scope of the “largest ... to date” dataset claim are not detailed.",
+      "The abstract does not report ablations isolating the effect of pre-fusion operations or the crowdsourcing strategy."
+    ]
+  }
+}

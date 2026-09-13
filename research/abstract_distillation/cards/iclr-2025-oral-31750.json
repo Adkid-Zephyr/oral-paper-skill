@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31750",
+    "title": "Robustness Inspired Graph Backdoor Defense",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31750"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8d57e1290400b8ea90bce616de65071c6423a0bdb8fc0e6ec2c6df76c136d38c",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "188718e26936d59c2463a76b9029a487e6883e1ed18cbabd0a1cb41c6c4bfc64",
+    "extracted_at": "2026-09-12T23:50:30.669405+00:00",
+    "session_id": "01a09807-4fa7-7b30-b63c-e58eb6680ef4",
+    "usage": {
+      "input_tokens": 12697,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 716,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "490d48732da67d66d01b811d69b0a39866852dd1c18478ee0ec91ea87739c906"
+    },
+    {
+      "id": "S2",
+      "sha256": "9c04015194122ad9dc027138d879c97d4f6902d8b356de942ff32d50eec57924"
+    },
+    {
+      "id": "S3",
+      "sha256": "f158aeaae070ed1bd308cd11a76ac5c7f9d651751ffe8b917b82a4128b8a5782"
+    },
+    {
+      "id": "S4",
+      "sha256": "b60b1c390c446beb323c08ad034561af32ebadc69b749bffd21d478810882834"
+    },
+    {
+      "id": "S5",
+      "sha256": "888982ee1578a10b50e6d9f3374dd49face6fcbd5b84f4b81a2da26f7157ccf3"
+    },
+    {
+      "id": "S6",
+      "sha256": "b10edc42f740b3f7dc6cc7708ba1658c29028c328a39d0b0488bd61f0ba5bad5"
+    },
+    {
+      "id": "S7",
+      "sha256": "dc09ce11f42b8e4eb6bfa1b557f54e7549864316bc780bb10c72923d91403816"
+    },
+    {
+      "id": "S8",
+      "sha256": "fbe267ea8a0fb9e4730b4152bf6d0935459cef95a353ea46778ac347fbaccced"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31750",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Defend GNNs against graph backdoor attacks with triggers having varied properties.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing defenses addressed specific graph backdoor attacks, leaving varied trigger types unaddressed.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A random edge-dropping approach for detecting graph backdoors via prediction variance.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "A theoretical result that random edge dropping can efficiently distinguish poisoned from clean nodes.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "training strategy",
+        "claim": "A robust training strategy intended to counteract trigger effects.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe the robust training strategy as novel.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors empirically report that prediction variance under edge dropping is a crucial indicator of poisoned nodes.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "On real-world datasets, the authors report effective poisoned-node identification, reduced attack success rate, and maintained clean accuracy across varied graph backdoor attacks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report a theoretical basis for efficiently distinguishing poisoned and clean nodes using random edge dropping.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "GNNs perform promising node- and graph-level tasks but are vulnerable to backdoor attacks.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Prior defenses target specific attacks rather than triggers with varied properties.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "observation_and_method",
+        "summary": "The authors link edge-dropping prediction variance to poisoning and propose random edge dropping for detection.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "training",
+        "summary": "They add a robust training strategy to counteract trigger effects.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Experiments on real-world datasets report detection, attack-success reduction, and preserved clean accuracy across attack types.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract first states an empirical indicator, then connects it to a detection method and a theoretical distinction result.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A measurable diagnostic can make a defense proposal more motivated and structurally coherent.",
+        "application": "Introduce a candidate diagnostic, report the observation motivating it, and state the exact operational and theoretical role it supports.",
+        "exception": "This framing is unsuitable when no task-relevant diagnostic is measured or when theory does not address the proposed mechanism."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, attack baselines, numerical improvements, or statistical conditions for the theoretical result.",
+      "The scope and implementation details of the robust training strategy are not given."
+    ]
+  }
+}

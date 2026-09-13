@@ -1,0 +1,148 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31894",
+    "title": "Cut Your Losses in Large-Vocabulary Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31894"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2a5244ca062244eb31229939daed7fa39278e7ec84ea31859b18f34eaa99c812",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "f1ed5d62f7c8517ff2d864ae0af9286a89d8c54dfb4a4a4b2f4dda8416c706ce",
+    "extracted_at": "2026-09-12T23:56:09.797119+00:00",
+    "session_id": "01a0980c-8276-71e3-96d5-1dc7ad0258b2",
+    "usage": {
+      "input_tokens": 12724,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 734,
+      "reasoning_output_tokens": 109
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6de0abb798bf99336cdafbd048a4587acd3b05e108572c37175ac977068ff051"
+    },
+    {
+      "id": "S2",
+      "sha256": "8272287032890e3b4ec1aed8da2c576a25a62d95eb709ac85e505e324b1fffb9"
+    },
+    {
+      "id": "S3",
+      "sha256": "85b4eb35837d0c142f713b084fd723a6712a24d317eb9e28701ba510ac0cec9c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31894",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Large-vocabulary language-model training can make cross-entropy loss computation the dominant memory cost because it constructs logits for input-token/vocabulary-item pairs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Cut Cross-Entropy (CCE) computes the correct-token logit and vocabulary-wide log-sum-exp on the fly, avoiding global materialization of all logits.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "CCE uses a custom flash-memory kernel and skips gradient elements whose contributions fall below numerical precision.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present CCE as a way to make global-memory consumption for cross-entropy negligible while retaining the loss computation.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, for Gemma 2 (2B), CCE reduces loss-computation memory from 24 GB to 1 MB and classifier-head training memory from 28 GB to 1 GB.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that the memory reduction occurs without sacrificing training speed or convergence.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Growing vocabularies make cross-entropy a disproportionately large training-memory consumer.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "CCE avoids storing the full logit matrix by computing only the correct-token logit and reducing over vocabulary logits on the fly.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "optimization",
+        "summary": "A custom kernel operates in flash memory, and negligible softmax-gradient contributions are skipped to improve throughput.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "On Gemma 2 (2B), the authors report major memory reductions with no reported loss in training speed or convergence.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a concrete memory bottleneck with an implementation mechanism and reports resource changes in absolute units for a named model.",
+          "source_ids": [
+            "S1",
+            "S3"
+          ]
+        },
+        "interpretation": "Resource-focused method claims become more informative when the bottleneck, mechanism, test setting, and before/after quantities are linked.",
+        "application": "Frame a systems contribution by naming the dominant resource, explaining which intermediate is avoided, and reporting absolute baseline-to-method changes on a specified model.",
+        "exception": "This framing is less suitable when resource usage is not the primary contribution or when absolute measurements are unavailable or incomparable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not state what prior approaches or understanding constitute a specific gap.",
+      "Experimental setup, datasets, hardware, evaluation duration, and convergence criteria are unspecified.",
+      "The abstract does not provide throughput values or conditions supporting the reported speed and convergence comparison."
+    ]
+  }
+}

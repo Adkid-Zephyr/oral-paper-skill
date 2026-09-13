@@ -1,0 +1,198 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31829",
+    "title": "LARP: Tokenizing Videos with a Learned Autoregressive Generative Prior",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31829"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "453008d1a26d7459f56cb98682cbf678cd37d4ba0c159b4db5dfc452de33eeb9",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "e91172ae035c85c79c2909df17f3f0574382ffc290cfaf89f701c2de7fa51ee8",
+    "extracted_at": "2026-09-12T23:53:36.932053+00:00",
+    "session_id": "01a0980a-2706-7b32-9815-c2bb3c24d71b",
+    "usage": {
+      "input_tokens": 12821,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 794,
+      "reasoning_output_tokens": 103
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6dca37196e81d5fd9729437193b1d0da6e73e516dab08dc5cbea24263ddbd407"
+    },
+    {
+      "id": "S2",
+      "sha256": "fb63977059e68dec83a2884f737762102365a58e25bc09467f782234b37ff36a"
+    },
+    {
+      "id": "S3",
+      "sha256": "f1288ed9c023eac8750ef5ffc4ddc380dd95ada05ebbeef3eef717047a14fdcc"
+    },
+    {
+      "id": "S4",
+      "sha256": "05d3f42fc892fade07c5210a8cd064d74aa95c8ed0a78f57ef1c8f679efbafd4"
+    },
+    {
+      "id": "S5",
+      "sha256": "adf4b56e6d329541b073c8f3d0fbababe977c7715888b8a6cfb42a417b96937d"
+    },
+    {
+      "id": "S6",
+      "sha256": "ff14cd68612e21ae61fd53c185a9867a87a2717286c0fdff924f616b702c0421"
+    },
+    {
+      "id": "S7",
+      "sha256": "15648ab5f291c5de97dd563256d085b2f8ff5073904c64d0014f797c6205e269"
+    },
+    {
+      "id": "S8",
+      "sha256": "68a2d9391eafe45de4f47d9698a0ffd9ed4e9ba16e339899a224f6635b75590e"
+    },
+    {
+      "id": "S9",
+      "sha256": "768657389b52e000267b079c799176c9313c2a1b757bdafee3a04ce98fd7cc29"
+    },
+    {
+      "id": "S10",
+      "sha256": "15a3ae9167081c3716016f6ff7f419eef5d762da81e258b3df70fbffb09aaed2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31829",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design a video tokenizer suited to autoregressive generative models.",
+        "source_ids": [
+          "S1",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Existing patchwise tokenizers are described as limited to local patch-level information and not sufficiently aligned with downstream autoregressive generation.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S5",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "LARP uses learned holistic queries to tokenize visual content into global, semantic representations rather than directly encoding local patches.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It supports an arbitrary number of discrete tokens and incorporates a lightweight autoregressive transformer as a training-time latent prior.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory-informed design",
+        "claim": "The training-time prior structures the latent space for autoregressive generation and defines a sequential token order.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish LARP as a novel holistic video tokenizer with a learned autoregressive generative prior.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art FVD on the UCF101 class-conditional video-generation benchmark.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames current video tokenization as limited for autoregressive generation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "representation design",
+        "summary": "LARP replaces local patchwise encoding with learned holistic queries intended to capture global semantic content.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "adaptability",
+        "summary": "The tokenizer permits an arbitrary number of discrete tokens for task-specific adaptive tokenization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "generation alignment",
+        "summary": "A lightweight autoregressive transformer is used during training to shape the discrete latent space and token order for generation.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Experiments are reported to achieve state-of-the-art FVD on UCF101 and to support broader multimodal-model ambitions.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly connects the tokenizer’s latent-space design and token ordering to the requirements of downstream autoregressive generation.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A representation can be designed around the structure required by its consuming model, rather than optimized only for reconstruction or local fidelity.",
+        "application": "When proposing a learned representation, add a lightweight training-time model that directly reflects the intended downstream factorization, and state which latent properties it is meant to induce.",
+        "exception": "This may be unsuitable when the downstream task does not require sequential factorization or when the auxiliary prior materially complicates training."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no FVD value, baselines, statistical details, or experimental conditions.",
+      "The strength of the claimed generation improvements and the phrase “ensuring” smoother, more accurate inference are not independently verifiable from the abstract.",
+      "It does not specify how arbitrary token counts are selected or what trade-offs they create."
+    ]
+  }
+}

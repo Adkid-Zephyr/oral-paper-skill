@@ -1,0 +1,201 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71052",
+    "title": "Mixtures Closest To A Given Measure: A Semidefinite Programming Approach",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71052"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "3916e0c8158a92d0e4d00fc6a95f53d1574d1a4b14d7b65c1adc5146b84e1fde",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "7bd2086b4969412502179881fba9577ea69a8a7e4e5b456c57b3884db5f004f1",
+    "extracted_at": "2026-09-12T23:40:39.967903+00:00",
+    "session_id": "01a097fe-512c-7122-99b0-91611788a4c4",
+    "usage": {
+      "input_tokens": 12729,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 842,
+      "reasoning_output_tokens": 116
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e204ba07fdad5068a9041f41a64dceed0988c461984fe4cd74974f310fe2f9ac"
+    },
+    {
+      "id": "S2",
+      "sha256": "7e430869baf91a2c29dd3ee73ca7aca0f04c33416ce3dbd1a55bfe2ed5860b2f"
+    },
+    {
+      "id": "S3",
+      "sha256": "5f5c23d2471fe16ab0e048818bbf8689f6fc36ec5b5ad8187171835337f47af8"
+    },
+    {
+      "id": "S4",
+      "sha256": "18db3c2b53a264bab4b68b5de170ea03d403adf18ba349a78e4e409c571735a4"
+    },
+    {
+      "id": "S5",
+      "sha256": "eddaeafffcd4795f9c77c76c4bddc581fdd9987579aba21ce0e253ddea307002"
+    },
+    {
+      "id": "S6",
+      "sha256": "c4fd70f727d9d8a580799f24ba47130d0833e5a269e94e05ebe782eeb00c6d54"
+    },
+    {
+      "id": "S7",
+      "sha256": "69b4354592d1a5eb68a65d5f34265aa98acea7f45580faad8679afb68a101169"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71052",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Approximate a target measure, observed through finitely many moments, with a parametric-family mixture while optimizing W₂ or total-variation distance.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches often assume a finite parameter set, whereas this setting allows a compact basic semi-algebraic parameter set.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A hierarchy of semidefinite relaxations for mixture approximation over compact basic semi-algebraic parameter sets.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Asymptotic convergence is established, with finite convergence and recovery of an optimal mixing measure under a rank condition.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "A clustering framework usable standalone or as preprocessing to obtain cluster count and initial parameter estimates.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The framework handles a compact basic semi-algebraic parameter set without assuming it is finite, unlike many existing approaches described by the authors.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report asymptotic convergence of their semidefinite-relaxation hierarchy to the desired optimal value.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report finite convergence and recovery of an optimal mixing measure when a specified rank condition holds.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "In clustering, the authors report that the framework yields cluster number and strong initial parameter estimates, accelerating standard local clustering algorithms.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Mixture models represent complex data distributions, while mixture order and parameter estimation are challenging, especially in high dimensions.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "The paper formulates approximation of a finitely moment-observed target measure by a parametric-family mixture, using W₂ or TV distance.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "generalization",
+        "summary": "It removes the usual finite-parameter-set assumption by modeling parameters as a compact basic semi-algebraic set.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "It introduces semidefinite relaxations with asymptotic convergence and conditional finite recovery.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "application",
+        "summary": "The framework is applied to clustering as either a standalone method or an initialization-oriented preprocessing step.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the optimization objective, information available about the target, parameter-domain assumption, and convergence guarantee in sequence.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This makes the scope and conditions of the theoretical claim easier to track.",
+        "application": "State the input limitation, feasible-set structure, objective, and guarantee in adjacent sentences when introducing a new optimization framework.",
+        "exception": "This structure may be too detailed for a short abstract whose main contribution is purely empirical."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the rank condition, relaxation construction, convergence rates, or assumptions needed for the guarantees.",
+      "No quantitative clustering results, datasets, baselines, or acceleration measurements are provided.",
+      "The relative behavior of W₂ versus TV objectives and the precise parametric-family assumptions are unspecified."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "stated_novelty.claim",
+      "before": "The framework handles a non-finite, compact basic semi-algebraic parameter set, unlike many existing approaches described by the authors.",
+      "after": "The framework handles a compact basic semi-algebraic parameter set without assuming it is finite, unlike many existing approaches described by the authors.",
+      "review_file": "reviews/pilot-02.json",
+      "review_sha256": "c9e1dc2a2b1b9cf5da4c272566b234e853aac460dbe9a2ef30fd633c4351a569",
+      "applied_at": "2026-09-12T23:46:38.302566+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

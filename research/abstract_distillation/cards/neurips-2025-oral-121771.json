@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-121771",
+    "title": "NOVA: A Benchmark for Rare Anomaly Localization and Clinical Reasoning in Brain MRI",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/121771"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5654f9494477806e7d659802709f7cd8a3ef1c6a1d70e4e89394c0cb8e1e80dc",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "db063d35930fd0e416950f5ea884a3595285dcc5768ae17a51caaf395609fc19",
+    "extracted_at": "2026-09-13T00:23:40.207449+00:00",
+    "session_id": "01a09825-b326-7a33-91c2-9f77f204fb36",
+    "usage": {
+      "input_tokens": 12813,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 758,
+      "reasoning_output_tokens": 58
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "caf5dd61fc3fbce7a880f51408ae7302c8bbd018f2e047cac1f486938a3f7b9e"
+    },
+    {
+      "id": "S2",
+      "sha256": "0fb291e9c0de9291ba2a404fa289a79f7c397ced7f8080975641061afe72d1b2"
+    },
+    {
+      "id": "S3",
+      "sha256": "d8bdfb6268d2bf276bb8e34108f11dbc194886a725caee2fe8c3b341c8008a61"
+    },
+    {
+      "id": "S4",
+      "sha256": "5298e146bb05d26380bd9fd5eaf83135cc5dbda588ec5a81834e87ae7752ebee"
+    },
+    {
+      "id": "S5",
+      "sha256": "e2b4cda97e9d1ce42adf00f2fed048cbc8d3625f9626a622dc293a6912409165"
+    },
+    {
+      "id": "S6",
+      "sha256": "64ae16ccb7418388dde2c68df5c772ec2ba61e7610803b1d08d76e87bd6c050d"
+    },
+    {
+      "id": "S7",
+      "sha256": "c2388c2d8ed6f2e4475403e33b021b4a9ee5b2d0b8cd4aa3a1ee4f39e11043e4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-121771",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate whether models can detect, localize, caption, and reason about rare, previously unknown brain-MRI anomalies under distribution and semantic shifts.",
+        "source_ids": [
+          "S2",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Common-outlier benchmarks can mask failures on rare or genuinely novel clinical conditions by reducing evaluation to a closed-set problem.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "NOVA is an evaluation-only benchmark of approximately 900 brain-MRI scans covering 281 rare pathologies and heterogeneous acquisition protocols.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The benchmark provides rich clinical narratives and double-blinded expert bounding-box annotations for joint assessment of localization, captioning, and diagnostic reasoning.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "baseline evaluation",
+        "claim": "It reports baseline results for GPT-4o, Gemini 2.0 Flash, and Qwen2.5-VL-72B on this stress test.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present NOVA as a challenging, real-life, evaluation-only testbed targeting truly unknown anomalies across appearance and semantic distribution gaps.",
+      "source_ids": [
+        "S2",
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report approximately a 65% localization gap relative to natural-image benchmarks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report approximately 40% and 20% gaps in captioning and reasoning, respectively, relative to resident radiologists.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Deployed models encounter inputs unlike their training data, including emerging unknown categories.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark rationale",
+        "summary": "Limited common-outlier test sets can conceal failures on rare or novel clinical conditions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark design",
+        "summary": "NOVA supplies rare-pathology brain MRIs, clinical narratives, and expert localization annotations for three linked capabilities.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "stress test and result",
+        "summary": "Because it is not used for training, NOVA tests both appearance and semantic shifts; reported baselines show substantial performance gaps.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns benchmark construction with the intended failure modes by combining rare pathologies, heterogeneous protocols, narratives, and localization annotations.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A task-specific evaluation can make the target distribution shift and required capabilities explicit.",
+        "application": "When introducing a benchmark, map each claimed failure mode to concrete data variation and an evaluation signal.",
+        "exception": "This approach may be unsuitable when the target task has no reliable annotations or when broad comparability requires a standardized distribution."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact evaluation metrics, dataset split, or statistical uncertainty.",
+      "The meanings of the reported percentage gaps and the underlying benchmark values are not defined.",
+      "It does not report per-pathology or per-protocol performance, nor comparisons with additional baselines."
+    ]
+  }
+}

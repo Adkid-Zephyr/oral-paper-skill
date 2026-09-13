@@ -1,0 +1,197 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-98004",
+    "title": "Not All Tokens Are What You Need for Pretraining",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/98004"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9acb7fc9cf46a38eea3a6023d03b11bc4e1e3886fdb463e5627e4cbe2ca5eadb",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "e7ecf592a364f42eafa19673441ddc6e0df528cd0c0cad7ec5458234b1aa4aa6",
+    "extracted_at": "2026-09-13T00:20:03.750323+00:00",
+    "session_id": "01a09822-5d90-7e01-ad8b-db465ad79bf9",
+    "usage": {
+      "input_tokens": 14324,
+      "cached_input_tokens": 9984,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 847,
+      "reasoning_output_tokens": 94
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7609a1e44b0984fe6702c856ecdfd5bddd8d5e897087017fc491fea66f1b3a9b"
+    },
+    {
+      "id": "S2",
+      "sha256": "d142ecd6a20d6479fc50c5475071b1e8a30df61c7cab3989c4c016435eaaf358"
+    },
+    {
+      "id": "S3",
+      "sha256": "f653c9918be5ee994dbfe1d3f6902e31310138d05c51876bd2c86a96cbe13c19"
+    },
+    {
+      "id": "S4",
+      "sha256": "b12194e124f92f3a23d064b6efad6788cc9645d1e15dbe7a40839d3bb72a77a6"
+    },
+    {
+      "id": "S5",
+      "sha256": "b6bf9e5f2d69996a3ed8cc945c15de9daf9a7828f75b3214f3e08876e2050ffc"
+    },
+    {
+      "id": "S6",
+      "sha256": "b143f4316f15db16831d1f3d693ced91f0b4eb076a4eb8f56e4fd3dfe139f729"
+    },
+    {
+      "id": "S7",
+      "sha256": "f7f837fc7ee157fd19c3a09f9061160fa2d9070461f10747f3c19fb86dda45b1"
+    },
+    {
+      "id": "S8",
+      "sha256": "5bb38dff71c90812d6c7121caa6f52cc0043e53f3de6b825f8b4b90d852ffbf6"
+    },
+    {
+      "id": "S9",
+      "sha256": "7d400804185ed3617fac3b0a6bdb97ef29f1dc4170da5940ee865a0690bc71a1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-98004",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve language-model pretraining by identifying and emphasizing more useful training tokens.",
+        "source_ids": [
+          "S2",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Prior pretraining methods uniformly applied next-token loss to all tokens, without accounting for token-level differences in training dynamics or importance.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "analysis",
+        "claim": "Analyzes token-level training dynamics and reports distinct loss patterns across tokens.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method and system",
+        "claim": "Introduces Rho-1, which uses Selective Language Modeling: a reference model scores tokens, and training focuses loss on higher-scoring tokens aligned with the desired distribution.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports gains from selective-token pretraining on mathematical and general-task settings.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present Rho-1 and Selective Language Modeling as a departure from training on every next token in the corpus.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "On continual pretraining with 15B OpenWebMath tokens, Rho-1 reportedly improved few-shot accuracy by up to 30% absolute across nine math tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "After fine-tuning, Rho-1-1B and Rho-1-7B reportedly reached 40.6% and 51.8% on MATH, matching DeepSeekMath while using 3% of the pretraining tokens.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "With 80B general tokens, Rho-1 reportedly improved average performance by 6.8% across 15 diverse tasks.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background and premise",
+        "summary": "Existing methods apply next-token loss uniformly; the authors posit that token importance differs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnostic analysis",
+        "summary": "Token-level training dynamics show distinct loss patterns for different tokens.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method introduction",
+        "summary": "These observations motivate Rho-1 and its reference-model-scored Selective Language Modeling procedure.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The abstract reports improvements on math tasks, MATH, and diverse general tasks under continual pretraining and fine-tuning.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a token-dynamics analysis to a selective-training mechanism that scores tokens with a reference model and concentrates loss on higher-scoring tokens.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A paper can make a method rationale more traceable by connecting an observed training pattern to a specific design choice.",
+        "application": "When proposing data or loss selection, first report the unit-level diagnostic, then state how its signal determines selection and objective weighting.",
+        "exception": "This framing is unsuitable when the selection signal is not measurable before training or when uniform coverage is essential to the task."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the reference model, score definition, selection fraction, training schedule, baselines, or variance across runs.",
+      "The reported MATH comparison and token-efficiency claim lack detailed evaluation and token-count context in the abstract."
+    ]
+  }
+}

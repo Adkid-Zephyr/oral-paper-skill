@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-118938",
+    "title": "PlayerOne: Egocentric World Simulator",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/118938"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a4aeba0b0c84ebba7b3c80380d9c3545da9f059564ea95652fd0a5cb7337556b",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "d037ea2284ededf32d3a6cfba9cac0016cead88e80adb21a76aed6f5e3c01d3c",
+    "extracted_at": "2026-09-13T00:22:53.323033+00:00",
+    "session_id": "01a09824-f610-7601-9a1a-4c374cc5cc7e",
+    "usage": {
+      "input_tokens": 12726,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 753,
+      "reasoning_output_tokens": 92
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "afc2de48455c3645854b6dda81749d3ebf203b49802ae07fe8cef4dec4087238"
+    },
+    {
+      "id": "S2",
+      "sha256": "19e4f30ce5cb11a90556a598211f618bab80ca3c2813559a2712abfcf52eabe8"
+    },
+    {
+      "id": "S3",
+      "sha256": "471bf75a377489adc2adc18151b84217df1f5ae873546e1b360919b1f82a1c03"
+    },
+    {
+      "id": "S4",
+      "sha256": "89b30e652e389871350ec85ad6f4851f21335d971d024f9c70bbae0e2a5857fc"
+    },
+    {
+      "id": "S5",
+      "sha256": "7ce958737c95daaf2ba290bc10d05258086de0c565dfa9edf18c21bb747b3b97"
+    },
+    {
+      "id": "S6",
+      "sha256": "916dd27257fd166d23b6834dc785ade89368d3ca521cddea600b64e58781d680"
+    },
+    {
+      "id": "S7",
+      "sha256": "18b7000138efccbbf5e047b0763d43fa95ef3eca191019dff5b892c1479db14a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-118938",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Construct an egocentric world from a user scene image and generate videos aligned with the user’s real human motion.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "system",
+        "claim": "PlayerOne is presented as an egocentric realistic world simulator for exploration in dynamic environments.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A coarse-to-fine training pipeline combines egocentric text-video pretraining with finetuning on automatically constructed synchronous egocentric-exocentric motion data.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Part-disentangled motion injection supports part-level movement control, while joint reconstruction progressively models 4D scenes and frames for long-form scene consistency.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe PlayerOne as the first egocentric real-world simulator and first egocentric realistic world simulator.",
+      "source_ids": [
+        "S1",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report generalization to precise control of varying human movements and consistent modeling of diverse scenarios.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that the generated egocentric videos are strictly aligned with real-scene human motion captured by an exocentric camera.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "system introduction",
+        "summary": "Introduces PlayerOne for immersive exploration of dynamic environments.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "task capability",
+        "summary": "Maps an egocentric scene image to a corresponding world and motion-aligned egocentric videos.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "training design",
+        "summary": "Uses coarse egocentric pretraining followed by motion-focused finetuning on automatically constructed synchronous data.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "control and consistency mechanisms",
+        "summary": "Adds part-level motion injection and progressive joint scene-video reconstruction.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcome and positioning",
+        "summary": "Reports movement-control and diverse-scenario generalization, and frames the system as an entry point for egocentric world modeling.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links each major capability to a specific mechanism: motion control to part-disentangled injection and long-form consistency to joint reconstruction.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Mechanism-to-capability alignment makes a multi-component system’s intended roles easy to trace.",
+        "application": "When presenting a composite method, state the target capability immediately alongside the component designed to support it.",
+        "exception": "This is less suitable when component roles are inseparable or only established through ablation evidence."
+      }
+    ],
+    "unknowns": [
+      "No quantitative metrics, baselines, dataset sizes, or evaluation protocols are supplied for the reported generalization and alignment claims.",
+      "The abstract does not establish the priority of the stated “first” distinction or provide details sufficient to assess the claimed scene consistency."
+    ]
+  }
+}

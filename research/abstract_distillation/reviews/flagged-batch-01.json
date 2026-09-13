@@ -1,0 +1,149 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "scope": "Targeted resolution of synthesis flags, not random or full semantic audit",
+  "records": [
+    {
+      "paper_id": "iclr-2025-oral-31741",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S3 itself says speculative cascades, whereas S1/S2 contrast cascades with speculative decoding. The card faithfully attributes S3 to the abstract; it does not identify the guarantee as a new proposed-method result. This is source-level ambiguity, not an extraction substitution. Synthesis must leave the guarantee's referent unresolved and must not silently change cascades to decoding or claim a verified guarantee for the new method.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31768",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "lessons[0].source_observation.claim",
+          "source_ids": ["S2", "S4", "S8"],
+          "issue": "Scale-matched mischaracterizes a comparison that simultaneously increases GPU count and Gaussian count. It implies a controlled comparison that the abstract does not report.",
+          "severity": "material_error",
+          "replacement_value": "The abstract pairs a systems bottleneck with a mechanism tailored to sparse, dynamically changing pixel influence, then reports a quality comparison at different GPU and Gaussian counts."
+        }
+      ],
+      "flag_resolution": "Confirmed. The numerical evidence and unknowns already preserve the unequal resource settings; fix the conflicting source observation.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31730",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "lessons[0].source_observation.claim",
+          "source_ids": ["S3", "S4", "S5"],
+          "issue": "S4 describes what the method handles, while S5 reports broad synthetic and real-world evaluation without stating that homophily/heterophily was varied in that evaluation. The observation upgrades intended scope into an evaluated axis.",
+          "severity": "material_error",
+          "replacement_value": "The abstract connects joint graph-and-feature intervention to spectral-space alignment, states applicability to differing homophily or heterophily levels, and separately reports broad synthetic and real-world comparisons."
+        }
+      ],
+      "flag_resolution": "Confirmed. Application remains a proposed evaluation practice, not a description of experiments the source proves were performed.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31734",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S2 and the source observation correctly identify active parameters. The application proposes reporting compute for a future systems paper; it is not a measured-compute claim about OLMoE, and the exception explicitly notes when active parameters do not represent cost. Synthesis must not convert its active-parameter counts into measured FLOPs, latency, or compute-matched comparisons.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31729",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S1 is a supplied multi-sentence source block containing the motivation, task-generation scale, Kinetix framework, Jax2D engine, simulation scale, and zero-shot result. Reusing that actual block locator is valid; its length is not invented support or a semantic error.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31760",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S10 explicitly announces availability at the label BenchForm, but supplies no resolved destination. The card preserves that statement and marks access details unknown. Empty author_reported_evidence and the unknowns correctly avoid inventing result directions or successful mitigation.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31770",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S5 directly connects LLM code generation, together with reinforcement learning, to training and combining skills. The card's compressed training-code wording is supported at that collective-role level. Neither card nor source establishes the exact generated artifact, so synthesis should not attribute generation of an entire trainer, reward implementation, or specific code module.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31763",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S4 makes the ranking-preservation argument explicitly. The card reports that argument, and its lesson exception correctly excludes downstream decisions requiring calibrated reward magnitudes. It does not claim invariance of every downstream optimization objective; no source correction is needed.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31795",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "contributions[1].claim",
+          "source_ids": ["S5", "S7", "S8"],
+          "issue": "The displayed bounds use N without specifying the source's first- and second-order oracle-cost model. The lesson says assumptions are stated but does not preserve their values. Include them alongside the bounds.",
+          "severity": "minor",
+          "replacement_value": "Assuming first-order oracle cost N and second-order oracle cost dN, the authors report Õ((N+d²)(d+d^(2/3)ε^(-2/3))) for convex-concave problems and Õ((N+d²)(d+d^(2/3)κ^(2/3))) for strongly-convex-strongly-concave problems with condition number κ."
+        },
+        {
+          "field": "contributions[1].source_ids",
+          "source_ids": ["S5", "S7", "S8"],
+          "issue": "Add the locator supporting the restored oracle-cost assumptions.",
+          "severity": "minor",
+          "replacement_value": ["S5", "S7", "S8"]
+        }
+      ],
+      "flag_resolution": "The ε^(-3/2) iteration exponent is copied faithfully from S2; the ε^(-2/3) computational exponent is present in S3/S7. Their apparent inconsistency is in the supplied abstract. Do not silently repair either exponent or synthesize a derivation connecting them; retain this source-level uncertainty. Oracle-cost context can be restored without resolving it.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31805",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "lessons[0].source_observation.claim",
+          "source_ids": ["S3", "S5"],
+          "issue": "The abstract lists three LLM capabilities and describes abduction followed by deduction; it does not map each listed capability to a separate inference stage. The card invents that stage assignment.",
+          "severity": "material_error",
+          "replacement_value": "The abstract lists factor generation, coarse probability estimation, and relevance assessment as useful LLM capabilities, then proposes a Bayesian-network framework using LLM abductions followed by deduction."
+        }
+      ],
+      "flag_resolution": "Confirmed. Explicit role assignment can remain an application suggestion, but cannot be attributed as an observed one-to-one stage design in this abstract.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31790",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "author_reported_evidence[1].claim",
+          "source_ids": ["S9", "S10"],
+          "issue": "S10 reports potential to identify subtype-specific genes; the card states that the network identified them. This strengthens a qualified simulation interpretation into an accomplished identification result. The abstract does not define the denominator or operational meaning of the 83% likelihood.",
+          "severity": "material_error",
+          "replacement_value": "From a biological simulation examining selected genes from over 11,000 candidates, the authors suggest that the generated network has potential to identify subtype-specific genes with an 83% likelihood of impacting patient-distribution shifts; the likelihood's operational definition is unspecified."
+        }
+      ],
+      "flag_resolution": "The 83% value and simulation framing are source-supported, but their precise measurement meaning remains unknown as the card already notes. Restore the potential qualifier; do not interpret this as clinical validation, a causal probability, or verified discovery accuracy.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2025-oral-31778",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S3 explicitly calls continuations objectively valid, and S4 explicitly reports low acceptance for GPT-4o and human text under standard verification. The card attributes those reports and preserves that condition. The abstract does not operationally define validity or give acceptance rates; synthesis must not turn this into unconditional rejection of all such text or a verified semantic-correctness test. The lesson exception preserves the distinction from exact target-distribution fidelity.",
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "first_pass_pass": 7,
+    "first_pass_minor": 1,
+    "first_pass_material_error": 4,
+    "material_findings": 4,
+    "minor_findings": 2,
+    "requires_correction": 5,
+    "scope": "Read all 12 supplied originals and current cards to resolve their specific synthesis flags. Four confirmed material errors concern invented matching, evaluated scope, stage assignment, and upgraded potential. One card needs oracle-cost context. Seven suspicions are resolved without card errors, including source ambiguity, source-unit grouping, and explicitly proposed applications. These targeted results are not a random error estimate or a full semantic certification. No other obvious unrelated material errors were identified during this check. No cards or synthesis files were edited."
+  }
+}

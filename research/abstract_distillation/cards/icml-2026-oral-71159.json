@@ -1,0 +1,165 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71159",
+    "title": "FlatLand: Personalized Graph Federated Learning via Tailored Lorentz Space",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71159"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "dffdce2febea2562ff3459bece1795e58b83577f18d36498c1d8101dfa7a6f8e",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "ba54a70b7296fe54dc35a77eb6e966323499f31aa737bbbc77dd30556f402d5e",
+    "extracted_at": "2026-09-13T00:16:24.007803+00:00",
+    "session_id": "01a0981f-0800-7bf2-9f4c-9a861896b3bd",
+    "usage": {
+      "input_tokens": 12708,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 738,
+      "reasoning_output_tokens": 82
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "571464211428e225d5a72ca27c4f65706e5203a8c35019896c49c73fefc92265"
+    },
+    {
+      "id": "S2",
+      "sha256": "255d1afd934a20b9e9846af238bb385ff586e53cdf397db67ae30da5505a368c"
+    },
+    {
+      "id": "S3",
+      "sha256": "eea675067a4d417565b066c16b16bfffc53af6c54022dd4b5ecadb07d7a9bc0f"
+    },
+    {
+      "id": "S4",
+      "sha256": "c5ed0da59398bfcefadc5aa447a98923120d4ee13e7407d5665979c96300b33d"
+    },
+    {
+      "id": "S5",
+      "sha256": "4896ef8d59409cabf8410e28ea63dad29c3607ded0a01d74fbdc85edb19cb58d"
+    },
+    {
+      "id": "S6",
+      "sha256": "36f2fa37f58d27919d81938269417749b0550bf4946a00d10fcbdfd3a3269f7a"
+    },
+    {
+      "id": "S7",
+      "sha256": "d44ca03c7084205614e7d588d0d4d818f12ca5013906006e3f7aa41598cc5f55"
+    },
+    {
+      "id": "S8",
+      "sha256": "23c7a7b2beda9601b70df1efa5f2eceb53ab9d5be6d9c9b191abd699bc1ea1bc"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71159",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Personalized federated learning for graphs must handle clients with structurally diverse graphs and highly heterogeneous data.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing personalized federated learning methods are described as ignoring the intrinsic geometric properties of diverse graph structures.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The authors propose FlatLand, which embeds each client's data in a tailored Lorentz space with hyperbolic geometry.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "They develop parameter decoupling that separates client-specific heterogeneous information in time-like parameters from shared knowledge in space-like parameters, allowing direct aggregation without client-similarity estimation or extra calculation modules.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize FlatLand as a novel personalized federated learning method combining tailored Lorentz-space embeddings with parameter decoupling for graph clients.",
+      "source_ids": [
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report superior performance for FlatLand across diverse federated graph learning tasks, particularly in low-dimensional settings.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context_and_task",
+        "summary": "Federated learning offers privacy-preserving collaboration, but graph clients can have highly heterogeneous and structurally diverse data.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "stated_gap",
+        "summary": "Existing personalized methods are said to overlook the intrinsic geometry of diverse graph structures.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method_and_rationale",
+        "summary": "FlatLand uses tailored hyperbolic Lorentz spaces; its time-like dimension encodes client heterogeneity, while parameter decoupling preserves shared knowledge for direct aggregation.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "The authors report superior performance on diverse federated graph learning tasks, especially in low dimensions.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a geometric modeling choice to graph structure and assigns client-specific and shared information to separate parameter components before describing direct aggregation.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A method claim can be made more persuasive by aligning representation geometry and parameter roles with distinct sources of variation in the task.",
+        "application": "When presenting a heterogeneous graph-learning method, explicitly map each architectural component to graph structure, client variation, or shared knowledge, then state how that mapping removes a specific procedural requirement.",
+        "exception": "This framing is unsuitable when the data geometry or decomposition into shared and client-specific factors is not justified by the task or cannot be operationalized."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, metrics, numerical gains, or the conditions defining the low-dimensional settings.",
+      "The abstract states that hyperbolic geometry accommodates prevalent negative curvature in real-world graphs, but provides no supporting analysis or scope conditions here.",
+      "Code availability is asserted, but the repository location and reproducibility details are not provided in the supplied units."
+    ]
+  }
+}

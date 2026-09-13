@@ -1,0 +1,207 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71148",
+    "title": "On the Role of Computation in Reinforcement Learning",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71148"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8d4bbee170af20a468e2f89d5b87af60dd072d2d8e6e37fc36cc42fe5c75e1f6",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "d7c29d3e29a78789791e20dc8803a1d140d040eb62605aba549137a932bf7a26",
+    "extracted_at": "2026-09-13T00:16:02.961831+00:00",
+    "session_id": "01a0981e-ab67-73f3-9662-bf3e55b74430",
+    "usage": {
+      "input_tokens": 12703,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 867,
+      "reasoning_output_tokens": 106
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c083debacf487e514be1decf626b02d4b90389a06e8c9d6a8ef0c6d29c79f08f"
+    },
+    {
+      "id": "S2",
+      "sha256": "1bf1de1204d0cf5e41256c934f64b6a44f62214c7b73b40c63563d8cfa5f1a61"
+    },
+    {
+      "id": "S3",
+      "sha256": "595d15a756646e0777b7404f34b32674af1a7cd0f278c4763901e3d83f45c5c6"
+    },
+    {
+      "id": "S4",
+      "sha256": "57bc8e8738edf6d70018f79d703bb7a0a2c1977bb44c9452844f9998692dab5c"
+    },
+    {
+      "id": "S5",
+      "sha256": "efee0e2f31423ca5d82fc219e22462978498fad92ea0fecf94c476132bb8e21f"
+    },
+    {
+      "id": "S6",
+      "sha256": "9de4a43f7393bc0ecccb6ba705f44a9d0beb346e92e335c2c55ec4032eaae021"
+    },
+    {
+      "id": "S7",
+      "sha256": "5716c55697cf08700dfd07c7b091ed09fc90fc164a661eae0a7b8c06caca8350"
+    },
+    {
+      "id": "S8",
+      "sha256": "bf41ca4370b27712b50012d803f5bf9bee10aceea8d2cc9c747c556f1c76be5b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71148",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks how available computation affects RL policy learning and whether fixed-parameter policies can benefit from additional computation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The standard RL framework lacks a formal language for these questions, while static neural-network architectures conflate computation with parameter count.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Formalizes compute-bounded policies and proves that higher-compute policies can solve problems and generalize to longer-horizon tasks beyond lower-compute policies' scope.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "architecture",
+        "claim": "Proposes a minimal architecture capable of using a variable amount of computation, building on algorithmic learning and model-free planning.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports experiments across 31 online and offline RL tasks evaluating compute scaling and longer-horizon generalization.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated new distinction is to formalize compute-bounded policies and introduce a minimal variable-compute architecture for RL.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the proposed architecture achieves stronger performance when using more computation across 31 tasks.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report stronger generalization on longer-horizon test tasks than standard feedforward and deep residual networks using up to five times more parameters.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report theoretical results that higher-compute policies can solve and generalize to longer-horizon tasks outside the scope of lower-compute policies.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "research question",
+        "summary": "Asks how computation affects RL learning and whether fixed-parameter policies benefit from additional computation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "formalization gap",
+        "summary": "Identifies the lack of a formal language and the confounding of compute with parameter count in static neural architectures.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "theoretical proposal",
+        "summary": "Formalizes compute-bounded policies and states higher-compute advantages for problem solving and longer-horizon generalization.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "architectural proposal",
+        "summary": "Introduces a minimal architecture with variable compute, drawing on algorithmic learning and model-free planning.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "empirical support",
+        "summary": "The authors report complementary experiments on 31 tasks spanning online and offline RL: stronger performance with more compute and stronger generalization on longer-horizon test tasks compared with standard feedforward networks or deep residual networks using up to five times more parameters.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates computation from parameter count by formalizing compute-bounded policies and comparing variable-compute policies with networks using up to five times more parameters.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S8"
+          ]
+        },
+        "interpretation": "This framing makes computational scaling an explicit experimental variable rather than a proxy for model size.",
+        "application": "When studying scaling, define a compute budget independently and include comparisons that vary parameters without equating them to computation.",
+        "exception": "This move may be unsuitable when the target deployment fixes architecture and inference cost jointly."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal compute model, policy assumptions, task domains, or proof conditions.",
+      "It does not report quantitative performance, uncertainty, statistical procedures, or exact compute budgets.",
+      "The phrase “up to 5 times more parameters” does not establish equality of training or inference compute."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "narrative_sequence[4].summary",
+      "before": "Reports complementary experiments on 31 online and offline RL tasks, including comparisons with parameter-matched alternatives.",
+      "after": "The authors report complementary experiments on 31 tasks spanning online and offline RL: stronger performance with more compute and stronger generalization on longer-horizon test tasks compared with standard feedforward networks or deep residual networks using up to five times more parameters.",
+      "review_file": "reviews/flagged-batch-12.json",
+      "review_sha256": "718c9a79d0fb5cb065df6f7a77df0d9188b9e0f6d894983afde0d0a26345722b",
+      "applied_at": "2026-09-13T00:42:27.386801+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

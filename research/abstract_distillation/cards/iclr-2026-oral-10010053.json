@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010053",
+    "title": "SimuHome: A Temporal- and Environment-Aware Benchmark for Smart Home LLM Agents",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010053"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6595200196447c35a210ddd3310c7891a8bd94dc2a72e89e7d2163f5f52f5ff7",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "f727692b229c97b36908b96703f44505392bd46ced1c9a624c54b37355db4209",
+    "extracted_at": "2026-09-13T00:03:57.187174+00:00",
+    "session_id": "01a09813-a6f9-7621-b648-6b65b04d0023",
+    "usage": {
+      "input_tokens": 12722,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 752,
+      "reasoning_output_tokens": 103
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "77682c14376cb5e29b6254a94d9a51e68bff162716085d71b5e92e2e49996119"
+    },
+    {
+      "id": "S2",
+      "sha256": "65878dcb5e37700d19910000c5be8631ee9c7d49b7ec14329b1d1eccdfcf40fe"
+    },
+    {
+      "id": "S3",
+      "sha256": "a52d8e8df103d5af2472f0004e156f66d66c111bccec3ff7d7c9649eebb0ba5a"
+    },
+    {
+      "id": "S4",
+      "sha256": "05966f0474d8e04619863673dc4716bb259120fc1888e2ca4f8789390a0418c7"
+    },
+    {
+      "id": "S5",
+      "sha256": "1b2d9e082005d24ebbe0b7a295977aa87a8c8796f8dc60b0f4f693c77731f879"
+    },
+    {
+      "id": "S6",
+      "sha256": "43806760ea4b5aaba7add4a6ac6a4d0916a84734eb1c96aeaf0d1fac1cba1eb1"
+    },
+    {
+      "id": "S7",
+      "sha256": "457cf8e0e87e562897916e05cf2e9df6dd509f3c39ac17b9c03d4b9fc2e613a6"
+    },
+    {
+      "id": "S8",
+      "sha256": "4a2f3604acbf1e4a767f324e3a1b632cac023d327e545cf52b436dbcdc635c77"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010053",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate LLM agents for smart-home interaction under temporal environmental effects and scheduled device workflows.",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Existing benchmarks model homes as static systems, omitting time-dependent environmental effects and workflow scheduling.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark and simulator",
+        "claim": "Introduces SimuHome, a Matter-grounded high-fidelity smart-home simulator and 600-episode benchmark.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "type": "task coverage",
+        "claim": "Covers state inquiry, implicit intent inference, explicit control, and workflow scheduling, including feasible and infeasible requests.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "evaluation finding",
+        "claim": "Reports workflow scheduling as the hardest category across 18 evaluated agents.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish SimuHome through temporal environmental simulation and immediate evaluation of scheduled workflows via time acceleration.",
+      "source_ids": [
+        "S2",
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that workflow scheduling is the hardest category among the evaluated tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that failures in workflow scheduling persist across alternative agent frameworks and fine-tuning.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors suggest time-accelerated simulation can pre-validate agent actions before real-world execution.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "benchmark motivation and introduction",
+        "summary": "SimuHome is introduced as a 600-episode smart-home simulator and benchmark addressing static assumptions in existing benchmarks.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "environment and task design",
+        "summary": "The simulator uses the Matter protocol, exposes APIs, models continuous temperature and humidity effects, and includes four task categories with feasible and infeasible requests.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation result and implication",
+        "summary": "Across 18 agents, workflow scheduling is reported as hardest, motivating simulation for pre-validation before real-world commitment.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs task categories with both feasible and infeasible requests and reports scheduling failures across agent frameworks and fine-tuning.",
+          "source_ids": [
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "Separating capability coverage from feasibility handling can expose failure modes that aggregate success rates may hide.",
+        "application": "When designing an agent benchmark, include valid and invalid requests within each task category and report failures by category and method variant.",
+        "exception": "This structure may be unsuitable when invalid requests are outside the deployment contract or when the study targets only a narrowly defined valid-task capability."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide per-category scores, failure rates, agent identities, or evaluation protocols.",
+      "It does not specify the simulator's environmental dynamics, workflow horizon, or how closely simulation outcomes match real-device behavior."
+    ]
+  }
+}

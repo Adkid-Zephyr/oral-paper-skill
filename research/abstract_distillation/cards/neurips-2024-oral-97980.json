@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97980",
+    "title": "Learning rigid-body simulators over implicit shapes for large-scale scenes and vision",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97980"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6a0e9b38493eada60d3d79937d81a9db53c3d98973a43f9a93f6be79544238bc",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "ad7de5c4e1f7d404471283d767892c230dced1b3abe45c29151824c8330a3625",
+    "extracted_at": "2026-09-13T00:19:07.559484+00:00",
+    "session_id": "01a09821-8273-75b0-8736-b19446a6cd33",
+    "usage": {
+      "input_tokens": 12769,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 827,
+      "reasoning_output_tokens": 85
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0df069c0f4120ab4c02fd249e903f428a09c7009396643734f7b29b0e40100bd"
+    },
+    {
+      "id": "S2",
+      "sha256": "e76bab6eee6f83d976b69a12026887ad7bc6411cb00278da680845dd55795503"
+    },
+    {
+      "id": "S3",
+      "sha256": "b4f2784be428dab6553a85a38d3b7691f999db0cdcc60a8d5055f4ec95c315c8"
+    },
+    {
+      "id": "S4",
+      "sha256": "0e2dcd70e8b739d482a62018b55c384853852334241fd7fc63ede3003231b1d0"
+    },
+    {
+      "id": "S5",
+      "sha256": "35d1b9a55b6bcc945afe833f3d6afa967d17c69535bdd6747cd502f2e47964e7"
+    },
+    {
+      "id": "S6",
+      "sha256": "ef6e778fabf50fc2ff678cc466a91670a70ec6de9c98a7f7c595e5cfc6790228"
+    },
+    {
+      "id": "S7",
+      "sha256": "cacf8acdc827c8f025b746d4d7748a7b0363e57c3b6e6bdd56ec49e7b84c7d48"
+    },
+    {
+      "id": "S8",
+      "sha256": "ecf05ccb73f7ccbaebcdc3a2ec75781989427e900131d099c474ec8420da1b25"
+    },
+    {
+      "id": "S9",
+      "sha256": "36e4b7d09a686ee11739d3053a34e6feee02669c4ee8fd721e3748b7043f06ae"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97980",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop a learned rigid-body simulator that can handle large scenes with many objects and detailed shapes.",
+        "source_ids": [
+          "S1",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Existing learned simulators operate on meshes and scale poorly to scenes with many objects or detailed shapes.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "system",
+        "claim": "Introduces SDF-Sim, using learned signed-distance functions to represent shapes and accelerate distance computation.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Designs the simulator to use SDFs while avoiding the collision-detection bottleneck identified in prior simulators.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "Applies SDF-Sim to real-world scenes by extracting SDFs from multi-view images.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe SDF-Sim as the first learned rigid-body simulator designed for scale and state that this is the first literature demonstration of scaling GNN-based simulators to scenes with hundreds of objects and up to 1.1 million nodes.",
+      "source_ids": [
+        "S6",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report scaling to scenes with hundreds of objects and up to 1.1 million nodes, while mesh-based approaches run out of memory.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that SDF-Sim can be applied to real-world scenes using SDFs extracted from multi-view images.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Large-scale rigid-body simulation is important, but rigid interactions are sensitive to initial states and simulation parameters.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "context_and_gap",
+        "summary": "Learned GNN simulators can capture dynamics from observations, yet mesh-based systems scale poorly with many objects or detailed shapes.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "proposed_solution",
+        "summary": "SDF-Sim represents shapes with learned SDFs and targets the collision-detection bottleneck.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported_demonstrations",
+        "summary": "The authors report scaling to very large node counts and applying the method to real-world scenes from multi-view images.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific scalability limitation—mesh-based shape representation and collision detection—to a replacement representation, learned SDFs, and reports a scale demonstration with explicit object and node counts.",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A strong abstract can align a concrete bottleneck, a mechanism intended to address it, and a scale-specific demonstration.",
+        "application": "Frame a systems contribution by naming the limiting component, explaining the proposed substitute's role, and reporting a directly comparable resource or scale boundary.",
+        "exception": "This framing is less suitable when the main contribution is theoretical or when no meaningful bottleneck-to-mechanism comparison can be stated."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report accuracy metrics, baselines beyond memory exhaustion, datasets, or experimental conditions for the scaling claims.",
+      "It does not specify how multi-view images are processed into SDFs or quantify real-world-scene performance.",
+      "The stated 'first' claims are author-reported and are not independently verified here."
+    ]
+  }
+}

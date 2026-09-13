@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71075",
+    "title": "Learning Human-Robot Collaboration via Heterogeneous-Agent Lyapunov Policy Optimization",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71075"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "dbc3c5b61e1ded33790ea0623783f0b403ba7328a994a03719c45b17e3e92083",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "0e5e029ad41f818851f5190c294900108afe921b01335ff8ea1b60416c03dbe1",
+    "extracted_at": "2026-09-13T00:13:02.205125+00:00",
+    "session_id": "01a0981b-f317-72e3-a3a7-1b0401e72e99",
+    "usage": {
+      "input_tokens": 12696,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 763,
+      "reasoning_output_tokens": 60
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "62c1901b8e60960a3502ba59b8611d0a0044198ed3634606afb7ed394862e564"
+    },
+    {
+      "id": "S2",
+      "sha256": "fce94e53c25b03480af251952708277288d76dfded77b4afda89446e2a3c7e2c"
+    },
+    {
+      "id": "S3",
+      "sha256": "845536cfa0bed77652870dea715f592ffa60de976cfd8fe5445a02c5fa213f76"
+    },
+    {
+      "id": "S4",
+      "sha256": "7fe074e9cb245f9ba6740bb588c1caee9536abb38543a95ec7624a401c1282ef"
+    },
+    {
+      "id": "S5",
+      "sha256": "aacd168b8045198203a7d23d4f484ca888a6bafc619e943d38cf1d2067207f59"
+    },
+    {
+      "id": "S6",
+      "sha256": "28e2693b6868eab1322b9ebdd91dd17518afc7fddab530b489b656f98db6ea32"
+    },
+    {
+      "id": "S7",
+      "sha256": "52045de8831a2d14e21f220f2ec158dfa2bb5656b906feeb56c26a7bba2455eb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71075",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to stabilize decentralized multi-agent reinforcement learning for human–robot collaboration across diverse human behaviors and contexts.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Heterogeneity creates a rationality gap between decentralized policy updates and cooperative joint optimization, while independent policy-gradient updates may oscillate or diverge in the resulting general-sum game.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes HALO, which enforces Lyapunov-based contraction in policy-parameter space to stabilize decentralized MARL.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses optimal quadratic projections to rectify decentralized gradients and monotonically contract the rationality gap.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "distinction",
+        "claim": "Positions Lyapunov certification as a tool for stabilizing decentralized policy learning, distinct from Lyapunov-based safe RL focused on state or trajectory constraints.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors' stated distinction is applying Lyapunov certification to decentralized policy-learning stability in heterogeneous-agent MARL, rather than to constrained state or trajectory safety.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that simulations and real-world humanoid-robot experiments show improved generalization and robustness in collaborative corner cases under certified stability.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Diverse human behaviors and contexts motivate MARL for more generalizable and resilient HRC.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "Human–robot heterogeneity induces a rationality gap and turns learning into a general-sum differentiable game vulnerable to oscillation or divergence.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "HALO stabilizes decentralized learning through Lyapunov contraction and quadratic gradient projection.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "role": "positioning",
+        "summary": "The framework is distinguished from Lyapunov-based safe RL by targeting policy-learning stability rather than state or trajectory constraints.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_outcome",
+        "summary": "Simulated and real-world humanoid-robot experiments are reported to improve generalization and robustness in corner cases.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly separates policy-learning stability from state or trajectory safety, then aligns its method with that distinction.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Separating neighboring objectives can make a technical contribution's scope and mechanism easier to evaluate.",
+        "application": "When introducing a stability or safety method, define the controlled object, certification target, and contrast with the closest similarly named approach.",
+        "exception": "This framing is less useful when the work genuinely addresses the neighboring objectives jointly or when the comparison lacks a meaningful shared mechanism."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative metrics, baselines, task details, or experimental conditions for the reported improvements.",
+      "The extent to which monotonic rationality-gap contraction translates to generalization or robustness is not quantified in the abstract.",
+      "The abstract does not state formal theorem assumptions or proof details for the Lyapunov certification."
+    ]
+  }
+}

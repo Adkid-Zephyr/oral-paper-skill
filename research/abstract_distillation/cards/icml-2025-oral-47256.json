@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47256",
+    "title": "Polynomial-Delay MAG Listing with Novel Locally Complete Orientation Rules",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47256"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "67bc93e0a29220ff6c748c8f42501f4cc9f33cf77d221c50814f34d395e02f7b",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "b81cefa99d67598c63eccf9a8bda48a9e461f8d1f78f79d0f65cb68878dbb0ec",
+    "extracted_at": "2026-09-13T00:10:43.395836+00:00",
+    "session_id": "01a09819-cd4e-7171-9a9e-aaad79695f85",
+    "usage": {
+      "input_tokens": 12753,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 759,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6cf27e8c947494f2bd09c6c96532a900faa30d1ad77955b897b8470190b4e23d"
+    },
+    {
+      "id": "S2",
+      "sha256": "0903c98e6b4181ca6fb1f0971156f1c798d7cd068beab2c8e623ba4cbb37e5a3"
+    },
+    {
+      "id": "S3",
+      "sha256": "dc264bacfc0be8e567a26b649e1050e63add737dc5c385214cfa3fc93add97e0"
+    },
+    {
+      "id": "S4",
+      "sha256": "86f6c52f0290f049127a6abd16fa3d771ff4ce08b50b520ec68e1055fd52c2f6"
+    },
+    {
+      "id": "S5",
+      "sha256": "58a49cdcbd4719dd4d45af0b4c186175b45514c80969acea8e64f806dd921813"
+    },
+    {
+      "id": "S6",
+      "sha256": "f1bf5085be4d6a0e3d4ad03ff538deaa24a3d6c2354a60e8c76e000c8bb488b1"
+    },
+    {
+      "id": "S7",
+      "sha256": "93dd90b7576d804d1bc8531227ed236b0f8541a703eae8e969bc055cec11079e"
+    },
+    {
+      "id": "S8",
+      "sha256": "548b2bf7f49595d280ccbe0424c18e84be4d83c2cfec8768891566546fc4257f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47256",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Given a partial ancestral graph representing a MAG Markov equivalence class, list all MAGs for downstream causal tasks.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing orientation rules, including the proposed rules, are not complete for incorporating general background knowledge; this motivates additional rules.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A MAG-listing method using recursively introduced singleton background knowledge and sound, locally complete orientation rules.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "A polynomial-delay procedure that outputs all and only MAGs in the equivalence class under the proposed process.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "type": "counterexamples and extensions",
+        "claim": "Two counterexamples for general background knowledge, motivating two additional rules.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present what they describe as the first polynomial-delay MAG-listing method, enabled by enumerated singleton background knowledge and novel orientation rules.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their procedure outputs all and only MAGs in the MEC with polynomial delay.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report experimental results validating the efficiency of the proposed MAG-listing method.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report two counterexamples showing that existing rules, including theirs, are not yet complete for general background knowledge.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "MAGs characterize causal relations among observables when latent variables may be present.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "Observational data generally identifies only a partial graph and leaves causal relations uncertain, making MAG listing useful for downstream tasks.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper introduces singleton background knowledge together with sound and locally complete orientation rules, recursively applying them for listing.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "scope and limitation",
+        "summary": "For general background knowledge, counterexamples reveal incompleteness and motivate two further rules; experiments report efficiency.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates the polynomial-delay result for singleton background knowledge from the incompleteness issue for general background knowledge.",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "Explicitly scoping a guarantee can make its applicability and remaining limitations easier to assess.",
+        "application": "State the knowledge regime attached to each algorithmic guarantee, then separately identify broader regimes where completeness remains unresolved.",
+        "exception": "This separation is less useful when the method and guarantee genuinely cover the same unrestricted regime."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the polynomial bound, input-size dependence, datasets, baselines, or quantitative efficiency results.",
+      "The exact definitions of singleton background knowledge, local completeness, and the two additional rules are not provided."
+    ]
+  }
+}

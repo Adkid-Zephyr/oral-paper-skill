@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31748",
+    "title": "Scaling In-the-Wild Training for Diffusion-based Illumination Harmonization and Editing by Imposing Consistent Light Transport",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31748"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f544f34fd0b99a0e349fe463f7649e7b0e583ffbe30ebca87ae1bec394d6e8dd",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "cc9f6a61d0a84c6be6abb6ba6612279f185a371f477299a5e6adfd25bf0531f5",
+    "extracted_at": "2026-09-12T23:50:29.790895+00:00",
+    "session_id": "01a09807-4c69-74e2-80b1-383250de3e80",
+    "usage": {
+      "input_tokens": 12756,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 747,
+      "reasoning_output_tokens": 72
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "688de58985213ae8746a377df3f3b92487d63a00ee09fad483ec01564aa06627"
+    },
+    {
+      "id": "S2",
+      "sha256": "ca246cdaa58900a02ff52a968be2fe14e73198c1df81778d5662c0def9394468"
+    },
+    {
+      "id": "S3",
+      "sha256": "a42e04a86fc83bbca79148ba254935bf12a66c4edc374b84b51edd090493772d"
+    },
+    {
+      "id": "S4",
+      "sha256": "2d2fec8780f46aa79ea771d6f435da6c7fb80e42f8f2d71e2251b870de71e87e"
+    },
+    {
+      "id": "S5",
+      "sha256": "3b50f37d205c2c5a5bef05f27bc2af595fa621417806a2107de67a4d2b8224b0"
+    },
+    {
+      "id": "S6",
+      "sha256": "7c22d5067962e345b91bb66cee125ed5af8a0e221fcfc116e846a8fc314860b5"
+    },
+    {
+      "id": "S7",
+      "sha256": "2edba2e2410ddf17b1ac0b77ef05576425ba1c5254fb6b365eb652dd88abf939"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31748",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Scale diffusion-based illumination editing to varied, in-the-wild data while preserving image details and intrinsic properties such as albedo.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Direct training on complex, varied data lacks constraints that reliably separate illumination manipulation from unintended structural or material changes.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "IC-Light imposes consistent light transport during training using a physical linear-blending principle for mixed illumination.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "scaling framework",
+        "claim": "The method supports training across more than 10 million examples, multiple data sources, and strong backbones including SDXL and Flux.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "behavioral objective",
+        "claim": "The approach is designed to modify illumination while preserving other intrinsic image properties.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by imposing consistent light transport as a physically grounded training constraint for scalable illumination learning.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report scaling illumination-editing training to more than 10 million examples spanning real light stages, rendered samples, and in-the-wild synthetic augmentations.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report reduced uncertainty and mitigation of artifacts including mismatched materials and altered albedos.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Diffusion models are positioned as useful for illumination harmonization and editing, but scaling training risks loss of details and intrinsic properties.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "failure mode",
+        "summary": "Without suitable constraints, training on varied in-the-wild data may yield a structure-guided random image generator instead of precise illumination manipulation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "IC-Light imposes consistent light transport based on linear blending across illumination conditions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "scale and outcome",
+        "summary": "The authors report large-scale, multi-source training and fewer uncertainties or material/albedo artifacts.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a physical consistency principle directly to scalable training, intrinsic-property preservation, and artifact mitigation.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A domain-grounded constraint can serve simultaneously as the method’s rationale and as a bridge between the intended behavior and reported outcomes.",
+        "application": "When proposing a controllable generative system, state a task-specific invariant and map it explicitly to the failure mode and claimed behavioral evidence.",
+        "exception": "This framing is unsuitable when no defensible domain invariant exists or when the proposed constraint cannot be connected to observable outcomes."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative metrics, baselines, ablations, or experimental conditions for the reported reductions and artifact mitigation.",
+      "It does not specify how preservation of intrinsic properties is measured or whether all listed backbones and data types were evaluated under comparable settings."
+    ]
+  }
+}

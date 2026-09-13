@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97971",
+    "title": "MetaLA: Unified Optimal Linear Approximation to Softmax Attention Map",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97971"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d11281023031dccdea2e5952c8f83d2ada456d1e13306c086be5af865ef5d659",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "14d0ab9889b9868339d3c1ef3267dd75610d9c6395b8bc84cac2cb787fa53d0f",
+    "extracted_at": "2026-09-13T00:18:43.744906+00:00",
+    "session_id": "01a09821-32de-7eb3-bf17-b5ca42bbaaa3",
+    "usage": {
+      "input_tokens": 12695,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 668,
+      "reasoning_output_tokens": 51
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "35ff3a46e5234148749f59c51cb73569a0c9a50cbbee76130f39af53590c2dda"
+    },
+    {
+      "id": "S2",
+      "sha256": "2463b0f13d6902f77bcd32f5308d38e4e7d7a67978440c04d1101607ff300a4c"
+    },
+    {
+      "id": "S3",
+      "sha256": "20e6f96190bcd59d3b2fab15716d0f132d09fad9361e68cec1ad9891481ef767"
+    },
+    {
+      "id": "S4",
+      "sha256": "f5f2aaa61c25a420820b9e20f43cb518002d7fe832a7ed76404b6f9e5423d901"
+    },
+    {
+      "id": "S5",
+      "sha256": "d474fef42c0c46d91a6e474ef4026273bdf51b3aa7f5fa567cef235e56cc3832"
+    },
+    {
+      "id": "S6",
+      "sha256": "960abff2c479a5c08061efe0771e4f5415e2a9dad83df2eec06f8779cd166c9f"
+    },
+    {
+      "id": "S7",
+      "sha256": "b2dc9faf00594e56b5532759dfe5a4214aee15e8a3df0b75e76f96ce592a110e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97971",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine the best linear approximation to softmax attention for Transformer structures.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The optimal design of linear attention models remains unresolved, and existing models do not satisfy all three proposed optimality conditions.",
+        "source_ids": [
+          "S2",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "unifying framework",
+        "claim": "Unifies existing linear-complexity models as a linear attention form.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Identifies dynamic memory, static approximation, and least-parameter approximation as conditions for optimal linear attention design.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes Meta Linear Attention (MetaLA), described as satisfying all three conditions.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish MetaLA as a linear attention solution designed to satisfy the three identified conditions, unlike the current linear models.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that none of the current linear models meet all three conditions and characterize them as suboptimal.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that experiments on MQAR, language modeling, image classification, and the LRA benchmark show MetaLA is more effective than existing linear models.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Linear-complexity alternatives have been proposed to replace softmax attention.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "open question",
+        "summary": "The optimal design of these models is stated to remain unresolved.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "The work unifies existing models and specifies three conditions for optimal linear attention.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method and evaluation",
+        "summary": "MetaLA is proposed to satisfy the conditions, with reported advantages across four evaluation settings.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a unified model form to explicit design conditions, then evaluates the proposed method across task and benchmark types.",
+          "source_ids": [
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "This alignment makes it easier to trace how theoretical criteria motivate a method and where its reported comparisons apply.",
+        "application": "State design criteria before introducing a method, and map each evaluation setting to the claimed scope of those criteria.",
+        "exception": "This framing is less suitable when the work has no formal design criteria or when evaluation settings cannot meaningfully test them."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify MetaLA's architecture, how each condition is formally defined or verified, baseline identities, quantitative results, or experimental protocols.",
+      "The reported comparative advantage is not quantified, and the scope or meaning of “more effective” is unspecified."
+    ]
+  }
+}

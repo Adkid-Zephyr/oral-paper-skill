@@ -1,0 +1,149 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-117616",
+    "title": "A multiscale analysis of mean-field transformers in the moderate interaction regime",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/117616"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2626d2e26babb801ce09a7a84c09a967ff70134fff114b1a0631a3f46ab0ba34",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "e30b06b25050b98a6b18f3420dcbb1e7497d02afa83d01fba0ff4e7798e14053",
+    "extracted_at": "2026-09-13T00:22:03.028914+00:00",
+    "session_id": "01a09824-391c-74f3-aa3c-c8acb0e09224",
+    "usage": {
+      "input_tokens": 12623,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 671,
+      "reasoning_output_tokens": 106
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "76929800e3a58eb3d8745e5e3d4a73fae201c4d3e2cf5ea7a53651c7e17044f5"
+    },
+    {
+      "id": "S2",
+      "sha256": "5e9463c57bdc027febab4056156e77d2d80cd7bc8a719132d61bf07603949195"
+    },
+    {
+      "id": "S3",
+      "sha256": "fa14e09156d66c5a1f6521048914c650acf5ebf4c37bd4938188502a6f3b0eaa"
+    },
+    {
+      "id": "S4",
+      "sha256": "6338878dbfcce193e6ddc76820aca62bc0c127efb502c4fcdac0b2f107edf5a6"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-117616",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies token evolution through encoder-only transformer depth at inference time by modeling tokens as mean-field-interacting particles, specifically when token count N and inverse temperature β scale together.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A rigorous characterization of limiting dynamics across the fast, intermediate, and slow phases of the moderate interaction regime.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "convergence result",
+        "claim": "A proof of convergence in the stated large-N, jointly scaled limit, illustrated with simulations.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": null,
+      "source_ids": []
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the dynamics has three scales: empirical-measure collapse onto a low-dimensional space, subsequent clustering, and sequential cluster merging into one cluster.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report proving convergence in the described limit and illustrating the results with simulations.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "modeling scope",
+        "summary": "The paper models inference-time token evolution through encoder depth as mean-field particle dynamics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "regime",
+        "summary": "It focuses on the moderate interaction regime, where N and β scale together.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "dynamical structure",
+        "summary": "It identifies fast, intermediate, and slow phases corresponding respectively to low-dimensional collapse, cluster formation, and sequential cluster merging.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "analysis and illustration",
+        "summary": "It characterizes the limiting dynamics rigorously, proves convergence, and presents simulations as examples.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract organizes the dynamics into three phases and assigns a distinct geometric behavior to each phase.",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "interpretation": "Phase-based organization can make a complex asymptotic process easier to state precisely and connect to separate analyses.",
+        "application": "For a multistage dynamical model, define phase boundaries and summarize the qualitative state transformation associated with each phase before presenting technical results.",
+        "exception": "This framing is unsuitable when the process has no meaningful scale separation or when phase boundaries cannot be specified."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the transformer dynamics, the precise scaling of β with N, the convergence mode, or the assumptions and limiting objects.",
+      "Simulation settings and how they relate quantitatively to the theoretical characterization are not given."
+    ]
+  }
+}

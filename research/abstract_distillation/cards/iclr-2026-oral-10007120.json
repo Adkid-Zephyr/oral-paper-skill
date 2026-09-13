@@ -1,0 +1,198 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007120",
+    "title": "$PhyWorldBench$: A Comprehensive Evaluation of Physical Realism in Text-to-Video Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007120"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c79bb0d3a544ff106dfb6050513f24b21e90d4082c70b96dcee3f3cdfd8614d0",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "c6ff44054f7c27a51b371e6c26a5acfef3b439878c3cade36827b16333fdeb34",
+    "extracted_at": "2026-09-12T23:59:03.916734+00:00",
+    "session_id": "01a0980f-2ada-7220-911e-2e282fd80e6f",
+    "usage": {
+      "input_tokens": 12785,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 753,
+      "reasoning_output_tokens": 49
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "793b631a9a3f5fb22640706c8f70474d9f89243fc33bda46060c3d8b1fc72d40"
+    },
+    {
+      "id": "S2",
+      "sha256": "11c7090ea03b9ac3503e898d7bad53b6ce91b9752620fa5bdbd13a51794355e5"
+    },
+    {
+      "id": "S3",
+      "sha256": "7b266eae724c2add89704236522d38425e93993d4f5e36afd93f0c71197a5b41"
+    },
+    {
+      "id": "S4",
+      "sha256": "6e57ef06c84268e9f8323ca7e30ff0f78c99e2d506eb707806a9a8db293ed072"
+    },
+    {
+      "id": "S5",
+      "sha256": "109f5f115fe72c30d45fa5b2fa7d377a79ce39bcf5c0ebbe7a26ea4067305ea4"
+    },
+    {
+      "id": "S6",
+      "sha256": "0e2b824c2c3c6fde212fc298f8aeca9208d039b788497e5bc9ac715ed73813d7"
+    },
+    {
+      "id": "S7",
+      "sha256": "54d9cd945363e736a87d52171ecaf1a60b770b908fdc5dad2e928a1d3a32a6b2"
+    },
+    {
+      "id": "S8",
+      "sha256": "7771f106066fb03e49a68b69a4ef2dd16c6cda044363a00f1eb5cf1c90f525a6"
+    },
+    {
+      "id": "S9",
+      "sha256": "2c0243e2f72754acd6c8c3153d047b973f0300e9260816d70c454f0d8da833e5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007120",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate whether text-to-video models simulate physical phenomena and follow physics-consistent or intentionally anti-physics prompts.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Models’ ability to accurately simulate physical phenomena remains unresolved despite progress in photorealistic generation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "PhyWorldBench evaluates physical realism across fundamental, composite, human/animal-motion, and anti-physics scenarios.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "evaluation method",
+        "claim": "The paper introduces a zero-shot method using current MLLMs to assess physics realism, alongside large-scale human evaluation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical study",
+        "claim": "The paper evaluates ten text-to-video models, evenly split between open-source and proprietary systems, on curated physical-phenomena prompts.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their benchmark by including an Anti-Physics category that tests intentional physics violations while requiring logical consistency.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report evaluating 10 state-of-the-art models—five open-source and five proprietary—with detailed comparison and analysis.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report systematic testing across 1,050 curated prompts covering fundamental, composite, and anti-physics scenarios, identifying pivotal physics-adherence challenges.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report deriving targeted prompt-crafting recommendations after examining performance across physical phenomena and prompt types.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Photorealistic video generation has advanced, but accurate physical simulation remains unresolved.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark design",
+        "summary": "PhyWorldBench evaluates physics adherence across multiple phenomenon levels and adds intentional anti-physics instructions.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "assessment approach",
+        "summary": "The study combines large-scale human evaluation with a proposed zero-shot MLLM-based physics-realism assessment.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "evaluation and analysis",
+        "summary": "Ten models are tested on 1,050 curated prompts to identify physics-related challenges and formulate prompt recommendations.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The benchmark separates fundamental, composite, and anti-physics scenarios and varies prompt types when analyzing model performance.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "Explicitly partitioning task regimes can reveal whether failures concern physical knowledge, compositional interaction, or instruction following.",
+        "application": "Design evaluations with separate regime labels and report results by regime rather than relying only on an aggregate score.",
+        "exception": "This partitioning may be unsuitable when the application has too few examples per regime for meaningful comparison."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide model-level scores, metric definitions, statistical uncertainty, or concrete failure examples.",
+      "The zero-shot MLLM method and its agreement with human evaluation are not described.",
+      "The targeted prompt recommendations are not specified."
+    ]
+  }
+}

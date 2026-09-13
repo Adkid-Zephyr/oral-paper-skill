@@ -1,0 +1,154 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007826",
+    "title": "MemAgent: Reshaping Long-Context LLM with Multi-Conv RL-based Memory Agent",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007826"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "308683d348750739f26f12e5afac8e3dc1d6cfb3347e1432326ea7dc8280a84b",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "ca9fa20a69d445e75839f78726eafa5d4334b4565e1218d2d61cdbd98bc84197",
+    "extracted_at": "2026-09-13T00:00:26.574053+00:00",
+    "session_id": "01a09810-6ab1-77f1-8cf4-c131c04428f7",
+    "usage": {
+      "input_tokens": 12615,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 705,
+      "reasoning_output_tokens": 70
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6a25ca79219a2d4a2c807487ebfc275caa51ead80c5c30c8a3779867a0d60cbf"
+    },
+    {
+      "id": "S2",
+      "sha256": "a3e869923a9b16b8daa27fbd957dbb33d7f37147a029f19e938d40f197a5d746"
+    },
+    {
+      "id": "S3",
+      "sha256": "eac5aa10fcda5da85de229f3ad0f4a8c60b008fa950423ae710efcd30747af1a"
+    },
+    {
+      "id": "S4",
+      "sha256": "df1ac68269359afcecbdbb21547baa937062ddc1b88e2f857655f2b45809bc0c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007826",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Handle extremely long documents and long-context tasks without substantial performance degradation during context extrapolation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies persistent difficulty in maintaining performance when extrapolating to infinitely long documents despite prior advances in length extrapolation, efficient attention, and memory modules.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces MemAgent, a segmented text-processing workflow that updates memory through overwriting.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "training method",
+        "claim": "Extends DAPO to optimize memory ability end-to-end using independent-context multi-conversation generation.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe the agent workflow and its memory-management approach as novel, and report an extension of DAPO for direct end-to-end memory optimization.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report extrapolating from an 8K context to a 3.5M QA task with less than 10% performance loss.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report performance above 95% on the 512K NIAH test.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "challenge",
+        "summary": "Long-context methods still face performance degradation when extrapolating to extremely long documents.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "workflow",
+        "summary": "MemAgent processes text in segments and manages memory with an overwrite strategy.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "optimization",
+        "summary": "The method extends DAPO for end-to-end memory training through independently generated multi-conversations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The authors report strong extrapolation from 8K to 3.5M QA and over 95% on 512K NIAH.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a concrete workflow change—segmentation plus memory overwriting—with explicit long-context extrapolation metrics at 3.5M and 512K scales.",
+          "source_ids": [
+            "S2",
+            "S4"
+          ]
+        },
+        "interpretation": "This pairing makes the proposed mechanism and its intended operating regime easy to connect.",
+        "application": "When proposing a long-context architecture, name the memory update operation and report results at the context scales that motivate the problem.",
+        "exception": "This framing is less suitable when the work has no explicit context-length scaling target or measurable long-context evaluation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baselines, dataset details, metric definitions, or the absolute performance underlying the reported loss.",
+      "The relationship between the 3.5M QA task and the 8K starting context is not further defined.",
+      "No training or evaluation protocol details are provided for the DAPO extension or NIAH result."
+    ]
+  }
+}

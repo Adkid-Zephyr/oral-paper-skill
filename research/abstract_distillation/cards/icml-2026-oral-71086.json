@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71086",
+    "title": "The Flexibility Trap: Rethinking the Value of Arbitrary Order in Diffusion Language Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71086"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "fc64d746600454c1715ecac7655abd1df98280849ddc20cf0a3940026b5acb75",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "be371a3b904633d4082daf72c9ec5e462d2c5e4e26c1945e2473919b7b76ff40",
+    "extracted_at": "2026-09-13T00:13:30.925192+00:00",
+    "session_id": "01a0981c-614a-72e3-b728-6fa78c3c2692",
+    "usage": {
+      "input_tokens": 12750,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 853,
+      "reasoning_output_tokens": 83
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ac1ec0ab81fc2b09c2c3cedcc012a20e102a5bb8b44a5398094b7af38a9679ea"
+    },
+    {
+      "id": "S2",
+      "sha256": "e9570aaa4257f38a65e5286ab2c9112e8245bbe3ffb6e83a6ad62576f69e85b9"
+    },
+    {
+      "id": "S3",
+      "sha256": "77537de1172341d1e5db3397327f158f9cce08356b078a98a7a658d5e26a5b44"
+    },
+    {
+      "id": "S4",
+      "sha256": "160d29768aa299fda4f6bb1032dbebbeb04b2d7afc54812239d233f99ccd634f"
+    },
+    {
+      "id": "S5",
+      "sha256": "a26da42ecf5c2c75feb087d02895d29cbd2e95be1ebb0aef8870f10c0336b2de"
+    },
+    {
+      "id": "S6",
+      "sha256": "b730a56f947768713c2e29a05f3929003f0333e6420d7b33bb1654b25bd118c6"
+    },
+    {
+      "id": "S7",
+      "sha256": "5aea930b459cfbfbe2851e59cf410a5e1955bd4f6d042050468ee53f68b3d361"
+    },
+    {
+      "id": "S8",
+      "sha256": "da87a5797c38da9bf78df8a90ccdbf812f14105b6c6b8fd9aaf8ec3d9e360d50"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71086",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper examines whether arbitrary-order token generation improves reasoning in diffusion language models (dLLMs), particularly on mathematics and coding tasks.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The authors report that arbitrary-order generation can limit reasoning potential because dLLMs may bypass high-uncertainty tokens needed for exploration, causing premature collapse of solution coverage.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "analysis",
+        "claim": "Identifies a flexibility trap in which dLLM order flexibility may undermine exploration during reasoning.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces JustGRPO, which forgoes arbitrary-order generation and applies standard GRPO while retaining parallel decoding.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that this minimalist approach can elicit effective reasoning, including 89.1% accuracy on GSM8K.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish JustGRPO as a minimalist way to train dLLMs for reasoning by abandoning arbitrary order while preserving parallel decoding.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report 89.1% accuracy on GSM8K with JustGRPO.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that JustGRPO fully retains dLLM parallel decoding ability despite forgoing arbitrary order.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors observe that dLLMs tend to avoid high-uncertainty tokens crucial for exploration, leading to premature solution-coverage collapse.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "capability and intuition",
+        "summary": "dLLMs permit arbitrary token-generation orders, seemingly expanding the solution space beyond fixed autoregressive trajectories.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "counter-observation",
+        "summary": "For general reasoning, the authors report that this flexibility may instead reduce reasoning potential by bypassing uncertain but important tokens.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "This observation motivates reconsidering RL methods that incur complexity to preserve arbitrary-order flexibility.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "proposed response and result",
+        "summary": "JustGRPO simply uses standard GRPO without arbitrary order and is reported to achieve strong reasoning performance while retaining parallel decoding.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a nominally larger generation space to a behavioral tendency to avoid high-uncertainty exploratory tokens, then aligns the training objective with the simpler fixed-order choice.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A broader action space may be counterproductive when the model learns shortcuts that reduce exploratory coverage.",
+        "application": "When proposing a flexible generation or planning mechanism, explicitly test whether it preserves exploration of uncertain intermediate decisions; if not, compare against a deliberately constrained training variant.",
+        "exception": "This move may be unsuitable when arbitrary order is itself essential to the target task or when exploration can be measured and preserved by another mechanism."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify JustGRPO’s full training and decoding procedure, baselines, evaluation settings, or comparative results beyond the GSM8K accuracy figure.",
+      "The reported mechanism and performance are attributed to the authors; the abstract does not provide evidence sufficient to assess causal validity, reproducibility, or generalization beyond the mentioned reasoning tasks."
+    ]
+  }
+}

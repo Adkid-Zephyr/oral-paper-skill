@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31831",
+    "title": "Self-Improvement in Language Models: The Sharpening Mechanism",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31831"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "582fe28927f955dc1607ef018e5ba720e9226ee30afdff5f8864224abcf9ef0f",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "3ca298c63cb3b6cd098a87e7adb30902511204de4aca80df3639b06d58f3b957",
+    "extracted_at": "2026-09-12T23:53:44.652630+00:00",
+    "session_id": "01a0980a-4aee-7803-8e61-859ab861424b",
+    "usage": {
+      "input_tokens": 12768,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 799,
+      "reasoning_output_tokens": 61
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b3c854ed41ded364bc99ff3f662cc4a50201dc2e42473f751bfe0f855b23c45f"
+    },
+    {
+      "id": "S2",
+      "sha256": "3488bf296630765120519f2477b437cec6cd0d004a0c0beafd08769b76fa8e4c"
+    },
+    {
+      "id": "S3",
+      "sha256": "7033a0e4c0ddb68926a5396ffa7551fb96fbf4af568cefbad12168c6b3949c7b"
+    },
+    {
+      "id": "S4",
+      "sha256": "dba05fbcaf377eaa45606d023c38dda5db27c86729f2ad9f6b21486954fa737a"
+    },
+    {
+      "id": "S5",
+      "sha256": "4afbd70732f8547bee9d933afcc9f1a5d2ca11831b167dbebe629026837e8122"
+    },
+    {
+      "id": "S6",
+      "sha256": "042594006fcfac5b988fe7cd37940dbcdacb1abc911ddc8ee4fafcf26350711a"
+    },
+    {
+      "id": "S7",
+      "sha256": "5a281f1cc10f9621d2645729d69e73c214abfad4489e992d6703089a9fb10a5e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31831",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain when and how language models can self-improve by evaluating and refining their own generations without external feedback.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies a conceptual gap: self-improvement cannot create information absent from the model, motivating an account of why it can nevertheless improve capabilities.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Introduces a theoretical perspective and statistical framework for self-improvement called sharpening, using the model as a verifier during post-training.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "Analyzes self-improvement algorithm families based on supervised fine-tuning and reinforcement learning from human feedback.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "comparative finding",
+        "claim": "Characterizes when SFT-based sharpening is minimax optimal and when RLHF-based sharpening can avoid its coverage requirement through online exploration.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present sharpening as a new theoretical perspective and introduce a new statistical framework for analyzing it.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that SFT-based self-improvement is minimax optimal when the initial model has sufficient coverage.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that RLHF-based self-improvement can outperform the SFT-based approach by using online exploration, thereby bypassing the need for coverage.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Self-improvement is framed as refining model generations without external feedback, despite the model's inability to create entirely new information.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "conceptual lens",
+        "summary": "The paper proposes sharpening, exploiting the premise that models may verify quality better than they generate correct responses, to concentrate probability on high-quality sequences and amortize generation cost.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "framework and analysis",
+        "summary": "It introduces a statistical framework with sample access to a pretrained base policy, then studies SFT- and RLHF-based algorithm families.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported conclusions",
+        "summary": "SFT is reported minimax optimal under sufficient coverage, while RLHF can improve over it through online exploration without that coverage requirement.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "The findings are positioned as an initial foundation for designing and evaluating self-improvement algorithms.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links each algorithmic comparison to a specific structural condition: SFT requires sufficient initial coverage, whereas RLHF can use online exploration to bypass that requirement.",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        "interpretation": "Claims become more informative when methods are paired with the conditions under which their guarantees or advantages are reported.",
+        "application": "State method comparisons together with the operative regime or assumption, such as coverage, exploration access, or another resource constraint.",
+        "exception": "This framing is unsuitable when the abstract lacks evidence or conditions that distinguish the methods."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal definition of coverage, the objective, model class, or assumptions behind the minimax result.",
+      "No quantitative results, benchmark details, or experimental setup are provided.",
+      "The abstract does not establish whether the reported theoretical comparisons hold beyond the stated framework."
+    ]
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008564",
+    "title": "Why DPO is a Misspecified Estimator and How to Fix It",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008564"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "45f13545f1f437d1c74a936e9d852a13e52de3504b77f8fc7d14db4968d155e6",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "ab82115407ac9a9201836f4d9db03dcb6de99a5cd36e9d736ce62897df567005",
+    "extracted_at": "2026-09-13T00:01:22.396311+00:00",
+    "session_id": "01a09811-4304-7f42-af7a-19649673038e",
+    "usage": {
+      "input_tokens": 12684,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 804,
+      "reasoning_output_tokens": 53
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "61ff2f1e0b6f58d1cca380e0d20c240641f93664589d4b0e0b6f0195a18eb07b"
+    },
+    {
+      "id": "S2",
+      "sha256": "fd54161c082bbe09feca1f5edd2b00cfa0d544b29e27f812354c92715a0b1c4e"
+    },
+    {
+      "id": "S3",
+      "sha256": "8c271bfd8ccfcccd8bd02f98c8d31aa55ca733eb0f80b2de6fb01b5034bddc57"
+    },
+    {
+      "id": "S4",
+      "sha256": "5714818a01da10ed4fc093e54930524e9d6127885ec48724f809c3be74bff16f"
+    },
+    {
+      "id": "S5",
+      "sha256": "19d25e7640c93e58227357417890b430fc29641a10c1ec975db008f09de34783"
+    },
+    {
+      "id": "S6",
+      "sha256": "6362e48be1d2ef454e73240c94997eb19d08a369e310ed07765f5f8c01013375"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008564",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper analyzes DPO as a statistical estimator over reward functions induced by a parametric policy class and seeks a principled way to address its limitations.",
+        "source_ids": [
+          "S2",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "It identifies misspecification when the preference-generating reward cannot be represented through the policy class, with resulting failure modes including preference-order reversal, lower policy reward, and sensitivity to the preference-data distribution.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A geometric characterization relates local two-stage RLHF behavior for a parametric class to a natural-gradient step in policy space.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "AuxDPO augments the DPO loss with auxiliary variables intended to move toward the RLHF solution and mitigate DPO misspecification.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report improved AuxDPO performance on didactic bandit settings and LLM alignment tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a fine-grained geometric characterization as the basis for proposing AuxDPO, a modified DPO objective with auxiliary variables.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that misspecified DPO can exhibit preference-order reversal, worsening policy reward, and high sensitivity to the input preference-data distribution.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report superior empirical performance for AuxDPO in didactic bandit settings and LLM alignment tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "DPO is framed as preference-based fine-tuning using supervised learning rather than two-stage RLHF.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "formalization",
+        "summary": "The paper casts DPO as estimation over rewards induced by a parametric policy class.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "failure analysis",
+        "summary": "It argues that reward-class mismatch produces several DPO failure modes and data-distribution sensitivity.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "comparison",
+        "summary": "It studies local two-stage RLHF behavior through its relation to a natural-gradient policy-space step.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed remedy",
+        "summary": "This geometry motivates AuxDPO, which adds auxiliary variables and is reported to outperform DPO in bandit and LLM-alignment settings.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a concrete estimator failure condition—unrealizable true rewards—to specific behavioral failures, then motivates the proposed method through a geometric relation to RLHF.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A useful paper structure connects assumption mismatch, observable failure modes, and a remedy derived from a principled reference point.",
+        "application": "When presenting a new alignment objective, explicitly state the representational assumption, enumerate its predicted failure modes, and derive the modification from a comparable baseline's local behavior.",
+        "exception": "This framing is less suitable when no meaningful representational mismatch or baseline geometry can be identified."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the parametric policy class, preference-data distributions, task or model details, metrics, baselines, or quantitative performance differences.",
+      "The abstract states a geometric characterization and empirical superiority but does not provide proof details or experimental conditions sufficient to assess them independently."
+    ]
+  }
+}

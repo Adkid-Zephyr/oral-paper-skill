@@ -1,7 +1,11 @@
 # Abstract-level distillation: implementation plan
 
-Status on 2026-09-12: planned. This document specifies the next research work;
-it is not a report that per-paper extraction has already been run.
+Status on 2026-09-13: completed for the eligible abstract corpus. Six official
+lists yielded 884 records, including one excluded workshop/session event;
+883 abstracts received per-paper extraction and 21-group synthesis. Source
+checks, corrections, final Astra xhigh synthesis and Skill integration are
+complete. See [the actual results](../research/abstract_distillation/RESULTS.md).
+No full-paper coverage or measured Skill effectiveness is implied.
 
 ## Purpose
 
@@ -70,5 +74,6 @@ can assess usefulness; it is not required to publish an honestly labeled prototy
 
 Use the pilot's measured input/output usage and extraction error rate to
 estimate a full run. Retain partial results and retry only failed records.
-No total API budget, model provider, or automated paid batch has been selected
-in this plan.
+The owner authorized Luna for extraction, Astra medium for checking/selection,
+and Astra xhigh for final synthesis. Calls use the existing local Codex ChatGPT
+login; no separately billed API fallback or usage-reset redemption is enabled.

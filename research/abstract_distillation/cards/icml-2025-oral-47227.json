@@ -1,0 +1,153 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47227",
+    "title": "Conformal Prediction as Bayesian Quadrature",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47227"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5f41338fac0e7b764cc603126e6681789783615a629c9b5e5e479c352da66c5c",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "5232d7577f6849c4ff094c12a426baf407b001ceebee39f86801bb2440d1329f",
+    "extracted_at": "2026-09-13T00:09:26.247522+00:00",
+    "session_id": "01a09818-acc6-7160-b694-cf3e9ab82497",
+    "usage": {
+      "input_tokens": 12585,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 659,
+      "reasoning_output_tokens": 88
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3c8b8886870987ad75976b985a4a57bf8d44d16122753ad86579ab7efb5104e6"
+    },
+    {
+      "id": "S2",
+      "sha256": "7bfe2f1fe6a6827c90ffa3ab0dd54e1efce454c332e15238cd23f24c251a8193"
+    },
+    {
+      "id": "S3",
+      "sha256": "52546bbc37d979059f04a380b60bfe5151874277d9054e4fca9b8df86b1bbbc8"
+    },
+    {
+      "id": "S4",
+      "sha256": "4438c31af5ef6631acf236714125ebb94fc15a4d8591b57fcf63013280f0308f"
+    },
+    {
+      "id": "S5",
+      "sha256": "f1d7e3b6a555a2f3f0f6d7fd3ba0af3134cd599eb543f7f0a187194a979c1ecc"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47227",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Understand and communicate how black-box predictive systems may perform after deployment, especially in high-stakes settings.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors argue that conformal prediction's frequentist basis limits applicability and can obscure shortcomings in its guarantees.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "perspective",
+        "claim": "Reframes central aspects of conformal prediction from a Bayesian perspective.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes a practical Bayesian-quadrature alternative intended to provide interpretable guarantees and a richer representation of likely test-time losses.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated distinction is a Bayesian reinterpretation of conformal prediction together with a Bayesian-quadrature alternative.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Deployment performance matters for prediction systems used in high-stakes situations.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "background",
+        "summary": "Conformal prediction is presented as distribution-free uncertainty quantification with guarantees for hidden-model losses.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The authors state that its frequentist probability basis unduly limits applicability.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reframing",
+        "summary": "The paper revisits conformal prediction through a Bayesian lens to illuminate shortcomings in frequentist guarantees.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "It introduces a practical Bayesian-quadrature alternative aimed at interpretable guarantees and richer likely-loss representations.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a limitation in the existing probabilistic framing to a proposed alternative and specifies two intended benefits: interpretability and a richer loss-range representation.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A methodological pitch becomes more informative when it ties the replacement framework to explicit shortcomings and user-facing outputs.",
+        "application": "When proposing a new uncertainty framework, state the limiting assumption, explain what perspective changes, and name the concrete form of uncertainty the method is intended to deliver.",
+        "exception": "This framing is unsuitable when the contribution is purely empirical or when the alternative does not directly address the identified assumption or output limitation."
+      }
+    ],
+    "unknowns": [
+      "The abstract reports no experiments, datasets, quantitative results, formal theorem details, or comparisons supporting the proposed guarantees or benefits.",
+      "The scope of the claimed applicability limitation and the precise meaning of the Bayesian-quadrature guarantees are unspecified."
+    ]
+  }
+}

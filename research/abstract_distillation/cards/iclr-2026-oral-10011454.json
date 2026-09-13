@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011454",
+    "title": "Veritas: Generalizable Deepfake Detection via Pattern-Aware Reasoning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011454"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e94bbf55ecc60919c0078ae315faa776e4c73f1a3757cf38ac636d7508f87248",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "c27db608c80700653a68549285c05044ed6d45d83979abe6f177fadd0b6d229e",
+    "extracted_at": "2026-09-13T00:06:02.900380+00:00",
+    "session_id": "01a09815-8f18-7013-8c50-9764858cc506",
+    "usage": {
+      "input_tokens": 12744,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 765,
+      "reasoning_output_tokens": 96
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "392761762d81e52e8a52a545a40a6daccf4dc65c2e0ccc5394b87a8feb4dee8d"
+    },
+    {
+      "id": "S2",
+      "sha256": "a5306b2a698350b0708988ab9b3bd7e29450832a0ebbab543501d2cfa1fab0d0"
+    },
+    {
+      "id": "S3",
+      "sha256": "36d46b6f5f8734a8ebfaba0b6fa904df3eb375babd48514a8cec2cdc560f04a7"
+    },
+    {
+      "id": "S4",
+      "sha256": "7ca974e2a3a1dc71424c472b4b1b98137373bff98be9eccfec6d2c84191eaf69"
+    },
+    {
+      "id": "S5",
+      "sha256": "a4317c84bf1804642d5c343e912ef65478e5ac1e790db2f6d813055aa9c5e95b"
+    },
+    {
+      "id": "S6",
+      "sha256": "eb3e1df78baa0b2e9f200036ebb48c0ae1436d978f70cdcd7a2a63efd1b0debe"
+    },
+    {
+      "id": "S7",
+      "sha256": "3ab86ffdddec3fe179f1dc35de79134361a95d1a7618e7e5b9658c97520f8db5"
+    },
+    {
+      "id": "S8",
+      "sha256": "1e895d90899af6c4a605198b460de7fae29ed5c2c7c54d8549d99460464938b9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011454",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Deepfake detectors must generalize to evolving, real-world fake content across unseen techniques, architectures, and domains.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing benchmarks diverge from industrial practice through homogeneous training sources and low-quality testing images, limiting practical detector usage.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "HydraFake, a dataset and training/evaluation protocol covering diversified techniques, in-the-wild forgeries, unseen architectures, emerging techniques, and novel domains.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Veritas, an MLLM-based detector using pattern-aware reasoning centered on planning and self-reflection to emulate forensic processes.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A two-stage pipeline for internalizing deepfake reasoning capacities into current MLLMs.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish pattern-aware reasoning from vanilla chain-of-thought by explicitly incorporating planning and self-reflection patterns, together with a two-stage training pipeline.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that prior detectors generalize well across models but perform poorly on unseen forgeries and data domains.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that Veritas achieves significant gains across OOD scenarios and produces transparent, faithful detection outputs.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "challenge",
+        "summary": "Deepfake detection is difficult because fake content evolves in real-world settings.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "benchmark_gap",
+        "summary": "Current benchmarks often use homogeneous sources and low-quality tests, unlike industrial practice.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "resource",
+        "summary": "HydraFake addresses this mismatch with diverse forgeries and evaluation spanning unseen architectures, techniques, and domains.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method_and_results",
+        "summary": "Veritas adds pattern-aware reasoning and two-stage MLLM training; the authors report improved OOD performance and transparent outputs.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links benchmark design to deployment relevance, then evaluates generalization on unseen forgeries and domains.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S7"
+          ]
+        },
+        "interpretation": "A paper can make its practical target concrete by aligning the benchmark's variation axes with the claimed generalization problem.",
+        "application": "Define evaluation splits around specific deployment-relevant shifts, such as unseen techniques and domains, and state how each tests the central claim.",
+        "exception": "This framing is less suitable when the task is intentionally restricted to a fixed data distribution or controlled laboratory setting."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative gains, baselines, or per-scenario results.",
+      "The evaluation criteria for “transparent” and “faithful” outputs are unspecified.",
+      "Details of HydraFake scale, the two training stages, and the reasoning patterns are not provided."
+    ]
+  }
+}

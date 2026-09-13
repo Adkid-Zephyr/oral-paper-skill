@@ -1,0 +1,173 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47213",
+    "title": "Retrieval-Augmented Perception: High-resolution Image Perception Meets Visual RAG",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47213"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1eccca87d2b2bcbf7debea0c0d7238c1f4a34c3598e5c0324b87f05ac7f34382",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "0453d620826a24bc353f2d7363fcfffa2d3f88efa75fb7153ddad4eed3943ed1",
+    "extracted_at": "2026-09-13T00:08:55.455819+00:00",
+    "session_id": "01a09818-31c2-78d1-8035-59e65c9ddb66",
+    "usage": {
+      "input_tokens": 12698,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 710,
+      "reasoning_output_tokens": 73
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "93dd9f2c7b97ebafadce0cc78112d2302d8e6a573f6d08a9acfdc517cbae483e"
+    },
+    {
+      "id": "S2",
+      "sha256": "3fb1365e89c8482da2fba74fbd1cf3169ed49eb4693ca3428ef79baa9ce264fa"
+    },
+    {
+      "id": "S3",
+      "sha256": "725de2ab55311b4c973bd6a0493febe17e75f13d8668c6a344a90050c80ae54f"
+    },
+    {
+      "id": "S4",
+      "sha256": "d493af11c1d55eecb2adbaecdccbbe9c8a14a9ac03995483a71c7d191d9f8387"
+    },
+    {
+      "id": "S5",
+      "sha256": "280e8ab6aeeef7098b935d1de10e39feb38ec432bb45f1726ec456d00ccc5fc5"
+    },
+    {
+      "id": "S6",
+      "sha256": "e22192780638d44bf9dacd926f23aaeb18524b33cf65ddeb0fe7afb3d6e2cd5d"
+    },
+    {
+      "id": "S7",
+      "sha256": "b72b70e0243cbe44a1d9e16f603369c9b24c818ec1aa7c0468ab265b8a322522"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47213",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve high-resolution image perception in multimodal large language models.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The paper identifies limits in heuristic methods and explores whether long-context retrieval-augmented generation can address them.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Retrieval-Augmented Perception (RAP), a training-free framework that retrieves and fuses relevant image crops while preserving spatial context through a Spatial-Awareness Layout.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Retrieved-Exploration Search (RE-Search), which dynamically selects the number of crops using model confidence and retrieval scores for different tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "study",
+        "claim": "A first study of using retrieval-augmented generation for high-resolution perception challenges.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that this is the first study exploring RAG for high-resolution perception challenges.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that RAP improved LLaVA-v1.5-13B performance by 43% on V* Bench and 19% on HR-Bench.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "challenge",
+        "summary": "High-resolution image perception is presented as a key challenge for multimodal large language models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "The paper seeks to move beyond heuristic methods by applying long-context techniques such as retrieval-augmented generation.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "RAP retrieves and fuses image crops while retaining spatial context through a Spatial-Awareness Layout.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "task_adaptation",
+        "summary": "RE-Search chooses the crop count dynamically from model confidence and retrieval scores.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "On high-resolution benchmarks, the authors report substantial gains for LLaVA-v1.5-13B.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each proposed component with a concrete operational challenge: spatial context is handled by the layout, while task variation is handled by dynamic crop selection.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This makes the method narrative explanatory rather than presenting a collection of unrelated mechanisms.",
+        "application": "When introducing a multi-part method, map each component explicitly to the failure mode or requirement it addresses.",
+        "exception": "This framing is less suitable when component roles cannot be distinguished or supported independently."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the baselines, evaluation protocols, statistical uncertainty, or whether the reported percentage improvements are relative or absolute.",
+      "The abstract does not provide details about the HR benchmarks, tasks, or computational cost of retrieval and crop fusion."
+    ]
+  }
+}

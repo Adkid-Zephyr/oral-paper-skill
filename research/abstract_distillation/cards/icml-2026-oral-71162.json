@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71162",
+    "title": "Towards Hierarchy–Uniformity Equilibrium: Recovering Semantic Depth in Hypergraph Contrastive Learning",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71162"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ed1beeffd9244d0e649af092b3c2e54c0876f7bbe18991a57f94cb7e68bcec9a",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "127f4b43cb11ee361e29ad281620dd48a1260aa20e48336e974fa51f98f8b486",
+    "extracted_at": "2026-09-13T00:16:30.026232+00:00",
+    "session_id": "01a0981f-1991-7220-81a5-2374b9354ea6",
+    "usage": {
+      "input_tokens": 12789,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 826,
+      "reasoning_output_tokens": 101
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "57306f84f2de21b168a2a5d7ab08a4e23d389ef0482d6fe0e4570ca3d7fde4a7"
+    },
+    {
+      "id": "S2",
+      "sha256": "2462aca2162e874d8727f8d8d5be887ae760bb5bd1e156d36f124b2771982a1e"
+    },
+    {
+      "id": "S3",
+      "sha256": "f65c1108fbe0dc389f22563273f4fd0c0c45fd872f99eede8cc17ee726a89369"
+    },
+    {
+      "id": "S4",
+      "sha256": "338aea9173f022e01e202cfcb3720eaab90f679631fc376348fec8254a956765"
+    },
+    {
+      "id": "S5",
+      "sha256": "e7f835d092dc62b7b7a8147536bc91b6bbac826eebaf823190a9e3cdc528d07f"
+    },
+    {
+      "id": "S6",
+      "sha256": "0bfdfdaedb49cdb8f65f462f56c283ad05ce9e7222e4da0e0fa86a343270af2b"
+    },
+    {
+      "id": "S7",
+      "sha256": "25160546d2b8c85559ef9f8eac4959cf5191eebebc496dc966e4dfaa9d4fba3c"
+    },
+    {
+      "id": "S8",
+      "sha256": "47abbae0d083ace9dace9da38139db0c6bdd4bb69cdbdeb93c6b880d34ee51c6"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71162",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Recover semantic depth in hypergraph contrastive representations while retaining instance-level discrimination.",
+        "source_ids": [
+          "S3",
+          "S7"
+        ]
+      },
+      "gap": {
+        "claim": "Existing hypergraph contrastive methods largely ignore the multi-level semantics of hyperedges, while standard objectives can indiscriminately push embeddings apart and flatten semantic structure.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces HyperDepth, which coordinates spectral and geometric signals toward a hierarchy–uniformity equilibrium.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses adaptive decoupled spectral encoding for local discrimination and global hierarchical structure, plus an energy-based prototype-tree alignment module for semantic-depth recovery.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Under a mild frequency-separation assumption, establishes orthogonality between local contrastive and global hierarchical objectives and equilibrium embeddings that preserve semantic depth while retaining instance discrimination.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper presents a framework combining adaptive spectral decoupling with energy-based hierarchical alignment to address the stated hierarchy–uniformity conflict.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that experiments across 15 hypergraph datasets and 17 supervised and self-supervised baselines, covering homophilic and heterophilic regimes, give HyperDepth the best average rank and strong performance.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "Authors report a theoretical result, conditional on a mild frequency-separation assumption, concerning orthogonal spectral components and semantic-depth-preserving equilibrium embeddings.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Hypergraph contrastive learning addresses higher-order relational data, but existing methods largely overlook multi-level hyperedge semantics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "Standard instance-discrimination objectives create a hierarchy–uniformity conflict whose geometric manifestation is semantic flattening.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "HyperDepth combines adaptively gated spectral encoding with prototype-tree energy alignment to separate local discrimination from global hierarchy recovery.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "theory_and_evidence",
+        "summary": "The authors give a conditional spectral analysis and report strong benchmark performance with the best average rank.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract names a geometric failure mode, semantic flattening, and links it to indiscriminate embedding separation under standard objectives.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A concrete failure-mode label can connect an objective-level tension to an observable representation geometry.",
+        "application": "When presenting a representation-learning problem, define the failure mode geometrically and trace it to the competing objective terms.",
+        "exception": "This framing is unsuitable when the failure geometry has not been measured or the objective-to-geometry link is only speculative."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide numerical scores, variance, dataset names, or details of the 17 baselines behind the reported best average rank.",
+      "The frequency-separation assumption and the precise meaning of semantic depth preservation are not specified.",
+      "It is unclear how the claimed geometric semantic flattening is operationalized or evaluated."
+    ]
+  }
+}

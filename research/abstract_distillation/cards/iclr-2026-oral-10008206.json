@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008206",
+    "title": "EigenBench: A Comparative Behavioral Measure of Value Alignment",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008206"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "250be38b90555cb40c0875db8e0964b997a386604f79adf6e703905f1c259f86",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "8e2421c3e19ee7e48de4023627ff0f029318684e253803f10067fd0ddce40012",
+    "extracted_at": "2026-09-13T00:00:50.374618+00:00",
+    "session_id": "01a09810-cc15-7a31-a809-6bb1cdb679a3",
+    "usage": {
+      "input_tokens": 12732,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 704,
+      "reasoning_output_tokens": 55
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "53c0a0dec020777eca549013591285108b30662695063d9f4ca0a73e4f378786"
+    },
+    {
+      "id": "S2",
+      "sha256": "023109b3bf5b87671cb526758e3e60ebe2ac07eebdbb1b115fa22dd5f80d2a73"
+    },
+    {
+      "id": "S3",
+      "sha256": "7bcf2e9f39c4a3a3b32bf14ddcdcae797ee2ae4f7371580b7220cc6150b9ff3b"
+    },
+    {
+      "id": "S4",
+      "sha256": "518eeab266a5e8d70484fa5ae0941831511de6aa8d5157a7dc758affd06015b4"
+    },
+    {
+      "id": "S5",
+      "sha256": "4d01a6564a9162659cecb386a5b07c110285343622f1eb92539927ff2c0eebf4"
+    },
+    {
+      "id": "S6",
+      "sha256": "5ef3d809c16d46cf32ecd33d79209030d14b9279585e823653a90b4e3a6623e8"
+    },
+    {
+      "id": "S7",
+      "sha256": "248699b7831b8be7bc1cf059e34b4ef548483c33787387958f161d37b897525f"
+    },
+    {
+      "id": "S8",
+      "sha256": "1cbf148b49fac1740aee13a3196c2402f155edb0c56ceed146da7c1b20d78ff3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008206",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "AI value alignment is an unsolved problem requiring quantitative assessment.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing metrics lack quantitative measures for comparatively assessing language-model alignment with subjective value systems.",
+        "source_ids": [
+          "S2",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "EigenBench is a black-box method that scores an ensemble of models against a specified constitution using scenario-based peer judgments aggregated with EigenTrust.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "evaluation framework",
+        "claim": "The method is designed for subjective values where ground-truth labels may not exist because reasonable judges can disagree.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors propose comparative value benchmarking that produces alignment scores without ground-truth labels, using weighted consensus across model judgments.",
+      "source_ids": [
+        "S2",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that EigenBench’s judgments align closely with human evaluators’ judgments on the same model ensemble.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that EigenBench recovers model rankings on GPQA without access to objective labels.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Value alignment is framed as an unsolved problem, with a lack of quantitative metrics.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "EigenBench scores models relative to a constitution from scenario judgments made by other ensemble members and aggregated with EigenTrust.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "design rationale",
+        "summary": "The framework omits ground-truth labels because subjective value judgments may reasonably differ.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported validation",
+        "summary": "Human-judgment agreement and recovery of GPQA rankings are presented as evidence of viability without objective labels.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "resource",
+        "summary": "The authors provide a code repository.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly links the absence of ground truth to a consensus-based evaluation design, then reports comparison with human judgments.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "When labels are inherently contestable, making the evaluator aggregation rule explicit and testing its agreement with a relevant human reference can clarify what the metric measures.",
+        "application": "For a subjective evaluation metric, define the judging population, aggregation procedure, and human-reference comparison alongside the score definition.",
+        "exception": "This move is unsuitable when the task has authoritative objective labels or when human judgments are not an appropriate reference."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the constitution, scenario dataset, ensemble size, scoring scale, or quantitative closeness to human judgments.",
+      "Details of the GPQA ranking-recovery setup and comparison baselines are not given.",
+      "The abstract does not establish independent validity, reproducibility, or priority of the proposed method."
+    ]
+  }
+}

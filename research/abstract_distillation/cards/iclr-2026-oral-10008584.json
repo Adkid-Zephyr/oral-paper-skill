@@ -1,0 +1,173 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008584",
+    "title": "EditVerse: Unifying Image and Video Editing and Generation with In-Context Learning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008584"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9ea2bfc86dc969382ff1cf19105145e6dc35f19f234ba79bbd2448d9b6c04240",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "e125bd8add7860ede476d09f1a10cdfba84ced6f193b3ad722f809935e8f72f4",
+    "extracted_at": "2026-09-13T00:01:28.060752+00:00",
+    "session_id": "01a09811-5d35-7822-88f7-b5e6d17ca13b",
+    "usage": {
+      "input_tokens": 12714,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 722,
+      "reasoning_output_tokens": 72
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cf40eb068fd6fd2b2f503a2a0594bbca642ad22ac27b5ddb35a867318eed421d"
+    },
+    {
+      "id": "S2",
+      "sha256": "b966348853bcb42f66c17c56195e7760b95d732aff23f3661d61026e58d3f03b"
+    },
+    {
+      "id": "S3",
+      "sha256": "d172e4717e97e50d7790cf31b79906b02b7a22386c8618f8fb7f8834eecd68eb"
+    },
+    {
+      "id": "S4",
+      "sha256": "3d4b0188b67605894a9196e532c37386e4b7db636a1838acf5fabd98809ff837"
+    },
+    {
+      "id": "S5",
+      "sha256": "14a8d4144c2666feb8c5eb5bc0e2ad5b155af9d0d6b2eaf2ddb62c5571b4ea45"
+    },
+    {
+      "id": "S6",
+      "sha256": "ba799c3345333819c9670c578b393945d7b1b20b0c30d15afe0bdbb237b14905"
+    },
+    {
+      "id": "S7",
+      "sha256": "b4180cdbffcaed1fd3137239fe6d753d2265235b4c90d3ba3e7dd75701acc3a7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008584",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Unify image and video generation and editing in one model.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Video generation and editing remain fragmented because of architectural limitations and data scarcity.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "EditVerse represents text, images, and videos as one token sequence to support in-context learning, cross-modal transfer, and variable-resolution or variable-duration inputs and outputs.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "A scalable pipeline curates 232K video-editing samples and combines them with large image and video datasets for joint training.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "benchmark",
+        "claim": "EditVerseBench is presented as a benchmark for instruction-based video editing across diverse tasks and resolutions.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe EditVerseBench as the first benchmark for instruction-based video editing.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive experiments and user studies show state-of-the-art performance, surpassing existing open-source and commercial models.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report emergent editing and generation abilities across modalities.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Image generation and editing have moved toward unified frameworks, whereas video generation and editing remain fragmented.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper introduces EditVerse, unifying image and video generation and editing through shared multimodal token sequences and self-attention.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "data_and_evaluation_resource",
+        "summary": "It addresses video-editing data scarcity with a 232K-sample pipeline and introduces EditVerseBench for instruction-based video editing.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The authors report strong experimental and user-study results, including comparisons with open-source and commercial models and cross-modal emergent abilities.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a unified token representation to cross-modal transfer and flexible input/output handling, then pairs the framework with a targeted data pipeline for video editing.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A representation change may be more persuasive when its claimed capabilities are matched with data construction that directly targets the main bottleneck.",
+        "application": "For a multimodal paper, connect each architectural claim to a concrete training-data strategy addressing the modality or task limitation.",
+        "exception": "This framing is unsuitable when the proposed representation and data pipeline are not independently separable or when the bottleneck is not data-related."
+      }
+    ],
+    "unknowns": [
+      "No quantitative metrics, dataset splits, baselines, or user-study protocol are provided in the abstract.",
+      "The abstract does not specify which editing and generation abilities are emergent or how arbitrary resolutions and durations are operationalized."
+    ]
+  }
+}

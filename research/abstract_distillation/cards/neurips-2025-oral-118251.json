@@ -1,0 +1,218 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-118251",
+    "title": "Pan-LUT: Efficient Pan-sharpening via Learnable Look-Up Tables",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/118251"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "cbfd372333ca9cfb68de14e4ae1dff06a322d31c260056637ae04607df2f5b8e",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "5b69c27b61cb6e97654fddd044697cabd278de2fce210de4d0c492d14bb753ce",
+    "extracted_at": "2026-09-13T00:22:27.139053+00:00",
+    "session_id": "01a09824-8a36-7ac3-905a-2253193818f9",
+    "usage": {
+      "input_tokens": 12865,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 827,
+      "reasoning_output_tokens": 79
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a64716569700d26d3f2c93aafa72082f469e0b9e979e740ceee2f2afe0bbaaf9"
+    },
+    {
+      "id": "S2",
+      "sha256": "31b13eeab8bc960b0b7a976e99d88cb45ecd02401aee95170cd0e7fae607aaf9"
+    },
+    {
+      "id": "S3",
+      "sha256": "de70b968567fad441109e50e6fb3cccc77f63afb8121c2bd6a199a14d74c7e0c"
+    },
+    {
+      "id": "S4",
+      "sha256": "705d79fb3513a913fa8dec623680f71d1355ef208362a480eea77785a5cc8d8e"
+    },
+    {
+      "id": "S5",
+      "sha256": "6decfe63d0ed0b896a10be6266eef1b72d6ed5622d84a78be9214d6b4c10a1a0"
+    },
+    {
+      "id": "S6",
+      "sha256": "2cb7b36b89e8eef05f0a715d5dca2f138dedc3d906070a7482798d341038a263"
+    },
+    {
+      "id": "S7",
+      "sha256": "5b2893e4e1d9587af56b24d19e3fbf5ba26eb773f98ecfbd45802912e82d2df1"
+    },
+    {
+      "id": "S8",
+      "sha256": "9954bd11c80c341c69735e77514741735548820b47c2e08046c3392a8db51cde"
+    },
+    {
+      "id": "S9",
+      "sha256": "ba4030a81ae803cb1ef9e84133b18335a78bbdccfef7c4b6cd2822df03189818"
+    },
+    {
+      "id": "S10",
+      "sha256": "b8dc5115e3b023589ae0c7d3ce43de594f5d2e95839afd5eab1862bc4ca216d5"
+    },
+    {
+      "id": "S11",
+      "sha256": "2290e15b65022345fa226dd2bd11e4df1c7326c84bc23cab5840f81a7edfc16d"
+    },
+    {
+      "id": "S12",
+      "sha256": "06ce9d1bfdb4c7ca0428f4dda4f0005749f0bb0f17edb944aa5245af82bfb5e4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-118251",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable efficient pan-sharpening of large remote-sensing images while balancing performance and computational cost.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing deep-learning pan-sharpening methods impose substantial inference overhead, limiting use in real-world settings without dedicated accelerators.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Pan-LUT, a learnable LUT framework with PAN-guided spectral mapping, spatial-detail modeling, and adaptive output aggregation.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "A lightweight model reported to contain fewer than 700K parameters and support very large-image processing.",
+        "source_ids": [
+          "S5",
+          "S9"
+        ]
+      },
+      {
+        "type": "extension",
+        "claim": "Extension of the method to general image-fusion tasks.",
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present Pan-LUT as a novel learnable LUT framework for efficient pan-sharpening.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report processing 15K×15K remote-sensing images on a 24GB GPU.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report processing a 9K×9K image in under 1 ms on one RTX 2080 Ti GPU, with significantly faster performance than other methods.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that Pan-LUT surpasses SOTA methods on full-resolution scenes under real-world conditions.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Deep-learning pan-sharpening improves on traditional methods but carries high inference cost, especially for large images and hardware-constrained deployment.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "The authors propose Pan-LUT to balance image-processing performance and computational efficiency.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "design",
+        "summary": "PGLUT handles channel-wise spectral mapping, SDLUT captures fine spatial details, and AOLUT adaptively aggregates channel information.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The authors report lightweight large-image processing, faster runtime than other methods, and higher performance than SOTA methods in stated full-resolution real-world scenes.",
+        "source_ids": [
+          "S5",
+          "S9",
+          "S10",
+          "S11"
+        ]
+      },
+      {
+        "role": "scope_extension",
+        "summary": "The method is also extended to general image-fusion tasks.",
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract ties each named LUT component to a distinct image-fusion function: spectral mapping, spatial-detail capture, or output aggregation.",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "Mapping modules to explicit failure-relevant functions makes the method's design rationale easier to evaluate.",
+        "application": "For a multi-stage vision method, state each component's targeted signal or bottleneck alongside its role.",
+        "exception": "This framing is less useful when modules are intentionally generic or their roles cannot be separated."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, quantitative quality metrics, baselines, or the exact hardware and measurement protocol for the comparisons.",
+      "The scope and evidence for the general image-fusion extension are not described.",
+      "The reported runtime and image-size claims do not establish reproducibility or independently verified effectiveness."
+    ]
+  }
+}

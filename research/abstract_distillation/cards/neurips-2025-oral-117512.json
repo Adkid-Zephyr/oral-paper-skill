@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-117512",
+    "title": "Agnostic Active Learning Is Always Better Than Passive Learning",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/117512"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0178b752b8f5254cf0732c5d0504f2df590f375482101aa87fdf8d67f5204a58",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "69996be383cebdc4c5959b1ec092ae9430e2234356f379ab5205ec7f6cde254d",
+    "extracted_at": "2026-09-13T00:21:57.294437+00:00",
+    "session_id": "01a09824-1fe8-7601-8487-194050ef4b08",
+    "usage": {
+      "input_tokens": 12719,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 788,
+      "reasoning_output_tokens": 64
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ab16eb48ce7e48d7052829c003fe4ae4cc288deb74f757845bf200cc8ba9db46"
+    },
+    {
+      "id": "S2",
+      "sha256": "bd2371cac1f60630f7bd9220e0993e8abcdf27ef8fdc09b7523d339f094f7348"
+    },
+    {
+      "id": "S3",
+      "sha256": "8d1cd7b5bf794f4ac52ad7317de0aa489a637a577a402a6a760e121c301bca09"
+    },
+    {
+      "id": "S4",
+      "sha256": "909d050500f6bb7b8ae13f04c82e0e9074471001aa1713a924e645df291b561c"
+    },
+    {
+      "id": "S5",
+      "sha256": "d817f7d4b6d7cfa8016a12608160faa8158a605ee273e40eeea87b1709557c88"
+    },
+    {
+      "id": "S6",
+      "sha256": "e1f043733cf0eb14c2c2d7b5b74f2f2c1ad35da43d61e4a453e7e49f8eda668c"
+    },
+    {
+      "id": "S7",
+      "sha256": "b7514c1cb2620d7ec05c86a60c97fc32a8770a696599c56e89c50f96318193e4"
+    },
+    {
+      "id": "S8",
+      "sha256": "93220a0ada1e2e02b9a9bdd73791dcd4bd5bec15539df0c955d9b16d70d638ff"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-117512",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize the optimal query complexity of agnostic active learning in the non-realizable case and determine whether it can always improve on passive learning.",
+        "source_ids": [
+          "S1",
+          "S7"
+        ]
+      },
+      "gap": {
+        "claim": "Prior general analyses retained disagreement-related or similar complexity factors, yielding improvements only in restricted cases; universal benefits were previously unknown.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Provides what the authors describe as the first sharp characterization of optimal first-order query complexity for agnostic active learning.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes a general active-learning algorithm that achieves the characterized query complexity.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theoretical implication",
+        "claim": "Removes additional complexity factors from the leading term, implying benefits for every concept class in the non-realizable setting.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish the work as the first sharp characterization and as making universal active-learning improvement possible, which they state was not previously known.",
+      "source_ids": [
+        "S2",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the optimal query complexity has a leading term always strictly smaller than passive supervised-learning sample complexity, by a factor proportional to the best-in-class error rate.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that their characterization removes the disagreement coefficient and related complexity factors from the leading term.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "open question",
+        "summary": "Frames universal improvement of agnostic active learning over passive learning as a long-standing theoretical question.",
+        "source_ids": [
+          "S1",
+          "S7"
+        ]
+      },
+      {
+        "role": "prior limitation",
+        "summary": "Contrasts the result with earlier general analyses whose leading terms included disagreement-related factors and helped only in restricted cases.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "main result",
+        "summary": "Introduces a sharp optimal query-complexity characterization and an algorithm attaining it.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "States that the leading term is always strictly smaller than passive sample complexity and that every concept class benefits in the non-realizable case.",
+        "source_ids": [
+          "S3",
+          "S6"
+        ]
+      },
+      {
+        "role": "resolution",
+        "summary": "Characterizes the work as settling the driving question of the preceding research program.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a quantitative comparison with the structural change responsible for it: a leading-term improvement and removal of disagreement-related factors.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This alignment makes a broad theoretical claim easier to assess conceptually by linking the headline advantage to a specific complexity-term distinction.",
+        "application": "When presenting a theoretical improvement, state both the quantitative comparison and which term or assumption differs from prior general bounds.",
+        "exception": "This framing is less suitable when the result has no meaningful baseline or term-level decomposition."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal hypotheses, query and sample-complexity definitions, algorithm details, or theorem statements.",
+      "The reported factor proportional to best-in-class error rate is not quantified more precisely, and no proof or experimental details are supplied.",
+      "The abstract does not identify the exact scope of concept classes or parameter regimes covered by the universal implication."
+    ]
+  }
+}

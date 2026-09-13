@@ -1,0 +1,186 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31832",
+    "title": "Do I Know This Entity? Knowledge Awareness and Hallucinations in Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31832"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2e3b939315a6f2c505b79759108d4d9edc059012f2d6c8bda610bb4784364a8e",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "c30968fa8216c3ec4f94c8048ed39e5e9818ae1a6ccc6b78131d3b222d019e1d",
+    "extracted_at": "2026-09-12T23:53:45.929406+00:00",
+    "session_id": "01a0980a-4c5e-7ae1-9be3-fb0ca475e792",
+    "usage": {
+      "input_tokens": 12724,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 817,
+      "reasoning_output_tokens": 74
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ebd27f1e414aa988affaac160155e5929aabfcb3bc955992f7ae780b3eb8aea0"
+    },
+    {
+      "id": "S2",
+      "sha256": "98f15e689386714d52a2ec3d5ab919d027590fb27ce3a2c67f92cc180532557d"
+    },
+    {
+      "id": "S3",
+      "sha256": "7243676b4aca7f1c3a47d2795d1416ba4613a9f02dfaa86723b7579638cb4c8d"
+    },
+    {
+      "id": "S4",
+      "sha256": "3cc2a26b87e9f844d22c76582daceb82a376a45fb2bd1ef898a9c820221bfbe7"
+    },
+    {
+      "id": "S5",
+      "sha256": "38b6133de015dcf507df256108a6391994fc4d98695fa4f132a34ad5442d4284"
+    },
+    {
+      "id": "S6",
+      "sha256": "64c4be8dbbf5f378068539e0b81e025f0e939c6415d2df0976f9efbe63ef1a76"
+    },
+    {
+      "id": "S7",
+      "sha256": "a2ae6c706271be42616936ec2f4d5f7bf2ad2e78b9c97fa3c8ca48c038350a8e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31832",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper investigates why language models hallucinate and when they recognize entities as ones they can recall facts about.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The mechanisms governing whether models hallucinate are described as poorly understood, limiting efforts to address hallucination.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "interpretability finding",
+        "claim": "Using sparse autoencoders, the authors identify representation-space directions associated with recognizing whether the model knows an entity.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "mechanistic account",
+        "claim": "The authors report that these directions affect entity-related behavior and may operate by disrupting downstream attention that moves entity attributes to the final token.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      },
+      {
+        "type": "cross-model finding",
+        "claim": "The authors show that directions learned in the base model affect chat-model refusal behavior, suggesting chat fine-tuning repurposed an existing mechanism.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present entity recognition as a key mechanism underlying hallucination and frame it as evidence of model self-knowledge about its capabilities.",
+      "source_ids": [
+        "S2",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that sparse autoencoders uncover meaningful directions that detect whether the model recognizes entities, including athletes or movies it does not know.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that steering these directions can make the model refuse questions about known entities or hallucinate attributes of unknown entities when it would otherwise refuse.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report a causal effect of base-model directions on chat-model refusal behavior and an associated disruption of downstream attention heads.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Hallucination mechanisms and their relationship to model behavior are poorly understood.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "discovery",
+        "summary": "Sparse-autoencoder analysis identifies directions tracking whether the model recognizes an entity and interprets this as capability-related self-knowledge.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "causal test",
+        "summary": "Steering the directions changes refusal and hallucination behavior in the reported cases.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "transfer and mechanism",
+        "summary": "Base-model directions influence chat-model refusal behavior, while further analysis implicates disruption of downstream attribute-moving attention.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects an interpretable representation direction to behavioral steering effects and then proposes a downstream attention mechanism.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A compact claim can become more informative when representation, intervention, and a tentative mechanism are linked explicitly.",
+        "application": "For a mechanistic-interpretability paper, organize the abstract as: identified feature, targeted intervention, observed behavioral change, and candidate circuit-level explanation.",
+        "exception": "This structure is unsuitable when the work has only descriptive representations or lacks an intervention and mechanistic analysis."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify model sizes, datasets, steering procedures, effect magnitudes, or refusal/hallucination evaluation criteria.",
+      "The reported causal and mechanistic claims are not independently verified here; the abstract does not provide quantitative evidence or detailed controls.",
+      "The scope and generality of the entity-recognition directions across models and entity types are unspecified."
+    ]
+  }
+}

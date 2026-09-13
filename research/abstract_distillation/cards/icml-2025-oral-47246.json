@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47246",
+    "title": "Statistical Query Hardness of Multiclass Linear Classification with Random Classification Noise",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47246"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7887bca648b6799259496457caace5fa794c339ee5799bba961c1f681aad80f5",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "4cef425eea735d5ef85047440e5cead25bcace3ceec22084d29d15c819668155",
+    "extracted_at": "2026-09-13T00:10:13.930335+00:00",
+    "session_id": "01a09819-6a71-7420-908c-1de17c40a291",
+    "usage": {
+      "input_tokens": 12816,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 718,
+      "reasoning_output_tokens": 74
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7711635e4f3a6f5337cb62d6f4506fd451ed99dcc8fe0e27f98b15093332241f"
+    },
+    {
+      "id": "S2",
+      "sha256": "7edfd905e17b11c1088f78545fc5a12694fdfe1a3ade6b0480e2f8485f036407"
+    },
+    {
+      "id": "S3",
+      "sha256": "942db0f58d890e96d13b8fa06495edaaf33c3f7c32ef75984fcd1f9813b7c590"
+    },
+    {
+      "id": "S4",
+      "sha256": "aa56ad70a5646695b48ab464ad6a7debbc940c62ae466d1351add0bb19ec0a34"
+    },
+    {
+      "id": "S5",
+      "sha256": "6428c880d83792f29c893a9325740031926a7df648d1db2c52edc738908daf49"
+    },
+    {
+      "id": "S6",
+      "sha256": "43ec5822d9d85769938b5feceae8e111fb073ddb4cfa4a96cb195f452f7e530d"
+    },
+    {
+      "id": "S7",
+      "sha256": "69757cb3257cb65b9187c1cfbbbf83995f4b4ea38b76a6311b562998d777275e"
+    },
+    {
+      "id": "S8",
+      "sha256": "d6221e00c65b4646b5233377b257b47cdd4c27a5a34b906e0469de8b9e5c4854"
+    },
+    {
+      "id": "S9",
+      "sha256": "57cb850594bd96352d9f532be2380799f945443829629bd84bbc22014ea2db62"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47246",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Study multiclass linear classification under distribution-free PAC learning with known random classification noise, seeking a hypothesis with small 0-1 error.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Although the two-label case has polynomial-time algorithms achieving optimal error, little is known about complexity for three labels.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Proves super-polynomial statistical query lower bounds for multiclass linear classification with random classification noise.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Establishes lower bounds under distinct label-count and noise-separation regimes, including weaker learning objectives.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that the complexity changes drastically at three or more labels and present corresponding super-polynomial SQ lower bounds.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, with three labels and constant separation, any SQ algorithm achieving optimal error has super-polynomial complexity.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that, for more labels and smaller separation, achieving any constant-factor approximation to optimal loss—or even beating the trivial hypothesis—has a super-polynomial SQ lower bound.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Defines multiclass linear classification in the distribution-free PAC model with random classification noise generated through a known noise matrix.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "objective",
+        "summary": "Frames learning as computing a hypothesis with small 0-1 error.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "context_and_gap",
+        "summary": "Contrasts the known two-label result with limited understanding of the three-label case.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "main_result",
+        "summary": "Reports super-polynomial SQ lower bounds for optimal-error learning with three labels, and for weaker goals with more labels and smaller separation.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract states lower bounds separately by number of labels, noise separation, and target guarantee, including the weaker benchmark of beating the trivial hypothesis.",
+          "source_ids": [
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "Complexity claims become more informative when their parameter regime and success criterion are stated together.",
+        "application": "When presenting a hardness result, explicitly tabulate how task size, noise separation, and approximation target affect the claim.",
+        "exception": "This framing is less useful when the result is uniform across parameters or the abstract lacks meaningful regime distinctions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact SQ complexity lower-bound exponents, dimension dependence, or formal assumptions beyond the stated regimes.",
+      "It does not identify the trivial hypothesis or quantify the optimal loss and separation thresholds."
+    ]
+  }
+}

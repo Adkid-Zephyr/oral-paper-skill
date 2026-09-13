@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31867",
+    "title": "Learning to Discover Regulatory Elements for Gene Expression Prediction",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31867"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e42e676fc65fe5b347d07038f704f4e3e7b11c9865729cff50692f00d6de7e2b",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "aa5a4e181bb9e7d8b5f414ec11d787a1e725861dc2ac65820dc01895b048b07b",
+    "extracted_at": "2026-09-12T23:55:04.852428+00:00",
+    "session_id": "01a0980b-83d8-7f50-9cb6-ae4ee77cc895",
+    "usage": {
+      "input_tokens": 12670,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 706,
+      "reasoning_output_tokens": 106
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "67366282c6589408eece408644abcf81c7b3d801630a89d00270772c61990b67"
+    },
+    {
+      "id": "S2",
+      "sha256": "90bf4f1a7761487e61f8fe3d9b6d89b9f1111fbe37e82e3c8421827c867cd42e"
+    },
+    {
+      "id": "S3",
+      "sha256": "6a305b0613d08694b3e0d2984e2838b4cab65366eac370030c07a9340ccc8cbc"
+    },
+    {
+      "id": "S4",
+      "sha256": "1922785429f84a59bc5800d920cb9f19c1eb31542c404527cd376ce9e06428aa"
+    },
+    {
+      "id": "S5",
+      "sha256": "c44eb182aba6c7c59e668fdfd70b7615342e7e5561a4cd2e0877a91b07e90a4b"
+    },
+    {
+      "id": "S6",
+      "sha256": "4abc2e228abb908f86b38527121877eb9016c9cc5e1a1362766c296cf73ef49c"
+    },
+    {
+      "id": "S7",
+      "sha256": "9302fb9036a61fd7300337e8f3f5af32f4421133bacd7afb3a004bd9d5d5d8c1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31867",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Predict gene expression from DNA sequences while identifying the regulatory elements controlling expression.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Seq2Exp explicitly discovers and extracts regulatory elements for target gene expression prediction.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The approach decomposes epigenomic signals and DNA sequences conditioned on causal active regulatory elements, then uses a Beta-distribution information bottleneck to filter non-causal components.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The source code is released in the AIRS library.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Seq2Exp as a sequence-to-expression network explicitly designed to discover and extract regulatory elements.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Seq2Exp outperforms existing baselines on gene expression prediction tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that Seq2Exp discovers influential regions compared with MACS3, a commonly used statistical peak-detection method.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The paper frames gene expression prediction from DNA sequences and identifies regulatory-element discovery as a key challenge.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Seq2Exp is introduced to discover regulatory elements, model relationships among epigenomic signals, DNA sequences, and associated elements, and combine effects through a Beta information bottleneck.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Experiments compare Seq2Exp with prediction baselines and MACS3 for influential-region discovery.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "release",
+        "summary": "Implementation is released through the AIRS library.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the prediction task to explicit regulatory-element discovery and describes filtering non-causal components with an information bottleneck.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "A task-specific intermediate representation can align interpretability with the predictive objective.",
+        "application": "For a structured prediction problem, define and evaluate an intermediate component tied to the target, then state how the model suppresses irrelevant components.",
+        "exception": "This move may be unsuitable when no defensible intermediate structure exists or when filtering assumptions cannot be operationalized."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, metrics, improvement magnitudes, statistical significance, or experimental conditions.",
+      "It does not provide details sufficient to assess how causal relationships or influential-region discoveries were validated."
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71038",
+    "title": "Protein Fold Classification at Scale: Benchmarking and Pretraining",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71038"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "f61c91519e71062e699749acd14b8bda3dc410f40cb20cae2f4cd960dc817b32",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "53cf4435cf6865b3fad59321845f5c527f7f3b22ebb099d6531945bfc757c80d",
+    "extracted_at": "2026-09-12T23:40:21.632962+00:00",
+    "session_id": "01a097fe-0a55-7ba1-bdfb-37e39ab10022",
+    "usage": {
+      "input_tokens": 12740,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 841,
+      "reasoning_output_tokens": 64
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "563c91a6f2a7f03bf87fc3d77956803255635cfb07ef9eccb56e06a975a5c670"
+    },
+    {
+      "id": "S2",
+      "sha256": "5078656144cc79b82f60d51fec5ef6825f23cd7eddf4eb9106acca0cbc131831"
+    },
+    {
+      "id": "S3",
+      "sha256": "3eb08c4c83e74b8ffcd8d06c96a1a3363c246a96f188fcd63cd10f6f3d0b61fe"
+    },
+    {
+      "id": "S4",
+      "sha256": "9532467fc27b09dfaa3ec686734f4988bd16a0302f6aecd597eaee87d3809b03"
+    },
+    {
+      "id": "S5",
+      "sha256": "c096c00979a28633d28a01d998c56b12432571eff5eae5c5a58b45e93ffbc1d2"
+    },
+    {
+      "id": "S6",
+      "sha256": "24a057b2a4bddf20a5a0dc8260453b405841bd4ef8f3eeef472e8d76602493cf"
+    },
+    {
+      "id": "S7",
+      "sha256": "5dfbde5ff3361a17e070d1977eb36f224d84436ae743d29ee143eb554812ad3f"
+    },
+    {
+      "id": "S8",
+      "sha256": "3656e8a9bbf2e67827ea765ac82e105309064aa7b94789ebac0b250c9f8e49c7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71038",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Protein topology/fold classification is needed to help decipher biological function.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Progress is limited by a lack of large-scale duplicate-avoiding benchmarks and by protein-classification models that do not scale well.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces TEDBench, a large-scale non-redundant protein fold-classification benchmark built from TED and Foldseek-clustered AlphaFold structures.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes Masked Invariant Autoencoders (MiAE), a self-supervised structure-representation framework combining up to 90% masking, an SE(3)-invariant encoder, and a lightweight coordinate-reconstructing decoder.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "transfer evaluation",
+        "claim": "Benchmarks transfer beyond AlphaFold structures using a curated dataset of experimental CATH v4.4 structures.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present TEDBench and MiAE as a benchmark-and-pretraining recipe for scalable protein fold classification.",
+      "source_ids": [
+        "S2",
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that existing protein representation-learning methods on TEDBench either require very large models or fail to achieve strong performance.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that MiAE scales well and outperforms supervised counterparts and state-of-the-art baselines on TEDBench.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report an additional transfer benchmark using experimental structures from CATH v4.4, but the abstract gives no result for it.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Protein topology classification matters for biological-function analysis, but benchmark scale, duplicate control, and model scaling are limiting factors.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "resource",
+        "summary": "The paper introduces TEDBench as a large-scale, non-redundant benchmark derived from TED and Foldseek-clustered AlphaFold structures.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It proposes MiAE, using extreme masking, SE(3)-invariant encoding, and lightweight reconstruction of backbone coordinates.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported result and transfer check",
+        "summary": "The authors report strong TEDBench performance against supervised and state-of-the-art baselines, then test transfer on experimental CATH v4.4 structures.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a newly defined benchmark with a pretraining method and then reports comparisons on that benchmark before adding an out-of-distribution structure-source check.",
+          "source_ids": [
+            "S2",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This creates a compact claim-evidence chain connecting evaluation design, method choice, and transfer scope.",
+        "application": "When introducing a representation-learning method, pair a clearly specified benchmark with direct baseline comparisons and a second evaluation source that tests whether gains depend on the original data pipeline.",
+        "exception": "This framing is less suitable when no meaningful independent data source or task-specific benchmark can be constructed."
+      }
+    ],
+    "unknowns": [
+      "TEDBench size, split protocol, duplicate criteria, and evaluation metrics are unspecified.",
+      "The abstract does not provide quantitative results, model sizes, computational costs, or the outcome of the CATH v4.4 transfer benchmark.",
+      "The abstract does not establish independently verified correctness, effectiveness, reproducibility, or priority of the stated contributions."
+    ]
+  }
+}

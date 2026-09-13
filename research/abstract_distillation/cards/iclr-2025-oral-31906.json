@@ -1,0 +1,217 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31906",
+    "title": "The Hidden Cost of Waiting for Accurate Predictions",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31906"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4a7d24efa14a48c0a6caeec868098bc6d43dc3dd5d728389538a8d1a03e1b77e",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "1eb0593692e1b692f19741840c1512c096d69afa27198f35d4a277d2d7034707",
+    "extracted_at": "2026-09-12T23:56:43.308766+00:00",
+    "session_id": "01a0980c-fd8a-72f3-b2bf-6322d31d8386",
+    "usage": {
+      "input_tokens": 12722,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 860,
+      "reasoning_output_tokens": 79
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "90b444d7564b613a5024f2023c354b34769edd8f28a8024672199227ad687e4a"
+    },
+    {
+      "id": "S2",
+      "sha256": "b6e2a9ec5a68fae2924b12e5e0047befbc75a9b57fa3cb789003fb6f9374c6b3"
+    },
+    {
+      "id": "S3",
+      "sha256": "df53322498eeadbdc38b8c68e1cd03b4826946f1aca3c1fe5db16bd39f7a6b2e"
+    },
+    {
+      "id": "S4",
+      "sha256": "fcdf3526f9161353cf2635805c6ac210067d1be0e13cc5d9b04b3c37e704cdff"
+    },
+    {
+      "id": "S5",
+      "sha256": "7d2d4f0c7429d266ba6b2c78c01bb370e1757157e21b83fca6bbd1ac708cda44"
+    },
+    {
+      "id": "S6",
+      "sha256": "1dabdcf976c6bccd5d0aa001e6589d721086f29220f0ddf0ccf3655a45eca446"
+    },
+    {
+      "id": "S7",
+      "sha256": "7c2863df00ba380e74a1b4fcf14817ffdd424c7b2458217dcde98f1b1e67a45b"
+    },
+    {
+      "id": "S8",
+      "sha256": "05f046f9581d074cd51473f8a2301686522aead8070c7948f8f913264b4e4e55"
+    },
+    {
+      "id": "S9",
+      "sha256": "d8cfd9bdffd898f2a04f99e64971dbfb5245b882dda3d3942edc36665a596c78"
+    },
+    {
+      "id": "S10",
+      "sha256": "b8423533aabbbd02b1e4d2795a7b60210487e400a1c6bd63db1bcfc11b07f77a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31906",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies when a planner should intervene using earlier, noisier predictions versus waiting for more observations and potentially more precise allocations.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "The timing consequences of prediction-driven allocation, including how waiting affects rankings and welfare, are described as overlooked.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "model",
+        "claim": "Introduces a simple mathematical model in which observations improve individual predictions over time, and analyzes induced rankings and optimal resource allocation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "theoretical finding",
+        "claim": "Reports that prediction accuracy can improve while average ranking loss worsens over time.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "explanatory finding",
+        "claim": "Identifies inequality as a factor driving this counter-intuitive phenomenon and frames its implications for allocation timing.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a nuanced perspective that challenges the conventional preference for waiting for more accurate predictions to obtain efficient allocations.",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that individual prediction accuracy improves over time, yet average ranking loss can worsen.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that this worsening ranking loss can reduce the planner’s ability to improve social welfare.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report inequality as a driving factor behind the phenomenon.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Prediction systems increasingly inform societal resource allocation by identifying people for targeting.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "conventional assumption",
+        "summary": "Policymakers may expect additional observations to improve accuracy and allocation efficiency.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "research question",
+        "summary": "The paper foregrounds the timing trade-off between acting early with noisy predictions and waiting for precision.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "A mathematical model examines evolving predictions, their rankings, and optimal allocation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "Accuracy may rise while ranking loss worsens, potentially reducing welfare; inequality is identified as a driver, challenging a wait-for-accuracy norm.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates individual prediction accuracy from average ranking loss and reports that they can move in opposite directions over time.",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        "interpretation": "A single accuracy metric may not represent the decision-relevant quality of rankings used for allocation.",
+        "application": "When presenting a prediction-for-allocation study, report both predictive accuracy and the ranking or selection loss that directly governs decisions.",
+        "exception": "This is less applicable when the downstream decision does not depend on ranking or selection."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract connects timing, welfare, and inequality rather than treating accuracy as the sole objective.",
+          "source_ids": [
+            "S4",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "Allocation timing may require subgroup-sensitive welfare analysis, especially when inequality shapes the outcome.",
+        "application": "Compare early and delayed intervention while stratifying decision-relevant losses or welfare effects by inequality-related groups or conditions.",
+        "exception": "Avoid subgroup analyses that are unsupported by the application’s available variables or could create harmful classifications."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the mathematical model, inequality conditions, ranking-loss definition, or intervention timing assumptions.",
+      "No quantitative magnitudes, baselines, or empirical validation are reported in the supplied units."
+    ]
+  }
+}

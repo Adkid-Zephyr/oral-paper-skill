@@ -1,0 +1,161 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-116465",
+    "title": "SAGE: A Unified Framework for Generalizable Object State Recognition with State-Action Graph Embedding",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/116465"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a5dca8f948d294c94e66bf735bae31da3a271f9a6c6e1d18c28c56ced3bf4cd7",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "07f72aa5958ce643e57155f32f0ca6ad04715e9214edfc8d8053ec1810b8e045",
+    "extracted_at": "2026-09-13T00:21:15.221967+00:00",
+    "session_id": "01a09823-7a51-7792-be89-e4b38a74bbfa",
+    "usage": {
+      "input_tokens": 12676,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 690,
+      "reasoning_output_tokens": 67
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "89aab0c664884921c16fd263bf4af81d6f803f3ad7d7265d5e7622c53d1ce993"
+    },
+    {
+      "id": "S2",
+      "sha256": "b9dd95e0f94a25436d2fb6712ee9602964a3a21dd83d71367cd694bab08bb4cb"
+    },
+    {
+      "id": "S3",
+      "sha256": "5aee1badfa40836b6f97916fc5fac341e4a640f8d6c6557c222db92e85904008"
+    },
+    {
+      "id": "S4",
+      "sha256": "efb7770f04a710fbbfecbbf02f3bc5043b17020224d65c9f8e6e4910f155be29"
+    },
+    {
+      "id": "S5",
+      "sha256": "1e7ae4a398f3485822ccf3cf6c82e5ee5d2ef862c66d52b0a3cce45490a56f0c"
+    },
+    {
+      "id": "S6",
+      "sha256": "e324296c314b1c0d2abf265d23100ee766a529025e4911712eff8d31521836ca"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-116465",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Recognize object physical states and their transformations in videos for structured video understanding and applications such as robotic manipulation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Pretrained vision-language models struggle with nuanced dynamics and temporal context, while specialized frameworks may fail to generalize to unseen actions or objects.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces SAGE, a unified framework that decomposes physical states into fine-grained, language-described visual concepts shareable across objects and actions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Constructs a State-Action Graph with Large Language Models and multimodally refines it using Vision-Language Models.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize SAGE as a novel unified model of physical state transitions based on shareable language-described concepts.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive experiments show SAGE significantly outperforms baselines and generalizes effectively to unseen objects and actions in open-world settings.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report up to a 14.6% improvement over the prior state of the art on novel state recognition, using less than 5% of its inference time.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Object-state and transformation recognition is presented as important for structured video understanding and robotics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing pretrained and specialized approaches are described as weak on temporal dynamics or generalization to unseen entities.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "SAGE models state transitions through shareable fine-grained language-described concepts and a State-Action Graph refined multimodally.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "Experiments are reported to show strong baseline gains, open-world generalization, and a large accuracy–inference-time advantage.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a concrete generalization problem to a representation built from concepts intended to be shareable across objects and actions.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A transferable framing is to align the proposed representation directly with the stated failure mode.",
+        "application": "When targeting compositional generalization, define intermediate concepts whose reuse explicitly spans the unseen dimensions.",
+        "exception": "This may be unsuitable when the target task depends on instance-specific details that cannot be abstracted safely."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baseline identities, evaluation protocols, or statistical uncertainty.",
+      "The reported 14.6% gain and inference-time comparison lack metric definitions and hardware or implementation conditions."
+    ]
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31836",
+    "title": "Unlocking State-Tracking in Linear RNNs Through Negative Eigenvalues",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31836"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "251360babb30918f2656aa1fdce6de88bf423ef7dda6b0e18c5f8f74cc359d5f",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "22dd794666f1302ced1af6c5326e7e0ae92dcb45a8434c14ce13935830d0c442",
+    "extracted_at": "2026-09-12T23:53:59.133112+00:00",
+    "session_id": "01a0980a-6c36-7003-a378-41a7c7f9f1f8",
+    "usage": {
+      "input_tokens": 12846,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1037,
+      "reasoning_output_tokens": 104
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3130860a70c5b224ba2872e43e6a65fb8d0ab74fd0d902f6e623f9973226af16"
+    },
+    {
+      "id": "S2",
+      "sha256": "1aa77f4b6100fdea2964ac8603d2c1307733acc0093a9b40a5866389bd8bd3ef"
+    },
+    {
+      "id": "S3",
+      "sha256": "4e5fe624cb6fc2c0ba7ce9448d7d98872f37284f2c114d77325d341f9ff6e45a"
+    },
+    {
+      "id": "S4",
+      "sha256": "1e29aa4b3b09912acc03f45a903518a23a5da4e8e0c90f8c7897779728cbdb57"
+    },
+    {
+      "id": "S5",
+      "sha256": "6875fcb56a6e1ab33ed90951084e081f68eabffd30396f41e73eb010e4a6cf19"
+    },
+    {
+      "id": "S6",
+      "sha256": "220c1d26f6835158f9f4a907ffac2224da423b69d3659f137ca717b677652dc6"
+    },
+    {
+      "id": "S7",
+      "sha256": "9313bfd571958c0a4737ed70fa97446d508762301116fd99290d48a7ed9b276d"
+    },
+    {
+      "id": "S8",
+      "sha256": "8cbbaff19b3c25b8683b389d216e51655521dbbb2244f0302f5c833d8b6a3823"
+    },
+    {
+      "id": "S9",
+      "sha256": "a8f5fd975b860f412f7f15daaa20b66c3b5386f9f92ce871c27c0fb6aa0b8d04"
+    },
+    {
+      "id": "S10",
+      "sha256": "c391d7fe598174d513f1dc9310fb3ad36fc759b5bd71b3113f4e510999d267b2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31836",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses state-tracking in efficient recurrent architectures, including solving parity and counting modulo 3.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S7"
+        ]
+      },
+      "gap": {
+        "claim": "Prior analysis linked LRNN parity failure to restricting diagonal transition values to [0,1], but the authors identify an unresolved extension to non-diagonal LRNNs such as DeltaNet.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Proves that finite-precision LRNNs with only positive transition-matrix eigenvalues cannot solve parity, and that non-triangular matrices are needed to count modulo 3.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Proves that LRNNs can learn any regular language when transitions are products of identity-minus-vector-outer-product matrices with eigenvalues in [-1,1].",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "type": "method and empirical finding",
+        "claim": "Extends the transition-eigenvalue range of Mamba and DeltaNet to include negative values and evaluates the resulting state-tracking and scaled pretraining behavior.",
+        "source_ids": [
+          "S6",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their analysis extends the negative-eigenvalue result from diagonal LRNNs to non-diagonal architectures and provides broader theoretical characterization of state-tracking.",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Mamba and DeltaNet with negative eigenvalues solve parity and consistently improve performance on state-tracking tasks.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report stable, efficient pretraining of state-tracking-enabled LRNNs at 1.3B parameters, with competitive language-modeling performance and promise on code and math tasks.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "LRNNs are presented as efficient alternatives to Transformers for long sequences.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "failure",
+        "summary": "Transformers and LRNNs struggle with state-tracking; even parity is unsolved by current architectures in one forward pass.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "prior explanation",
+        "summary": "Earlier work attributed LRNN parity failure to diagonal transition values restricted to [0,1] and reported that negative values resolve it.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "extension and theory",
+        "summary": "This paper extends the result to non-diagonal LRNNs and gives impossibility and regular-language learnability results.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "experiments and scale",
+        "summary": "Experiments report improved state tracking and stable large-scale pretraining with competitive language modeling results.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects an observed failure on parity to a specific architectural constraint—the allowed eigenvalue range—and then tests that targeted modification across architectures.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S9"
+          ]
+        },
+        "interpretation": "A narrowly defined failure case can motivate a mechanistic intervention and a focused cross-architecture evaluation.",
+        "application": "When presenting a new architecture, identify a minimal diagnostic task, state the suspected constraint, and evaluate the corresponding intervention on more than one model family.",
+        "exception": "This framing is unsuitable when the diagnostic task is not representative of the intended deployment setting or the suspected mechanism is not independently supported."
+      },
+      {
+        "source_observation": {
+          "claim": "The paper separates finite-precision impossibility results, modulo-counting structural requirements, and a constructive regular-language result.",
+          "source_ids": [
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "Separating theorem scopes and assumptions helps prevent broad capability claims from being inferred from one result.",
+        "application": "Organize theoretical claims by task class, matrix structure, and precision assumptions before relating them to empirical behavior.",
+        "exception": "This level of decomposition may be unnecessary for a paper whose contribution is purely empirical and has no distinct theoretical regimes."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the experimental benchmarks, baselines, effect sizes, or statistical variability behind the reported improvements and competitiveness.",
+      "It does not state the precise finite-precision model or the conditions and construction details for the regular-language theorem.",
+      "The meaning of “promise” on code and math tasks is not quantified."
+    ]
+  }
+}

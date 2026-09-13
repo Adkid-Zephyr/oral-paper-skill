@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-115740",
+    "title": "State Entropy Regularization for Robust Reinforcement Learning",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/115740"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8843e2e2623e66c28c6e129c743326a1c2c252b6a646654f48a1a19eaa5ef167",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "78e4e41f13608c5a86963543ad7dc1312613a9bed53d06af457fb5a29e8ab662",
+    "extracted_at": "2026-09-13T00:20:53.007241+00:00",
+    "session_id": "01a09823-2463-7553-9501-933965316f6e",
+    "usage": {
+      "input_tokens": 14178,
+      "cached_input_tokens": 13056,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 798,
+      "reasoning_output_tokens": 60
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5513c903903dba3acfb89867866836ac069d07d83792e5457f564d91dcc21474"
+    },
+    {
+      "id": "S2",
+      "sha256": "84263ef4e4ddf9b94cad6a8d088b70ade4d3f1cc94f472b547c388f805b389a8"
+    },
+    {
+      "id": "S3",
+      "sha256": "03cc82a89d215119228e8cf946dfcc18c67a0acc7c5be875fff0e4d0181bc5fd"
+    },
+    {
+      "id": "S4",
+      "sha256": "229a20140e229285942ed37ad1e717b554f2749b827e21ebcdcb82869f4acfdd"
+    },
+    {
+      "id": "S5",
+      "sha256": "42d666b1b6413ed5bb64ab2c690b6f167e6fb261083bc0a9b57f9e3e70093b34"
+    },
+    {
+      "id": "S6",
+      "sha256": "12814fcb0addf7e3d376f482110a8d043251a3aa30bd0012dede655fdf89a7da"
+    },
+    {
+      "id": "S7",
+      "sha256": "eebb6015b1a33ee9aeb6e2e7e4daafed28517b4f4d46fe8769d748d078b95252"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-115740",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies whether state entropy regularization can improve robustness in reinforcement learning under structured and spatially correlated perturbations.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Although state entropy regularization had shown empirical exploration and sample-complexity benefits, its theoretical guarantees had not been studied; standard robust RL methods often overlook structured transfer variations.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Provides formal robustness guarantees for state entropy regularization under reward and transition uncertainty.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "characterization",
+        "claim": "Characterizes settings in which state entropy improves robustness and settings in which it performs poorly.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "type": "comparison and practical finding",
+        "claim": "Contrasts state entropy with policy entropy regularization and examines how rollout count affects their relative robustness advantages.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish state entropy regularization’s robustness properties under structured and spatially correlated perturbations from the usual focus of robust RL on small, uncorrelated changes, while providing corresponding formal guarantees.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report improved robustness to structured and spatially correlated perturbations with state entropy regularization.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report formal guarantees under both reward and transition uncertainty, alongside settings where the method performs poorly.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that, relative to policy entropy, state entropy’s robustness advantages are more sensitive to the number of rollouts used for policy evaluation.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "State entropy is associated with better exploration and sample complexity, but its theoretical guarantees are described as unstudied.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "problem framing",
+        "summary": "The paper targets structured and spatially correlated perturbations, which commonly arise in transfer learning and are often missed by standard robust RL methods.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "It characterizes robustness through formal guarantees under reward and transition uncertainty, including unfavorable settings.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "comparison and practice",
+        "summary": "The analysis contrasts state and policy entropy, then reports rollout-count sensitivity in their practical robustness comparison.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs positive robustness claims with formal guarantees, explicit poor-performing settings, and a practical sensitivity condition.",
+          "source_ids": [
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "This aligns a method’s headline benefit with boundary cases and an operational factor that can change the comparison.",
+        "application": "When presenting a new robustness method, state the target perturbation class, formal guarantee scope, failure settings, and key evaluation-sensitivity variable together.",
+        "exception": "This framing is unsuitable when the work has no meaningful formal analysis or when boundary conditions cannot be identified from the available evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact robustness metrics, perturbation models, theorem conditions, or quantitative results.",
+      "It does not identify which settings produce poor performance or how rollout count changes the comparison quantitatively.",
+      "No experimental baselines, environments, sample sizes, or reproducibility details are provided."
+    ]
+  }
+}

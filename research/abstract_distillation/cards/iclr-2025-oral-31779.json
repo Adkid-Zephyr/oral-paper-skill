@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31779",
+    "title": "Mind the Gap: Examining the Self-Improvement Capabilities of Large Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31779"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "27f10703a3cb8c5ef9cc049e422141dd956f3618d24a06ecc20734fe834bb973",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "d9493554be2b39c5a16dce82d4b47ed644891fc6700303afdb40238888a86272",
+    "extracted_at": "2026-09-12T23:51:33.485804+00:00",
+    "session_id": "01a09808-4b13-7361-a426-50c875a8b042",
+    "usage": {
+      "input_tokens": 12704,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 740,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c89a8001f1d044a5df939dfe24fef73dd9c5fa7cbeceda1df54a259d2d444e59"
+    },
+    {
+      "id": "S2",
+      "sha256": "9e37bbcf2d53ee304bbbabdfdb5a6ef5bbdf3ed6de8b634428c5758e0e091fa9"
+    },
+    {
+      "id": "S3",
+      "sha256": "854ad06d22f26964b441952edd3eff09059b6d00dac2ef86eaff5d61db5f7a3e"
+    },
+    {
+      "id": "S4",
+      "sha256": "071ade49df486732def5286a356655db3720a074ab432b38745324e5af993ba5"
+    },
+    {
+      "id": "S5",
+      "sha256": "4ed11c86f753938f8e4e4a369c7e9265e3eccc59fad47fda7cd2837383641e72"
+    },
+    {
+      "id": "S6",
+      "sha256": "889d846e3c514d6a890ac7f40f0b55e0a556f05785ae00c6e5fdadbeb22d3bef"
+    },
+    {
+      "id": "S7",
+      "sha256": "7fbaea1a94cef7d39f1a8d89095bdbdffac1b0c0d6586c083f28332a905688c3"
+    },
+    {
+      "id": "S8",
+      "sha256": "17f21632f7345aa0fd777dba7cb4736cbf42fda89c6df3f42deaddeac06dce5d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31779",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies LLM self-improvement through self-verification, data filtering or reweighting, and distillation across training and inference settings.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Despite reported empirical successes, a fundamental understanding of LLM self-improvement remains lacking.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "controlled study",
+        "claim": "A comprehensive, modular, and controlled study of LLM self-improvement.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "A mathematical formulation centered on the formalized generation-verification gap.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Experiments investigate scaling, feasibility, iteration, and performance-improvement strategies for self-improvement.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a mathematical formulation in which self-improvement is largely governed by the generation-verification gap, alongside a modular controlled study.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that a variant of the generation-verification gap scales monotonically with model pre-training FLOPs across experiments involving various model families and tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Self-improvement is framed as relevant to LLM pre-training, post-training, and test-time inference.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The study examines self-verification followed by data filtering or reweighting and distillation.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "gap and formalization",
+        "summary": "Against a lack of fundamental understanding, the authors initiate a modular controlled study and formalize the generation-verification gap.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "findings and scope",
+        "summary": "Experiments report a FLOPs-related scaling phenomenon and examine feasibility, iteration, and performance-improvement methods.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a formal quantity—the generation-verification gap—with a reported scaling relationship and separately names feasibility, iteration, and improvement as study dimensions.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A useful research pattern is to connect a measurable explanatory quantity to scaling behavior, then test adjacent operational conditions.",
+        "application": "For a self-training mechanism, define a verification-related statistic before reporting scaling results, and organize follow-up analyses around feasibility, iteration, and intervention.",
+        "exception": "This framing is unsuitable when no defensible statistic links the proposed mechanism to the claimed behavior."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the model families, tasks, FLOPs range, gap variant, or quantitative results underlying the monotonic scaling report.",
+      "The conditions and outcomes for when self-improvement is possible, iterative procedures, and performance-improvement methods are not given.",
+      "No detailed comparison, proof statement, or reproducibility information is supplied."
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71051",
+    "title": "Asymmetric Perturbation in Solving Bilinear Saddle-Point Optimization",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71051"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "02da6d6b1689df81657ed36ae8df180480458404efcded94e63a23ed168b0ca7",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "8a00e6661300945099bf3c716348f13d7cdb20a57d1cbc594a1cc73595343514",
+    "extracted_at": "2026-09-13T00:12:06.875406+00:00",
+    "session_id": "01a0981b-13fd-7061-ad4e-fc0523094eeb",
+    "usage": {
+      "input_tokens": 12661,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 850,
+      "reasoning_output_tokens": 107
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d7b98ab0b1e5b02cdac3ecf733de67eaaee512f1fe18d0c9d1577c5a88b1967b"
+    },
+    {
+      "id": "S2",
+      "sha256": "80e27dd410cfa2775ffb32d9a9e7bca4040a3956f7a7e7bb283c15f2c5094236"
+    },
+    {
+      "id": "S3",
+      "sha256": "459c5eb598249b7a50dbede76cb3d09ba33937f18b71d696a92dd6f5c274255c"
+    },
+    {
+      "id": "S4",
+      "sha256": "a1df0d5bf39e3f40ca94ddc396ae8a7a7398d51f0c3c2449e1f7c6cbea9471f0"
+    },
+    {
+      "id": "S5",
+      "sha256": "5959fbce3cb741ce5f75520c4b0bcd26b1f63ec58aa666bae2a8a9d11972026f"
+    },
+    {
+      "id": "S6",
+      "sha256": "9838a88fb67b8a493fe4538cad0da152b516711e4f2287c3e66a0fe93ac801a7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71051",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Solve bilinear saddle-point optimization problems arising in minimax, game-theoretic, and constrained-optimization settings.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Symmetric perturbation must decrease in strength to converge to an equilibrium of the original game, which leads to a slower rate.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes asymmetric perturbation, perturbing only one player's payoff function.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "theory and algorithm",
+        "claim": "Reports that sufficiently small asymmetric perturbation preserves an equilibrium strategy of the original game and uses this result to construct a learning algorithm with a linear last-iterate convergence rate.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Provides a parameter-free variant that reportedly retains the linear rate.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper's stated distinction is to use one-sided rather than symmetric payoff perturbation, together with a parameter-free variant and linear-rate learning construction.",
+      "source_ids": [
+        "S1",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report equilibrium-strategy coincidence between the asymmetrically perturbed and original games when perturbation strength is sufficiently small.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that both the learning algorithm and its parameter-free variant have a linear last-iterate convergence rate.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors empirically demonstrate fast convergence toward equilibria in normal-form and extensive-form games.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setup",
+        "summary": "Frames bilinear saddle-point optimization and introduces one-sided payoff perturbation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Contrasts the proposal with symmetric perturbation, whose decreasing strength causes a slower rate.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "theoretical result",
+        "summary": "States that sufficiently small asymmetric perturbation preserves an equilibrium strategy of the original game.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "algorithmic extension",
+        "summary": "Builds a linear last-iterate learning algorithm and then gives a parameter-free variant retaining that rate.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "empirical demonstration",
+        "summary": "Reports fast convergence toward equilibria in normal-form and extensive-form games.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific structural choice—perturbing only one player's payoff—to equilibrium preservation under a sufficiently small strength, then uses that link to motivate a linear-rate algorithm and a parameter-free variant.",
+          "source_ids": [
+            "S1",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A method's design choice can serve as both the mechanism for a theoretical guarantee and the organizing rationale for later algorithmic extensions.",
+        "application": "When presenting a new optimization method, explicitly connect its structural modification to the key theoretical property, then derive algorithmic variants from the property’s limiting condition.",
+        "exception": "This framing is unsuitable when the proposed modification has no stated mechanism or when its guarantee depends on conditions that cannot be specified or checked."
+      }
+    ],
+    "unknowns": [
+      "The numerical meaning of “sufficiently small” perturbation strength is not given.",
+      "The assumptions, rate constants, and precise meaning of the parameter-free construction are unspecified.",
+      "The empirical protocols, baselines, and quantitative convergence results are not reported."
+    ]
+  }
+}

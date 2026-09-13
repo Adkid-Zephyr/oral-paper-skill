@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97945",
+    "title": "MeshFormer : High-Quality Mesh Generation with 3D-Guided Reconstruction Model",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97945"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5c29b04804a1e9105bb65585313770f745c088aec6383c3005bf3791391c1064",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "481f729bf6b846210ca73142a24f05ca65800179b15346340fca0151f4cc2737",
+    "extracted_at": "2026-09-13T00:17:56.310513+00:00",
+    "session_id": "01a09820-6a3d-79b0-90fa-37a9e0cf481c",
+    "usage": {
+      "input_tokens": 12779,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 804,
+      "reasoning_output_tokens": 90
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "60e6bae626d38791c32c262b91c16c81e75e95b2aece62b3ac4e902070ccc401"
+    },
+    {
+      "id": "S2",
+      "sha256": "f2f8dac4923e84b28bff84d6d8c9eb52bed202f52775e2843a4d5a5d374dd95e"
+    },
+    {
+      "id": "S3",
+      "sha256": "f45944cced9c923f1ff89b9ea85a3af176eff94c43c6cff0dcc7210e67607de4"
+    },
+    {
+      "id": "S4",
+      "sha256": "e4389130bb46d4648660a5ee00831023e7c9953d1fff91e98f2d32b092027dca"
+    },
+    {
+      "id": "S5",
+      "sha256": "f083198fea9303cdff99b0a1a6792582f4401d3b4e909879e0e1970f5e9e9aa4"
+    },
+    {
+      "id": "S6",
+      "sha256": "85d5c41ad089bef0b59ba2ee46a20ad42135c2dfef750f0eaff81d7d5cbe3ad8"
+    },
+    {
+      "id": "S7",
+      "sha256": "27e6629e29a0d94e73e731745d71a0efabe0dddaf4093826dc419447b58f6f03"
+    },
+    {
+      "id": "S8",
+      "sha256": "4813be7e05e004bb29f82e0429b33913db50ce35813710823b8bb58778d4d8ca"
+    },
+    {
+      "id": "S9",
+      "sha256": "fa24b204cc9c00b5dc5c45cd8c93be420107abdd90cda1b62221c1337c625e6a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97945",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Open-world, sparse-view 3D reconstruction must produce high-quality meshes efficiently.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods are described as lacking sufficient 3D inductive bias, leading to expensive training and difficulty extracting high-quality meshes.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "MeshFormer stores features in sparse 3D voxels and combines transformers with 3D convolutions to use explicit 3D and projective structure.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It uses normal-map input and SDF supervision combined with surface rendering to guide geometry learning and directly generate meshes.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The model is described as supporting integration with 2D diffusion models for single-image-to-3D and text-to-3D tasks.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce a reconstruction model that explicitly combines native 3D structure, input guidance, and training supervision.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that MeshFormer can be trained efficiently and deliver textured meshes with fine-grained geometric details.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that normal maps predicted by 2D diffusion models significantly aid geometry guidance and refinement.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that SDF supervision plus surface rendering avoids complex multi-stage training for mesh generation.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies expensive training and poor mesh quality as problems associated with insufficient 3D inductive bias.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "architecture",
+        "summary": "MeshFormer uses sparse 3D voxels with transformers and 3D convolutions instead of triplanes.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "guidance_and_supervision",
+        "summary": "It adds normal-map guidance and combines SDF supervision with surface rendering for direct mesh generation.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported_capability",
+        "summary": "The authors describe efficient training, detailed textured meshes, and integration with diffusion models for fast 3D generation tasks.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each architectural choice with a stated bottleneck: 3D voxels and convolutions address structural bias, normal maps provide input guidance, and SDF plus rendering simplifies supervision.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A paper's rationale is easier to assess when design components are explicitly tied to distinct limitations.",
+        "application": "When presenting a new system, map each major component to one named failure mode or training constraint and state the intended mechanism.",
+        "exception": "This framing is insufficient when the claimed mechanism requires quantitative ablations or task-specific validation that is not reported."
+      }
+    ],
+    "unknowns": [
+      "No quantitative quality, speed, training-cost, or comparison results are provided.",
+      "The abstract does not specify the conditions or accuracy of predicted normal maps, nor how the reported capabilities are evaluated."
+    ]
+  }
+}

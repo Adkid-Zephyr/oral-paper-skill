@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31735",
+    "title": "Learning to Discretize Denoising Diffusion ODEs",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31735"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2f91b8d276b1af09cb17f8c2f2ea90038dba3fcba29a75cf6b8744446b206d1c",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "d77b372ebc16cb28251a7d6753a124d117f5ba8461e50d6d79b9b4427db2b513",
+    "extracted_at": "2026-09-12T23:49:50.724081+00:00",
+    "session_id": "01a09806-ba7c-7533-bf9f-cacced61d0f9",
+    "usage": {
+      "input_tokens": 14312,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 790,
+      "reasoning_output_tokens": 106
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f4209a814b787c1a71716fa3c680192a9c863a26c2b733ac32f7fb8408c54ba9"
+    },
+    {
+      "id": "S2",
+      "sha256": "371bc65fda411e7123730da94258e63421a64abffb4f9d517473ac335c294ea9"
+    },
+    {
+      "id": "S3",
+      "sha256": "0a6fd8ed42fa4c2d4c46a3c82d6f1f9ddf8d0fb33fe95c04e7d8202fd568a955"
+    },
+    {
+      "id": "S4",
+      "sha256": "75f037fdc01df271878e8fccd3d04218ba1f3c9368f5a995c17289bebdbad712"
+    },
+    {
+      "id": "S5",
+      "sha256": "eac941a96d0ba884f9533fbe8d9d2a127c5a69693b87dcf04996ee19afd19d4e"
+    },
+    {
+      "id": "S6",
+      "sha256": "897c9fd03ca910e90c13e17ab5d2e1ce67369bd5543b11da437031f33e631069"
+    },
+    {
+      "id": "S7",
+      "sha256": "c9144e3bafd2ae16ff3b9ddf297b570414791ec842dd34dd9d61a8e384bcf870"
+    },
+    {
+      "id": "S8",
+      "sha256": "c3e05566b646c4062f56f7999f61bc8784484b757fd05851e21d86e6bec136c6"
+    },
+    {
+      "id": "S9",
+      "sha256": "1b76cc52f13333249f2044d27a6944d058c6f1b883b6eb886653f554e40d8f76"
+    },
+    {
+      "id": "S10",
+      "sha256": "95dbdc6027a3a1d262bf0846d70c1c6a33f3a560f80f052c235272ba7fd604a8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31735",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reduce the NFEs required to sample from pretrained diffusion models while preserving generation quality.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "LD3 is a lightweight framework that learns time discretization for diffusion sampling and can combine with various samplers without retraining resource-intensive networks.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory_and_empirical_finding",
+        "claim": "The authors report analytical and empirical evidence that LD3 improves sampling efficiency with low computational overhead.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical evaluation",
+        "claim": "The method is evaluated across seven pretrained models spanning unconditional and conditional, pixel-space and latent-space diffusion models.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present LD3 as an efficient approach to sampling from pretrained diffusion models.",
+      "source_ids": [
+        "S4",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report FIDs of 2.38 at 10 NFE on unconditional CIFAR10 and 2.27 at 10 NFE on AFHQv2, after 5–10 minutes of training.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report consistent generation-quality improvements when LD3 is combined with various samplers, without retraining the underlying resource-intensive neural networks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report analytical and empirical improvements in sampling efficiency with much less computational overhead.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Diffusion sampling uses multiple NFEs, making it more computationally costly than single-step generators; reducing NFEs while retaining quality is identified as important.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "LD3 learns an optimized sampling time discretization as a lightweight add-on.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "claimed capability",
+        "summary": "LD3 is compatible with various samplers and is reported to improve quality without neural-network retraining.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "evidence",
+        "summary": "The authors report analytical and empirical efficiency gains and evaluate seven pretrained models, including the stated CIFAR10 and AFHQv2 FIDs.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a concrete efficiency target—fewer NFEs—with quality preservation, then reports results at a fixed 10-NFE budget.",
+          "source_ids": [
+            "S3",
+            "S8"
+          ]
+        },
+        "interpretation": "A resource-saving method is easier to assess when its efficiency constraint and quality outcome are stated together.",
+        "application": "Frame a sampling contribution around an explicit compute budget and report the corresponding quality metric.",
+        "exception": "This framing is unsuitable when no agreed quality metric or meaningful compute budget exists."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the specific samplers, datasets beyond CIFAR10 and AFHQv2, baselines, or statistical variability.",
+      "The comparative meaning of “consistently” and “much less computational overhead” is not quantified in the abstract."
+    ]
+  }
+}

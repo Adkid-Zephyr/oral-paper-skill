@@ -1,0 +1,162 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31884",
+    "title": "More RLHF, More Trust? On The Impact of Preference Alignment On Trustworthiness",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31884"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "676e0982a45b7f58bf4d7212580340c3b8c7ce9e1888f494c5320e4e9375957c",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "3a466b8747428c96eb462857fd22d93ffdaa082d24268ed4a4f5cb625ef3df14",
+    "extracted_at": "2026-09-12T23:55:42.603166+00:00",
+    "session_id": "01a0980c-1be7-72e2-961f-edbf86251831",
+    "usage": {
+      "input_tokens": 12704,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 657,
+      "reasoning_output_tokens": 53
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ec54b76ea3775d6ecfd822fb6f0cda5b8a8ef969cf9a3bc30b1b9eb262d4f6b4"
+    },
+    {
+      "id": "S2",
+      "sha256": "ae8db06c4f6fb682835da4c9b1cf232e62fa9b806ea39827a2319415c443b9cb"
+    },
+    {
+      "id": "S3",
+      "sha256": "c6f59853d53f370311627ebfe34785ab943baf8da5c3a0309fea92a9e8ea96fc"
+    },
+    {
+      "id": "S4",
+      "sha256": "a7bcb690958ece43916d1a7155902418ef504a3e32c31490b48a37b1a49f882d"
+    },
+    {
+      "id": "S5",
+      "sha256": "e458cb8c87d3faced5899a603299195f7820cee8026bf194bef24a1eb7a568f6"
+    },
+    {
+      "id": "S6",
+      "sha256": "fa74c6d65f30c4f2509527da170b4f1d1ee6c5b7bab18a5b51b6f931fd8e60fd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31884",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The study asks how general-purpose preference alignment affects LLM trustworthiness across toxicity, stereotypical bias, machine ethics, truthfulness, and privacy.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The assumed effect of RLHF on trustworthiness had not been rigorously evaluated.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "It evaluates preference-aligned models across five trustworthiness verticals and reports that RLHF does not automatically guarantee trustworthiness, with reverse effects often observed.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It adapts efficient-influence-function data-attribution methods to RLHF and provides estimated attribution scores for individual trustworthiness benchmarks.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state an adaptation of efficient influence-function data attribution to the RLHF setting for analyzing fine-tuning-data influence on trustworthiness benchmarks.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that RLHF on human preferences does not automatically guarantee trustworthiness and that reverse effects are often observed.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report feasibility of their adapted attribution approach by providing estimated attribution scores.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Trustworthiness is presented as a key consideration alongside LLM cognitive performance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "RLHF is widely used for preference alignment, but its effect on trustworthiness is described as insufficiently evaluated.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "investigation",
+        "summary": "The study examines general-purpose preference-aligned models across five trustworthiness verticals.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "finding_and_method",
+        "summary": "The authors report non-automatic and sometimes reverse trustworthiness effects, then introduce RLHF-oriented data attribution with estimated scores.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract evaluates alignment across five distinct trustworthiness verticals and reports that preference alignment can produce reverse effects.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A single aggregate alignment claim may conceal dimension-specific trade-offs.",
+        "application": "Report alignment outcomes separately across relevant trustworthiness dimensions and explicitly flag regressions or reverse effects.",
+        "exception": "This framing is less suitable when a study has a narrowly defined trustworthiness target or a validated aggregate metric."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the models, datasets, baselines, evaluation protocols, or which verticals exhibited reverse effects.",
+      "The attribution scores' validation, quantitative results, and practical interpretation are not described.",
+      "The abstract does not establish that the proposed alignment approaches improve trustworthiness."
+    ]
+  }
+}

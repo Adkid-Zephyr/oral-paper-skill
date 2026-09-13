@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47259",
+    "title": "What Limits Virtual Agent Application? OmniBench: A Scalable Multi-Dimensional Benchmark for Essential Virtual Agent Capabilities",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47259"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "07924c8c01ab40c361c48c81437c7c0e93828c232a481042b83f541bf992aaf3",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "a507de2f784823d142fdb346ca4bb389f7b7c4200d18c5e992550da69e54fd9f",
+    "extracted_at": "2026-09-13T00:10:48.155902+00:00",
+    "session_id": "01a09819-e632-7c12-aa5d-9f92a1435067",
+    "usage": {
+      "input_tokens": 12708,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 758,
+      "reasoning_output_tokens": 99
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "27066f59fa5e03839bc513a084c40fca90182dc07e8eb3beebbd7ddeaa8f17bc"
+    },
+    {
+      "id": "S2",
+      "sha256": "6ab33ce23043b7102af49e0e080fb798de2f6a5c2ca0e4c47fea28a4e9cb48d2"
+    },
+    {
+      "id": "S3",
+      "sha256": "5252565f11d33c8fb95f282674c363ba835d22f979056d7aeed088488b1642da"
+    },
+    {
+      "id": "S4",
+      "sha256": "281ca8a929f21241df548cf9f720329c3461323a1635bdbe0b06db01ee6ee32b"
+    },
+    {
+      "id": "S5",
+      "sha256": "6e93c343c7f0ea95ef4bbcea3c820c833be421857074ec868344f020a1ac4ab1"
+    },
+    {
+      "id": "S6",
+      "sha256": "64b5354786b940010b29b659f4a20070b77360b8aeddde5e4a8275436adf8acf"
+    },
+    {
+      "id": "S7",
+      "sha256": "95eaf1d8ba3f96026b725aa7c7a2d39a9d5c723ac1db0cf049f9021521ffe5c5"
+    },
+    {
+      "id": "S8",
+      "sha256": "d71e612d822de6ca8dee51a01167be0a5e05931ab018812db8ec5b651bc7ce96"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47259",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop scalable evaluation of multimodal virtual-agent capabilities across controllable, graph-structured tasks.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing benchmarks reportedly have uncontrollable task complexity, extensive manual annotation requirements, and insufficient multidimensional evaluation.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "OmniBench is a self-generating graph-based benchmark whose pipeline synthesizes tasks with controllable complexity through subtask composition.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "evaluation framework",
+        "claim": "OmniEval evaluates virtual agents at the subtask and graph levels and tests 10 capabilities.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors provide 36k graph-structured tasks spanning 20 scenarios.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach through self-generating graph-based task synthesis and multidimensional graph-aware evaluation.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The synthesized dataset reportedly achieved a 91% human acceptance rate.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that training on graph-structured data improves generalization across environments.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "Multidimensional evaluations reportedly reveal virtual-agent performance across various capabilities.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "MLLM-based virtual agents have shown strong performance, but current benchmarks have practical and evaluative limitations.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark",
+        "summary": "OmniBench addresses task-generation constraints with graph-based subtask composition and controllable complexity.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "OmniEval adds subtask-level, graph-based, and 10-capability evaluation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report a 36k-task resource, 91% human acceptance, improved cross-environment generalization after training, and capability-level evaluations.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a benchmark's task-generation mechanism with evaluation metrics designed for the same graph structure and reports dataset acceptance separately.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This suggests making the unit of data construction explicit and matching evaluation granularity to it.",
+        "application": "For a compositional benchmark, define primitive subtasks and composition rules, then report both primitive-level and whole-structure metrics.",
+        "exception": "This may be unsuitable when tasks are not naturally decomposable or when structure-specific metrics obscure the primary end-task objective."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the environments, baselines, evaluation protocols, or statistical details supporting the reported generalization improvement.",
+      "The 91% human acceptance rate lacks annotation procedures, sample size, and acceptance criteria.",
+      "The abstract does not detail the 10 capabilities or the graph-based metrics."
+    ]
+  }
+}

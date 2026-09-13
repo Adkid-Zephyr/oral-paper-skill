@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71152",
+    "title": "CausalGame: Benchmarking Causal Thinking of LLM Agents in Games",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71152"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "59349ff4257f685800130cabbd8701395a4442460b752141a9d8818db9e75e60",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "8075cf7b9047696af2b2005606a0de878c3c90364624957e815c89cf257c4c43",
+    "extracted_at": "2026-09-13T00:16:09.317633+00:00",
+    "session_id": "01a0981e-cf1f-7ef0-9fd1-d59f3088de67",
+    "usage": {
+      "input_tokens": 12737,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 694,
+      "reasoning_output_tokens": 65
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1e3ddb3c00708e9dcf3abebf142302d1b0b55d0bc9fcc991ee6618f787ce3dd6"
+    },
+    {
+      "id": "S2",
+      "sha256": "e19e5a015660b7bdcb4504fbc02dde2fd4a5e7839cdb78dcdeb81507012b4173"
+    },
+    {
+      "id": "S3",
+      "sha256": "6487caa455bc7f29d9d788b3e4232e73363de570871f3085ab89395936da3567"
+    },
+    {
+      "id": "S4",
+      "sha256": "57a859c91ad38102c8b455f8e3ee74ea512ed6ca80c17223b709764bee7db5ac"
+    },
+    {
+      "id": "S5",
+      "sha256": "046c1cab531ee1b9f181bf09c3c70a620c616d57997f1e6e4b696c2ac39e7975"
+    },
+    {
+      "id": "S6",
+      "sha256": "c1cb7be612ad27c9432edd2428d4d88432218d8a76b49a075b6c3364257c8afd"
+    },
+    {
+      "id": "S7",
+      "sha256": "c96e3843ce0d739871025aa325de7894f52c7300e997adcf32d0166f15e6c971"
+    },
+    {
+      "id": "S8",
+      "sha256": "885559ec6b2e0243413d7535d628f53528157d8cf3f2b9f3b8a56c2ff8594a2e"
+    },
+    {
+      "id": "S9",
+      "sha256": "acce5c7eede2448a21c771f75e428373e7dbf2d5131730bee75247497d08a0d6"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71152",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate whether LLM agents can distinguish causation from correlation and hidden bias during scientific-discovery tasks.",
+        "source_ids": [
+          "S2",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Existing AI-scientist benchmarks reportedly do not explicitly test hidden confounders, selection bias, and noisy measurements common in real-world discovery.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces CausalGame, an interactive benchmark in which agents design experiments, collect observations, and produce solution explanations.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Provides 14 game settings incorporating selection bias, noisy measurements, and hidden confounders, as a controlled testbed for causal-thinking evaluation.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish CausalGame by explicitly embedding these causal-discovery challenges in interactive games and requiring active experimental design.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that evaluations of 29 frontier LLM agents consistently found failures to reason about and recover the underlying causal relationships needed to solve the games.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Scientific discovery depends on separating causation from correlation and hidden bias, making causal thinking important for LLM agents.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Existing AI-scientist benchmarks reportedly omit explicit challenges involving confounding, selection bias, and noisy measurements.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "benchmark design",
+        "summary": "CausalGame evaluates agents through interactive games requiring protocol design, observation collection, and explanatory solutions across 14 settings.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported finding",
+        "summary": "Across 29 frontier agents, the authors report consistent failure to recover the causal relationships required by the games.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The benchmark aligns its evaluation process with scientific practice by requiring agents to choose experiments, gather data, and explain their conclusions under specified causal complications.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A task can expose reasoning failures more directly when the evaluation includes the intermediate decisions needed to reach the final answer.",
+        "application": "Design evaluations that score both intervention or data-collection choices and the final explanation, while explicitly varying confounding, selection, and measurement conditions.",
+        "exception": "This is unsuitable when the target capability concerns only static prediction or when interactive data collection is unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report per-setting scores, baselines, statistical analyses, or details of the 29 agents.",
+      "It does not specify how causal reasoning or explanation quality was scored, nor whether failures varied by bias type."
+    ]
+  }
+}

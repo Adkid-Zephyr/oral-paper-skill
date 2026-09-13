@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47244",
+    "title": "AutoAdvExBench: Benchmarking Autonomous Exploitation of Adversarial Example Defenses",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47244"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f895289140cf3a874a290fb8ddcdb3c0c3ebb3b204b6e37c37ad1b4783ad2239",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "74a0aa48ed06c86e27fd11ad19eaece4687c376e6205a2bc85b5f41a02e5b1a4",
+    "extracted_at": "2026-09-13T00:10:05.120190+00:00",
+    "session_id": "01a09819-490e-7310-b403-4811f50e2a15",
+    "usage": {
+      "input_tokens": 12738,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 668,
+      "reasoning_output_tokens": 56
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9938b04d5616f07553e15ad9a2fb69694a9a3199bc3e28db46bd119dc7dc20f7"
+    },
+    {
+      "id": "S2",
+      "sha256": "da4b2450bbab6df9f002fe16a2083d6434b2da65d523ed3e5050aba310884dc8"
+    },
+    {
+      "id": "S3",
+      "sha256": "c28e961181a4fb0d9821b1ddad337e33a2cb77ce1ae5b5c2192d0b7afca5383a"
+    },
+    {
+      "id": "S4",
+      "sha256": "4acb8bd9bc4b0fc13ed74563839604b5664cf884fff5d19b4eba7777b3581961"
+    },
+    {
+      "id": "S5",
+      "sha256": "b93900f8a8f672fca5624e2b633c7bcbf3836b8817f08643d4fa960ce6f021a0"
+    },
+    {
+      "id": "S6",
+      "sha256": "b61960e5e86ad28607340980b357a081269e868ee715b74acba935f9317aed6c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47244",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess whether LLMs can autonomously exploit defenses against adversarial examples.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing security benchmarks often proxy real-world tasks rather than directly measuring success on tasks regularly performed by machine-learning security experts.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces AutoAdvExBench for evaluating autonomous LLM exploitation of adversarial-example defenses.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Releases the benchmark publicly through a GitHub repository.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The benchmark directly measures LLM success on expert-relevant adversarial-machine-learning tasks, unlike proxy-based security benchmarks.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The strongest reported agent ensemble breaks 87% of CTF-like defenses but 37% of real-world defenses.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "For CTF-like defenses, Sonnet 3.5 and Opus 4 achieve 75% and 79% attack success, respectively; on real-world defenses, the rates are 13% and 30%.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "benchmark introduction",
+        "summary": "The authors introduce a benchmark for autonomous LLM exploitation of adversarial-example defenses.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "evaluation distinction",
+        "summary": "They position it as a direct measure of expert-relevant task success rather than a proxy benchmark.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "main finding",
+        "summary": "Their strongest ensemble performs much better on CTF-like defenses than on real-world defenses, revealing a large reported difficulty gap.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "model comparison",
+        "summary": "Sonnet 3.5 and Opus 4 have similar reported attack success on CTF-like defenses (75% and 79%), but a wider separation on real-world defenses (13% and 30%).",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "availability",
+        "summary": "The benchmark is made available via GitHub.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates CTF-like from real-world defenses and reports both aggregate and model-specific success rates.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Benchmark conclusions become more informative when evaluation tracks task realism and reports whether proxy performance transfers.",
+        "application": "When presenting a benchmark, define realism-based subsets and compare rankings or success rates across them.",
+        "exception": "This framing is unsuitable when the deployment setting is intentionally limited to synthetic or educational tasks."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the number or composition of defenses, attack protocols, agent configurations, or evaluation criteria.",
+      "It does not report uncertainty, statistical tests, or whether the benchmark’s real-world subset represents the broader ecosystem."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "narrative_sequence[3].summary",
+      "before": "They report that CTF performance does not consistently predict real-world-defense performance across Sonnet 3.5 and Opus 4.",
+      "after": "Sonnet 3.5 and Opus 4 have similar reported attack success on CTF-like defenses (75% and 79%), but a wider separation on real-world defenses (13% and 30%).",
+      "review_file": "reviews/flagged-batch-09.json",
+      "review_sha256": "a805d2a838a15720b4e4d927cb99828ba317e8f4b259fa729f5ebd20a0e7ae8c",
+      "applied_at": "2026-09-13T00:35:16.277437+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

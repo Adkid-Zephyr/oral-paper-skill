@@ -1,0 +1,155 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71129",
+    "title": "Solving Time-Dependent Differential Equations with Physical Dynamical Systems",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71129"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9b8779006fef1a98a60233501a1cffa3dc8b08c3736a610c441354cb33a4bd7b",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "a171ba85900c636b0110ae24d6ca91e302da6f2979f25a24ef8609a8d83ac286",
+    "extracted_at": "2026-09-13T00:15:13.314800+00:00",
+    "session_id": "01a0981d-f3be-76f0-92d5-6198e10d3ceb",
+    "usage": {
+      "input_tokens": 12740,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 673,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f470f8638d0f31dfddbb7af6dcac8a27c69d728e2ab7dbec3aef9a823d36c4ff"
+    },
+    {
+      "id": "S2",
+      "sha256": "f886dcda1c7fbe7821053a2642ad0d33f896317385c50cbd9e8ffcda2cfd5e67"
+    },
+    {
+      "id": "S3",
+      "sha256": "d723bc9d7ec31d6946085e5985170bded028fa3372d85de19fab53b6261f31d0"
+    },
+    {
+      "id": "S4",
+      "sha256": "991a0d2eb3273e4b47b6082241475421e07bb78717c0f7b3ba2a5bcd3da8e68a"
+    },
+    {
+      "id": "S5",
+      "sha256": "ce21e2db4576c1b936f9e084157167512a33807e50130039ccd8affff8803bcd"
+    },
+    {
+      "id": "S6",
+      "sha256": "04406a75b56f998032f78cb3857071a9b9b821121a95b0b1334e444494f26536"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71129",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Time-dependent differential equation solvers must produce high-fidelity trajectories under stringent latency constraints.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Time discretization creates a latency–accuracy trade-off, while existing Dynamical System Machines struggle with TDDE spatiotemporal complexity.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces DS-TS, a TDDE solver designed to combine accuracy and efficiency using continuous physical evolution in Dynamical System Machines.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Combines excitatory-inhibitory-inspired coupling, state-aware dynamic nonlinearity, and hierarchical temporal integration to model spatial interactions, state-dependent correlations, and high-order temporal dependencies.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present DS-TS as a novel solver leveraging the computational advantages of Dynamical System Machines.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that DS-TS achieves high-fidelity solutions with approximately 10^3× speed improvement and 10^5× energy-efficiency improvement over baseline solvers.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "TDDE applications require accurate trajectories under tight latency budgets.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Conventional discretization imposes a latency–accuracy trade-off, and existing DSMs do not adequately capture TDDE spatiotemporal complexity.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The work proposes DS-TS and its three architectural innovations for spatial, state-dependent, and temporal modeling.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "Experiments are reported to show high-fidelity solutions alongside large speed and energy-efficiency gains.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links each DS-TS design component to a distinct modeling challenge: spatial interaction, state-dependent correlation, or temporal dependence.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "A contribution is easier to assess when architectural choices are explicitly mapped to the problem structure they address.",
+        "application": "For a structured scientific solver, state each module together with the specific dependency or failure mode it is intended to represent.",
+        "exception": "This framing may be less useful when modules are generic, weakly interpretable, or not tied to separable problem characteristics."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, evaluation protocols, hardware, or whether the reported speed and energy ratios hold across all tested settings.",
+      "The meaning and measurement conditions of “high-fidelity” are not provided."
+    ]
+  }
+}

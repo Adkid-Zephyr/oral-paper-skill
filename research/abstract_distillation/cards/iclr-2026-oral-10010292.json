@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010292",
+    "title": "Rodrigues Network for Learning Robot Actions",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010292"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "65f9ec9b8f514e43fce7568b0be6faaf21af9f15c6d5c72e23d54a22443677bf",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "9cfd432a733feae5088c433c9fb3a72cf27864e6e52e5eea8f55d08147f96a18",
+    "extracted_at": "2026-09-13T00:04:12.083032+00:00",
+    "session_id": "01a09813-e302-7152-8370-ed537468c303",
+    "usage": {
+      "input_tokens": 12667,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 716,
+      "reasoning_output_tokens": 69
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8eb2e6ce6e90dfb1e5e2d1b8fac2d46f9ee8e164600470d6f1be87aec0dd5479"
+    },
+    {
+      "id": "S2",
+      "sha256": "6b079d181f250ebfcbb1f1c2696831976d5cf9bd35dab0edf7ebe0b6d0df632a"
+    },
+    {
+      "id": "S3",
+      "sha256": "ee8166ed08cce941801e2736786728beb78466974cec8611989f9cab3285ccb0"
+    },
+    {
+      "id": "S4",
+      "sha256": "1111d09e9e7343948e71b5fa829a85b18f18418de6171f25d89e9baf073d7d14"
+    },
+    {
+      "id": "S5",
+      "sha256": "38bbeeca834f59fc2520c7247c41a99f4f0921be5c42d9eec0f0455be63cba54"
+    },
+    {
+      "id": "S6",
+      "sha256": "c3d811f5c9a608b5d4677a0373f3af1fc2d2c991b57fd936f158e11715b22f8f"
+    },
+    {
+      "id": "S7",
+      "sha256": "7e7bbf3f5f0dc9d254977b049cfedbc14bf1c59d36e7dc41eade1c494355ff9f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010292",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses learning to understand and predict articulated robot actions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify that common MLP and Transformer architectures lack inductive biases reflecting articulated systems’ underlying kinematic structure.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The authors propose the Neural Rodrigues Operator, a learnable generalization of classical forward kinematics intended to add kinematics-aware inductive bias to neural computation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "architecture",
+        "claim": "They build Rodrigues Network (RodriNet), a neural architecture specialized for processing actions.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe RodriNet as a novel architecture and distinguish the Neural Rodrigues Operator as a learnable generalization of forward kinematics.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report significant improvements over standard backbones on two synthetic kinematic and motion-prediction tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report demonstrations in imitation learning on robotic benchmarks with Diffusion Policy and in single-image 3D hand reconstruction.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that structured kinematic priors improve action learning across various domains.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Articulated-action understanding and prediction are framed as important for robot learning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap_and_method",
+        "summary": "The abstract attributes a structural mismatch to standard backbones, then introduces the Neural Rodrigues Operator and RodriNet to encode kinematic structure.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation_and_implication",
+        "summary": "The authors report gains on synthetic tasks and demonstrations in robotic imitation learning and hand reconstruction, supporting broader use of structured kinematic priors.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a stated architectural gap directly to a structural operator and then evaluates the resulting architecture across synthetic and realistic applications.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact research narrative can make the proposed inductive bias, its implementation, and its evaluation settings visibly correspond.",
+        "application": "When proposing a structure-aware model, explicitly map the observed structural limitation to the mechanism that encodes the structure and test it in both controlled and application-oriented settings.",
+        "exception": "This framing is less suitable when the task has no well-supported domain structure or when application settings cannot isolate the proposed mechanism."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the synthetic tasks, benchmark datasets, metrics, baseline details, improvement magnitudes, or statistical conditions.",
+      "It does not provide implementation details for the Neural Rodrigues Operator or RodriNet, nor clarify whether the reported application demonstrations include direct baseline comparisons."
+    ]
+  }
+}

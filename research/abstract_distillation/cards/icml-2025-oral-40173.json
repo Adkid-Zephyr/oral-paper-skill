@@ -1,0 +1,162 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-40173",
+    "title": "Position: AI Agents Need Authenticated Delegation",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/40173"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9267bcb578ba376c788e25fd936f660712f665b8087aa811a2aef4de74858da1",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "e1d7fdb95b11fc7297e411d035bbfbd4e09210c8d8c0ec3413a1ff8b94d73df5",
+    "extracted_at": "2026-09-13T00:06:58.542641+00:00",
+    "session_id": "01a09816-6f05-7631-bfff-2d09fb8b94c0",
+    "usage": {
+      "input_tokens": 12659,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 649,
+      "reasoning_output_tokens": 92
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "99ee404076227008f20d02d0e10506569575e6260821f01296e0b78f1af39f18"
+    },
+    {
+      "id": "S2",
+      "sha256": "8a0ccefe88c47ab7477b0c56afb20958408a6f46057675d7fce513379d098b3c"
+    },
+    {
+      "id": "S3",
+      "sha256": "05cc64e106ab5d62390da70dc73b1820b6874377fe09e2dd78d6942ddea765d6"
+    },
+    {
+      "id": "S4",
+      "sha256": "f451b3e16299184871018d3966b5ad46ab30338e1f4a42a8d5d718b93f0facf5"
+    },
+    {
+      "id": "S5",
+      "sha256": "f1fd60aea5fbd74d8ceecbc338b21a56a8b7d8986e9f4b2dd1478e0e99dd3eff"
+    },
+    {
+      "id": "S6",
+      "sha256": "7c86a3fe26f715aa883e7778695ef4bf46f0796723b28c41df40973585c74fc2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-40173",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Autonomous-agent delegation raises authorization, accountability, and access-control challenges.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "position and roadmap",
+        "claim": "Argues that authenticated, auditable delegation should be prioritized in AI-agent governance and outlines a roadmap.",
+        "source_ids": [
+          "S2",
+          "S6"
+        ]
+      },
+      {
+        "type": "system design",
+        "claim": "Outlines extending OAuth 2.0 and OpenID Connect with agent-specific credentials and translating natural-language permissions into scoped rules across interaction modalities.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach through agent-specific extensions to established authentication infrastructure and transparent natural-language permission translation.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their outlined approach can support clear accountability chains while remaining compatible with established authentication and web infrastructure.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that the work supports agent systems performing only appropriate actions.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Rapid autonomous-agent deployment creates delegation-related authorization, accountability, and access-control challenges.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "position",
+        "summary": "The paper argues that authenticated and auditable authority delegation is critical for mitigating practical risks and realizing agent value.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "design direction",
+        "summary": "It examines extending web protocols and natural-language access-control interfaces for secure agent delegation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed outcome",
+        "summary": "The outlined extensions aim to provide scoped permissions, accountability, infrastructure compatibility, and governance guidance.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects natural-language permissions to robust scoping rules and established authentication protocols.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This frames agent governance as both an interface-translation problem and an accountability-infrastructure problem.",
+        "application": "Authors addressing agent safety could map high-level user permissions to explicit scopes and identify the accountability chain supported by each scope.",
+        "exception": "This framing may be unsuitable when the task does not involve delegated authority, access control, or auditable actions."
+      }
+    ],
+    "unknowns": [
+      "The abstract reports no experiments, benchmarks, formal proofs, implementation details, or concrete security analysis.",
+      "It does not specify the agent credentials, translation procedure, threat model, or how compatibility and appropriate-action claims are evaluated."
+    ]
+  }
+}

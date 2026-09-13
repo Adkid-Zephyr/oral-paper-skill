@@ -1,0 +1,171 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31855",
+    "title": "Unlearning-based Neural Interpretations",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31855"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "364dbf695b818398fe7377c22d0dd15511df3b387dfe47e9c772abcab90ca802",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "e88e520fd196fad8d9fe966d42be04903fcd30c865660702c2429339e505b6b9",
+    "extracted_at": "2026-09-12T23:54:39.881055+00:00",
+    "session_id": "01a0980b-26fd-7811-8395-6a35d2f8c251",
+    "usage": {
+      "input_tokens": 12633,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 742,
+      "reasoning_output_tokens": 78
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0098d5066e73e93b330a876c13242c35dc3ee1be12cfbe6e811d6ab88362d7b0"
+    },
+    {
+      "id": "S2",
+      "sha256": "99b69850630ebe865fd8ed9cf21ec74df14726012e082216e450ee433470b78f"
+    },
+    {
+      "id": "S3",
+      "sha256": "98509d30a42a4a385c570c89b246ea829c57b19e21d3520e9cc90fb9fcf09fd6"
+    },
+    {
+      "id": "S4",
+      "sha256": "b9e6a4d359b6fea6fae0bb4cd382657f444566b3ce2ee5fe0b37a969e38bef3d"
+    },
+    {
+      "id": "S5",
+      "sha256": "56e86c2b14a686cbd0f5ae278e845eb29ba149a31da1db15f5ee1a77a92054b3"
+    },
+    {
+      "id": "S6",
+      "sha256": "85b5112f43cc16bb47dbcfea2b2feb305c4b2e68ae1f331d37b477007c3f041b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31855",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Gradient-based interpretations need a comparison anchor to avoid saturation when computing feature importance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The authors argue that static baselines can impose harmful colour, texture, and frequency assumptions that diverge from model behaviour, producing biased, fragile, and manipulable attribution maps.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "UNI computes an adaptive, debiased baseline by perturbing the input toward an unlearning direction defined by steepest ascent.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "interpretation",
+        "claim": "The proposed approach uses unlearning to erase salient features and locally smooth high-curvature decision boundaries.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish UNI from static-baseline approaches by making the baseline adaptive and unlearning-based.",
+      "source_ids": [
+        "S2",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that UNI discovers reliable baselines and succeeds in erasing salient features, with corresponding local smoothing of high-curvature decision boundaries.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report analyses indicating that unlearning is promising for faithful, efficient, and robust interpretations.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Gradient-based interpretation methods require an anchor to mitigate saturation in feature-importance computation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors attribute failures of static baselines to injected colour, texture, and frequency assumptions, which accumulate irregular gradients.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "UNI replaces the static approach with an adaptive baseline obtained by perturbing inputs along an unlearning direction.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_outcome",
+        "summary": "The authors report reliable baselines, salient-feature erasure, and local smoothing of high-curvature boundaries.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The analyses frame unlearning as a promising route to faithful, efficient, and robust interpretations.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a concrete baseline design choice to specific failure modes—assumption mismatch, irregular gradients, and biased or manipulable attribution maps—before presenting an adaptive alternative.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This creates a traceable chain from mechanism to pathology to intervention.",
+        "application": "When proposing an interpretation method, explicitly connect the design choice to the failure mode it is intended to address and state the intermediate mechanism.",
+        "exception": "This framing is less suitable when the failure mechanism has not been established or when the method targets a different objective."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no datasets, quantitative metrics, baselines, or experimental conditions for the reported outcomes.",
+      "It does not specify how reliability, faithfulness, efficiency, robustness, or local boundary smoothing are operationalized.",
+      "The abstract does not provide comparative evidence establishing superiority over existing methods."
+    ]
+  }
+}

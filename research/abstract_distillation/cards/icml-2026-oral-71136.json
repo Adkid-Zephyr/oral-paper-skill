@@ -1,0 +1,162 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71136",
+    "title": "From Text to Forecasts: Bridging Modality Gap with Temporal Evolution Semantic Space",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71136"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b731dfdc3e12e5afdba3acfc69f841b6357eeb79d4325bf15ca33ce30091ec6b",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "5e3ed2c76229e53e0d3587c9aacc0749b6f58fc9b3533664fee597e8d361916e",
+    "extracted_at": "2026-09-13T00:15:30.655512+00:00",
+    "session_id": "01a0981e-3dd2-73a2-8e49-ed372bc8676e",
+    "usage": {
+      "input_tokens": 14203,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 728,
+      "reasoning_output_tokens": 64
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1e16290af7f24cb8d05111b6cf2d8541e1f9cca8b3f8c40b1b28c0b0445ca681"
+    },
+    {
+      "id": "S2",
+      "sha256": "c82b886f725ca32a0a96c69c8471e0a1b335697e6dba1e70305a25c3019c6dfb"
+    },
+    {
+      "id": "S3",
+      "sha256": "4542907643975703ebb0cd5fd761137e638b7c02269ef4b5f47cf98085f1a244"
+    },
+    {
+      "id": "S4",
+      "sha256": "a9d6653ba509d03d19e269891f583e2ccd72c7168a41547af99397a3af5f8e24"
+    },
+    {
+      "id": "S5",
+      "sha256": "78aefa4fcb13cf5f99cec6df2153c2dc67b2a178fc6ea434e6b19466535bf0b5"
+    },
+    {
+      "id": "S6",
+      "sha256": "7a6f0b7f3e7ce3dd12a61c4e9ef4ed669f8212bb91ac064ec1c3dcbee11524ea"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71136",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Use textual information to improve time-series forecasting under event-driven non-stationarity.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Text describes temporal impacts implicitly and qualitatively, while forecasting models require explicit quantitative signals; existing methods reportedly over-attend to redundant tokens and struggle to translate semantics into numerical cues.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "TESS introduces a Temporal Evolution Semantic Space as an intermediate bottleneck between text and forecasting modalities.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The space represents interpretable, numerically grounded temporal primitives—distribution shift, volatility, shape, and lag—extracted by an LLM with structured prompting and confidence-aware gating.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish TESS by inserting a temporal semantic bottleneck composed of numerically grounded primitives between modalities.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "In controlled semi-synthetic experiments, the authors report that existing methods over-attend to redundant tokens and do not reliably convert textual semantics into usable numerical cues.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "On four real-world datasets, the authors report up to a 29% reduction in forecasting error versus state-of-the-art unimodal and multimodal baselines.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Text may help forecasting with event-driven non-stationarity, but its qualitative temporal descriptions do not align with quantitative forecasting signals.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "Controlled semi-synthetic experiments reportedly expose redundant-token attention and unreliable semantic-to-numeric translation in existing methods.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "TESS bridges modalities through an intermediate space of grounded temporal primitives extracted and confidence-gated from text.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Experiments on four real-world datasets reportedly show up to 29% lower forecasting error than unimodal and multimodal baselines.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper maps qualitative text into a small set of interpretable temporal primitives before fusion, using structured prompting and confidence-aware gating.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "An explicit semantic interface can make cross-modal translation more inspectable and align representations with the downstream task.",
+        "application": "For another multimodal forecasting problem, define task-relevant, numerically grounded intermediate primitives and gate uncertain extractions before model fusion.",
+        "exception": "This may be unsuitable when the domain lacks stable interpretable primitives or when discretizing rich semantics would discard essential information."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dataset identities, forecasting horizons, error metric, absolute errors, or whether the 29% reduction is consistent across all four datasets.",
+      "It does not report ablations isolating the bottleneck, primitive set, prompting, or gating contributions."
+    ]
+  }
+}

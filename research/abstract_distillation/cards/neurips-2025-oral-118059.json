@@ -1,0 +1,198 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-118059",
+    "title": "A is for Absorption: Studying Feature Splitting and Absorption in Sparse Autoencoders",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/118059"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a22cca6bc553d9f3a920ef275b58ea6d3ad1ad80bb8a83ca6b93e1dbc0bfb24b",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "4013d7f3cc75875731e2664678391e0e57c0623a03818609fe2b7da920b33ca5",
+    "extracted_at": "2026-09-13T00:22:23.799082+00:00",
+    "session_id": "01a09824-7c3b-7760-a31d-979e67213534",
+    "usage": {
+      "input_tokens": 12730,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 791,
+      "reasoning_output_tokens": 64
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "09665f226261e2df5cc16a595cb23f5b94b90dd24b6c87a45cabd7619af2376e"
+    },
+    {
+      "id": "S2",
+      "sha256": "9867bcdfc96112907ce80a10c5c7b97d90fb0f715d509f3f8e0b93aa70f0adf9"
+    },
+    {
+      "id": "S3",
+      "sha256": "0bd95b68ed5b3fe3311cdc91cb608d4c0e6497a3b0b6700422109c6eba1ba97e"
+    },
+    {
+      "id": "S4",
+      "sha256": "84a8837c226f2848cc1267be40ffa44e54c847cafac54743ceec2565f0ce6ea2"
+    },
+    {
+      "id": "S5",
+      "sha256": "ef894fc44171f03e0d8bb0e3a36dbcc4c34c23773e77f4dcfc836b4948e23a71"
+    },
+    {
+      "id": "S6",
+      "sha256": "ae40fca47bae404817e1956ba7e55d06ca2207f1f57f375ec1bd32607a8027f8"
+    },
+    {
+      "id": "S7",
+      "sha256": "d2ceadb8a10ce3ab6259180f96bf6d833806da34f810be2af4e49cdaf4cc2ef4"
+    },
+    {
+      "id": "S8",
+      "sha256": "c046b5b5a55b935b1be76a2680d688f6821cfa8f1bb951cafd117b76ded0fe47"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-118059",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies whether SAEs robustly decompose LLM activations into interpretable hierarchical features as SAE feature count increases.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies a lack of robustness in sparse decomposition and feature splitting, including monosemantic features failing to fire where expected.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "phenomenon",
+        "claim": "Defines feature absorption: parent-like features are absorbed into their hierarchical child features under sparse decomposition.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "metric",
+        "claim": "Introduces a metric for detecting feature absorption in SAEs.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that changing SAE size or sparsity is insufficient to resolve absorption, and discusses potential approaches to its theoretical issues.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that they coin the term feature absorption for this phenomenon and introduce a detection metric.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that seemingly monosemantic features sometimes fail to activate where expected and instead become absorbed into child features.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report empirical validation of their findings on hundreds of LLM SAEs.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that varying SAE sizes or sparsity does not solve the issue.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setup",
+        "summary": "SAEs are framed as tools for decomposing LLM activation spaces into interpretable features.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "background phenomenon",
+        "summary": "Increasing SAE feature count is associated with hierarchical features splitting into finer-grained features.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "problem diagnosis",
+        "summary": "The paper reports that splitting is not robust and characterizes parent-feature failure as absorption into child features, linked to sparsity optimization.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "measurement and implications",
+        "summary": "It introduces an absorption metric, reports validation across hundreds of SAEs, and argues that size or sparsity variation is insufficient.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "outlook",
+        "summary": "The paper discusses implications and possible routes toward addressing the underlying theoretical issues.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract names a specific failure mode, identifies a proposed cause, and pairs it with a metric and empirical validation.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A precise failure-mode–cause–measurement chain can make an interpretability claim more diagnostically useful than reporting aggregate decomposition quality alone.",
+        "application": "For a new representation-learning study, define a concrete failure mode, hypothesize its mechanism, and introduce a targeted diagnostic before presenting broad evaluation.",
+        "exception": "This framing is less suitable when the task has no identifiable failure mode or when mechanism claims cannot be separated from descriptive measurement."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the absorption metric, its threshold or validation procedure.",
+      "The number, model diversity, and evaluation conditions of the hundreds of LLM SAEs are unspecified.",
+      "The proposed approaches for resolving the theoretical issues are not described in detail."
+    ]
+  }
+}

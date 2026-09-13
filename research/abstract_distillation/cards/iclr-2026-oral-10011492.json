@@ -1,0 +1,164 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011492",
+    "title": "HATSolver: Learning Gröbner Bases with Hierarchical Attention Transformers",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011492"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "799510adcee47a364a174dfb5ca48bf6f44b238666a974d4656f3f6cf160caa4",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "eced7988a45614e17c14d965299d9924edea8dc5d0d3d5c2a368f0a6870adc2e",
+    "extracted_at": "2026-09-13T00:06:04.689921+00:00",
+    "session_id": "01a09815-957c-7153-88ab-4b0c694baa46",
+    "usage": {
+      "input_tokens": 12609,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 743,
+      "reasoning_output_tokens": 137
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "77e0fe7460a9ce11f29ecec3a8570e32a442113dfe1c8ed68e6d81d59793e5db"
+    },
+    {
+      "id": "S2",
+      "sha256": "115744a4ae45ff3e701a7779e7a0e62a0e867086d7833ef5371ea0eabf5034a1"
+    },
+    {
+      "id": "S3",
+      "sha256": "e72e2fea79aff742d8237b77c98d72f82da81bd3e0a6701de3a0e4dd1d6e6203"
+    },
+    {
+      "id": "S4",
+      "sha256": "fc20d56b4efde9abd6b54dd0cdb33d8e9ccf42a01028f310a362fddbe37851bd"
+    },
+    {
+      "id": "S5",
+      "sha256": "72e07a67d9386bdbefb61962a3487396432f5ab73654357be54db7aefd380e48"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011492",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Learn to solve systems of multivariate polynomial equations through Gröbner-basis computation using transformers.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Applies Hierarchical Attention Transformers with a tree-structured inductive bias to Gröbner-basis computation.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "Generalizes the approach to arbitrary depths and provides a computational cost analysis.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Combines the method with curriculum learning to address substantially larger instances than the cited prior work.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper distinguishes its approach by introducing HATs, hierarchical structure, arbitrary-depth generalization, and cost analysis for transformer-based Gröbner-basis computation.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report significant computational savings relative to conventional flat-attention models, attributing them to the hierarchical architecture.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that curriculum learning enables solving instances much larger than those in Kera (2024).",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "prior context",
+        "summary": "Transformers had previously been introduced for computing Gröbner bases.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method proposal",
+        "summary": "The paper applies Hierarchical Attention Transformers to multivariate polynomial systems solved through Gröbner bases.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "mechanism and scope",
+        "summary": "The architecture uses tree structure for hierarchical relationships, claims savings over flat attention, and is generalized to arbitrary depths with cost analysis.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "With curriculum learning, the method reportedly handles much larger instances than the cited prior work.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a structural inductive bias to computational savings and pairs the architectural proposal with explicit cost analysis.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This links the design rationale to a measurable resource claim and an analysis intended to characterize its scope.",
+        "application": "When proposing structured attention, state which data relationship the structure models and include an explicit cost comparison or scaling analysis.",
+        "exception": "This framing is unsuitable when the task has no credible hierarchical structure or when computational cost is not a meaningful evaluation dimension."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative savings, instance sizes, baselines beyond the cited comparison, or experimental conditions.",
+      "The cost analysis, arbitrary-depth construction, and reported claims cannot be independently assessed from the abstract alone."
+    ]
+  }
+}

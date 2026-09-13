@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006542",
+    "title": "Watch your steps: Dormant Adversarial Behaviors that Activate upon LLM Finetuning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006542"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "842c1d4465306bc3e6ddaa1fa9006dcb2dbf207fbf62bce142bd36d85c4b2bab",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "cb6a8570255659f275c6518c6c782d4d524cf55db184e44734becf28aa8891ad",
+    "extracted_at": "2026-09-12T23:58:03.507624+00:00",
+    "session_id": "01a0980e-34fd-73b1-bbb7-fd456cd07b3e",
+    "usage": {
+      "input_tokens": 12810,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 849,
+      "reasoning_output_tokens": 108
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d03cc0bdcd12a26ab2a6b2b559a17e118dd0bb380ae72f80d9d2ad4c211e6497"
+    },
+    {
+      "id": "S2",
+      "sha256": "cf3415e7fa84bf6df04ec7d465caf0440b875cb1d261006c7ccf4c2c82620d54"
+    },
+    {
+      "id": "S3",
+      "sha256": "315cdd19938cdf9d1e741c2847430428c8a932dfae48b00ee9d3885004210f6f"
+    },
+    {
+      "id": "S4",
+      "sha256": "40298a40519959d2e47a5881ab02869738195dd86ec6348af0167af78f25625b"
+    },
+    {
+      "id": "S5",
+      "sha256": "9fb99fd4daf52797e3efcb456131669ec726b18f9a84290ce758943739e7ea9d"
+    },
+    {
+      "id": "S6",
+      "sha256": "1d56c98a92c503e776cdde53e9fb31f2bbf1f86f28412faea969cd3d29e07932"
+    },
+    {
+      "id": "S7",
+      "sha256": "fc0903375d0eb31101ca9563dfc584536af676e1626212a465e8677d21c35de1"
+    },
+    {
+      "id": "S8",
+      "sha256": "37b8ecfb9619d7f89da2bdb303bfc4145469fd38da91275bd1b4d5dd828dd123"
+    },
+    {
+      "id": "S9",
+      "sha256": "15472fa4acd740df0312fed2a5f5294aa753697a3ca036afd255229526d115ff"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006542",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper examines whether downstream finetuning of an apparently benign, capable LLM can activate adversarial behavior.",
+        "source_ids": [
+          "S3",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "The authors challenge the prevailing view that finetuning on benign data is controlled, secure, and behaviorally predictable.",
+        "source_ids": [
+          "S2",
+          "S9"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "attack method",
+        "claim": "FAB uses meta-learning to simulate downstream finetuning and optimize for adversarial behavior after finetuning, while regularizing the pre-finetuning model to retain capabilities and show no adversarial behavior.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report FAB across multiple LLMs and three target behaviors: unsolicited advertising, jailbreakability, and over-refusal.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "robustness finding",
+        "claim": "The authors report that FAB triggers persist across user choices involving datasets, training steps, schedulers, and post-training algorithms.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that they demonstrate for the first time an adversary can create performant, benign-looking LLMs whose adversarial behavior emerges after downstream finetuning.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors experimentally report FAB effectiveness across multiple LLMs and the three listed target behaviors.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report robustness of FAB triggers to variations in dataset, number of steps, scheduler, and post-training algorithm.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Finetuning open-weight LLMs is presented as standard practice for task-specific improvement.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "assumption",
+        "summary": "Existing understanding is described as treating benign-data finetuning as controlled, secure, and predictable.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "attack",
+        "summary": "FAB embeds dormant adversarial behavior through simulated downstream finetuning while preserving benign pre-finetuning behavior and general capabilities.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "trigger and evidence",
+        "summary": "User finetuning can unknowingly activate the behavior; experiments report effects across models, target behaviors, and finetuning choices.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The findings are framed as challenging finetuning-security assumptions and exposing an attack vector.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the attack claim with a precondition (benign behavior before finetuning), a trigger (downstream finetuning), and robustness across several user choices.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "Separating latent state, activation event, and variation conditions makes a hidden-behavior threat easier to specify and test.",
+        "application": "For a paper on conditional model failures, define the dormant state, activation procedure, and tested perturbations as separate claim-evidence units.",
+        "exception": "This structure is less suitable when the phenomenon has no identifiable trigger or precondition."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide attack success rates, baselines, model identities, dataset details, or statistical uncertainty.",
+      "It does not specify how adversarial behavior is measured or how broad the finetuning-choice robustness tests are."
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71163",
+    "title": "3ViewSense: Spatial and Mental Perspective Reasoning from Orthographic Views in Vision-Language Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71163"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4f5444c886c776fc94ce62b669b10983f3dbad7319ae0823b9dbebfb3164694d",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "ebc38be542f5d1c65db5b48e1036e9a71f6ae4102755b7ea437d29e565a5bc71",
+    "extracted_at": "2026-09-13T00:16:29.875874+00:00",
+    "session_id": "01a0981f-222f-7ec3-8a19-9cd5a428f59e",
+    "usage": {
+      "input_tokens": 12718,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 727,
+      "reasoning_output_tokens": 82
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f03a6011ede8fb19da595f4af482b01c13fb001812e84a31db353b11f06ad776"
+    },
+    {
+      "id": "S2",
+      "sha256": "1647c80be9da60d7e6c441dc1752b6c4b1845417c3449141bc46d5e450d26777"
+    },
+    {
+      "id": "S3",
+      "sha256": "432d5351aef3b41aea01420fafbe730502aa2bc416e4fcad9082a4fa6d98b427"
+    },
+    {
+      "id": "S4",
+      "sha256": "3236e3da0042ce1da3d1c34b5c0a5e4895b7f899708ceb9076d2ae58f6eb1c8e"
+    },
+    {
+      "id": "S5",
+      "sha256": "6a54b0e6df60799752c814225359a6f1ed03966ab92ac11cf66fd194329b2e88"
+    },
+    {
+      "id": "S6",
+      "sha256": "c0434cf556a5685b83769b65ba984e68d89eb2fb6f75ef2059a83ff6cdf82e2f"
+    },
+    {
+      "id": "S7",
+      "sha256": "24abb2adf2fef56c1fdd785fb6a8b54dd2ec59f25ca30737ae15a9784f0a82c7"
+    },
+    {
+      "id": "S8",
+      "sha256": "3e8f815ce0e3851547f3c7b45accc77c6dd84474f1db1c88980cb59c5a769bb7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71163",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Vision-Language Models struggle with elementary spatial tasks and with constructing coherent 3D representations from 2D observations.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify a missing view-consistent spatial interface as the bottleneck, rather than insufficient visual features or weak reasoning.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Introduces 3ViewSense, which grounds spatial reasoning in orthographic views.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "mechanism",
+        "claim": "Proposes Simulate-and-Reason, decomposing complex scenes into canonical orthographic projections to address geometric ambiguities and support mental rotation and reconstruction.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their framework by combining orthographic-view grounding with a Simulate-and-Reason mechanism for spatial reasoning.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report significant gains over existing baselines on spatial reasoning benchmarks, including occlusion-heavy counting and view-consistent spatial reasoning.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report improved stability and consistency of spatial descriptions.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames a mismatch between strong language-model logic and weak Vision-Language Model performance on basic spatial tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "It describes a spatial intelligence gap and attributes the bottleneck to a missing view-consistent spatial interface.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It introduces 3ViewSense and its Simulate-and-Reason mechanism based on canonical orthographic projections.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The authors report benchmark gains and more stable, consistent spatial descriptions.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a diagnosed representational interface bottleneck to a method that explicitly aligns egocentric perceptions with allocentric orthographic references.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A paper can make its method rationale more testable by connecting an explicitly diagnosed bottleneck to a corresponding intermediate representation.",
+        "application": "When a task involves ambiguous 2D evidence and latent 3D structure, define the missing interface first, then design an intermediate representation that directly addresses it and evaluate the matching failure modes.",
+        "exception": "This framing is unsuitable when the task has no meaningful intermediate representation or when the diagnosis is not supported by targeted analysis."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark names, dataset sizes, metrics, baseline identities, or numerical gains.",
+      "The diagnostic analyses and the conditions under which the proposed interface outperforms alternatives are not described.",
+      "The abstract does not provide details sufficient to assess the reported stability improvements or scalability claim."
+    ]
+  }
+}

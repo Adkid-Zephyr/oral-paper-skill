@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31926",
+    "title": "OptionZero: Planning with Learned Options",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31926"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f79d5d2ef979aa53cd67d6521fe54ffe607ad98efe472c8c1b715c4e4fd193d8",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "618a2238d89e4b1eaea998d4570f578a32ee6635f04b23fc3d20e55867699c3e",
+    "extracted_at": "2026-09-12T23:57:26.804946+00:00",
+    "session_id": "01a0980d-aab3-70b1-bc97-4288ca67d657",
+    "usage": {
+      "input_tokens": 12690,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 810,
+      "reasoning_output_tokens": 118
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f915d5db0a1eb7fd571902abc5060104b05db4362ddf760a6819ff345f66c7f6"
+    },
+    {
+      "id": "S2",
+      "sha256": "a289a78d7529e4b2876badaf774b2d498155f2aa4f00f9baf95616093f1c6d18"
+    },
+    {
+      "id": "S3",
+      "sha256": "a21963e2b7d237a19710ff182cf94d9be5b9862933f7111c9b24f9b9bc92330a"
+    },
+    {
+      "id": "S4",
+      "sha256": "c802ab5fe7ec542fae325866d76d44b739db2b6eb5b724309e12c6bfc40def03"
+    },
+    {
+      "id": "S5",
+      "sha256": "7eed2fef85bff91014e6277b48cbe0353073d0bce3542dfc5053010c165bf429"
+    },
+    {
+      "id": "S6",
+      "sha256": "64a2c2d41f30244ad096ba5eacdab47bb85a245dc40355019abaf114df9c5b3f"
+    },
+    {
+      "id": "S7",
+      "sha256": "92801e664733c51053c6abda88c47c2e8311774c618d9ddfb40b5bedee2cb875"
+    },
+    {
+      "id": "S8",
+      "sha256": "bb5d00a679f7c2ec1f03dccbccf8bc679aae539e54ede301841f8a459b5c426f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31926",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to discover and use action-sequence options autonomously for planning in complex reinforcement-learning environments.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Prior work focused on predefined options or options learned from expert demonstrations, leaving the proposed self-play, no-human-knowledge approach as the paper’s stated direction.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "OptionZero adds an option network to MuZero to discover options autonomously through self-play.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It modifies the dynamics network to model environment transitions when using options, enabling deeper search under the same simulation constraints.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The approach is evaluated across 26 Atari games and is reported to learn both options and game-specific strategic skills.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present OptionZero as a novel MuZero-based approach that autonomously discovers options through self-play without human knowledge.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that OptionZero outperforms MuZero across 26 Atari games, with a 131.58% improvement in mean human-normalized score.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report behavior analyses indicating that the method learns options and strategic skills tailored to different game characteristics.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Planning with action-sequence options has been effective in complex reinforcement-learning environments.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior-work framing",
+        "summary": "Earlier studies used predefined options or learned them from expert demonstrations.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "OptionZero combines an option network for self-play discovery with a modified dynamics network for option-based transitions and deeper search under fixed simulation limits.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "In 26 Atari games, the authors report improved mean human-normalized performance and game-specific strategic skills.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs an architectural addition for discovering options with a dynamics-network change that explains how those options support deeper search under the same simulation constraints.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A compact abstract can make a method’s components more informative by linking each component to a distinct planning bottleneck.",
+        "application": "When presenting a planning method, map each architectural change to the specific search or representation constraint it is intended to address.",
+        "exception": "This framing is less suitable when the abstract lacks a concrete mechanism-to-bottleneck correspondence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify Atari-game identities, training budgets, evaluation protocol, variance or significance, or the precise baseline configuration.",
+      "The reported 131.58% improvement is not further defined beyond mean human-normalized score, so its aggregation and comparison details are unclear.",
+      "The abstract does not provide details sufficient to assess the behavioral analysis or reproduce the reported results."
+    ]
+  }
+}

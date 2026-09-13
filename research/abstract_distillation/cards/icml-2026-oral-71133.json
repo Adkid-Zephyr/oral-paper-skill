@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71133",
+    "title": "Rational Transductors",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71133"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b5e0f5e5f36f39793a74ed0d47c34a9dfdba3c8c898d65d6a1663dbdc91817af",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "b2932f578d668ce053f1e2553996d0ab93cd96684905fe02199fbac33a037e70",
+    "extracted_at": "2026-09-13T00:15:24.356012+00:00",
+    "session_id": "01a0981e-1afa-7022-9305-df8f522e0dce",
+    "usage": {
+      "input_tokens": 12704,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 810,
+      "reasoning_output_tokens": 48
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1910058c9e1d6fe65cb14e18862da67271a44140352ff69a7c9297a1910e095d"
+    },
+    {
+      "id": "S2",
+      "sha256": "8bcc15b8f81bb7e3d89dffd52acc9f2f19ff4e8fea3aec66de3950a3524a6b29"
+    },
+    {
+      "id": "S3",
+      "sha256": "c31f7db170424d29c44bbf5759beca7ce8dfc4f742f44eb615c83018f2c16f10"
+    },
+    {
+      "id": "S4",
+      "sha256": "129ad3ef3d92fce7a5331449758a9fb741262bcd0db95fa791aa5efac75398fa"
+    },
+    {
+      "id": "S5",
+      "sha256": "4d994a1bfdbebcd90de220694bbb75b72f6bc5393a6c136d0005be75af573afa"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71133",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses sequential tasks requiring rigid logic, state tracking, and length generalization.",
+        "source_ids": [
+          "S1",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify limitations of standard self-attention for robustly handling such sequential problems, particularly without intermediate chain-of-thought.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The authors introduce Rational Transductors, a dual-stream Transformer architecture with a WFA-derived matrix-valued recurrence and Deep Rational Injection into attention.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The framework is described as strictly generalizing Transformers to capture Regular Languages, NC^1-complete problems, Parity, and Modular Counting while retaining O(log T) parallel training efficiency.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report that Rational Transductors enable robust length generalization on algorithmic tasks where standard Transformers fail, without traditional RNN-style sequential bottlenecks.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present the combination of a WFA-derived rational recurrence with attention through Deep Rational Injection as their introduced framework.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical analysis and empirical results indicating that Rational Transductors solve the “Regular Gap.”",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report coverage of Regular Languages, NC^1-complete Boolean Formula Evaluation, Parity, and Modular Counting, with O(log T) parallel training efficiency.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Standard Transformers are reported to excel at semantic modeling but struggle with rigid sequential logic and state tracking.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "theoretical context",
+        "summary": "Prior theoretical work is cited as placing hard- and soft-attention self-attention in AC^0 and TC^0, respectively, with limitations for robust sequential length generalization.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper introduces Rational Transductors, combining Transformer attention with a WFA-derived matrix recurrence.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism and scope",
+        "summary": "Deep Rational Injection supplies rational state information to attention; the authors state that this strictly expands representational coverage while preserving parallel training efficiency.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report solving the Regular Gap and improving length generalization on tasks where standard Transformers fail, without RNN-like sequential bottlenecks.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a concrete architectural mechanism—rational state injection—to both named formal capability classes and length-generalization outcomes.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This creates a traceable alignment between mechanism, theoretical scope, and reported behavior.",
+        "application": "When presenting a new architecture, map each introduced component to explicit formal capabilities and task-level evidence.",
+        "exception": "This framing is unsuitable when the work has no formal analysis or when the claimed capabilities are not directly evaluated."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify task datasets, evaluation protocols, baselines beyond standard Transformers, or quantitative empirical results.",
+      "The stated theoretical coverage and strict generalization are author reports; proof details and assumptions are not provided.",
+      "The meaning and operational details of the “Regular Gap” are not defined in the supplied units."
+    ]
+  }
+}

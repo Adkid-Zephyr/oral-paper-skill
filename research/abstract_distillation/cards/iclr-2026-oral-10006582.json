@@ -1,0 +1,156 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006582",
+    "title": "Differentially Private Domain Discovery",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006582"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "678ddd0f49ee6906db26459473c37b2c368605eec852f5f592ebb95b700ac2d2",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "06c1b9f416f8f49884d97e44757509de4fa972d3baf6d3d5decfb58201baebe1",
+    "extracted_at": "2026-09-12T23:58:05.200322+00:00",
+    "session_id": "01a0980e-4628-7fb2-b407-84dee24e1cef",
+    "usage": {
+      "input_tokens": 12600,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 738,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "615e53073941f88751fa45fb2b5d7a1485dc4c488f25f1ec9d28fca6f219b85e"
+    },
+    {
+      "id": "S2",
+      "sha256": "c6c1fa060e59751cfef4cfc3497467532640d965dd8d6ba0bd63735d3091c244"
+    },
+    {
+      "id": "S3",
+      "sha256": "2da860116eb0f2c2ce42d21782471b2601779cf33ff4a6280be1ec12ab2cc242"
+    },
+    {
+      "id": "S4",
+      "sha256": "93334492aa381dc3ca1a95309b8b2aa1e321d7657a12900e490640e286ab5f6f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006582",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies differentially private domain discovery when users hold subsets of items from an unknown shared domain, aiming to output an informative item subset.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Characterizes Weighted Gaussian Mechanism (WGM) guarantees for private set union: near-optimal ℓ1 missing mass on Zipfian data and distribution-free ℓ∞ missing mass.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses WGM as a domain-discovery precursor for unknown-domain private top-k and k-hitting-set algorithms, yielding utility guarantees.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that WGM-based methods are competitive with or outperform existing baselines across set union, private top-k, and k-hitting set.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present new utility guarantees for unknown-domain variants of private top-k and k-hitting-set algorithms via WGM-based domain discovery.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report near-optimal ℓ1 missing-mass performance for WGM on Zipfian data and a distribution-free ℓ∞ missing-mass guarantee.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report that their WGM-based methods are competitive with or outperform existing baselines on all three studied problems.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem",
+        "summary": "Defines private domain discovery for users holding subsets of an unknown shared item domain.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "set-union result",
+        "summary": "Analyzes WGM and reports near-optimal ℓ1 missing mass on Zipfian data plus distribution-free ℓ∞ missing mass.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "extension",
+        "summary": "Feeds WGM domain discovery into private top-k and k-hitting-set algorithms for unknown-domain utility guarantees.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Reports competitive or better performance than existing baselines across all three problems.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a domain-discovery primitive with downstream unknown-domain algorithms and states both distribution-specific and distribution-free guarantees.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A layered presentation can connect a reusable primitive to downstream tasks while distinguishing assumptions and guarantee scopes.",
+        "application": "When introducing a preprocessing method, state its standalone guarantee, then specify how it changes guarantees for each downstream unknown-domain task.",
+        "exception": "This framing is unsuitable when the preprocessing stage has no independently meaningful guarantee or when downstream performance cannot be characterized separately."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify privacy parameters, sample or domain sizes, exact utility bounds, or the conditions behind the stated guarantees.",
+      "The experiments' datasets, metrics, baseline configurations, and quantitative margins are not reported."
+    ]
+  }
+}

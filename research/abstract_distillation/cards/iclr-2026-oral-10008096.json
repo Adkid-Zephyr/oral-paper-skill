@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008096",
+    "title": "Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008096"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "629c272f130147dfcec451a3532cdf01376752b71d12fc87aa1dce3b4bab345e",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "c05f8306e2cc86a6ce714688a6cc9043ddf3cd7c195645e1068c92d11d6e36ac",
+    "extracted_at": "2026-09-13T00:00:39.495010+00:00",
+    "session_id": "01a09810-a0aa-7121-8976-bc2f51381a10",
+    "usage": {
+      "input_tokens": 12714,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 744,
+      "reasoning_output_tokens": 101
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ba3085a4e603996844451d877335b24bdc08166ec5ca0e06ff9f9fbd28072194"
+    },
+    {
+      "id": "S2",
+      "sha256": "67d99354ce23bd79d2ac37af687863ecd3596d0fa65454ffe6379571cfc9e3b5"
+    },
+    {
+      "id": "S3",
+      "sha256": "327ce9d402f766986fd2a9429f75ff3cf2abd68c49ac574f3e2ed2245e683353"
+    },
+    {
+      "id": "S4",
+      "sha256": "75b16a4b4c135caad9246bf263d8a5d3b3f528f9c386050c6485bb445014f8fe"
+    },
+    {
+      "id": "S5",
+      "sha256": "c6c86270f2bdc6692c145f12d4000b1bc7973161d2d93333743b4a3e1b31d19e"
+    },
+    {
+      "id": "S6",
+      "sha256": "26121e2fb55d2e9278a6a789999c0cdbf8e10bed7f8974a0996479961a43678c"
+    },
+    {
+      "id": "S7",
+      "sha256": "3e64be420cfe2831cb649d0d4ba007c783649da471cf566e6c2dacb0ffdadfe3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008096",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Autoregressive image generation is latency-heavy because next-patch prediction is memory-bound.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Prior multi-patch approaches provided only limited parallelization, leaving a need for higher parallelism without sacrificing generation quality.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "LPD introduces Flexible Parallelized Autoregressive Modeling, using learnable position-query tokens and mutual visibility among concurrently generated tokens to support arbitrary generation orders and parallelization levels.",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "LPD introduces Locality-aware Generation Ordering, grouping tokens to reduce within-group dependencies and increase contextual support.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe both the flexible modeling architecture and locality-aware ordering schedule as novel techniques.",
+      "source_ids": [
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report reducing generation steps from 256 to 20 at 256×256 resolution and from 1024 to 48 at 512×512 resolution for ImageNet class-conditional generation, without compromising quality.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report at least 3.4× lower latency than previous parallelized autoregressive models.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Next-patch autoregressive decoding is memory-bound and causes high latency.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "prior limitation",
+        "summary": "Existing multi-patch methods improve parallelism only to a limited extent.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "architecture",
+        "summary": "LPD enables flexible generation ordering and parallelization through position queries and mutual visibility.",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "ordering strategy",
+        "summary": "A locality-aware schedule forms groups that reduce dependencies and increase contextual support.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The abstract reports substantially fewer steps and lower latency while maintaining ImageNet generation quality.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each proposed design with a specific decoding constraint: token visibility supports concurrent prediction, while grouping targets dependency reduction and contextual support.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Pairing mechanisms with the bottlenecks they address makes a compact method description more explanatory.",
+        "application": "For a multi-component method, state the operational constraint each component changes and connect it to the intended quality or efficiency effect.",
+        "exception": "Avoid this framing when component roles are inseparable or the abstract does not provide evidence for the proposed mechanism-effect link."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report quality metrics, statistical results, latency measurements, hardware or decoding settings, or the identities of comparison baselines.",
+      "The basis of the claim that quality is not compromised is unspecified."
+    ]
+  }
+}

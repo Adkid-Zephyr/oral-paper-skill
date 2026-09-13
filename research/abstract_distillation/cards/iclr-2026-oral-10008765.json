@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008765",
+    "title": "Navigating the Latent Space Dynamics of Neural Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008765"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "85555815d97e804d2018b814b7b19eb18d386816c1df461fa755e2877544cce9",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "8cb7271d3a8409e3e263893573d23ffd58f677945203ace107f7d88ce4475a35",
+    "extracted_at": "2026-09-13T00:01:46.671186+00:00",
+    "session_id": "01a09811-a418-7121-ae88-ab1fd503cb24",
+    "usage": {
+      "input_tokens": 12710,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 811,
+      "reasoning_output_tokens": 105
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5a0bc62ebcd07d249ea6afe3afa85df9572f49d5343efd16f56141526cb1a567"
+    },
+    {
+      "id": "S2",
+      "sha256": "f636480e29a7c080b7f26c02a59ac6f0361be3996548db7ca5bd81a01cc1e6d4"
+    },
+    {
+      "id": "S3",
+      "sha256": "4656c732e17efa5c620a0894ced121cf618b3a1774a84df96fc4231b6c9add08"
+    },
+    {
+      "id": "S4",
+      "sha256": "347d708c022fd4aaa7d8a2466ba3bce80d217e264f4c181c9afec6f30c79560c"
+    },
+    {
+      "id": "S5",
+      "sha256": "d32b85bc04eb4f2278afe8dc9f491007a4116b925fe6f7b86d44ce5a391112fa"
+    },
+    {
+      "id": "S6",
+      "sha256": "7115a8af8b4144c234bd46f03b7eafcaa69428375fa0b3364bd4379a090be850"
+    },
+    {
+      "id": "S7",
+      "sha256": "a71a5cfd6eea29ce4fe67f09b516bd5f01c2eb0ef1d139e53d9fa4987f902099"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008765",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks how neural models’ latent representations can be interpreted and analyzed as dynamics on a latent manifold.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "It derives a latent vector field for autoencoders by iteratively applying the encoding-decoding map, without additional training.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "representation",
+        "claim": "It proposes using this vector field as a representation for analyzing model and data properties, including training-stage generalization and memorization, data-free extraction of parameter-encoded prior knowledge, and trajectory-based out-of-distribution detection.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "It reports validation on vision foundation models to demonstrate applicability and effectiveness in real-world scenarios.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by interpreting neural models as dynamical systems acting on the latent manifold and by using the induced vector field as a model representation.",
+      "source_ids": [
+        "S2",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that standard training procedures lead to attractor points emerging in the latent vector field.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report validation of the approach on vision foundation models.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Neural networks are described as mapping high-dimensional data into structured representations in a lower-dimensional latent space.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "reinterpretation",
+        "summary": "The paper reframes neural models as dynamical systems operating on the latent manifold.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "construction",
+        "summary": "For autoencoders, repeated encoding and decoding implicitly define a latent vector field without extra training.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The authors associate standard-training inductive biases with attractors and propose the vector field for model and data analysis.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "application",
+        "summary": "The abstract lists analyses of training regimes, data-free prior extraction, and out-of-distribution identification, followed by validation on vision foundation models.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper turns an iterated, already-defined model operation into an analyzable latent-space object, then maps that object to several analysis tasks.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This can make a proposed analysis feel concrete by exposing an intermediate representation that connects mechanism to multiple uses.",
+        "application": "When a model has a natural repeated transformation, define its induced state-space structure explicitly and link each claimed use to that structure.",
+        "exception": "This framing may be unsuitable when the transformation has no meaningful iteration or when the induced states cannot be interpreted reliably."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, baselines, datasets, or evaluation conditions for the reported validation or effectiveness.",
+      "It does not specify how attractors are detected, how trajectories support out-of-distribution identification, or what is meant by extracting prior knowledge.",
+      "The abstract does not establish that the proposed representation outperforms alternative analyses."
+    ]
+  }
+}

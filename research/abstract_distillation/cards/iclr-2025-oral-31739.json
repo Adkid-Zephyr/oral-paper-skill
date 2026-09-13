@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31739",
+    "title": "Diffusion-Based Planning for Autonomous Driving with Flexible Guidance",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31739"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3858214af7e536961ae80c9eec46f85ca5761c3b9efebe57bc4f1fe2843fed72",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "d2a3bc171ec674eae3850c2bd0a8e56283a8394aee4208e6ade3595940282479",
+    "extracted_at": "2026-09-12T23:50:10.261141+00:00",
+    "session_id": "01a09806-ff63-7442-b04e-ad5e2b496bef",
+    "usage": {
+      "input_tokens": 12672,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 759,
+      "reasoning_output_tokens": 76
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "514536bde5c9c0962b54be25356f9819e51c03bd75793eb8b082c0ec645297f7"
+    },
+    {
+      "id": "S2",
+      "sha256": "f3076e5a6c37ee671b1ec10350d213d6ef71db3b592b8c645c249efd13d2061e"
+    },
+    {
+      "id": "S3",
+      "sha256": "4dbe2f39af786078f5a6d007b1d16ed0b1867631773d0ad18654f384cca62cd1"
+    },
+    {
+      "id": "S4",
+      "sha256": "5de97055928bd28d41d8354f4f660d3b3080c4860f64d37a438ca8ec674886bb"
+    },
+    {
+      "id": "S5",
+      "sha256": "2f1eca05a29057fe6f1cb6bd8a40b67eec6b85ef9b07cf1f39aaad21904c3359"
+    },
+    {
+      "id": "S6",
+      "sha256": "396fb6ddeedf7ffbb6405f10eb9a1d1b5c3b4dc8fc2acc63007a6f9a15bd95db"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31739",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Autonomous driving must produce human-like behavior in complex open-world environments.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that imitation-learning planners struggle with competing objectives, safety assurance, and complex multimodal behavior, often relying on predefined-rule fallback strategies.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A transformer-based diffusion planner for closed-loop planning that models multimodal driving behavior and trajectory quality without rule-based refinement.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "architecture",
+        "claim": "Joint prediction and planning under one architecture to enable cooperative vehicle behaviors.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "guidance mechanism",
+        "claim": "Learning trajectory-score gradients and using flexible classifier guidance for safe and adaptable planning behaviors.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize the proposed Diffusion Planner as novel, distinguishing it by combining transformer-based diffusion planning, joint prediction/planning, and flexible guidance without rule-based refinement.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art closed-loop performance on the nuPlan benchmark.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report robust transferability across diverse driving styles on nuPlan and a newly collected 200-hour delivery-vehicle dataset.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Human-like driving in complex open-world environments is presented as a central challenge.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing learning-based planners are described as limited in balancing objectives, safety assurance, and multimodal behavior, with dependence on rule-based fallback.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposed planner",
+        "summary": "The paper introduces a transformer-based diffusion planner for closed-loop planning without rule-based refinement.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "model extensions",
+        "summary": "The planner jointly models prediction and planning and uses trajectory-score gradients with flexible classifier guidance.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Reported evaluations cover nuPlan and a 200-hour delivery-vehicle dataset, with claimed strong closed-loop performance and transferability.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns separate design choices with distinct stated shortcomings: multimodal diffusion modeling, joint prediction/planning, and flexible guidance address behavior modeling, cooperation, and adaptability.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This provides a compact claim-to-mechanism framing for presenting a planning method.",
+        "application": "When introducing a new planner, map each identified limitation to a specific architectural or training mechanism before describing evaluation.",
+        "exception": "Avoid this framing when the abstract or paper does not establish a clear correspondence between limitations and mechanisms."
+      }
+    ],
+    "unknowns": [
+      "No numerical metrics, baseline identities, dataset splits, or evaluation conditions are provided.",
+      "The abstract does not specify how safety assurance or robust transferability is measured.",
+      "The stated state-of-the-art and novelty claims are author-reported and are not independently verified here."
+    ]
+  }
+}

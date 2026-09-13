@@ -1,0 +1,203 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006670",
+    "title": "Multiplayer Nash Preference Optimization",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006670"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "087b7da41a7484571b52565e736f14b2397611e047a3ff510f5e7da79bc47f4e",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "3b3c2558563c5cc6cc7a0ec9a5417f18170d4d1da8cf02a3b7482417e7394ff1",
+    "extracted_at": "2026-09-12T23:58:22.373348+00:00",
+    "session_id": "01a0980e-8509-71a0-ad10-bd4317510ca2",
+    "usage": {
+      "input_tokens": 12815,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 789,
+      "reasoning_output_tokens": 75
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "35510b5a8d77270a07abf2e3b9c78f55302172f692908fda4b80b251dbcc9ee7"
+    },
+    {
+      "id": "S2",
+      "sha256": "784c805fd2ea45e39148b9e7c05ceafbf45a28a44ffde9738f05fb985a410613"
+    },
+    {
+      "id": "S3",
+      "sha256": "964809299971aeddec5696361f15317e3126db99c59f36e477ac459ccbc993ee"
+    },
+    {
+      "id": "S4",
+      "sha256": "68c5520154535be32ede40551f77f7763621fe823366d785f8326441a2d963b7"
+    },
+    {
+      "id": "S5",
+      "sha256": "f30470209d9e1fc47efed34fdb02459deea6fa6d177e1c8df13a9a9b8db31d35"
+    },
+    {
+      "id": "S6",
+      "sha256": "5f14d3ea3068a7c9b826c62cf726f8d191bb2c37b57be81564dece416f1f95f8"
+    },
+    {
+      "id": "S7",
+      "sha256": "7cf21683a0ff6244634618b402a6c700b9e99f2113e32a63fb1c7462f4e363a3"
+    },
+    {
+      "id": "S8",
+      "sha256": "ada678952d5f7c2d53d59039cc1db287ced321d1654f9454b2e315d831011ef0"
+    },
+    {
+      "id": "S9",
+      "sha256": "5dc66e305ba462b01c8eab737954a5665e8b6dc18ede30b4bec4bd3e70de17fb"
+    },
+    {
+      "id": "S10",
+      "sha256": "2c400b3a96308c6c599399e5081a66d82a8be9424d306fc0f37bf533e67004e8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006670",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Align LLMs with human preferences that may be heterogeneous and non-transitive.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing Nash-based alignment algorithms are restricted to two-player interactions, creating single-opponent bias and limited coverage of realistic preference structures.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Introduces MNPO, generalizing NLHF to an n-player game in which each policy competes against a population of opponents while remaining regularized toward a reference model.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "theoretical and empirical finding",
+        "claim": "Reports that MNPO inherits two-player equilibrium guarantees while supporting richer competitive dynamics and broader preference-structure coverage.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "system/resource",
+        "claim": "Provides an implementation of MNPO via an openly identified code repository.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize MNPO as a novel multiplayer generalization of NLHF for alignment with complex preferences.",
+      "source_ids": [
+        "S5",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that MNPO consistently outperforms existing NLHF baselines on instruction-following benchmarks.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "Under heterogeneous annotator conditions and mixed-policy evaluation, the authors report superior alignment quality for MNPO.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report inherited equilibrium guarantees from two-player methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "RLHF is presented as the standard paradigm for preference alignment.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Bradley–Terry reward methods are described as poorly capturing nontransitive and heterogeneous preferences.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "prior approach and gap",
+        "summary": "NLHF reframes alignment as a two-player Nash game, but its algorithms retain single-opponent bias.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed framework",
+        "summary": "MNPO extends the formulation to n players competing against opponent populations with reference-model regularization.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The authors report retained equilibrium guarantees, richer preference coverage, and stronger benchmark performance under heterogeneous and mixed-policy settings.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a structural limitation—two-player single-opponent bias—with an explicitly matching multiplayer formulation and evaluates it under heterogeneous annotators and mixed-policy scenarios.",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "A useful research pattern is to align the method's interaction structure and evaluation settings with the stated failure mode.",
+        "application": "When claiming to address heterogeneous preferences, define the training interaction population explicitly and include evaluation conditions that vary annotators or policies.",
+        "exception": "This move may be unsuitable when the target task is intrinsically bilateral or when such evaluation conditions are unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact equilibrium guarantees, optimization procedure, benchmark datasets, baseline configurations, or quantitative performance margins.",
+      "The scope and meaning of “improved coverage” and “scalable” are not operationalized in the abstract."
+    ]
+  }
+}

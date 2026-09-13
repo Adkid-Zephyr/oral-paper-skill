@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71125",
+    "title": "Disentangling Latent Risk Pathways via Bayesian Hypergraph Inference",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71125"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b14593f09888591efb7f608889d88abc203f67becddc37b0167d99b304adf2e7",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "73889e9992e760bedf7b77414d9eeb04e4ddfddb9687eb4c64633b1102ab6a9d",
+    "extracted_at": "2026-09-13T00:15:04.913286+00:00",
+    "session_id": "01a0981d-c936-7323-9af1-2e959e18a3e8",
+    "usage": {
+      "input_tokens": 12711,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 877,
+      "reasoning_output_tokens": 98
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7f7fe599d115c51aeaca4916debb4941eb713c40f7d2f6744beaf103582753f3"
+    },
+    {
+      "id": "S2",
+      "sha256": "4286d7776203dc83eb75b1ec409f7c0d970733763d2b00ab3350c39b1321519a"
+    },
+    {
+      "id": "S3",
+      "sha256": "d7900f245a4242e9e2b0be5ee2c9ed6734fb7bcd628a351e566e8a7d912cf02d"
+    },
+    {
+      "id": "S4",
+      "sha256": "ce2941a226a6c6d75591880f783ca37bf67e07f2ae903b03a70280cd80ac7abb"
+    },
+    {
+      "id": "S5",
+      "sha256": "34005b51627e2e75a9b623554efa3286f8aea2168f7aa7195ea894ad8b6e7d6d"
+    },
+    {
+      "id": "S6",
+      "sha256": "9beb30d72e710dc8e6911e59109b7d7748ddc3bd6a1329ac2af3f50bd5e681cc"
+    },
+    {
+      "id": "S7",
+      "sha256": "463f397d45aead21e45640aed246a7e4d5fe8a8de7c4b70f8807a31a4fe123a4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71125",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Model rare, correlated multi-disease outcomes in EHRs while representing shared risk factors and disease pathways.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches often model diseases independently or use black-box architectures, limiting pathway interpretability and principled uncertainty quantification.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A Bayesian hypergraph framework models latent disease pathways whose hyperedges are modulated by risk factors, allowing overlapping disease subsets and higher-order structure.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory-informed modeling",
+        "claim": "A repulsion prior is used to encourage parsimonious, identifiable structure and posterior inference quantifies uncertainty in disease groupings and risk-factor effects.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "scalable inference",
+        "claim": "A structured variational inference algorithm preserves dependencies among hyperedge existence, disease membership, and pathway-level effects.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present multi-disease modeling as inference over latent, risk-factor-modulated disease pathways represented by interpretable hypergraphs rather than only independent or pairwise disease relationships.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments on simulated data and UK Biobank produced stable and interpretable disease pathway structure.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report well-calibrated uncertainty, improved estimation for rare diseases, and competitive predictive performance in those experiments.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation_and_gap",
+        "summary": "EHR multi-disease modeling involves rare outcomes shaped by shared risk factors, while common approaches provide limited structural insight and uncertainty quantification.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper introduces Bayesian hypergraph inference with risk-factor-modulated hyperedges, overlapping disease pathways, and higher-order structure.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "regularization_and_uncertainty",
+        "summary": "A repulsion prior targets parsimonious identifiable pathways, and posterior inference represents uncertainty in groupings and risk-factor influence.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "scalable_inference",
+        "summary": "Structured variational inference is developed to retain logical dependencies among pathway components on large EHR datasets.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "Simulated-data and UK Biobank experiments are reported to show interpretable structure, calibrated uncertainty, better rare-disease estimation, and competitive prediction.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each modeling choice with a specific limitation: hyperedges address higher-order overlapping pathways, the prior addresses parsimony and identifiability, and posterior inference addresses uncertainty.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This creates a compact claim-to-mechanism narrative that makes the purpose of each technical component explicit.",
+        "application": "When introducing a structured model, pair each architectural or inferential component with the concrete failure mode or missing capability it is intended to address.",
+        "exception": "This framing is less suitable when component purposes are genuinely entangled or when the paper lacks evidence or analysis distinguishing their roles."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify evaluation metrics, comparator methods, dataset sizes, or the conditions and protocol supporting the claims of calibration, rare-disease estimation, stability, scalability, and competitive prediction.",
+      "It does not report quantitative effect sizes, uncertainty-calibration procedures, or details of the identifiability guarantees associated with the repulsion prior."
+    ]
+  }
+}

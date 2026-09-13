@@ -1,0 +1,199 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47206",
+    "title": "Strategy Coopetition Explains the Emergence and Transience of In-Context Learning",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47206"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c003ce2b66c6d623bf1f59a8978d81b7658c782101e8c3f422312cb9a3dffbd3",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "2532e037a5c2bd81bcfbd3f9d92188017bef848896316003cf7a678cf2347167",
+    "extracted_at": "2026-09-13T00:08:42.698169+00:00",
+    "session_id": "01a09817-fd36-77c2-974d-ac14c27cb982",
+    "usage": {
+      "input_tokens": 12783,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 797,
+      "reasoning_output_tokens": 78
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b1470a68bd4bfd5a074631d7d5263a7badd85fa77f8ef46f87d94a61847c64e4"
+    },
+    {
+      "id": "S2",
+      "sha256": "519c4aed772f347e642a4aa04fb43badb5e05802e6382070cfbdb0faf9832ade"
+    },
+    {
+      "id": "S3",
+      "sha256": "aefc7896bd3acfa4a3f51c96caec4c536a7c8a2d14067586b059fc27943649d4"
+    },
+    {
+      "id": "S4",
+      "sha256": "3adbd67cb5420f582a78a91a58a2bfe00134c84361919b96c18f09ae3ac4a067"
+    },
+    {
+      "id": "S5",
+      "sha256": "2d030abcdb368d02a11100f7e78d14c6b35ec7e1f44788e1cbf898d50abb8c5f"
+    },
+    {
+      "id": "S6",
+      "sha256": "7324233e60d9867ae0edc00df301f85edea8d08957493783274fb20a230a7587"
+    },
+    {
+      "id": "S7",
+      "sha256": "1af212cd5b45d9bbadab649edfe3fa9c25ebc62ce94cb123e5c9dc91578527f5"
+    },
+    {
+      "id": "S8",
+      "sha256": "b2b65aba13db3e24f0b6224ddeaefb3646bff4ab07c6843a3d97b2419287bbec"
+    },
+    {
+      "id": "S9",
+      "sha256": "4f5cfa50718e5fb7bf2f0c1bfd926566209f419067aa073673654690c1149797"
+    },
+    {
+      "id": "S10",
+      "sha256": "59b99f3b6043204b30f80be81e3376d230b558c1cdf00ae387523ffddf48fef9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47206",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work seeks a mechanistic understanding of why emergent in-context learning can disappear after prolonged training.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "mechanistic account",
+        "claim": "Introduces context-constrained in-weights learning (CIWL) as a hybrid asymptotic strategy and characterizes its competitive and cooperative interaction with ICL.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S8"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Proposes a minimal mathematical model that reproduces the reported strategy interactions and dynamics.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Identifies a setup reported to make ICL emergent and persistent.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors term the combined competitive and cooperative interaction between CIWL and ICL “strategy coopetition.”",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, after ICL disappears, CIWL becomes the dominant asymptotic strategy and replaces ICL.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "claim": "In their setup, the authors report that ICL cannot emerge quickly independently and is enabled through the simultaneous slow development of CIWL.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that their mathematical model reproduces the key dynamics and interactions, and that it guided identification of a setup with persistent ICL.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context and question",
+        "summary": "ICL is described as emergent and potentially transient, motivating a mechanistic investigation.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "asymptotic mechanism",
+        "summary": "After ICL disappears, the model is reported to rely on hybrid CIWL, which competes with and replaces ICL.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "interaction mechanism",
+        "summary": "Shared sub-circuits create cooperation as well as competition; CIWL can enable ICL’s emergence in the stated setup.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "unifying model and implication",
+        "summary": "The authors name this interaction strategy coopetition, model it mathematically, and use the model to identify a persistent-ICL setup.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links ICL transience to a competing hybrid strategy while also reporting that the same strategy can help ICL emerge.",
+          "source_ids": [
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A mechanism may have time-dependent effects that are jointly enabling and suppressive, so explanations should distinguish interaction phases.",
+        "application": "Frame a learning-dynamics account by separately identifying each strategy’s early enabling role and late competitive replacement role.",
+        "exception": "This framing is unsuitable when the system has no identifiable competing strategies or temporal regime change."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the model architecture, training setup, datasets, or measurements supporting the reported dynamics.",
+      "The conditions and operational criteria for ICL being “truly emergent and persistent” are not given.",
+      "The mathematical model’s assumptions, derivation, and quantitative agreement with experiments are unspecified."
+    ]
+  }
+}

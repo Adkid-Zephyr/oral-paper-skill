@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71155",
+    "title": "Compositional Generalization Requires Linear, Orthogonal Representations in Vision Embedding Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71155"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "01787341e8cf7bd9afa602a4af6857513c9d06f1bf93cbc141b0a21b10188bcb",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "fe663fa926f561e50f4c4d2b4b13648c31111d576af50681e7fa5cf55547e401",
+    "extracted_at": "2026-09-13T00:16:12.312845+00:00",
+    "session_id": "01a0981e-dbd7-7612-81a2-1e4d37da432e",
+    "usage": {
+      "input_tokens": 12707,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 746,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "89dcf8c68fd51084371cd1666edd044adfc7a08cabd71fba0e9576ed96192a1f"
+    },
+    {
+      "id": "S2",
+      "sha256": "0358b2f2a55ff9aae4917e47e515cfc7f7def4c0aacd22be404065a36c9e80c4"
+    },
+    {
+      "id": "S3",
+      "sha256": "14dee799c730b12d9091e63e1838f16f70866e4b28d6bc873d31dc09af33debc"
+    },
+    {
+      "id": "S4",
+      "sha256": "5f590fa7165ddcba5ee96cce523fcf071ab976dbb61e537674d6690789c56935"
+    },
+    {
+      "id": "S5",
+      "sha256": "8a3165f8080476951fe1bc07f3434be42d7cfb14dcfac56d70fa5a949f108ef3"
+    },
+    {
+      "id": "S6",
+      "sha256": "bec4450476bd8fe987fc8b721c2984ce050604de3082a6ab703a19d847470d3c"
+    },
+    {
+      "id": "S7",
+      "sha256": "3d653a3e632df46b3793ac5196c4348e0e4192ad980d5f600fb4a0b54ce3bdf4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71155",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks what representational structure supports generalization to unseen combinations of familiar concepts.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Formalizes divisibility, transferability, and stability, and reports that under standard training these desiderata impose linear decomposition into per-concept components that are orthogonal across concepts.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Connects the Linear Representation Hypothesis to compositional generalization as a necessary consequence and derives dimension bounds relating composable-concept counts to embedding geometry.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports partial linear factorization with low-rank, near-orthogonal per-concept factors across CLIP, SigLIP, and DINO, with the structure's degree correlating with generalization to unseen combinations.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a necessary-geometric-constraints account of compositional generalization, including dimension bounds linking composable concepts to embedding geometry.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report partial linear factorization and low-rank, near-orthogonal per-concept factors in CLIP, SigLIP, and DINO.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that the degree of this structure correlates with compositional generalization on unseen combinations.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Modern models encounter only a small fraction of the combinatorial input space, motivating compositional generalization.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "question",
+        "summary": "The paper asks what representation structure is required for generalization to unseen concept combinations.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "theoretical result",
+        "summary": "Three desiderata are formalized and reported to require linear per-concept decomposition with cross-concept orthogonality, yielding dimension bounds.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "empirical finding",
+        "summary": "Across three vision embedding models, the authors report partial versions of this geometry and a correlation with unseen-combination generalization.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The conditions are presented as predictions about geometry to which increasingly scaled models may converge.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs formal desiderata and geometric constraints with measurable representation properties, then relates those properties to compositional generalization across named model families.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "This makes a structural theory legible by aligning its abstract conditions with observable diagnostics and an outcome measure.",
+        "application": "Define each theoretical representation condition operationally, report its diagnostic separately, and test whether diagnostic strength tracks the target capability across model families.",
+        "exception": "Avoid this framing when the proposed structure has no defensible observable proxy or the target outcome cannot be measured independently."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal definitions, proof assumptions, dimension-bound formulas, or what 'standard training' entails.",
+      "The reported correlations do not establish causation, and no effect sizes, statistical details, evaluation protocols, or comparison baselines are given.",
+      "The abstract does not clarify how partial factorization, low rank, near orthogonality, or convergence predictions are quantified."
+    ]
+  }
+}

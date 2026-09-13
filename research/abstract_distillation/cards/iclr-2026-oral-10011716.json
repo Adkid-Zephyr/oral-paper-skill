@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011716",
+    "title": "Spherical Watermark: Encryption-Free, Lossless Watermarking for Diffusion Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011716"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4fde347b76c7ce7bdc70e347b1fb4fcbdd6604edb86468003498345b38e9dea2",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "90a9d0435d5e4be8de017f082504d11a0b69054a13c8dadb1d9e90b0eebc19bd",
+    "extracted_at": "2026-09-13T00:06:22.837140+00:00",
+    "session_id": "01a09815-d5b7-7332-8b21-e22acfa0b39c",
+    "usage": {
+      "input_tokens": 12740,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 858,
+      "reasoning_output_tokens": 98
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f533bb3d974e9aef9500f1a265b2b75f67c91e563de2e0b35264225dce579788"
+    },
+    {
+      "id": "S2",
+      "sha256": "899f5723f5fc2571e84c7e414f5deac0b7f203dee38bbbdb559a18a02f69e2cc"
+    },
+    {
+      "id": "S3",
+      "sha256": "b95b99d4fcce09802592911244f95e9bbcbb369088ebabf4b775c4ae4ba37936"
+    },
+    {
+      "id": "S4",
+      "sha256": "8ee412d04c9f5dc0d25103f72d6d0620a7ecde6d99cbde41c788e8f8e215f711"
+    },
+    {
+      "id": "S5",
+      "sha256": "c7b29b2d8517d8cdd1c18c4dca97139f8ac3d6be7a47fbe473effaa973c3846e"
+    },
+    {
+      "id": "S6",
+      "sha256": "c108442beb50a1067b5c2b0f98fffe69e9d38222efc3791c25e22a728c5f4909"
+    },
+    {
+      "id": "S7",
+      "sha256": "5ac01ecc7e6878ab2c2db512c1b1c53eb4603c755bd4da718d390870b4d3246d"
+    },
+    {
+      "id": "S8",
+      "sha256": "358514b0491789534864bc3952539954b523d41ebc4008b9afe782297f466406"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011716",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses provenance and authenticity tracing for diffusion-generated images through digital watermarking.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing watermarking can shift the data distribution or reduce visual quality, while recent lossless latent methods require per-image key storage or substantial cryptographic overhead.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Spherical Watermark, an encryption-free, lossless watermarking framework for diffusion architectures.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Combines repeated watermark bits with random padding, then maps the resulting code onto a rotated unit sphere and scales it with a chi-square-distributed radius to recover multivariate Gaussian noise.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "theory and empirical finding",
+        "claim": "Reports a third-order-moment preservation guarantee for the watermarked noise distribution and empirical statistical indistinguishability from a standard multivariate normal distribution.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their framework as simultaneously encryption-free and lossless while integrating with diffusion architectures.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the watermarked noise preserves the target prior up to third-order moments and is empirically statistically indistinguishable from standard multivariate normal noise.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "Using Stable Diffusion, the authors report consistently high visual fidelity together with improved traceability, computational efficiency, and robustness under attacks.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report outperforming both lossy and lossless watermarking approaches in their experiments.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Diffusion image synthesis creates provenance and authenticity concerns; watermarking may harm distributional fidelity or visual quality.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "prior limitation",
+        "summary": "Recent lossless latent watermarking avoids weight changes but retains key-storage or cryptographic overhead.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "Spherical Watermark constructs a high-entropy code and transforms it into Gaussian-compatible noise through spherical mapping, rotation, and radius scaling.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "supporting results",
+        "summary": "The paper reports moment preservation, statistical indistinguishability, and Stable Diffusion gains in fidelity, traceability, efficiency, robustness, and comparisons with prior approaches.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each major design step with a distributional objective: coding raises entropy, while spherical transformation and radius scaling target Gaussian noise recovery.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This makes the method’s mechanism legible by connecting components to the constraint they are intended to satisfy.",
+        "application": "For a generative-method paper, explicitly map each module to a measurable distributional or deployment requirement before presenting aggregate results.",
+        "exception": "This framing is less suitable when module roles cannot be isolated or the method has no meaningful distributional constraint."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical metrics, baselines, statistical-test details, attack types, or experimental settings for the reported comparisons.",
+      "The relationship between third-order moment preservation and the claimed empirical indistinguishability is not detailed.",
+      "The abstract does not specify how watermark recovery or traceability is evaluated, nor the exact meaning of losslessness."
+    ]
+  }
+}

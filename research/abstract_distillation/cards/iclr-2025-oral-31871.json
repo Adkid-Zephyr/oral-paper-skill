@@ -1,0 +1,145 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31871",
+    "title": "Residual Deep Gaussian Processes on Manifolds",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31871"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "82790e4535b7184db0732c00f090a129cbfd9c55151e650fb660d34384f065f8",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "941bb37cbba8fe6752f508c22a141d655db0f7df7c8b051eb391c6f85cd1bd01",
+    "extracted_at": "2026-09-12T23:55:20.527237+00:00",
+    "session_id": "01a0980b-c2bb-78e3-89b6-500f5a5a1893",
+    "usage": {
+      "input_tokens": 12606,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 743,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "82790e4535b7184db0732c00f090a129cbfd9c55151e650fb660d34384f065f8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31871",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Model complex manifold-supported data and functions, including manifold- and scalar-valued functions and vector fields, with deep Gaussian processes.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Shallow Gaussian processes on manifolds are described as inadequate for more intricate, nonstationary patterns, such as low-altitude wind data.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Practical residual-style deep Gaussian process models with manifold-to-manifold hidden layers and an arbitrary last layer.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The models are reported to improve prediction quality and uncertainty calibration while remaining robust to overfitting by reverting to shallow models when extra complexity is unnecessary.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "Applications are demonstrated for Bayesian optimisation on manifolds and potentially for accelerating inference on non-manifold data mapped to a suitable proxy manifold.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors propose deep Gaussian process models on Riemannian manifolds in a residual-network-inspired design.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report significant improvements over shallow models for intricate low-altitude wind patterns, including prediction quality and uncertainty calibration.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report substantial improvements in later stages of stylised manifold Bayesian optimisation problems motivated by robotics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report potential inference speedups for non-manifold data when it can be mapped sufficiently well to a proxy manifold.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper targets inherently manifold-supported data and identifies shallow Gaussian processes as insufficient for complex, nonstationary patterns.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It proposes residual-style deep Gaussian processes with manifold-to-manifold hidden layers and flexible output layers.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "reported applications",
+        "summary": "The abstract reports gains in wind prediction, uncertainty calibration, manifold Bayesian optimisation, and possibly proxy-manifold inference.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The proposed models can revert to shallow models when added complexity is unneeded, while targeting cases where shallow models struggle.",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        "interpretation": "A complexity-adaptive design can align model capacity with problem difficulty and make the claim more specific than simply proposing a deeper model.",
+        "application": "Describe an explicit fallback or capacity-selection mechanism, and evaluate it separately on simple and complex regimes.",
+        "exception": "This framing is unsuitable when the method has no meaningful shallow analogue or when capacity selection is fixed by the deployment setting."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, quantitative improvement values, or uncertainty-calibration metrics.",
+      "The conditions under which inference is faster, proxy-manifold mappings are sufficiently accurate, and models revert to shallow behavior are not detailed.",
+      "The abstract does not provide theoretical guarantees or independently verified evidence."
+    ]
+  }
+}

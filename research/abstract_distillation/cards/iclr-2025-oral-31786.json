@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31786",
+    "title": "Toward Guidance-Free AR Visual Generation via Condition Contrastive Alignment",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31786"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "72ee1715ff8e5c6ec695536ae51c2e07c8d72311b81d545708779ad3579c0711",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "e833bdbf26c800c388c87e256de783e41b42e63d015a5998c4c89c9be274d4d2",
+    "extracted_at": "2026-09-12T23:51:55.263487+00:00",
+    "session_id": "01a09808-984c-72d3-bd71-5c2402f1481c",
+    "usage": {
+      "input_tokens": 12714,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 814,
+      "reasoning_output_tokens": 118
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4b44a6cd3378cfdc48a3a3616dc075bbc46e0a1c5099ebd391e05689ea2c72bf"
+    },
+    {
+      "id": "S2",
+      "sha256": "8cfd66859e5bfdad6f14c11dc25e9340f6c6e414d7a817ead0a52c0458822980"
+    },
+    {
+      "id": "S3",
+      "sha256": "c7a62d41d181729fd1040e6ebceef1be21799b6e0114a24af1c44d804838c98f"
+    },
+    {
+      "id": "S4",
+      "sha256": "f7d32ff9dfd1fb6aab5881f545ccefe09be0d8d62fc366e10eaa52e6e4996ab4"
+    },
+    {
+      "id": "S5",
+      "sha256": "f413c59dc28910f9bb7aed23cfb004a0964b8ee362ffbd330791e9af22294094"
+    },
+    {
+      "id": "S6",
+      "sha256": "69185c097807248497da4b30da607834a8857998f618c1f78034fa928d86d7c7"
+    },
+    {
+      "id": "S7",
+      "sha256": "106bca997a04a18c1bd3d3ad7115d2e13c48cb265cdb462bf10839dbc3ae5aef"
+    },
+    {
+      "id": "S8",
+      "sha256": "fd9ea1a8f593fb6899c19a1e2d0469535a261ecea40ede9b192b7e2f934dec3d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31786",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable guidance-free autoregressive visual generation while preserving sample quality and controllable diversity–fidelity trade-offs.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S7"
+        ]
+      },
+      "gap": {
+        "claim": "In autoregressive multimodal generation, classifier-free guidance creates design inconsistencies between language and visual content, conflicting with modality unification.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Condition Contrastive Alignment (CCA), a fine-tuning method for guidance-free autoregressive visual generation.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "methodological distinction",
+        "claim": "CCA fine-tunes pretrained models toward the target distribution instead of altering sampling to approximate it.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical/theoretical finding",
+        "claim": "The authors report links between language-targeted alignment and visual-targeted guidance, framing them as a unified research area.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish CCA from guidance methods by directly fine-tuning pretrained models to fit the same distribution target.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that one epoch of CCA fine-tuning on the pretraining dataset—1% of pretraining epochs—enhanced guidance-free performance across all tested models.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that removing guided sampling cuts sampling cost by half.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that adjusting training parameters yields diversity–fidelity trade-offs similar to those of CFG.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "CFG is presented as important for visual sample quality.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "CFG is described as inconsistent with unified language–visual design in autoregressive multimodal generation.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "The paper proposes CCA, inspired by language-model alignment, and contrasts its training-based distribution fitting with sampling-time guidance.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report improved guidance-free performance, halved sampling cost, and CFG-like diversity–fidelity control, followed by a claimed theoretical connection between alignment and guidance.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly contrasts sampling-time guidance with direct fine-tuning toward the same distribution target.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "Making the intervention target explicit can clarify why a proposed method addresses a design mismatch.",
+        "application": "When introducing a replacement for inference-time control, state whether it changes sampling, training, or both, and identify the target distribution or behavior.",
+        "exception": "This framing is less suitable when the method intentionally targets a different distribution or relies on inference-time adaptation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the tested models, evaluation metrics, or numerical performance gains behind “significantly enhance.”",
+      "The conditions and accounting underlying the reported halving of sampling cost are unspecified.",
+      "The abstract does not provide the theoretical argument or scope supporting the claimed connection between alignment and guidance."
+    ]
+  }
+}

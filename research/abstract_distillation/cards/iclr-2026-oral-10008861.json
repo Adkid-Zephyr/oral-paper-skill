@@ -1,0 +1,178 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008861",
+    "title": "SWINGARENA: Adversarial Programming Arena for Long-context GitHub Issue Solving",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008861"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "08261131ebb94fca0b45e88615b2b5f9b23b8eff1c2364850c3ba832084df729",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "b99626e7b122e4ae31a6cf76e335e5dc51d854cbfda347a67dde51753efa83e1",
+    "extracted_at": "2026-09-13T00:02:00.437316+00:00",
+    "session_id": "01a09811-d58f-7a13-a060-641a3730e8f3",
+    "usage": {
+      "input_tokens": 14251,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 807,
+      "reasoning_output_tokens": 100
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4e7ce7bff93504fecc5caa5cb2f2c2e9c6539c838dd2607b577f9bfef69e440a"
+    },
+    {
+      "id": "S2",
+      "sha256": "3499beefbec789bd5c443751df539384ca876438e34f09f5888ec6f26ad8e9a8"
+    },
+    {
+      "id": "S3",
+      "sha256": "55547ab920bb75b8313079ab1208bf2217ddfc4505eddacd49133acf66ebc6f1"
+    },
+    {
+      "id": "S4",
+      "sha256": "61df83a86e6de601b8a6088317c17ea895e24800d417d625e32eab0d5ce30ff4"
+    },
+    {
+      "id": "S5",
+      "sha256": "9d4ca86abc93c7b3f881e00648f119464268e906ca117ca99c291fa2dd500ece"
+    },
+    {
+      "id": "S6",
+      "sha256": "1c5e6c0e5a67fa7a69728ca7ed59a0f6f65992f449be14cb296326a61304ad44"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008861",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate LLMs on long-context GitHub issue solving in realistic software-development workflows.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Traditional static benchmarks do not model collaborative software iteration with patch submission, review, test creation, and CI verification.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "evaluation framework",
+        "claim": "Introduces SwingArena, an adversarial arena pairing LLM submitters that generate patches with reviewers that create tests and verify patches through CI.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces a retrieval-augmented code-generation module that retrieves syntactically and semantically relevant snippets from large codebases across C++, Python, Rust, and Go for long-context evaluation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "methodology",
+        "claim": "Defines a scalable and extensible approach for CI-driven evaluation across diverse tasks and contexts under token limits.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish SwingArena from static benchmarks by adversarially modeling collaborative, iterative, CI-based software development and adding RACG for long-context code retrieval.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments on over 400 real-world GitHub issues selected from 2,300 issues.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that GPT-4o excelled at aggressive patch generation, while DeepSeek and Gemini prioritized correctness in CI validation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames realistic software-workflow evaluation as the target.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "SwingArena replaces static evaluation with submitter–reviewer interaction and CI-based patch verification.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "long-context support",
+        "summary": "RACG retrieves relevant code across four languages while respecting token limitations.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported study",
+        "summary": "Experiments on more than 400 selected GitHub issues compare model tendencies in patch generation and CI validation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "positioning",
+        "summary": "The authors characterize the resulting methodology as scalable and extensible for realistic CI-driven evaluation.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates patch generation from test creation and CI verification, assigning them to interacting submitter and reviewer roles.",
+          "source_ids": [
+            "S2"
+          ]
+        },
+        "interpretation": "Decomposing evaluation into adversarial roles can expose trade-offs hidden by a single-pass score.",
+        "application": "Design an issue-solving benchmark with separate patch-author and test/reviewer agents, and report generation and CI outcomes independently.",
+        "exception": "This may be unsuitable when the research question concerns only isolated code synthesis or when reliable automated tests cannot be constructed."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative performance metrics, baselines, or statistical details for the reported model comparison.",
+      "Selection criteria for the 400 issues, RACG retrieval procedure, CI setup, and meaning of “correctness” are unspecified.",
+      "The abstract does not establish independently verified effectiveness, reproducibility, or priority of the claimed novelty."
+    ]
+  }
+}

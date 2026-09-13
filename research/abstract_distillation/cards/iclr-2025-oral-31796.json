@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31796",
+    "title": "Computationally Efficient RL under Linear Bellman Completeness for Deterministic Dynamics",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31796"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b99070e48bbfb1f78506f9ae6a5326dd404615b8202e25074146ccb20a3ae19b",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "867635e0fa43182d1b81914d2bbedc24b56cd764e0f6d2ad22b1c7434c5f68e1",
+    "extracted_at": "2026-09-12T23:52:19.615573+00:00",
+    "session_id": "01a09809-0040-72f1-b1a8-0d795c2919c5",
+    "usage": {
+      "input_tokens": 12654,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 735,
+      "reasoning_output_tokens": 89
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "68746dd995cf2f89934e18161a2ff58ea64d134e73923e75303e6353072292a7"
+    },
+    {
+      "id": "S2",
+      "sha256": "93f5c005b7713d7e2d53dba59c5ff0c508299c288daf46387b1f32cce468e907"
+    },
+    {
+      "id": "S3",
+      "sha256": "7bf1d8f09ae11bebd5321fcb30b9f827e5b38b9806de09866ac32fd4240fdb41"
+    },
+    {
+      "id": "S4",
+      "sha256": "21f600b9533226fba547746cfc53b71f201ea6a1f64f150a573e36fd7d2ef14e"
+    },
+    {
+      "id": "S5",
+      "sha256": "20e9bd347399436080e2ba891e6cb1a65422e6f9ef2763500c6dfc38df94d5b1"
+    },
+    {
+      "id": "S6",
+      "sha256": "e1b003c79df70b2f6d43961830b81afcc64dd9abc8358222cf20d20f8620a5cd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31796",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design computationally and statistically efficient reinforcement-learning algorithms for the linear Bellman complete setting.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Although prior work established statistical tractability, whether a computationally efficient algorithm exists remained open.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "algorithm",
+        "claim": "Provides a computationally efficient algorithm for linear Bellman completeness covering large action spaces, random initial states, and random rewards when the underlying dynamics are deterministic.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses noise injected into least-squares regression to perform optimistic value iteration, with noise restricted to the training-data null space.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "theory-oriented technique",
+        "claim": "Designs the noise to preserve optimism while circumventing a subtle error-amplification issue.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work addresses the previously open computational-efficiency question by providing an algorithm under the stated deterministic-dynamics conditions.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report an algorithm that handles large action spaces, random initial states, and random rewards, subject to deterministic underlying dynamics.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that null-space noise is designed to ensure optimism while avoiding a subtle error-amplification issue.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setting",
+        "summary": "The paper studies efficient reinforcement learning with linear function approximation in the linear Bellman complete setting, which includes linear MDPs and LQRs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "open question",
+        "summary": "It identifies a gap between known statistical tractability and unknown computational efficiency.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "algorithm",
+        "summary": "It presents a computationally efficient algorithm under deterministic dynamics, despite broad action, initialization, and reward conditions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "technical mechanism",
+        "summary": "The approach injects carefully designed null-space noise into least-squares regression for optimistic value iteration.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific algorithmic mechanism—null-space noise—to two targeted goals: preserving optimism and avoiding error amplification.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact mechanism-to-obstacle explanation can make a technical contribution legible without detailing the full algorithm.",
+        "application": "When presenting a new method, state which component addresses which named technical difficulty, and preserve the conditions under which the claim applies.",
+        "exception": "This framing is insufficient when the abstract must establish quantitative guarantees or empirical performance, which are not reported here."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no computational or statistical complexity bounds, theorem conditions beyond deterministic dynamics, or empirical results.",
+      "It does not specify how the method scales with action-space size or quantify the claimed error-amplification avoidance."
+    ]
+  }
+}

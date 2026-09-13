@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71114",
+    "title": "Skip a Layer or Loop It? Learning Program-of-Layers in LLMs",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71114"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "36bf65901a8f856d34df14c692612c81b30f3c6d9c0a63fc44cd159f5b617543",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "3f7185aae2a98830ca4bb63cedfa32178a7eca0f3f99f20159709c20ff4097e0",
+    "extracted_at": "2026-09-13T00:14:38.296104+00:00",
+    "session_id": "01a0981d-6860-7591-b9fa-6cb418163872",
+    "usage": {
+      "input_tokens": 14233,
+      "cached_input_tokens": 9984,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 846,
+      "reasoning_output_tokens": 141
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bee0f2179db6183347be04147cd684b25c6e00eeb61bb4b0f240e54e6882d62a"
+    },
+    {
+      "id": "S2",
+      "sha256": "d1c612a9d1e2970da3993d74d735e904850908dbaa4cce32dfd93b6e950dc619"
+    },
+    {
+      "id": "S3",
+      "sha256": "9ccea787a009fa7243f294248739d001bc7e6bc027265102a71fdd1b0a7ce53e"
+    },
+    {
+      "id": "S4",
+      "sha256": "f34413e39ca1737f07f7f304ae0a63cfd94e5a1dbebe7d884c6fd598419cec02"
+    },
+    {
+      "id": "S5",
+      "sha256": "916faf62cb9eb6af81e50bcebad0609d000543ae1142d088eee67b488ed1a922"
+    },
+    {
+      "id": "S6",
+      "sha256": "7ece2b1169d85f55abc1e77fa97cffcb9c3c6d2d7b9fcfb18501a99d987fcc71"
+    },
+    {
+      "id": "S7",
+      "sha256": "8848377874f5f4e877a7862b64d3980811d9be5658b047c3679ef2a9264e86e0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71114",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "LLMs ordinarily infer with a fixed-depth, fixed-order pass through all layers, motivating input-specific execution programs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Fixed-depth execution may capture only a narrow subset of an LLM’s latent reasoning capacity.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "conceptual finding",
+        "claim": "The authors report broadly occurring, training-free program-of-layers execution that packs pretrained layers into modules and skips or loops them per input.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "They propose a lightweight predictor that generates input-specific programs to skip or repeat pretrained layers.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "They report improved accuracy, often with fewer executed layers, relative to standard inference and prior dynamic-depth methods, including under out-of-distribution evaluation.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach through flexible, dynamic programs that can both skip and loop pretrained layers for each input, without training the base layers.",
+      "source_ids": [
+        "S2",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "For most inputs, substantially shorter executions reportedly achieve the same or better accuracy; alternative programs can reportedly correct some original LLM errors while using fewer layers.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "On mathematical reasoning benchmarks, the authors report consistent accuracy gains over standard inference and prior dynamic-depth methods, often with fewer executed layers, and persistence of gains under out-of-distribution evaluation.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setup",
+        "summary": "LLMs are described as using fixed-depth, fixed-order, non-recurrent execution.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "observation",
+        "summary": "The authors report flexible, training-free programs that skip or loop pretrained layer modules per input.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "Shorter alternative programs may preserve or improve accuracy and correct some baseline errors, suggesting multiple valid latent computations.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method and evaluation",
+        "summary": "A lightweight program predictor is proposed and evaluated on mathematical reasoning benchmarks, with reported gains over standard and prior dynamic-depth inference, including out of distribution.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a flexible execution mechanism with evidence about both accuracy and computation length, including error correction by alternative programs.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A method claim becomes more informative when it specifies the adaptive action and measures its quality–cost tradeoff.",
+        "application": "When presenting adaptive inference, report both task performance and execution cost, and test whether alternative execution paths repair baseline errors.",
+        "exception": "This framing is unsuitable when computation cost is fixed by the deployment setting or when no meaningful alternative execution paths exist."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark names, model families, layer-count reductions, or numerical accuracy changes.",
+      "It does not define how PoLar programs are generated or trained, nor the scope of “wide existence” and “most inputs.”",
+      "Details of the out-of-distribution splits and comparisons with prior dynamic-depth methods are unspecified."
+    ]
+  }
+}

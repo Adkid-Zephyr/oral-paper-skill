@@ -1,0 +1,219 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007803",
+    "title": "Text-to-3D by Stitching a Multi-view Reconstruction Network to a Video Generator",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007803"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5f06a2b7c963a8905a62be641d156f7c2b5228c239d8fbef01a4c28ff938f612",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "fbf1a5ad5b259b1cfddcd08e0be646b8ffc1f69a6bc3bb4d333b17b11ab2fbc4",
+    "extracted_at": "2026-09-13T00:00:27.113581+00:00",
+    "session_id": "01a09810-5b55-71e3-9fea-7b06fc498c0a",
+    "usage": {
+      "input_tokens": 12839,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 938,
+      "reasoning_output_tokens": 69
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "27b0304c5ae05880ddac844a2db75479e2e71d99e1d137dcd41505302df478ea"
+    },
+    {
+      "id": "S2",
+      "sha256": "9dc7ef08914aca1f07bdbf693eb8b54e9e85f3f3d85411abea294592e34bdc9b"
+    },
+    {
+      "id": "S3",
+      "sha256": "4c5c71d7045005f9de0847238675ffe4f85ba352552a7a6ca609b0fb2cff2c67"
+    },
+    {
+      "id": "S4",
+      "sha256": "192e0c262847b679a1b7521071b2a02def84e47b3d0452acd692823934737608"
+    },
+    {
+      "id": "S5",
+      "sha256": "7e75fa0d92a7ebd8d71909542523d469f6cacef44ac62a41ef76a768eca72db4"
+    },
+    {
+      "id": "S6",
+      "sha256": "17f734a0052ac16c8e9228097d55a2c3ecf3b91e70ac4f946b07b28b74e454ef"
+    },
+    {
+      "id": "S7",
+      "sha256": "f375c43c8494d1313f3de8e5a31e4628fea35a566c94ef3d1c4c74c36f2b0820"
+    },
+    {
+      "id": "S8",
+      "sha256": "a3d695bd6585d87f7b7b0f3fc5d1fd35879a2e49e1397bacfdfb33df2ac1b2d5"
+    },
+    {
+      "id": "S9",
+      "sha256": "9bd415a39f59db4892f9ce3abe02c71f9d6f38b66adb1138095a9803e2f1762a"
+    },
+    {
+      "id": "S10",
+      "sha256": "f30c03a2a69d1078db9df4247cb24b72e34bd0f859104a58212765bb67b2e83f"
+    },
+    {
+      "id": "S11",
+      "sha256": "827353448d966f4379702313bd68cb03a487d84185433ffb8a0bd1b2e630fbc3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007803",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop text-to-3D generation by combining a latent text-to-video generator with a feedforward 3D reconstruction decoder.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing understanding or approaches do not directly resolve how to preserve both models’ encoded knowledge during joining and align generated latents with the decoder for consistent 3D geometry.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S7"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Introduces VIST3A, which stitches a text-to-video generator to a 3D reconstruction model.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses label-free, small-dataset model stitching to select a compatible decoder layer, then adapts direct reward finetuning to align the generator with the stitched decoder.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S8"
+        ]
+      },
+      {
+        "type": "capability",
+        "claim": "Supports both text-to-3D scene generation and, with a suitable 3D base model, text-to-pointmap generation.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present VIST3A as a general framework that combines these pretrained components through model stitching and generator alignment.",
+      "source_ids": [
+        "S3",
+        "S5",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report evaluating VIST3A with different video generators and 3D reconstruction models.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that all tested pairings markedly improve over prior text-to-3D models producing Gaussian splats.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report that VIST3A enables high-quality text-to-pointmap generation when paired with a suitable 3D base model.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Progress in visual generation and 3D reconstruction motivates combining the two capabilities for text-to-3D.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "The framework must preserve pretrained knowledge across the join and make generated latents decodable as consistent 3D geometry.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S7"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "VIST3A identifies a matching decoder layer using label-free model stitching and adapts direct reward finetuning for alignment.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "Across varied component pairings, the authors report improvements over prior Gaussian-splat text-to-3D models and pointmap generation with a suitable base model.",
+        "source_ids": [
+          "S9",
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates the integration problem into preserving representations at the interface and aligning generator outputs with the downstream decoder.",
+          "source_ids": [
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "Decomposing a composite-model proposal into interface compatibility and output alignment makes its technical bottlenecks explicit.",
+        "application": "For another modular generative system, state separately how representations are connected and how outputs are trained to satisfy the receiving module.",
+        "exception": "This split may be unsuitable when the modules are trained jointly or have no identifiable interface."
+      },
+      {
+        "source_observation": {
+          "claim": "The authors report testing multiple video-generator and 3D-reconstruction-model pairings.",
+          "source_ids": [
+            "S9"
+          ]
+        },
+        "interpretation": "Varying both components can indicate whether a framework is intended to generalize beyond one pairing.",
+        "application": "Evaluate modular methods across a small matrix of interchangeable upstream and downstream models, labeling which combinations were tested.",
+        "exception": "A pairing matrix is less informative when only one compatible model family exists or evaluation resources are highly constrained."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dataset sizes, exact model pairings, quantitative metrics, or the magnitude of the reported improvements.",
+      "The basis and protocol for the claimed “high-quality” pointmap generation are not given.",
+      "The abstract does not identify which prior Gaussian-splat models were compared or whether comparisons used matched settings."
+    ]
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97972",
+    "title": "Cambrian-1: A Fully Open, Vision-Centric Exploration of Multimodal LLMs",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97972"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ea152e37acd3c53684e1a885e275a1df38a025976529fa3eb5e6bed4286a21c5",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "19fd2d79bd87c2d629abffa7e6c40bb67c2f0e6af404b74fe95c782d974a49be",
+    "extracted_at": "2026-09-13T00:18:48.025706+00:00",
+    "session_id": "01a09821-3380-7041-9e51-81b98bae28b2",
+    "usage": {
+      "input_tokens": 12800,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 783,
+      "reasoning_output_tokens": 103
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "73e5d1cb7a1ddc0fba4fd3f8a13719aa06f2e398d865294ba72395746c8734f1"
+    },
+    {
+      "id": "S2",
+      "sha256": "9abe90b4657f665080d90511ccc23ad4e1fe6a47f6da80be4a0d56f0d739ead2"
+    },
+    {
+      "id": "S3",
+      "sha256": "c550a05cb05214cd7cedfadcc7eb6b22420eaa98f804787250b78cfb36741e3c"
+    },
+    {
+      "id": "S4",
+      "sha256": "ffc425d601082024b5b9c0f1e514c4959cd4acb37bf268ce4d23be9fdc8c9c82"
+    },
+    {
+      "id": "S5",
+      "sha256": "fbf4a55be1d3a219548e0e42b75ec3902d32060b4d8478d5ace6406d6b80170e"
+    },
+    {
+      "id": "S6",
+      "sha256": "a898cd7c8970c57dd7436561a223edd86ff2bed2f736ad19fc51ef4501e536a5"
+    },
+    {
+      "id": "S7",
+      "sha256": "0b401390766bd34dbc38e4d30f2f41c61a4902ddffa553fcbec4efbe790a978b"
+    },
+    {
+      "id": "S8",
+      "sha256": "1205f7e7697fde9594de7b76c59198b9a3f882f9f1c0cfea4727b0e8262dd4e6"
+    },
+    {
+      "id": "S9",
+      "sha256": "cca7ce0dfd3cec63870706527cf3120321cef1c2952e2726f637417ba969e409"
+    },
+    {
+      "id": "S10",
+      "sha256": "d8c7104312ce5daf91d8c01ec82c24e1a2fb710569de4e5928f0996107a1f53e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97972",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design and improve multimodal LLMs with accurate visual grounding, especially in real-world scenarios.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Vision-component design in MLLMs is often underexplored and disconnected from visual representation learning, hindering sensory grounding.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical study",
+        "claim": "Evaluates more than 15 self-supervised, strongly supervised, and hybrid vision models through LLM-based visual instruction tuning.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes Spatial Vision Aggregator, a dynamic spatially aware connector that integrates vision features with LLMs while reducing token counts.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Provides an open MLLM cookbook with model weights, code, tools, datasets, and instruction-tuning and evaluation recipes, alongside guidance on balanced visual instruction data.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "Presents a fully open, vision-centric exploration of multimodal LLM design, including systematic visual-representation comparisons and the SVA connector.",
+      "source_ids": [
+        "S1",
+        "S4",
+        "S6",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The study reports experiments involving more than 15 vision models across multiple representation-learning regimes.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report state-of-the-art performance for Cambrian-1.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper identifies underexplored, disconnected vision-component choices as a barrier to accurate sensory grounding.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "It evaluates diverse visual representations through an LLM and visual-instruction-tuning interface.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It introduces SVA to provide dynamic, spatially aware visual feature integration with fewer tokens.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "data_and_release",
+        "summary": "It discusses balanced instruction-data curation and releases an open set of models, code, datasets, tools, and recipes.",
+        "source_ids": [
+          "S7",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates visual-representation analysis, benchmark interpretation, connector design, and data-distribution balancing as linked parts of MLLM development.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This suggests framing multimodal-system work as an interaction among representation, interface, evaluation, and data choices.",
+        "application": "Organize a future paper around these choice categories and report how each is evaluated or constrained.",
+        "exception": "This framing may be unsuitable for a narrowly scoped study focused on one component or task."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the benchmark tasks, metrics, baselines, or conditions supporting the state-of-the-art claim.",
+      "It does not report quantitative gains, token reductions, or ablations for SVA.",
+      "The benchmark critique’s concrete recommendations and the effects of distribution balancing are unspecified."
+    ]
+  }
+}

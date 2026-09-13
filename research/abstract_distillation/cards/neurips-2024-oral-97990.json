@@ -1,0 +1,166 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97990",
+    "title": "Flipped Classroom: Aligning Teacher Attention with Student in Generalized Category Discovery",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97990"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8c577afdd1229ba6fb0ae96603731f76cbd76eb3d6e88d0537a652decc8e24a3",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "a9f960e9ac4ea7654d95b874ecdfcefd88f8b1097c152d7000ac0aa3f56b896b",
+    "extracted_at": "2026-09-13T00:19:29.798476+00:00",
+    "session_id": "01a09821-e335-7b53-9165-dde26d336ca7",
+    "usage": {
+      "input_tokens": 12710,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 681,
+      "reasoning_output_tokens": 73
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "546a9752a98aff6249c54ecc583bcbaa2a42c7e158755ffd5fc79a18752e3d4a"
+    },
+    {
+      "id": "S2",
+      "sha256": "896b5ef73680d08c419c5ff0926c964426e48ffae5a2cb4fdf3ae8f360e3d95c"
+    },
+    {
+      "id": "S3",
+      "sha256": "c48cd764af2a9d458dfc60229b9b30355cbffdace6d2ce6b1c19224f70e23b49"
+    },
+    {
+      "id": "S4",
+      "sha256": "241eee4afb59c4fad66408c0d40adf18ff512aff168216484ff31bfaa10e70c0"
+    },
+    {
+      "id": "S5",
+      "sha256": "80ee96a3967a4e4742ab452dabd991724b65296c955c3e9f1d790c6c26112f28"
+    },
+    {
+      "id": "S6",
+      "sha256": "352d4e060b9565433f2c777fccabf4106426505ef807b222a4851b2f1d0c9a0f"
+    },
+    {
+      "id": "S7",
+      "sha256": "fd59a81063e8389dd95dd4d5abc331716402506f47ff709708b815c029fb16f4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97990",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generalized Category Discovery requires classifying known and novel categories without explicit labels, using teacher–student learning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Traditional teacher–student designs can fail in GCD because absent priors for new classes cause teacher misguidance, unsynchronized learning, and inconsistent pattern learning.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The authors introduce FlipClass, which dynamically updates the teacher to align its attention with the student's rather than preserving a static teacher reference.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "mechanism",
+        "claim": "FlipClass refines teacher focus using student feedback to promote consistent pattern recognition and synchronized learning across old and new classes.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish FlipClass by updating teacher attention dynamically from student feedback in generalized category discovery.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive experiments across a spectrum of benchmarks show FlipClass significantly surpassing contemporary GCD methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Semi-supervised learning strategies have been applied to generalized category discovery through teacher–student frameworks.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "problem diagnosis",
+        "summary": "The abstract attributes conventional design failures in GCD to missing priors for new classes and inconsistent pattern learning, unlike closed-world semi-supervised learning.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "FlipClass dynamically aligns teacher attention with student attention through feedback.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report substantial benchmark superiority over contemporary GCD methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a failure mode—unsynchronized pattern learning—to a targeted design change: updating teacher attention from student feedback.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A paper can make its method rationale more persuasive by explicitly mapping the diagnosed failure mechanism to the intervention.",
+        "application": "Frame a proposed component as a direct response to a named failure mode, and state the information flow that is intended to address it.",
+        "exception": "This framing is unsuitable when the abstract does not establish a specific failure mechanism or when the proposed component is not designed to affect that mechanism."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark names, metrics, dataset conditions, or the quantitative margin behind “significantly surpasses.”",
+      "It does not provide evidence details sufficient to assess whether the reported mechanism, rather than other design choices, explains the outcome."
+    ]
+  }
+}

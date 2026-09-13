@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71137",
+    "title": "Markov Chain Monte Carlo without Evaluating the Target: an Auxiliary Variable Approach",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71137"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "eb4cbe6c2d2fd1905cb197ab11b7e26b152bec4025a44352d28d1e16c1881daf",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "de49063e61ba76813d77d63ac94a582b8ba72966b36e252b15060c60ef7c4500",
+    "extracted_at": "2026-09-13T00:15:31.919171+00:00",
+    "session_id": "01a0981e-3e35-7ef3-8623-288904fab506",
+    "usage": {
+      "input_tokens": 12726,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 754,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c74f41f8f2935e20001ba87ba72cca25cfab85dee3b95ba89af9b5a5144e24b8"
+    },
+    {
+      "id": "S2",
+      "sha256": "c51d4a6fe444bbf6ae1bd30e1aed4d0a83a13d76212779a97d2302153a5eb41b"
+    },
+    {
+      "id": "S3",
+      "sha256": "5476f4fc6e07fe8208987275956d0f12fc9acf3cca1d70e4815ab6c6f5bb6725"
+    },
+    {
+      "id": "S4",
+      "sha256": "34bc07c8b744b469bdc6beadaaa0597deb096701db90ab012368c1f2ae612c0a"
+    },
+    {
+      "id": "S5",
+      "sha256": "77cbed25483748b49a10f7953106f5868332b6f05a1bbee59abd5d21572a9d21"
+    },
+    {
+      "id": "S6",
+      "sha256": "08a0f2e0d4036dfabb29f459dfbaa4c1d00d6b86bb52ba71b50cd710f52b6156"
+    },
+    {
+      "id": "S7",
+      "sha256": "41b3eb56c269e73b5e341b32494e8ece431e2673a92d4c67cfa8c013e9661693"
+    },
+    {
+      "id": "S8",
+      "sha256": "9a30c9bc5f4307e22e27681d45560cd10b3371a05753cd2a4554f854af056e49"
+    },
+    {
+      "id": "S9",
+      "sha256": "b40fdb2467974e7c081717e1b29e33fc7ad6847e358bfd06b54c4141267f3775"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71137",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop MCMC methods for sampling when evaluating even the unnormalized target distribution is costly or infeasible.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "unifying procedure",
+        "claim": "Unifies the exchange algorithm, PoissonMH, and TunaMH under a common procedure.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method framework",
+        "claim": "Introduces a framework using auxiliary variables in both proposal and acceptance–rejection steps, yielding gradient-guided MCMC algorithms.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Develops theory for the framework and uses it to simplify and extend results for existing algorithms.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe the auxiliary-variable framework as novel, including auxiliary variables in both proposal and acceptance–rejection steps.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report significantly better performance for the resulting algorithms than existing methods on synthetic and real datasets.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report theoretical results that simplify and extend results for existing algorithms.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Target distributions may be known only up to normalization, while evaluating the unnormalized distribution can itself be costly or infeasible.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "The difficulty is described for Bayesian posteriors on tall datasets and doubly-intractable distributions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "unification",
+        "summary": "Several seemingly different MCMC algorithms are first unified through a common procedure.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "extension",
+        "summary": "That procedure is extended into an auxiliary-variable framework, producing gradient-guided algorithms and associated theory.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported_outcome",
+        "summary": "The new algorithms are reported to outperform existing methods on synthetic and real datasets.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a computational bottleneck to a unifying procedure, then to a framework extension, algorithm instances, theory, and empirical comparisons.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "This sequence makes the relationship between motivation, construction, analysis, and evidence traceable.",
+        "application": "Structure a method abstract by explicitly mapping the initial bottleneck to a shared abstraction, its extension, resulting instances, and separate theoretical and empirical outcomes.",
+        "exception": "This structure is unsuitable when a paper has no genuine unifying abstraction or when theory and experiments do not directly concern the proposed method."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the performance metrics, dataset details, baselines, or conditions behind the reported significant improvement.",
+      "It does not state the precise theoretical guarantees or how auxiliary variables are sampled and used.",
+      "The claimed novelty and experimental results are author-reported and not independently verified here."
+    ]
+  }
+}

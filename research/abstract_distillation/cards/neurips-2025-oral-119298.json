@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-119298",
+    "title": "In Search of Adam’s Secret Sauce",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/119298"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1b273eb723aa989b16737349333503428379670ebd86f6e40b7c25981fa8b03f",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "938290134916877b9a77a725ef24bc43845523a27d87d8c9904d9dfdb16a4212",
+    "extracted_at": "2026-09-13T00:23:02.731046+00:00",
+    "session_id": "01a09825-1f27-7c31-ab9a-d192c001a1cb",
+    "usage": {
+      "input_tokens": 12685,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 763,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fcbd777064a4fe54041d07e4e799f174b695c5a5df5e1818a7bab78122f586b2"
+    },
+    {
+      "id": "S2",
+      "sha256": "eec84215c62129fc30473e05cce85bc284f5630c2d806e3a078862387f0fd7b0"
+    },
+    {
+      "id": "S3",
+      "sha256": "4a2153426bf45b729e1b6f5d20c93bddd15e2172d9974d56695b6bda2534182a"
+    },
+    {
+      "id": "S4",
+      "sha256": "a0206a9316d7a9ad9cb962e15f9bd289a347be9b3e10ff4edd3c20bb4fd95b6e"
+    },
+    {
+      "id": "S5",
+      "sha256": "48c72e3e884e72e78857789982ad85d4cc6437264b3f1cd54f901ef4b6bd4cdd"
+    },
+    {
+      "id": "S6",
+      "sha256": "5c184069d9276bb528d4099993c4a89e27689ccbd1afb45050923ed4bab7c8c9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-119298",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work investigates why Adam is remarkably effective for training transformer-based language models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing simplifications, including signed gradient and signed momentum methods, do not fully explain or match Adam’s performance; the abstract does not state a broader explicit limitation of prior understanding.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical study",
+        "claim": "An empirical comparison of Adam with several simplified variants across more than 1,500 language models, data configurations, and scales.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A reformulation that constrains Adam’s momentum parameters to satisfy β₁=β₂ while preserving near-optimal reported performance.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "A statistical interpretation of the constrained setting as an online algorithm for estimating gradient means and variances, motivated by mean-field Gaussian variational inference.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present β₁=β₂ as an option enabling new reformulations and theoretical insights into Adam’s behavior, including its statistical interpretation.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report training over 1,500 language models across different data configurations and scales to compare Adam with simplified variants.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that signed momentum is faster than SGD but consistently underperforms Adam despite tuning momentum, clipping, and learning rates.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report near-optimal performance for the β₁=β₂ constrained setting and derive an online mean-and-variance estimation interpretation from a mean-field Gaussian variational-inference perspective.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Adam’s effectiveness for transformer language-model training motivates investigation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior simplifications",
+        "summary": "Signed-gradient and signed-momentum variants are introduced as simplifications for gaining insight.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "empirical comparison",
+        "summary": "The study compares Adam and simplified variants using more than 1,500 models across data configurations and scales.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "comparative result",
+        "summary": "Signed momentum is reported faster than SGD but consistently below Adam after tuning key hyperparameters.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reformulation and interpretation",
+        "summary": "Equal momentum parameters, β₁=β₂, are reported to retain near-optimal performance and yield theoretical and statistical interpretations.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a large, varied empirical comparison with a targeted reformulation and a statistical interpretation of the resulting behavior.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This alignment connects observed performance differences to a compact mechanism and an interpretable account.",
+        "application": "When presenting an optimizer study, pair controlled breadth in comparisons with a simplified parameter setting that supports a concrete theoretical or statistical explanation.",
+        "exception": "This framing is unsuitable when the available study lacks enough variation to support comparisons or when the proposed simplification has no interpretable derivation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact model architectures, datasets, evaluation metrics, hyperparameter ranges, or meaning of “near-optimal.”",
+      "The reported statistical interpretation and theoretical insights are not detailed enough here to assess their assumptions or derivation."
+    ]
+  }
+}

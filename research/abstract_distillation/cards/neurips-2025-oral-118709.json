@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-118709",
+    "title": "InfinityStar: Uniﬁed Spacetime AutoRegressive Modeling for Visual Generation",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/118709"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1c872f95805e411e5ef0d3874f775686922ed99b22367f6c5d36b0211c1afc9d",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "24122533e34d96d339bc6c5ec13c449aaa11fbda6b102d7ab8dfd4e7bab13395",
+    "extracted_at": "2026-09-13T00:22:42.636794+00:00",
+    "session_id": "01a09824-cd4c-7b71-b82d-5aa1359e59b5",
+    "usage": {
+      "input_tokens": 12680,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 814,
+      "reasoning_output_tokens": 94
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "240f89a05632ef1aae1dc3e94a9cd8182904dbd31c0a812b5fc2ae4327fb7264"
+    },
+    {
+      "id": "S2",
+      "sha256": "9b7077ff17c30f39bdb4dca474f39dbdde269e750292df1e198009514027c435"
+    },
+    {
+      "id": "S3",
+      "sha256": "861d4eeb337828bf84bd086316dd6f1dbc85924f0da112888cb4e1bdf592d563"
+    },
+    {
+      "id": "S4",
+      "sha256": "398dd8f8df53c40d82cdebe42d14fabad23b92d135f1c9053baf5497e3f49df9"
+    },
+    {
+      "id": "S5",
+      "sha256": "3c7fe32e59c972e771e41c8030b80d02033ab3c47e769f98cbdb518e4d9cae1c"
+    },
+    {
+      "id": "S6",
+      "sha256": "af4fb8a93ff09ba9a22c4db71e7cf1eec6e3176e2263223caeba9ab4bb0bd479"
+    },
+    {
+      "id": "S7",
+      "sha256": "314ce7f5921f62b62684ac855d5584558f7fcd28131766640c24e4915e1bd13c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-118709",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop a unified discrete autoregressive framework for high-resolution image and dynamic video synthesis, capturing spatial and temporal dependencies in one architecture.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "InfinityStar jointly models spatial and temporal dependencies through a purely discrete autoregressive architecture supporting text-to-image, text-to-video, image-to-video, and long-duration video generation.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report strong VBench performance and substantially faster 5-second 720p video generation than leading diffusion-based methods without extra optimizations.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors release the code and models for further research in efficient, high-quality video generation.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that, to their knowledge, InfinityStar is the first discrete autoregressive video generator capable of producing industrial-level 720p videos.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report an 83.74 VBench score, outperforming all autoregressive models by large margins and surpassing diffusion competitor HunyuanVideo.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report approximately 10× faster generation of a 5-second, 720p video than leading diffusion-based methods, without extra optimizations.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "framework introduction",
+        "summary": "The paper introduces InfinityStar as a unified spacetime autoregressive framework for high-resolution images and dynamic video.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "design rationale",
+        "summary": "It uses purely discrete modeling to jointly capture spatial and temporal dependencies within one architecture.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "task scope",
+        "summary": "The unified design is presented as supporting multiple image and video generation tasks, including long-duration synthesis through temporal autoregression.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report strong VBench results and approximately 10× faster 5-second 720p generation than leading diffusion methods.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "distinction and release",
+        "summary": "They state a first-of-its-kind 720p discrete autoregressive capability and release code and models.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects one architectural choice—joint spatial-temporal discrete autoregression—to a broad task range and then reports both quality and speed outcomes.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact abstract can make a system proposition legible by aligning design, supported use cases, and measurable outcomes.",
+        "application": "When presenting a unified architecture, explicitly map its central mechanism to each claimed task and report outcome metrics that correspond to the intended benefits.",
+        "exception": "This framing is unsuitable when tasks rely on materially different mechanisms or when the abstract lacks task-specific evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, evaluation protocols, or the meaning of “industrial-level.”",
+      "The reported speed comparison does not state hardware, implementation details, or whether quality and generation settings were matched."
+    ]
+  }
+}

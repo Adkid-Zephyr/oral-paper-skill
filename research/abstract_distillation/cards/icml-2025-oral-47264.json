@@ -1,0 +1,196 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47264",
+    "title": "Algorithm Development in Neural Networks: Insights from the Streaming Parity Task",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47264"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "28d9be12961413b893bb33236021444429b07cd0b7b92e894c1e5dee1287b196",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "70b65a8367c6b29eca0ed3bc06ce725f083f07decf94dd73fae07e2a22b3f7a3",
+    "extracted_at": "2026-09-13T00:11:02.278492+00:00",
+    "session_id": "01a0981a-218c-7ec0-8092-d12a507ece02",
+    "usage": {
+      "input_tokens": 14233,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 821,
+      "reasoning_output_tokens": 132
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b633b741767c2b48d8190e5025fe894e476cd036acebebf7280c392ac29cf1c6"
+    },
+    {
+      "id": "S2",
+      "sha256": "2d732ddd0baa46e2be75c86224b6be8672efaa9a7d30ae8e4f3be68494873cf6"
+    },
+    {
+      "id": "S3",
+      "sha256": "839d6d2ec930842e06016c9f3bdf4dddfde70628cf77ba368b615b5f755c5878"
+    },
+    {
+      "id": "S4",
+      "sha256": "279168b7e0e593e744abadeb04111cbf6bb6bab186083b5d5827ec436e78f758"
+    },
+    {
+      "id": "S5",
+      "sha256": "3bfa4277442de542cb1dc02731a2f4675e70461d7609cd62b45f8915922dc6bb"
+    },
+    {
+      "id": "S6",
+      "sha256": "8e2013bda9950c74e4c4d09e7dc1ee8572036c955534ca495c6285483ad8e4f1"
+    },
+    {
+      "id": "S7",
+      "sha256": "c884aa3ccb4a26782cc6613d182efe9e1031fe4f2cc14aabb61968f5f95188b3"
+    },
+    {
+      "id": "S8",
+      "sha256": "bee7d9b1c7e31072e5209553f741908e5198701dd7689bf980a4829d0f80bb7f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47264",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how recurrent neural networks develop algorithms while learning the streaming parity task, a nonlinear sequence task defined for arbitrary lengths.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "case study",
+        "claim": "A case study of RNN learning dynamics for developing an effective theory of algorithm development.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "An effective theory of representational dynamics identifying an implicit representational merger effect, interpreted as constructing a finite automaton that reproduces the task.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "mechanism",
+        "claim": "A proposed account of how finite training experience can support infinite generalization.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present the representational merger effect as a mechanism explaining infinite generalization from finite experience.",
+      "source_ids": [
+        "S7",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, with sufficient finite training experience, RNNs undergo a phase transition to perfect infinite generalization.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report finding an implicit representational merger effect in the representational dynamics, which they interpret as finite-automaton construction.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "The paper situates neural-network generalization research primarily in within-distribution smooth interpolation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "It highlights settings where networks extrapolate far beyond training bounds, potentially indicating that an algorithm has been learned.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "study",
+        "summary": "It investigates RNN learning dynamics on streaming parity, a nonlinear task over sequences of arbitrary length.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "It reports a transition to perfect infinite generalization and links this to representational merger and finite-automaton construction.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The results are presented as one mechanism for infinite generalization from finite experience.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a behavioral generalization transition with an internal representational interpretation: merger is interpreted as constructing a finite automaton reproducing the task.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "Pairing an observed capability change with a mechanistic representation-level hypothesis can make an algorithm-development narrative more explanatory.",
+        "application": "When presenting extrapolation results, map the capability transition to a concrete representational object or dynamics hypothesis, while labeling the mapping as an interpretation.",
+        "exception": "This framing is unsuitable when no interpretable representation-level evidence or hypothesis is available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify what training experience is sufficient, or the RNN architecture, optimization procedure, data distribution, or transition criterion.",
+      "The abstract does not provide quantitative evaluation details establishing the scope of “perfect infinite generalization.”",
+      "The authors report a representational merger effect and interpret it as finite-automaton construction; the abstract does not clarify whether that correspondence is formally proved or empirically inferred."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "unknowns[2]",
+      "before": "The representational merger is described as an interpretation; the abstract does not clarify whether finite-automaton construction is formally proved or empirically inferred.",
+      "after": "The authors report a representational merger effect and interpret it as finite-automaton construction; the abstract does not clarify whether that correspondence is formally proved or empirically inferred.",
+      "review_file": "reviews/flagged-batch-10.json",
+      "review_sha256": "f8a74e34c47e62f0714a839ccc201719d983b2c8e4ded9590045bc92b01af376",
+      "applied_at": "2026-09-13T00:42:27.380981+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

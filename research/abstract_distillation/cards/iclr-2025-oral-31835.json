@@ -1,0 +1,142 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31835",
+    "title": "Attention as a Hypernetwork",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31835"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f61ff42a02fc4ef286fde92dcfca789a7a003030b8d471b25e18c83dbfaaace4",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "5b73a7058d5370dc6a4364944b086952e12b0127a7ddba1c76ade6e7ffbaa955",
+    "extracted_at": "2026-09-12T23:53:51.020270+00:00",
+    "session_id": "01a0980a-6310-7f62-b210-38ed15e1dae7",
+    "usage": {
+      "input_tokens": 12616,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 763,
+      "reasoning_output_tokens": 116
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f61ff42a02fc4ef286fde92dcfca789a7a003030b8d471b25e18c83dbfaaace4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31835",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain how transformers achieve compositional generalization to unseen compositions of familiar parts.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method/theory",
+        "claim": "Reformulates multi-head attention as a hypernetwork with a composable, low-dimensional latent code specifying key-query-specific operations.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Shows that latent codes predict subtasks on unseen compositions and are reused to solve unseen instances.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "resource/empirical study",
+        "claim": "Introduces a symbolic Raven’s Progressive Matrices benchmark with controlled training and evaluation compositions.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper’s stated new elements are the hypernetwork reformulation and the symbolic Raven’s Progressive Matrices task for controlled compositional-generalization analysis.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report empirically that latent codes predict subtasks performed on unseen task compositions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report that making the hypernetwork-generated linear value network nonlinear improves compositional generalization on abstract reasoning tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "On the symbolic Raven’s task, the authors report that scaling model size and data enables compositional generalization and yields a functionally structured latent space.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation/question",
+        "summary": "Frames compositional generalization as the ability to solve novel compositions of parts encountered during training, and asks what mechanism supports it.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "mechanistic account",
+        "summary": "Recasts multi-head attention as an intrinsic hypernetwork whose low-dimensional latent codes specify key-query operations and are reused across unseen compositions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "intervention and controlled demonstration",
+        "summary": "Tests nonlinear value networks and introduces a symbolic Raven’s benchmark, reporting gains from the modification and effects of scaling model size and data.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a proposed internal representation to behavior by reporting that latent codes predict unseen subtasks and are reused on unseen instances.",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        "interpretation": "A mechanistic claim becomes more informative when the representation is linked to a measurable prediction about generalization.",
+        "application": "For a new architecture, define an internal code or state, test whether it predicts held-out task factors, and separately test whether interventions on it alter compositional performance.",
+        "exception": "This approach is unsuitable when no interpretable or extractable internal representation can be operationalized."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the circumstances under which generalization occurs, model and dataset details, quantitative gains, statistical uncertainty, or ablation settings.",
+      "It does not establish whether the reported latent-code interpretation or improvements generalize beyond the stated abstract reasoning and symbolic Raven’s tasks."
+    ]
+  }
+}

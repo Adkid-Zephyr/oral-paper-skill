@@ -1,0 +1,220 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31929",
+    "title": "RMP-SAM: Towards Real-Time Multi-Purpose Segment Anything",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31929"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8ea34a1a6f249f46abd54a3fbb824cff95cba0a36d8364214a98f4c1b9ba92c5",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "049ab73b43ff1ce782eafa6f1ffa961c71cf37dda37be7a3fa60b9fe8608d92d",
+    "extracted_at": "2026-09-12T23:57:38.568509+00:00",
+    "session_id": "01a0980d-d61e-7541-86ea-6f94cf1f238a",
+    "usage": {
+      "input_tokens": 12869,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 848,
+      "reasoning_output_tokens": 78
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7e5c3ab0234e85f2df23fcc114e6a6d130cfaf919803bfc119aef41d20ec9d01"
+    },
+    {
+      "id": "S2",
+      "sha256": "f49282caba0a7321c847bfcb03265383353926bcb7b1c2522e907fb99d9c85bd"
+    },
+    {
+      "id": "S3",
+      "sha256": "a2257c3112c7337164f317eb90c81222ecef0024119412275ecb5e0ae0d80c24"
+    },
+    {
+      "id": "S4",
+      "sha256": "13eb5836a81945e13399e1242de5ba18bf184f076fd669b96ded11b12982d993"
+    },
+    {
+      "id": "S5",
+      "sha256": "6fc2e6a959552fed3565d1741f82326768d301e573d39f6c86d62fa8f4ba2818"
+    },
+    {
+      "id": "S6",
+      "sha256": "9915e6f6529f33336f2ae0fa1d54f56ac4ad3eb8fabb367fe75ed03349f5ddd8"
+    },
+    {
+      "id": "S7",
+      "sha256": "61bb51db602b6d0713d15ffcb0047467f7d690737bd10c00b97eef3bfd001a73"
+    },
+    {
+      "id": "S8",
+      "sha256": "fc039a730e8e38515fd1475ed5b3a6f784fd14b2139532efa534cf7c766f4606"
+    },
+    {
+      "id": "S9",
+      "sha256": "f2454412e2de2f453b46202ac7b9d6e07757a581793853a5ac3688aa1dcc4f85"
+    },
+    {
+      "id": "S10",
+      "sha256": "cddfe68acc06795a81b3c8a8ece31da831e6b4e167674ec659a8b0efa462859d"
+    },
+    {
+      "id": "S11",
+      "sha256": "1a95dfca13f09e4b6f4ef16bb646441ea94d6d44ddffbd901effe55bd1aaec37"
+    },
+    {
+      "id": "S12",
+      "sha256": "344aa1e04ff36fcfd98c40965dadd9bed6a853cc2b97a7c78b691f94a4a6b7d6"
+    },
+    {
+      "id": "S13",
+      "sha256": "dc3b8d74b6880d8652cf179c10c7cb30ea7d78f2858c0ead8ec1168965e89b6a"
+    },
+    {
+      "id": "S14",
+      "sha256": "a77735787972e4212ddd7ec18e43f698221679e0efdda1e234ba588e67211a62"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31929",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Can one end-to-end model perform interactive, panoptic, and video instance segmentation in real time?",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      "gap": {
+        "claim": "Existing foundation segmentation methods are hindered by heavy encoder-decoder designs, while real-time work often targets specific environments and overlooks cross-scenario generalization.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "setting",
+        "claim": "Defines real-time multi-purpose segmentation across three sub-tasks: interactive, panoptic, and video instance segmentation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Presents RMP-SAM, a dynamic-convolution method with an efficient encoder and decoupled adapter for prompt-driven decoding.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "type": "training and benchmarking",
+        "claim": "Explores training strategies and a new adapter design, and benchmarks extended strong baselines for multi-purpose segmentation.",
+        "source_ids": [
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by targeting a single end-to-end model for multiple segmentation tasks in real time, using dynamic convolution.",
+      "source_ids": [
+        "S7",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive experiments show RMP-SAM is effective and generalizes well on proposed benchmarks and other specific semantic tasks.",
+        "source_ids": [
+          "S12"
+        ]
+      },
+      {
+        "claim": "The authors report that their implementation achieves the optimal balance between accuracy and speed for these tasks.",
+        "source_ids": [
+          "S13"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Large foundation segmentation models support multiple tasks but their heavy frameworks impede real-time performance.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap and task definition",
+        "summary": "Prior real-time efforts emphasize environment-specific semantic segmentation and may overlook generalization, motivating real-time multi-purpose segmentation across three sub-tasks.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "RMP-SAM uses one end-to-end model with dynamic convolution, an efficient encoder, and a decoupled prompt-driven adapter; training strategies and another adapter design support co-training.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9",
+          "S10"
+        ]
+      },
+      {
+        "role": "evaluation and release",
+        "summary": "The authors benchmark extended baselines, report effectiveness, generalization, and an accuracy-speed balance, and state that code and models will be released.",
+        "source_ids": [
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly links a multi-task setting to a single end-to-end design, then describes efficiency components and training strategies intended to satisfy real-time and co-training requirements.",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "A useful paper-framing pattern is to align the task definition, architectural choices, and optimization strategy with distinct constraints.",
+        "application": "When presenting a multi-task system, map each stated constraint to a named design component or training decision before reporting results.",
+        "exception": "This framing is unsuitable when the tasks do not share representations or when separate specialized models are required by the deployment setting."
+      }
+    ],
+    "unknowns": [
+      "No numerical accuracy, speed, latency, hardware, baseline, benchmark, or ablation details are provided.",
+      "The abstract does not define the real-time threshold or specify which semantic tasks and scenarios support the generalization claim.",
+      "Code and model availability is stated as future-oriented; their actual release status is unknown."
+    ]
+  }
+}

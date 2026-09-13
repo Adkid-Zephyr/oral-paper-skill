@@ -1,0 +1,200 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006554",
+    "title": "The Polar Express: Optimal Matrix Sign Methods and their Application to the Muon Algorithm",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006554"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1b796370639af85c28e392d179835f4b4a8bdfea0ff423315b07bbd902adc03a",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "a23c646bdaf96a5cfe9264f259c22e63c1a0ec9691c39bdcdfe84f318a04428f",
+    "extracted_at": "2026-09-12T23:58:04.988184+00:00",
+    "session_id": "01a0980e-3d4a-7782-912b-3a6913c3b663",
+    "usage": {
+      "input_tokens": 12763,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 846,
+      "reasoning_output_tokens": 102
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "253cbed59ce2933235980b97a88852e37a50fb0b857af669c0bfdb8614b9398c"
+    },
+    {
+      "id": "S2",
+      "sha256": "2d47008ca137eba75f87a64abf730d81df22b182dae91d2f95f9275b4639943f"
+    },
+    {
+      "id": "S3",
+      "sha256": "0bcd09abf11befa8a46609177904311cb8cc0fea25e4c503df101c3161b8ff92"
+    },
+    {
+      "id": "S4",
+      "sha256": "070e02aa5a74fde70daf3358054bc313849d40bcea4805d550d784b8c6dc5220"
+    },
+    {
+      "id": "S5",
+      "sha256": "f95a30c16628341d378af44e9951dee2bd97769ff8891a594ecca784dab1006a"
+    },
+    {
+      "id": "S6",
+      "sha256": "3a3d4a85ce3c4a446d14181ee6c9a441f8bbae42e7bf4231662c6f604beb4ca7"
+    },
+    {
+      "id": "S7",
+      "sha256": "b3b2dbd416c8a78ab26175cea997bd3902f9f91ef7db2a9d9652136f28570aeb"
+    },
+    {
+      "id": "S8",
+      "sha256": "13f65517c0b9da037eb51ec899b5093e1d2fe039723e030b097945bb9ab5d6ee"
+    },
+    {
+      "id": "S9",
+      "sha256": "b681efa3b6c04c07f1de5422143050dfbcd9035f8bd8cdd0a7ad54f82daf9b05"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006554",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Efficiently compute the polar decomposition/matrix sign function as a Muon subroutine under deep-learning priorities.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Classical numerical-analysis settings do not match the application’s GPU-throughput and lower-precision requirements.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Polar Express, a matrix-multiplication-only polar-decomposition method whose iteration updates are chosen by minimax optimization.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Provides a worst-case error-minimization result for the update strategy, covering both early iterations and asymptotic convergence.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "systems/precision",
+        "claim": "Addresses finite-precision use, including practical operation in bfloat16, and applies the method within Muon.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Polar Express by adapting each iteration through a minimax optimization problem while retaining matrix-matrix multiplication updates.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a worst-case error-minimization proof and convergence as rapidly as possible in early and asymptotic regimes.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report consistent validation-loss improvements for GPT-2 trained on 1–10 billion FineWeb tokens, outperforming recent alternatives across learning rates.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that finite-precision considerations make the method practical in bfloat16.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Polar decomposition and the matrix sign function are longstanding numerical-analysis problems and have become relevant to Muon.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "application gap",
+        "summary": "Deep learning changes the design target toward GPU throughput rather than high precision.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Polar Express uses GPU-friendly matrix multiplications and minimax-selected updates at each iteration.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "theory and application",
+        "summary": "The abstract reports worst-case convergence guarantees, bfloat16 practicality, and improved GPT-2 validation loss within Muon.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the algorithmic design—matrix multiplications and bfloat16 handling—with the deployment setting, then reports an application-level comparison in Muon.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "A strong abstract can connect method constraints, implementation choices, and downstream evidence as one application-specific argument.",
+        "application": "When presenting a systems-oriented method, explicitly map each design choice to the target hardware or precision regime and report a downstream task comparison under stated conditions.",
+        "exception": "This framing is less suitable when the primary contribution is purely theoretical or when downstream deployment is outside the paper’s scope."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact minimax objective, assumptions, convergence metrics, or proof conditions.",
+      "The GPT-2 comparison lacks dataset split, baseline identities, quantitative loss values, and training-control details.",
+      "The meaning of “as rapidly as possible” is not operationalized in the abstract."
+    ]
+  }
+}

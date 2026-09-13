@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47252",
+    "title": "EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47252"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f3844a8a7a99422a07258d9513c3a2f1fe94d4fcd342a10f03ac7cf38f76a506",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "4126aef8834b147cdc0d36e40019641776e75af2479960ab4235be4dd8670fab",
+    "extracted_at": "2026-09-13T00:10:29.813151+00:00",
+    "session_id": "01a09819-9d7b-7342-81fe-0bec716f4d37",
+    "usage": {
+      "input_tokens": 12750,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 767,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3707345ffd7b8dc26a4f4e36e1d123855fcd5c3796177c59aa47b4c8ea1b3bfc"
+    },
+    {
+      "id": "S2",
+      "sha256": "9d017575e59de331f859d51999a573835b7b4dc2cb6fa70ced83967d6cf1aa43"
+    },
+    {
+      "id": "S3",
+      "sha256": "b4425aa9c1b67a5f26b9302a3be18cf79e3bb9aaf96816ab5cfabbb9fc2c90bf"
+    },
+    {
+      "id": "S4",
+      "sha256": "ce39e226f979830c5cdcc120f803e7c37ee6fe19689b92a5bb3eef5ca22a74ab"
+    },
+    {
+      "id": "S5",
+      "sha256": "1244be48ee507ae12a0e3968febbfa2141b376570dc930e158abcbaf79a3e4be"
+    },
+    {
+      "id": "S6",
+      "sha256": "52392b71683f1114457ee0e4deb6c6067bc7a2c4adaf35d8d1d421c0f75f51be"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47252",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate vision-driven embodied agents built with multimodal large language models (MLLMs) across real-world task abilities.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "MLLM-based embodied agents are underexplored because comprehensive evaluation frameworks are lacking.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces EmbodiedBench, with 1,128 tasks across four environments and six capability-focused subsets spanning reasoning, instruction understanding, spatial awareness, perception, and planning.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical evaluation",
+        "claim": "Evaluates 24 proprietary and open-source MLLMs using the benchmark.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Provides the benchmark code and dataset publicly.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish EmbodiedBench as an extensive, multifaceted standardized evaluation platform for vision-driven embodied agents.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that MLLMs perform well on high-level tasks but struggle with low-level manipulation; GPT-4o, identified as the best model, scores 28.9% on average.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that benchmark evaluation highlights existing challenges and provides insights intended to advance MLLM-based embodied agents.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "MLLM-based embodied agents are promising, but comprehensive evaluation is missing.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark design",
+        "summary": "EmbodiedBench organizes 1,128 tasks across four environments and six capability-oriented subsets.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The benchmark is used to evaluate 24 leading proprietary and open-source MLLMs.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "finding",
+        "summary": "The authors report a high-level/low-level performance gap, with GPT-4o averaging 28.9%.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "resource impact",
+        "summary": "The platform is presented as a standardized way to expose challenges and guide progress, with code and data released.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates benchmark scope into environments and capability-focused subsets, then reports an aggregate model comparison and a specific low-level weakness.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This pairing connects evaluation coverage to an interpretable capability diagnosis rather than presenting only a single leaderboard score.",
+        "application": "Design evaluations with both broad task coverage and capability-specific slices, and report a concrete failure mode alongside aggregate results.",
+        "exception": "This structure may be unsuitable when the task has no meaningful capability decomposition or when subset scores would be statistically underpowered."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report per-environment or per-subset scores, task-level variance, evaluation conditions, or baselines beyond GPT-4o.",
+      "The claim that GPT-4o is the best model is not further qualified by model versions, prompting, or comparison metrics."
+    ]
+  }
+}

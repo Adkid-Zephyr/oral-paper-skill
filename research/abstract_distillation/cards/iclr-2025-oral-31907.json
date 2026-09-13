@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31907",
+    "title": "DeepLTL: Learning to Efficiently Satisfy Complex LTL Specifications for Multi-Task RL",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31907"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d8cfab5f4f26343ee20810ecdf8dc053a8370c5bcceb6ad65c84f7ec2771a37f",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "2c52e888388a82e626f98b7ba2d25ad870e0e38b307e7c6dcf91fdb17417d31d",
+    "extracted_at": "2026-09-12T23:56:42.939013+00:00",
+    "session_id": "01a0980d-008e-77c0-8f4b-10a1a379d30b",
+    "usage": {
+      "input_tokens": 12688,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 759,
+      "reasoning_output_tokens": 82
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bc10fd95867ae83a730aff968f1afa0d68e0b4ad8ebf73c9c8c1080739426bc9"
+    },
+    {
+      "id": "S2",
+      "sha256": "5020ac4eeb798948f077ff3e15a82ec90f9927c0ab0a40a0e09b1add43b32fc7"
+    },
+    {
+      "id": "S3",
+      "sha256": "0e73c9a0f9c06e0c1c780b57f0ce931afa253d4741aa06ab24d69ad1a61125fb"
+    },
+    {
+      "id": "S4",
+      "sha256": "a458153ed72f86c5404f8d9cd283c4a91518dad7bafeae24ba08a2b360b8d0f8"
+    },
+    {
+      "id": "S5",
+      "sha256": "57d65718928238ccc37d5439f2d913168ed4c3e4aa74657608d5aecfb0f17482"
+    },
+    {
+      "id": "S6",
+      "sha256": "51028af16294d02f4604d1a305bcbcfd2691afd66582911d22fe25c640b3b18b"
+    },
+    {
+      "id": "S7",
+      "sha256": "7e94d2a226314daa821867a1b118ce10519a980c32d097ec7e39a98e494c12df"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31907",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Learn policies that efficiently satisfy arbitrary, including unseen, LTL specifications in multi-task reinforcement learning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches are limited to finite-horizon LTL fragments, restricted to suboptimal solutions, and insufficiently handle safety constraints.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The authors propose a learning approach that uses Büchi-automaton structure and conditions policies on truth-assignment sequences leading to satisfaction of the target formula.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report zero-shot satisfaction across finite- and infinite-horizon specifications in discrete and continuous domains, with higher satisfaction probability and efficiency than existing methods.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe their learning approach as novel and distinguish it by leveraging Büchi automata to represent LTL semantics during policy learning.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that experiments across varied discrete and continuous domains demonstrate zero-shot satisfaction of a wide range of finite- and infinite-horizon specifications.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "Authors report outperforming existing methods on both satisfaction probability and efficiency.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "LTL is presented as a formalism for complex, temporally extended tasks in multi-task RL.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "Efficiently satisfying arbitrary specifications unseen during training is identified as challenging.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Prior approaches are characterized as finite-horizon-limited, potentially suboptimal, and inadequate for safety constraints.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The proposed method uses Büchi-automaton structure and truth-assignment sequences to condition policy learning.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Experiments are reported to show broad zero-shot satisfaction and better satisfaction probability and efficiency than existing methods.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the method's policy-conditioning mechanism directly to Büchi automata, which explicitly encode LTL semantics, and then reports outcomes using satisfaction probability and efficiency.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact abstract can align representation choice, learning mechanism, and evaluation criteria around the task's formal objective.",
+        "application": "When presenting a specification-driven learning method, map the formal structure to the conditioning or optimization signal, then evaluate the same objective and its practical cost.",
+        "exception": "This framing is unsuitable when the formal representation is not actually used by the learning mechanism or when the task has no operational satisfaction criterion."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark identities, task counts, baselines, numerical results, or statistical uncertainty.",
+      "The meanings and measurement procedures for satisfaction probability and efficiency are unspecified.",
+      "The reported zero-shot scope and safety-constraint handling are not detailed."
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71076",
+    "title": "Optimal and Scalable MAPF via Multi-Marginal Optimal Transport and Schrödinger Bridges",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71076"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d88a2c45bd70ad57aebf182d20ce2fb37f0252df41457bfb342ac1dac6cde4e9",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "d7d0765667c0fe841de4040329e34a450801be86d76458a9db3e22fde11ed986",
+    "extracted_at": "2026-09-13T00:13:06.222162+00:00",
+    "session_id": "01a0981b-f93b-7bc1-bbe4-4589d469a819",
+    "usage": {
+      "input_tokens": 12745,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 904,
+      "reasoning_output_tokens": 113
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "565f8e5d55caf715919fd9bf1c5d887e94bb07675f637b131159cf3a28d8734c"
+    },
+    {
+      "id": "S2",
+      "sha256": "a001365c0e9858ab6180da2153ac30e90f065bda3ddbb04f1209b5919e724dea"
+    },
+    {
+      "id": "S3",
+      "sha256": "3344ec1657cb42aa21ec0fc8350d2e76f335deab4d3478615decdfa898edde3a"
+    },
+    {
+      "id": "S4",
+      "sha256": "99c89d57ec18b96233f07c3d4b97a1b909c069f31ae8ee5d9c8c2925815a5d6f"
+    },
+    {
+      "id": "S5",
+      "sha256": "6d9352d4adb8a4b680972aee81e103fd2bfeca923307270fef2156b65c2fa5c3"
+    },
+    {
+      "id": "S6",
+      "sha256": "2e3c383760b135d76c369159bdfca92cae42aa75218c2d453e7b077b4b588a25"
+    },
+    {
+      "id": "S7",
+      "sha256": "4d1d13aa350cd5e103b5f20e19d0a4e348df1a28b7b7bbb536baeb827528ae31"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71076",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Solve anonymous multi-agent path finding, where robots travel between targets on a finite connected graph.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory and formulation",
+        "claim": "Recasts MAPF as a Markovian multi-marginal optimal transport problem whose exponential formulation collapses to a polynomial-size linear program.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theoretical result",
+        "claim": "For the anonymous setting, identifies conditions yielding feasibility, total unimodularity, and minimum-cost integral transports without space-time overlap.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "scalable method",
+        "claim": "Introduces a Schrödinger-bridge formulation with an iterative Sinkhorn-type solver and uses its fractional transport as a template for a reduced LP.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": null,
+      "source_ids": []
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, under stated conditions, the LP produces minimum-cost integral non-overlapping transports.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "Under standard assumptions, the authors report that the Schrödinger-bridge formulation reduces to entropic MMOT regularization solvable by Sinkhorn-type iterations.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report extensive experiments highlighting optimality and scalability, and describe the reduced-LP approach as producing near-optimal integral transports with substantially lower complexity.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Anonymous MAPF is posed as moving robots to targets on a finite connected graph.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "structural reduction",
+        "summary": "MAPF is connected to Markovian MMOT, enabling a polynomial-size LP representation.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "integrality and feasibility",
+        "summary": "Conditions are given for feasible, totally unimodular LPs with minimum-cost integral transports that avoid space-time overlap.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "scalable approximation framework",
+        "summary": "Schrödinger bridges provide an entropic, Sinkhorn-solvable formulation and a fractional template for a reduced LP; experiments are reported to support optimality and scalability.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each modeling transformation with a distinct computational or structural consequence: polynomial LP size, integrality, and iterative scalability.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "Separating formulation, guarantees, and solver consequences makes a technical contribution easier to audit.",
+        "application": "Organize a paper's abstract by pairing each proposed representation with the precise property or algorithmic benefit it enables.",
+        "exception": "This structure is less suitable when the work has one tightly coupled result and no meaningful intermediate consequences."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract distinguishes fractional Schrödinger-bridge output from the subsequent reduced-LP construction of integral transports.",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        "interpretation": "Explicitly labeling intermediate objects prevents readers from confusing a relaxed solution with the final feasible output.",
+        "application": "When using relaxations, state which stage produces the relaxed object and which later stage restores the required discrete constraints.",
+        "exception": "Do not imply restoration of exact feasibility or optimality unless the relevant conditions and evidence are supplied."
+      }
+    ],
+    "unknowns": [
+      "The standard assumptions behind the Schrödinger-bridge reduction are not specified.",
+      "The abstract does not quantify the reported near-optimality, complexity reduction, or experimental comparisons.",
+      "Instance sizes, baselines, and detailed conditions for LP feasibility and integrality are omitted."
+    ]
+  }
+}

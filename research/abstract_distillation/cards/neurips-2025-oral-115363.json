@@ -1,0 +1,215 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-115363",
+    "title": "Learning long range dependencies through time reversal symmetry breaking",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/115363"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "85d07a240b90b977755048d1e11d2719483d401936d6bebbbf7ae0d9225a3176",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "221a358d1ae9f931532ccf266d77e5e26c75c283bbf48a1ac5e90d3637f965ee",
+    "extracted_at": "2026-09-12T23:41:03.890416+00:00",
+    "session_id": "01a097fe-aa9b-7022-9541-de0681bbe416",
+    "usage": {
+      "input_tokens": 12890,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 890,
+      "reasoning_output_tokens": 112
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6fd24ad3d5b91688c4a8142d60bbe48592867fa1b0d777793c5e9ee945532663"
+    },
+    {
+      "id": "S2",
+      "sha256": "20b13f81f9d9430521d9c56f69a8a134956b1e7e100b69f3ae7c1d71101b328a"
+    },
+    {
+      "id": "S3",
+      "sha256": "cc68b9442db100ffb47f4624b989bdd24c40154c551ed5e95fd377137a56ea92"
+    },
+    {
+      "id": "S4",
+      "sha256": "404426f55ebfb3bcde3a74b7fd948a3fea51dd17dc87396c94be262d4fc94d9a"
+    },
+    {
+      "id": "S5",
+      "sha256": "44325abcf6b214a5acc0890492ab7ab84558c72ecc106a56439bf604a632d40f"
+    },
+    {
+      "id": "S6",
+      "sha256": "57a3f520372e2f1a2fd483dad3788b50e3316429479a30c30516b984eda72b4e"
+    },
+    {
+      "id": "S7",
+      "sha256": "05b2d60fdbddfaca27b650ce5aac5b50f4d0fd843bcfc2f732558b41da3594bb"
+    },
+    {
+      "id": "S8",
+      "sha256": "8a4cecdc5061ab032af4ca1caf209c91fe9c0793f461d8a3d69c51e7854d590e"
+    },
+    {
+      "id": "S9",
+      "sha256": "90d6ddf5953eb43efde7234997b126526123d98e8440d5b8e9bb7a0c1e92e8b8"
+    },
+    {
+      "id": "S10",
+      "sha256": "15864d20ac897610cd4895f1917453ce1a88e16ab1abeeb5125988806bc6c3cb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-115363",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop learning algorithms for physics-grounded recurrent systems that respect physical principles and support efficient simulation and design.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Recurrent Hamiltonian Echo Learning (RHEL), which authors state computes loss gradients as finite differences of trajectories in non-dissipative Hamiltonian systems.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Introduces continuous- and discrete-time formulations, with reported equivalence to the continuous adjoint method and, for Hamiltonian Recurrent Units, to BPTT.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Extends the construction to hierarchical Hamiltonian SSMs and applies it to linear and nonlinear sequence models.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish RHEL through its physical-trajectory finite-difference gradient computation and its potential implementation in non-digital physical systems.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that RHEL requires three forward passes regardless of model size, without explicit Jacobian computation or gradient-estimation variance.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report training HSSMs on mid- to long-range time-series classification and regression tasks with sequence lengths reaching approximately 50,000.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "Across the reported models and tasks, the authors state that RHEL consistently matches BPTT performance.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Physics-grounded SSMs motivate algorithms that follow physical principles while enabling efficient simulation and design.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "core proposal",
+        "summary": "RHEL is introduced as a finite-difference gradient method based on Hamiltonian trajectories, with a stated three-forward-pass property.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "continuous formulation",
+        "summary": "The continuous-time method is presented with a reported formal equivalence to the continuous adjoint state method.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "discrete scaling",
+        "summary": "A discrete-time version is proposed, linked to BPTT for HRUs and generalized to hierarchical HSSMs.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "application",
+        "summary": "HSSMs are trained on time-series tasks up to roughly 50k sequence length, with reported performance matching BPTT.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a computational claim about gradient estimation with explicit equivalence statements and a comparison against BPTT across task types and sequence lengths.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "This alignment makes the method’s intended computational advantage, theoretical relationship, and empirical comparison inspectable as separate claims.",
+        "application": "When presenting a new training algorithm, state its resource property, identify the regime where it corresponds to a known method, and report comparisons across the claimed operating range.",
+        "exception": "This structure is unsuitable when no meaningful baseline, formal correspondence, or varied evaluation regime exists."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the conditions or proof details behind the gradient and equivalence claims.",
+      "It does not quantify the number of models, tasks, baselines, or the meaning of “consistently matches” BPTT.",
+      "Energy efficiency and physical-system implementation are presented as potential directions, not demonstrated results."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "author_reported_evidence[1].claim",
+      "before": "The authors report training HSSMs on mid- to long-range time-series classification and regression tasks with sequence lengths of approximately 50,000.",
+      "after": "The authors report training HSSMs on mid- to long-range time-series classification and regression tasks with sequence lengths reaching approximately 50,000.",
+      "review_file": "reviews/pilot-03.json",
+      "review_sha256": "aab51adc33d4ff3aa16c1bb2c38822a46393e25c71ee181cc183e90ffc7b1e64",
+      "applied_at": "2026-09-12T23:46:38.304218+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

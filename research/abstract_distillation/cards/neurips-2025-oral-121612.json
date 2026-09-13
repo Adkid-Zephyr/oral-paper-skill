@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-121612",
+    "title": "OrthoLoC: UAV 6-DoF Localization and Calibration Using Orthographic Geodata",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/121612"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c8e7021d415c21b654a9d35e13b6f844f9b630ac0592adf4802e443444fe38c5",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "ec979bf2349334471dedb8cf1a50c80ae8475f1a318665324f6f7fe64efdbacb",
+    "extracted_at": "2026-09-13T00:23:38.978117+00:00",
+    "session_id": "01a09825-a605-78f3-8a2d-e6390e660d48",
+    "usage": {
+      "input_tokens": 12780,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 801,
+      "reasoning_output_tokens": 58
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "80dea0f27420222e3272b65a67552303e3f3d98c048e05f33f71acd5539b1244"
+    },
+    {
+      "id": "S2",
+      "sha256": "2fc70e6f0e580f45eb61350cbc1b9e314d671fc27ace69d3b8323e0c4d241fb2"
+    },
+    {
+      "id": "S3",
+      "sha256": "94b272a32ac826bdecd812ccaf87653de6d2ddd50707c5178bdfa3cd6a2f1c1d"
+    },
+    {
+      "id": "S4",
+      "sha256": "cc383e53061ff9fb087d29226a17848c349c29a5cb11ea3f097a49756160058a"
+    },
+    {
+      "id": "S5",
+      "sha256": "91046dbb71965f4028ed80bda70ed3aedaccf8e48077715047c8c9dae99b8a18"
+    },
+    {
+      "id": "S6",
+      "sha256": "eaf0e02b56079403548941156b09faa99fa68d28869a3ede04d3eb877c411731"
+    },
+    {
+      "id": "S7",
+      "sha256": "312564aad063954d914162c8767ccf262ec22ce4deb4f4b04f7d8c7dc037cc16"
+    },
+    {
+      "id": "S8",
+      "sha256": "43dc2c67c90800c2ac34d34945176c6ae207e1f542c03507988b627abb9d528a"
+    },
+    {
+      "id": "S9",
+      "sha256": "cf8ef9e02d2903000ab2283374123de0477cbd7be396ee2a042c7bb71026ef24"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-121612",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Achieve accurate aerial visual localization, including high-precision operation under resource constraints and without internet or GNSS/GPS support.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Orthographic geodata had received little attention as a lightweight alternative to large image databases or heavy 3D models.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "Introduces OrthoLoC, described as the first large-scale dataset of 16,425 UAV images from Germany and the United States with multiple modalities, addressing UAV–geospatial-data domain shifts.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "benchmark",
+        "claim": "Provides paired data for benchmarking that separates image retrieval from feature matching, enabling isolated assessment of localization and calibration performance.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces AdHoP, a feature-matcher-compatible refinement technique for improving matching and reducing translation error.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish OrthoLoC as the first large-scale dataset of its stated kind and AdHoP as a refinement technique integrable with any feature matcher.",
+      "source_ids": [
+        "S4",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report evaluating the effects of domain shifts, data resolution, and covisibility on localization accuracy.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that AdHoP improves matching by up to 95% and reduces translation error by up to 63%.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report releasing the dataset and code publicly.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Aerial visual localization is important, but practical deployments may require high precision with limited compute and no connectivity or GNSS/GPS.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The abstract identifies orthographic geodata as an underused, lightweight alternative that is increasingly available through government releases.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "resource_and_evaluation",
+        "summary": "OrthoLoC supplies paired, multimodal UAV and geospatial data to address domain shift and disentangle retrieval from matching in evaluation.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "method_and_results",
+        "summary": "The authors evaluate domain-shift, resolution, and covisibility effects, then report gains from the AdHoP refinement technique.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a dataset’s structural property—paired data—with a specific evaluation decomposition that separates retrieval from feature matching.",
+          "source_ids": [
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A resource contribution becomes more actionable when its data design directly isolates the factors a benchmark is intended to measure.",
+        "application": "When introducing a dataset, explicitly map its pairing or annotations to separable evaluation stages and state which performance dimensions each stage tests.",
+        "exception": "This decomposition is unsuitable when the target application intrinsically couples retrieval and matching or when the data cannot support stage-level ground truth."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dataset splits, modality details, evaluation metrics, baselines, or the conditions under which the reported maxima were obtained.",
+      "It does not provide the magnitude or direction of the individual effects of domain shifts, resolution, or covisibility."
+    ]
+  }
+}

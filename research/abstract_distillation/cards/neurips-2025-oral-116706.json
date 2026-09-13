@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-116706",
+    "title": "From Condensation to Rank Collapse: A Two-Stage Analysis of Transformer Training Dynamics",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/116706"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1c1d220f7f3bdecf797cb90c4bf48f6e0d486c7e2e0c5a72e1c45dad06484cb0",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "c1dcc09eac89976061b7e7171640d1f854984f9c9d195a36e8fd4af857d93998",
+    "extracted_at": "2026-09-13T00:21:27.347761+00:00",
+    "session_id": "01a09823-aa86-7950-a915-1cb7d2f7f27c",
+    "usage": {
+      "input_tokens": 12653,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 761,
+      "reasoning_output_tokens": 69
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "52b538993c31b4af340f8dea372ce3df94e14af8871789bee99d8e08e85f526b"
+    },
+    {
+      "id": "S2",
+      "sha256": "ab0f52e10bc7c523bb093a583b58c821410a582cad4ba28321d99b2d6f8e0ef9"
+    },
+    {
+      "id": "S3",
+      "sha256": "1a4fefd90a52a81841fbf61adfbbbcca891fce972ba88b9a6e3395ef1c3e3bdb"
+    },
+    {
+      "id": "S4",
+      "sha256": "73a5938cb7d205a33ebcc5fd48e87973d765298d6d85e89998fcf075b05a37b4"
+    },
+    {
+      "id": "S5",
+      "sha256": "1073ed6c0a4760c2491bd39555d64ab0f898e21a3182815a51e364d2ce7eabd1"
+    },
+    {
+      "id": "S6",
+      "sha256": "042f02a0a9548fde3f6ce18d343c74a9761ebbf810604b0a6e90df127db14ace"
+    },
+    {
+      "id": "S7",
+      "sha256": "5104fc77d7359e9244826c7c79b643924334e6198dd2185672704ec62f9b43cb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-116706",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize the training dynamics of linearized Transformer attention modules, especially under small initialization scales.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing understanding of Transformer training dynamics is inadequately characterized beyond configuration-specific studies.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A two-stage theoretical framework for analyzing attention-module training dynamics.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theoretical finding",
+        "claim": "The analysis describes an initial escape from small initialization followed by matrix condensation toward the target orientation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theoretical finding",
+        "claim": "It identifies a second stage in which key-query matrices drive normalized matrices toward asymptotic rank collapse, while generalizing classical directional convergence results.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a two-stage framework that generalizes classical directional convergence results for these Transformer dynamics.",
+      "source_ids": [
+        "S3",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that asymmetric perturbations from random initialization sustain non-degenerate parameter-matrix gradients and facilitate systematic escape from small-initialization regimes.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that matrices subsequently condense by progressively aligning toward the target orientation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that formerly static key-query matrices become active in a second stage, driving normalized matrices toward asymptotic rank collapse.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Transformer training dynamics remain insufficiently characterized outside configuration-specific studies.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "analytical setup",
+        "summary": "Motivated by improved reasoning reported under small initialization scales, the authors analyze linearized Transformer dynamics using a gradient-flow framework.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "first stage",
+        "summary": "Initialization-induced asymmetric perturbations sustain gradients, enabling escape from the small-initialization regime, followed by condensation toward the target orientation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "second stage",
+        "summary": "Key-query matrices become active and drive normalized matrices toward asymptotic rank collapse; the framework is presented as a generalization of classical directional convergence.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract organizes the theory into sequential stages with distinct mechanisms and outcomes: escape, condensation, and rank collapse.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Stage decomposition can make a complex training-dynamics claim more explanatory by linking each phase to a specific mechanism and qualitative state change.",
+        "application": "When presenting a dynamics theory, partition the trajectory into ordered regimes and state the mechanism and outcome for each regime.",
+        "exception": "This framing is unsuitable when the process has no meaningful regime changes or when stage boundaries are not theoretically supported."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide the precise model assumptions, initialization scaling, convergence conditions, or formal statements underlying the reported dynamics.",
+      "It does not specify whether the analysis extends beyond the stated linearized Transformer setting or how the theoretical predictions compare with experiments."
+    ]
+  }
+}

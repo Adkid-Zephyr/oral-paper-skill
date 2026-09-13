@@ -1,0 +1,649 @@
+{
+  "batch_id": "icml-2025-01",
+  "covered_ids": [
+    "icml-2025-oral-40109",
+    "icml-2025-oral-40118",
+    "icml-2025-oral-40120",
+    "icml-2025-oral-40124",
+    "icml-2025-oral-40130",
+    "icml-2025-oral-40135",
+    "icml-2025-oral-40140",
+    "icml-2025-oral-40158",
+    "icml-2025-oral-40160",
+    "icml-2025-oral-40167",
+    "icml-2025-oral-40173",
+    "icml-2025-oral-40181",
+    "icml-2025-oral-47164",
+    "icml-2025-oral-47165",
+    "icml-2025-oral-47166",
+    "icml-2025-oral-47167",
+    "icml-2025-oral-47168",
+    "icml-2025-oral-47169",
+    "icml-2025-oral-47170",
+    "icml-2025-oral-47171",
+    "icml-2025-oral-47172",
+    "icml-2025-oral-47173",
+    "icml-2025-oral-47174",
+    "icml-2025-oral-47175",
+    "icml-2025-oral-47176",
+    "icml-2025-oral-47177",
+    "icml-2025-oral-47178",
+    "icml-2025-oral-47179",
+    "icml-2025-oral-47180",
+    "icml-2025-oral-47181",
+    "icml-2025-oral-47182",
+    "icml-2025-oral-47183",
+    "icml-2025-oral-47184",
+    "icml-2025-oral-47185",
+    "icml-2025-oral-47186",
+    "icml-2025-oral-47187",
+    "icml-2025-oral-47188",
+    "icml-2025-oral-47189",
+    "icml-2025-oral-47190",
+    "icml-2025-oral-47191",
+    "icml-2025-oral-47192",
+    "icml-2025-oral-47193",
+    "icml-2025-oral-47194",
+    "icml-2025-oral-47195",
+    "icml-2025-oral-47196",
+    "icml-2025-oral-47197",
+    "icml-2025-oral-47198",
+    "icml-2025-oral-47199"
+  ],
+  "candidate_practices": [
+    {
+      "name": "把贡献写成具体边界的改变",
+      "source_observation": "这些摘要用训练范围、词表兼容性、输出类型或优化对象的变化界定贡献。",
+      "why_it_may_help": "解释：读者可能更容易识别新增能力，而无需接受未经核实的优先权主张。",
+      "application": "把“提出新范式”改写为“此前限定于X；本文处理Y；仍需条件Z”。",
+      "when_not_to_use": "贡献只是同一设置下的改进时，不虚构被突破的限制。",
+      "support": [
+        {
+          "paper_id": "icml-2025-oral-47165",
+          "source_ids": [
+            "S2",
+            "S3"
+          ],
+          "specific_example": "从单任务合作转向跨环境训练；训练伙伴仍为一个，目标包含陌生伙伴和任务。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47176",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "移除共享词表要求，同时声称保持目标分布且无需再训练。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47198",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5"
+          ],
+          "specific_example": "从返回优化代价扩展到返回搜索解，并指出解可能泄露更多内部随机性。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47173",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "specific_example": "将微调对象表述为前向状态，并把LoRA纳入特例。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2025-oral-47196",
+          "source_ids": [
+            "S2",
+            "S3"
+          ],
+          "contrast": "通过广义光滑性涵盖梯度裁剪，贡献也可以是统一已有方法，而非替换它们。"
+        }
+      ],
+      "full_text_needed_for": "边界扩展的准确假设、覆盖范围，以及所述先前限制是否成立。"
+    },
+    {
+      "name": "把诊断落实到目标函数的具体操作",
+      "source_observation": "这些摘要将被指出的问题与像素和运动预测、概率质量分配、响应似然或散度替换相连。",
+      "why_it_may_help": "解释：这能让设计理由成为可检查的对应关系；对应关系本身不证明因果机制。",
+      "application": "写明哪个数据对象接受哪个运算，以及该运算针对诊断中的哪一部分。",
+      "when_not_to_use": "机制尚属探索性假说时，保留假说措辞，不写成已证实原因。",
+      "support": [
+        {
+          "paper_id": "icml-2025-oral-47168",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "针对外观偏重的诊断，联合预测像素与运动，并以运动预测引导推理。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47175",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S8"
+          ],
+          "specific_example": "先对照FKLD与RKLD的两种集中效应，再提出平滑插值。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47185",
+          "source_ids": [
+            "S2",
+            "S3"
+          ],
+          "specific_example": "针对数据来源与损失的交互，提高教师响应似然、降低学生响应似然。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47187",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "将先验与后验参数化耦合联系到失配，再以Rényi散度替换KL。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2025-oral-47193",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "contrast": "一次随机剪枝也能用操作配方和所分析的训练性质解释，无需目标函数改造。"
+        }
+      ],
+      "full_text_needed_for": "诊断证据、替代解释，以及各操作对结果的独立作用。"
+    },
+    {
+      "name": "先定义所测能力，再选择评分依据",
+      "source_observation": "这些摘要区分临床构念、联合跨模态推理、工程与管理任务，以及不同IT任务的结果指标。",
+      "why_it_may_help": "解释：可能减少把方便计算的分数直接等同于目标能力的跳跃。",
+      "application": "写出目标活动、可接受的成功依据及可能绕过目标能力的解题方式；异质任务分别报告。",
+      "when_not_to_use": "开放探索没有稳定成功判据时，不强行转换成统一准确率。",
+      "support": [
+        {
+          "paper_id": "icml-2025-oral-40130",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S9"
+          ],
+          "specific_example": "要求经验检验医学基准的构念效度，并报告临床数据概念验证。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47178",
+          "source_ids": [
+            "S2",
+            "S4"
+          ],
+          "specific_example": "将目标限定为不能靠各模态独立推理完成的跨模态推理。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47172",
+          "source_ids": [
+            "S2",
+            "S3"
+          ],
+          "specific_example": "工程实现使用端到端测试，管理选择参照原聘用经理的决定。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47199",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "specific_example": "分别给出领域解决率，并将FinOps异常检测单列为F1。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2025-oral-47182",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "contrast": "ACD以问题和大量实例支持开放猜想生成；摘要未报告固定评分协议或模型成绩。"
+        }
+      ],
+      "full_text_needed_for": "构念操作化、捷径排除、评分覆盖，以及参考决策的合理性。"
+    },
+    {
+      "name": "让每项理论结论携带自己的适用条件",
+      "source_observation": "这些摘要按噪声、过程结构、污染与矩条件或优化区制分别陈述结论。",
+      "why_it_may_help": "解释：有助于防止把局部保证合并成无条件的总体承诺。",
+      "application": "将“方法最优”改为“在条件X下，量Y达到界Z”；把解释性论点与定理结论分开。",
+      "when_not_to_use": "没有实质区制差异时，不人为拆分结论。",
+      "support": [
+        {
+          "paper_id": "icml-2025-oral-47167",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "区分无噪声近优、RKHS范数依赖最优及时变方差下的上下界匹配。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47169",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "离散到连续估计收敛与鞅过程专用的低误差修改分开陈述。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47186",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "分别报告强污染误差、低阶矩比较、邻域最优性与渐近效率。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47190",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "先区分特殊和一般区制，再陈述一般区制二分结果与隐式偏置解释。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2025-oral-47194",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "contrast": "重要性加权和变分方法的优势区制包含经验比较，不能一律改写成保证。"
+        }
+      ],
+      "full_text_needed_for": "定理假设、界的完整形式、最优性含义及证明。"
+    },
+    {
+      "name": "把性能数字与比较条件绑定",
+      "source_observation": "这些摘要用资源预算、采样步数、基线或多项性能维度限定报告结果。",
+      "why_it_may_help": "解释：可能让读者判断数字回答了哪种实际比较，而非只看到增益。",
+      "application": "在结果句中保留基线、工作负载和关键成本条件；未给出的条件明确留待核查。",
+      "when_not_to_use": "比较条件不可比或缺失时，不补写公平性结论。",
+      "support": [
+        {
+          "paper_id": "icml-2025-oral-47166",
+          "source_ids": [
+            "S2",
+            "S6"
+          ],
+          "specific_example": "相对MRL同时讨论准确率、检索速度与训练时间，而非只报质量。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47174",
+          "source_ids": [
+            "S9"
+          ],
+          "specific_example": "在匹配FLOPs与VRAM的条件下报告接近稠密模型的速度，并比较卸载MoE。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47188",
+          "source_ids": [
+            "S4"
+          ],
+          "specific_example": "将ImageNet-256的2.13 FID绑定8步，将CIFAR-10的2.05绑定2步及从头训练。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47195",
+          "source_ids": [
+            "S6"
+          ],
+          "specific_example": "Law类别中，相对多数投票报告7.9%增益，并列Qwen2.5-Math-PRM的1.3%。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2025-oral-47179",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "contrast": "正式近似率与更新时间可以明确，经验上的数量级加速仍可能缺少工作负载细节。"
+        }
+      ],
+      "full_text_needed_for": "硬件、预算匹配方式、基线配置、统计变化及百分比定义。"
+    },
+    {
+      "name": "把立场转成有对象和机制的提案",
+      "source_observation": "这些立场摘要将改革方向落实为反馈程序、比较后形成的建议、补偿制度或认证扩展。",
+      "why_it_may_help": "解释：可能使规范性主张具有可讨论的实施对象，但不构成有效性证据。",
+      "application": "在主张后写明谁改变什么程序、依据什么比较或诊断，以及预期处理哪类问题。",
+      "when_not_to_use": "研究只支持诊断时，不为完整叙事添加未经论证的制度方案。",
+      "support": [
+        {
+          "paper_id": "icml-2025-oral-40109",
+          "source_ids": [
+            "S4"
+          ],
+          "specific_example": "作者评价评审与防报复分阶段程序、评审奖励一起提出。"
+        },
+        {
+          "paper_id": "icml-2025-oral-40120",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "specific_example": "先比较社交媒体与生成式AI的异同，再提出四项监管建议。"
+        },
+        {
+          "paper_id": "icml-2025-oral-40167",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "把工作转型与经济理论分析连接到集体许可、补偿和劳动者导向治理。"
+        },
+        {
+          "paper_id": "icml-2025-oral-40173",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "提出OAuth和OpenID Connect扩展，以及自然语言权限到范围规则的转换。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2025-oral-40118",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "contrast": "动物认知原则通过传递推理案例展示用途，其落实形式是评价示范而非制度机制。"
+        }
+      ],
+      "full_text_needed_for": "提案操作细节、跨领域迁移依据及实施后果；摘要不证明方案有效。"
+    },
+    {
+      "name": "用关系组织多个贡献",
+      "source_observation": "这些摘要通过数据—模型—评价关系、公共预测能力的应用或分析量与算法联系组织多个贡献。",
+      "why_it_may_help": "解释：可能使贡献组合可理解，同时保留资源或理论本身的独立价值。",
+      "application": "逐项说明产物解决的问题及相互关系；只在确有依赖时写成技术推导链。",
+      "when_not_to_use": "贡献互不依赖时，不捏造统一核心；单项资源贡献也无需附加模型。",
+      "support": [
+        {
+          "paper_id": "icml-2025-oral-47171",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "描述性情绪数据、预融合模型和兼容自由文本输出的评价形成组合。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47184",
+          "source_ids": [
+            "S1",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "新任务配套Ref-LERF与空间感知方法，并报告新旧任务上的结果。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47181",
+          "source_ids": [
+            "S1",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "由低偏差预测能力展开到决策者遗憾、组合优化和多重校准。"
+        },
+        {
+          "paper_id": "icml-2025-oral-47180",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "条件数连接线性模型分析与正则化设计，经验评价另覆盖非线性网络。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2025-oral-40124",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "contrast": "现象研究的价值也可来自修炼更广的解释理论，无需增加配套产物。"
+        }
+      ],
+      "full_text_needed_for": "各贡献的真实依赖、独立证据及理论是否覆盖经验测试的模型类。"
+    }
+  ],
+  "unusual_but_useful": [
+    {
+      "paper_id": "icml-2025-oral-40135",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S6"
+      ],
+      "practice": "用具体概率表述展示方法论立场，同时讨论专用工具的效用。",
+      "application": "给一个目标问题到拟议形式化的转换例。",
+      "limit": "例子不证明任何因果问题均可解决，也不消除识别假设。"
+    },
+    {
+      "paper_id": "icml-2025-oral-40140",
+      "source_ids": [
+        "S3",
+        "S4"
+      ],
+      "practice": "把优先威胁与已有实践来源相连。",
+      "application": "说明竞赛防泄漏经验具体针对何种评价威胁。",
+      "limit": "摘要未列具体措施；金标准地位是立场。"
+    },
+    {
+      "paper_id": "icml-2025-oral-40158",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "practice": "把绝对中立改为程度性近似，并提出评价路线。",
+      "application": "区分规范目标、近似技术和输出层评价。",
+      "limit": "未列可测代理或评价结果，不推定公平性改善。"
+    },
+    {
+      "paper_id": "icml-2025-oral-40160",
+      "source_ids": [
+        "S2"
+      ],
+      "practice": "分开技术缺口、评价标准和保证预期风险。",
+      "application": "说明证书到部署结论之间尚缺哪些环节。",
+      "limit": "不从未定义的检测问题推出具体攻击能力。"
+    },
+    {
+      "paper_id": "icml-2025-oral-40181",
+      "source_ids": [
+        "S9",
+        "S10",
+        "S11"
+      ],
+      "practice": "用条款分析和仓库实例连接风险诊断与草案产物。",
+      "application": "将法律风险对应到规则文本和可定位案例。",
+      "limit": "潜在风险不是已裁定违法，草案不是已验证补救。"
+    },
+    {
+      "paper_id": "icml-2025-oral-47164",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "practice": "分别报告攻击前提与下游操纵成本。",
+      "application": "并列模型识别准确率和离线排行榜改变所需票数。",
+      "limit": "不能写成已攻击线上平台或逐项验证防御。"
+    },
+    {
+      "paper_id": "icml-2025-oral-47170",
+      "source_ids": [
+        "S2",
+        "S3"
+      ],
+      "practice": "将放宽失配假设与新增校准数据需求一起呈现。",
+      "application": "在无需额外失配形式假设之后，立即写明真实参数测量需求。",
+      "limit": "不是完全无假设；调节机制与校准集规模未知。"
+    },
+    {
+      "paper_id": "icml-2025-oral-47177",
+      "source_ids": [
+        "S3",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "practice": "把计算替代、假说验证和应用分开。",
+      "application": "分别写Hessian-free改写、合成验证及数据选择用途。",
+      "limit": "不同证据场景不能自动互证。"
+    },
+    {
+      "paper_id": "icml-2025-oral-47183",
+      "source_ids": [
+        "S1"
+      ],
+      "practice": "用定向干扰任务暴露设计弱点。",
+      "application": "解释周期干扰为何针对时间维度分配。",
+      "limit": "摘要不能证明测试隔离了唯一原因。"
+    },
+    {
+      "paper_id": "icml-2025-oral-47189",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S5"
+      ],
+      "practice": "区分科学建模能力与计算扩展机制。",
+      "application": "分别说明时变延迟建模与parallel-scan推理的职责。",
+      "limit": "方向性发现不直接构成因果通信证明。"
+    },
+    {
+      "paper_id": "icml-2025-oral-47191",
+      "source_ids": [
+        "S3",
+        "S9",
+        "S10"
+      ],
+      "practice": "把训练期违规与最终策略表现同时作为结果。",
+      "application": "报告违规变化及保持的策略指标，另列理论结论。",
+      "limit": "减少违规不等于零违规或部署安全保证。"
+    },
+    {
+      "paper_id": "icml-2025-oral-47192",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "practice": "给计算复用注明最相关的输入结构。",
+      "application": "说明跨根团复用及团数相对顶点、边数较少的情形。",
+      "limit": "摘要没有具体复杂度式或运行时间。"
+    },
+    {
+      "paper_id": "icml-2025-oral-47197",
+      "source_ids": [
+        "S3",
+        "S4"
+      ],
+      "practice": "以学习目标与条件独立关系界定解释性贡献。",
+      "application": "说明框架解释什么量及哪些依赖关系。",
+      "limit": "无需虚构性能增益；具体定义仍需全文。"
+    }
+  ],
+  "discarded_generalizations": [
+    {
+      "generalization": "所有摘要都应套用统一ORAL叙事。",
+      "reason": "材料包含资源先行、理论区制展开、机制诊断及规范性提案，不能由入选身份推导统一写法或选择原因。",
+      "paper_ids": [
+        "icml-2025-oral-47182",
+        "icml-2025-oral-47186",
+        "icml-2025-oral-40109"
+      ]
+    },
+    {
+      "generalization": "每篇论文必须提出新模型并报告胜出。",
+      "reason": "资源、已有估计器的新保证及模型能力不足的发现均可独立构成贡献。",
+      "paper_ids": [
+        "icml-2025-oral-47182",
+        "icml-2025-oral-47186",
+        "icml-2025-oral-47172"
+      ]
+    },
+    {
+      "generalization": "摘要中的机制解释、保证或倡议收益都是已验证事实。",
+      "reason": "作者诊断、形式结果和预期结果需要不同证据；摘要不足以核实因果、证明正确性或实施效果。",
+      "paper_ids": [
+        "icml-2025-oral-47168",
+        "icml-2025-oral-47190",
+        "icml-2025-oral-40173"
+      ]
+    }
+  ],
+  "source_checks_needed": [
+    {
+      "paper_id": "icml-2025-oral-47173",
+      "field": "lessons.source_observation / S7",
+      "issue": "避免存储大中间状态的说法仅在lesson出现；核对原摘要支持及消费者GPU可行性措辞。"
+    },
+    {
+      "paper_id": "icml-2025-oral-47183",
+      "field": "lessons / S1",
+      "issue": "全部定位合并为S1；时间振荡、空间对称和索引耦合的细分解释需核对原文。"
+    },
+    {
+      "paper_id": "icml-2025-oral-47188",
+      "field": "identity.title / contributions",
+      "issue": "标题为Inductive Moment Matching，抽取方法名为MMSD；核对命名及摘要版本。"
+    },
+    {
+      "paper_id": "icml-2025-oral-47169",
+      "field": "narrative_sequence / S1",
+      "issue": "低维特征张量与完全刻画分布可能混合截断表示和完整期望签名；核对限定条件。"
+    },
+    {
+      "paper_id": "icml-2025-oral-47195",
+      "field": "author_reported_evidence / S6",
+      "issue": "核对7.9%与1.3%是相对百分比还是百分点，以及共同基线。"
+    },
+    {
+      "paper_id": "icml-2025-oral-47164",
+      "field": "mitigation / S7–S9",
+      "issue": "抽取混用已实施、计划和拟议措施；核对各防御的状态。"
+    },
+    {
+      "paper_id": "icml-2025-oral-40158",
+      "field": "lessons",
+      "issue": "可测代理来自应用推断；核对摘要是否真的定义代理，避免提升为作者观察。"
+    },
+    {
+      "paper_id": "icml-2025-oral-40167",
+      "field": "author_reported_evidence / S4–S5",
+      "issue": "不平等和寻租表述可能是经济分析或立场判断；核对其证据性质。"
+    },
+    {
+      "paper_id": "icml-2025-oral-40173",
+      "field": "author_reported_evidence / S4–S5",
+      "issue": "兼容性和适当行动是拟议能力，不能据此写成经过安全验证的结果。"
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006729",
+    "title": "Improving Diffusion Models for Class-imbalanced Training Data via Capacity Manipulation",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006729"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9f9e349d04040472ae70b08e67f9f0652901a565f9de93a9b616fb0ac99a3bbe",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "c58ed3a9df383b5f0f496601bc9223749e92b485916a695a4eb7bff4778a5e52",
+    "extracted_at": "2026-09-12T23:58:30.492801+00:00",
+    "session_id": "01a0980e-adfa-7491-8945-67c86d06d90e",
+    "usage": {
+      "input_tokens": 12659,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 669,
+      "reasoning_output_tokens": 48
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a8109744eaeb1202d9fa3294250965ccb292380dbb214a23e6ba36d4293eb6e0"
+    },
+    {
+      "id": "S2",
+      "sha256": "0d820d9003c5cab6becf479f67b216419e9d328353943563c48581448a66d97c"
+    },
+    {
+      "id": "S3",
+      "sha256": "5e12d4f8e58c1ee6bed27a6808c48add306953dc250ff01c3f0f57fda6e94056"
+    },
+    {
+      "id": "S4",
+      "sha256": "bb47c868ab7a702742cbbec2fbb93c18e2d79b2a5db88109f779e20c3c8407a5"
+    },
+    {
+      "id": "S5",
+      "sha256": "307bf0d2b4cdcbffbc236d4b32ad5d2b7b08ffbed08b0e7f252f2ebb8182179c"
+    },
+    {
+      "id": "S6",
+      "sha256": "1f735d2d0d8eff1787253da09f8f3d8452d3f5eb4c4ec54ffd1c32c827403c81"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006729",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Diffusion models can degrade substantially on minority classes when trained on imbalanced datasets.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Model capacity allocation is presented as a previously underexplored factor, distinct from existing research, in explaining this issue.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical and theoretical finding",
+        "claim": "The authors report that majority classes use an unnecessarily large share of model capacity, limiting minority-class representation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Capacity Manipulation (CM) reserves capacity for minority classes using low-rank parameter decomposition and a capacity manipulation loss.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their perspective by treating model capacity allocation as an orthogonal factor in class-imbalanced diffusion-model training.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that empirical experiments and theoretical analysis support majority-class capacity monopolization as a restriction on minority representation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that extensive experiments show CM consistently and significantly improves diffusion-model robustness on imbalanced datasets.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report further overall-performance gains when CM is combined with existing methods.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem context",
+        "summary": "Imbalanced training data can cause diffusion models to perform poorly on minority classes.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors identify capacity allocation as an underexplored, orthogonal perspective and report majority-class overuse of capacity.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed intervention",
+        "summary": "CM explicitly reserves capacity for minority knowledge through low-rank parameterization and a dedicated loss.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Experiments are reported to show improved robustness and additional gains alongside existing methods.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a resource-allocation diagnosis—majority classes occupying excess capacity—to a method that explicitly reserves capacity for minority classes.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A paper can make its intervention legible by aligning the mechanism directly with the diagnosed bottleneck.",
+        "application": "Frame a proposed method as an explicit resource or constraint adjustment that targets the limiting factor identified in the analysis.",
+        "exception": "This framing is unsuitable when the abstract does not establish a concrete bottleneck or when the intervention addresses a different mechanism."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, metrics, effect sizes, or experimental settings.",
+      "The theoretical analysis' assumptions and formal results are not given.",
+      "The relative contribution of CM versus combining it with existing methods is unspecified."
+    ]
+  }
+}

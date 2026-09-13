@@ -1,0 +1,180 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007173",
+    "title": "Reducing Belief Deviation in Reinforcement Learning for Active Reasoning of LLM Agents",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007173"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d1ff85160964bb3d91f2ebe50af61bdd649132f27d63ee245398d01bd8c3bc8f",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "5758452a41f932fe593187292f809b490a321ccf22977697c05f51bc986d60ee",
+    "extracted_at": "2026-09-12T23:59:07.891166+00:00",
+    "session_id": "01a0980f-3500-7200-994b-1a06f4873c21",
+    "usage": {
+      "input_tokens": 12744,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 785,
+      "reasoning_output_tokens": 139
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8008b0bd5a76ba7e438c5232830ba1a6387f36a5c0f8f34abb466237fa64f348"
+    },
+    {
+      "id": "S2",
+      "sha256": "6cdfcc92b6343bd5dc7f3539bf58b99e28fc8f55311f5f119b851ef353cc3225"
+    },
+    {
+      "id": "S3",
+      "sha256": "942122661b162f30c22619671684dfccaa5fbdca34a0807353eb2c442a389cd0"
+    },
+    {
+      "id": "S4",
+      "sha256": "dce0a21de5a87d96e731c78dbbe0f633ec5b07ed9cf3b58cddb07e6044fbfa43"
+    },
+    {
+      "id": "S5",
+      "sha256": "ade1cabdc34ce2c1f01b40bc9eab7b8ed301a1c07352987fedf6a6036c205a3c"
+    },
+    {
+      "id": "S6",
+      "sha256": "b4e23300f6db0e8056b8cf99cc03873021cbb28ab9a224ef745e5d910828db59"
+    },
+    {
+      "id": "S7",
+      "sha256": "737d16915f50ae10017cddae08c03fc0e59d8f8b2ad58d88ae46b429589e2cdc"
+    },
+    {
+      "id": "S8",
+      "sha256": "1466a65996b62347279021cfb58b10e7c6791b66e143e858ab89393175eeac4f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007173",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "LLM agents performing multi-turn active reasoning can drift from the true problem state, causing uninformative or repetitive actions and compounding RL trajectory errors.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces T^3, which tracks belief deviation, detects excessive deviation, and truncates training trajectories to reduce uninformative tail effects.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports improved training stability, performance gains of up to 30 points, and token-cost reductions of up to 34% across five challenging tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize T^3 as a simple yet principled approach to controlling belief deviation during RL training.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that T^3 consistently enhances training stability across five challenging tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report performance improvements of up to 30 points and token-cost reductions of up to 34%.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Active reasoning requires multi-turn interaction with external sources and strategic information gathering.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "Accurate belief tracking is central, but limited reasoning can cause belief deviation and state-awareness loss.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "consequence",
+        "summary": "Deviation can produce repetitive actions and corrupt RL credit assignment and exploration through compounding trajectory errors.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "T^3 tracks deviation and truncates trajectories after excessive deviation, aiming to preserve informative prefixes.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The authors report stability, performance, and token-cost gains across five tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a recognizable trajectory failure mode—belief deviation—to a targeted intervention that truncates only excessively deviated tails while preserving informative prefixes.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A strong abstract can align the intervention’s scope with the diagnosed failure mechanism and explain the intended credit-assignment effect.",
+        "application": "When a sequential learning process becomes corrupted after a detectable state signal, define that signal and describe a localized intervention that preserves earlier informative computation.",
+        "exception": "This framing is unsuitable when degradation cannot be localized, detected reliably, or separated from genuinely informative late-stage behavior."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baselines, task identities, metric definitions, statistical variation, or whether the reported gains are relative to particular methods.",
+      "The detection criterion and trajectory-truncation procedure are not described in enough detail to assess implementation or reproducibility."
+    ]
+  }
+}

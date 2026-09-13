@@ -1,0 +1,205 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011292",
+    "title": "FRABench and UFEval: Unified Fine-grained Evaluation with Task and Aspect Generalization",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011292"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f8551609dbca8574567f6826f19347f17199d6c5e6c4abc05b21ef84757e35b0",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "7ac768a2a648a12a041578491b3bb194d536f0b29bcfd137beaaf94810654a37",
+    "extracted_at": "2026-09-13T00:05:57.239220+00:00",
+    "session_id": "01a09815-7679-70e3-ae5b-3f3ee96102c3",
+    "usage": {
+      "input_tokens": 12862,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 852,
+      "reasoning_output_tokens": 65
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a671130d9d630337656168caa8bbf525e434e7cafd67f367439de1586514588e"
+    },
+    {
+      "id": "S2",
+      "sha256": "bba46ebbf0d214fcabacd177e57e3bca30824dabb89c3132c375b104ecd501fd"
+    },
+    {
+      "id": "S3",
+      "sha256": "6205f12b901989b9c7838ac05bbc11f8db74e09efb81d7d344a621ffe1168557"
+    },
+    {
+      "id": "S4",
+      "sha256": "24c78bfe1ea26752cbb8e9af763db1fe100589d0d4415746e2a8c1ab2e3b30b0"
+    },
+    {
+      "id": "S5",
+      "sha256": "6d1da6c05775c240459becfc3b04f5089146c1da086e65198f26f174a47f6fce"
+    },
+    {
+      "id": "S6",
+      "sha256": "54f9b723248bca6c3dbffd55e46b866a51ed3bcc7420e7b9e181834debf16efb"
+    },
+    {
+      "id": "S7",
+      "sha256": "5843e26525482f5d066a0b0e02b1d5b4698d288f46ee316f020dfbb2d90deed9"
+    },
+    {
+      "id": "S8",
+      "sha256": "369b88e5dd0c11f710b98521f64c73deda71edf55efb3a7bf81487367f81fd61"
+    },
+    {
+      "id": "S9",
+      "sha256": "44ebb8c9b9435b28a1c469765e922bf8bc2b96cd9bf3061016e2e6b5274dccf1"
+    },
+    {
+      "id": "S10",
+      "sha256": "c364f9943196b04f2fc9c943f0ba0bcce51cd15c5e88c0e9d19ba3b2aee0a112"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011292",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate open-ended multimodal large language model outputs across diverse tasks and fine-grained criteria.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing evaluators are constrained to specific tasks and aspects, while unified training is hindered by the lack of a large-scale multimodal, aspect-level resource.",
+        "source_ids": [
+          "S2",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "Introduces FRABench, a fine-grained evaluation dataset built from a 112-aspect hierarchical taxonomy, containing 60.4k pairwise samples and 325k labels from human and GPT-4o annotations.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Develops UFEval, a unified fine-grained evaluator spanning natural language generation, image understanding, image generation, and interleaved text-and-image generation.",
+        "source_ids": [
+          "S4",
+          "S9"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that aspect-specific learning generalizes to unseen aspects, while joint learning across diverse visual tasks and aspects provides substantial mutual benefits.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe UFEval as the first unified fine-grained evaluator with task and aspect generalization across the four listed evaluation tasks.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that learning specific aspects enables UFEval to generalize to unseen aspects.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "Authors report substantial mutual benefits from jointly learning assessment across diverse visual tasks and aspects.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "Authors report that FRABench contains 60.4k pairwise samples and 325k evaluation labels obtained through combined human and GPT-4o annotation.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Open-ended multimodal output evaluation is presented as a bottleneck amid expanding capabilities, tasks, and modalities.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing MLLM-as-a-Judge evaluators are described as task- and aspect-specific.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "hypothesis",
+        "summary": "The paper argues that interconnected criteria may support aspect generalization and that joint task-aspect learning may be synergistic.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "resource_and_method",
+        "summary": "The authors introduce a 112-aspect taxonomy and FRABench, then use it to develop UFEval across four evaluation tasks.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "Experiments are said to show unseen-aspect generalization and mutual benefits from joint learning.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper links its evaluator to an explicit aspect taxonomy and reports both cross-aspect and joint-task learning outcomes.",
+          "source_ids": [
+            "S3",
+            "S7",
+            "S10"
+          ]
+        },
+        "interpretation": "A structured criterion space can make a generalization claim more concrete and connect the resource, method, and evaluation.",
+        "application": "Define a hierarchical evaluation taxonomy before training a multi-task evaluator, then separately test transfer to held-out criteria and gains from joint training.",
+        "exception": "This may be unsuitable when criteria are not meaningfully related or when held-out aspects cannot be labeled consistently."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluation metrics, baselines, dataset splits, effect sizes, or conditions underlying the reported generalization and mutual benefits.",
+      "The claim of being first is attributed to the authors; priority is not independently established."
+    ]
+  }
+}

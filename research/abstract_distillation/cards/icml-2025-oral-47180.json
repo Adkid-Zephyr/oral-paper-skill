@@ -1,0 +1,157 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47180",
+    "title": "Model Immunization from a Condition Number Perspective",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47180"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c175d963828ca97d67f4c0e999bb68183d3cc859d1c33d3aaccdc64416fdc845",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "8dce4dc43d41b451226b0e21e86769152e326248a13c411f1aae93d3a93e8046",
+    "extracted_at": "2026-09-13T00:07:38.817626+00:00",
+    "session_id": "01a09817-0c3c-7103-9093-85c4fc5976a4",
+    "usage": {
+      "input_tokens": 12628,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 661,
+      "reasoning_output_tokens": 48
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3faac3e22a1eac256aa65985ed1675f68543a779a8f1949885f8fc26c91fd627"
+    },
+    {
+      "id": "S2",
+      "sha256": "3cf77c546ad4e5d520a758f3113e462735e02ca67d1904a013ad30559e7cde5b"
+    },
+    {
+      "id": "S3",
+      "sha256": "2f3bf06e2278f87081b4a3129e7fe9dde7df7c6184b5d7a4faa8803cc753b514"
+    },
+    {
+      "id": "S4",
+      "sha256": "008c52f54786b0d3196b14be6a15f02269fc9fd8ff36eb7fd3e4fd1ee132d9b0"
+    },
+    {
+      "id": "S5",
+      "sha256": "079277b17c7d3863a7f8ac9d93bcce7a34d29f992473c33c7deabde9ba24ffa0"
+    },
+    {
+      "id": "S6",
+      "sha256": "c5d02850a300355debca5135a6264144b0739512414680fe548e8d6989a714ac"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47180",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Model immunization seeks pre-trained models that resist fine-tuning for harmful tasks while preserving utility on non-harmful tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Prior work provided empirical evidence for text-to-image immunization, but when immunization is possible and how to define an immunized model precisely remained unclear.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory/framework",
+        "claim": "The authors propose a Hessian-condition-number framework for analyzing immunization in linear models.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "They design a regularized algorithm intended to control condition numbers after pre-training.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by analyzing model immunization through Hessian condition numbers and using regularization to control them after pre-training.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report empirical results on linear models and nonlinear deep networks demonstrating the effectiveness of their algorithm for model immunization.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The paper frames immunization as retaining benign-task utility while hindering harmful-task fine-tuning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "It identifies unclear conditions for possibility and an imprecise definition as limitations of existing understanding.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "It introduces a Hessian-condition-number framework and a regularized pre-training algorithm to control resulting condition numbers.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report results on linear models and nonlinear deep networks supporting algorithm effectiveness.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a formal quantity—the Hessian condition number—to both analysis and algorithm design, then reports evaluation across linear and nonlinear models.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A measurable structural quantity can provide a bridge between explaining a mechanism and specifying an intervention.",
+        "application": "When proposing a robustness method, define a tractable diagnostic quantity and state how the training objective is designed to control it, then test whether the claimed behavior appears beyond the motivating model class.",
+        "exception": "This framing is unsuitable when the quantity lacks a defensible connection to the target behavior or cannot be estimated reliably in the intended setting."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not state the precise immunization definition, the conditions under which immunization is possible, or the quantitative results and baselines.",
+      "It does not specify which harmful and non-harmful tasks, datasets, metrics, or regularization terms were used.",
+      "Code availability is stated, but reproducibility details are not provided in the abstract."
+    ]
+  }
+}

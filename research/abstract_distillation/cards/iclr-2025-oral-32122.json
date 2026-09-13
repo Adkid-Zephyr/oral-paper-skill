@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-32122",
+    "title": "Loopy: Taming Audio-Driven Portrait Avatar with Long-Term Motion Dependency",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/32122"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2c63a5d6bbacaa5330eedbd12226536aa3c13d8918ce4b2e25b420a0765bb5e8",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "2aac4b7e12a06592a369d4e06cf474f7e00486929fa0772c9a6c65e3a7730606",
+    "extracted_at": "2026-09-12T23:57:47.405892+00:00",
+    "session_id": "01a0980d-fc7e-7992-b97c-2ebebe9ad8ed",
+    "usage": {
+      "input_tokens": 12705,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 759,
+      "reasoning_output_tokens": 100
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ebbbf21cc0472e2a7c6b671ce3626581188401f3f8fd4be263e1ae4a1b941c90"
+    },
+    {
+      "id": "S2",
+      "sha256": "f608a6b6e7f275faadae5a74316eee8b8543a17c95082c456b6feca8433ba90a"
+    },
+    {
+      "id": "S3",
+      "sha256": "53412d785e7538f27801d171c2152178d333f65757b04bac4ae523f45fca1e13"
+    },
+    {
+      "id": "S4",
+      "sha256": "1330511ac4b3bf1c862da5c1a2ba27d331b684726b9f151ca8386a9f32dd1b56"
+    },
+    {
+      "id": "S5",
+      "sha256": "c3adc14c4413099fa254f2c1a9023fa3b8dcb269f69021bf1d4d0feb20c32d6b"
+    },
+    {
+      "id": "S6",
+      "sha256": "671ed601394cff39305c21429a8eeab343541cc428de5b121c7152f9e256af6f"
+    },
+    {
+      "id": "S7",
+      "sha256": "af1ee0f555177780fe155230bc34dab67bd1187fb6436ad10a903fe1f20d952b"
+    },
+    {
+      "id": "S8",
+      "sha256": "541ed5d078025ecab4397119e995654ebe0a29e8945bae477075695f1616487b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-32122",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Audio-driven portrait video generation seeks natural, stable human motion from audio alone.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Limited audio control leads existing methods to add spatial movement signals, trading away motion naturalness and freedom.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Loopy, an end-to-end audio-only conditioned video diffusion model.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Two modules—inter- and intra-clip temporal modeling and audio-to-latents mapping—to use long-term motion dependencies and strengthen audio–portrait-motion correlation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Loopy by combining audio-only conditioning with dedicated temporal-dependency and audio-to-latents modules.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Loopy generates more natural and stable portrait videos with subtle facial expressions without manually specified movement constraints.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that extensive experiments show Loopy outperforming recent audio-driven portrait diffusion models across various scenarios, with more lifelike, high-quality results.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors provide video samples through the project website.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Video diffusion has improved natural motion and portrait detail in audio-conditioned human video generation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing methods compensate for weak audio motion control with auxiliary spatial signals, which restrict motion naturalness and freedom.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "Loopy addresses this limitation using end-to-end audio-only conditioning and two specialized modules.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_outcome",
+        "summary": "The authors attribute more natural, stable motion and stronger facial expressiveness to long-term dependency use and improved audio–motion correlation, and report superiority over recent models.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract identifies a control–naturalness tradeoff in auxiliary spatial conditioning and responds with modules targeting temporal dependencies and audio–motion correlation.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A useful research framing links each observed limitation to an explicit architectural mechanism.",
+        "application": "When introducing a generative model, map each claimed failure mode to a named module and state the mechanism connecting it to the desired behavior.",
+        "exception": "This framing is less suitable when the limitation is primarily data, optimization, or deployment related rather than architectural."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative metrics, dataset details, sample counts, or baseline identities for the reported comparisons.",
+      "The scope and evaluation conditions behind “various scenarios,” “more natural,” and “high-quality” are unspecified.",
+      "The abstract does not establish independently verified effectiveness or novelty."
+    ]
+  }
+}

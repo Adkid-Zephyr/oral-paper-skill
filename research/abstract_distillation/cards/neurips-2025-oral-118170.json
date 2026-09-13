@@ -1,0 +1,210 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-118170",
+    "title": "Understanding and Mitigating Numerical Sources of Nondeterminism in LLM Inference",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/118170"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "539b77beb6f1d528388634f18e7c64f4d62a34d81875c7165c71caebee6aab6f",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "ce0601190a21d10281163464cdbc9c00d88c8be1d0a9b08de700f490bfde44c4",
+    "extracted_at": "2026-09-13T00:22:23.567184+00:00",
+    "session_id": "01a09824-7dcb-70e2-a086-b46683182f71",
+    "usage": {
+      "input_tokens": 12846,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 847,
+      "reasoning_output_tokens": 74
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cb0d88af5acabd2caef03545842ccc33c27607035e7c79d75eaf067e3d314cd4"
+    },
+    {
+      "id": "S2",
+      "sha256": "c5e78c026d9fcad59f01d79a97f18c2ca17be1ae3059fb16309d8681fb10033d"
+    },
+    {
+      "id": "S3",
+      "sha256": "176b67f7b8b709cc39d2c24805e6e91b0612e0934bb7063e71e59cecb0940a10"
+    },
+    {
+      "id": "S4",
+      "sha256": "f5364eada6b64aae4a29916d675677b4980a8da64abea6a40a96aaaa38858a41"
+    },
+    {
+      "id": "S5",
+      "sha256": "98b8659a5af7ae2ca503edc5154b3c0fadacedbae5c3ded423b5a24b8d21012b"
+    },
+    {
+      "id": "S6",
+      "sha256": "8e98581e55f3e89ac8c4d4981f8af079e11344a9090beb11f77bddf98951d467"
+    },
+    {
+      "id": "S7",
+      "sha256": "e9a7b825f3ca8f4657eac9a9d5bdd734f6302d6c5133c52370d368bea339681f"
+    },
+    {
+      "id": "S8",
+      "sha256": "e0bacd804cf7dc4dad4eb872b77fbc2f188464d68898dc7ad3e072de3944966a"
+    },
+    {
+      "id": "S9",
+      "sha256": "494308359a3e0481fd608d3cd41c2dde4b52bd1fea5f38e771a55ce510034d8a"
+    },
+    {
+      "id": "S10",
+      "sha256": "fae78b613142629ce76157929e78fa8cae069c9d96d2a76b36cae7a883e43da7"
+    },
+    {
+      "id": "S11",
+      "sha256": "115ff2a7aff510d1516316fde920d49ec71bc0a68644d9ec9cb266bd146b6eb6"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-118170",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper examines why LLM inference outputs and benchmark performance can vary across system configurations and numerical-precision settings.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S8"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that floating-point precision is often neglected in evaluation practices and that its effect on inference reproducibility lacked systematic investigation.",
+        "source_ids": [
+          "S7",
+          "S9"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "analysis",
+        "claim": "A systematic investigation quantifying when and how hardware, software, batch-size, and precision choices cause LLM outputs to diverge.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "theory/root-cause analysis",
+        "claim": "An attribution of the variability to the non-associativity of limited-precision floating-point arithmetic.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "LayerCast, a lightweight pipeline that stores weights in 16-bit precision while computing in FP32 to balance memory efficiency and numerical stability.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe this as the first systematic investigation of how numerical precision affects reproducibility in LLM inference.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that changing evaluation batch size, GPU count, or GPU version can produce significant response differences.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "Under bfloat16 precision with greedy decoding, they report up to 9% accuracy variation and a 9,000-token response-length difference for DeepSeek-R1-Distill-Qwen-7B across GPU and batch-size configurations.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that small early-token rounding differences can cascade into divergent reasoning chains and affect accuracy, especially in reasoning models.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Reliable benchmark interpretation depends on accurate and reproducible LLM performance.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "problem demonstration",
+        "summary": "System configuration changes can substantially alter generated responses, with especially large effects in reasoning models.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "mechanistic explanation",
+        "summary": "The authors trace the variability to non-associative floating-point arithmetic under limited precision.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "investigation",
+        "summary": "Controlled experiments across hardware, software, and precision settings quantify output divergence and highlight neglected precision factors.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "proposed mitigation",
+        "summary": "LayerCast retains 16-bit weight storage but uses FP32 computation for greater numerical stability.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a concrete configuration-sensitive result with a root-cause account involving early-token rounding and floating-point non-associativity.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A claim becomes more actionable when its observed effect is connected to a plausible mechanism and the conditions producing it are retained.",
+        "application": "When reporting reproducibility failures, state the affected metric, configuration conditions, magnitude, and proposed numerical mechanism together.",
+        "exception": "This framing is less suitable when the mechanism is untested or when configuration details cannot be controlled or specified."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the full model, task, benchmark set, hardware matrix, or statistical methodology behind the reported variation.",
+      "No abstract-level evaluation results are given for LayerCast itself, so its practical stability or accuracy trade-offs remain unspecified.",
+      "The scope of the claimed first systematic investigation is not operationally defined."
+    ]
+  }
+}

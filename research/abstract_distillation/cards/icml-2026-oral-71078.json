@@ -1,0 +1,152 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71078",
+    "title": "Unsupervised Partner Design Enables Robust Ad-hoc Teamwork",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71078"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "aa5b0c94ef26a068ec60e7cdb0b242739b97201f54f5854c9b6e129447fd08db",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "9f2f1f49e36a431c87c00e87783e26c4867d5bf98986b91dd5b4ed5d7ae6ffa9",
+    "extracted_at": "2026-09-13T00:13:11.791348+00:00",
+    "session_id": "01a0981c-23c8-7ba0-a10f-ad51d756979c",
+    "usage": {
+      "input_tokens": 12618,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 650,
+      "reasoning_output_tokens": 64
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f10d903cf6ca58fc7e57cbb238bdca3e81c61ff3c836c3a365a4b1639b5f5206"
+    },
+    {
+      "id": "S2",
+      "sha256": "d5a667fa58d326b2785f5be504701cb1fb022328766f152eaa2c1f4422042a51"
+    },
+    {
+      "id": "S3",
+      "sha256": "082c252199aff3eb5f5330db1b187a898a867234cf284872103fdfe768b40f03"
+    },
+    {
+      "id": "S4",
+      "sha256": "c4c23ff641b96e95ff53621b56c77c9da34c74536eae8ea2e3a4637a9ce9c81b"
+    },
+    {
+      "id": "S5",
+      "sha256": "848580b889e1e6bd1fc31bd69e4c54b39e39e6e068afadf1d54ce1c2a5df3423"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71078",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Robust ad-hoc teamwork among agents without fixed partners.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches require pre-trained partner populations or manual parameter tuning.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Unsupervised Partner Design (UPD), a population-free multi-agent reinforcement learning method that generates and adaptively selects training partners using a learnability criterion.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "extension",
+        "claim": "Extends partner selection to joint partner-environment selection when a procedural level generator is available.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish UPD by generating and selecting partners on the fly without pre-trained partner populations or manual parameter tuning.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that UPD consistently achieves strong performance against population-based and population-free baselines across Level-Based Foraging, Overcooked-AI, and the Overcooked Generalisation Challenge.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "In a human-AI user study, the authors report higher returns and ratings of greater adaptivity, greater human-likeness, and less frustration than all evaluated baselines.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "method introduction",
+        "summary": "UPD is proposed as a population-free approach for robust ad-hoc teamwork.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "It generates partners on the fly and adaptively selects them by learnability, while supporting partner-environment selection with procedural generation.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report strong benchmark performance and more favorable human-study outcomes than evaluated baselines.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links partner diversity to on-the-fly generation and adaptive selection by a learnability criterion.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "Training-distribution diversity can be framed as an adaptive selection problem rather than requiring a fixed partner population.",
+        "application": "For a multi-agent learning paper, define a measurable learnability or training-value criterion and use it to select procedurally generated partners during training.",
+        "exception": "This move may be unsuitable when partner generation is unavailable or the selection criterion is not operationally measurable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the learnability criterion, algorithmic details, dataset or study size, metric values, statistical analysis, or baseline identities.",
+      "The claimed extension depends on availability of a procedural level generator."
+    ]
+  }
+}

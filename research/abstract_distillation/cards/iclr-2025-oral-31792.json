@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31792",
+    "title": "Rethinking the generalization of drug target affinity prediction algorithms via similarity aware evaluation",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31792"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "27d73cb1debc6a5537fab19f1e4c7dcedd60b4214bee537685bf38f87ca60d99",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "c3c91d740f46323f124515b8607cff31bff03a74f88478f4a64fff7bfb46a079",
+    "extracted_at": "2026-09-12T23:52:10.957517+00:00",
+    "session_id": "01a09808-dbab-7be3-a1b9-244bd87dbad4",
+    "usage": {
+      "input_tokens": 12740,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 786,
+      "reasoning_output_tokens": 77
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c28780849a77460778ff9154421a9e7bbd0e66715579b4bc9ca4ae0f2091d0bd"
+    },
+    {
+      "id": "S2",
+      "sha256": "4855584cb00caabbb6d8e5ea7e0506657da343fd1e4445816502b3773c38f16c"
+    },
+    {
+      "id": "S3",
+      "sha256": "2850202fb0f115fe10886c2854aee905b3a64ad8f62429fb87966ac8a3cd020a"
+    },
+    {
+      "id": "S4",
+      "sha256": "722708ec5fb7b7ffd62f5376354dd9cf44802feb77798b64bbbeebce6922e55c"
+    },
+    {
+      "id": "S5",
+      "sha256": "b64a4df35d01a7ea0164c8c247c92ec7f2b36c26907efa4834d4f9ef7f0974d5"
+    },
+    {
+      "id": "S6",
+      "sha256": "37d81a08d9375d854b165cc0bfb4f96d1f771870492109cac8989fc10a8a3cb5"
+    },
+    {
+      "id": "S7",
+      "sha256": "ed94f53d2a82f2f04b071ab3366722777bd3d9a06ebfa5b26826375afa271639"
+    },
+    {
+      "id": "S8",
+      "sha256": "6b8b326a180dae5d90b98966fd27b0ae5da6086613b0123ae8dbc9faeab7af40"
+    },
+    {
+      "id": "S9",
+      "sha256": "6e6095a0cd5463a8ef9ae41c95560d1135683e20cb0d6706b6ae189e27e83e33"
+    },
+    {
+      "id": "S10",
+      "sha256": "12a13c5ecc227c90b8f472f469976b356b8ebaf194d1d5bb141192e1fcf71461"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31792",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate and improve the generalization of drug–target binding affinity prediction to real-practice samples with varying similarity to training data.",
+        "source_ids": [
+          "S1",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Conventional randomized test splits can be dominated by high-similarity samples, while performance degradation on low-similarity samples is overlooked, making reported performance potentially misleading for real practice.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "A similarity-aware evaluation framework with a split methodology that adapts to a desired sample distribution.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "optimization method",
+        "claim": "An optimization formulation for constructing such splits, approximately and efficiently solved by gradient descent.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state a novel split methodology designed to adapt evaluation to any desired distribution of similarity-related samples.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments spanning five representative methods, four datasets, two typical target evaluations, and various counterpart methods.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that their split methodology fits desired distributions significantly better and guides model development.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report that model performance is severely degraded on samples with lower similarity to the training set.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task and context",
+        "summary": "Drug–target binding affinity prediction is presented as a fundamental drug-discovery task with promising prior results.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "evaluation concern",
+        "summary": "The paper argues that conventional randomized splits overrepresent high-similarity test samples and overlook degradation on low-similarity samples.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "The authors introduce similarity-aware evaluation, using distribution-adaptive splitting formulated as optimization and solved approximately with gradient descent.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported assessment",
+        "summary": "Experiments compare the methodology across methods, datasets, target evaluations, and counterpart approaches; the authors report improved distribution fit and guidance for model development.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a specific evaluation artifact—high similarity between training and test samples—to a concrete generalization concern, then evaluates whether a redesigned split matches desired distributions.",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "This alignment makes the methodological proposal legible as a response to a diagnosed measurement problem rather than as an isolated evaluation variant.",
+        "application": "When proposing an evaluation protocol, explicitly identify the sampling artifact, state the deployment-relevant distribution it misses, and report whether the new protocol realizes that distribution.",
+        "exception": "This framing is unsuitable when the deployment distribution is unknown or cannot be operationalized from available similarity or sampling information."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical results, dataset or method names, similarity definition, target-distribution specifications, or details of the counterpart methods.",
+      "It does not report direct real-practice outcomes, so the claimed implications for deployment generalization remain abstract-level author reports."
+    ]
+  }
+}

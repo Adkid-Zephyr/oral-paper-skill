@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97974",
+    "title": "Improving Environment Novelty Quantification for Effective Unsupervised Environment Design",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97974"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ed27b628d32fbffc6a75cfed0c71549e68c73a76659989b4c67a1e94e101d1ea",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "ac06718193fee4668f6ab460cca93a0a7e539c9630826d3cd06294df916b871e",
+    "extracted_at": "2026-09-13T00:18:52.348296+00:00",
+    "session_id": "01a09821-4cc9-7793-91d9-9ffeda617904",
+    "usage": {
+      "input_tokens": 12822,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 748,
+      "reasoning_output_tokens": 75
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9fe202f6579d676bc1e7203174cf0a2df04adbe5a6816614e6bfe9ba7419ff35"
+    },
+    {
+      "id": "S2",
+      "sha256": "41366e54980ab0af5ccd89b505a0b2ea59ef9d97e0a10c105df0679e52eb10b3"
+    },
+    {
+      "id": "S3",
+      "sha256": "f37241cf96853ff86ba03a96c21ff324599b05e1a08166b399c6310ff90085bc"
+    },
+    {
+      "id": "S4",
+      "sha256": "51d60f1229a791edf264b474de77e2dabd9d6ceb9c05548355d44a6a31c9281f"
+    },
+    {
+      "id": "S5",
+      "sha256": "d276975cfbbf45d60edf5a2714c3ec58e40649ffcb79037681189ff26415b4dc"
+    },
+    {
+      "id": "S6",
+      "sha256": "f85cf515adcc3df61d18328675f4b132649323a958760d1d686cf2893c5dc7dd"
+    },
+    {
+      "id": "S7",
+      "sha256": "0a6cfab763d4fd49fee0ce7453d732a687f437fa3ec6c759a611cc59e1fecb42"
+    },
+    {
+      "id": "S8",
+      "sha256": "ba755fb8a3fc8bc49af4e38ad8f101445c6928fd0d73d3cb83fab60b92945cd2"
+    },
+    {
+      "id": "S9",
+      "sha256": "537617a8402989c49f5972ec969409ef5607ab73175136759c1fcdae8e6e6648"
+    },
+    {
+      "id": "S10",
+      "sha256": "bef637c3a4272528e4875e353caceec45af4cc534fe978734fe3f14b37c29ac8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97974",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "UED designs adaptive environment curricula through teacher–student interaction to improve handling of unseen scenarios.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Regret-focused methods increase complexity but overlook novelty, while novelty measurement is difficult because UED environment parameters are underspecified.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Introduces CENIE, a curriculum-aware, scalable, domain-agnostic framework for quantifying environment novelty from prior student state-action coverage.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Instantiates CENIE with Gaussian Mixture Models to model coverage and measure novelty.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "type": "curriculum-design approach",
+        "claim": "Combines regret and novelty as complementary curriculum objectives.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish CENIE by quantifying novelty through student state-action coverage while accounting for curriculum history and domain differences.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that adding CENIE to existing regret-based UED algorithms achieves state-of-the-art performance across multiple benchmarks.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report that the combined objectives support exploration across the state-action space while curriculum complexity increases progressively.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setting",
+        "summary": "UED frames autocurricula as interactive teacher–student training, with the teacher generating environments with learning potential.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing methods mainly use regret, increasing complexity but neglecting environment novelty; novelty is hard to measure under underspecified parameters.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "CENIE quantifies novelty using curriculum-aware student state-action coverage, with a Gaussian Mixture Model implementation.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Combining novelty with regret is reported to yield state-of-the-art results across multiple benchmarks.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper links its novelty metric to the student's previously visited state-action coverage and combines it with regret rather than replacing regret.",
+          "source_ids": [
+            "S7",
+            "S9"
+          ]
+        },
+        "interpretation": "A metric can be more actionable when tied to the learner's history and positioned as complementary to an established objective.",
+        "application": "When proposing a curriculum signal, define it relative to learner experience and state explicitly how it complements existing signals.",
+        "exception": "This framing may be unsuitable when learner-state coverage is unavailable, unreliable, or irrelevant to the target notion of novelty."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the benchmarks, quantitative gains, baselines, statistical conditions, or generalization tasks behind the state-of-the-art claim.",
+      "It does not detail the Gaussian Mixture Model design, scalability evidence, or how underspecified environment parameters are handled in practice."
+    ]
+  }
+}

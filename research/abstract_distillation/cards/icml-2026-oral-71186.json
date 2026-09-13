@@ -1,0 +1,186 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71186",
+    "title": "What Preferences Can—and Cannot—Predict in Multi-Agent Online Learning",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71186"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8f30c06a2960155dec7fede1a0f44a0bac64f2e1122620d3b7b1afc02bac5de0",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "445efbec510f311272b047e5574c8329ecf8604b431940d89ae6b6981df21590",
+    "extracted_at": "2026-09-13T00:17:26.692400+00:00",
+    "session_id": "01a0981f-f82a-70f1-aff4-b2a72967be2d",
+    "usage": {
+      "input_tokens": 12757,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 779,
+      "reasoning_output_tokens": 55
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "01b5cba2cb01b70f8ee318bb09205e0e4bd854a7d167cd5b175c676e746c965a"
+    },
+    {
+      "id": "S2",
+      "sha256": "81be149fa73c39a516f4d3c577e7efcc82c0ff3ddea8f1e8d2f7d61cfeb463b2"
+    },
+    {
+      "id": "S3",
+      "sha256": "211ec45d1071589c32d43b1d8ac24e4a12335c83a36b5094f7d352690628440e"
+    },
+    {
+      "id": "S4",
+      "sha256": "f0f02872d9a954c16b3a211e51b3d2a06c6820fbe2b2fb79dc809733b0c04675"
+    },
+    {
+      "id": "S5",
+      "sha256": "07a31dd09e3e35ed61f54584afa0c1533fd4e686009995161a666c90b1d01858"
+    },
+    {
+      "id": "S6",
+      "sha256": "4aeb168e5ea38b9ef5d5c3da8e238b4e0306f9fe972b73a0d86f5133fb99a4a1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71186",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies whether a game's preference graph can predict long-run behavior under payoff-driven no-regret dynamics such as FTRL.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Outside restricted subgames, preferences may not suffice to characterize dynamically stable behavior.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Shows that the pure-profile skeleton of every dynamically stable set is preferentially stable, meaning closed under profitable deviations.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Shows preferences fully characterize asymptotic stability for subgames, but constructs a three-player counterexample beyond subgames where preferential stability does not imply dynamic stability.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "condition",
+        "claim": "Introduces leaklessness, measuring aggregate payoff drift away from a profile set, and uses it to give a payoff-based condition for stability and attraction of its span.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish where preference information is sufficient—subgames—from the general case, and introduce leaklessness to restore a stability guarantee.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a three-player game whose preferentially stable set has a dynamically unstable span.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that preferences fully characterize asymptotic stability for subgames.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that leaklessness yields a payoff-based condition guaranteeing that a set's span is stable and attracting.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "question",
+        "summary": "Relates preference-based solution concepts to long-run outcomes of no-regret learning through the game's preference graph.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "one-way implication",
+        "summary": "Establishes that dynamically stable sets must have preferentially stable pure-profile skeletons.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "restricted converse",
+        "summary": "Shows preference sufficiency for asymptotic stability in subgames.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "boundary case",
+        "summary": "Gives a three-player counterexample showing the equivalence fails beyond subgames.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "repair",
+        "summary": "Adds leaklessness as a payoff-drift condition supporting stability and attraction.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates a necessary implication, a restricted equivalence, a counterexample outside that scope, and a condition that restores a guarantee.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Scope boundaries and failure cases make a theoretical claim more informative than an unrestricted sufficiency statement.",
+        "application": "State a theorem with its exact domain, then include a minimal counterexample when extending beyond that domain and identify an additional sufficient condition.",
+        "exception": "This pattern is less suitable when the work genuinely concerns only one narrowly defined setting and no broader claim is being made."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal definition of dynamic stability, the exact leaklessness condition, or the learning assumptions beyond mentioning FTRL and no-regret dynamics.",
+      "It does not report quantitative experiments, proof details, or whether the stated guarantees hold uniformly across specific algorithmic parameter choices."
+    ]
+  }
+}

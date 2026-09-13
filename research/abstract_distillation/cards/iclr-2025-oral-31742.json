@@ -1,0 +1,186 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31742",
+    "title": "DEPT: Decoupled Embeddings for Pre-training Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31742"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f4567526e0ffa81db03ad12740fe14dd1e2041ebd441018b738d180f75182dad",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "fe005f2bf6abc65c713aeac16c9aa379ea9cf8240e27f6f232f33a3cbaa2fbe8",
+    "extracted_at": "2026-09-12T23:50:13.821032+00:00",
+    "session_id": "01a09807-0682-73e2-94ee-0638fff647bd",
+    "usage": {
+      "input_tokens": 12717,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 836,
+      "reasoning_output_tokens": 119
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6896d85d00c6c85ed7226b2d1b47c136383abd93f5f1884fb4db29514cd5ab07"
+    },
+    {
+      "id": "S2",
+      "sha256": "dfa5d3c305fff61d0d7e38e852b412f0da4e437bd1d453de4a6831e8a852be95"
+    },
+    {
+      "id": "S3",
+      "sha256": "042e6ebc0b4bf292508297b2880f563dde17c80643f7e49cfd882a3afcd6cf58"
+    },
+    {
+      "id": "S4",
+      "sha256": "d08fc98fd23be891a237631afa0ad97e5222f5dd6b8d5a17c8fde8b688c9f839"
+    },
+    {
+      "id": "S5",
+      "sha256": "fb82e50ebb1635c0bd9769b5cc410e13f11a16ca76e84df39dae93df01aa41f9"
+    },
+    {
+      "id": "S6",
+      "sha256": "6da07514e949c5f60ea615cd667ba2abf700211c40b41810c13e457d3671fa68"
+    },
+    {
+      "id": "S7",
+      "sha256": "31071ffd857f2bd9ba0acc317114f62d227447c43c6621f06fb6de3cdcd86e7c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31742",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Pre-training language models across heterogeneous data sources is costly and can suffer interference because sources differ lexically, syntactically, and semantically.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies a need for a communication-efficient approach that handles heterogeneous sources without requiring a shared vocabulary.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DEPT decouples token embeddings from the transformer body, allowing simultaneous training on multiple data sources without a shared vocabulary.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The framework supports source-specific vocabularies and reduces communicated embedding parameters according to source vocabulary size.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "demonstration",
+        "claim": "The authors report vocabulary-agnostic federated pre-training for billion-scale models.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe their demonstration as the first vocabulary-agnostic federated pre-training of billion-scale models.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report up to 20% improvement in average perplexity and improved downstream task performance.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report communication-cost reductions by orders of magnitude and 4–5× lower embedding memory in their billion-scale federated pre-training demonstration.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Language-model pre-training uses broad mixtures to improve performance across domains and languages.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "Heterogeneous corpora make training expensive and may create negative interference or a multilinguality curse.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "DEPT separates embeddings from the transformer body and trains across sources without a shared vocabulary.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_capabilities",
+        "summary": "The abstract attributes robustness, lower communication and embedding costs, greater plasticity/generalization, better perplexity and downstream performance, and custom source vocabularies to DEPT.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "demonstration",
+        "summary": "The authors report a billion-scale vocabulary-agnostic federated pre-training demonstration with large communication and memory reductions.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "DEPT isolates embeddings from the shared transformer body and permits source-specific vocabularies, while the abstract separately reports communication and memory savings.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "Separating source-dependent parameters from shared computation can align an architectural change with a concrete systems constraint.",
+        "application": "When writing a multi-source training paper, explicitly map each parameter partition to its communication, memory, and modeling role.",
+        "exception": "This framing may be unsuitable when sources genuinely require shared lexical representations or when partitioning harms cross-source transfer."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, evaluation protocols, model sizes beyond “billion-scale,” or whether the reported improvements are relative to a particular comparator.",
+      "The conditions and definitions behind “robustly,” “orders of magnitude,” and “up to 20%” are not given."
+    ]
+  }
+}

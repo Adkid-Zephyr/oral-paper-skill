@@ -1,0 +1,197 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010431",
+    "title": "FlashVID: Efficient Video Large Language Models via Training-free Tree-based Spatiotemporal Token Merging",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010431"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2d55f87d39961af44e813e93f7ee9b847f06e7541efffa4d67eb831fc8550259",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "aa90575ccf7483f509933a810e26bb6435e8d9aefc4052f30c79d491a0248078",
+    "extracted_at": "2026-09-13T00:04:27.475642+00:00",
+    "session_id": "01a09814-18a2-7c11-82dc-8675e0246b99",
+    "usage": {
+      "input_tokens": 12841,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 813,
+      "reasoning_output_tokens": 65
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ef0c26def9749f6c72bf6ef47ac8033686b0b5b4ecb4282cf971bcbc45566578"
+    },
+    {
+      "id": "S2",
+      "sha256": "d76ddecaddd3fc1aa4715ab3c69481263f625a710bef44bce484d376a6481071"
+    },
+    {
+      "id": "S3",
+      "sha256": "90a9f9f87a1e8d166fa5a3fdc6ad0cae9153ccc2e76e4545e6c4184b6f31ba5d"
+    },
+    {
+      "id": "S4",
+      "sha256": "601f47639e7186eeee1f6ea23e693cc7231d752f39f9661350ae070df27d3134"
+    },
+    {
+      "id": "S5",
+      "sha256": "ff36394a59b8c9bb05dbc364312d92c20a741514d00f81742448dc8608ce4fa8"
+    },
+    {
+      "id": "S6",
+      "sha256": "bf89570cbb2f79611c04e1e7d98f9dac75b3cd107fe0cf15a917cc56691d4183"
+    },
+    {
+      "id": "S7",
+      "sha256": "27162aa9b3ff171c36d50e29164081b1e4e1bf8615fea2d3c6cfbbcc4ed9e1f5"
+    },
+    {
+      "id": "S8",
+      "sha256": "26accdf74724159f95dc73916ace1f32c81d39294b8a59558df100c355f2c827"
+    },
+    {
+      "id": "S9",
+      "sha256": "9944f47f5927c00c87982efc38ec9dadf0d0b108b417b7dc50457f4a6af2cd26"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010431",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Video large language models process many visual tokens, creating substantial computational inefficiency.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing acceleration frameworks typically compress spatial and temporal redundancy separately, overlooking their relationships and potentially producing suboptimal spatiotemporal compression.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The authors introduce FlashVID, a training-free inference-acceleration framework combining attention- and diversity-based token selection with tree-based spatiotemporal token merging.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The authors present FlashVID as a training-free, plug-and-play module for extending the number of video frames processed by VLLMs.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish FlashVID through joint, fine-grained spatiotemporal redundancy handling using ADTS followed by TSTM, without additional training.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments on three representative VLLMs and five video-understanding benchmarks, describing the method as effective and generalizable.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that retaining 10% of visual tokens preserves 99.1% of LLaVA-OneVision's performance.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that FlashVID enables a 10× increase in video-frame input to Qwen2.5-VL and an 8.6% relative improvement under the same computational budget.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "VLLMs face computational inefficiency because video processing requires many visual tokens.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Separate spatial and temporal compression misses dynamic spatiotemporal relationships, while correlated features can shift in position, scale, or orientation over time.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "FlashVID uses ADTS for representative-token selection and TSTM for fine-grained spatiotemporal redundancy elimination.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The authors report benchmark evidence, high retained performance at 10% token retention, and longer-frame processing within a fixed budget.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific failure mode—independent spatial and temporal compression—to a method that jointly addresses spatiotemporal redundancy, then reports token-retention and fixed-budget outcomes.",
+          "source_ids": [
+            "S2",
+            "S5",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A strong abstract can align the method's design directly with the diagnosed limitation and quantify the resulting efficiency–performance tradeoff.",
+        "application": "When proposing compression, define the overlooked dependency, make the mechanism target it explicitly, and report both retained quality and compute or input-scaling consequences.",
+        "exception": "This framing is less suitable when the task has no meaningful cross-axis dependency or when quality and computational budgets cannot be measured comparably."
+      }
+    ],
+    "unknowns": [
+      "The abstract names LLaVA-OneVision and Qwen2.5-VL but does not provide the complete roster of three evaluated VLLMs, the identities of the five benchmarks, baseline methods, or detailed evaluation protocols.",
+      "The conditions and metric underlying the reported 99.1% preservation and 8.6% relative improvement are not specified.",
+      "The abstract does not provide ablations separating ADTS from TSTM."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "unknowns[0]",
+      "before": "The abstract does not identify the three VLLMs, five benchmarks, baseline methods, or detailed evaluation protocols.",
+      "after": "The abstract names LLaVA-OneVision and Qwen2.5-VL but does not provide the complete roster of three evaluated VLLMs, the identities of the five benchmarks, baseline methods, or detailed evaluation protocols.",
+      "review_file": "reviews/flagged-batch-07.json",
+      "review_sha256": "da8130c13e152fce85f706ec0ec78e55cbb147ff44895d96357f9c6af2b9eea4",
+      "applied_at": "2026-09-13T00:35:16.273807+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

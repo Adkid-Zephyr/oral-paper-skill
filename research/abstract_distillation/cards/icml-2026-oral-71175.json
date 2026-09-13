@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71175",
+    "title": "DOUBT: Decoupled Object-level Understanding and Bridging via vMF-based Trustworthiness for Hallucination Detection in MLLMs",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71175"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "833272ad985f745868e3e2abec0134c606e9d9688b19d645cc58a96b09c42743",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "db9286054986fcee1b50c0b4bfd33308c742134423a2aa9ac0dceb93c68b201b",
+    "extracted_at": "2026-09-13T00:17:04.568220+00:00",
+    "session_id": "01a0981f-a12b-72b2-8c24-3c5e82809b83",
+    "usage": {
+      "input_tokens": 12783,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 784,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "81e863ac6ccafbd765969b2c14acdf8a7a32e61c4c7a6320aae81a6777038cad"
+    },
+    {
+      "id": "S2",
+      "sha256": "6ef9b2bb63a5cd06a0b148eaf8cc3b3646ff9af050b7c6052907bbe6b18aac88"
+    },
+    {
+      "id": "S3",
+      "sha256": "55303823f0ae495e2c59c989eb46bca73666d4ead4736850cb43b7895dbb9cdc"
+    },
+    {
+      "id": "S4",
+      "sha256": "9e1f9acb8350c5116a9a3b78b74646f2d0d6e2a41eafa7e7acb89c97f407d3b5"
+    },
+    {
+      "id": "S5",
+      "sha256": "fd63073cf2a7c564da684dde67b809a93083416adf7465ac7686145f6b929577"
+    },
+    {
+      "id": "S6",
+      "sha256": "df3aff0be221085445de677faae5c1be46317b82ab6fde2af862df6951c7b1df"
+    },
+    {
+      "id": "S7",
+      "sha256": "74a1abf1f0fb91dbcec87e399feeda0bc78ebe055adae553f126fc08c2f502b5"
+    },
+    {
+      "id": "S8",
+      "sha256": "ca543b1f5c5d7abaf66be2564f9fe815d28196f8b301587ccd8dd76a846f24fb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71175",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Detect hallucinations in multimodal large language models (MLLMs), whose image- or fact-contradicting assertions undermine reliability in high-risk applications.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Joint image-text detection can overestimate trustworthiness and miss hallucinations when weak visual understanding causes repeated but incorrect answers.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DOUBT, a model-agnostic hallucination-detection method combining decoupled object-level understanding and bridging with vMF-based trustworthiness.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A two-step OUB prompting scheme separates object recognition from relational reasoning, followed by reasoning grounded in identified objects.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "metric",
+        "claim": "A von Mises–Fisher-based trustworthiness metric intended to be more stable than semantic entropy in small-sample settings.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present DOUBT as a simple, model-agnostic approach that combines OUB with vMF-based trustworthiness for hallucination detection.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the vMF-based trustworthiness metric is more stable than semantic entropy metrics in small-sample settings.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that experiments and ablations across multiple benchmarks show DOUBT consistently outperforming state-of-the-art baselines, with reported robustness and generalizability.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "MLLM hallucinations conflict with images or facts and threaten reliability in high-risk uses.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing joint image-text consistency approaches may miss hallucinations because repeated incorrect answers inflate trustworthiness estimates.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "DOUBT decouples object recognition from relational reasoning through OUB and adds a vMF-based trustworthiness metric.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report consistent gains over state-of-the-art baselines across multiple benchmarks and ablations.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates object identification from relational reasoning and pairs that decomposition with a trustworthiness metric designed for small samples.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Decomposing a failure-prone multimodal judgment into intermediate perceptual and reasoning checks can make the source of uncertainty more explicit.",
+        "application": "For a multimodal reliability method, define separate object-level and relation-level checks, then report how each contributes to the final confidence estimate.",
+        "exception": "This decomposition may be unsuitable when the task requires holistic visual interpretation or when intermediate object labels are unreliable."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no benchmark names, dataset sizes, numerical gains, or statistical uncertainty for the reported comparisons.",
+      "The claimed robustness and generalizability are not further qualified by model families, tasks, or distribution shifts."
+    ]
+  }
+}

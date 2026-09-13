@@ -1,0 +1,163 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47228",
+    "title": "Auditing $f$-differential privacy in one run",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47228"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6531c9dab9910ca89fecc8466c790d2daf35dc97ddcbd868f993bba5d80a8813",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "ec96c1ef8889c14d4f36c10830b6e06f56add2747de87ea1fe0343e6249f4eb3",
+    "extracted_at": "2026-09-13T00:09:26.786022+00:00",
+    "session_id": "01a09818-b4bd-7261-945f-d7fc971356b0",
+    "usage": {
+      "input_tokens": 12673,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 667,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6591a5f7374ca8c44bb7761ec44e7918e2329e6e45534e26e8daa1f78a481dc5"
+    },
+    {
+      "id": "S2",
+      "sha256": "a8719deb719c2cc90219be31e48c85d046247d42d8f55391bb18ab8a37dff174"
+    },
+    {
+      "id": "S3",
+      "sha256": "74a517cd4f479d9f87d7d14e6fd193d1e6c5f0e35d7f424c85ec0f72da8b0753"
+    },
+    {
+      "id": "S4",
+      "sha256": "3deab2c9e5f2637e7372b449a02901b51461615a6b79a49f8ee15d44e2a444fe"
+    },
+    {
+      "id": "S5",
+      "sha256": "5f4caedf3224783aa76c0ba5dc591d64f49cff71284ae17c07f7d4e7c7a73564"
+    },
+    {
+      "id": "S6",
+      "sha256": "718c07b0688011906c700e83c590a4bf984c41f6aada08a1c0eccee9234404b0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47228",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess the empirical privacy of privacy-preserving mechanisms and detect implementation flaws.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing auditing is either computationally inefficient because it requires multiple algorithm runs or suboptimal for calculating empirical privacy.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A tight, efficient auditing procedure and analysis that uses input-example randomness and requires one run of the target mechanism.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "An analysis based on the mechanism’s hypothesized f-DP curve for tighter empirical privacy estimates than those based on traditional ε,δ parameters.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their analysis is novel and enables tight empirical privacy estimates using the hypothesized f-DP curve.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report obtaining empirical privacy with their procedure and analysis, with tighter privacy estimates.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Empirical auditing is presented as a way to catch flaws in privacy-preserving algorithm implementations.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Prior mechanisms are described as costly through repeated runs or suboptimal for empirical privacy calculation.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "The paper introduces a tight auditing procedure and analysis requiring only one target-mechanism run by exploiting input randomness.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "The procedure uses a hypothesized f-DP curve to seek more accurate privacy measurement than ε,δ parameters provide.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report that the resulting empirical privacy estimates are tighter.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the audit design with a specific privacy representation—the hypothesized f-DP curve—and links that choice to tighter estimates.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A method’s representation or target quantity can be part of the explanatory argument, not merely an implementation detail.",
+        "application": "When proposing an auditing or evaluation method, state which formal quantity it estimates and why that quantity should resolve the identified measurement limitation.",
+        "exception": "This framing is unsuitable when the target quantity is not available, cannot be hypothesized credibly, or is not the quantity required by the application."
+      }
+    ],
+    "unknowns": [
+      "No quantitative tightness, accuracy, runtime, datasets, baselines, or experimental conditions are given in the abstract.",
+      "The abstract does not specify the assumptions or construction of the hypothesized f-DP curve."
+    ]
+  }
+}

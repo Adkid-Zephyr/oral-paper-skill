@@ -1,0 +1,207 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71102",
+    "title": "Is Your LLM Overcharging You? Tokenization, Transparency, and Incentives",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71102"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d369e5d2910167ae7a083232c459ded32419190e9210559998d6e3058e36a075",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "58eafc45aca9f1742501f0d30a341430432c950c1236369698fb2cc77c32f935",
+    "extracted_at": "2026-09-13T00:14:16.159675+00:00",
+    "session_id": "01a0981d-006f-7732-8246-a57313a1a85b",
+    "usage": {
+      "input_tokens": 12853,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 989,
+      "reasoning_output_tokens": 211
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "37ba95dfe119c163400cc72447f0b8fab812e69bfc60c28b084932bac5e856a3"
+    },
+    {
+      "id": "S2",
+      "sha256": "d1679acb4f71e4ffe41b98dec5d88c0cbfb945a216b8e8566f5e478be3147e5e"
+    },
+    {
+      "id": "S3",
+      "sha256": "2127af43be97129b2c38b43dbcf31904e1de0b8910779d593abad9205e7f9558"
+    },
+    {
+      "id": "S4",
+      "sha256": "9c40c248c59c1047486e41d29b644bb810e4df4a32f4fb7c1567064eaa17d983"
+    },
+    {
+      "id": "S5",
+      "sha256": "2113864b1bb6f2f4349602059df2c2b4c8ed491f7117ec0254ff1ff7d4d834e9"
+    },
+    {
+      "id": "S6",
+      "sha256": "4c6f362fa1b970cc2d03c04d7f2ca2473156ce33ef05a84e445af3b7f3fd5383"
+    },
+    {
+      "id": "S7",
+      "sha256": "567eeffb0d1bc9082c8d9e30d917c6179b1c6091f476297a03ffee2714efe36b"
+    },
+    {
+      "id": "S8",
+      "sha256": "6086b3fba4b6b18043bcb4dc735a39533773204ad6c81d4c21d817f7cd338934"
+    },
+    {
+      "id": "S9",
+      "sha256": "1bd384d0fd34a48209178d14665f51981d7e081b323b9168386f137420f7ff80"
+    },
+    {
+      "id": "S10",
+      "sha256": "964181ed3cd34d6554e4b98e303e1e7f4814ff29ba6fda7fe44c84e90f2d287a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71102",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper examines whether pay-per-token cloud pricing gives model providers incentives to misreport token usage and overcharge users.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Users cannot prove, or even know, whether providers are overcharging them under this mechanism.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Shows that pay-per-token pricing creates a financial incentive for providers to strategize and misreport token counts.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "proof-of-concept system",
+        "claim": "Develops an efficient heuristic that can significantly overcharge users without raising suspicion, with stated operating cost below the added revenue.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "pricing prescription",
+        "claim": "Shows that eliminating the incentive to strategize requires pricing tokens linearly by character count, and introduces a prescription for maintaining average provider profit margin during the transition.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that they introduce a simple profit-margin-preserving prescription for transitioning to incentive-compatible pricing.",
+      "source_ids": [
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that transparent disclosure of the model’s generative process makes optimal suspicion-free misreporting hard for an unfaithful provider.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that their heuristic enables significant suspicion-free overcharging and costs less to run than the resulting additional revenue.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report experiments using Llama, Gemma, and Ministral models with prompts from a popular benchmarking platform.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Specialized hardware and energy requirements have contributed to the popularity of cloud-based LLM services.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "mechanism and vulnerability",
+        "summary": "Because users pay a fixed price per generated token, providers may benefit from strategically misreporting usage, while users lack proof or knowledge of overcharging.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "mitigation and attack",
+        "summary": "Transparency about generation makes optimal covert misreporting hard, yet a heuristic proof-of-concept still enables significant suspicion-free overcharging.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "incentive-compatible redesign",
+        "summary": "The paper argues for character-count-linear token pricing and gives a prescription intended to preserve average provider profit margins.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "empirical complement",
+        "summary": "Experiments are reported with three LLM families and benchmark-platform prompts.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs an incentive analysis, an attack proof-of-concept, a transparency condition, and a pricing redesign.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "A strong abstract can connect mechanism, exploitability, mitigation, and redesign so the practical implication follows from the analysis.",
+        "application": "Frame a systems-economics paper as: identify the incentive, demonstrate its operational consequence, state a condition that constrains it, then propose a compatible redesign.",
+        "exception": "This sequence is unsuitable when the work has no mechanism-level explanation or when mitigation and redesign are outside its scope."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no experimental outcomes, sample sizes, baselines, or evaluation protocol beyond model families and prompt source.",
+      "The formal meaning of transparency, the proof details, and the scope of the pricing necessity claim are unspecified."
+    ]
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71153",
+    "title": "Characterizing, Evaluating, and Optimizing Complex Reasoning",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71153"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8d257c4f90f7b87b8b2072ad16dd87d577467decff84ea9047bcfa3e7efc80e8",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "a82ac63ff1bc279e3d752bc9a9dd7eb6cc8fa9251d84728b480e5a0300751891",
+    "extracted_at": "2026-09-13T00:16:10.107419+00:00",
+    "session_id": "01a0981e-cfb1-7cb3-ad7b-ccb477cd682f",
+    "usage": {
+      "input_tokens": 12757,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 744,
+      "reasoning_output_tokens": 66
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "740ddca1755d43b30af3bfe9eb997a16780ae2932d82752eb952a88178c1f036"
+    },
+    {
+      "id": "S2",
+      "sha256": "7e073f6537f6b279f1975806a783a49264e52c5fee75191d5a5c789d88a39f79"
+    },
+    {
+      "id": "S3",
+      "sha256": "e686485cb02b880a32e5491fdecd37a9a7159aac7581ff016f96906377dd98fd"
+    },
+    {
+      "id": "S4",
+      "sha256": "b5971ea070dc3724959f5bc887883fc89d8aed279c58cc17a19d6e393ea8ea18"
+    },
+    {
+      "id": "S5",
+      "sha256": "3afe157d8cb82d4c0460c44dfe1a4d848146c3904e0948687ebc92944a35715e"
+    },
+    {
+      "id": "S6",
+      "sha256": "2a8c87f370692d3f24fe64dbab7228fd2c6b7981694ea7fdb1fe4294a543b241"
+    },
+    {
+      "id": "S7",
+      "sha256": "e6888a1335d18548c4bcc8630c0159af1ee71345014086d97f9a7fb89e3ade3e"
+    },
+    {
+      "id": "S8",
+      "sha256": "5332088f204df04b13196513d5ed6fcac9c51049d362e813f076c772bcee824d"
+    },
+    {
+      "id": "S9",
+      "sha256": "eaf24e07c67dfb37c125a42019282517e7bef915c20afca9c554fe8be2a12898"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71153",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses how to characterize, evaluate, and optimize complex reasoning traces used by Large Reasoning Models.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing work lacks a unified answer about reasoning quality, reliable evaluation of long implicitly structured traces, and use of evaluation signals for optimization.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "principle",
+        "claim": "Introduces the ME² principle, characterizing reasoning quality at macro and micro levels through efficiency and effectiveness.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method and system",
+        "claim": "Models reasoning traces as directed acyclic graphs and develops a DAG-based pairwise evaluator, then trains a Thinking Reward Model using the TRM-Preference dataset.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Provides the TRM-Preference dataset, Thinking Reward Model, and associated code and data.",
+        "source_ids": [
+          "S6",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a unified perspective connecting quality characterization, DAG-based evaluation, and reasoning optimization.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, at test time, selecting better reasoning improves outcomes by up to 19.3% across diverse tasks.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that, during reinforcement-learning training, thinking rewards enhance reasoning and performance by up to 3.9% across diverse tasks.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Large Reasoning Models increasingly use reasoning traces with complex internal structures.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The abstract identifies three unresolved needs: defining quality, evaluating long implicit structures, and using evaluation for optimization.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper proposes the ME² principle and represents traces as DAGs for pairwise evaluation.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "scaling and results",
+        "summary": "The approach yields the TRM-Preference dataset and TRM; reported gains occur in test-time selection and RL training.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a quality principle, a structured evaluation representation, a reward model, and two optimization settings.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "A tightly linked chain can make a broad reasoning agenda more concrete and traceable.",
+        "application": "Frame a reasoning paper by mapping each conceptual quality dimension to an evaluator and then to a specific optimization use case.",
+        "exception": "This framing is unsuitable when the work addresses only one isolated component or lacks evidence for downstream use."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the ME² dimensions beyond efficiency and effectiveness, the DAG construction, evaluation protocol, baselines, task identities, or statistical details.",
+      "The reported percentage gains lack denominators, datasets, and uncertainty information in the supplied units."
+    ]
+  }
+}

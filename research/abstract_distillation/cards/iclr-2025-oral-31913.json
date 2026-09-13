@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31913",
+    "title": "Geometry-aware RL for Manipulation of Varying Shapes and Deformable Objects",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31913"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "237328a32ccac8ecc47486239f7e2a88f839b59b3570273de2b73d459acf93f5",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "7d5b73713578f56c77b05680e5edffdd41aaeefeb9606bff2806e8b91c757380",
+    "extracted_at": "2026-09-12T23:57:00.277170+00:00",
+    "session_id": "01a0980d-4049-70b1-8a1f-29ffbcf0cccb",
+    "usage": {
+      "input_tokens": 14309,
+      "cached_input_tokens": 9984,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 836,
+      "reasoning_output_tokens": 127
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ebb1e7b969affe2d6e028cde413e727f1bc5d3fea581a25457740350b1e7c4a2"
+    },
+    {
+      "id": "S2",
+      "sha256": "3a6138d1a3c774fe14eeb549e0df3ed8329da1e4240b00dfa5bd67484dfa9688"
+    },
+    {
+      "id": "S3",
+      "sha256": "dfb429e8619861b804ec9180a7d8d5cd7a13c03010f698fa28096bd0ddb9156a"
+    },
+    {
+      "id": "S4",
+      "sha256": "18bdef37034fc39088f0de533ee32a4f338a40409ba36eaf094247c34e01d4b1"
+    },
+    {
+      "id": "S5",
+      "sha256": "05c06272ef28b59ffd222d1e8e2b1d535e8c5fe80bf8f0acb97062474d333680"
+    },
+    {
+      "id": "S6",
+      "sha256": "55c904f83c5eeee8179855b0ad34131e708e2c130d9147d92863c825d3244890"
+    },
+    {
+      "id": "S7",
+      "sha256": "a7c6f5ebe762d6c04a5d8f2c23d9adfe08f33816120b11667ddc1b45bd219904"
+    },
+    {
+      "id": "S8",
+      "sha256": "273708629e2cd352efdb134d85f9fb765ff0521c5a8d28734c9ee51ad4b8bc75"
+    },
+    {
+      "id": "S9",
+      "sha256": "16014bde645cd02397d52de57b961290aeffe2913ad4b04e5612774fc68447c6"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31913",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Robustly manipulating objects with varying geometries and deformable objects, including insertion and cloth-hanging tasks, requires precise control and modeling of complex dynamics.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "representation",
+        "claim": "A heterogeneous graph represents actuators, objects, and their typed interactions in a unified structure for rigid and deformable-object tasks, with possible extension to multiple actuators.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "benchmark",
+        "claim": "A reinforcement-learning benchmark covers rigid insertion with diverse objects and rope and cloth manipulation using multiple end-effectors, with initial and target configurations sampled uniformly in 3D space.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "HEPi is a graph-based policy using SE(3)-equivariant message passing to exploit geometric symmetry.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe both the benchmark and HEPi as novel, distinguishing HEPi by combining explicit heterogeneity with SE(3)-equivariant message passing.",
+      "source_ids": [
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that HEPi outperforms Transformer-based and non-heterogeneous equivariant policies in average returns, sample efficiency, and generalization to unseen objects.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "challenge",
+        "summary": "The paper frames manipulation across varying geometries and deformable objects as difficult because tasks demand precise control and complex-dynamics modeling.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "representation",
+        "summary": "It models actuators, objects, and their interactions as a heterogeneous graph intended to unify rigid and deformable tasks.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation_setup",
+        "summary": "It introduces challenging benchmark tasks spanning diverse-object insertion and rope or cloth manipulation, with broadly sampled 3D configurations.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "proposed_policy",
+        "summary": "HEPi uses SE(3)-equivariant graph message passing to exploit geometric symmetry.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "reported_comparison",
+        "summary": "The authors report gains over Transformer-based and non-heterogeneous equivariant policies on returns, sample efficiency, and unseen-object generalization.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper uses one typed interaction structure for both rigid and deformable manipulation, then makes heterogeneity explicit in its policy model.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "A shared representation can connect task variants while preserving distinct interaction semantics.",
+        "application": "When a project spans object or actuator types, define node and edge types explicitly before designing the policy, and state which structure is shared across tasks.",
+        "exception": "This may be unsuitable when the entities and interactions do not admit a meaningful common graph or when type annotations are unreliable."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical returns, sample-efficiency measurements, generalization protocol, or statistical uncertainty for the reported comparison.",
+      "It does not specify the benchmark size, environments, training budget, or implementation details needed to assess the comparison."
+    ]
+  }
+}

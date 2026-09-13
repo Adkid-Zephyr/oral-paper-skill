@@ -1,0 +1,173 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011030",
+    "title": "The Coverage Principle: How Pre-Training Enables Post-Training",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011030"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "afac701af365e1b5ef4a3073f499cb9260b65417331cce2ff9cd5209b4b8b880",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "3b7f49eca7ce6ad5ba07121b1631b46acae892e28d0ecf04f376693a50762969",
+    "extracted_at": "2026-09-13T00:05:23.245470+00:00",
+    "session_id": "01a09814-f063-74e3-b3d8-23aea985ea9e",
+    "usage": {
+      "input_tokens": 12693,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 765,
+      "reasoning_output_tokens": 64
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "55cf8b97df46000691c3a7127c08cb0258589d5fa5cbdabca9a6b6101c10b7eb"
+    },
+    {
+      "id": "S2",
+      "sha256": "5a4e21b6936dc13c664f024984a212bbbe928fa218827feda16a2d6ed682bfa6"
+    },
+    {
+      "id": "S3",
+      "sha256": "4c2f7a06b130ae8e9311b43cf2e4ff9c7734597e5f0a0afe2959efcd07c6d3d7"
+    },
+    {
+      "id": "S4",
+      "sha256": "c85ea8f7d2532f48b382f3334f9cb8b108d73902da30a0be0aed99c8fb980791"
+    },
+    {
+      "id": "S5",
+      "sha256": "6370e221abebbe163d21f731cbff1836304f4eb81fa4865492ec93993224f52f"
+    },
+    {
+      "id": "S6",
+      "sha256": "87e33be95158c895907909a62fecd07f873505c06281b55b7ae5ce48cccc6c31"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011030",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain how pre-training shapes the success of post-training and downstream performance.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing understanding is limited, and cross-entropy loss may poorly predict downstream performance.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Introduces coverage as a lens for analyzing post-training and Best-of-N success, characterizing it as necessary and sufficient for these methods to succeed.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Develops an account of why next-token prediction implicitly optimizes for good coverage and why coverage predicts downstream performance faster than cross entropy.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "algorithmic interventions",
+        "claim": "Studies model/checkpoint selection, gradient normalization, and test-time decoding strategies with stated provable benefits for improving coverage.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a coverage-based theoretical perspective and identify a mechanism linking coverage's predictive power to faster generalization than cross entropy.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that coverage generalizes faster than cross entropy and avoids spurious dependence on problem-dependent parameters such as sequence length.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report provable benefits from practical interventions targeting coverage, including selection procedures, gradient normalization, and test-time decoding.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Pre-training enables strong fine-tuned models, but its effect on final-model success is poorly understood.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Cross entropy is commonly used to quantify pre-training success but can poorly predict downstream performance.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper analyzes the relationship through coverage, the probability mass assigned to high-quality responses, and states its necessity and sufficiency for post-training and Best-of-N success.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism_and_interventions",
+        "summary": "It explains coverage's predictive advantage over cross entropy and studies three intervention families intended to improve coverage.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper contrasts a standard training metric, cross entropy, with coverage because the latter is reported to generalize faster and avoid sequence-length dependence.",
+          "source_ids": [
+            "S2",
+            "S5"
+          ]
+        },
+        "interpretation": "A task-relevant intermediate quantity can frame why a familiar objective fails to predict the desired outcome.",
+        "application": "When motivating a new metric, explicitly identify the standard metric's predictive limitation and state the mechanism by which the proposed quantity addresses it.",
+        "exception": "This framing is unsuitable when the abstract lacks evidence that the proposed quantity connects to the target outcome or explains the limitation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal assumptions, theorem statements, model scales, datasets, or quantitative magnitudes behind the coverage claims.",
+      "The scope of the stated necessity-and-sufficiency result across post-training and test-time methods is not detailed.",
+      "The abstract does not report empirical comparisons or conditions under which each intervention provides its provable benefit."
+    ]
+  }
+}

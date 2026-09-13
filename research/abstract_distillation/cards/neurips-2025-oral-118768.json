@@ -1,0 +1,149 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-118768",
+    "title": "Dynamical Decoupling of Generalization and Overfitting in Large Two-Layer Networks",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/118768"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2f4e8121b126869e2485ca7c0045add29ff22b73e62ae4c2bfd2c2fd70349bc0",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "b231deffd86185327a68a47d44276711085519f97d81be4d1334decb78d57b27",
+    "extracted_at": "2026-09-13T00:22:45.193022+00:00",
+    "session_id": "01a09824-da57-75c2-8b72-950c8d3aba2e",
+    "usage": {
+      "input_tokens": 12617,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 726,
+      "reasoning_output_tokens": 122
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fb360aae54b3d1fd9f9f5a5b52c2d66bc71a85d4cd50afab12474e240ed9e312"
+    },
+    {
+      "id": "S2",
+      "sha256": "d2afda1145d1cf0ec465e10f4bdd002fd4d794caca6e67e5eac47b0e668bdd12"
+    },
+    {
+      "id": "S3",
+      "sha256": "3a5f9afe8e2c6b982ad74c16ef865f0e7cce00bc5b62fb4076ad02dcfd9ffa97"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-118768",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize how training dynamics determine inductive bias and generalization in large overparameterized models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Analyzes learning dynamics of large two-layer networks using dynamical mean field theory.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theoretical finding",
+        "claim": "Reports a separation of timescales linking complexity growth, inductive bias, feature learning, and overfitting.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theoretical finding",
+        "claim": "Identifies a late-time feature-unlearning regime associated with non-monotone test error.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The reported dynamical decoupling between feature learning and overfitting is presented as a characteristic of the training dynamics in the stated large-width and high-sample regimes.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, for large width m and large n/d, training dynamics exhibit separated timescales, including a slow scale associated with increasing Gaussian/Rademacher complexity.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "They report an inductive bias toward small complexity when initialization has sufficiently small complexity.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "They report non-monotone test error and feature unlearning at large times.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Frames training dynamics as necessary for understanding inductive bias and generalization in large overparameterized models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Studies large two-layer-network dynamics through dynamical mean field theory.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "main results",
+        "summary": "Reports separated timescales, complexity-related inductive bias, decoupled feature learning and overfitting, and late-time feature unlearning with non-monotone test error.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates several training phenomena by timescale and explicitly connects them to complexity, feature learning, overfitting, and test-error behavior.",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "interpretation": "A timescale-based framing can make relationships among training phases and generalization behavior more mechanistic and testable.",
+        "application": "When presenting a dynamics result, organize claims by timescale and state which observable or regime each timescale explains.",
+        "exception": "This framing may be unsuitable when the method or data do not support distinct temporal regimes."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide quantitative timescales, theorem statements, finite-width or finite-sample conditions beyond the asymptotic regime, or empirical validation details."
+    ]
+  }
+}

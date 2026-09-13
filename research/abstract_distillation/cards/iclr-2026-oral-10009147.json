@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009147",
+    "title": "LLMs Get Lost In Multi-Turn Conversation",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009147"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ca1a2c3b74fcf4b84e0648c3d6195b32cc8c71074ae1a99b7ef3795bdb024ed1",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "f128aa583772d4f08432c210da6682f0bfa0b44d0dda18eca50ddd18b6ac04ae",
+    "extracted_at": "2026-09-13T00:02:24.967799+00:00",
+    "session_id": "01a09812-383c-7522-9d75-5fb63ea0b941",
+    "usage": {
+      "input_tokens": 12733,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 795,
+      "reasoning_output_tokens": 88
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5ce80a7086f0bbbc90f4da4b658fb0cb3952d36bf185639b9fd8dcce554a0073"
+    },
+    {
+      "id": "S2",
+      "sha256": "9a3dc78384d7657c7538f088c1bafae9565465f917ee1a0487643ff56b2f81f2"
+    },
+    {
+      "id": "S3",
+      "sha256": "fc79acc206745d962d2278081e8f398784218e368bf56344d358dd7fc8cb9d09"
+    },
+    {
+      "id": "S4",
+      "sha256": "2069fee58e58956e4ed38a6e679630106d77258e2893f28709a19a6af6687e6b"
+    },
+    {
+      "id": "S5",
+      "sha256": "c63063fa7e8771245a7d66ed196289dec1ef50bc36ecf359858bde6f979ff28e"
+    },
+    {
+      "id": "S6",
+      "sha256": "09c2be923dbfbccf0d50b50f599a56eafedf9a1674668a987357f89a1923f4ac"
+    },
+    {
+      "id": "S7",
+      "sha256": "1c43f71bd11be6852b32ed4741976bc4d610f9ae3c422e276c4bd722933e56c9"
+    },
+    {
+      "id": "S8",
+      "sha256": "caf4359ab36c3fb0ded6235f09bcb550961971a7175cbe43ae251a55392c085b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009147",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How LLM performance changes when users develop or refine underspecified needs through multi-turn conversation.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Despite frequent underspecification in real instructions, evaluation has mainly studied single-turn, fully specified prompts.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical study",
+        "claim": "A large-scale simulation comparison of LLM performance in single- versus multi-turn settings.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "A decomposition of multi-turn degradation into a minor aptitude loss and a significant increase in unreliability.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "mechanistic account",
+        "claim": "An account in which early assumptions and premature solution attempts create errors that models overly rely on and fail to recover from.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present the multi-turn performance comparison and degradation decomposition as discoveries of this work.",
+      "source_ids": [
+        "S4",
+        "S6",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The tested open- and closed-weight LLMs reportedly perform significantly worse in multi-turn conversations, with an average 39% drop across six generation tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Analysis of more than 200,000 simulated conversations reportedly attributes degradation mainly to increased unreliability rather than loss of aptitude.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that models often make early assumptions, attempt final answers prematurely, and do not recover after a wrong turn.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLMs could help users define and refine needs through conversation, not only execute fully specified tasks.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "evaluation gap",
+        "summary": "Conversation logs show underspecification is frequent, while evaluation has emphasized single-turn fully specified instructions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "study design",
+        "summary": "The work compares LLM performance across single- and multi-turn settings using large-scale simulations.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "results and explanation",
+        "summary": "Across six tasks, the authors report a 39% average multi-turn drop, linked chiefly to unreliability, early assumptions, premature answers, and failed recovery.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs an aggregate performance gap with a decomposition into aptitude loss and unreliability, then gives a conversational failure pattern explaining the latter.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This alignment makes a broad benchmark result more diagnostically useful.",
+        "application": "When reporting interactive-system degradation, pair the headline metric with a component breakdown and an observable failure sequence.",
+        "exception": "This is less suitable when the study cannot measure or distinguish the proposed components."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the tested models, six tasks, metrics, significance procedure, or simulation protocol.",
+      "It does not specify how aptitude and unreliability were operationalized or how realistic the simulated conversations were.",
+      "The abstract does not report recovery rates, error distributions, or comparisons among individual models."
+    ]
+  }
+}

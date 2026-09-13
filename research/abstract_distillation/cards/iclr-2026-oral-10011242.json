@@ -1,0 +1,169 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011242",
+    "title": "Instilling an Active Mind in Avatars via Cognitive Simulation",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011242"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4fbe2816a57552fb496c464314298cc689e1148f4667328fc493958637134eec",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "f0cc79aafef627017a81e57eeaf1fb188883d511eaaf4c40ea946d91a2041128",
+    "extracted_at": "2026-09-13T00:05:45.229134+00:00",
+    "session_id": "01a09815-53f7-7c01-8229-abf4969b42cc",
+    "usage": {
+      "input_tokens": 12745,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 661,
+      "reasoning_output_tokens": 92
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "012999c6dcf6ff7a7362c0d2c36c0b0bc07c9221cfa3edc1ff935db9092be6c4"
+    },
+    {
+      "id": "S2",
+      "sha256": "03f417f75c5cede3fb5f1be3f914e1eb3893c26218fc8ef0c9c6bcb384d5fc24"
+    },
+    {
+      "id": "S3",
+      "sha256": "ee7cb9350a99b8067a5ec81e395bb823a16b1f80c48ba376e413fa544b9c386f"
+    },
+    {
+      "id": "S4",
+      "sha256": "e0adb3082aea414d8eba022af524b18b89f114239b263764e52fac8e856f2172"
+    },
+    {
+      "id": "S5",
+      "sha256": "3047028ef183f60aaba20a5a538492d5d17ad4c1463eb0b97496187358b99985"
+    },
+    {
+      "id": "S6",
+      "sha256": "efab1dfad162cbbb5f398d66479408581017dea6b2e9c9681b0b3fb959a1c4b5"
+    },
+    {
+      "id": "S7",
+      "sha256": "fa676dbc4d365cb2e2d77f286c4f0eda4988451d11e03562220a480e7d4c7be0"
+    },
+    {
+      "id": "S8",
+      "sha256": "ce22b6fe634a9cd61e718cafeb02c6f6f2c4fcc5a618a9e9e165204ec781d990"
+    },
+    {
+      "id": "S9",
+      "sha256": "0e462134a9ee194dec3ebec4462501f32a46640b8ff81e48046d933f827e75b1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011242",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate physically plausible, semantically rich, and expressive character animations from multimodal input conditions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing video avatar models often synchronize motion to low-level audio cues without capturing higher-level emotion, intent, or authentic character essence.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Uses multimodal large language models to produce structured textual representations that guide contextually and emotionally resonant actions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "architecture",
+        "claim": "Introduces a multimodal diffusion transformer with a Pseudo Last Frame design for fusing multimodal signals.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe the framework and its two technical innovations as novel.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report strong results in lip-sync accuracy, video quality, motion naturalness, and semantic consistency.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report generalization to multi-person and non-human subjects.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies a mismatch between fluid animation and authentic, high-level character expression in current avatar models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The proposed framework combines structured semantic guidance from multimodal language models with a multimodal diffusion transformer using Pseudo Last Frame.",
+        "source_ids": [
+          "S2",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report improvements across animation and semantic criteria, plus generalization to multi-person and non-human subjects.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The approach inserts a structured textual representation between multimodal inputs and action generation to provide high-level semantic guidance.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "An explicit semantic intermediate can make the intended context and emotion easier to represent and align with generated behavior.",
+        "application": "For a multimodal generation paper, define and evaluate an interpretable intermediate representation linking inputs to downstream actions.",
+        "exception": "This may be unsuitable when the task requires minimal latency, end-to-end optimization, or semantics that are difficult to express textually."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative metrics, datasets, baselines, statistical details, or ablations supporting the reported superiority.",
+      "It does not specify how the Pseudo Last Frame design works or which input conditions are required.",
+      "The linked video results are referenced but not described in the supplied units."
+    ]
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31744",
+    "title": "Learning to Search from Demonstration Sequences",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31744"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "0202a70ed0cf59fde20382825b027252b07cf78ece1bb3f85ab32b0120b986d5",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "42a3ff848fa5d6a695212342a7285613fa63062e9c3f45c4dc00457597213d69",
+    "extracted_at": "2026-09-12T23:39:13.439349+00:00",
+    "session_id": "01a097fc-feee-7c62-8328-0945b2360fb6",
+    "usage": {
+      "input_tokens": 14364,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 827,
+      "reasoning_output_tokens": 98
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "863d604151213be6a1d0af8bb407123620dec22c9d29d01426778352d4174ec0"
+    },
+    {
+      "id": "S2",
+      "sha256": "f3008daec8ca2e6e8c5c9567fde50c518293b461ae2b8b7f2e34c4161178e6fb"
+    },
+    {
+      "id": "S3",
+      "sha256": "43efdb9851672ead05abf778afd159d9097aab421ffc29116edf690235bdee6d"
+    },
+    {
+      "id": "S4",
+      "sha256": "b6646eecb4eed79af666addc8e2924f96b3b9ca50bd180c36b840aea03e093f0"
+    },
+    {
+      "id": "S5",
+      "sha256": "db4969e9ffba579646898797af221c0c2d9ec5439abc3a624777aebbf5568668"
+    },
+    {
+      "id": "S6",
+      "sha256": "46c73afee4d8a8794ccbe626bb7389d909c77c879558839d605ffe063906312c"
+    },
+    {
+      "id": "S7",
+      "sha256": "9f303fa6d169e3691670fbabdd660fbf69f9c3bb34a884f95d571781c388fa53"
+    },
+    {
+      "id": "S8",
+      "sha256": "0234e6902f03e3b5bd6228689cbe920c02e69032982f2c6c6316d56573cef0ff"
+    },
+    {
+      "id": "S9",
+      "sha256": "d7a5cc930bef785e1df7c9b219c358a3d5c2f2e2d31b56afe94d261ee1dd7936"
+    },
+    {
+      "id": "S10",
+      "sha256": "df7ab9b7bcadfa4e1c9cef5085c59bc7f3ef4df3b9a7d9770fc5d7f43a8260eb"
+    },
+    {
+      "id": "S11",
+      "sha256": "8a6908d2c670c57b1a2d38668549191dd61759343e11b8316fdf46cc90c12825"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31744",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Learn search and planning from action-observation sequences such as demonstrations or instructions when other learning signals are unavailable.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract reports that relying only on supervised learning from such sequences can be sub-optimal because training encounters a vast unseen search space.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces D-TSN, a neural architecture that learns to construct search trees from demonstration sequences by differentiating through best-first tree construction.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Jointly learns planning components—an encoder, value function, and world model—and models stochastic tree expansion as a decision-making task optimized with REINFORCE plus variance reduction.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "scope",
+        "claim": "Supports settings with either a known world model or a jointly learned latent-state world model.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe D-TSN as a novel architecture for learning search-tree construction from demonstration sequences through gradient descent on a best-first search algorithm.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments on Game of 24, 2D grid navigation, and Procgen games spanning known-model and jointly learned latent-state-model settings.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that D-TSN is effective, particularly when the latent-state world model is jointly learned.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Search and planning matter for real-world problem solving, but learning may provide only demonstrations or instruction sequences.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Sequence-only supervised learning may struggle with the unseen search space encountered during training.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "D-TSN differentiates through best-first tree construction and jointly learns key planning modules.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "optimization",
+        "summary": "Stochastic tree expansion is treated as a decision problem and optimized with REINFORCE using variance reduction.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Experiments cover three task domains and report particular benefit in jointly learned latent-state world-model settings.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the learning-signal constraint, the unseen-search-space limitation, and a method that explicitly differentiates through search-tree construction.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A paper can make its methodological motivation more concrete by aligning the proposed mechanism with the identified failure mode.",
+        "application": "When proposing a planning method from demonstrations, explicitly state which search operation is learned or differentiated and how that operation addresses sequence-only supervision.",
+        "exception": "This framing is less suitable when the main contribution concerns representation learning or tasks without an explicit search process."
+      }
+    ],
+    "unknowns": [
+      "No quantitative results, baselines, statistical details, or task-specific conditions are provided, so the strength and scope of the reported effectiveness cannot be assessed.",
+      "The abstract does not specify which components or settings drive the reported advantage beyond emphasizing jointly learned latent-state world models."
+    ]
+  }
+}

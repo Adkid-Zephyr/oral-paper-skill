@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71103",
+    "title": "Jailbreak Foundry: From Papers to Runnable Attacks for Reproducible Benchmarking",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71103"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6f7f541d21693773e97c3a90636ae1c371bf04ab58a0cd880d1683324a1b28d3",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "ab8e31b75b06a100d6646a295aa220888e448b991631d12eeb1c38baafe3c65f",
+    "extracted_at": "2026-09-13T00:14:14.610453+00:00",
+    "session_id": "01a0981d-0a38-7cf2-9c89-6d4a2e5a8fdc",
+    "usage": {
+      "input_tokens": 12755,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 849,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "86856654a98bf32aead7ba83a50664559844b20e25ad97862da01a350cca5d71"
+    },
+    {
+      "id": "S2",
+      "sha256": "88310239cc37ec21de622a307cd5316a88596def2b331459b00c3af9307ce79d"
+    },
+    {
+      "id": "S3",
+      "sha256": "2c98a4b27f3817cc978a6a4449ea9be90045a67673aa4b613f2eb02060e82e0f"
+    },
+    {
+      "id": "S4",
+      "sha256": "51990f82b957427c8c6af90acd4d26b47d6e23191bdfe25234692f179e04b06b"
+    },
+    {
+      "id": "S5",
+      "sha256": "570041cdbbd3d4d300cfc76a3a579e31335b015ca5213ff93b3b8733c4871f9a"
+    },
+    {
+      "id": "S6",
+      "sha256": "274bb442d10cf602f78dbf2564246fb1900fa5afc050c660ae34e9b060fe61fb"
+    },
+    {
+      "id": "S7",
+      "sha256": "ebb4dd5c5f09d3d04d7285d26eb83aad3ba8c0d3b95a994318674b9b30e0e005"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71103",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "LLM jailbreak techniques evolve faster than benchmarks, making robustness estimates stale and cross-paper comparisons difficult amid drift in datasets, harnesses, and judging protocols.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing benchmarking lacks a unified way to translate new jailbreak papers into executable modules and evaluate them consistently.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "system",
+        "claim": "Introduces JAILBREAK FOUNDRY, a multi-agent workflow for translating jailbreak papers into executable modules within a unified evaluation harness.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "architecture",
+        "claim": "Provides JBF-LIB for shared contracts and utilities, JBF-FORGE for paper-to-module translation, and JBF-EVAL for standardized evaluation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "benchmarking approach",
+        "claim": "Automates attack integration and standardized evaluation to support scalable, living benchmarks.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish JBF as an automated, multi-agent system that converts jailbreak papers into runnable modules for immediate evaluation in a unified harness.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report reproducing 30 attacks with a mean reproduced-minus-reported ASR deviation of +0.26 percentage points.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report reducing attack-specific implementation code by more than half relative to original repositories, with an 82.5% mean reused-code ratio.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report standardized AdvBench evaluation of all 30 attacks across 10 victim models using a consistent GPT-4o judge.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Jailbreak methods outpace benchmarks, causing stale and difficult-to-compare robustness estimates.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "system introduction",
+        "summary": "JBF addresses this gap by translating papers into executable modules through a multi-agent workflow and unified harness.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "architecture",
+        "summary": "The system is organized into shared infrastructure, translation, and evaluation components.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "Across 30 attacks, the authors report close mean ASR alignment, substantial code reuse, and standardized evaluation across 10 models.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The authors position automated integration and evaluation as a route toward scalable living benchmarks.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a reproducibility-oriented system description with concrete alignment, code-reuse, and standardized-evaluation metrics.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A paper-to-system claim becomes more assessable when operational outputs and multiple dimensions of evidence are stated together.",
+        "application": "For a benchmarking system, report fidelity to source results, implementation cost or reuse, and coverage under a fixed evaluation protocol.",
+        "exception": "This framing may be unsuitable when the work is purely theoretical or when source results and evaluation protocols cannot be meaningfully aligned."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives a mean ASR deviation but not its distribution, per-attack failures, or conditions explaining discrepancies.",
+      "Details of the 10 victim models, attack implementations, AdvBench setup, and GPT-4o judging procedure are unspecified.",
+      "The abstract does not establish independent verification, reproducibility by third parties, or priority over related systems."
+    ]
+  }
+}

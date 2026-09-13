@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007564",
+    "title": "ParaRNN: Unlocking Parallel Training of Nonlinear RNNs for Large Language Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007564"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b9d2d254a7801297f1f89c4ae683f5e2cba739c76c3fcb9b00964cab8b88528a",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "702a3483d309ac0d63f16f0d3f350a46e3f11d16c6a62b65257b1f4eddc99805",
+    "extracted_at": "2026-09-12T23:59:44.270085+00:00",
+    "session_id": "01a0980f-c325-79e3-be27-8457cb643adf",
+    "usage": {
+      "input_tokens": 12771,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 739,
+      "reasoning_output_tokens": 51
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e12b9a4abf49d1b5a2228a2c01cda63ffdc7f90f99277987e8d344dc6989fb60"
+    },
+    {
+      "id": "S2",
+      "sha256": "78f525104e0d930ff6393513453fc24f2b4d9f60c8b9d117ee9f1507d8c90c94"
+    },
+    {
+      "id": "S3",
+      "sha256": "85d04f0fcca4a7a819c722993b4b03ca5b27f43f7ed8841b3abbf9233fcad915"
+    },
+    {
+      "id": "S4",
+      "sha256": "8ab01bb9e4ef5095ff334d452c39737fc06fb4bcec9dbc5a3585ff6e926035a2"
+    },
+    {
+      "id": "S5",
+      "sha256": "624fbb1a24a70174ef3baceb21551c7883bbb4d70c973bb5d6c8d99718726267"
+    },
+    {
+      "id": "S6",
+      "sha256": "cfbb3701c1da88f8f728df6522a59e279f9056844214297dc6c4940702e40e2a"
+    },
+    {
+      "id": "S7",
+      "sha256": "8fb989d3c9b42d661f6e6faa540a4ee4db84c55bf2309e87915aa42482e058b5"
+    },
+    {
+      "id": "S8",
+      "sha256": "3d88952e63ca584019c3e4c996595236f2f9e6b07cedcac7eb30bcba8ab53d72"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007564",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to parallelize training for nonlinear RNNs so they can scale to large language models.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing SSM parallelization relies on linear recurrences, limiting expressive nonlinear sequence dependencies, while RNNs remain intrinsically sequential.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "ParaRNN formulates nonlinear recurrence sequences as one system of equations and solves them in parallel with Newton iterations and custom parallel reductions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The implementation reports speedups of up to 665× over naive sequential application and trains 7B-parameter LSTM and GRU adaptations.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors release an open-source framework for automatic training-parallelization of nonlinear RNNs.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The framework is presented as breaking the sequence-parallelization barrier for nonlinear RNNs.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report speedups of up to 665× versus naive sequential application.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report successfully training 7B-parameter LSTM and GRU adaptations with perplexity comparable to similarly sized Transformers and Mamba2 models.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "RNN sequentiality restricts parallel computation and creates a scaling barrier.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "contextual limitation",
+        "summary": "Transformers and SSMs dominate through parallelization, but SSM linearity is described as limiting nonlinear sequence modeling.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "core approach",
+        "summary": "ParaRNN converts nonlinear recurrences into a coupled equation system solved with parallel Newton iterations and reductions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "demonstration and release",
+        "summary": "The authors report large speedups, 7B-scale LSTM/GRU training with comparable perplexity, and an open-source implementation.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a systems bottleneck, a specific solver design, speedup measurements, and downstream model-scale comparisons.",
+          "source_ids": [
+            "S1",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A paper can make a scaling claim more assessable by aligning the mechanism with both efficiency and task-level demonstrations.",
+        "application": "When presenting a systems method, pair the computational transformation with a direct baseline speed metric and a scale-relevant model comparison.",
+        "exception": "This framing is unsuitable when no meaningful baseline or downstream evaluation is available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify hardware, sequence lengths, batch settings, or measurement conditions for the 665× speedup.",
+      "The perplexity comparison does not state datasets, training budgets, or exact model configurations.",
+      "The abstract does not report convergence conditions or theoretical guarantees for the Newton-based solver."
+    ]
+  }
+}

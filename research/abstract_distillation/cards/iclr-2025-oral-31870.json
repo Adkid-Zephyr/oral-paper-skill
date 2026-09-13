@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31870",
+    "title": "miniCTX: Neural Theorem Proving with (Long-)Contexts",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31870"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2ecffffc4e68527d96a2c53287f70d7f192e37ae36cefe300b2529ef89d3f3ca",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "ed2dbaff3537be17cae8ee29c754e1f5d34d3a8bc0c1cd24a526a977f54d8c3b",
+    "extracted_at": "2026-09-12T23:55:16.153929+00:00",
+    "session_id": "01a0980b-ae51-7931-a09b-5452888f89a7",
+    "usage": {
+      "input_tokens": 12754,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 737,
+      "reasoning_output_tokens": 52
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "398691d1743f85d3f571b2ad139be63b8dce50460f998ca12af87d136626f776"
+    },
+    {
+      "id": "S2",
+      "sha256": "7d4bab98c66269af8f60d994bf775b6b600ac8c3300d3a1605f4adf75fe90c57"
+    },
+    {
+      "id": "S3",
+      "sha256": "0cb1ae04750823db7a2803538100916e44ea3e2495b0bc612077f913e95bb247"
+    },
+    {
+      "id": "S4",
+      "sha256": "236f3a1aecb3dbe1f1340fd32b37476bdc7eca664c5596997c4a507a3e5c897b"
+    },
+    {
+      "id": "S5",
+      "sha256": "23870ce53df59c17f37449855f64d02b2a6a2a10d5449e499d0fd5f85b674adf"
+    },
+    {
+      "id": "S6",
+      "sha256": "ac03bf123d73bd302bc2a7bfb40c805a84d00a18f3a23adb96363e17affd14d9"
+    },
+    {
+      "id": "S7",
+      "sha256": "6517c78108a8fb3aba0f94dc0b0286e72e15ba0040f6b4fbf486bdd998eef864"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31870",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Formal theorem proving must use repository and project context, including definitions, lemmas, comments, and file structure, to prove theorems whose needed context may be unseen during training.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Previous benchmarks such as miniF2F do not capture models' ability to use this context.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "Introduces miniCTX, a benchmark of Lean theorems from real projects and textbooks paired with contexts spanning tens of thousands of tokens and unavailable during training.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports fine-tuning and prompting baselines conditioned on preceding context for miniCTX.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "toolkit",
+        "claim": "Provides ntp-toolkit to automatically extract and annotate theorem-proving data and add projects while controlling training-context exposure.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present miniCTX as a challenging, realistic evaluation specifically targeting theorem proving with long, newly encountered contexts, together with tooling for extending it.",
+      "source_ids": [
+        "S2",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that both fine-tuning and prompting methods using preceding context substantially outperform traditional methods relying only on state information.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that context use is not captured by prior benchmarks such as miniF2F.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Real-world formal proofs depend on extensive repository context, motivating evaluation beyond theorem state alone.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "benchmark",
+        "summary": "miniCTX tests proving Lean theorems with new, potentially tens-of-thousands-token contexts drawn from projects and textbooks.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "baseline result",
+        "summary": "Context-conditioned fine-tuning and prompting are reported to outperform state-only traditional methods.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "tooling and positioning",
+        "summary": "ntp-toolkit supports dataset expansion while withholding contexts from training; miniCTX is positioned as a realistic evaluation.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a benchmark with explicit context-access conditions, contrasts it with state-only methods, and reports that prior miniF2F does not measure this capability.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A useful evaluation can isolate a neglected capability by specifying the information available at proof time and comparing against a narrower baseline.",
+        "application": "When introducing a benchmark, define the test-time context boundary, construct examples requiring that context, and include a baseline that lacks it.",
+        "exception": "This framing is unsuitable when the target task intentionally excludes external context or when context availability cannot be controlled."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report dataset size, exact train/test construction, baseline scores, or evaluation metrics.",
+      "It does not specify how context leakage is detected or prevented beyond stating that contexts are not seen during training."
+    ]
+  }
+}

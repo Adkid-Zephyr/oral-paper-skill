@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71122",
+    "title": "Reward-free Alignment for Conflicting Objectives",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71122"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "89d8d9e11526dad715bfb6168215114f99528d5b40cb5c7ad07d3331cf592c05",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "fa389e6348481430f394d77a724d60a32efb98ef5dffd22535ebbfe4f5a2a9c4",
+    "extracted_at": "2026-09-13T00:14:56.466734+00:00",
+    "session_id": "01a0981d-ac26-79c2-b029-332f76eee4a3",
+    "usage": {
+      "input_tokens": 12759,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 833,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "37e168520dbe3ae0960a5c9ff108fdcd8f4beaccaac65fcbb9e3bc59195c324c"
+    },
+    {
+      "id": "S2",
+      "sha256": "0d70845ea9549c956378409b0c374f472b16f5612e7b689d7fa2162b8217cd02"
+    },
+    {
+      "id": "S3",
+      "sha256": "446723f48f42451565bd78680232a27c02730358acbcb517b7535b71824eb10e"
+    },
+    {
+      "id": "S4",
+      "sha256": "bb791da8a4a63b6b23e431591c010a36986e1e98ee1c8117e5e2eef916581b39"
+    },
+    {
+      "id": "S5",
+      "sha256": "ba3f6ad746105618b1f8c92adad0cae8ee4eee70c7c6acedd74184c9efed95f5"
+    },
+    {
+      "id": "S6",
+      "sha256": "3ecb22306760c2d03c6354ecf31d96010245f47ad0930e090291ff0e70b45a5b"
+    },
+    {
+      "id": "S7",
+      "sha256": "4ea81702e63822c9f8378b3c4e82b80249ec8013eae0ba1cc792cdb7134d267c"
+    },
+    {
+      "id": "S8",
+      "sha256": "bdcb44df75e1206258ed48e58aedcf6ba2b675a8e1e2a56902189655ec06d56a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71122",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Aligning LLMs across multiple conflicting human-preference objectives while preserving desirable trade-offs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Naive preference aggregation can destabilize training; weighted losses may miss directions improving all objectives, while reward-model-based methods add complexity and can distort user-specified preferences.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "RACO directly uses pairwise preference data and resolves gradient conflicts with a clipped conflict-averse gradient-descent variant.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory and empirical study",
+        "claim": "The paper reports convergence guarantees to Pareto-critical points respecting user-specified weights, analyzes clipping in the two-objective case, and evaluates the framework for LLM alignment.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish RACO through reward-free pairwise-preference alignment and a novel clipped conflict-averse gradient-descent method for conflicted objectives.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report convergence guarantees to Pareto-critical points that respect user-specified objective weights, and a strict convergence-rate improvement from clipping in the two-objective setting.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "Across multi-objective summarization and safety-alignment tasks and Qwen 3, Llama 3, and Gemma 3, the authors report better Pareto trade-offs than existing multi-objective alignment baselines in both qualitative and quantitative evaluations.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames direct preference alignment as increasingly common and identifies conflicting objectives as a source of unstable training and poor trade-offs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "It characterizes weighted-loss and reward-model-based multi-objective approaches as having directional, complexity, and preference-distortion limitations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It introduces RACO, combining pairwise preference data with clipped conflict-averse gradient descent.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "It reports Pareto-critical convergence guarantees and a two-objective convergence-rate result for clipping.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "It reports qualitative and quantitative tests on summarization and safety alignment across three LLM families, with better Pareto trade-offs than baselines.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the method, theoretical guarantee, and evaluation around preserving user-specified objective weights and improving Pareto trade-offs.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "A coherent alignment between the optimization target, formal guarantee, and evaluation criterion makes the central claim easier to trace.",
+        "application": "Frame a multi-objective method by linking its update rule to an explicit trade-off notion, then evaluate that same notion under the relevant task settings.",
+        "exception": "This approach is less suitable when objectives are not meaningfully conflicting or when no operational trade-off criterion is available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact clipping rule, convergence assumptions, baselines, datasets, metrics, or numerical effect sizes.",
+      "It does not establish independently verified correctness, reproducibility, or priority of the stated novelty."
+    ]
+  }
+}

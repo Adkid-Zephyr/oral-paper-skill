@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71055",
+    "title": "Controlled LLM Training on Spectral Sphere",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71055"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "090014970967d4dd66b4200561e78cd8bec69f935962dac72cd6f11147c9fd65",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "76bc0eb23a2a70b9fe8cd87030014cd49139c1e7443858c8237ca97279512146",
+    "extracted_at": "2026-09-13T00:12:17.301314+00:00",
+    "session_id": "01a0981b-3da5-7f90-83c9-c4ef13fb84d2",
+    "usage": {
+      "input_tokens": 12707,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 839,
+      "reasoning_output_tokens": 85
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "98b96d166f6fe11ab870d49f43fcccf62aeffae21674c4dc8c139e3f8c8cb8f0"
+    },
+    {
+      "id": "S2",
+      "sha256": "05eed29fbec09fd8dd1f7c314c24982ad9b5b6e89c6b2019da4fba1a1b8ee37f"
+    },
+    {
+      "id": "S3",
+      "sha256": "bbcdf35c7dd6db451a7c8866e8a05fb0eecce302083586065d0be9aa67e91df3"
+    },
+    {
+      "id": "S4",
+      "sha256": "a592f38b0465d8f2a525bf07151efffb044aff162c8b0831673d69b62c047557"
+    },
+    {
+      "id": "S5",
+      "sha256": "97fe3102773faf8a1fae55de3b7f1120e0122408689e9c4f5b165b08e270503b"
+    },
+    {
+      "id": "S6",
+      "sha256": "e81995a4407468904affbae65d93ba3e86721db3dd0f76ef81ea929e8ace1627"
+    },
+    {
+      "id": "S7",
+      "sha256": "4f0356da79f62d836cec58d91f00e1d0dd538c5d2988c8f25697d8f2016a8f7c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71055",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Scaling large models requires optimization that converges rapidly while maintaining stability.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies a limitation in emerging optimizers such as Muon: they control updates but permit weights to drift, leaving them only partly aligned with μP constraints.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces the Spectral Sphere Optimizer, enforcing module-wise spectral constraints on both weights and updates.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Derives the steepest-descent direction on the spectral sphere to define a fully μP-aligned optimization process.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Implements SSO as an efficient parallel algorithm within Megatron for large-scale training.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present SSO as addressing weight drift by jointly constraining weights and updates on a spectral sphere, with a corresponding steepest-descent formulation.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, across pretraining on diverse architectures—Dense 1.7B, MoE 8B-A1B, and 200-layer DeepNet—SSO consistently outperforms AdamW and Muon.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report practical stability benefits including improved MoE router load balancing, suppressed outliers, and strictly bounded activations.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Large-model scaling is framed as requiring rapid convergence grounded in stability.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "μP is described as providing width-invariant Θ(1) activation control, while Muon controls updates but allows weight drift.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "SSO is introduced to constrain both weights and updates spectrally, using a steepest-descent direction on the spectral sphere.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "deployment",
+        "summary": "The optimizer is implemented as a parallel Megatron algorithm for large-scale training.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported-results",
+        "summary": "Pretraining studies across three architecture settings are reported to show performance and stability advantages over AdamW and Muon.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects the proposed optimizer's geometric constraint, implementation strategy, and reported benefits across both performance and stability dimensions.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A compact abstract can make a method's rationale legible by linking the identified failure mode to a specific constraint and then to deployment and outcome claims.",
+        "application": "Frame a proposed optimization method as a chain: name the failure mode, state the exact invariant or constraint introduced, explain how it is made scalable, and report outcomes under named model settings.",
+        "exception": "This framing is unsuitable when the method's mechanism, scalability path, or evaluation settings are not yet specified."
+      }
+    ],
+    "unknowns": [
+      "No numerical performance margins, training budgets, statistical variation, or evaluation metrics are provided for the comparisons.",
+      "The abstract does not specify the exact spectral constraints, steepest-descent derivation, or meaning of fully μP-aligned.",
+      "It does not establish whether the reported benefits hold beyond the listed architectures or explain the baseline configurations."
+    ]
+  }
+}

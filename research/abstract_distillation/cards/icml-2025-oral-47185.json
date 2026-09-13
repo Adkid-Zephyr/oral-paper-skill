@@ -1,0 +1,164 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47185",
+    "title": "DistiLLM-2: A Contrastive Approach Boosts the Distillation of LLMs",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47185"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7734221b53aff4bae708b6fa859dedc47126b51c0fbce9b0398ff7b97ff226e8",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "492efb739b47c62a25b4f2de62bbf5e6e216982f327ebdce0beed1dcd60fef62",
+    "extracted_at": "2026-09-13T00:07:50.370012+00:00",
+    "session_id": "01a09817-35b2-7ef0-97a5-8524956fd776",
+    "usage": {
+      "input_tokens": 12633,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 708,
+      "reasoning_output_tokens": 76
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ab86df0a59d483f31c08f8d4331b2bce9627c96adc2f56d272c71493012b7178"
+    },
+    {
+      "id": "S2",
+      "sha256": "c24e9f2444f6f91388d211fafe591c9faa2e2bfeddb439df6affab74cf97006c"
+    },
+    {
+      "id": "S3",
+      "sha256": "f1245b28903a510779e39918b577f47de74260fccb5f77f8ee9c830143e8bb8c"
+    },
+    {
+      "id": "S4",
+      "sha256": "1ab71460cb9c8495a4e7dcc47af61800a87743a79c95cf6c419b0d8a614f0f07"
+    },
+    {
+      "id": "S5",
+      "sha256": "3cef24e4fef9644b8ad39369d4ac6944438f12312532bd71d117c02d945967a8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47185",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve student-model performance in LLM distillation across varied teacher- and student-generated data.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Prior work generally applies identical losses to teacher- and student-generated data, overlooking interactions between loss formulation and data type.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DistiLLM-2 uses a contrastive objective that increases the likelihood of teacher responses while decreasing that of student responses.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "application scope",
+        "claim": "The approach is presented for instruction following, code generation, preference alignment, and vision-language extensions.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors propose a contrastive distillation approach that explicitly harnesses synergy between loss formulations and data types.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive experiments produced high-performing student models across instruction-following and code-generation tasks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report support for preference-alignment and vision-language applications.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors state that the findings indicate potential for improving distillation by aligning teacher and student models across varied data types.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies identical treatment of teacher- and student-generated data as common in prior distillation work.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "It attributes suboptimal student performance gains to ignoring the interaction between loss formulations and data types.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It introduces DistiLLM-2, which contrasts teacher and student responses through opposing likelihood objectives.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported scope",
+        "summary": "The authors report results spanning instruction following, code generation, preference alignment, and vision-language extensions.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links distinct data types with distinct loss behavior and implements this through opposing teacher- and student-response likelihood objectives.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A paper can make its central design rationale concrete by mapping a diagnosed data–objective interaction directly to the training rule.",
+        "application": "When proposing a distillation method, explicitly state which data types receive which objective terms and connect each term to the failure mode it is meant to address.",
+        "exception": "This framing may be unsuitable when the method uses a single homogeneous data source or when objective differences cannot be justified by data provenance."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, baselines, task-by-task conditions, or ablations isolating the contrastive objective from other factors.",
+      "It does not specify how the method is adapted for preference alignment or vision-language extensions."
+    ]
+  }
+}

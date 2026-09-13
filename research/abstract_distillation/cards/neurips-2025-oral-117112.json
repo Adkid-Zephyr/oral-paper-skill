@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-117112",
+    "title": "High-dimensional neuronal activity from low-dimensional latent dynamics: a solvable model",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/117112"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d2d513589612df7f997861d9db22ae921445131a05df7711d115774258dd08c7",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "ed28e290a40f241c74d6692bc78410d509fdb47d1e5dde2f9b30a691135fb009",
+    "extracted_at": "2026-09-13T00:21:43.821243+00:00",
+    "session_id": "01a09823-e24c-78d3-b0e3-126015e315a5",
+    "usage": {
+      "input_tokens": 12760,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 869,
+      "reasoning_output_tokens": 131
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4839b2b47427410a44e6b563e3161d10bb884784894329b2923261901114ba8d"
+    },
+    {
+      "id": "S2",
+      "sha256": "c80ed1c0e97044b720243d35871d8379fa27fe706dbc0e6c65a2e05518cfdefa"
+    },
+    {
+      "id": "S3",
+      "sha256": "f41b6227cf4ccb53dee7f22521a47d140e7a471ccb76778f5fb8b2d3649de878"
+    },
+    {
+      "id": "S4",
+      "sha256": "eef2389e4a2191c0cce4e05f1de7c60c1080adb805fb33524e873483d64480d2"
+    },
+    {
+      "id": "S5",
+      "sha256": "4c714680b625eb77a9a74c17bac75b15ea4f5334f30b0a85be26c2ff2190e4c5"
+    },
+    {
+      "id": "S6",
+      "sha256": "fe34c0dfbb0954206a23d10b2e002718dfd40d9a511a4e09426e60e9c2c820b8"
+    },
+    {
+      "id": "S7",
+      "sha256": "c84d39cde3b732af08958bfa6c7de329078ef369aa25bda1f6bf4a98fbdec5ff"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-117112",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine whether low-dimensional latent dynamics can account for high-dimensional neuronal activity, particularly in mouse visual cortex.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "For nonlinear neurons, the covariance eigenspectrum alone cannot determine whether latent dimensionality is low or high, leaving the latent explanation indeterminate.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory/model",
+        "claim": "An analytically solvable RNN whose dynamics exactly reduce to a low-dimensional system while its activity manifold has high linear embedding dimension.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Neural Cross-Encoder (NCE), an interpretable nonlinear latent-variable modeling method for neuronal recordings.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "NCE reports low-dimensional latent structure for drifting-grating responses and spontaneous visual-cortex activity, but not for natural-image responses.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish latent dynamical dimensionality from the linear embedding dimension of neuronal activity through a solvable RNN construction, and introduce NCE to address the resulting indeterminacy.",
+      "source_ids": [
+        "S3",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The proposed RNN exactly reduces to low-dimensional dynamics while generating an activity manifold with high linear embedding dimension.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that drifting-grating responses and spontaneous activity in visual cortex reduce to low-dimensional latents under NCE, whereas natural-image responses do not.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Low-dimensional latent dynamics are hypothesized to underlie recurrent-neural computation, but mouse recordings show high-dimensional population activity.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "solvable construction",
+        "summary": "The paper presents an RNN showing that low-dimensional dynamics and high-dimensional activity can coexist.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "research question",
+        "summary": "It asks whether low-dimensional latents explain high-dimensional activity in mouse visual cortex.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "method and result",
+        "summary": "Because covariance spectra are insufficient for nonlinear neurons, the authors develop NCE and report condition-dependent latent dimensionality.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "interpretation",
+        "summary": "They conclude that certain high-dimensional activity, including unstimulated activity, can arise from nonlinear processing of low-dimensional latents.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper separates latent dynamical dimensionality from observed linear embedding dimension using a solvable model, then uses an interpretable nonlinear model to examine real recordings.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This pairing makes a potentially paradoxical observation testable without treating a single dimensionality statistic as decisive.",
+        "application": "When observed dimensionality conflicts with a latent hypothesis, construct a tractable counterexample and use an interpretable nonlinear latent model targeted to the ambiguity.",
+        "exception": "This strategy may be unsuitable when the relevant neural nonlinearity or latent-variable assumptions cannot be meaningfully specified."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no recording size, preprocessing details, NCE architecture, dimensionality criteria, or quantitative uncertainty.",
+      "It does not specify the experimental conditions or evidence supporting the claimed reductions beyond the named activity types."
+    ]
+  }
+}

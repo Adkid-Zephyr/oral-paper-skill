@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31809",
+    "title": "Knowledge Entropy Decay during Language Model Pretraining Hinders New Knowledge Acquisition",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31809"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "776e7646c4ed2a3d7cc9beb7c22595443e830132d9569fef5a5af77ad909e423",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "919336f5052b631fe5b5932a1660040ae0bc68fd44286872e69023f82fa7586e",
+    "extracted_at": "2026-09-12T23:52:49.849477+00:00",
+    "session_id": "01a09809-75ed-70d0-97df-38393541add9",
+    "usage": {
+      "input_tokens": 12640,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 753,
+      "reasoning_output_tokens": 122
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b0ea6283d8aeb5d01328cd66ae8a294e25462912477e8bf741e4645cf53eeca4"
+    },
+    {
+      "id": "S2",
+      "sha256": "edb31fc3ad6551637d2c3c61212edf37b109a846e63edc98da5eec5c7a754a66"
+    },
+    {
+      "id": "S3",
+      "sha256": "b0d81e1dcc05dcfcb78ca34322b0dbf96e58396c40ff3703bb7b23a412790ad8"
+    },
+    {
+      "id": "S4",
+      "sha256": "1fe31ee0d71ffaeb73106738d77a4b585f42863a08d9a622158100566063c142"
+    },
+    {
+      "id": "S5",
+      "sha256": "4c6c36c8e8512ddf183e9db948b724fa1900787f0c5daca7add58b4636906af3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31809",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work examines how models’ integration of parametric knowledge changes during pretraining and affects knowledge acquisition and forgetting.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "concept",
+        "claim": "Introduces knowledge entropy, a measure of the range of memory sources engaged by a model.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that knowledge entropy consistently declines as pretraining advances and is associated with reduced knowledge acquisition and retention.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "intervention finding",
+        "claim": "Reports that increasing activity from inactive memory sources improves knowledge acquisition and retention.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce the concept of knowledge entropy to characterize the breadth of memory sources used by a model.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a consistent decline in knowledge entropy throughout pretraining.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that lower knowledge entropy is closely associated with reduced ability to acquire and retain knowledge.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report improved acquisition and retention when inactive memory sources are made more active.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "research question",
+        "summary": "Investigates the evolution and consequences of models’ broad integration of parametric knowledge during pretraining.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "measurement concept",
+        "summary": "Defines knowledge entropy as the range of memory sources engaged, distinguishing broad use from reliance on specific sources.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "observed trend",
+        "summary": "Reports that knowledge entropy declines consistently as pretraining progresses.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "implication and intervention",
+        "summary": "Links declining entropy to weaker acquisition and retention, then reports gains when inactive memory sources become more active.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a proposed summary measure of memory-source breadth with a targeted manipulation of inactive sources and reports aligned changes in knowledge acquisition and retention.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This provides a compact claim–evidence pattern connecting a measurable internal property to an outcome and an intervention.",
+        "application": "For a related mechanism claim, define a quantitative proxy, track it over the relevant process, and test whether changing the proxy corresponds to the predicted outcome.",
+        "exception": "This pattern is unsuitable when the proxy lacks a defensible operational definition or cannot be manipulated independently of major confounds."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify how knowledge entropy or memory-source activity is measured.",
+      "Model scales, datasets, training conditions, effect sizes, and comparison baselines are not reported.",
+      "The abstract does not establish whether the reported associations are causal beyond the stated intervention result."
+    ]
+  }
+}

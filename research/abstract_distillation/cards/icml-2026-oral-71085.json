@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71085",
+    "title": "High-accuracy and dimension-free sampling with diffusions",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71085"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "75077cd6ef1250581be339c7bba2e577c60fcce65cc7c13a4c689c210b1db2ce",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "4bed96efebb2fcc6cd2c719c476f9cfc82b99118493c3c408581f2cd58553e38",
+    "extracted_at": "2026-09-13T00:13:24.458445+00:00",
+    "session_id": "01a0981c-4b45-7352-9990-131075a1ef86",
+    "usage": {
+      "input_tokens": 12680,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 757,
+      "reasoning_output_tokens": 122
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "62ed1c7cea2420c92a7d09a02d7534944812aa8d22ed3ce5717b4195ce35e2da"
+    },
+    {
+      "id": "S2",
+      "sha256": "a6663bffa248927cffba89bb1febc4f28d083af9cd1cb4c4e583fd3e59124a0d"
+    },
+    {
+      "id": "S3",
+      "sha256": "cc1d4cb1322bf3d5d217fadfcf747f4f29f3f24eb4c80385717eb46a58e5405f"
+    },
+    {
+      "id": "S4",
+      "sha256": "0ea5cef3f00aa587f3f537402c57d351e8963b82badb1334bcf2b6ad042524e2"
+    },
+    {
+      "id": "S5",
+      "sha256": "b134c6f443bf4a4b895b90663c09c0fc641274bcaf97411a340891df7f0fe6c1"
+    },
+    {
+      "id": "S6",
+      "sha256": "c097bb7f16082d76c86c0e3665e1c7a6cd1c458126c8a8d9716c201021ada18e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71085",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop a diffusion-model solver that produces high-quality samples with high accuracy using approximate access to data-distribution scores.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Prior discretization methods reportedly have iteration complexity polynomial in ambient dimension and inverse accuracy, while a high-accuracy guarantee for a diffusion-based sampler using approximate scores was absent.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A solver combining low-degree approximation with the collocation method.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "A complexity bound that is polylogarithmic in inverse accuracy and depends on dimension only through the target distribution's effective support radius.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that this is the first high-accuracy guarantee for a diffusion-based sampler using approximate score access.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report proving polylogarithmic dependence on 1/ε for the proposed solver's iteration complexity.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that ambient dimension does not enter explicitly; its effect occurs through the effective radius of the target support.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Diffusion models have achieved empirical success for sampling from multimodal distributions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "bottleneck",
+        "summary": "Inference requires numerically solving a differential equation without a closed form, and discretization typically needs many small iterations for high-quality samples.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "prior limitation",
+        "summary": "Existing discretization analyses reportedly scale polynomially with ambient dimension and inverse accuracy.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed resolution",
+        "summary": "The paper introduces a low-degree-approximation and collocation-based solver with polylogarithmic inverse-accuracy complexity and effective-radius dependence on dimension.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a concrete computational bottleneck to two separately stated complexity targets: inverse-accuracy dependence and dimension dependence.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This decomposition makes the claimed advance easier to evaluate because each improvement has a distinct complexity axis.",
+        "application": "When presenting a theoretical method, state baseline scaling and separate the target improvements by parameter, then attach each guarantee to its precise condition.",
+        "exception": "This framing is less suitable when the main contribution is empirical or when complexity parameters cannot be meaningfully isolated."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact polylogarithmic expression, score-approximation assumptions, sampling-distance guarantee, or dependence on the effective radius.",
+      "No empirical comparisons, implementation details, or proof details are provided in the supplied units."
+    ]
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71170",
+    "title": "Procedural Pretraining: Warming Up Language Models with Abstract Data",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71170"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0d4450d5f5cd9da50fefa7b82076e3c271b16776259e69632ae9654718122b2b",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "8de7be1122f5e0bbc2c8f55f1d80f10497255ec5ac5567edbc8e8b53c3b1cc05",
+    "extracted_at": "2026-09-13T00:16:50.806529+00:00",
+    "session_id": "01a0981f-66de-7dd1-ba76-da66b6b9615b",
+    "usage": {
+      "input_tokens": 12886,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 894,
+      "reasoning_output_tokens": 95
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "96cf6076250cea26783f62cfa4fc25d7c9cf2c5669a32a8e7fb1d07cb8d2acb9"
+    },
+    {
+      "id": "S2",
+      "sha256": "6df612ef76612253a2b8b36dffdbb56f826f01e7b2d4ba4bc367a52e1f714a68"
+    },
+    {
+      "id": "S3",
+      "sha256": "d982d5e2087404e5b41e54579dde2ce6be421ec4e910de65ab94627361c72095"
+    },
+    {
+      "id": "S4",
+      "sha256": "33a90d37330e9f2534e9708199fa82d0fd342179d6e6cc02b3429caadfdc7313"
+    },
+    {
+      "id": "S5",
+      "sha256": "f74c1ed7d7ec37e48d94ff6bf148517a8ba8fb1eb22f2fa66f1fb252bec28105"
+    },
+    {
+      "id": "S6",
+      "sha256": "7af383779afea10ea7b63eecd5be271ebb3bf8030de35162c540ddcfcf63798b"
+    },
+    {
+      "id": "S7",
+      "sha256": "f9a1053dd134911b8b60bc6facf3f76fe42dbd0fd1427c623b1f857b1feb6e67"
+    },
+    {
+      "id": "S8",
+      "sha256": "a33ede620c31e88cb4cc15a133dfad9d63c0336f9fb35b6f056c825949de2b53"
+    },
+    {
+      "id": "S9",
+      "sha256": "c7a8c5f6b728297739c57d40648bb75fbacddd7396ac477ab132bca3f2109e6f"
+    },
+    {
+      "id": "S10",
+      "sha256": "7cf003b75e098bc7b8b12e82b93bfcf4581a030d678d08f58dbb189ca8c052dc"
+    },
+    {
+      "id": "S11",
+      "sha256": "4b4673820a229c46d2f35245819fde6f0afc061443ad0f468b7b3bfa7312bf08"
+    },
+    {
+      "id": "S12",
+      "sha256": "c9093d29c6c5bf690d163cc81f7af0c6b688d772b587cf9055d89dfd5e276d86"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71170",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies whether exposing language models first to abstract, procedurally generated structured data can ease later acquisition of semantic knowledge compared with direct web-scale pretraining.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "It diagnoses which algorithmic skills different procedural-data forms can improve and reports substantial gains for several skills.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "It studies procedural-data front-loading in models up to 1.3B parameters, including performance, data-use, and FLOP-related outcomes.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "mechanistic analysis and framework",
+        "claim": "It explores benefits through attention and MLP structure and proposes combining multiple procedural-data forms.",
+        "source_ids": [
+          "S9",
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present procedural pretraining as a simple, lightweight approach that separates aspects of knowledge acquisition from reasoning in language-model pretraining.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S12"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that context-recall accuracy on a Needle-in-a-Haystack task rises from 10% to 98% after pretraining on Dyck sequences.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that front-loading 0.1–0.3% procedural data significantly outperforms standard natural-language pretraining on C4, CodeParrot, and DeepMind-Math datasets.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report reaching the same loss using 55%, 67%, and 86% of the original data, with a comparable reduction in FLOPs.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setup",
+        "summary": "The paper contrasts direct web-scale pretraining with an alternative inspired by learning simple formal structures before higher reasoning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method focus",
+        "summary": "It uses procedural data generated by formal languages and simple algorithms as abstract structured data.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "empirical evaluation",
+        "summary": "It first links procedural-data types to algorithmic skills, then evaluates front-loading at scales up to 1.3B parameters and reports gains, data savings, and FLOP reductions.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "mechanism and outlook",
+        "summary": "It examines structure in attention and MLP layers, differentiates their reported relevance across domains, and outlines combining procedural-data forms.",
+        "source_ids": [
+          "S9",
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs skill-specific diagnosis with downstream pretraining results and then relates the gains to distinct structures in attention and MLP layers.",
+          "source_ids": [
+            "S4",
+            "S7",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "A staged account can connect what a data intervention improves, where it transfers, and what internal mechanism may explain the transfer.",
+        "application": "For a new pretraining intervention, organize evaluation from targeted capability diagnostics to downstream benchmarks and a mechanism analysis tied to the observed domain differences.",
+        "exception": "This sequence may be unsuitable when the intervention has no separable target capability or when internal measurements cannot support a meaningful mechanism claim."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify model architectures, training schedules, baseline configurations, statistical variability, or the exact meaning of the three reported data-retention percentages.",
+      "The reported mechanism findings and performance comparisons are author-reported; the abstract does not provide enough detail to assess causal attribution or reproducibility."
+    ]
+  }
+}

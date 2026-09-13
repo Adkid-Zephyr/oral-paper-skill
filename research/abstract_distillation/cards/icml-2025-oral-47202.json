@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47202",
+    "title": "An analytic theory of creativity in convolutional diffusion models",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47202"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "db008b5ee1ce54fd31374e20c81962e7e13fa4e89d67df592bf35f94130868c6",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "bccc00f273d32af7e0e7da76b7d99438eae5b6b9962996892ca9a7e265870ec0",
+    "extracted_at": "2026-09-13T00:08:32.118908+00:00",
+    "session_id": "01a09817-cfd3-7751-8f07-6e87917a7a7e",
+    "usage": {
+      "input_tokens": 14307,
+      "cached_input_tokens": 13056,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 846,
+      "reasoning_output_tokens": 63
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5f3166a4f35207e1cf95b1714b4979a76fd4adb55b711bbdf42fe518487c6f16"
+    },
+    {
+      "id": "S2",
+      "sha256": "61d85146f4d46647570987dc159a3ac00ed7ff19581bb231269252227df76556"
+    },
+    {
+      "id": "S3",
+      "sha256": "789e21ca7a89b4aca090537580e7867c0b3293e8306d31a3f2e88c6ef38a43d0"
+    },
+    {
+      "id": "S4",
+      "sha256": "904d8b4771a2b7ea5352b8a4c668ba8cdf09b04f945ac1df0691d45ce2248c14"
+    },
+    {
+      "id": "S5",
+      "sha256": "c052890bd18e4430ad58344a666df3a4182767f3775877431f7b24fbd2ff858c"
+    },
+    {
+      "id": "S6",
+      "sha256": "16cc7f635e0bb8f89138ec4f0b4b248e7d5f2c91aeb8307122fee5de4e259f1f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47202",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain and predict creativity in convolutional diffusion models, including generation of novel images far from training data.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Optimal score-matching theory suggests memorization, conflicting with observed originality; the abstract frames this as a theory–experiment gap.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "An analytic, interpretable, predictive theory of creativity based on locality and equivariance inductive biases.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "type": "mechanistic model",
+        "claim": "Analytic local score and equivariant local score machines that model creativity through combinatorial patch recombination.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "interpretation",
+        "claim": "An account of attention as helping carve semantic coherence from local patch mosaics in self-attention-enabled UNets.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach through fully analytic and mechanistically interpretable local-score models that quantitatively predict outputs after calibrating one time-dependent hyperparameter.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The top model reportedly achieved median r² values of 0.95, 0.94, 0.94, and 0.96 on CIFAR10, FashionMNIST, MNIST, and CelebA, respectively, for trained convolution-only diffusion models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The theory reportedly partially predicted pretrained self-attention-enabled UNet outputs on CIFAR10, with median r² approximately 0.77.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that the mechanism generates exponentially many novel images by mixing local training-set patches across scales and image locations.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "observation and tension",
+        "summary": "Diffusion models reportedly generate original images far from training data, despite optimal score-matching theory suggesting memorization.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "resolution",
+        "summary": "The authors identify locality and equivariance as biases that prevent optimal score-matching and induce combinatorial creativity.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "mechanism and prediction",
+        "summary": "Local-score machines describe creativity as multiscale, location-dependent patch mosaicing and predict convolution-only model outputs after single-parameter calibration.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "extension",
+        "summary": "Partial prediction for attention-enabled UNets is used to suggest a role for attention in semantic coherence.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects an apparent theory–experiment conflict to specific inductive biases, then links those biases to an interpretable generative mechanism and quantitative predictions.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A strong research narrative can make the explanatory bridge explicit: identify the tension, isolate the mechanism, and align predictions with the mechanism.",
+        "application": "When presenting a model, state the conflict it resolves, name the structural assumption responsible, and give a measurable prediction derived from that assumption.",
+        "exception": "This framing is unsuitable when the work has no clearly stated conflict or when the proposed mechanism is not connected to testable predictions."
+      }
+    ],
+    "unknowns": [
+      "The abstract names CIFAR10, FashionMNIST, MNIST, and CelebA, but does not specify comparison baselines, the detailed evaluation protocol, sample sizes, or uncertainty for the reported r² values.",
+      "The meaning and calibration procedure of the single time-dependent hyperparameter are not given.",
+      "The abstract does not establish whether the reported mechanism or theory is independently validated beyond the authors’ reports."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "unknowns[0]",
+      "before": "The abstract does not specify datasets, baselines, evaluation protocol, sample sizes, or uncertainty for the reported r² values.",
+      "after": "The abstract names CIFAR10, FashionMNIST, MNIST, and CelebA, but does not specify comparison baselines, the detailed evaluation protocol, sample sizes, or uncertainty for the reported r² values.",
+      "review_file": "reviews/audit-icml-2025.json",
+      "review_sha256": "99fcf044970d91a1d4c17f9ec7c515bb9d3ccb439ce21aa77db2c0b191431e5d",
+      "applied_at": "2026-09-13T00:14:31.545025+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

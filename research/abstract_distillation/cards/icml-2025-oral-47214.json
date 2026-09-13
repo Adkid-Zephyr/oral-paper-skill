@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47214",
+    "title": "Layer by Layer: Uncovering Hidden Representations in Language Models",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47214"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8f746ef3ed5cf59f0cf77e291aca89bc0b287fe469aa60eed30d31c1a4928384",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "fd0ba3840a119b7bfa8b7b509b3903cb834eb2a25ba3be2b7f33617ef4f5696d",
+    "extracted_at": "2026-09-13T00:09:02.355117+00:00",
+    "session_id": "01a09818-45f9-74c2-afa5-ac54d2133f39",
+    "usage": {
+      "input_tokens": 12641,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 817,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "206726b5e7fe9e24918f168bae2bfc3c09717134278a7ce480c6d7b407e430f5"
+    },
+    {
+      "id": "S2",
+      "sha256": "182cc6c4811139808667a285117b0f35ec67189d91b2ce7a49b4f370a8bc00a8"
+    },
+    {
+      "id": "S3",
+      "sha256": "b73dd2f77befa57dcc83d4da7aabbc97653ecec8a4b8e5e6a945bb4d7c35d9ee"
+    },
+    {
+      "id": "S4",
+      "sha256": "4b5616911d36d1b5a284e76f6d2590e0cae0bba62fcf800292244de1d7b8a8dc"
+    },
+    {
+      "id": "S5",
+      "sha256": "7f62fb703cabe784ea17eb19acd9c525716b91781f907cd51fb1308c8c6e636d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47214",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper examines how representation quality varies across language-model layers and whether intermediate-layer features can outperform final-layer outputs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "It addresses the conventional view that earlier layers mainly capture low-level cues and that final layers are generally the appropriate source of representations.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "A unified framework of representation-quality metrics based on information theory, geometry, and invariance to input perturbations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory-oriented analysis",
+        "claim": "An analysis connecting layer-wise representation quality to the balance between information compression and signal preservation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "An evaluation of intermediate-layer representations across architectures, domains, and text-embedding tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a unified metric framework for explaining and quantifying hidden-layer properties, and use it to challenge the standard emphasis on final-layer embeddings.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments on 32 text-embedding tasks spanning transformer and state-space architectures and language and vision domains.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "They report that intermediate layers consistently provide stronger features across this evaluation and that mid-depth embeddings can exceed last-layer performance.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "claim": "They report that intermediate layers often improve performance on a wide range of downstream tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background assumption",
+        "summary": "LLM outputs typically rely on final layers because earlier layers are conventionally viewed as encoding low-level cues.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "The analysis reports that intermediate layers can encode richer representations and often improve downstream performance.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The authors propose unified metrics grounded in information theory, geometry, and perturbation invariance to quantify hidden-layer properties.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "explanation",
+        "summary": "The framework relates performance differences to each layer’s balance of information compression and signal preservation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation and implication",
+        "summary": "Experiments across 32 tasks, architectures, and domains report stronger intermediate-layer features and motivate further use of mid-layer representations.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a broad empirical claim about intermediate layers with a metric framework intended to explain it through compression, signal preservation, geometry, and invariance.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A claim is more informative when its evaluation and proposed explanation are presented together.",
+        "application": "When presenting a layer- or component-level finding, pair comparative evaluation with measurements tied to a stated explanatory mechanism.",
+        "exception": "This framing may be unsuitable when the work is purely descriptive or when the proposed measurements have not been evaluated alongside the comparison."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify task-level results, baselines, numerical effect sizes, or statistical uncertainty.",
+      "It does not identify which layers, architectures, or domains show exceptions to the reported consistency.",
+      "The abstract does not provide details sufficient to assess metric validity, experimental reproducibility, or the scope of the claimed robustness and accuracy improvements."
+    ]
+  }
+}

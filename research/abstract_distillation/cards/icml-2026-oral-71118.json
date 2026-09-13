@@ -1,0 +1,200 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71118",
+    "title": "XR-1: Towards Versatile Vision-Language-Action Models via Learning Unified Vision-Motion Representations",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71118"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "639d94c7b3d094934d2832ec768f7ea64dcc1d3f5471ee573d56d45440fd4d21",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "fa7643bf39fe6c5a9d238189db420d0d062d9f3dc52c41aaedddb739f41ee0ba",
+    "extracted_at": "2026-09-13T00:14:50.680992+00:00",
+    "session_id": "01a0981d-9e44-7cb2-9f64-b50a2fec93b4",
+    "usage": {
+      "input_tokens": 12945,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 744,
+      "reasoning_output_tokens": 70
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "96a3fcc62b55028ab24ddaf12e3b328b0706ed5cb66462fd4ccea9c812468fd2"
+    },
+    {
+      "id": "S2",
+      "sha256": "d93f00b7036e1c623743606e9d43286aa45d6de669b9f0c8bd05d5e5d883c45d"
+    },
+    {
+      "id": "S3",
+      "sha256": "cc49fd6b44aca3e5d09860219ac9a4bfbd8f70776b6c09299e735ea8bdf076da"
+    },
+    {
+      "id": "S4",
+      "sha256": "dc494027b04e80af4a5a3926927af06e6edfd9e96dd51026af31a605378cb630"
+    },
+    {
+      "id": "S5",
+      "sha256": "a0aa8e5788c1133b013d16e23c69c97752e3bef1eb0ff21874f57efd1b2d55cd"
+    },
+    {
+      "id": "S6",
+      "sha256": "cdc2b858d69566b7dc0ad5ec8b77825acad0880a2066d967992904f26384f3ed"
+    },
+    {
+      "id": "S7",
+      "sha256": "cb083e75feeaa95f25cabf8e4f32275e032ade5d164486029360e80d4c06cefc"
+    },
+    {
+      "id": "S8",
+      "sha256": "aa05c8839377f71a75c2aa1172c4ecb673724bd197f9ae401252e999c3cebbe5"
+    },
+    {
+      "id": "S9",
+      "sha256": "189aab6f83c602f1a46690ec0e84ac20a14877a894594c031c6731eaf2482e58"
+    },
+    {
+      "id": "S10",
+      "sha256": "96d8c74eab35672f3f8eba6e6b0eea6a02c44ac9443c47e2ac193b7c3f2a5426"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71118",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "VLA models must produce precise low-level actions from high-dimensional observations and transfer across heterogeneous robots and human demonstrations.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing latent-variable methods do not fully exploit complementary multimodal knowledge in large-scale heterogeneous datasets.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "XR-1 introduces Unified Vision-Motion Codes, a discrete latent representation jointly encoding visual dynamics and robotic motion via a dual-branch VQ-VAE.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "training paradigm",
+        "claim": "It proposes three stages: self-supervised UVMC learning, cross-embodiment pretraining, and task-specific post-training.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report validation across six robot embodiments and more than 120 manipulation tasks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present XR-1 as a novel versatile and scalable VLA framework centered on a unified vision-motion representation.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report more than 12,000 real-world rollouts across six robot embodiments and over 120 manipulation tasks.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that XR-1 consistently outperforms π_0 and GR00T-N1.5, while generalizing to novel objects, backgrounds, distractors, and illumination changes.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper identifies precision and heterogeneous-domain transfer as two fundamental VLA challenges.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "It attributes a limitation to insufficient use of complementary multimodal knowledge in existing latent-variable approaches.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "XR-1 uses UVMC as an intermediate observation-action representation and aligns multimodal dynamics, trained in three stages.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report extensive real-world testing and gains over named baselines with robustness to several distribution changes.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a representation design—joint vision-motion codes—to a staged training procedure and explicitly states the representation's roles between observations and actions and across heterogeneous data.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This makes the proposed mechanism and its intended resolution of the stated gap easy to trace.",
+        "application": "When presenting a multimodal method, map each representation component to a concrete bottleneck and show how training stages operationalize it.",
+        "exception": "This framing is less suitable when the method has no distinct intermediate representation or staged optimization."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide quantitative results, baseline values, task-wise breakdowns, or experimental conditions for the reported comparisons.",
+      "It does not specify how UVMC alignment or generalization was separately ablated."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "author_reported_evidence[1].claim",
+      "before": "The authors report that XR-1 consistently outperforms \u0000pi_0 and GR00T-N1.5, while generalizing to novel objects, backgrounds, distractors, and illumination changes.",
+      "after": "The authors report that XR-1 consistently outperforms π_0 and GR00T-N1.5, while generalizing to novel objects, backgrounds, distractors, and illumination changes.",
+      "review_file": "reviews/flagged-batch-11.json",
+      "review_sha256": "406dc52c6f06d4bb867d70a262dc0e2f852257bb2c51f63258465be74ef7a505",
+      "applied_at": "2026-09-13T00:42:27.384980+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

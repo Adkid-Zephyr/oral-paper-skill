@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008134",
+    "title": "Sequences of Logits Reveal the Low Rank Structure of Language Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008134"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4f2b75a987aec6b7607d9e09cbf6593625aa04e46e5a6e7f20c1d296455eb4c8",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "fdf95426142980dc2973b5fd81e1d6c2402ef3c9c66db03d469beff24a5072a7",
+    "extracted_at": "2026-09-13T00:00:48.650107+00:00",
+    "session_id": "01a09810-c233-73c1-a52c-b7883d1f78da",
+    "usage": {
+      "input_tokens": 12651,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 793,
+      "reasoning_output_tokens": 120
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5387259a12bd0508698c1f633a70089214f3399d278bdf22b77ca4b511a8e84f"
+    },
+    {
+      "id": "S2",
+      "sha256": "d33bf067c3b9c7ebecceb5c7fab5843b44fed0b613299783704e0f877e629b57"
+    },
+    {
+      "id": "S3",
+      "sha256": "48f36ff4d13e44d26ef90176d0e86478c06b02fa1405a87fc8fa48e4f0815bfc"
+    },
+    {
+      "id": "S4",
+      "sha256": "af010f41772b91a9b93883f89d155cb53b5ba681acd5343b41291eea7b73a2e3"
+    },
+    {
+      "id": "S5",
+      "sha256": "c43d22df7b8e420046042c7b82da40ddbe096ee4758b922a47005d98faae79b5"
+    },
+    {
+      "id": "S6",
+      "sha256": "eb6b840148ccc743c8186990e0914e2d1f928e7bdb8961d43a342ac26178343c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008134",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Understanding the inherent low-dimensional structure of large language models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "methodological framework",
+        "claim": "Introduces a model-agnostic approach that studies language models as sequential probabilistic models.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports approximate low-rank structure in logit-derived matrices across a wide range of modern language models.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory and application",
+        "claim": "Uses the low-rank structure for response generation and develops a universal abstraction with provable learning guarantees.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed perspective is model-agnostic and treats language models as sequential probabilistic models, yielding a simple universal abstraction for approximate-rank analysis.",
+      "source_ids": [
+        "S2",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that matrices constructed from logits over varying prompts and responses have low approximate rank across a wide range of modern language models.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report generating a target-prompt response from a linear combination of outputs on unrelated or nonsensical prompts.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report provable learning guarantees for their abstraction.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Frames understanding language models' inherent low-dimensional structure as a major problem.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "Introduces a model-agnostic sequential-probabilistic-model perspective.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "empirical observation",
+        "summary": "Reports approximate low rank in logit matrices across modern models.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "application",
+        "summary": "Shows that the structure can support generation from outputs on unrelated or nonsensical prompts.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "Presents a universal abstraction whose predictions parallel the experiments and analyzes its representation power with learning guarantees.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects an empirical structural observation—approximate low rank—to a concrete generation procedure and then to a theoretical abstraction with guarantees.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A structural claim becomes more informative when the paper traces both an operational consequence and a formal explanatory model.",
+        "application": "When presenting a discovered model property, pair it with a task-level use and a deliberately simplified abstraction whose predictions can be compared with observations.",
+        "exception": "This framing may be unsuitable when the structural measurement has no clear downstream operation or when formalization would obscure essential task-specific behavior."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluated models, prompt and response sets, rank criteria, or quantitative results.",
+      "The generation procedure, linear-combination construction, and its conditions are unspecified.",
+      "The assumptions and scope of the provable learning guarantees are not given."
+    ]
+  }
+}

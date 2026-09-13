@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47186",
+    "title": "All-Purpose Mean Estimation over R: Optimal Sub-Gaussianity with Outlier Robustness and Low Moments Performance",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47186"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8721497f15ba218491ab0f381564c98b182ad38d4178f8ea57d26c64a0f5f546",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "4310771681e1fe03f2c93475ea84ead4003ad4c482cc90c0575fca1b95436bb7",
+    "extracted_at": "2026-09-13T00:07:53.738270+00:00",
+    "session_id": "01a09817-3bab-7501-a890-a1d0acbb3f42",
+    "usage": {
+      "input_tokens": 12904,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 839,
+      "reasoning_output_tokens": 79
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e32ca9b696866b60f65fb3d1ceee32f6c4a555018bbe598ab872e96036ea7093"
+    },
+    {
+      "id": "S2",
+      "sha256": "90bc052f69032ad44c6f9191144403bef0d09967a0181ddb531524bbd5713fa7"
+    },
+    {
+      "id": "S3",
+      "sha256": "160017649ad1834d073ff0e30b3c029c025530deb315082add3e233bc436f288"
+    },
+    {
+      "id": "S4",
+      "sha256": "4eeb9cf9c240be0ffb9d2a4b628e70d47b95bd854bab74c39b710c1d854cff52"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47186",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design a one-dimensional mean estimator usable across standard, contaminated, and heavy-tailed settings while retaining optimal standard-setting performance.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The Lee–Valiant estimator had standard finite-variance optimality but lacked proven guarantees under adversarial corruption and infinite-variance heavy tails.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "robustness and low-moment theory",
+        "claim": "Shows the Lee–Valiant estimator tolerates strong contamination and achieves stated optimal rates for finite-variance corruption and finite z-th moments with z in (1,2).",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Shows that outlier robustness implies neighborhood optimality for one-dimensional estimators that are simultaneously robust and sub-Gaussian.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "asymptotic theory",
+        "claim": "Establishes asymptotic normality and efficiency for the Lee–Valiant estimator.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "Extends neighborhood-optimality guarantees beyond median-of-means to all estimators that are both robust and sub-Gaussian, resolving a question attributed to Dang et al.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report an O(σ√η) estimation error under an η-fraction of strong contamination for variance-σ² distributions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report finite-z-moment performance matching Devroye et al.'s lower bounds up to constants for z in (1,2).",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report asymptotic normality and efficiency of the Lee–Valiant estimator.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setting",
+        "summary": "Introduces all-purpose one-dimensional mean estimation and prior standard-setting optimality of the Lee–Valiant estimator.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap and question",
+        "summary": "Identifies missing robustness guarantees under strong contamination and infinite-variance heavy tails, then asks whether robustness can coexist with standard optimality.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "main guarantees",
+        "summary": "Reports contamination robustness, optimal finite-variance and low-moment error, and a robustness-to-neighborhood-optimality implication.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "additional result",
+        "summary": "Reports asymptotic normality and efficiency as further cross-setting performance evidence.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract organizes one estimator's claim around distinct regimes—standard variance, contamination, low moments, neighborhood optimality, and asymptotics—with explicit rates or comparison targets where available.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A multi-regime claim is easier to assess when each regime has its own guarantee or benchmark.",
+        "application": "When presenting a broadly applicable method, partition the abstract by operating regime and attach a concrete rate, lower-bound comparison, or asymptotic property to each.",
+        "exception": "This structure is unsuitable when the method is intentionally specialized to one regime or when regime-specific guarantees are unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify sample-size dependence, constants, estimator details, theorem assumptions beyond the named settings, or how asymptotic efficiency is defined.",
+      "The abstract does not provide experimental results or details supporting the reported theoretical claims."
+    ]
+  }
+}

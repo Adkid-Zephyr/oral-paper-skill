@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009682",
+    "title": "RAIN-Merging: A Gradient-Free Method to Enhance Instruction Following in Large Reasoning Models with Preserved Thinking Format",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009682"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "94cc2fcadc154e02705f470e51aaea56ee9450cd351474534cc4844bf696bcea",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "94717d5c3fea417d94c84de4c8b3f4c247d8fa4544cc0df85d03a396f3d6e265",
+    "extracted_at": "2026-09-13T00:03:09.640294+00:00",
+    "session_id": "01a09812-e4dd-7db3-9eb1-e41ce6215f69",
+    "usage": {
+      "input_tokens": 12797,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 850,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "09151b0782c49cb083152a021bcad6f96672ba006541bc4f1368b9e0f0e2d6ce"
+    },
+    {
+      "id": "S2",
+      "sha256": "033a262f40bc5c7add26a420b1354089090bdd90172945150af1f89190a31bcf"
+    },
+    {
+      "id": "S3",
+      "sha256": "f8712c519746df245a38ad91b5bf6b3d928bccf1ffaadc8c5893171074ce2d16"
+    },
+    {
+      "id": "S4",
+      "sha256": "6f1bf634f5e9dd8b3a4c78346c303380210986f6048993536160008959c4e14d"
+    },
+    {
+      "id": "S5",
+      "sha256": "091696e7aaa28d74ff31c0492db13edcbc7df0baf305db13fde34360b730387b"
+    },
+    {
+      "id": "S6",
+      "sha256": "00576f7dde8ca6de135f5bc9326c0eb99dcc4003466056a760f26de9fdd16b09"
+    },
+    {
+      "id": "S7",
+      "sha256": "08a69da1935af8cc874002b7e44d822bbc3ba77667bc5c1d68f2370eff04c277"
+    },
+    {
+      "id": "S8",
+      "sha256": "cc95d6a201f608613b855f4df5e2558d528300c86cfff1d2886d663d904248ae"
+    },
+    {
+      "id": "S9",
+      "sha256": "840d78cda3a127f481b0a4a2c8562c7aa9f659a4f3ce0c44d4f4ae72284b5e19"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009682",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks whether integrating an instruction-tuned model into a large reasoning model can improve adherence to output formats, constraints, and requirements.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Naïve parameter merging is described as fragile because it overlooks the mismatch between explicit thinking/response segments in reasoning models and answers-only outputs in instruction-tuned models.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "RAIN-Merging is a gradient-free, reasoning-aware merging method designed to integrate instruction following while preserving thinking format and reasoning performance.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The method projects instruction-model task vectors into a null space defined by forward features at thinking special tokens, then applies module-specific scaling derived from instruction attention.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "The authors report that task-vector principal subspaces are nearly orthogonal across key modules, motivating lightweight merging with minimal interference.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present RAIN-Merging as a reasoning-aware, instruction-attention-guided null-space projection approach for gradient-free model merging that preserves the reasoning model’s thinking format.",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report substantial improvement in instruction adherence across four instruction-following benchmarks while maintaining reasoning quality across nine reasoning and general-capability benchmarks.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report consistent gains across model scales and architectures, with improved performance in agent settings.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Large reasoning models are strong at long-chain reasoning but often fail format and constraint-following requirements.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "research question",
+        "summary": "The paper investigates whether an instruction-tuned model can close this instruction-following gap when integrated into a reasoning model.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "Parameter-space analysis suggests low interference from near-orthogonal task-vector subspaces, but naïve merging fails to account for thinking-format mismatch.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method and reported outcome",
+        "summary": "RAIN-Merging uses null-space projection and instruction-attention-guided scaling; the authors report better instruction adherence while preserving reasoning quality across benchmarks and settings.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly identifies an output-format mismatch as a failure mode of naïve merging and makes preservation of thinking tokens a design target.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "When combining models with different output protocols, compatibility constraints may need to be part of the merge objective rather than treated as a downstream formatting issue.",
+        "application": "Define representation- or token-level invariants for each model’s output protocol, then constrain parameter updates against those invariants during integration.",
+        "exception": "This move may be unsuitable when the models share the same output protocol or when preserving the original protocol is not a goal."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical results, baseline definitions, statistical analyses, or benchmark-specific conditions.",
+      "It does not specify the calibration-set sizes, projection details, scaling formula, or which model scales and architectures were evaluated.",
+      "The claimed agent-setting improvement and near-orthogonality are not quantified in the supplied units."
+    ]
+  }
+}

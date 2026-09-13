@@ -1,0 +1,161 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31775",
+    "title": "Ctrl-Adapter: An Efficient and Versatile Framework for Adapting Diverse Controls to Any Diffusion Model",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31775"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b72d857a4e06924ec175ce4ef149b95eceb44d4b411995c1a707bc69de28ef86",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "bfceed568a7e03040a29e6e283b0dc1c4fc921c8058064ba60eae8364c484372",
+    "extracted_at": "2026-09-12T23:51:32.290050+00:00",
+    "session_id": "01a09808-3f9c-7250-9dce-2e6d64b14186",
+    "usage": {
+      "input_tokens": 12732,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 791,
+      "reasoning_output_tokens": 59
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cdb1106071a1b361fc7db9203772e3d9dc3a24676896901a60530e84a3893146"
+    },
+    {
+      "id": "S2",
+      "sha256": "5b6f8fa6111b1501669a10404b20502a8d1f558ce83c443bb0d87c023e554e85"
+    },
+    {
+      "id": "S3",
+      "sha256": "55871f311e471ac5f7d76d9d71e929598adaebcc4a00b58ffb11cf067b68541d"
+    },
+    {
+      "id": "S4",
+      "sha256": "04ad267f461855a92a426dcef3f8e34c96447718cf2194f51b2560e380e1c341"
+    },
+    {
+      "id": "S5",
+      "sha256": "2b680575930fc7f01fbb333c857f3a178111b37a21c63aa198023b4915f575bd"
+    },
+    {
+      "id": "S6",
+      "sha256": "2d8ba534ae9560f14f4b46c6dc5362a636a43eaba7b0d0bcd7a5c4a42224b8de"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31775",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable diverse spatial and non-spatial controls for image and video diffusion models, including controllable video generation.",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Existing ControlNets face feature-space mismatches when transferred to new video backbones, require burdensome retraining, and may fail to preserve temporal consistency when applied frame by frame.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Ctrl-Adapter, which adapts pretrained ControlNets to add diverse controls to arbitrary image/video diffusion models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "capability",
+        "claim": "Reports support for image/video, sparse-frame, patch-level multi-condition, and zero-shot unseen-condition control, plus video editing, style transfer, and text-guided motion control.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present Ctrl-Adapter as an efficient and versatile framework for adapting diverse controls to any image/video diffusion model through pretrained ControlNets.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that across six U-Net/DiT-based models—SDXL, PixArt-α, I2VGen-XL, SVD, Latte, and Hotshot-XL—Ctrl-Adapter matches pretrained ControlNet performance on COCO and achieves state of the art on DAVIS 2017 with under 10 GPU hours.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "ControlNets are widely used to provide spatial control in text-to-image diffusion models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitations",
+        "summary": "For controllable video, direct integration into new backbones is hindered by feature-space mismatches; retraining is costly, and independent per-frame application can weaken temporal consistency.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed_framework",
+        "summary": "Ctrl-Adapter adapts pretrained ControlNets to diverse image and video diffusion models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_scope_and_results",
+        "summary": "The framework is described as supporting varied control and downstream tasks; evaluation across six models reports COCO parity with pretrained ControlNets and DAVIS 2017 state-of-the-art performance at under 10 GPU hours.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links specific deployment obstacles—feature-space mismatch, retraining burden, and framewise temporal inconsistency—to an adaptation framework, then reports capability breadth and benchmark results under a stated compute budget.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This makes the motivation, proposed mechanism, scope, and evidence visibly correspond to distinct claimed obstacles.",
+        "application": "Structure an abstract by pairing each concrete limitation with the mechanism intended to address it, followed by capability scope and evaluation conditions.",
+        "exception": "This framing is unsuitable when the work has no clearly stated prior limitation or when the abstract cannot support a meaningful mechanism-to-evidence link."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide numerical benchmark scores, comparator details beyond pretrained ControlNets, or the evaluation conditions underlying the temporal-consistency and downstream-task claims.",
+      "The basis and scope of the stated DAVIS 2017 state-of-the-art comparison are unspecified."
+    ]
+  }
+}

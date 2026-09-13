@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31905",
+    "title": "Geometry of Neural Reinforcement Learning in Continuous State and Action Spaces",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31905"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "12746929be872ff5ea76378389218b6ee778792acac8f7122a415fd5eeabfd9b",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "72f49cf60d1be68dd6ca7e41799b4cb1436ccacfaef8307ba3a88c6473354b73",
+    "extracted_at": "2026-09-12T23:56:39.745639+00:00",
+    "session_id": "01a0980c-f3b5-7630-9443-d70ba418dae1",
+    "usage": {
+      "input_tokens": 12758,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 803,
+      "reasoning_output_tokens": 65
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ea74d949235d1258d5769e691c10d56eeee0cced2c975b9c2eeeceb41ec1a755"
+    },
+    {
+      "id": "S2",
+      "sha256": "71b1a7e275725964f84ed874bcc2ca5f706154e1a0e8448f75600eedabd99e2b"
+    },
+    {
+      "id": "S3",
+      "sha256": "0e2055102396e8def745c6f6758a6a571775b7921d9bd0fa4b89251c2c6cd943"
+    },
+    {
+      "id": "S4",
+      "sha256": "ad5ba845616b2767bf0fcf62947abd36bf28f7fefba335652f31c91c42685012"
+    },
+    {
+      "id": "S5",
+      "sha256": "3ac6755c51cb4fd9bec7eae7e338358cc149bac0c31701b1c964876ea75c500e"
+    },
+    {
+      "id": "S6",
+      "sha256": "3d90b997294fec1e35cd2d6ad47985d713307f707660dfee822776f62b972397"
+    },
+    {
+      "id": "S7",
+      "sha256": "61bd6a39e826240a154b834f0fa5edb3c71e9f5713ec2d5ba2cd575aeaf74c89"
+    },
+    {
+      "id": "S8",
+      "sha256": "939a40cce9a6cb080d2de01aff189db5453a4473da3fe8a7c42d74e325f79844"
+    },
+    {
+      "id": "S9",
+      "sha256": "7c0425bc43ae9f5fa52d31175dc64d0d0f09d28f1c7cbed14acdf3f57e51132c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31905",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop a theoretical account of reinforcement learning with continuous state and action spaces using the geometry of locally attainable states.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Most theoretical RL work concerns finite state and action spaces despite practical advances in continuous domains.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Characterizes attainable states induced by parametrized policies trained with a semi-gradient approach, showing that a two-layer neural policy trained by actor-critic dynamics induces a low-dimensional manifold within the nominal state space.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theoretical result",
+        "claim": "Proves that, under certain conditions, the manifold dimension is on the order of the action-space dimension.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "method and application",
+        "claim": "Introduces a local manifold-learning layer for policy and value networks that changes one neural-network layer to learn sparse representations for high-degree-of-freedom control.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe their result as the first linking state-space geometry to action-space dimensionality.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report empirical corroboration of the dimensionality upper bound in four MuJoCo environments.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report demonstrating the result in a toy environment with varying dimensionality.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report improved control performance in environments with very high degrees of freedom after adding the local manifold-learning layer.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Practical RL has succeeded in continuous state and action spaces, while theory has mostly focused on finite spaces.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framing",
+        "summary": "The paper proposes a geometric lens centered on locally attainable states and sets induced by parametrized policies.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "main result",
+        "summary": "For a two-layer neural policy trained with actor-critic dynamics, attainable states form a low-dimensional manifold; under certain conditions its dimension scales with action-space dimension.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "validation and application",
+        "summary": "The authors report tests in four MuJoCo environments and a varying-dimensionality toy environment, then apply the result through a sparse-representation manifold-learning layer.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a geometric structural claim, an explicit dimensionality relation, empirical corroboration, and a network-layer intervention.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "A compact theory-to-method narrative can make an abstract's conceptual contribution and practical use mutually legible.",
+        "application": "When presenting a structural learning-theory result, state the object characterized, the quantitative relation, the reported checks, and the concrete architectural change it motivates.",
+        "exception": "This framing is unsuitable when the proposed intervention is not directly derived from the stated theoretical result or when the abstract lacks a concrete application."
+      }
+    ],
+    "unknowns": [
+      "The conditions required for the dimensionality bound are not specified.",
+      "The abstract does not provide numerical dimensions, performance gains, baselines, environment details, or evaluation protocols.",
+      "The precise definition of the attainable-state manifold and local manifold-learning layer is not given."
+    ]
+  }
+}

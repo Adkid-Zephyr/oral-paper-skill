@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006659",
+    "title": "Overparametrization bends the landscape: BBP transitions at initialization in simple Neural Networks",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006659"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6d7ad4bdfc654a9f8d4a9d64d0b13322daca5b777f10cc212e0ae6259e985d09",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "0c644a7722838693fd90d6458082d56fcb017a48be0d404f20517b247f529d23",
+    "extracted_at": "2026-09-12T23:58:19.880165+00:00",
+    "session_id": "01a0980e-7180-7ab0-be84-f95be9fd4747",
+    "usage": {
+      "input_tokens": 12786,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 869,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e3d57f361d0dcce604cf6d9072ff753eebf39f6623c90e7d97e6198a55da3727"
+    },
+    {
+      "id": "S2",
+      "sha256": "e949365cb5caab4837ec755ec8689e8b425cc596d6c10d12c128b3dc044eefad"
+    },
+    {
+      "id": "S3",
+      "sha256": "0e5a2cba4500fe0dd6d2277f23c5706560be596be580650154944682813138e2"
+    },
+    {
+      "id": "S4",
+      "sha256": "0299d9bb6eccfcd24afeb545f0536411f6fd96ffa3d72eb015644fef9baa5b33"
+    },
+    {
+      "id": "S5",
+      "sha256": "302dfae306565566742889dd10bfbb7a85e3f8b770346eab89640ba2e0717bfd"
+    },
+    {
+      "id": "S6",
+      "sha256": "7bd65f966151a68c7b9eed1f4494c916aa5c6a8d781b4ad6ab42552d734efed2"
+    },
+    {
+      "id": "S7",
+      "sha256": "6c5a1d8e775b55700ff76e3fb9a6577ea97853b49016abe20156064c8a3aa4cb"
+    },
+    {
+      "id": "S8",
+      "sha256": "fe49774249f3f2c2c1c6726e3985fee870c34dd568195f85536b2a186d6822b0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006659",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Analyze how overparameterization affects the loss landscape and initialization informativeness in a simple teacher–student learning problem generalizing phase retrieval.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A field-theoretic Hessian-spectrum analysis identifies a BBP data transition separating informative and uninformative initialization regimes.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theoretical finding",
+        "claim": "The analysis shows that overparameterization shifts the transition, potentially reaching the information-theoretic weak-recovery threshold at large overparameterization, while changing whether the transition is continuous or discontinuous.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "finite-size analysis",
+        "claim": "For discontinuous transitions, the authors estimate a lower SNR threshold below which initialization becomes entirely uninformative.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors emphasize that overparameterization can bend the landscape by shifting and qualitatively altering BBP transitions, including their limiting location and continuity type.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report simulations supporting their analytical predictions and compare them with finite-N behavior.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "For discontinuous BBP transitions, the authors report that strong finite-N corrections permit information retrieval at an SNR below the predicted BBP transition.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report estimates of a new lower SNR threshold marking when initialization becomes entirely uninformative in those discontinuous-transition cases.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames high-dimensional non-convex landscapes and their interaction with gradient-based optimization as an important question, even in simple models.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "setup",
+        "summary": "It studies a prototypical teacher–student problem that generalizes phase retrieval to overparameterized settings.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "Using field-theory techniques, it analyzes the initialization Hessian spectrum and identifies informative versus uninformative BBP regimes.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "main finding",
+        "summary": "It reports that overparameterization shifts the transition toward the weak-recovery threshold and can change its continuous or discontinuous character.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "finite-N qualification",
+        "summary": "For discontinuous transitions, finite-N corrections are reported to enable lower-SNR retrieval and motivate a lower uninformative threshold.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates the asymptotic BBP transition from finite-N corrections and introduces a distinct lower SNR threshold for complete loss of initialization information.",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "This preserves the distinction between a predicted phase boundary and finite-size operational behavior.",
+        "application": "When presenting phase-transition results, report the asymptotic boundary, finite-size deviations, and any separately defined practical threshold as different quantities.",
+        "exception": "This framing is unsuitable when the study has no finite-size analysis or no operationally distinct threshold."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact model, scaling, signal-to-noise parametrization, or overparameterization limit.",
+      "Simulation sizes, quantitative threshold estimates, and the extent of agreement with finite-N behavior are not given.",
+      "The abstract does not provide details sufficient to assess the analytical derivation or the meaning of “entirely uninformative.”"
+    ]
+  }
+}

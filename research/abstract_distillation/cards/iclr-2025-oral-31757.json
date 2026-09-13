@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31757",
+    "title": "MoE++: Accelerating Mixture-of-Experts Methods with Zero-Computation Experts",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31757"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a8ca1bfec55c58cc5732b1301b04f1bce0320180784a5bd8cb0b500251caf8a8",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "9f53a728387688d568b772cfcda3ce743e2e76c015a243f8aca994f3f24ead3b",
+    "extracted_at": "2026-09-12T23:50:49.434393+00:00",
+    "session_id": "01a09807-9c23-77f2-a5b2-89ef07046d4c",
+    "usage": {
+      "input_tokens": 12826,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 775,
+      "reasoning_output_tokens": 118
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "efa031653e1d975dc945effccb5c3a36bff762f718aa6605b7f6e99e47da0819"
+    },
+    {
+      "id": "S2",
+      "sha256": "534d6905525724e104f923bec423021d27103cdf5d98ade1545271b98ab9f877"
+    },
+    {
+      "id": "S3",
+      "sha256": "2a2a700722b0c7323335fab076b06563952e3fa6ad69985983411fda2e9c4bfd"
+    },
+    {
+      "id": "S4",
+      "sha256": "70aaf306d5b824ce15efdda103474cdac9ea8cd9c04d0fbb5ce3bffbf6c155d2"
+    },
+    {
+      "id": "S5",
+      "sha256": "43c3b2d0e95f0835f12cc4e517f8aa442680b467e384da2f6c844361132e0977"
+    },
+    {
+      "id": "S6",
+      "sha256": "467e51ef5e010b4721a181e6fc89298bcf4e4e980a87bd897c7f295709530a18"
+    },
+    {
+      "id": "S7",
+      "sha256": "44958d06d4d041c4ff6972700e9907d8a4793b748216311d9ad9ae2364270ac9"
+    },
+    {
+      "id": "S8",
+      "sha256": "7270cfa317cfd36ddae4088471b2590557c692fc79f2bd9354dbcacbe5d39f3a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31757",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Simultaneously improve the effectiveness and efficiency of Mixture-of-Experts methods.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Proposes MoE++, a general heterogeneous framework combining FFN experts with zero-computation experts.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces zero, copy, and constant experts corresponding to discard, skip, and replace operations, and uses gating residuals to incorporate the previous layer’s pathway when selecting experts.",
+        "source_ids": [
+          "S3",
+          "S7"
+        ]
+      },
+      {
+        "type": "deployment design",
+        "claim": "Distributes negligible-parameter zero-computation experts across GPUs to reduce communication and expert-load-imbalance costs associated with distributed FFN experts.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish MoE++ through heterogeneous integration of FFN and zero-computation experts, including three operation-specific expert types.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report better performance and 1.1–2.1× expert forward throughput versus a same-size vanilla MoE model.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "objective",
+        "summary": "Defines the goal of improving MoE effectiveness and efficiency simultaneously.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "Presents MoE++ as a heterogeneous combination of FFN and zero-computation experts.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "Specifies zero, copy, and constant experts, then adds gating residuals so routing can consider the preceding layer’s pathway.",
+        "source_ids": [
+          "S3",
+          "S7"
+        ]
+      },
+      {
+        "role": "claimed advantages",
+        "summary": "Attributes lower computation, higher performance potential, and easier deployment to adaptive FFN usage and locally deployable zero-computation experts.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Reports improved performance and 1.1–2.1× expert forward throughput over same-size vanilla MoE.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links each zero-computation expert to an explicit operation—discard, skip, or replace—and separately connects those operations to computation and deployment benefits.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "Mapping mechanisms to concrete operations and claimed benefits makes the design rationale traceable.",
+        "application": "When introducing a modular architecture, name each module’s exact operation and state which claimed cost or capability it addresses.",
+        "exception": "This framing is less suitable when module behavior cannot be defined independently or benefits depend on interactions not captured by one-to-one mappings."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, model scales, baselines beyond vanilla MoE, statistical details, or which performance metrics support the reported improvement.",
+      "The conditions under which the 1.1–2.1× throughput range holds are unspecified."
+    ]
+  }
+}

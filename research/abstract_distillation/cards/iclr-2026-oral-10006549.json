@@ -1,0 +1,217 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006549",
+    "title": "RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006549"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "fc5847a9a9249180c5ee8bf1e82294a3bb98361eb3defebc954c7464a61ec8df",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "86ca80ad22813a51e0ef426818c4d1673bd79efaa4386d1e353c1395a27180be",
+    "extracted_at": "2026-09-12T23:39:46.763018+00:00",
+    "session_id": "01a097fd-8249-79b3-a810-cd14e187ee95",
+    "usage": {
+      "input_tokens": 12875,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 763,
+      "reasoning_output_tokens": 87
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b9b18a03a403877fd913826e7a6d0ac952dfbd889e516eacc88942e1b773d770"
+    },
+    {
+      "id": "S2",
+      "sha256": "eb9c804dfd42e21352a04e269adf8eee95b5aacd3ee462eb2b60fc2c84ee2c6d"
+    },
+    {
+      "id": "S3",
+      "sha256": "f56ae159bac6339c29e86dee02a2ad2c8ae26b4aedc13b96e7918d643ed99e3b"
+    },
+    {
+      "id": "S4",
+      "sha256": "e4c052450e8e9ef9db543534f07ca2382bbfe399f9b19b0b703036ffce6d4218"
+    },
+    {
+      "id": "S5",
+      "sha256": "b11c759b6687de0b03d759e255296de90595617c3a7474b37c8bd3e4383ade3b"
+    },
+    {
+      "id": "S6",
+      "sha256": "6366732916e1a79b2e7ea1b48d88e0b47016a6a1712837489a6ec8465b096f75"
+    },
+    {
+      "id": "S7",
+      "sha256": "04584d7492fd32221d62dfef9824b4d3cf1aef22d1d8cd4dee909c257f2cf2f3"
+    },
+    {
+      "id": "S8",
+      "sha256": "814e7650085ea53d008c77d5b2fedf3869f2e62ff79e6d79ec0e7a53f7fc2bf0"
+    },
+    {
+      "id": "S9",
+      "sha256": "7d8486d0de037fc691697c66b13ae2e3f6be72eec98ba18902d764facdbc0029"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006549",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Indirect prompt injection can hijack computer-use agents operating across web and OS environments.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing evaluations lack realistic controlled adversarial testing or omit hybrid web-OS attack scenarios.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "RedTeamCUA, an adversarial testing framework with a VM-based OS and Docker-based web hybrid sandbox.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "benchmark",
+        "claim": "RTC-Bench, a benchmark of 864 realistic hybrid web-OS attack examples.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Benchmarking frontier CUAs reveals substantial attack susceptibility and frequent attempts at adversarial tasks.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe the hybrid sandbox as novel and tailor it for configurable red-team scenarios initialized at the injection point.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report an ASR of 42.9% for Claude 3.7 Sonnet | CUA and 7.6% for Operator, the most secure evaluated CUA.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report attempt rates as high as 92.5%, with failures attributed to capability limitations.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report ASRs up to 50% in realistic end-to-end settings.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "threat",
+        "summary": "CUAs are presented as vulnerable to indirect prompt injection across web and OS tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "evaluation gap",
+        "summary": "Prior evaluations are described as lacking realistic controlled testing or hybrid web-OS coverage.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework and resource",
+        "summary": "RedTeamCUA introduces a hybrid sandbox and RTC-Bench with 864 attack examples.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The authors report ASRs of 7.6% for Operator and 42.9% for Claude 3.7 Sonnet | CUA, an Attempt Rate as high as 92.5%, and end-to-end ASRs up to 50%.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The authors call for robust indirect-prompt-injection defenses before deployment.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates attack attempts from completed attack success and reports both metrics.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This distinction exposes failures caused by agent capability limits rather than only resistance to attack.",
+        "application": "Report attempt rate alongside success rate when evaluating agent security.",
+        "exception": "Attempt rate may be less informative when the evaluation task does not require an explicit agent action."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the complete evaluated CUA set, detailed benchmark construction or splits, statistical uncertainty, or defense baselines.",
+      "The reported ASRs' denominators and exact scenario conditions are not provided."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "narrative_sequence[3].summary",
+      "before": "Frontier CUA tests show ASRs from 7.6% to 42.9%, attempts up to 92.5%, and end-to-end ASRs up to 50%.",
+      "after": "The authors report ASRs of 7.6% for Operator and 42.9% for Claude 3.7 Sonnet | CUA, an Attempt Rate as high as 92.5%, and end-to-end ASRs up to 50%.",
+      "review_file": "reviews/pilot-01.json",
+      "review_sha256": "b548b6b21cf5cc87e15a0fb065b4980eb113634df49f0ca4263694767799715c",
+      "applied_at": "2026-09-12T23:46:38.299393+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "unknowns[0]",
+      "before": "The abstract does not specify the evaluated CUA sample, benchmark construction or splits, statistical uncertainty, or defense baselines.",
+      "after": "The abstract does not specify the complete evaluated CUA set, detailed benchmark construction or splits, statistical uncertainty, or defense baselines.",
+      "review_file": "reviews/pilot-01.json",
+      "review_sha256": "b548b6b21cf5cc87e15a0fb065b4980eb113634df49f0ca4263694767799715c",
+      "applied_at": "2026-09-12T23:46:38.299942+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

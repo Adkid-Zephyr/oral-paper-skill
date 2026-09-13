@@ -1,0 +1,225 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97981",
+    "title": "DapperFL: Domain Adaptive Federated Learning with Model Fusion Pruning for Edge Devices",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97981"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7e75ab6d140070ceb6bf1421a9905789f3d27a13775fca0e51ce51f63109786d",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "3258f51e05c12bb0903c5a16fb8c2fc60dc425554a8e08f20c5d24eea32033a5",
+    "extracted_at": "2026-09-13T00:19:13.308220+00:00",
+    "session_id": "01a09821-936a-7041-ab5c-68ff16f0d227",
+    "usage": {
+      "input_tokens": 12824,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 947,
+      "reasoning_output_tokens": 61
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a8d19e1e5e3226272566c6de4a37b0d3f9c79d3e178b16c490c710ff9405295c"
+    },
+    {
+      "id": "S2",
+      "sha256": "eeb8e510a21865294d63afdcdbb0aad0cc89f048b0996ba62520f881fd84fee7"
+    },
+    {
+      "id": "S3",
+      "sha256": "38c91f5869596230fde689c86e6f67baa6dc3905cff931c9e78e5df37cd72a02"
+    },
+    {
+      "id": "S4",
+      "sha256": "3493cc4460bd20874616e5885cb86388632fee95e95b074bc71cde467f8c1142"
+    },
+    {
+      "id": "S5",
+      "sha256": "76fa916381660d9ee611a84ead7df23ce2f94b5eb5b80a7b5561d8c606fd0f1b"
+    },
+    {
+      "id": "S6",
+      "sha256": "d8d8c7ba4abcf11194c241ec7fdef1b64dc7692799047fca7d2826b65e682452"
+    },
+    {
+      "id": "S7",
+      "sha256": "77dea409d1526c940d7665142f3cf3588581eb79751079ebf22ffa5223953651"
+    },
+    {
+      "id": "S8",
+      "sha256": "02b7de23fccad3c9362653d5dbc2ddacbfe15fb8e830a1da010ca17b62d89f4d"
+    },
+    {
+      "id": "S9",
+      "sha256": "8c12dd02e2b738773d04a118813cc981362785bac9c3581bda2bd854533e9a9c"
+    },
+    {
+      "id": "S10",
+      "sha256": "94b8884dc85755907cef1140884805a02662c6b18e83b147cb5ea670630f7cef"
+    },
+    {
+      "id": "S11",
+      "sha256": "005866b64bcb765212ce29b448c4c8163044c522eb2861b35219787b47d8277e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97981",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve federated-learning model performance across multiple domains on heterogeneous edge clients.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing federated-learning frameworks experience efficacy deterioration from system heterogeneity, particularly under domain shifts in local data.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DapperFL combines Model Fusion Pruning to create personalized compact local models with Domain Adaptive Regularization intended to learn robust cross-domain representations.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "aggregation method",
+        "claim": "A specific algorithm aggregates heterogeneous local models with tailored architectures and weights.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The framework was implemented on a real-world federated-learning platform with heterogeneous clients.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present DapperFL as a heterogeneous federated-learning framework integrating model-fusion pruning, domain-adaptive regularization, and tailored aggregation for multi-domain settings.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S6",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that benchmark experiments across multiple domains show DapperFL outperforming several state-of-the-art federated-learning frameworks by up to 2.28%.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report model-volume reductions of 20% to 80% in those experiments.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report a real-world platform implementation involving heterogeneous clients.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Federated learning supports collaborative global-model optimization on edge devices without sharing private data, but heterogeneity and domain shifts can reduce efficacy.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The authors propose DapperFL to improve performance across multiple domains.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "modules",
+        "summary": "DapperFL uses fused local and remaining-domain knowledge for pruning, then applies regularization generated by the pruned model to encourage robust representations.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "coordination",
+        "summary": "A tailored aggregation algorithm combines local models with heterogeneous architectures and weights.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report platform implementation and benchmark gains of up to 2.28% alongside 20%–80% model-volume reductions.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links each proposed component to a stated deployment challenge: pruning addresses system heterogeneity, fused knowledge addresses domain shifts, and regularization targets robust cross-domain representations.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "This creates an explicit challenge-to-mechanism alignment that helps readers understand why the design is composed of multiple modules.",
+        "application": "When presenting a multi-component method, map each component to a distinct failure mode and state the intended mechanism.",
+        "exception": "Avoid one-to-one mappings when components interact substantially or the abstract lacks evidence isolating their roles."
+      },
+      {
+        "source_observation": {
+          "claim": "The reported headline comparison preserves both performance direction and compression range: outperforming several frameworks by up to 2.28% while reducing model volume by 20%–80%.",
+          "source_ids": [
+            "S10"
+          ]
+        },
+        "interpretation": "Pairing utility and resource outcomes makes the claimed edge-device trade-off immediately assessable.",
+        "application": "Report task-performance and deployment-cost outcomes together, retaining qualifiers such as “up to” and the relevant range.",
+        "exception": "Do not combine metrics when they use incompatible evaluation settings or when the abstract does not establish their joint measurement."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark datasets, domains, baselines, metrics, statistical variation, or experimental settings behind the 2.28% and 20%–80% figures.",
+      "It does not report ablations separating the effects of MFP, DAR, and the aggregation algorithm.",
+      "The abstract states intended robustness and representation benefits but provides no detailed robustness protocol or conditions."
+    ]
+  }
+}

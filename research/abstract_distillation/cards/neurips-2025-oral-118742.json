@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-118742",
+    "title": "KVzip: Query-Agnostic KV Cache Compression with Context Reconstruction",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/118742"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8e6350320544506a24fab1b5f27151ab2e779fdac8b31832f9ec2eb028c52626",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "a08a39becd460621c589c73416de2929fdfecb1b336dcffe7fbf59d894697adb",
+    "extracted_at": "2026-09-13T00:22:44.753746+00:00",
+    "session_id": "01a09824-d7c6-7a01-bf48-5e6a1b7c3678",
+    "usage": {
+      "input_tokens": 12706,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 767,
+      "reasoning_output_tokens": 106
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "15e792fa23b0359a38b338b8e619b317add726ecb806474f66eea07bc56f6f71"
+    },
+    {
+      "id": "S2",
+      "sha256": "5e023e263539f67b7c2774be9cb6183b4a24569dfae2733256124ff4cc1c3b9a"
+    },
+    {
+      "id": "S3",
+      "sha256": "e5ca0f075f8751b03b987c841005cbdee696b9f5916e8710134f2309f8859b73"
+    },
+    {
+      "id": "S4",
+      "sha256": "784e5d3e53c645b68cd57161320d66358aa805a3eb4746ce894db0b2bd6f1db8"
+    },
+    {
+      "id": "S5",
+      "sha256": "88cf2286e86113d2d30f87d75e749aec2bb5abed05596c88dcbd252df749d576"
+    },
+    {
+      "id": "S6",
+      "sha256": "6be660ea26e97e9180178e8209ab84560e2c19bfe5127f40ba96f12c0d1e9e50"
+    },
+    {
+      "id": "S7",
+      "sha256": "16e3067b82dd67c1182d998176a9876ee72bc7fd9ab15adf1dc197282e82ffa7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-118742",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Growing context lengths make KV-cache memory and attention latency costly during LLM inference.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing query-aware eviction methods reportedly degrade under multi-query use, even at a 90% cache-budget ratio.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces KVzip, a query-agnostic KV-cache eviction method designed to reuse compressed caches across diverse queries.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Ranks KV pairs by using the underlying LLM to reconstruct the original context, then evicts lower-importance pairs.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports compression and latency gains with negligible task-performance loss across several model and task settings.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish KVzip through query-agnostic cache reuse based on context reconstruction from cached KV pairs.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report 3–4× KV-cache size reduction and approximately 2× lower FlashAttention decoding latency.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Authors report negligible performance loss on question answering, retrieval, reasoning, and code comprehension tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Authors report evaluations on LLaMA3.1, Qwen2.5, and Gemma3, with contexts up to 170K tokens, and significant gains over query-aware methods in multi-query scenarios.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "LLM inference caches context as KV pairs, but longer contexts increase memory overhead and attention latency.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "KVzip enables query-agnostic compressed-cache reuse and scores KV-pair importance through context reconstruction.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The authors report substantial cache and latency reductions with negligible task-performance loss, including long-context and multi-query evaluations.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects the eviction criterion directly to reconstructing the original context, rather than only to a particular downstream query.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A task-independent objective can make a compressed representation reusable across changing query distributions.",
+        "application": "When proposing reusable compression, define importance through reconstruction of a shared underlying representation and evaluate reuse across query types.",
+        "exception": "This framing may be unsuitable when queries have sharply different task-specific information requirements or reconstruction is substantially more expensive than query-aware scoring."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify cache-budget settings, latency hardware or baselines, evaluation metrics, or the quantitative meaning of “negligible” performance loss.",
+      "The abstract does not provide implementation details or reconstruction overhead, limiting assessment of end-to-end trade-offs."
+    ]
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007440",
+    "title": "LoongRL: Reinforcement Learning for Advanced Reasoning over Long Contexts",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007440"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "010549c63d366d35e970835e1a90fd4ccb7ece57cd686c382183eea78a5ac821",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "e67b41b236f1df37068583e5120634318c19959a7abae9f627257e231c5d1bde",
+    "extracted_at": "2026-09-12T23:59:35.557202+00:00",
+    "session_id": "01a0980f-997a-7280-b205-b40195c1124f",
+    "usage": {
+      "input_tokens": 12857,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 858,
+      "reasoning_output_tokens": 67
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e899ca11833c048523cf9c29174ab7ea7a44c83580097d5ef76d74b4eb46b9d6"
+    },
+    {
+      "id": "S2",
+      "sha256": "01e33a045f0e245f9e2b95ac5cda31aae7e6fef16651c41ed835862d0e3f6200"
+    },
+    {
+      "id": "S3",
+      "sha256": "8974a4f5721134803d6401198ff6a4306adf5f43e2fc0c7e2f72400c79ae95b8"
+    },
+    {
+      "id": "S4",
+      "sha256": "35b550aa83f050f563d2d592eff1e06da82242955e3641b0aed71f76a64c17e5"
+    },
+    {
+      "id": "S5",
+      "sha256": "630d6acc86411b3459736583e9dfefbbd05f17a7e8e5b15f2d1b9a316aa965c0"
+    },
+    {
+      "id": "S6",
+      "sha256": "77b7d931c014b3565c9eafaf83716164778b6254b8e68b0869e800dea2a8c63e"
+    },
+    {
+      "id": "S7",
+      "sha256": "d9cf2214db6df912e74abe764993c7b8b340cd1f5321f23489e7fde57112641b"
+    },
+    {
+      "id": "S8",
+      "sha256": "90548c8f6a4fb1dfea399e6e3c7d6d12b81b667e3a9574eca639050bf01eaa2c"
+    },
+    {
+      "id": "S9",
+      "sha256": "8aa857be56d69f03b4a568a8afb3405ee9f1180a42d4eb78a2d879884d3229ae"
+    },
+    {
+      "id": "S10",
+      "sha256": "4f35a2ebf66ee51af9d3a50b04324ee8ce4d925e7e6f181a746eb18146a84e57"
+    },
+    {
+      "id": "S11",
+      "sha256": "2fbd0060951f6a4bb72dc5e3ff64868425c43bd7c6d3c9a52c093da77c8578c8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007440",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable language models to perform advanced reasoning over long contexts.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Advanced long-context reasoning patterns remain largely unexplored, while high-difficulty reinforcement-learning data are scarce.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "LoongRL, a data-driven reinforcement-learning method for advanced long-context reasoning.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "data synthesis",
+        "claim": "KeyChain transforms short multi-hop QA into difficult long-context tasks by hiding questions within distracting documents using UUID chains.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "reasoning finding",
+        "claim": "The authors report that KeyChain-based RL induces a plan–retrieve–reason–recheck pattern that generalizes beyond training length.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper presents LoongRL as a method specifically targeting advanced long-context reasoning through synthesized high-difficulty RL data.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that models trained at 16K effectively solve 128K tasks without prohibitive full-length RL rollout costs.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "On Qwen2.5-7B and 14B, the authors report absolute long-context multi-hop QA gains of 23.5% and 21.1%, respectively.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report a 74.2 score for LoongRL-14B, near o3-mini at 74.5 and DeepSeek-R1 at 74.9; they also report passing all 128K needle-in-a-haystack tests while preserving short-context reasoning.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation and gap",
+        "summary": "Long-context reasoning is important, but its advanced reasoning patterns and suitable difficult RL data are underexplored.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "LoongRL introduces KeyChain, which embeds hidden questions and UUID chains among distracting documents to create difficult long-context tasks.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "claimed mechanism",
+        "summary": "RL on KeyChain data is reported to induce plan–retrieve–reason–recheck behavior that extends beyond the training context length.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The authors report substantial QA gains, near-frontier-model scores, improved retrieval, 128K stress-test success, and retained short-context reasoning.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a deliberately structured task transformation—hidden questions, distractors, and chained retrieval—to an emergent multi-stage reasoning pattern under RL.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A training-data construction can make the intended reasoning stages necessary rather than merely describing them as objectives.",
+        "application": "When proposing a reasoning method, design training examples whose solution process requires the target intermediate behaviors, then state the behavior-to-task correspondence explicitly.",
+        "exception": "This may be unsuitable when the target task lacks a reliable synthetic transformation or when imposed intermediate steps distort natural problem solving."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify evaluation datasets, baseline definitions, sample sizes, statistical variation, or the exact meaning of the reported percentage gains.",
+      "Details supporting the claims about emergent reasoning, retrieval improvement, and preservation of short-context abilities are not provided.",
+      "The abstract does not establish independent verification of the reported comparisons or stress-test results."
+    ]
+  }
+}

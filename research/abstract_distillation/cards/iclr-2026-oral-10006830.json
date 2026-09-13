@@ -1,0 +1,209 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006830",
+    "title": "Partition Generative Modeling: Masked Modeling Without Masks",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006830"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3652716db0b2549201dd8a888b8476cecf4b28b7473b813376c17469b29aba11",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "28a897542459e9f48d5967f0d5c97af0a685dd0b9042328700498fa4b10db370",
+    "extracted_at": "2026-09-12T23:58:44.247835+00:00",
+    "session_id": "01a0980e-cebe-7140-b7a2-1eeac2e88e16",
+    "usage": {
+      "input_tokens": 12777,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 894,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ee7868730db6382c6a865ae122752d57666598823232248104beded6f82fd6dd"
+    },
+    {
+      "id": "S2",
+      "sha256": "eba89cad13aca35de89727bebfe6ac891b439005fbd19a371df2b7bab765d4ae"
+    },
+    {
+      "id": "S3",
+      "sha256": "cfdfcc06bd821aa3b9a96ea00c0ffd9340f3c69ac7a5514a74544113a55b699f"
+    },
+    {
+      "id": "S4",
+      "sha256": "a2cf1c74a2847ab74907f78ba4a74a357d01905ace4c5a263993372ead923f2d"
+    },
+    {
+      "id": "S5",
+      "sha256": "c3744cbdf137d0e11126b8dec18755b8f85ebac578e8e5b780fe06e62ea2af3d"
+    },
+    {
+      "id": "S6",
+      "sha256": "ca3dc56178e87cc2b135702f80eb1ab61e3be7ac79d83fb2a2806cec97408af1"
+    },
+    {
+      "id": "S7",
+      "sha256": "74fe857cd852f6edb188bc8d4a039251346078a4348af170be70e3d5e4dc95a2"
+    },
+    {
+      "id": "S8",
+      "sha256": "4d259fd6b9c50e8d0c34e933f45c31f49aa5b43065447f3b79e938c4ccaf2d15"
+    },
+    {
+      "id": "S9",
+      "sha256": "a7a630a300f1e70697e75496da52d13ce7694ede1e3e19d9fdd207ad91709b44"
+    },
+    {
+      "id": "S10",
+      "sha256": "1ac11b5392d3e49a71eb4286eca84edc3cd2c56405c7efccd9e7a7fa2c3164ff"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006830",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reduce the sampling cost of masked generative models while preserving parallel, any-order generation.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Masked generative models process full-length sequences at every step, including information-free mask tokens, unlike autoregressive models that process only generated tokens.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Partition Generative Models, replacing masking with partitioning: two non-attending token groups are predicted conditionally on each other.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses group non-interaction to process only clean tokens during sampling while retaining parallel, any-order generation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "compatibility",
+        "claim": "Reports compatibility with existing masked-model samplers and distillation methods.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish PGMs from masked modeling by eliminating mask tokens through partitioning while combining ARM-like sampling efficiency with MGM-like generation flexibility.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "On OpenWebText, PGMs reportedly achieve 5–5.5× higher throughput than MDLM and produce samples with lower Generative Perplexity.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "On ImageNet, PGMs reportedly obtain comparable FID to MaskGIT with 7.5× higher throughput.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "With twice as many steps, the reported ImageNet FID improves to 4.56 while PGMs remain 3.9× faster than MGMs.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "MGMs support parallel and arbitrary-order generation, but repeatedly process full sequences containing uninformative mask tokens.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "contrast",
+        "summary": "ARMs avoid this overhead by processing only previously generated tokens, though they decode sequentially and left-to-right.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "PGMs replace masks with two mutually non-attending groups and conditionally predict each group from the other.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "This partitioning permits clean-token-only sampling while retaining parallel, any-order generation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The abstract reports throughput and quality comparisons on OpenWebText and ImageNet, plus sampler and distillation compatibility.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract frames the method as resolving a specific computational inefficiency while preserving the two capabilities motivating masked generation: parallelism and arbitrary ordering.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A strong technical pitch can make the design rationale explicit by mapping one mechanism to the removed bottleneck and separately stating which desirable properties remain.",
+        "application": "When introducing a model, describe the replaced operation, the computational consequence, and the retained capabilities in one linked argument before presenting results.",
+        "exception": "This framing is unsuitable when the method changes the task or its objective so substantially that capability preservation cannot be stated meaningfully."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify sampling configurations, hardware, baselines’ implementation details, or how throughput was measured.",
+      "The meaning of “lower Generative Perplexity” and “comparable FID,” including uncertainty or statistical significance, is not provided.",
+      "The reference point for “twice as many steps” and the exact comparison conditions for the 4.56 FID and 3.9× speedup are unspecified."
+    ]
+  }
+}

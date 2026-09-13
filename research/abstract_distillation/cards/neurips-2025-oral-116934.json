@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-116934",
+    "title": "Auto-Compressing Networks",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/116934"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e126731e82d546b94c63fa9065636751522407a479641a50bb1491106391c77f",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "fcecd47de84f30a8316c507dfd1f32114a8cfaea5c2779533a76d815d8eeb293",
+    "extracted_at": "2026-09-13T00:21:39.407916+00:00",
+    "session_id": "01a09823-da76-7582-b5e1-2f7cdd310480",
+    "usage": {
+      "input_tokens": 12775,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 745,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "093eaf45b301725eb0ff1dbf115ceb86b749abbede4924381bfc8109689b2742"
+    },
+    {
+      "id": "S2",
+      "sha256": "003e2eba48ace14e09d1976d25eccb9be1343673238b7ece5eb62503e48e13f8"
+    },
+    {
+      "id": "S3",
+      "sha256": "e53220ec5f1d602f808d5a83ca571c8cc3e6f75434cb8718c90ddc1e1abd01cd"
+    },
+    {
+      "id": "S4",
+      "sha256": "79a035441281b9c8c435f92f5676c60e599f9492bed39a99e68116d01bd7e6de"
+    },
+    {
+      "id": "S5",
+      "sha256": "9d2cc21389a9e4a8b73a92572bbb0a2e9c0f1e542159331feeefcdfdf64d6810"
+    },
+    {
+      "id": "S6",
+      "sha256": "8a49f333d1327a924beff2afc2efe4e9bc93e9e2645bb6cfa7018ff10742d0f3"
+    },
+    {
+      "id": "S7",
+      "sha256": "fcb17035efbd0dd153f78dcdcb215583f5d3d2dcebba80b7e1c241801c7019ff"
+    },
+    {
+      "id": "S8",
+      "sha256": "d283c46ceb19edcef76f3e048732ce75eaed69284864b371f699948094c0fbb9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-116934",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Deep networks can gain depth-related computational redundancy without corresponding representation-quality improvements.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing short-residual architectures do not, as described here, automatically identify and compress redundant computation during training.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Auto-Compressing Networks, replacing short residual connections with additive long feedforward connections from each layer to the output.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Characterizes auto-compression as training-driven information movement toward early layers and attributes it to ACN-specific layer-wise training dynamics.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports robustness, low-data, transfer-learning, and catastrophic-forgetting advantages across several architecture families.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present auto-compression as a distinct architectural property arising through gradient-descent training from architecture alone.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report enhanced noise robustness, low-data performance, transfer learning, and reduced catastrophic forgetting relative to residual networks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report up to 18% less catastrophic forgetting and 30–80% architectural compression while maintaining accuracy across vision transformers, MLP-mixers, and BERT architectures.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Increasing depth can add computational redundancy without comparable representational gains.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "architectural proposal",
+        "summary": "ACNs replace short residual connections with additive long connections from every layer to the output.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "mechanistic account",
+        "summary": "The architecture is described as organically compressing information during training, pushing information into early layers and exposing deeper-layer redundancy.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "theory and reported outcomes",
+        "summary": "The authors link the behavior to ACN-specific layer-wise training patterns and report broad robustness, efficiency, and continual-learning benefits.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a named mechanism—information being pushed into early layers—with a quantified compression and forgetting result.",
+          "source_ids": [
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "Naming an interpretable mechanism can connect an architectural proposal to its claimed empirical benefits.",
+        "application": "When presenting a new architecture, define the hypothesized internal dynamic and then report measurements that directly reflect both the dynamic and the target outcome.",
+        "exception": "This framing is unsuitable when the mechanism is only speculative or when the available measurements cannot distinguish it from alternative explanations."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, evaluation protocols, statistical variation, or the conditions behind the reported percentage ranges.",
+      "The scope and verification details of the theoretical result are not provided.",
+      "The meaning and measurement of maintaining accuracy, architectural compression, and layer utilization are unspecified."
+    ]
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71188",
+    "title": "GoodDiffusion: Proactive Copyright Protection for Diffusion Bridge Models via Learnable Sample-specific Signatures",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71188"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e57da031a7bc4f3192b8532c70d0befe9f89662a4ec25d0d60d6d1458f7c0020",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "f08509e898a584e3b5d1873790fbd4135cdc4d18982606aeb3200aa5a39fb706",
+    "extracted_at": "2026-09-13T00:17:38.071402+00:00",
+    "session_id": "01a09820-2857-7371-8012-25e200e6f44b",
+    "usage": {
+      "input_tokens": 14251,
+      "cached_input_tokens": 9984,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 759,
+      "reasoning_output_tokens": 83
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a7ac0b064d754ad0968c4ca89f407936b35150dc99b6073e0b4706dc34ca8972"
+    },
+    {
+      "id": "S2",
+      "sha256": "7990284b380535d35d8864647a9d49052ff1f5deb7a45d82133e044fcf0f5f4e"
+    },
+    {
+      "id": "S3",
+      "sha256": "cf642e3cdb97d4618977e1ea82a94f5cc183dded646e431bebf63d760ad75354"
+    },
+    {
+      "id": "S4",
+      "sha256": "c34118b8f4c5560cd29fcd536dd20aa4674327ecf168f1f77c4eb9f55aa4bf30"
+    },
+    {
+      "id": "S5",
+      "sha256": "7b8f05809a3cbef0d11e013f14a50c78f1f55abfa33eeb39bf5664481a71dfef"
+    },
+    {
+      "id": "S6",
+      "sha256": "a92468ce6ff12d7a453feecaa41ea87c200968cfd8d5c51dac47ed9aa016c249"
+    },
+    {
+      "id": "S7",
+      "sha256": "f29786a477624edebfd0b0fb11602cea9f98f5417bb60eb7dfee4ed82ea31673"
+    },
+    {
+      "id": "S8",
+      "sha256": "aa3012ce932756d3980fe14b97058af232f217acca52f6243d81ba3b78eaa7ee"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71188",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop a proactive copyright-protection mechanism that prevents unauthorized use of diffusion bridge models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing attribution and degradation-only defenses provide only indirect and limited preventive effects.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "GoodDiffusion internalizes authorization into the generative process, permitting validly signed queries while refusing unauthorized inputs.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "security mechanism",
+        "claim": "The Learnable Signature Network assigns input-conditioned, sample-specific signatures to prevent signature transfer across inputs.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The paper reports that static signatures are vulnerable to efficient surrogate recovery through gradient-based optimization.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed distinction is model-level, use-time authorization implemented through selectively permissive behavior and learnable sample-specific signatures.",
+      "source_ids": [
+        "S3",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that naive static-signature designs are fundamentally fragile because gradient-based optimization can efficiently recover a surrogate signature.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report extensive experiments showing blocked unauthorized use alongside strong generation quality for authorized users.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem",
+        "summary": "The paper frames proactive prevention of unauthorized diffusion bridge-model use as the target.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "It characterizes prior watermarking, fingerprinting, and degradation defenses as indirect and limited in preventive effect.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "GoodDiffusion embeds authorization into generation, preserving access for valid signatures and closing it otherwise.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "security refinement",
+        "summary": "After reporting static-signature vulnerability, the paper introduces input-conditioned signatures via LSN to prevent cross-input transfer.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report experiments supporting unauthorized-use blocking with strong authorized-user generation quality.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a proposed access-control behavior with an explicit attack on static signatures, then motivates sample-specific signatures as the security refinement.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A security contribution is easier to assess when the design addresses a concrete failure mode of a simpler baseline.",
+        "application": "When presenting a protective mechanism, define the baseline attack or bypass, report its consequence, and map each architectural refinement to that failure.",
+        "exception": "This framing is less suitable when the work is not security-oriented or lacks a concrete threat model and attack condition."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, metrics, threat-model assumptions, attack budgets, or quantitative generation-quality results.",
+      "It does not provide details sufficient to assess how authorization signatures are issued, validated, or maintained across deployment settings.",
+      "The claim that LSN prevents transfer is reported without stated scope or attack conditions."
+    ]
+  }
+}

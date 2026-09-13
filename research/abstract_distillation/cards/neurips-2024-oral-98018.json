@@ -1,0 +1,150 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-98018",
+    "title": "Embodied Agent Interface: Benchmarking LLMs for Embodied Decision Making",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/98018"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8139d6c7d2e3a1ac2a5a0c71d7ebfb1ecf2d604d60ba13901435f68ec75ade0b",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "11647b55e5a866028b70b830f12b2cae19c1f5aa6a082ca37a394da204017692",
+    "extracted_at": "2026-09-13T00:20:06.489996+00:00",
+    "session_id": "01a09822-72d8-7b81-8540-b32e08a01c3e",
+    "usage": {
+      "input_tokens": 12764,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 640,
+      "reasoning_output_tokens": 127
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "977664202c1788a5f87c5da27ed79c37e61681dec2737a56f43da5d89945c6d8"
+    },
+    {
+      "id": "S2",
+      "sha256": "ce8571c1cd98af161853821265b64fba5693afa7aeadb27882f97d21581c662d"
+    },
+    {
+      "id": "S3",
+      "sha256": "01eb4dc5759da25ac4970e6a0b3ae16824ca4b182e0def8b143146c4d1e6c25b"
+    },
+    {
+      "id": "S4",
+      "sha256": "fd8f0083af2018f9c1b6c5e5b97010e94870c9f896b4f514beb7d8f6217a2ddf"
+    },
+    {
+      "id": "S5",
+      "sha256": "920c3ac0fb36abc57e52da14dff97f2c49c1912a5205447e0a0a72fd72ac5b92"
+    },
+    {
+      "id": "S6",
+      "sha256": "13e85c74c91b56cf3ac3aae6f0a0fa263c3bd791f6e496d33966c054dc848ef9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-98018",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate LLMs for embodied decision making.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing work lacks systematic performance understanding because applications differ in domains, purposes, inputs, and outputs; final success rates also obscure missing abilities and failure locations.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "interface",
+        "claim": "Proposes the Embodied Agent Interface to formalize varied embodied tasks and LLM-module input-output specifications.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "benchmark",
+        "claim": "Unifies embodied tasks, four decision-making modules, and fine-grained error metrics covering hallucination, affordance, and planning errors.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated distinction is a generalized interface and benchmark that jointly standardize task/module specifications and decompose evaluation by error type.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [],
+    "narrative_sequence": [
+      {
+        "role": "objective",
+        "summary": "The paper aims to evaluate LLMs for embodied decision making.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "It identifies fragmented prior applications and coarse final-success evaluation as barriers to systematic diagnosis and selective use.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "It introduces a generalized interface spanning tasks, modules, and formalized input-output specifications.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "claimed_value",
+        "summary": "The authors report that the resulting benchmark assesses subtasks and identifies strengths and weaknesses in LLM-powered embodied systems.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract replaces a single final success rate with fine-grained metrics organized around error types and specific modules.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "This links evaluation outputs to actionable capability diagnoses.",
+        "application": "For a modular AI benchmark, report module-level and error-type metrics alongside aggregate task success.",
+        "exception": "This decomposition may be unsuitable when errors cannot be reliably assigned to distinct modules or categories."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no benchmark task inventory, dataset size, metric definitions, baselines, numerical results, or validation protocol.",
+      "It does not establish that the proposed interface or benchmark improves agent performance or is novel relative to prior benchmarks."
+    ]
+  }
+}

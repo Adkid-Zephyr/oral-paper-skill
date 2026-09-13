@@ -1,0 +1,173 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010024",
+    "title": "Overcoming Joint Intractability with Lossless Hierarchical Speculative Decoding",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010024"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "da1b50afb2a5fd6b4fdbcf7a5bb360622faca265f63e57eb76da28cbe0c177fb",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "bb4c5e86b87422dd9ca393e6862318661e23fab27e3d5d4234bdcc7c4b7ae4c4",
+    "extracted_at": "2026-09-13T00:03:55.049816+00:00",
+    "session_id": "01a09813-9e64-7c40-ac41-55db49fae7de",
+    "usage": {
+      "input_tokens": 12719,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 733,
+      "reasoning_output_tokens": 65
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3012a66fc122a77c5723e4bbbbf9971888714ad5b622caf0c06e28ff31611c08"
+    },
+    {
+      "id": "S2",
+      "sha256": "0097667db4731ef5d4361aa4f2d0d75c8134b0007c49ee77ee3c47d777db21a9"
+    },
+    {
+      "id": "S3",
+      "sha256": "6cb6bb782ca7c42df9748f8098abdc862e888d2b4d1c9efbd77f5175b00b4df0"
+    },
+    {
+      "id": "S4",
+      "sha256": "d498cb7fd2e875c8fa44c5d232a6f416df47ddbc13f0d7e5e8e141349e052f56"
+    },
+    {
+      "id": "S5",
+      "sha256": "367634ef33a82ff5055824d51eafddaf7879decd54f963653b709a55be043de9"
+    },
+    {
+      "id": "S6",
+      "sha256": "e9ede093143751ae7e790245df250ad5d7c740358664418d0490008f41aa1888"
+    },
+    {
+      "id": "S7",
+      "sha256": "6af2cb36f59628a42fcf93187989ac66a53b9609b043ca418a9e042888223492"
+    },
+    {
+      "id": "S8",
+      "sha256": "04f6ecb7a3a28112dfde8a1833aaea13b9f198acdcd97fa1b59d144afdf9251f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010024",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve speculative decoding inference speed while preserving distribution fidelity, with verification as the bottleneck.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches may use surrogate approximations or partial information and struggle with joint intractability.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Hierarchical Speculative Decoding, described as a provably lossless verification method that balances excess and deficient probability mass across accessible branches.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system integration",
+        "claim": "Integrates HSD into speculative decoding frameworks, including EAGLE-3.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish HSD as a lossless verification approach intended to overcome joint intractability through hierarchical branch balancing.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report consistent acceptance-rate improvements across diverse model families and benchmarks in large-scale experiments.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that HSD integrated into EAGLE-3 produces over a 12% performance gain and maintains distribution fidelity.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "bottleneck",
+        "summary": "Verification is identified as limiting faster inference under distribution-fidelity constraints.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "context and gap",
+        "summary": "Sequence-level verification is contrasted with token-wise verification, while existing methods are described as limited by approximations, partial information, and joint intractability.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "HSD is introduced as a lossless hierarchical verification method balancing probability-mass excesses and deficiencies across accessible branches.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported results and applicability",
+        "summary": "The authors report broad acceptance-rate gains, explainability and generality, plus a reported 12%+ gain when integrated with EAGLE-3.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a verification bottleneck, a specific structural obstacle (joint intractability), a mechanism (balancing excess and deficient probability mass), and targeted outcomes (acceptance rates and fidelity).",
+          "source_ids": [
+            "S1",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact technical narrative can make a method's motivation and claimed benefit traceable through an explicit mechanism.",
+        "application": "Frame a new algorithm by mapping each stated bottleneck to its structural remedy and the metric or constraint it is intended to affect.",
+        "exception": "This framing is unsuitable when the mechanism-to-outcome link is not specified or when the work is primarily descriptive rather than algorithmic."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide experimental baselines, absolute acceptance rates, benchmark names, statistical variation, or details of the 12% performance-gain measurement.",
+      "The meaning and scope of “provably lossless,” “joint intractability,” and accessible branches are not defined in the supplied units."
+    ]
+  }
+}

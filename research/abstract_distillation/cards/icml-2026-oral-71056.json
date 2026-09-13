@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71056",
+    "title": "Detecting the Semantic Fixed Point: A Geometric Framework for Efficient Inference",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71056"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "611599fa7f712413590d2e18df540aee00fbaabc52794efd7896d9e8a8db6b8b",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "12ebb87f3ad561be3de5bbefd0efc3c41176d37204334102623750b9722fe62d",
+    "extracted_at": "2026-09-13T00:12:17.668015+00:00",
+    "session_id": "01a0981b-4399-73b1-a94b-cc0f77fbc3f6",
+    "usage": {
+      "input_tokens": 12733,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 820,
+      "reasoning_output_tokens": 96
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6cc528e6aa6623670469a899cf5d4882cf613260c9d57822a82edd0ea44ca73e"
+    },
+    {
+      "id": "S2",
+      "sha256": "795a26d4a4600156309a1d61a652b3fbcc7910c067eba057f4ef681b4151e600"
+    },
+    {
+      "id": "S3",
+      "sha256": "cc9b05dcc82338f257183469446fc936c37e59b9cb128eac9f5ef6e3a222be6c"
+    },
+    {
+      "id": "S4",
+      "sha256": "91ec6c60bb0004f2a0dc86516fc5a8ac49f6d0a7f7963c1e3e3f16198adce24d"
+    },
+    {
+      "id": "S5",
+      "sha256": "df8aabe2a77e109d6c3d0ac02acc9fe7ee62aaad7717b680ddb03e50603bcb8d"
+    },
+    {
+      "id": "S6",
+      "sha256": "d99e7d4a888e058b468cbe5959fe60c91919a6b615918b9aa77104392f2f98fd"
+    },
+    {
+      "id": "S7",
+      "sha256": "df5484fb8a72fe2fda357facccb602566f609aaba41b8abdd54794c1270a5ae1"
+    },
+    {
+      "id": "S8",
+      "sha256": "c99780b3cf98094d9938b030efbabc33e7cd831272e18f5d669cd9a6ac859547"
+    },
+    {
+      "id": "S9",
+      "sha256": "5a80025eae9622dd079c7e3c8cea1cd08335aa90a6dd2baf6fc5bfb3a4337698"
+    },
+    {
+      "id": "S10",
+      "sha256": "734138ae8028f37defd930ae9f17b5b7aa3c5386449989f091e7863184e9b461"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71056",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine when Transformer-layer iteration should terminate during inference.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing early-exit methods use output confidence as a proxy for internal convergence rather than measuring convergence directly.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A geometric early-exit criterion based on vanishing normalized update norm and stabilized cosine direction between consecutive hidden-state updates.",
+        "source_ids": [
+          "S4",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "system property",
+        "claim": "The criterion has O(d) per-layer overhead, independent of vocabulary size, and uses neither learned components nor architectural modifications.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report a sharp two-phase structure in layer-wise updates: volatile early changes followed by small, aligned updates.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper proposes directly examining hidden-state trajectory geometry for early exit, instead of relying on output confidence.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report 30–35% FLOP reductions on LLaMA-2-7B and LLaMA-2-13B across question answering and commonsense reasoning, while retaining over 98% of full-depth accuracy.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report that layer-wise updates undergo a remarkably sharp transition from large, volatile updates to small, aligned updates.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setup",
+        "summary": "Transformer layers are framed as an iterative refinement process, raising the question of when to stop.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing early-exit approaches are described as inferring internal convergence from output confidence.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "observation",
+        "summary": "The authors report a sharp two-phase geometry in hidden-state updates.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "criterion",
+        "summary": "They operationalize convergence by jointly checking update magnitude and directional stability.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report substantial FLOP savings with over 98% retained full-depth accuracy on two LLaMA-2 models and two task categories.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a qualitative geometric transition to two measurable signals—normalized update norm and consecutive-update cosine similarity—and then reports task-level compute and accuracy outcomes.",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S8",
+            "S10"
+          ]
+        },
+        "interpretation": "A technical proposal is easier to assess when its mechanism, observable criterion, and outcome metrics are explicitly connected.",
+        "application": "Frame a systems method by mapping the claimed internal phenomenon to measurable decision signals, then report both resource savings and task-performance retention.",
+        "exception": "This framing is unsuitable when the proposed internal signal cannot be measured reliably or when task-level outcomes are unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify exit thresholds, calibration procedure, evaluation baselines, or the distribution of exit depths.",
+      "The reported results cover only LLaMA-2-7B/13B and question answering/commonsense reasoning tasks; broader scope is unspecified."
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71185",
+    "title": "Nash Equilibria in Games with Playerwise Concave Coupling Constraints: Existence and Computation",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71185"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b1d46fdd74e743354ac5514e1bf7f36f6cefc0bc63e4a4003ad6e2b05434517a",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "de084612862f28bf16042206a81ede9601499079689b0d8e4e92f4e830b0a9ee",
+    "extracted_at": "2026-09-13T00:17:24.045987+00:00",
+    "session_id": "01a0981f-f155-7513-b6eb-22be7a666873",
+    "usage": {
+      "input_tokens": 12679,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 813,
+      "reasoning_output_tokens": 96
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4c1ca2b27b309f6a4a32ac9883828828bfc3737e721eaeba9f2f307a71c8bde8"
+    },
+    {
+      "id": "S2",
+      "sha256": "4b888ece9ff92017ced72abf76412baafd81c268b2824a9c84c77af6e59f6efa"
+    },
+    {
+      "id": "S3",
+      "sha256": "47b14af6bcc354b174778a42b829085a666bcc30c3700ef7e1149f7c70951649"
+    },
+    {
+      "id": "S4",
+      "sha256": "cbce0a044fdb86aca6123ade27457db1f7c8268c3f66787cb6b1db6c9e049a29"
+    },
+    {
+      "id": "S5",
+      "sha256": "750630f2b23e891b9e9ec32057e40fab17909c9acace5405952733b58fec5c66"
+    },
+    {
+      "id": "S6",
+      "sha256": "b0696604b7e3b00df957fdff0c4af84bfb80ad5f4ca6ed9ab64a93d99c385676"
+    },
+    {
+      "id": "S7",
+      "sha256": "3643dea6917fd2c73434743eb1e9ad0192cd536b91c92e379c5e7538ba34cf4f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71185",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies existence and computation of Nash equilibria in concave games with shared coupling constraints.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Prior existence results relied on stronger assumptions, and convergence guarantees for playerwise independent learning with coupling constraints were an open question addressed here.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A proof of Nash equilibrium existence under playerwise concavity of the coupling constraints.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "A convergent algorithm for potential games with coupling constraints, using log-barrier regularized gradient ascent and adaptive stepsizes to handle possibly nonconvex feasible regions.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "complexity result",
+        "claim": "A convergence guarantee to an epsilon-approximate constrained Nash equilibrium within O(epsilon^-3) iterations under exact gradient feedback and an initially feasible strategy profile.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their existence proof uses novel structural insights into feasible-set contractibility and relaxes strong assumptions from prior work.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report proving existence of Nash equilibria under playerwise concavity of constraints.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report positive convergence guarantees for playerwise independent learning dynamics in the class of potential games.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report convergence within O(epsilon^-3) iterations to an epsilon-approximate constrained Nash equilibrium under exact gradients and an initially feasible profile.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem setup",
+        "summary": "The paper frames equilibrium existence and computation for concave games with shared coupling constraints.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "existence theory",
+        "summary": "It proves existence under playerwise concavity, using fixed-point theory and contractibility insights while relaxing prior assumptions.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "convergence question",
+        "summary": "It then asks whether playerwise independent learning dynamics converge despite coupling constraints.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "algorithm and guarantee",
+        "summary": "For potential games, it proposes adaptive-step log-barrier gradient ascent and reports an O(epsilon^-3) guarantee.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs an algorithmic proposal with explicit applicability conditions and an iteration-complexity guarantee.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This alignment makes the scope and claimed computational consequence easy to assess from the abstract alone.",
+        "application": "When presenting a new method, state the target problem subclass, key mechanism, feedback assumptions, initialization requirements, and quantitative guarantee together.",
+        "exception": "This format is unsuitable when no meaningful formal guarantee or clearly delimited applicability conditions are available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the precise playerwise concavity assumptions, the potential-game definition, or the feasible-set conditions beyond possible nonconvexity.",
+      "It does not provide proof details, baselines, empirical results, or clarify whether the O(epsilon^-3) bound is worst-case, so the reported guarantees cannot be independently assessed here."
+    ]
+  }
+}

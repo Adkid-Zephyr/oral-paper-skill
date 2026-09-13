@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97999",
+    "title": "E2E-MFD: Towards End-to-End Synchronous Multimodal Fusion Detection",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97999"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "55cb5f181094a1784b96d5e79cfd65f792bb2b12b063031c5db749f3b04485ec",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "aa319e3a7b0e6ed4a3b14940874b54c87046718b41ad93e030725190adeddd7f",
+    "extracted_at": "2026-09-13T00:19:49.565366+00:00",
+    "session_id": "01a09822-300c-7753-8aad-244c66bcdc57",
+    "usage": {
+      "input_tokens": 12690,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 710,
+      "reasoning_output_tokens": 95
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7e1b2c0ab647625302484d8e0499a0d6d739620c9367156ce67e58208663c909"
+    },
+    {
+      "id": "S2",
+      "sha256": "6b060ba85df841e1e7a876a456b12f494c8ac7a4693ee11efd03d8c80f533f55"
+    },
+    {
+      "id": "S3",
+      "sha256": "af3cdea85f0b7f99dad125e1dca2b970a9a8baf0e18b1faecadeeaa9e055e7c5"
+    },
+    {
+      "id": "S4",
+      "sha256": "ae6e62bcff85997ed3a14813a2fca69b882513f7ac9557b6a15dc831134bf527"
+    },
+    {
+      "id": "S5",
+      "sha256": "a64346e12dcba4ce9b5671f722e02592d504ad36dc8f6dd9528f193e7ac3eadb"
+    },
+    {
+      "id": "S6",
+      "sha256": "a692d93d61cad48ef9bdb61f8ae7dd9e7ddfb45ae7edb7c65e70b2a799ec8044"
+    },
+    {
+      "id": "S7",
+      "sha256": "f6841fc7857e03e5b809d0a23510f03878c3a3248eb3f2a066dcb96499c22920"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97999",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Multimodal image fusion and object detection are important for autonomous driving.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches can require complex training processes despite advances in combining texture and semantic information, limiting broader application.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces E2E-MFD, an end-to-end multimodal fusion detection algorithm using a single training phase.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "optimization strategy",
+        "claim": "Uses synchronous joint optimization across components and gradient-matrix optimization for shared parameters.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present E2E-MFD as a novel end-to-end algorithm that streamlines multimodal fusion detection.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report testing E2E-MFD on multiple public datasets and describe both visually appealing fusion and strong detection outcomes.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "Compared with state-of-the-art approaches, the authors report mAP50 increases of 3.9% on M3FD horizontal detection and 2.0% on DroneVehicle oriented detection.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Multimodal fusion and object detection are framed as important for autonomous driving.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The abstract identifies complex training processes as a barrier in existing methods.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "E2E-MFD is introduced as a single-phase, end-to-end algorithm with synchronous joint optimization.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report improvements over state-of-the-art approaches on M3FD and DroneVehicle.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a concrete training-process limitation with a method design intended to address it, then reports task-specific percentage improvements on named datasets.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "This creates a traceable problem-to-design-to-evidence chain while preserving evaluation scope.",
+        "application": "When presenting a systems method, explicitly connect the stated bottleneck to the architectural or optimization choice and report metric changes by dataset and task.",
+        "exception": "This framing is unsuitable when the work has no concrete bottleneck or when dataset-specific comparisons are unavailable or not comparable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dataset sizes, evaluation protocols, statistical variability, or the exact state-of-the-art baselines.",
+      "The claimed convergence to an optimal configuration is stated without proof details or supporting conditions in the supplied units."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "problem_and_gap.problem.claim",
+      "before": "Multimodal image fusion and object detection for autonomous driving need to be handled jointly.",
+      "after": "Multimodal image fusion and object detection are important for autonomous driving.",
+      "review_file": "reviews/audit-neurips-2024.json",
+      "review_sha256": "e6b9ed59c87d1bd48f24745d3c538ce2afece542286318f65dda012aa779620e",
+      "applied_at": "2026-09-13T00:25:55.409371+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31830",
+    "title": "Knowing Your Target: Target-Aware Transformer Makes Better Spatio-Temporal Video Grounding",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31830"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9079f20379fbd9e16626c72c29cce90ea1733efc0a4cd05222f2ee39c93512a3",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "9312e11cd2efb03f7e8fa3592e55a84835a2dca4539632d123436c2363509a61",
+    "extracted_at": "2026-09-12T23:53:42.484285+00:00",
+    "session_id": "01a0980a-44e8-7b41-ae83-db179d535a82",
+    "usage": {
+      "input_tokens": 12951,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 743,
+      "reasoning_output_tokens": 78
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3dd1e0dd2d27532f636f94921930dcb770ab06fa03c4a3d1702aa5db40374983"
+    },
+    {
+      "id": "S2",
+      "sha256": "fd2f2e1c415d661030ed24b5d9faead3cbad8dd21aca04aed21752aa295012e4"
+    },
+    {
+      "id": "S3",
+      "sha256": "a6f357427063e45e7d1d4c2ef80bb1aba7a5514fcb0810b557c69967454aabb4"
+    },
+    {
+      "id": "S4",
+      "sha256": "53f878c5593d1e88cef7dbdb0442be8b52b70678b48b6531b1a395c7d20a968e"
+    },
+    {
+      "id": "S5",
+      "sha256": "25eabd1303b96412d1ed892c2654a5e5076a2bd894b16f971f22129c9403fa54"
+    },
+    {
+      "id": "S6",
+      "sha256": "89badf446637cc87d5baa0d7e37dee8862a4aa05e5a8f9a3d5decf7b59137845"
+    },
+    {
+      "id": "S7",
+      "sha256": "0d8dd8a1b4d8a7bec57bf5dc60bd1bae804d93d59f7c592243b61844fc77367e"
+    },
+    {
+      "id": "S8",
+      "sha256": "86563e81ce51afb51fbcafdc571668befa38ec34c0849c690b7e73b4ebe6b252"
+    },
+    {
+      "id": "S9",
+      "sha256": "f000494972dca1185a12589202feef44c7a13d1af66839618c4e1de04c5bfe9d"
+    },
+    {
+      "id": "S10",
+      "sha256": "50ea4376db416071ca966084ecf5318b2a571a83c98ddaaf32be5a0ab0745e6d"
+    },
+    {
+      "id": "S11",
+      "sha256": "bd3728e3b202da8cd4b741c879bd75eed633ed9eb3f27fda6909cc87a5c9852b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31830",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve spatio-temporal video grounding by localizing targets in space and time from video-text pairs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Zero-initialized object queries lack target-specific cues and are difficult to learn discriminative target information in scenarios involving distractors or occlusion.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces TA-STVG, which adaptively generates object queries from target-specific cues in a video-text pair.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Combines text-guided temporal sampling with attribute-aware spatial activation in a cascade to initialize target-aware object queries.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "generality",
+        "claim": "Applies the proposed modules to existing methods including TubeDETR and STCAT.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a target-aware Transformer that directly generates object queries from a given video-text pair, distinguishing it from zero-initialized-query approaches.",
+      "source_ids": [
+        "S4",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art performance on HCSTVG-v1, HCSTVG-v2, and VidSTG, with significant improvement over the baseline.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report substantial performance gains when TTS and ASA are added to TubeDETR and STCAT.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Transformer-based STVG uses object queries for spatial and temporal localization.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Zero queries may fail to acquire discriminative target information in complicated scenes with distractors or occlusion.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "TA-STVG cascades text-guided temporal sampling and attribute-aware spatial activation to generate target-aware queries.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "Experiments across three benchmarks and integrations with two existing methods are reported as supporting performance and generality.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The method first selects target-relevant temporal cues using holistic text, then extracts fine-grained visual attributes for query initialization.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A staged design can align coarse cross-modal retrieval with subsequent fine-grained localization.",
+        "application": "For a multimodal grounding paper, separate global temporal selection from attribute-level spatial initialization and state each module's information flow.",
+        "exception": "This decomposition may be unsuitable when temporal and spatial cues must be inferred jointly or when the task lacks reliable text or object attributes."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical results, baseline identities beyond the named integrations, or experimental settings.",
+      "The abstract does not specify how TTS and ASA are implemented or which component accounts for the reported gains."
+    ]
+  }
+}

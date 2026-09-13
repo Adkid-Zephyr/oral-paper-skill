@@ -1,0 +1,164 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31804",
+    "title": "Tight Lower Bounds under Asymmetric High-Order Hölder Smoothness and Uniform Convexity",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31804"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b26ad20620af768b95f75a58341fd629b02d11d82688fffd36792577f51c3507",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "99aba03e4541aa69a4c6e59355a5c96c2d4e165532a255d07b402fc50f7f2522",
+    "extracted_at": "2026-09-12T23:52:40.585593+00:00",
+    "session_id": "01a09809-45b4-7b12-b789-73ed52199273",
+    "usage": {
+      "input_tokens": 12815,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 853,
+      "reasoning_output_tokens": 71
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "86bc2b642ee7125123e4c8d9d74ea14030213fc20e333f0de6bb3c6e13c7e034"
+    },
+    {
+      "id": "S2",
+      "sha256": "a11471944989c0251f7ff8efda51daf25d9e2b907a3238ba45e712b64a554605"
+    },
+    {
+      "id": "S3",
+      "sha256": "c1018598fccd55f0f4b03e212a86581982f1c862b3ad1dddf121e74f135bb01f"
+    },
+    {
+      "id": "S4",
+      "sha256": "ec2b1f9df5b5743bcad5231f86089b49c455971bb42ccb4778e737b04a3cf8bf"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31804",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize oracle complexity for minimizing high-order Hölder-smooth, uniformly convex functions under asymmetric relationships between smoothness and convexity orders.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Derives worst-case oracle-complexity lower bounds for the two asymmetric regimes q > p+ν and q < p+ν, under access to derivatives through order p.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "hard-instance construction",
+        "claim": "Uses an ℓ∞-ball-truncated-Gaussian smoothed hard function in the first asymmetric regime.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "generalization and comparison",
+        "claim": "Extends prior lower bounds for first- and second-order smoothness and for uniformly convex functions, with reported agreement with corresponding upper bounds.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their results generalize several prior lower-bound settings and match upper bounds in the general high-order asymmetric setting.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report an Ω((H/σ)^{2/(3(p+ν)-2)}(σ/ε)^{2(q-p-ν)/(q(3(p+ν)-2))}) lower bound for q > p+ν, for reaching an ε-approximate solution measured by optimality gap.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report an Ω((H/σ)^{2/(3(p+ν)-2)} + log log((σ^{p+ν}/H^q)^{1/(p+ν-q)}(1/ε))) lower bound for q < p+ν.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that these lower bounds match corresponding upper bounds in the stated general setting.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The paper studies oracle complexity for minimizing high-order Hölder-smooth and uniformly convex functions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "regime specification",
+        "summary": "It separates the analysis into the asymmetric cases q > p+ν and q < p+ν.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "lower-bound results",
+        "summary": "For pth-order oracle access, it gives regime-specific worst-case lower bounds for ε-approximate solutions measured by optimality gap.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "contextualization",
+        "summary": "It presents the analysis as a generalization of earlier smoothness and uniform-convexity lower bounds and reports matching upper bounds.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly partitions the result by the ordering of q and p+ν and states separate complexity expressions for each regime.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "When parameter relationships change the form of the guarantee, regime-specific claims can make the theorem's scope and dependence easier to interpret.",
+        "application": "State the governing parameter regimes before presenting bounds, then attach each expression to its exact regime and approximation criterion.",
+        "exception": "This structure is less useful when the parameter dependence is genuinely uniform or when additional regimes would make the presentation disproportionate."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide proof details, dimensional assumptions, oracle-model conventions beyond access through order p, or constants and validity conditions for the displayed bounds.",
+      "The reported match to upper bounds is not detailed enough here to identify the compared algorithms, parameter ranges, or whether the comparison is exact in all dependencies."
+    ]
+  }
+}

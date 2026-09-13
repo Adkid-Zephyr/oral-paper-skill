@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71071",
+    "title": "Chebyshev Policies and the Mountain Car Problem: Reinforcement Learning for Low-Dimensional Control Tasks",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71071"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b725c394546f836870e891df62e58fe08128a9136ebddd9b20db88c428a17f41",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "9fe1d1504ecaa607e2518de4c1fd9c8f9c5c31aca840ab45d4cd7ab60839a74e",
+    "extracted_at": "2026-09-13T00:12:57.008794+00:00",
+    "session_id": "01a0981b-d821-7901-b4ad-3e9985082a7f",
+    "usage": {
+      "input_tokens": 12685,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 799,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0fa2d4f9f4acf05ee743df08a47e89499cb5520a25c2590ba9ab966e454bfa73"
+    },
+    {
+      "id": "S2",
+      "sha256": "1deab6279a7722370f4bbd8de43f7aca02a0e2ac95eee6d77db0039eb4a1b474"
+    },
+    {
+      "id": "S3",
+      "sha256": "0582d3cb72d66ae1de025458b67b3ba3f53b4acf35b49e68bd46c54ffccfdc9f"
+    },
+    {
+      "id": "S4",
+      "sha256": "cf25d16a75ef8251ec619829f5eb5dfce2e20d2374eda82e7d0d156cac1c4351"
+    },
+    {
+      "id": "S5",
+      "sha256": "4a6eaeacb87e780baebebad33d31b107aaba95c36c6e8aab7b9b833506674f00"
+    },
+    {
+      "id": "S6",
+      "sha256": "a7361164a2bfcc1bfe7aa7dafea8ddea1c533cd06b4182afd8c4f19aa07e0c79"
+    },
+    {
+      "id": "S7",
+      "sha256": "d20a5b5bda1534ba183c278c67c6fffa596d7acbf8e8624b6311b1f796d4d87f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71071",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Analytically solve the Mountain Car reinforcement-learning benchmark and derive its optimal control solution.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The authors report that an optimal analytical solution had remained unavailable for 36 years.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "An analytical optimal-control solution for Mountain Car.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Chebyshev policies, introduced from first principles as a universal dense class of RL policies.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Evaluation of Chebyshev policies across additional RL tasks, including a real-world nonlinear motion-control testbed.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Chebyshev policies as a first-principles universal dense policy class motivated by the derived optimal control.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the optimal control is simple while modern RL agents remain substantially suboptimal.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "As drop-in replacements for neural networks, Chebyshev policies are reported to reduce regret by a factor of 4.18 while using 277 times fewer parameters.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "Across further tasks, the authors report consistent performance improvements over neural networks with PPO, ARS, and REINFORCE.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "analytical result",
+        "summary": "The paper analytically solves Mountain Car and derives an optimal control solution.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors use the solution to highlight the simplicity of optimal control and the large gap of modern RL agents from optimality.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method introduction",
+        "summary": "They introduce Chebyshev policies as a universal dense policy class motivated by the analysis.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The policies are tested as neural-network replacements on additional RL tasks and a real-world nonlinear motion-control testbed.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "comparative conclusion",
+        "summary": "The authors report consistent improvements over neural networks paired with PPO, ARS, and REINFORCE.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links an analytically derived simple optimum to both a diagnosis of agent suboptimality and the design of a lightweight policy class.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A tractable benchmark solution can serve as a design guide, not only as an evaluation target.",
+        "application": "For a low-dimensional control paper, derive or characterize the target optimum first, then use its structure to motivate the policy parameterization.",
+        "exception": "This move may be unsuitable when the optimum is analytically inaccessible or its structure does not transfer beyond the benchmark."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the Mountain Car assumptions, derivation details, or meaning and measurement conditions of the reported regret factor.",
+      "It does not provide task-level scores, statistical variation, training budgets, or details of the real-world testbed.",
+      "The basis, implementation, and scope of the claimed universal density are not detailed in the abstract."
+    ]
+  }
+}

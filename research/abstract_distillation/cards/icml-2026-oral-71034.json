@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71034",
+    "title": "VenusBench-Mobile: A Challenging and User-Centric Benchmark for Mobile GUI Agents with Capability Diagnostics",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71034"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8790de644f655f4e2a27fa300e9e9e07de1071fa5b50bf3e7a0945c9989eacfc",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "e125bea0f449f7d7c60332dc80e5c36bcb76a05a3a81f1e3d1c25b7f9e03ffa4",
+    "extracted_at": "2026-09-13T00:11:30.185804+00:00",
+    "session_id": "01a0981a-8e86-7c51-9a04-693085d12c17",
+    "usage": {
+      "input_tokens": 12742,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 739,
+      "reasoning_output_tokens": 89
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "edfa7c832edd64512f21db09149fcbba1ac6d34206c4676bef30ec9628211427"
+    },
+    {
+      "id": "S2",
+      "sha256": "c7b32853f417b12f566a087be2aaa77e8380129f83a00edf93d3531827b04897"
+    },
+    {
+      "id": "S3",
+      "sha256": "fdcb410b40f17fa1a617a7d1c39af231b2313ad6f567eda07e29d5ddc71e4b6e"
+    },
+    {
+      "id": "S4",
+      "sha256": "054cfd9a80f7450bf46294ecb5a6e1e601e0c427c250cfd7634d6013a1c911f1"
+    },
+    {
+      "id": "S5",
+      "sha256": "20e01c7463235b3b47a2b0b47caa494680f973966b08f7466416aa9fc0cababc"
+    },
+    {
+      "id": "S6",
+      "sha256": "0890434950c101403ecf4bd8e44777523d20892a550c8dbf468318dc68547c5e"
+    },
+    {
+      "id": "S7",
+      "sha256": "b1756968650bc56beda9a527ff4e9babe661b8d2fa43651889f38e33ce9ec930"
+    },
+    {
+      "id": "S8",
+      "sha256": "bb0ff8afb1a5776e1681d88ceb3310c39d765f1bb270cd1e49451f7fab42afc5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71034",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate general-purpose mobile GUI agents under diverse, unstable, user-centric conditions resembling real mobile use.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing online benchmarks are app-centric and task-homogeneous, while coarse evaluation obscures fine-grained failure causes such as perception and memory deficiencies.",
+        "source_ids": [
+          "S1",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces VenusBench-Mobile, an online benchmark with user-intent-driven task design for realistic mobile usage.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "diagnostic framework",
+        "claim": "Adds capability-oriented annotations for fine-grained analysis of agent behavior and failures.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Provides code and data for the benchmark.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The benchmark combines user-centric task definition with capability-oriented evaluation, addressing both what and how to evaluate for mobile GUI agents.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that state-of-the-art agents show large performance gaps relative to prior benchmarks, which they interpret as evidence that the tasks are more challenging and realistic.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "Authors report that diagnostic analysis attributes most failures to perception and memory deficiencies.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Authors report near-zero success for even the strongest agents under environment variations.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Existing benchmarks do not capture the diversity and instability of real mobile usage.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "benchmark design",
+        "summary": "VenusBench-Mobile evaluates realistic user-centric tasks and annotates capabilities for fine-grained diagnosis.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Reported results show substantially larger performance gaps than prior benchmarks and near-zero success under environment variation.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      },
+      {
+        "role": "diagnosis and implication",
+        "summary": "Failures are reported as dominated by perception and memory deficits; the benchmark is positioned as a step toward robust deployment.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns benchmark construction with a diagnostic annotation scheme, then reports both aggregate performance gaps and capability-specific failure patterns.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Pairing realistic evaluation with structured diagnosis can make poor performance more actionable than a single success metric.",
+        "application": "When introducing a benchmark, define task realism and failure-capability labels together, and report aggregate results alongside diagnostic breakdowns.",
+        "exception": "This approach may be unsuitable when reliable capability labels are unavailable or the task has no meaningful decomposition."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no dataset size, task distribution, metrics, numerical performance values, or details of environment variations.",
+      "It does not specify the evaluated agents, annotation procedure, or whether the reported diagnoses were independently validated."
+    ]
+  }
+}

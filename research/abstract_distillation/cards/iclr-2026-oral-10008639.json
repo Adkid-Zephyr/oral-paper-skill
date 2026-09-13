@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008639",
+    "title": "Compositional Diffusion with Guided search for Long-Horizon Planning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008639"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "48c0428257dcf3ee0113fe5f77e4aaf6779e052af13f6a128105416ee1e978cb",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "f75b8e124ce6761a1798ef00875b48314806198d22677a04646ec0d2e5676918",
+    "extracted_at": "2026-09-13T00:01:34.581391+00:00",
+    "session_id": "01a09811-776c-7462-befb-82be8de65e61",
+    "usage": {
+      "input_tokens": 12726,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 752,
+      "reasoning_output_tokens": 74
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "32dff5d782a6a1f6b330a233202aa6982cfea748196174c1520f043e098c7247"
+    },
+    {
+      "id": "S2",
+      "sha256": "e5029d1a78448b8fccaf579eefb4de42c8c69166040db6df67d00e744e020148"
+    },
+    {
+      "id": "S3",
+      "sha256": "d3810a86315cb52eea7457f093f1ccf6c4d0d92fdc7f4737e2996abc520fba30"
+    },
+    {
+      "id": "S4",
+      "sha256": "9a8bac62140be50b563c0c7de4afbed801ef3dde3ec3da6ba9ff12a5669964c3"
+    },
+    {
+      "id": "S5",
+      "sha256": "3edf524e8c850a279012e3818e1e830c3428e15fd38b1b01be8ab1eec5fe6b60"
+    },
+    {
+      "id": "S6",
+      "sha256": "72d0e74106339846c837a9a6e7a1a21d2c4329bc2e104b0b6f8885a4ec7ebdd6"
+    },
+    {
+      "id": "S7",
+      "sha256": "235d77f4e7b2a2df74c69a988095ad745a0a0fc75466387bb270a852f88cd69f"
+    },
+    {
+      "id": "S8",
+      "sha256": "14b51cd2e87fd23bf39d340dc47d89b0f3c9517cb9e0f6bb9ca31557f93eaf6b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008639",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Long-horizon planning with compositional generative models must combine local multimodal distributions without producing infeasible or globally incoherent plans.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing composition methods are described as averaging incompatible local modes when distributions are multimodal.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The authors propose Compositional Diffusion with Guided Search (CDGS), embedding search within diffusion denoising to address mode averaging.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "CDGS uses population-based sampling, likelihood-based pruning of infeasible candidates, and iterative resampling across overlapping segments to enforce global consistency.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "cross-domain system",
+        "claim": "The approach is applied across robot manipulation, panoramic image synthesis, and long video generation.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish CDGS by integrating guided search directly into the diffusion denoising process for compositional generation.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that CDGS matches oracle performance on seven robot manipulation tasks and outperforms baselines lacking compositionality or long-horizon training data.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report coherent text-guided panoramic images and long videos, attributing this to effective local-to-global message passing.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Compositional generative models are presented as promising for modeling long-horizon task distributions with local modular models.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "The abstract identifies mode averaging under multimodal local distributions as producing locally infeasible and globally incoherent plans.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "CDGS embeds guided search in diffusion denoising and combines population sampling, likelihood filtering, and overlap-based resampling.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report oracle-level performance on seven robot tasks and coherent generation in image and video domains.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each proposed mechanism with a named failure mode: exploring local modes, pruning infeasible candidates, and resampling overlaps for global consistency.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "This provides a compact mechanism-to-failure mapping that makes the method's intended rationale inspectable.",
+        "application": "When presenting a new planning method, pair each algorithmic component with the specific failure it is meant to mitigate, then report evidence at that level.",
+        "exception": "This framing is less suitable when component effects cannot be separately measured or when failures are not meaningfully decomposable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define the oracle, evaluation metrics, task details, baseline identities, or quantitative margins.",
+      "The reported cross-domain demonstrations omit dataset, comparison, and evaluation details, so their scope cannot be assessed from the abstract alone."
+    ]
+  }
+}

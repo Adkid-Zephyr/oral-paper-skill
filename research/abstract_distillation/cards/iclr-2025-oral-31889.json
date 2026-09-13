@@ -1,0 +1,203 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31889",
+    "title": "Topological Blindspots: Understanding and Extending Topological Deep Learning Through the Lens of Expressivity",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31889"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "26459f5f7ef4a58e6c296dda732413d40fa84fb0b93e62fc5a03bc34a9f12504",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "aaed235a515b93bde6b6a539490225df8b741a6c448743103032ada20f4ac174",
+    "extracted_at": "2026-09-12T23:56:04.123147+00:00",
+    "session_id": "01a0980c-5abd-70f2-9394-d1cbb9448984",
+    "usage": {
+      "input_tokens": 12839,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 892,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "51dab0a95d0b60ea4a0ff919cdaf9bd8a22a502bd7d27b70f9454323c3f5077e"
+    },
+    {
+      "id": "S2",
+      "sha256": "349a1f9d7a78df91af7b51a1282e20126957c4b08e8722ecda8f4010b9fbee5e"
+    },
+    {
+      "id": "S3",
+      "sha256": "66babd2697377c0023c6686343809e417107944ea2220e4e54d94a87ed264279"
+    },
+    {
+      "id": "S4",
+      "sha256": "eb3e8e85de41a4364971bc200a55336a685c5fc86cf1b72fbb83519fe68dc0ae"
+    },
+    {
+      "id": "S5",
+      "sha256": "f7b6ce10f3765317b138196e4fcdadca6e22a64c52bb21b3d4f6322832bb749d"
+    },
+    {
+      "id": "S6",
+      "sha256": "314b80f4685ca769ec29fbb1c9eec67e89cea5ca4a8e3082340ea9ee0d0ecd18"
+    },
+    {
+      "id": "S7",
+      "sha256": "87d589bdd8aad96262ff0294ab8b92e18d094a0fbd8442036b8aac59f1d532ba"
+    },
+    {
+      "id": "S8",
+      "sha256": "661d6995df2ed9f51f33a4b725b18952073c843aaf026124c2e8f94a29181638"
+    },
+    {
+      "id": "S9",
+      "sha256": "5416cb1900d87248b0bc15185c28cb49eaf9dc0e4b9262e4a55fd775348f924f"
+    },
+    {
+      "id": "S10",
+      "sha256": "1c9eda2ed9e1677b7aab8ea963d26dfba9cdc3fce354f18f6b62cd5ad1644e8e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31889",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how expressively topological deep-learning architectures can learn topological properties of data supported on higher-order objects.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify limited prior understanding of TDL expressivity from a topological perspective, including whether common HOMP architectures capture fundamental topological and metric invariants.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Analyzes HOMP expressivity and reports inability to capture diameter, orientability, planarity, and homology, plus limitations in exploiting graph lifting and pooling.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces multi-cellular networks (MCN) and scalable MCN (SMCN); MCN is described as fully expressive, while SMCN targets better scalability and mitigates many HOMP limitations.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "resource and empirical study",
+        "claim": "Creates benchmarks for learning topological properties of complexes and evaluates SMCN on them and on real-world graph datasets.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that this is, to their knowledge, the first study of TDL expressivity from a topological perspective.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that HOMP cannot capture the listed diameter, orientability, planarity, and homology invariants.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that SMCN improves over HOMP baselines and expressive graph methods on the proposed benchmarks and real-world graph datasets.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report that MCN can reach full expressivity, while scaling it to large data objects can be computationally expansive.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "framing",
+        "summary": "TDL architectures are unified as higher-order message-passing methods for topologically structured data.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The paper examines HOMP and reports blindspots involving key topological and metric invariants, as well as graph lifting and pooling.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "architectural response",
+        "summary": "It introduces MCN and the more scalable SMCN, trading MCN's stated full expressivity against its computational cost.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "It proposes topology-focused benchmarks and evaluates SMCN against HOMP and expressive graph methods on synthetic-style benchmarks and real-world graph datasets.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects an expressivity diagnosis to specific invariants, then introduces architectures designed to address the identified limitations and evaluates them on matching benchmarks.",
+          "source_ids": [
+            "S3",
+            "S6",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "A paper's argument is easier to assess when the limitation, proposed remedy, and evaluation target are explicitly aligned.",
+        "application": "Map each claimed model limitation to a named property-level benchmark and state which baseline comparison tests the proposed remedy.",
+        "exception": "This mapping is less suitable when the work is primarily conceptual or when no operational benchmark can represent the target property."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal expressivity definitions, proof conditions, benchmark construction, dataset details, or numerical improvement margins.",
+      "The scope of MCN's stated full expressivity and the exact computational scaling behavior are not given.",
+      "The abstract does not establish independent validity of the reported comparisons or the stated priority claim."
+    ]
+  }
+}

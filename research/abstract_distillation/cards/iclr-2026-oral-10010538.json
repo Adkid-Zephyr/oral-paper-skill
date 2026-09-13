@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010538",
+    "title": "Multi-Domain Riemannian Graph Gluing for Building Graph Foundation Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010538"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b24f2334432e1e347de70aa0f804de64416e428c1e686ad7abf8c0e5880d069f",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "69c8988c049df9c2ef505c8ea9d5f109c841a1f2acb22484db64d13347d80f30",
+    "extracted_at": "2026-09-13T00:04:31.513336+00:00",
+    "session_id": "01a09814-24c8-7451-85f9-e7755ef56210",
+    "usage": {
+      "input_tokens": 12730,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 818,
+      "reasoning_output_tokens": 74
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2d227ab667f4abe2c3d00d64dd481124c68a8bb748dca6e9c7af1ec253a92cad"
+    },
+    {
+      "id": "S2",
+      "sha256": "3b0947a1fdf30da75f017de1d5320d254ac605d1b2951d4f14be348ba7315888"
+    },
+    {
+      "id": "S3",
+      "sha256": "63a4f2e67ca50f07d0aaa98012321876b8caf1e28726b0e9a07ca2929ac8c336"
+    },
+    {
+      "id": "S4",
+      "sha256": "f8be0edfafed393b07aa2d4334583f4e324cc0804404d622ec71e91aedbefe29"
+    },
+    {
+      "id": "S5",
+      "sha256": "3f2e55fe5126a609de625526692c91c73f1dacaa9637e5cb134467c928f6d50a"
+    },
+    {
+      "id": "S6",
+      "sha256": "fbfc99ee9df094c882b783cf95113be6193fbe97ee4252a1df6cc547103082f4"
+    },
+    {
+      "id": "S7",
+      "sha256": "e14657f0dbdcf53423a66fcc948f1019e51c011b27c10891db13f636cb08bd3a"
+    },
+    {
+      "id": "S8",
+      "sha256": "6e941f835e41821a1713dd5638c2539c84d079916791aeb385c3d24db98b8143"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010538",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to integrate and transfer knowledge across domains for graph foundation model pre-training.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing solutions often do not explain how cross-domain knowledge is integrated or transferred, motivating questions about consistency and transferability between pre-trained and target domains.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A differential-geometric formulation that merges graph datasets into a unified smooth Riemannian manifold, with neural manifold gluing based on adaptive orthogonal frames.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "GraphGlue, a framework for batched pre-training with EMA prototyping and a transferability measure based on geometric consistency.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reported experiments show superior performance across diverse graph domains and support a geometric scaling law relating more datasets to smoother manifolds and greater transferability.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a fresh differential-geometry perspective and establish neural manifold gluing theoretically for cross-domain graph knowledge integration and transfer.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report superior performance across diverse graph domains in extensive experiments.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report empirical validation of GraphGlue’s geometric scaling law: increasing dataset quantity improves transferability by producing a smoother manifold.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Multi-domain graph pre-training is framed as important for graph foundation models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Existing approaches are said to leave cross-domain knowledge integration and transfer unexplained.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "The paper introduces a unified smooth Riemannian-manifold view and neural manifold gluing via adaptive local frames.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The theory is instantiated in GraphGlue with batched pre-training, EMA prototyping, and geometric-consistency transferability measurement.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "Reported experiments indicate strong cross-domain performance and a dataset-scale relationship to manifold smoothness and transferability.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a theoretical representation of cross-domain structure to concrete framework components and a transferability measure.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A paper can make an abstract integration mechanism more actionable by mapping it to an operational training procedure and measurable diagnostic.",
+        "application": "When proposing a cross-domain method, explicitly pair the central structural object with the algorithmic mechanism and a metric intended to reflect transfer.",
+        "exception": "This framing may be unsuitable when the structural interpretation cannot be operationalized or the metric lacks a clear relationship to the claimed transfer question."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the graph domains, datasets, baselines, metrics, numerical gains, or experimental conditions behind “superior performance.”",
+      "The formulation and assumptions of neural manifold gluing, EMA prototyping, geometric consistency, and the reported scaling law are not detailed.",
+      "It is unclear whether the scaling relationship is causal, how broadly it holds, or what dataset quantity and smoothness measurements were used."
+    ]
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31853",
+    "title": "Iterative Nash Policy Optimization: Aligning LLMs with General Preferences via No-Regret Learning",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31853"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7965383d4d61dd6a5d1f847e0b5c67ef1d2a39c0e09f1b153dafa3029225aeba",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "ea3d89e218a11f8ff600ab69a4eb91ef213c7eadfd2f8c0ad6cb611a89d9e09e",
+    "extracted_at": "2026-09-12T23:54:41.354095+00:00",
+    "session_id": "01a0980b-16d8-7db3-908e-cac4d175272c",
+    "usage": {
+      "input_tokens": 12775,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 868,
+      "reasoning_output_tokens": 83
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4e661c1cd9d4d7b4aa7203cbcae16218547c76805e138cf5c4c8d4f4f6126b8b"
+    },
+    {
+      "id": "S2",
+      "sha256": "313dc88c92c22f61262e59540b221099878cdf4ce0e1bea54bef1ea02bc794a2"
+    },
+    {
+      "id": "S3",
+      "sha256": "a0a8762679302454273525fbbdedb9e53857727d0589a08eea57e9ae9e82c09e"
+    },
+    {
+      "id": "S4",
+      "sha256": "6edc9ba50dfb0819a0b5a63e30e1162ee7d550ab9bccfc71cda97ba46ced80c4"
+    },
+    {
+      "id": "S5",
+      "sha256": "9575f6533f1989fc1eb7de1b531ee382f8d63ca94bb59e86bbcd1783ce5424b8"
+    },
+    {
+      "id": "S6",
+      "sha256": "0a5e07306503748584af80f3261621ace2e1a665b0ea3933572f3e9b43fe22ba"
+    },
+    {
+      "id": "S7",
+      "sha256": "08f60c2f9264cdae7cc0c3c74a098db5d0dcd0e21b957142ee814c19db00d835"
+    },
+    {
+      "id": "S8",
+      "sha256": "c4f3289c282d808c4e5d9a6a2e8a496a9ce4af637455cbf8a24a66e6275c0e4a"
+    },
+    {
+      "id": "S9",
+      "sha256": "2fbffe3a869e1bf9a602a67aa27493f38a9f84e068ce6a040e0a25aecf87383b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31853",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop RLHF under a general preference framework using a game-theoretic formulation.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Reward-based RLHF commonly relies on the Bradley–Terry assumption, which may not capture the complexity of human preferences.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Formulates preference alignment as a two-player game and proposes iterative Nash policy optimization (INPO), an online algorithm.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses self-play with no-regret learning to approximate a Nash policy and introduces a loss directly minimized over preference data, avoiding individual-response expected-win-rate estimation.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "theory and empirical finding",
+        "claim": "Provides theoretical analysis and reports experiments on representative benchmarks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe INPO as a novel online algorithm that bypasses expected-win-rate estimation and instead optimizes a preference-dataset loss.",
+      "source_ids": [
+        "S4",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "With an LLaMA-3-8B-based SFT model, the authors report a 42.6% length-controlled win rate on AlpacaEval 2.0.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report a 37.8% win rate on Arena-Hard and state that INPO substantially improves over state-of-the-art online RLHF algorithms.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report theoretical analysis and experiments across representative benchmarks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "RLHF has been successful for aligning LLMs with human preferences.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "Existing reward-based approaches often assume the Bradley–Terry model, which may inadequately represent preference complexity.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "formulation and method",
+        "summary": "The paper adopts a general-preference, game-theoretic view, formulates a two-player game, and proposes INPO based on self-play no-regret learning.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "objective and claimed advantage",
+        "summary": "INPO replaces expected-win-rate estimation for individual responses with a loss minimized directly on preference data.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report theory and benchmark experiments, including the stated AlpacaEval 2.0 and Arena-Hard win rates.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a limitation of the preference model to a general-preference game formulation, then to an objective that can be optimized directly on preference data.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This alignment makes the proposed mechanism visibly responsive to the stated modeling and cost concerns.",
+        "application": "When introducing a new alignment method, explicitly map each motivating limitation to a formulation and an operational training objective.",
+        "exception": "This framing is less suitable when the claimed limitation is not tied to a concrete change in optimization or data requirements."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the theoretical guarantees, benchmark protocols, baseline configurations, uncertainty, or statistical significance.",
+      "The comparison direction and magnitude beyond the two reported win rates are not quantified; the meaning of “substantial improvement” is unspecified.",
+      "The abstract does not establish that INPO’s stated computational or annotation savings hold empirically."
+    ]
+  }
+}

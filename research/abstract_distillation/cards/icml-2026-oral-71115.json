@@ -1,0 +1,161 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71115",
+    "title": "From Abstraction to Instantiation: Learning Behavioral Representation for Vision-Language-Action Model",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71115"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "19dafb8e6125b32caface3fda0781044aeb250a4cc4dfc5fd0eee5c91239a821",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "dd209f95dc00931f84945bfbb2fcbf542c44999e14420eb97462ff1cc8ea806d",
+    "extracted_at": "2026-09-13T00:14:36.227408+00:00",
+    "session_id": "01a0981d-69c1-78f3-9c30-59273dff534a",
+    "usage": {
+      "input_tokens": 14278,
+      "cached_input_tokens": 9984,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 738,
+      "reasoning_output_tokens": 128
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c42afd681516214a2c44c954bb55c162bddebfd1358ef2342a6273e257388b2a"
+    },
+    {
+      "id": "S2",
+      "sha256": "a88f7b5160d53da11341671d347c79aa83c5b9ca41ee16b5089da273df1a9890"
+    },
+    {
+      "id": "S3",
+      "sha256": "6f3e9238cfea5d3f80c69ff3520edd352d648aec95227a2aae5f5f51bf8a5f76"
+    },
+    {
+      "id": "S4",
+      "sha256": "4e892d1a8c9683fd885f6fe53965a618d21d374eead5df61840bf2e917895cab"
+    },
+    {
+      "id": "S5",
+      "sha256": "d2a3b32f8a701ceed10e1ea3cf7368c0b486300656ab198e68185fa9b2910bda"
+    },
+    {
+      "id": "S6",
+      "sha256": "513174b354b0f11cea1523c654da9ec0c4c105c38af11ad48ba88b7d8ff6a430"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71115",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "VLA models degrade under distribution shifts because they struggle to learn generalized behavior representations across environments.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing action-centric representations are limited by short-horizon temporal fragmentation and static execution alignment, producing inconsistent behavior in complex scenarios.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "BehaviorVLA learns temporally coherent behavioral representations for robust manipulation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The framework combines a causal Mamba-based Visuomotor Behavior Encoder for long-horizon trajectory aggregation with a Phase-conditioned Behavior Decoder that dynamically aligns task priors to execution progress.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce BehaviorVLA with symmetric encoder and decoder components designed around temporally coherent representation learning and phase-conditioned action decoding.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report success rates of 58% on RoboTwin 2.0, 98% on LIBERO, and 4.36 Avg.Len on CALVIN, described as state of the art.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that, in real-world sim-to-real transfer, BehaviorVLA matches OpenVLA-OFT while using 50% of the demonstration data.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem",
+        "summary": "Distribution shifts expose weak cross-environment behavior representations in VLA models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Action-centric alternatives fragment behavior over short horizons and rely on static execution alignment.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "BehaviorVLA addresses these limitations through temporally coherent representation learning.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "architecture_and_results",
+        "summary": "A long-horizon causal-Mamba encoder and phase-conditioned decoder support reported benchmark and sim-to-real results.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper explicitly links long-horizon representation aggregation with dynamic alignment between task-level priors and real-time execution.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "A representation may be more actionable when its temporal scope and decoding alignment are designed together.",
+        "application": "When presenting a sequential control method, map each representation mechanism to a specific execution-time alignment problem.",
+        "exception": "This framing may be unsuitable when the task has no meaningful phases, temporal structure, or execution feedback."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide baseline details, statistical variation, implementation settings, or per-task comparisons beyond the reported aggregate metrics.",
+      "The sim-to-real transfer setup and the meaning and evaluation conditions of CALVIN’s Avg.Len are unspecified."
+    ]
+  }
+}

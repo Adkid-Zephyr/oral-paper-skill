@@ -1,0 +1,180 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008516",
+    "title": "Token-Importance Guided Direct Preference Optimization",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008516"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "827615cfb49bee0e6542d493a2cabb4e44d3677b5c1e7557c058ec8a2a6c0370",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "25e534a283e22bf30f3cbcbe391b4536f38545b54c7cdbcb99be17b24c278339",
+    "extracted_at": "2026-09-13T00:01:16.626860+00:00",
+    "session_id": "01a09811-31e6-7982-a3d0-a7b145418f01",
+    "usage": {
+      "input_tokens": 12685,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 759,
+      "reasoning_output_tokens": 120
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a5012943731f27b101188149d6f972b40130990ac0b24e3e6265272d927a131c"
+    },
+    {
+      "id": "S2",
+      "sha256": "b60ffabc089b45ed6214a37e2893fcfc5414b1f8c391b794779cc15866f1d8bc"
+    },
+    {
+      "id": "S3",
+      "sha256": "92c055cc506ccfc8817c2c890a78de964808ab4cded724233460c51af7a5d4cd"
+    },
+    {
+      "id": "S4",
+      "sha256": "733c858be036b04469ee518fc66a7432beaa3d05bfbb0e701b246eb5abf04fb9"
+    },
+    {
+      "id": "S5",
+      "sha256": "0f01c19179e1c2a7358ad1f2b1f40f91835627b92fb024c523518fd80fb2b234"
+    },
+    {
+      "id": "S6",
+      "sha256": "cba41058f630dce55701046a2da8196efabb79c0ebc0fd3a9c43e2f83f44b3c3"
+    },
+    {
+      "id": "S7",
+      "sha256": "c5cf917872e1cf9014a2850904c78e80178417b1cf2a1024c83f0712a413dfc7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008516",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve preference alignment of LLMs with fine-grained control over token importance.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "DPO is sensitive to noisy data and ignores differential token importance; existing token-level methods use probability prediction or simplistic weighting that does not fully resolve these issues.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "TI-DPO combines gradient attribution with a Gaussian prior to weight token importance, and uses triplet loss to guide outputs toward preferred and away from non-preferred responses.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report improved accuracy, generative diversity, stability, and computational efficiency relative to DPO and other RLHF methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize TI-DPO as a framework with two synergistic innovations: hybrid token weighting and triplet-loss guidance.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that TI-DPO achieves higher accuracy and stronger generative diversity than DPO and other RLHF methods, with more stable and computationally efficient solutions.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Preference alignment is presented as important for safe and effective LLM interactions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "DPO and existing token-level approaches are described as insufficiently robust to noise and token-importance differences.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed method",
+        "summary": "TI-DPO introduces hybrid token weighting using gradient attribution plus a Gaussian prior, alongside triplet-loss optimization guidance.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report gains in accuracy, diversity, stability, and computational efficiency against DPO and other RLHF methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract motivates TI-DPO with noise sensitivity and inadequate token-importance modeling, then assigns complementary roles to hybrid weighting for accurate, robust importance scores and triplet loss for preferred-versus-non-preferred output guidance.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This alignment makes the method rationale traceable from diagnosed failure modes to design choices.",
+        "application": "When presenting a new alignment method, map each stated limitation to an explicit component and explain the component's intended role.",
+        "exception": "This framing is less suitable when a single mechanism addresses several interacting limitations that cannot be cleanly separated."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, evaluation metrics, numerical gains, computational-cost measurements, or statistical variability.",
+      "The claimed stability and efficiency advantages are not further conditioned or quantified.",
+      "The abstract does not establish priority or independently verify the stated novelty."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "lessons[0].source_observation.claim",
+      "before": "The abstract links each of two identified limitations to a corresponding mechanism: robust token weighting for importance estimation and triplet loss for preferred-versus-non-preferred output guidance.",
+      "after": "The abstract motivates TI-DPO with noise sensitivity and inadequate token-importance modeling, then assigns complementary roles to hybrid weighting for accurate, robust importance scores and triplet loss for preferred-versus-non-preferred output guidance.",
+      "review_file": "reviews/flagged-batch-05.json",
+      "review_sha256": "ce6ded1327d007ae02b4e8e948c93ddc73988661db83790e555daa98362d78e9",
+      "applied_at": "2026-09-13T00:32:13.714921+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

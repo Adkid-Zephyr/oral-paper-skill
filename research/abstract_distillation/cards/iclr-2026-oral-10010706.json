@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010706",
+    "title": "SAFETY-GUIDED FLOW (SGF): A UNIFIED FRAMEWORK FOR NEGATIVE GUIDANCE IN SAFE GENERATION",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010706"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b9e814bdd9cde76697266a41fc216e70d34c57a9bb97be66a82a0f301c1f52d6",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "686e31ac7ec6b3f2c84ea97d1e644faf7d654ad3a93e75e4a6f3e3a383438d7e",
+    "extracted_at": "2026-09-13T00:04:50.710060+00:00",
+    "session_id": "01a09814-78c9-7cd3-8c20-70980b0f3d63",
+    "usage": {
+      "input_tokens": 12715,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 729,
+      "reasoning_output_tokens": 83
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e6d1906c42e4ad132c69ca2521de5b15d494f61f8c04dabb4f2291960cab0c49"
+    },
+    {
+      "id": "S2",
+      "sha256": "696b8af82ad922e118d4094d20f8079a2d77516847dd29da53004694db22d4f8"
+    },
+    {
+      "id": "S3",
+      "sha256": "1829c15746feed694dcd4d3d475aa8ac866c745fc54b461add1898cd3dfd42e6"
+    },
+    {
+      "id": "S4",
+      "sha256": "a09a1d1aaa3472aad50c728e22e704e328b55b9c07b0faf141e1f0d5f83c14a1"
+    },
+    {
+      "id": "S5",
+      "sha256": "d9a25299d37fa5a927cdd9823a327108e2f2347adf6bbb3fc64bf38cd750292d"
+    },
+    {
+      "id": "S6",
+      "sha256": "41a7d9f07d0d920c2dbd129a4a34cc8ebb6577d9ccad87e19da9867986db05fb"
+    },
+    {
+      "id": "S7",
+      "sha256": "66b80e8a0fce90b1cba91b535d646bf53d94853c0bac07296bcb0e8caa7490a0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010706",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop safety guidance for diffusion and flow generation that suppresses unsafe content while preserving generation quality.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches follow separate geometric and data-driven paths, with data-driven methods relying on heuristics and not specifying when guidance is necessary.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Introduces a unified probabilistic framework using an MMD potential that casts Shielded Diffusion and Safe Denoiser as energy-based negative guidance against unsafe samples.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Uses control-barrier-function analysis to identify a critical time window for strong negative guidance, with decay toward zero outside that window.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Evaluates the framework across several realistic safe-generation scenarios and reports that guidance should be applied early in denoising.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a unified probabilistic and control-barrier-function-based account of negative guidance, including when its strength should be concentrated during denoising.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report evaluations on several realistic safe-generation scenarios supporting early-stage application of negative guidance for successful safe generation.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Safety mechanisms are described as developing along geometric-constraint and data-driven negative-guidance paths.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The abstract identifies heuristic guidance and a lack of clear criteria for when safety guidance is needed.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "framework and analysis",
+        "summary": "The paper unifies prior methods through an MMD-based energy potential and analyzes a critical guidance window with decay outside it.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Reported scenario evaluations support applying negative guidance during early denoising stages.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a unified formulation with an analysis of when guidance should be strong and with an evaluation focused on denoising stages.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A method claim becomes more actionable when its formulation, timing rationale, and operational implication are linked.",
+        "application": "For a guidance-based generation paper, state the guidance potential, derive or motivate its time-dependent schedule, and test the schedule by denoising stage.",
+        "exception": "This framing is unsuitable when guidance timing is irrelevant to the method or cannot be varied meaningfully."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluated scenarios, metrics, baselines, model details, or quantitative results.",
+      "The claimed critical time window and decay behavior are not quantified in the abstract."
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71059",
+    "title": "Don't Force the Fit: Bounded Log-Likelihood Loss for Enhanced Reasoning in Large Language Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71059"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5f690ea8290f4e806f8e6cca8269f46444d7800a2e843fae649496cfb835ebe5",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "f4a50ce843dfe0714d8ffcf0c9f743e141555fd2c3881eac7fe3ef7e320d81c8",
+    "extracted_at": "2026-09-13T00:12:22.978886+00:00",
+    "session_id": "01a0981b-5f2e-7ef2-b84b-d8c7396e4f69",
+    "usage": {
+      "input_tokens": 12677,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 736,
+      "reasoning_output_tokens": 67
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4c3c1d5acbb98a3caebd0c27fd35137de6ac39fff112b1ba9f7670c171c2e48b"
+    },
+    {
+      "id": "S2",
+      "sha256": "ef895f8e3b7acd8fce564a00f9e027d757886a236e743432c79b67f398b12f55"
+    },
+    {
+      "id": "S3",
+      "sha256": "df4a95e85f939961af2d5753a34fd28a4a8fa72de0bc50ac1e891d0cf47596ad"
+    },
+    {
+      "id": "S4",
+      "sha256": "60d3a15ad0b2d42393a72bc1193f1a79728aac4bd3934673d6b7d170d37ad4c4"
+    },
+    {
+      "id": "S5",
+      "sha256": "e8c1f8507d634a15a7147e858aac4f0d275e727d2099c84654bc79d1a7123352"
+    },
+    {
+      "id": "S6",
+      "sha256": "325281eda6c11f2a86564af0155698032294f6891ae93746197f5785f09acb71"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71059",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "SFT must align token-level training with reasoning behavior whose correctness depends on logical validity or final outcomes rather than exact wording.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies a mismatch in standard SFT: strictly fitting every demonstration token can overweight realization-specific or stylistic variation in reasoning tasks.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Bounded Log-Likelihood Loss (BLL-Loss), a parameter-free alternative that bounds gradient contributions from low-probability tokens while retaining conventional optimization behavior.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory and empirical finding",
+        "claim": "Reports theoretical insights and empirical evaluation of BLL-Loss across model scales and challenging reasoning benchmarks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish BLL-Loss as a simple, parameter-free bounded-gradient alternative to standard likelihood training for reasoning alignment.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that low-probability tokens in reasoning demonstrations often represent realization-specific or stylistic variation, and that reducing their training influence consistently improves reasoning-benchmark generalization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report improvements in reasoning generalization across diverse model scales and challenging benchmarks, alongside theoretical insights.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "SFT is presented as central to aligning LLMs with instruction following and task-specific reasoning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "Standard token-level likelihood training implicitly assumes that fitting every expert token produces desired downstream behavior, which may misalign with outcome-based reasoning correctness.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "observation",
+        "summary": "The authors report that low-probability reasoning tokens often encode stylistic or realization-specific variation, and that downweighting them improves generalization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "proposal and results",
+        "summary": "They introduce BLL-Loss and report theoretical and empirical evidence of improved reasoning generalization across scales and benchmarks.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates reasoning correctness from exact token realization and links low-probability tokens to stylistic or realization-specific variation.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "This suggests framing the training objective around the task’s success criterion rather than treating every demonstrated surface form as equally essential.",
+        "application": "When presenting an objective for outcome-based reasoning, explicitly identify which demonstration details may be incidental and explain how the loss limits their influence.",
+        "exception": "This framing may be unsuitable when exact wording, token fidelity, or stylistic reproduction is itself the task objective."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact bound, implementation, benchmark names, model sizes, baselines, or quantitative gains.",
+      "The reported consistency and improvement conditions are not detailed, so their scope cannot be assessed from the abstract alone."
+    ]
+  }
+}

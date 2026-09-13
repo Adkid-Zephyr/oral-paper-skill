@@ -1,0 +1,489 @@
+{
+  "batch_id": "iclr-2026-05",
+  "covered_ids": [
+    "iclr-2026-oral-10011092",
+    "iclr-2026-oral-10011116",
+    "iclr-2026-oral-10011137",
+    "iclr-2026-oral-10011187",
+    "iclr-2026-oral-10011189",
+    "iclr-2026-oral-10011204",
+    "iclr-2026-oral-10011209",
+    "iclr-2026-oral-10011228",
+    "iclr-2026-oral-10011242",
+    "iclr-2026-oral-10011247",
+    "iclr-2026-oral-10011280",
+    "iclr-2026-oral-10011292",
+    "iclr-2026-oral-10011364",
+    "iclr-2026-oral-10011454",
+    "iclr-2026-oral-10011477",
+    "iclr-2026-oral-10011492",
+    "iclr-2026-oral-10011624",
+    "iclr-2026-oral-10011638",
+    "iclr-2026-oral-10011644",
+    "iclr-2026-oral-10011653",
+    "iclr-2026-oral-10011716",
+    "iclr-2026-oral-10011728",
+    "iclr-2026-oral-10011760",
+    "iclr-2026-oral-10011784",
+    "iclr-2026-oral-10011845",
+    "iclr-2026-oral-10011869",
+    "iclr-2026-oral-10011886",
+    "iclr-2026-oral-10011897",
+    "iclr-2026-oral-10011904",
+    "iclr-2026-oral-10011956",
+    "iclr-2026-oral-10020874"
+  ],
+  "candidate_practices": [
+    {
+      "name": "用具体失效维度限定总体成绩",
+      "source_observation": "这些摘要把总体表现与时间约束、专家判断、隐藏信息或分布变化下的失效并列呈现。",
+      "why_it_may_help": "这可能帮助读者判断分数实际覆盖的能力，避免把局部成功理解为全面可靠；并非已证实的写作效果。",
+      "application": "在总分之后补一句：在哪种条件下、由哪个评价者、观察到什么失败；选择会改变结论的维度。",
+      "when_not_to_use": "研究只有单一明确终点，且没有分维度证据时，不人为制造能力画像。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10011092",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Gaia2设置动作级验证，并在42% pass@1总体领先结果旁指出时间敏感任务失败。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011209",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "CounselBench同时报告若干维度高分、专家发现的安全问题，以及LLM裁判的高估。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011364",
+          "source_ids": [
+            "S6",
+            "S10",
+            "S11"
+          ],
+          "specific_example": "隐写研究区分可见掩护交互与隐藏内容，并指定误判发生在Llama-Guard-3-8B上。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011454",
+          "source_ids": [
+            "S3",
+            "S7"
+          ],
+          "specific_example": "Veritas区分跨模型泛化与对未见伪造技术、数据域的泛化，报告前者较好而后者不足。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10011204",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "contrast": "RealUID主要用理论覆盖范围限定贡献；没有定量比较的摘要不适合硬添失败画像。"
+        }
+      ],
+      "full_text_needed_for": "维度定义、评价协议、失败频率、裁判可见信息，以及各条件是否可比。"
+    },
+    {
+      "name": "明确资源本身填补什么缺口",
+      "source_observation": "这些摘要将数据、基准或文档作为独立贡献，并以覆盖范围、组成、开放性或下游演示说明其用途。",
+      "why_it_may_help": "这种组织可能使资源贡献不依附于新模型是否领先，也能解释多个产物为何属于同一研究。",
+      "application": "为每个产物写明缺失的能力或材料、具体提供的内容及其与其他产物的关系；保留资源自身的贡献句。",
+      "when_not_to_use": "产物之间只有松散联系时，不强行编成一条端到端贡献链。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10011137",
+          "source_ids": [
+            "S1",
+            "S2"
+          ],
+          "specific_example": "Omni-Reward把模态与偏好表达不足连接到九任务基准、两类训练数据及奖励模型。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011247",
+          "source_ids": [
+            "S2",
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "OpenThoughts针对私有配方不透明，报告数据生成步骤实验、后续数据迭代和公开模型。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011624",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S8"
+          ],
+          "specific_example": "MomaGraph把统一场景表示、任务驱动数据、六能力基准与Graph-then-Plan连接起来。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011886",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S9",
+            "S10"
+          ],
+          "specific_example": "Common Corpus以许可来源、语言覆盖和溯源整理说明资源，并报告两个小模型的使用演示。"
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "资源可获得性、组成与许可证据、标注方法，以及下游结果能否归因于资源属性。"
+    },
+    {
+      "name": "把效率数字写成有条件的比较",
+      "source_observation": "这些摘要将性能与秩、可训练参数、内存、工作负载规模或实际设备速度一起报告，使用的资源单位并不相同。",
+      "why_it_may_help": "明确单位和运行条件可能使效率主张更可判断，避免把参数减少误读成同等幅度的运行加速。",
+      "application": "改写为“在何种任务或设备上，以何种资源变化，达到何种性能”；分别呈现代理指标与实测开销。",
+      "when_not_to_use": "比较条件尚未对齐时，不把秩匹配或参数匹配称为完整预算匹配。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10011116",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S9"
+          ],
+          "specific_example": "LoRA-Pre报告60M至1B预训练范围、八分之一秩结果及同秩微调比较。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011187",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "FFDP给出八张A6000约一分钟的体积配准演示，并分别报告加速、峰值内存和单卡容量。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011869",
+          "source_ids": [
+            "S10"
+          ],
+          "specific_example": "BioX-Bridge把88–99%的可训练参数减少与保持或改善迁移性能并列。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011897",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "specific_example": "WASI分别报告最高62倍内存缩减、最高2倍FLOPs缩减与Raspberry Pi 5约1.4倍加速。"
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "绝对资源量、基线配置、质量容差、测量范围，以及多个最大值是否来自同一设置。"
+    },
+    {
+      "name": "说明中间表示改变了哪个决策",
+      "source_observation": "这些摘要具体命名中间表示的结构，并说明它进入重建、动作生成、注意力计算或分类学习的位置。",
+      "why_it_may_help": "这可能让表示设计成为可理解的研究选择，而不只是新增模块名称。",
+      "application": "补充一句“表示保留哪些关系，并如何影响下游操作”；有表示比较时，用比较结果引出设计。",
+      "when_not_to_use": "没有证据时，不把可读表示称为忠实解释，也不把架构动机写成已验证机制。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10011228",
+          "source_ids": [
+            "S7",
+            "S8",
+            "S9",
+            "S10"
+          ],
+          "specific_example": "PRISM从文本空间相似性观察转向对象、属性和关系组成的结构化文本重建。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011242",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Avatar框架用结构化文本提供语境与情绪指导，并另设多模态扩散融合设计。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011492",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "HATSolver把树结构归纳偏置连接到分层注意力及计算成本分析。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011784",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "CompSLOT通过语义槽、原语选择聚合和概念相似性蒸馏改变分类器的学习信号。"
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "表示定义、学习方式、模块贡献，以及表示性质与最终行为之间的证据。"
+    },
+    {
+      "name": "把理论新意写成定义或建模对象的改变",
+      "source_observation": "这些摘要通过覆盖哪些模型、在哪个空间建模、如何重述已有方法或更换认证概念来陈述理论贡献。",
+      "why_it_may_help": "明确改变的对象可能比“通用”或“统一”更能展示理论贡献的范围，并防止把不同保证当成同一结论。",
+      "application": "写出原有对象或定义、新对象或定义，以及由此得到的覆盖范围或结论；标明这是理论陈述还是实验结果。",
+      "when_not_to_use": "没有形式对应关系时，不声称新框架涵盖旧方法；更换保证概念时，不宣称直接推翻旧定理。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10011204",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "specific_example": "RealUID列出Flow Matching、Diffusion、Bridge Matching和Stochastic Interpolants，并强调无需GAN即可使用真实数据。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011653",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Quotient-Space Diffusion把群作用下等价对象的分布放到商空间，并陈述采样器恢复目标分布的性质。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011845",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "MrRoPE把扩展方法重述为进制转换，再以均匀和渐进转换区分两个免训练变体。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011956",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "Gaussian unlearning把一步与两步Newton结论的差异归于认证概念对加噪机制的适配。"
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "正式定义、假设、包含关系、保证强度和证明条件。"
+    },
+    {
+      "name": "区分机制诊断、预测和干预证据",
+      "source_observation": "这些摘要用不同证据连接解释与现象：生物记录中的预测对应、理论引出的干预、内部错误定位或针对性修复。",
+      "why_it_may_help": "区分证据角色可能使机制主张更准确，避免把相关观察、诊断和修复统称为因果验证。",
+      "application": "分别写明解释变量、它预测或定位的现象，以及实际完成的检验；只在有干预结果时写出修复效果。",
+      "when_not_to_use": "仅有任务分数或概念类比时，不补造机制链。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10011189",
+          "source_ids": [
+            "S8",
+            "S9",
+            "S10"
+          ],
+          "specific_example": "发育RNN研究报告时序对应、记录支持的成熟预测，并区分具体运动统计与单纯加快感官变化。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011477",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S7"
+          ],
+          "specific_example": "困难样本研究将删样本后性能改善连接到样本对相似性框架及移除、margin、temperature干预。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011644",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "视觉符号研究把绑定错误追溯到空间索引机制失效，但改进方向尚不是已展示的修复。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011904",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "低精度研究描述低秩表示与舍入偏差相互累积，并报告针对偏差的最小修改稳定了训练。"
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "替代解释、干预隔离程度、预测形成时间、记录独立性和机制定位方法。"
+    },
+    {
+      "name": "为抽象性质指定可观察的证据对象",
+      "source_observation": "这些摘要把记忆策略、泛化、因果构造或分布保持连接到具体诊断量、迁移对象、挑战条件或统计性质。",
+      "why_it_may_help": "这可能帮助作者选择真正对应主张的结果，而不是用总体性能代替所有性质的证据。",
+      "application": "对每个核心性质写明“观察或证明什么才支持它”，并区分构造保证、统计检验与任务表现。",
+      "when_not_to_use": "诊断只是代理量时，应保持代理关系，不能将其提升为完整性质保证。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10011280",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Temporal superposition用特征角分布变化和谱半径下降表征稠密、稀疏策略。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011292",
+          "source_ids": [
+            "S7",
+            "S10"
+          ],
+          "specific_example": "FRABench/UFEval以112方面分类体系界定评价空间，并分别报告未见方面泛化与联合学习收益。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011638",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Frozen-PINN将内建时间因果性作为构造性质，另以含高速平流、激波等九个PDE基准报告效率和准确性。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10011716",
+          "source_ids": [
+            "S7",
+            "S8"
+          ],
+          "specific_example": "Spherical Watermark分别陈述三阶矩保持、经验统计不可区分及图像与追踪结果。"
+        }
+      ],
+      "contrasts": [],
+      "full_text_needed_for": "诊断阈值、迁移划分、统计检验功效、构造条件，以及性质与任务结果的关系。"
+    }
+  ],
+  "unusual_but_useful": [
+    {
+      "paper_id": "iclr-2026-oral-10011728",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S6",
+        "S7"
+      ],
+      "practice": "把基准内成功率与基准外发现分别报告。",
+      "application": "像CyberGym一样分开描述任务覆盖、约20%最高成功率与34个零日漏洞、18个不完整补丁的发现。",
+      "limit": "发现的验证、归因和影响尚需全文；不能用发现数量替代能力评价。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011760",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4",
+        "S7"
+      ],
+      "practice": "解释直接输出表示与分阶段训练各自解决的问题。",
+      "application": "将直接生成3D Gaussian的流程改变，与后续提升视觉质量、保持一致性及减少去噪步数分开表述。",
+      "limit": "提取中蒸馏方向存在冲突，核对前不要据此教授教师与学生的方向。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10020874",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "practice": "将表达优势与验证代价并列为理论贡献。",
+      "application": "先指定succinctness及有限自动机、LTL比较对象，再陈述相关验证问题的EXPSPACE-complete结果。",
+      "limit": "摘要未定义具体验证问题，也不能据此推出所有实际Transformer验证都同样困难。"
+    }
+  ],
+  "discarded_generalizations": [
+    {
+      "generalization": "这些写法解释了Oral入选，或必须归入统一ORAL框架。",
+      "reason": "材料只有入选论文的摘要提取，没有选择机制或写作效果证据。",
+      "paper_ids": [
+        "iclr-2026-oral-10011092",
+        "iclr-2026-oral-10020874"
+      ]
+    },
+    {
+      "generalization": "每篇摘要都需要新模型和量化性能提升。",
+      "reason": "资源、认证定义和复杂性结果本身可以构成贡献。",
+      "paper_ids": [
+        "iclr-2026-oral-10011886",
+        "iclr-2026-oral-10011956",
+        "iclr-2026-oral-10020874"
+      ]
+    },
+    {
+      "generalization": "实验数量、结构化推理或专家参与本身证明严谨性、忠实性与实际收益。",
+      "reason": "摘要未提供足够的方法和验证细节；这些属性不能相互替代。",
+      "paper_ids": [
+        "iclr-2026-oral-10011247",
+        "iclr-2026-oral-10011454",
+        "iclr-2026-oral-10011209"
+      ]
+    },
+    {
+      "generalization": "理论上界、矩保持或更少参数等于完整能力保证。",
+      "reason": "编码长度上界不保证所有长上下文任务表现，矩保持不等于分布相等，参数减少不等于实测加速。",
+      "paper_ids": [
+        "iclr-2026-oral-10011845",
+        "iclr-2026-oral-10011716",
+        "iclr-2026-oral-10011869"
+      ]
+    }
+  ],
+  "source_checks_needed": [
+    {
+      "paper_id": "iclr-2026-oral-10011760",
+      "field": "contributions / narrative_sequence, S6",
+      "issue": "贡献项写3D-oriented到MV-oriented，叙事写MV质量迁移到3D模式；需核对蒸馏方向。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011716",
+      "field": "method / evidence, S6–S7",
+      "issue": "核对半径是chi-square变量还是其平方根，以及“恢复Gaussian”“lossless”与三阶矩保证的准确关系。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011189",
+      "field": "lessons.application, S9",
+      "issue": "prospective与independent来自应用推断；原提取仅支持模型预测得到记录分析支持。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10020874",
+      "field": "author_reported_evidence, S3–S4",
+      "issue": "S3据称句法截断，需核对与S4的连接及EXPSPACE-complete对应的具体问题。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011092",
+      "field": "author_reported_evidence, S4",
+      "issue": "“trades accuracy and speed for cost”方向不清，核对Claude比较究竟减少哪类成本、牺牲哪项指标。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011137",
+      "field": "gap / contributions, S1–S2",
+      "issue": "固定二元偏好的局限与仍以preference pairs计数的数据不必矛盾，但需核对free-form修饰什么。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011638",
+      "field": "lessons.source_observation, S2–S4",
+      "issue": "逐组件对应独立瓶颈的说法可能强于摘要；九类挑战也不自动证明每个组件作用。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011886",
+      "field": "problem / contributions, S2–S5",
+      "issue": "核对合法使用、数据安全合规及ethical的原文范围；许可来源陈述不能自动支持全部概括。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011956",
+      "field": "gap / theoretical finding, S5–S8",
+      "issue": "核对不同认证概念下的一步与两步结论，避免写成同一保证下对旧结果的反证。"
+    }
+  ]
+}

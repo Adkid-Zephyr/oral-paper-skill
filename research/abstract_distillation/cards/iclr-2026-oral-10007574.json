@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007574",
+    "title": "Cross-Domain Lossy Compression via Rate- and Classification-Constrained Optimal Transport",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007574"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6a2bf7e87e3eeb08d91220cb97480182e6d3f91449f4bc4c385f3ce64d05ca09",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "b9de0fd9fcce4445599ffbf75c2d0f8aef714f4333c1e8348e7aa19f8e4545e0",
+    "extracted_at": "2026-09-12T23:59:48.026741+00:00",
+    "session_id": "01a0980f-ca76-72d1-9d5d-b70cb659cae0",
+    "usage": {
+      "input_tokens": 12689,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 868,
+      "reasoning_output_tokens": 97
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2770bc70020a6116cca99034ac0641e0f8f6d8571cfed3ed3fb7820facaa40cc"
+    },
+    {
+      "id": "S2",
+      "sha256": "154f6c3253719c7bcc1303fae575aa02aae2d9bac1d29cacf6ea3cb32c7d24f9"
+    },
+    {
+      "id": "S3",
+      "sha256": "d496afe05d70a448a473b6e0f64d6d1fc8d210958f13c4f7120bc8e2297514d2"
+    },
+    {
+      "id": "S4",
+      "sha256": "440c21e119bb506202a00cf103cdb3ec285e2d152b51939e804ec781c04ac7b9"
+    },
+    {
+      "id": "S5",
+      "sha256": "6bb9002bd5f89d87b796ad4e3e0b2ce28c490efdc557696de912cb071254ec22"
+    },
+    {
+      "id": "S6",
+      "sha256": "8cbaec587af61eb4415e199c7c410c9a5122c6173b9e1730a2ac7ae214557d53"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007574",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies lossy compression where the encoder observes a degraded source but the decoder reconstructs samples from a distinct target distribution.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "It formulates cross-domain lossy compression as constrained optimal transport with rate and classification-loss constraints.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "It derives closed-form DRC/RDC tradeoffs for Bernoulli sources with Hamming distortion, analytic DRC/RDC expressions for Gaussian models with mean-squared error, and DRPC functions incorporating KL and squared-Wasserstein perception divergences.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "It develops deep end-to-end models for super-resolution, denoising, and inpainting across the listed datasets to compare empirical performance with the theoretical results.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state a unified constrained-transport framework that jointly incorporates compression rate, classification loss, and, in its extension, perception divergences for cross-domain lossy compression.",
+      "source_ids": [
+        "S2",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that shared common randomness reduces the one-shot setting to a deterministic transport plan and enables closed-form Bernoulli DRC/RDC tradeoffs under Hamming distortion.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report analytic DRC/RDC expressions for Gaussian models in the asymptotic regime under mean-squared error.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report consistency between theoretical results and empirical performance in models for super-resolution, denoising, and inpainting.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setup",
+        "summary": "Defines cross-domain lossy compression with degraded-source encoding and target-distribution reconstruction.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "formulation",
+        "summary": "Casts the task as constrained optimal transport with rate and classification-loss constraints.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "Derives one-shot Bernoulli and asymptotic Gaussian tradeoff expressions under specified distortions.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "extension",
+        "summary": "Adds KL and squared-Wasserstein perception divergences and derives DRPC functions.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "validation",
+        "summary": "Reports end-to-end experiments across super-resolution, denoising, and inpainting tasks and datasets.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract introduces a constrained-transport formulation, specializes it to tractable Bernoulli and Gaussian cases, then extends it with perception divergences before reporting application experiments.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A layered presentation can connect a general formulation to interpretable special cases and broader constraints before empirical testing.",
+        "application": "Structure a paper by stating the general constrained problem, deriving at least one transparent special case, extending the constraint set, and then mapping experiments to those theoretical claims.",
+        "exception": "This sequence may be unsuitable when the target problem lacks tractable special cases or when theory and experiments do not share comparable metrics."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact tradeoff formulas, model architectures, baselines, numerical results, or experimental conditions.",
+      "The reported empirical consistency is not quantified, and the abstract does not establish whether the framework improves over competing approaches."
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47176",
+    "title": "Accelerating LLM Inference with Lossless Speculative Decoding Algorithms for Heterogeneous Vocabularies",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47176"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4957b9532616cb30f64c78b15aa54d8d9404c52066fd609f190d6b9dc2230bc3",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "ea64b6eac63f1165cc4aeb4bbde8a9a7af0527b16e9f6990db8e3ec58c899762",
+    "extracted_at": "2026-09-13T00:07:30.699052+00:00",
+    "session_id": "01a09816-e670-7a20-b444-6402ee52e564",
+    "usage": {
+      "input_tokens": 12687,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 729,
+      "reasoning_output_tokens": 78
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8aba0b42c0741214a5dd726dd82bad4369c255f6eb00081584513ce79c9b7536"
+    },
+    {
+      "id": "S2",
+      "sha256": "4c4949715d207e65b28595c607a616037baefecb8263b09743a4cbaa1dc16068"
+    },
+    {
+      "id": "S3",
+      "sha256": "4b3ed6d228ea905cb7e87cf85c7aee2cfdce29ad8db04e0b522a538d40c249fe"
+    },
+    {
+      "id": "S4",
+      "sha256": "517d190c1deda0eb6e291fbe92009058110dfb8fa1f6e813f85f68788e6dfe5a"
+    },
+    {
+      "id": "S5",
+      "sha256": "f88f8eac10dddf6f121ae47a42f7cc3a7c3b94c1f3c0d35f4f80357454cdb3f4"
+    },
+    {
+      "id": "S6",
+      "sha256": "80ae85be0915d5e7ea5342788073c5b2a21ba96d345657b8309f380ccaae61e6"
+    },
+    {
+      "id": "S7",
+      "sha256": "8ff1ab56d7d013fa0b364437b90417f211ef134adeedf72a717c1cbe5d7dfbe1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47176",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Accelerate large language model inference using speculative decoding.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing speculative decoding requires drafter and target models to share a vocabulary, limiting drafter choice and often requiring training from scratch.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces three speculative decoding methods that remove the shared-vocabulary constraint.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The methods are described as lossless, compatible with off-the-shelf models, and requiring neither additional training nor model modifications.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by enabling speculative decoding across heterogeneous vocabularies without retraining or modifying off-the-shelf models.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report speedups of up to 2.8× over standard autoregressive decoding on summarization, programming, and long-context tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that all three methods preserve the target distribution.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLM inference acceleration is identified as a critical generative-AI challenge, and speculative decoding is presented as an efficiency-oriented approach.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Prior speculative decoding approaches are described as requiring shared drafter and target vocabularies, restricting available drafters and often prompting from-scratch training.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "The paper presents three methods intended to remove the shared-vocabulary requirement while preserving the target distribution and avoiding retraining or modifications.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report up to 2.8× speedups across summarization, programming, and long-context tasks, and argue that drafter choice is substantially broadened.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a concrete deployment constraint—shared vocabularies—with corresponding method properties: distribution preservation, off-the-shelf compatibility, and no retraining.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "Aligning each proposed capability with the motivating adoption barrier makes the contribution easier to evaluate conceptually.",
+        "application": "Frame a new method by explicitly mapping each design property to a stated limitation of existing approaches.",
+        "exception": "This framing is less suitable when the main contribution is theoretical or the deployment constraint is not central."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify how the three methods handle heterogeneous vocabularies or how they preserve the target distribution.",
+      "Experimental datasets, hardware, decoding settings, baselines, and statistical variability are not reported.",
+      "The basis and scope of the claim that the methods work with any off-the-shelf model are unspecified."
+    ]
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011018",
+    "title": "Fast Escape, Slow Convergence: Learning Dynamics of Phase Retrieval under Power-Law Data",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011018"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e91d303eee77dbf08eb3a7cf9295b83be0ecbf0b69f820ac949761b90a38ea5c",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "9d6db6580cf702d9eb0bc6117e8cc7b0898047a6c4f7672e458961437ca7ce86",
+    "extracted_at": "2026-09-13T00:05:18.964409+00:00",
+    "session_id": "01a09814-e05b-72d2-b2ac-f49543859d32",
+    "usage": {
+      "input_tokens": 12689,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 845,
+      "reasoning_output_tokens": 110
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9af3206e6aee7ae216e18511e7c29c16448c69ec373f2bd6074e1e08fab82e06"
+    },
+    {
+      "id": "S2",
+      "sha256": "877a1ea3004dd50f1d08ca4bbf7d1ba7a3f4b297f7ebdf27c9523bcaaa158702"
+    },
+    {
+      "id": "S3",
+      "sha256": "90dd6837859ed0832025182d0c49a19d4523533f7e7b8124e0a6e1f1f97ff82d"
+    },
+    {
+      "id": "S4",
+      "sha256": "a182eaae56ba9cf4d35b39701877c1abe6f5ecc7eaf3e12a3638dbf8615affb4"
+    },
+    {
+      "id": "S5",
+      "sha256": "f773663cfd6dd5c2f21028a192ad85accf7ab593a5daff715ac538a8e7e137e1"
+    },
+    {
+      "id": "S6",
+      "sha256": "e7ac5c00764853d11dba8c9fe1a8a918a5ea8e971cacc2f98f7dfcf969705a9b"
+    },
+    {
+      "id": "S7",
+      "sha256": "0f8c1b1e538f22eea161823653883917d83fd99a05a197360adc65aedab7b56d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011018",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Analyze scaling laws and learning dynamics in phase retrieval with anisotropic Gaussian inputs whose covariance spectrum follows a power law.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The isotropic two-dimensional description does not extend directly: anisotropy produces an infinite hierarchy of coupled equations, and the abstract presents a rigorous characterization for this nonlinear anisotropic setting as previously unavailable.",
+        "source_ids": [
+          "S3",
+          "S7"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Develops a tractable reduction of the anisotropic dynamics into three phases: fast escape, slow summary-statistic convergence, and spectral-tail learning.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Derives explicit mean-squared-error scaling laws linking spectral decay to convergence times and error curves.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports experimental confirmation of the predicted phases and exponents.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize scaling laws in nonlinear regression with anisotropic data and identify how anisotropy reshapes learning dynamics, describing this as the first rigorous characterization of its kind.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the reduction yields a three-phase trajectory: rapid escape from low alignment, slow convergence of summary statistics, and subsequent learning in low-variance spectral directions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report explicit mean-squared-error scaling laws whose convergence times and error curves depend on spectral decay.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Experiments are reported to confirm the predicted phases and exponents.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context_and_task",
+        "summary": "Frames scaling laws as a central learning-dynamics question and studies phase retrieval under power-law anisotropic Gaussian data.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "contrast",
+        "summary": "Contrasts the isotropic two-dimensional dynamics with the anisotropic infinite hierarchy of coupled equations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reduction",
+        "summary": "Introduces a tractable reduction exposing three sequential learning phases.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "scaling_laws",
+        "summary": "Uses the phase decomposition to derive mean-squared-error scaling laws governed by spectral decay.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "confirmation_and_claim",
+        "summary": "Reports experimental agreement with predicted phases and exponents and positions the result as a first rigorous characterization.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract organizes its dynamics through a three-phase decomposition and then derives error scaling laws from that decomposition.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A staged mechanism can make a complex learning-curve claim more interpretable by connecting distinct dynamical regimes to measurable scaling behavior.",
+        "application": "For a dynamics paper, define regime-specific phases first, then state which observable and scaling law each phase explains.",
+        "exception": "This framing is unsuitable when phases cannot be separated operationally or when the target phenomenon is not sequential."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical exponents, convergence-time formulas, spectral-decay conditions, or parameter ranges.",
+      "Experimental setup, datasets, baselines, and quantitative agreement measures are unspecified.",
+      "The reduction’s assumptions and the precise meaning of “rigorous characterization” are not provided."
+    ]
+  }
+}

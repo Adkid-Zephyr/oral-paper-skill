@@ -1,0 +1,211 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31746",
+    "title": "Capturing the Temporal Dependence of Training Data Influence",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31746"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a97bd3886592075551e69e8a953bac9f31a6b35d19eec5762c0a5d31704149e2",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "1c760e1797c7c05f17f1dec455141233026b903907ce6d158ced72021e92ffe4",
+    "extracted_at": "2026-09-12T23:50:28.084476+00:00",
+    "session_id": "01a09807-44a2-7941-803b-9abbf46c9ab9",
+    "usage": {
+      "input_tokens": 12880,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 809,
+      "reasoning_output_tokens": 62
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "572cecc7f9f110076cbe3e1fd2f1a8d22dc01dab1a5fd493273361387b5d7254"
+    },
+    {
+      "id": "S2",
+      "sha256": "6664d7ff3fa04de01978962be6953d00587181a744913d7814587e45062998ff"
+    },
+    {
+      "id": "S3",
+      "sha256": "830e373730b0af78f532c4c558892ee5689286f4baf0be10b8e65ef874a49bf3"
+    },
+    {
+      "id": "S4",
+      "sha256": "d5b7f696f53996e49d8b578bb0b9481d7a4789da59612745cf593504df944b50"
+    },
+    {
+      "id": "S5",
+      "sha256": "c041248646e97ea05b43d0f4172c2a77198574d7150a2194c791046fff365c5f"
+    },
+    {
+      "id": "S6",
+      "sha256": "08f117441181daad1795e9da888c75f505312bc9a7953ab8917f8fa661b69736"
+    },
+    {
+      "id": "S7",
+      "sha256": "c1bec3c17c5f4ca085976cabaf9b46675bcb0eb066c613e3b5380c188563edd1"
+    },
+    {
+      "id": "S8",
+      "sha256": "67d2e5353ec9369205d37a2ed61b2e4bbfdc8cb0a2bf6279e1f54a04defa0415"
+    },
+    {
+      "id": "S9",
+      "sha256": "4cfa6920868e8886c8ab8fc3f7a610389025843ec8dbd6f73d6098bb4f768741"
+    },
+    {
+      "id": "S10",
+      "sha256": "4ecc9ac1b9bd4415e080f1a6a31a187f607af4c36e8d2844162144ffe7faa721"
+    },
+    {
+      "id": "S11",
+      "sha256": "8ae0c555403070dbccc4cda35cfa864bc8d30262be9db1e841dbea73b7379a1a"
+    },
+    {
+      "id": "S12",
+      "sha256": "2588fbd7fae74b9cdc307a731c890e82dfc22c73ddc25a55974132629bf41023"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31746",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to measure the influence of training data as a function of its position in, and interaction with, the optimization trajectory.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Influence-function methods assume permutation-invariant learning, an assumption violated by stochastic, non-convergent, multi-stage training sensitive to data ordering.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Formalizes trajectory-specific leave-one-out influence for removing a data point at a particular training iteration while accounting for the encountered data sequence and optimization trajectory.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces data value embedding, which approximates trajectory-specific leave-one-out influence using a training-data embedding and a test-data gradient dot product.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports distinct influence phases, with early- and late-stage data points exerting greater impact on the final model, and connects this pattern to timing data selection.",
+        "source_ids": [
+          "S10",
+          "S11",
+          "S12"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe data value embedding as a novel technique for efficiently approximating trajectory-specific leave-one-out influence.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that data value embedding captures training-data ordering and reveals distinct phases of data influence.",
+        "source_ids": [
+          "S10",
+          "S11"
+        ]
+      },
+      {
+        "claim": "The authors report that early- and late-stage training data have greater impact on the final model, motivating strategically timed data selection to manage selection overhead.",
+        "source_ids": [
+          "S11",
+          "S12"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "assumption",
+        "summary": "Existing influence estimation assumes training-order permutation invariance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "mismatch",
+        "summary": "Modern stochastic, multi-stage, non-convergent curricula depend on data ordering, creating unanswered stage-specific and trajectory-dependent influence questions.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "formalization_and_method",
+        "summary": "The paper defines trajectory-specific leave-one-out influence and proposes data value embedding with dot-product approximation.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "reported_insight",
+        "summary": "The embedding is reported to expose stronger influence in early and late training stages, suggesting timed data selection.",
+        "source_ids": [
+          "S10",
+          "S11",
+          "S12"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract ties a failure of a standard assumption to a trajectory-aware quantity and then to an approximation whose inputs are explicitly identified.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S5",
+            "S7",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "A strong technical narrative can align the limitation, formal target, computational obstacle, and proposed estimator in sequence.",
+        "application": "When presenting a new influence or attribution method, state the violated assumption, define the target quantity, identify the cost bottleneck, and show exactly how the estimator approximates it.",
+        "exception": "This framing is less suitable when the work does not introduce a formal target or when the main contribution is primarily empirical or architectural."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report quantitative approximation error, computational cost, datasets, baselines, or experimental conditions.",
+      "It does not specify how influence phases are measured or whether the reported pattern holds across models, curricula, or selection settings."
+    ]
+  }
+}

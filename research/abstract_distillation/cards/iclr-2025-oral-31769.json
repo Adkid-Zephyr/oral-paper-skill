@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31769",
+    "title": "Data Scaling Laws in Imitation Learning for Robotic Manipulation",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31769"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6b32d5406ae88ef0b13d24929dce76df5b50ac1c00327c96708f43fe58018e4d",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "2ccbe2e22d3154258189721640e0917353525f5927e550bbbc441a559a8a128f",
+    "extracted_at": "2026-09-12T23:51:12.531382+00:00",
+    "session_id": "01a09807-f42f-7620-bdec-bc366bef1849",
+    "usage": {
+      "input_tokens": 12768,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 791,
+      "reasoning_output_tokens": 69
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5e7fe1d3dd583994e1150d622a36c90740401ef7971f9f779858c60eab04e816"
+    },
+    {
+      "id": "S2",
+      "sha256": "baa60a2f6a3cfd702abd3187636e6e6050fa326551ee16a72a3b3132acb24cf7"
+    },
+    {
+      "id": "S3",
+      "sha256": "1a4260f5a58228fde9e82064b9745af657bb7acf8de7280b99ce4b4145b417f0"
+    },
+    {
+      "id": "S4",
+      "sha256": "c84841f132a4613c6bd484108f972657ed48965af3d38d3b62994a319328352e"
+    },
+    {
+      "id": "S5",
+      "sha256": "2ba52efc3a960a5af4e11bbdea5e0866fd90e72bbfbc173de337932e037f6777"
+    },
+    {
+      "id": "S6",
+      "sha256": "f092bb85d1175c3e3e5b3b6c39505cbc6b6c783222c00c531b785768b0bdac48"
+    },
+    {
+      "id": "S7",
+      "sha256": "21cf16eb558b810975b44a650caca9ca0022c30d0d477f88e264b82130606556"
+    },
+    {
+      "id": "S8",
+      "sha256": "c6c7fcee0c92df7c49969181d185e4393cceaca4f5def50a945b56517da9ecda"
+    },
+    {
+      "id": "S9",
+      "sha256": "fdd6015d0f177f5367aee91553d3413dca1200876b0d95130be95990281a5e6b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31769",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper investigates whether robotics, particularly robotic manipulation, exhibits data scaling laws and whether scaling can produce single-task policies that deploy zero-shot across same-category objects and environments.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical study",
+        "claim": "A comprehensive study of imitation-learning data scaling using variation in training environments, objects, and demonstrations.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "finding",
+        "claim": "Characterization of how environment, object, and demonstration diversity relate to policy generalization.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "strategy",
+        "claim": "An efficient data-collection strategy based on the reported scaling findings.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present an empirical investigation of data scaling laws specifically for robotic manipulation and derive an efficient collection strategy from its findings.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that policy generalization follows a roughly power-law relationship with the number of training environments and objects.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that environment and object diversity matter more than the absolute demonstration count; beyond a threshold of demonstrations per environment or object, additional demonstrations have minimal effect.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report collecting over 40,000 demonstrations and conducting more than 15,000 real-world robot rollouts under a rigorous evaluation protocol.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "research question",
+        "summary": "The paper asks whether data scaling laws transfer to robotic manipulation and support zero-shot deployment across novel objects and environments.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "study design",
+        "summary": "It varies the numbers of training environments, objects, and demonstrations while collecting data across many environments and objects.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported findings",
+        "summary": "Generalization approximately follows power laws for environments and objects, while diversity outweighs demonstration quantity after a per-environment or per-object threshold.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "practical outcome",
+        "summary": "The authors propose efficient collection and report approximately 90% success on two tasks in novel environments with unseen objects using data collected by four collectors in one afternoon.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates scaling dimensions—environments, objects, and demonstrations—and reports different effects for each, including a threshold beyond which more demonstrations have minimal impact.",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A paper can make a more actionable scaling claim by decomposing a total resource into distinct axes and identifying where marginal returns change.",
+        "application": "When presenting a data-scaling study, report performance against each meaningful diversity or quantity axis separately, and state any observed saturation condition.",
+        "exception": "This framing may be unsuitable when the data axes cannot be varied independently or when the abstract lacks evidence for a saturation pattern."
+      }
+    ],
+    "unknowns": [
+      "The threshold for demonstrations per environment or object is not quantified.",
+      "The two tasks, policy architecture, task-specific data amounts, and success-rate uncertainty are unspecified.",
+      "The abstract does not detail the evaluation protocol or establish whether the reported relationships are statistically validated."
+    ]
+  }
+}

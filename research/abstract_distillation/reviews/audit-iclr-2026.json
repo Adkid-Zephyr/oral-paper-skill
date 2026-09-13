@@ -1,0 +1,82 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "records": [
+    {
+      "paper_id": "iclr-2026-oral-10011869",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011477",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10011638",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "author_reported_evidence[1].claim",
+          "source_ids": ["S6"],
+          "issue": "S6 frames the approach as challenging reliance on gradient descent and specialized hardware. 'Report that the approach avoids reliance' hardens that positioning into a reported hardware-independence result. S3 explicitly establishes the gradient-descent-free design, but the abstract gives no comparable hardware demonstration. The rest of the card retains the hardware uncertainty and correctly describes the core method, so this is a local attribution precision issue.",
+          "severity": "minor",
+          "correction": "Preserve the authors' positioning language rather than asserting established hardware independence.",
+          "replacement_value": "The authors argue that their approach challenges PINNs' reliance on stochastic gradient-descent methods and specialized hardware."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10008765",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10008786",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "problem_and_gap.problem.source_ids",
+          "source_ids": ["S1", "S5", "S6"],
+          "issue": "The claim explicitly includes long-horizon decision-making, but its current S1/S5 locators support multi-turn tasks and environment interaction without stating long horizons. S6 supplies that scope. The claim is faithful to the complete abstract; its locator set is incomplete.",
+          "severity": "minor",
+          "correction": "Add S6 to the problem claim's supporting source IDs.",
+          "replacement_value": ["S1", "S5", "S6"]
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009050",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "stated_novelty.source_ids",
+          "source_ids": ["S2", "S3", "S6", "S8"],
+          "issue": "The stated-novelty claim includes weak-to-strong oversight, which is supported by S6 rather than its current S2/S3/S8 locators. The underlying claim is explicitly present in the abstract and correctly reported in the evidence field; only this locator set needs completion.",
+          "severity": "minor",
+          "correction": "Add S6 to support the weak-to-strong portion of the stated-novelty claim.",
+          "replacement_value": ["S2", "S3", "S6", "S8"]
+        }
+      ],
+      "final_disposition": "requires_correction"
+    }
+  ],
+  "summary": {
+    "reviewed": 6,
+    "full_original_abstracts_read": 6,
+    "first_pass_pass": 3,
+    "first_pass_minor": 3,
+    "first_pass_material_error": 0,
+    "material_findings": 0,
+    "minor_findings": 3,
+    "requires_correction": 3,
+    "scope": "Read all six original source-unit sets and all extraction fields in runs/audit-source-review-iclr-2026/packet-01.json. Checked entailment, attribution, numerical scope, qualifiers, locators, narrative, unknowns, and separation of lesson observations from interpretation and proposed application. BioX-Bridge preserves the trainable-parameter denominator and 88-99% reduction; Frozen-PINN preserves nine benchmarks and often several orders of magnitude; AgentGym-RL preserves the 27-task comparison and named systems; the monitoring card retains 15% TPR improvement at FPR 0.01 without inventing a percentage-point interpretation. No material error found; one local attribution issue and two incomplete locator sets require minor correction.",
+    "limitations": "AI source checking only. This review does not independently verify experiments, proofs, novelty, reproducibility, or lesson effectiveness. Initial random-audit outcomes are preserved; no cards were edited, no model calls were made, and no corpus-wide accuracy or gate decision is issued."
+  }
+}

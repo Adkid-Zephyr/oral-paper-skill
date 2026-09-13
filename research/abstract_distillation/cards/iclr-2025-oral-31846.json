@@ -1,0 +1,172 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31846",
+    "title": "Generator Matching: Generative modeling with arbitrary Markov processes",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31846"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "71345c2ec487fc29c8b09e15c874a62e5d558840898cc6034419ea749a633ef8",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "885d890a69fc38aae075ef355e0feb0ec75a09168e465c3d1993818af21b9694",
+    "extracted_at": "2026-09-12T23:54:19.664851+00:00",
+    "session_id": "01a0980a-d355-7db1-8053-ded952ca76e4",
+    "usage": {
+      "input_tokens": 12640,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 716,
+      "reasoning_output_tokens": 93
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4b01ab9dd7136f26cad8800a3b2ad9b25e2dcd5c71848fcec6c45c699a9a3841"
+    },
+    {
+      "id": "S2",
+      "sha256": "37ab2ea543147572c0702834c72738806c1886d015a6adc7a9e0023634e5df0e"
+    },
+    {
+      "id": "S3",
+      "sha256": "d86b590b583220400d338b1ec17924d311e0d6d9f26ada3d5b9c0ac780491c88"
+    },
+    {
+      "id": "S4",
+      "sha256": "faa046e46a1fa73b0ef08b982af2efa604e1aad23a26fab235f5a1edf67c1650"
+    },
+    {
+      "id": "S5",
+      "sha256": "3c01279be286ee0c4cdd7a7d669c63ef740b6853848b85c3fcdb89bac9822e32"
+    },
+    {
+      "id": "S6",
+      "sha256": "6b91376410932abac90e2f2daa63253ee83d171f2517eb5a7872368a38df865b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31846",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop a modality-agnostic generative-modeling framework based on arbitrary Markov processes.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Generator Matching, which learns a marginal generator from conditional generators for individual data points.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "theory/framework",
+        "claim": "Unifies diffusion models, flow matching, and discrete diffusion models while extending the design space to processes such as jump processes.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "Provides a rigorous construction for superpositions of Markov generative models and multimodal models.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Generator Matching by applying generator-based modeling to arbitrary Markov processes and enabling jump-process and rigorous superposition constructions.",
+      "source_ids": [
+        "S1",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report empirical validation on image and multimodal generation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that superposition with a jump process improves performance.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "framework introduction",
+        "summary": "Generator Matching uses infinitesimal Markov-process generators for generative modeling, learning a marginal generator from conditional ones.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "unification",
+        "summary": "The framework is presented as encompassing several diffusion- and flow-based methods.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "design-space expansion",
+        "summary": "It extends the approach to previously unexplored Markov processes, including jump processes.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "model construction and validation",
+        "summary": "It supports rigorous superpositions and multimodal models, with reported image and multimodal experiments including a jump-process performance improvement.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a common generator-based formulation to existing methods, then uses that formulation to motivate new process choices and superpositions.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A shared formal object can make unification and principled extensions part of the same contribution narrative.",
+        "application": "When proposing a generative framework, define the common mathematical object, map established methods into it, and show which new design choices it makes expressible.",
+        "exception": "This framing is unsuitable when the proposed method lacks a meaningful common formal representation or when method mapping would obscure important differences."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the benchmark datasets, metrics, baselines, magnitude of the reported improvement, or conditions under which jump-process superposition helps.",
+      "The abstract does not state an explicit limitation in prior approaches or establish priority beyond the authors' stated distinctions."
+    ]
+  }
+}

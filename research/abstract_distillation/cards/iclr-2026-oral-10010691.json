@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010691",
+    "title": "Pinet: Optimizing hard-constrained neural networks with orthogonal projection layers",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010691"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0cf4857ac39d935c708b33846e55ec1b6a8eb3260352819319b604d016b332bf",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "5125c9f8ee6be8068bfb84b2c14cfb48cc4158b23432f8d0ec735bbc95ca96cc",
+    "extracted_at": "2026-09-13T00:04:50.578446+00:00",
+    "session_id": "01a09814-70ae-7d52-b754-f9626c5b0afd",
+    "usage": {
+      "input_tokens": 12622,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 798,
+      "reasoning_output_tokens": 114
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fdb20b9a8da0de2b21c2ffb7c1f78e7de043cbede9b95d291200d6898a3f0356"
+    },
+    {
+      "id": "S2",
+      "sha256": "f5787b65ec3a6df3e85e353859e9a9a8f99bca28997102b1f33999be09b26d43"
+    },
+    {
+      "id": "S3",
+      "sha256": "3a6fbf709ede9bc77e91b187513353c3d8227b5f6c9b060488df6f0412c1cbf7"
+    },
+    {
+      "id": "S4",
+      "sha256": "259de4e53732c41d3226784a8f1e13549d11e514bb1ae031ec9f6307945d0aaf"
+    },
+    {
+      "id": "S5",
+      "sha256": "619d1103a0dad19c35f4f6b10bf1d8288d7a95a324d7c33c7710c52da90dd42e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010691",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses neural-network outputs for convex constraints, parametric constrained optimization, and multi-vehicle motion planning with non-convex trajectory preferences.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "An output layer, Πnet, uses operator splitting for forward-pass projections and the implicit function theorem for backpropagation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Πnet is deployed as a feasible-by-design optimization proxy and provided as a GPU-ready JAX package for multi-vehicle motion planning.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce a neural-network output layer intended to ensure satisfaction of convex constraints while supporting differentiable optimization.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Πnet obtains modest-accuracy solutions faster than traditional solvers for one problem and significantly faster for batches of problems.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report orders-of-magnitude advantages over state-of-the-art learning approaches in training time, solution quality, and robustness to hyperparameter tuning, with similar inference times.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report applying Πnet to multi-vehicle motion planning with non-convex trajectory preferences and releasing a GPU-ready JAX implementation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem framing",
+        "summary": "The paper introduces a neural-network output layer for satisfying convex constraints.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "technical approach",
+        "summary": "Πnet combines operator splitting for rapid forward projections with implicit-function-theorem-based backpropagation.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "optimization evaluation",
+        "summary": "The method is used as a feasible-by-design proxy, with reported speed advantages over traditional solvers and learning approaches under stated comparisons.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "application and release",
+        "summary": "The paper applies Πnet to multi-vehicle motion planning and presents a GPU-ready JAX package.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a method mechanism with separate deployment settings: constrained optimization and non-convex-preference motion planning.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "This makes the claimed scope easier to assess by connecting the technical design to concrete uses.",
+        "application": "When presenting a constrained-learning method, state the computational mechanism first, then map it to each task and constraint regime.",
+        "exception": "This framing is unsuitable when the method has only one use case or when task-specific details are not yet established."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify constraint dimensions, solver baselines, datasets, accuracy definitions, hardware, batch sizes, or numerical speedups.",
+      "The scope and guarantees of constraint satisfaction, and the conditions behind the reported robustness and orders-of-magnitude comparisons, are not detailed.",
+      "The abstract does not establish independent validity, reproducibility, or priority of the stated novelty."
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71111",
+    "title": "CAT-Q: Cost-efficient and Accurate Ternary Quantization for LLMs",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71111"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "cd1f45f55da65de5a817f6126b3fcc8c2e6db4a7415a1841c2c2a8197a1bf887",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "4b4087899b499e191a1df3c996faebc4ae47bbb14920758e96c5c760856d89e5",
+    "extracted_at": "2026-09-13T00:14:35.984197+00:00",
+    "session_id": "01a0981d-5a1c-78f2-8140-4e5080efd78a",
+    "usage": {
+      "input_tokens": 14375,
+      "cached_input_tokens": 9984,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 874,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6e9b440037e8bbfda18ee2b70fb0c4ae6e9537fc258b366594dac15a81a86bee"
+    },
+    {
+      "id": "S2",
+      "sha256": "2f45c17a9b2215d5346b60fbec3461ec593efd9cd9f632fcb2d13d8a768a0de8"
+    },
+    {
+      "id": "S3",
+      "sha256": "1ed7b9985ff88762b9686b5ab87a0f43e24b9e20a5f570375c4619f98fe8f08a"
+    },
+    {
+      "id": "S4",
+      "sha256": "000bc5ff3e3530968caba89494f243fc65feab1e1b4071b72013e53185a0ca5e"
+    },
+    {
+      "id": "S5",
+      "sha256": "9d7f314b2c1bac9b52ed33a75a70b600f0a74fb76d2a43bbf18635435d996cbe"
+    },
+    {
+      "id": "S6",
+      "sha256": "2e5d41c9effe503ac45728104a6c7033fcd6ef4a1f6b48d13227c7327da51777"
+    },
+    {
+      "id": "S7",
+      "sha256": "daabf92770f04c8c944774766501564e162b9a74bead8114e598362a29038b01"
+    },
+    {
+      "id": "S8",
+      "sha256": "3245d952b7e0b35c692fbf84cf7788418c8acc60c20a8de6bb82f403d7251173"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71111",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Compress and accelerate large language models through ternary quantization.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing leading ternary quantization methods rely on costly, data-intensive quantization-aware training to address severe performance degradation.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "CAT-Q is a post-training ternary quantization scheme with learnable modulation and softened ternarization, coupled from an optimization perspective.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Learnable modulation adjusts weight distributions and ternary thresholds, while softened ternarization uses a differentiable transition to guide convergence.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The method is reported as applicable across diverse LLM architectures and model sizes, including models up to 235B parameters.",
+        "source_ids": [
+          "S2",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that CAT-Q is the first method to quantize much larger pre-trained LLMs of 14B–235B parameters into leading ternary models within 8–60 hours on eight A100-80GB GPUs.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that 1.7B–8B-parameter pre-trained LLMs can be quantized using 512 calibration samples, with superior performance to BitNet 1.58-bit v1 and v2 models of 1.3B–7B parameters trained on 100B tokens.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report an approximately 100,000× reduction in training tokens relative to those BitNet comparisons.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report quantizing 14B–235B-parameter pre-trained LLMs into leading ternary models in 8–60 hours on eight A100-80GB GPUs.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The paper introduces ternary quantization for compressing and accelerating LLMs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "contrast",
+        "summary": "It positions CAT-Q as post-training quantization, avoiding the costly quantization-aware training used by existing methods.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "CAT-Q combines learnable modulation with softened ternarization to reduce sensitivity and promote stable convergence.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The authors report strong results with 512 calibration samples for 1.7B–8B models and scaling to 14B–235B models within 8–60 hours.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links each component to a specific quantization difficulty: modulation addresses sensitivity, while softened ternarization addresses convergence.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Mechanism-to-problem alignment makes a technical method easier to evaluate and understand.",
+        "application": "When presenting a new method, map each component to the concrete failure mode it is intended to mitigate.",
+        "exception": "This framing is unsuitable when component roles are not independently distinguishable or supported by evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical accuracy metrics, datasets, evaluation tasks, or detailed definition of “superior performance” or “leading.”",
+      "The comparison may involve different training regimes and model families; the abstract does not provide enough detail to assess comparability.",
+      "The abstract does not specify calibration procedure, architecture coverage, or resource usage beyond the reported GPU count and time."
+    ]
+  }
+}

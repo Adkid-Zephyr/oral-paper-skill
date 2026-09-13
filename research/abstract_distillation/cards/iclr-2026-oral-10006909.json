@@ -1,0 +1,169 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006909",
+    "title": "TTSDS2: Resources and Benchmark for Evaluating Human-Quality Text to Speech Systems",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006909"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c3afddd9819da9ac260db6d65408c9bab1f7a0d58732157aefa2b8af507643bd",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "a86deb6f2bd290f92a9d1c2edcc0af9945af3740ef94e1488dc29b43a7ef0791",
+    "extracted_at": "2026-09-12T23:58:48.550649+00:00",
+    "session_id": "01a0980e-ee78-71b3-b7ff-5ec292126552",
+    "usage": {
+      "input_tokens": 12681,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 751,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a8940a71c979b0769da681ff0ab9a160796bae56b45cf854a2aaa31f91dca762"
+    },
+    {
+      "id": "S2",
+      "sha256": "57072d6fcc084f6279dcc04e32dbf95ec4ee3ddda8abd7307e9223d3afd54756"
+    },
+    {
+      "id": "S3",
+      "sha256": "ab9222a31d884ed8545a40dc79a09970c5d2ae9c512a81ec232fee6985afd599"
+    },
+    {
+      "id": "S4",
+      "sha256": "4f174d9383fdf06f30060c205aadbced6957b51a76ff388285f0e933fe505a7a"
+    },
+    {
+      "id": "S5",
+      "sha256": "65c76703be28d30dc6bc7681a49965c611cdeca8322d7fe95c1845fdf5a2f95b"
+    },
+    {
+      "id": "S6",
+      "sha256": "90c92d31897d4426c0eb55d6401571eaf5f56719c037c0aef3949a6878c6cc6c"
+    },
+    {
+      "id": "S7",
+      "sha256": "61824167d0b37ba2ed17fa02a022501bf2626d5f61b83ff44a30c45f04e03cfa"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006909",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluating text-to-speech systems, especially systems producing speech close to real speech, is challenging and resource-intensive.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "MOS scores are difficult to compare across studies, while objective metrics are rarely validated against subjective measures and both metric types face challenges on recent TTS systems.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces TTSDS2, described as a more robust and improved version of TTSDS.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Releases over 11,000 subjective opinion-score ratings, a pipeline for recreating a multilingual test dataset to reduce data leakage, and a 14-language TTS benchmark.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish TTSDS2 as a more robust and improved successor to TTSDS.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that TTSDS2 was the only one of 16 compared metrics with Spearman correlation above 0.50 for every evaluated domain and subjective score, across multiple domains and languages.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report releasing evaluation resources spanning subjective ratings, leakage-avoidance test-data reconstruction, and multilingual benchmarking.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies evaluation cost and difficulty, limited comparability of MOS, weak objective-metric validation, and challenges posed by near-real synthetic speech.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The work introduces TTSDS2 as an improved and more robust TTSDS variant.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported result",
+        "summary": "Across domains and languages, the authors report TTSDS2 uniquely exceeding 0.50 Spearman correlation for every evaluated domain and subjective score among 16 metrics.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "resources",
+        "summary": "The authors additionally release ratings, a multilingual data-recreation pipeline, and a 14-language benchmark.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a metric proposal with a quantified comparison against 16 metrics and specifies the correlation threshold, domains, languages, and subjective-score coverage.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This alignment makes the claimed distinction and evaluation scope easier to inspect from a compact abstract.",
+        "application": "When presenting a new evaluation metric, state the comparator set, metric, threshold, and coverage conditions alongside the proposal.",
+        "exception": "This framing is unsuitable when no meaningful comparator set or agreed evaluation target exists."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the compared metrics, datasets, rating protocols, sample sizes by domain or language, or statistical uncertainty.",
+      "It does not provide details needed to assess how the data-leakage pipeline works or how the benchmark is constructed."
+    ]
+  }
+}

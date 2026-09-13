@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47195",
+    "title": "VersaPRM: Multi-Domain Process Reward Model via Synthetic Reasoning Data",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47195"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6a5ea02b952a0144747b9a44b1768cfc536ff48ede43317af79c36f2a3675883",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "7bf810bd1e2012852ef86c95f202039baba70d4d33e3553ad9de28bcd2cfb960",
+    "extracted_at": "2026-09-13T00:08:11.456513+00:00",
+    "session_id": "01a09817-8afa-7990-af74-30e7372f9545",
+    "usage": {
+      "input_tokens": 12683,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 714,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "67b6ac2d128c7a140bdb02b9f2855df3f39fe65a4d89628964338969f15b8ba4"
+    },
+    {
+      "id": "S2",
+      "sha256": "94ce3a894c1458db2af814e2b62de2d43fcde992030114839dc89200f4878729"
+    },
+    {
+      "id": "S3",
+      "sha256": "82886a019ebb014bbfaaca1af3666890949cf12373b27b7a8d79c00a2364c803"
+    },
+    {
+      "id": "S4",
+      "sha256": "d83d42b8f3489778b4abcf1ce894fc7512e3b7c8cac08f557eb78028ff145129"
+    },
+    {
+      "id": "S5",
+      "sha256": "78c14e23aaa3227d95bceb2cb2d9800aa90332b89925863bbd4a1c0a03031718"
+    },
+    {
+      "id": "S6",
+      "sha256": "4e471e5dc708e45dc8eb088d10fdb425c3452aee9b31357e56882ad46145aa25"
+    },
+    {
+      "id": "S7",
+      "sha256": "1bd6dd0b6d1cb0662bf87f01d41d4322592675cbf81740b8263cb2f8641e9f8d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47195",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Process reward models improve mathematical reasoning, but their use across non-mathematical domains is the task examined here.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing PRMs are predominantly trained on mathematical data, and their generalizability to non-mathematical domains has not been rigorously studied.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "Reports poor performance of current PRMs in domains beyond mathematics.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces VersaPRM, a multi-domain PRM trained on synthetic reasoning data produced by a new data-generation and annotation method.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Open-sources the VersaPRM data, code, and models.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish VersaPRM through its multi-domain training and novel synthetic reasoning-data generation and annotation method.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report consistent performance gains across diverse domains for VersaPRM.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "On MMLU-Pro Law, the authors report that VersaPRM with weighted majority voting gains 7.9% over the majority-voting baseline, compared with a 1.3% gain for Qwen2.5-Math-PRM.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that current PRMs perform poorly in other domains.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "PRMs are presented as useful for mathematical reasoning through increased inference-time computation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The abstract notes mathematical-data concentration and limited rigorous study of non-mathematical generalizability.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors report poor performance of current PRMs outside mathematics.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "VersaPRM is introduced using synthetic reasoning data generated and annotated by a new method.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "evidence_and_release",
+        "summary": "The authors report cross-domain gains, give a Law-category comparison, and release the data, code, and models.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a stated generalization gap to a domain-targeted model and supports the claim with one domain-specific percentage comparison.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A focused problem–intervention–illustration chain can make a cross-domain contribution legible without listing every evaluation detail.",
+        "application": "Frame a multi-domain method by naming the existing training concentration, the mechanism intended to address it, and one representative domain-specific comparison with baseline and competitor values.",
+        "exception": "Avoid this compressed framing when domain coverage, evaluation conditions, or comparison definitions are essential to interpreting the claim but unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the diverse domains, evaluation protocol, dataset scale, or statistical uncertainty behind the reported gains.",
+      "The exact data-generation and annotation procedure and the scope of the claimed multi-domain performance are not described."
+    ]
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31797",
+    "title": "Cross-Entropy Is All You Need To Invert the Data Generating Process",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31797"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "92dcb6346b5dede92b4f37d1e2d1b2e836a6233e9ddbeb72e3315252abb6aaa6",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "3250e583dc841c12f0f5fe38825ad33f9babee2bbcb4e95c73458e14c37902a1",
+    "extracted_at": "2026-09-12T23:52:25.577499+00:00",
+    "session_id": "01a09809-11ce-7ed3-aa21-bb3c46bc732c",
+    "usage": {
+      "input_tokens": 12794,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 887,
+      "reasoning_output_tokens": 46
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "234343f6c13494bfb1b01f6c91835a0c26d75c0db87de06491375f44624c63d0"
+    },
+    {
+      "id": "S2",
+      "sha256": "14a17aab62982f45d02239bdcc20c862c1fed4fa8b65d8418a4142c08df6e78b"
+    },
+    {
+      "id": "S3",
+      "sha256": "162047a7e03052f5ae4ab9f946ecc66364076034b5ab568154b35207e404e67b"
+    },
+    {
+      "id": "S4",
+      "sha256": "4b9b41f0d26c37a66b971ece8c8652dc193abe40c5f29dd0f05385d8399a8bed"
+    },
+    {
+      "id": "S5",
+      "sha256": "99496a70d342027e00fa8008746f6979197aff394dc8126712bfab494c760493"
+    },
+    {
+      "id": "S6",
+      "sha256": "1ef63501461f052c1da515dda6dbf96202f580fc925184762d19c5eac8932134"
+    },
+    {
+      "id": "S7",
+      "sha256": "2798826eb2ad387fa78db6968fae1151cd266c03fbadf670e56cf3b1b32cf094"
+    },
+    {
+      "id": "S8",
+      "sha256": "6d919c7d86647d98e5d879dc20f1542f621ce7c2c7e66756deadc33708343146"
+    },
+    {
+      "id": "S9",
+      "sha256": "c0ca21c48e400d232b289ab128a9fcfe5153a91a8ead74494098b728be1d3602"
+    },
+    {
+      "id": "S10",
+      "sha256": "b66592745d449933a5f022c57dab83d389c438ca9fb4c17c2ce3eea8aa1446c9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31797",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain how supervised learning can recover interpretable latent factors and invert aspects of the data-generating process.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "A comprehensive theory explaining supervised learning’s effectiveness remains elusive, despite empirical evidence for linear, interpretable representations.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Extends identifiability results from nonlinear independent component analysis to parametric instance discrimination and supervised cross-entropy minimization.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theoretical result",
+        "claim": "Proves that, under a specified data-generating process, standard classification models learn ground-truth variation factors up to a linear transformation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports latent-factor recovery across simulated data, the DisLib benchmark, and ImageNet proxy factors.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a unified theoretical and empirical account connecting cross-entropy-trained supervised representations with inversion of the data-generating process and linear factor representations.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S9",
+        "S10"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report successful disentanglement on simulated data constructed to match their theoretical assumptions.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that simple classification tasks on DisLib recover latent structures up to linear transformations.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that ImageNet-trained models encode representations enabling linear decoding of proxy variation factors.",
+        "source_ids": [
+          "S6",
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Supervised learning is highly effective, but its effectiveness lacks a comprehensive theory; observed linear representations motivate a latent-factor perspective.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "context",
+        "summary": "Self-supervised nonlinear independent component analysis provides related evidence that latent structures can be recovered by inverting the data-generating process.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "The work extends identifiability results and states a classification result under a particular data-generating process.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "empirical corroboration",
+        "summary": "Experiments test the account on matched simulations, DisLib, and ImageNet proxy factors.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The authors connect the combined findings to linear-representation observations such as neural-network superposition and to a broader theory of supervised learning.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a formal representation-identifiability result with empirical checks under matching assumptions, a benchmark, and a real-data proxy-factor setting.",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "This suggests a useful way to frame theory-driven work: state the scope conditions, then test both assumption-matched behavior and broader empirical correspondences.",
+        "application": "For a theory paper, pair each central theorem with an experiment designed around its assumptions, followed by benchmark or real-data probes that test whether the predicted representation property appears beyond the idealized setting.",
+        "exception": "This framing is less suitable when the contribution is purely conceptual, the theorem has no observable consequence, or no credible proxy for the theoretical object exists."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact data-generating-process assumptions, model parameterization, optimization conditions, or formal identifiability statement.",
+      "The empirical studies’ sample sizes, metrics, baselines, statistical uncertainty, and whether proxy-factor linear decoding reflects ground-truth factors are not reported.",
+      "The abstract does not establish priority, correctness beyond the authors’ reported proof, or independent experimental validity."
+    ]
+  }
+}

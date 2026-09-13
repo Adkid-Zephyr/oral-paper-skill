@@ -1,0 +1,216 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71044",
+    "title": "A Systematic Study of Behavioral Cloning for Scientific Data Annotation",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71044"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "64fdad46e979de5b496150a4a65dd7e88367655c4f4917e4b18a3e757fb587f3",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "51a8a435766d58e7b1145b8f39cd8a7d98e7d4b319b82d3f659739412277ce17",
+    "extracted_at": "2026-09-13T00:11:55.664984+00:00",
+    "session_id": "01a0981a-e26b-7dc1-8b0d-00062d4cbe3e",
+    "usage": {
+      "input_tokens": 12761,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 943,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9c9892b3b879f6df7f357c8cbac0a848bcdf47df6e593107bb038860f8806d14"
+    },
+    {
+      "id": "S2",
+      "sha256": "14ddb6af7d9c4c3133d040be668b32f98188988c5f76475504de70263aba9d6e"
+    },
+    {
+      "id": "S3",
+      "sha256": "edf7511a33ab56bc3c96c029aae5733eae37d282380cc7874b7ead55b343ea47"
+    },
+    {
+      "id": "S4",
+      "sha256": "38e95b5ed98e5d8148da537682784e578a5a6bda9175111d3c1a133e5e9dffdd"
+    },
+    {
+      "id": "S5",
+      "sha256": "de2912d58055295a112f9a1564016f88f5b7dd43277c0e71207b5e6f36db9a21"
+    },
+    {
+      "id": "S6",
+      "sha256": "2b9ca3495ed822b6fd23362bad594668f0112964c8f8ccaa7b95bb78b330757a"
+    },
+    {
+      "id": "S7",
+      "sha256": "99b2232053eddd2eb6ebbad341f7c2463aa207cfaad2010295eedeb6c31a8bcb"
+    },
+    {
+      "id": "S8",
+      "sha256": "10a18ea97f38ef5a3f038ffbc8890a1d4ee95091a8fcf8db226a662f0a0ec7a2"
+    },
+    {
+      "id": "S9",
+      "sha256": "60ceed17dc62d7d16783b2777c9c752f23ea8c9e2f333e2cde2502833f80257d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71044",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Scientific annotation has a last-mile bottleneck: human verification and correction remain costly despite automation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Direct annotation prediction discards supervision contained in experts’ navigation, clicking, verification, and correction behavior.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework and benchmark",
+        "claim": "Introduces a behavioral-cloning study framework with nine synthetic annotation tasks and annotations simulating exploration, correction, and strategic decisions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical findings",
+        "claim": "Reports findings on hierarchical skill learning, scaling, multi-task transfer, and internal representations in behavioral cloning.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "research foundation",
+        "claim": "Provides systematic benchmarks and identifies bottlenecks intended to support scaling behavioral cloning toward real-world scientific annotation.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work distinguishes itself by systematically studying behavioral cloning for scientific annotation through simulated human strategies across nine paired synthetic tasks.",
+      "source_ids": [
+        "S3",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that models learn GUI mechanics before task-critical decisions, make fewer mistakes than the training data, and can correct errors when they occur.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Within the reported scale range, the authors report that larger models are more data-efficient; multi-task pretraining enables efficient fine-tuning, whereas training from scratch fails entirely.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report representations of task phase and data position, including a shared mistake representation that generalizes across annotation tasks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Scientific annotation remains costly because verification and correction form a persistent last-mile bottleneck.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Standard direct-prediction approaches omit behavioral supervision from expert annotation workflows.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "setup",
+        "summary": "The framework studies behavioral cloning using nine synthetic tasks designed to simulate realistic annotation strategies.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "Experiments report hierarchical skills, scale-dependent data efficiency, transfer benefits from multi-task pretraining, and shared internal representations.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The framework is presented as a benchmark and foundation for future scaling to real-world annotation.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links behavioral cloning to simulated workflow behaviors and separately reports how skills emerge, transfer, and encode latent process variables.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "Modeling the annotation process can expose intermediate capabilities and reusable structure that direct output prediction may miss.",
+        "application": "When introducing a workflow-learning method, define behavioral task supervision and analyze process-level representations alongside final outputs.",
+        "exception": "This framing may be unsuitable when only final labels are available or intermediate actions do not carry meaningful task information."
+      },
+      {
+        "source_observation": {
+          "claim": "The reported scaling result is explicitly limited to the authors’ scale range, while the benchmark uses synthetic tasks and annotations.",
+          "source_ids": [
+            "S3",
+            "S6"
+          ]
+        },
+        "interpretation": "Explicit scope qualifiers help prevent broad claims from outrunning the evaluated setting.",
+        "application": "State model-scale and data-regime boundaries directly when presenting scaling findings, and separate synthetic-benchmark conclusions from real-world claims.",
+        "exception": "A narrower qualifier is insufficient if the study actually evaluates diverse real-world settings that justify broader generalization."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the model architectures, exact scale range, dataset sizes, or evaluation metrics.",
+      "The reported findings are based on synthetic tasks; real-world scientific annotation performance is not established here.",
+      "The conditions behind complete failure when training from scratch are not detailed.",
+      "The abstract does not provide quantitative effect sizes or comparisons with specific baseline methods."
+    ]
+  }
+}

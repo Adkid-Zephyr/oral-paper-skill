@@ -1,0 +1,160 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31839",
+    "title": "HiRA: Parameter-Efficient Hadamard High-Rank Adaptation for Large Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31839"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f158382e38e1afce7726f219d02fdd13d8d1db7c78f414b6502b826f01a8c45a",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "bf607220d87c933b934543f9be34c2712682aeebdb48931f9ce58079513e9f44",
+    "extracted_at": "2026-09-12T23:54:04.619491+00:00",
+    "session_id": "01a0980a-91e3-7260-aa16-56fb31031262",
+    "usage": {
+      "input_tokens": 12599,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 703,
+      "reasoning_output_tokens": 88
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "31bca5ca69451f794d41e38fdf45b033effedaf80d58be34b3c4f5b81af492c6"
+    },
+    {
+      "id": "S2",
+      "sha256": "a58940c5eeceee55ff0aa21ae34e814b3572dcca937306e027d5e098cf66becb"
+    },
+    {
+      "id": "S3",
+      "sha256": "fd9edcd7029ee2f6bbe620c210530dd8c3153c0de28a412a5d5b836b01fc9a0d"
+    },
+    {
+      "id": "S4",
+      "sha256": "995b6c07e5a83c6845bb5398dbd06a65fdbd56ee1e7483cae963dea651fcb929"
+    },
+    {
+      "id": "S5",
+      "sha256": "f76ef271b16fb008fb99c414662d3e07eb60aaab84a316d813da33e838ce2e0d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31839",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop a parameter-efficient fine-tuning method that improves large language models’ adaptability to new tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "LoRA reduces resource demands, but its low-rank updates may restrict expressiveness for new tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Hadamard High-Rank Adaptation (HiRA), a PEFT method using a Hadamard product to retain high-rank update parameters and increase model capacity.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports comparisons with LoRA and its variants across several tasks, together with ablation studies.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Provides publicly available implementation code.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish HiRA by combining parameter-efficient adaptation with high-rank updates retained through a Hadamard product.",
+      "source_ids": [
+        "S1",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that HiRA outperforms LoRA and its variants on several tasks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report extensive ablation studies intended to validate HiRA’s effectiveness.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies LoRA’s resource benefits alongside a possible expressiveness limitation from low-rank updates.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It introduces HiRA, which uses a Hadamard product to retain high-rank update parameters and improve model capacity.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation and release",
+        "summary": "It reports gains over LoRA and variants on several tasks, ablations, and code availability.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific limitation—low-rank expressiveness—to a matching design choice—retaining high-rank updates—and then names comparisons and ablations as evidence.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A compact problem–mechanism–evidence chain can make a method’s rationale and evaluation target easy to follow.",
+        "application": "When introducing an adaptation method, state the incumbent constraint, identify the mechanism intended to address it, and evaluate directly against that constraint.",
+        "exception": "This framing is less suitable when the claimed limitation is not operationalized in the evaluation or when the method targets a different bottleneck."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the tasks, datasets, metrics, resource budgets, numerical gains, LoRA variants, or ablation configurations.",
+      "The reported evidence does not reveal whether improvements are consistent across tasks or statistically tested."
+    ]
+  }
+}

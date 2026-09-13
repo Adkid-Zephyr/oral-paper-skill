@@ -1,0 +1,178 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31731",
+    "title": "AFlow: Automating Agentic Workflow Generation",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31731"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "88e3ac025b4b9092d22ab71429cd9b3277268ece87fece3bd72586cf29d64c2a",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "d5c37841df8c8dcd6a8bd625b59012c125a1e20a93f38ee5a4f50331eff9507b",
+    "extracted_at": "2026-09-12T23:49:49.174529+00:00",
+    "session_id": "01a09806-bb3a-7b42-b058-7de17d71f612",
+    "usage": {
+      "input_tokens": 14251,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 651,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "455eeca253600ca2996f339fd952559387d5a21ed19f781d3a0b5fc79556dd85"
+    },
+    {
+      "id": "S2",
+      "sha256": "59075de492d79db570631cc415d3fa419c60cdaef23f6821b4591929b4d25542"
+    },
+    {
+      "id": "S3",
+      "sha256": "6f1aab9d3d1b69227a21eb12c4ce8747ba87d7b47868be33044e86979152961c"
+    },
+    {
+      "id": "S4",
+      "sha256": "a76e169807a0f3573ad58b29291f5937999b072fb7f691cf096735f1b05dfd12"
+    },
+    {
+      "id": "S5",
+      "sha256": "653a17f79af96f27493be4cac0e3637607afe3fa48a246b64ea06b2cd5598a36"
+    },
+    {
+      "id": "S6",
+      "sha256": "f9a8cfaa99cc25f2366c607e05523b368bbdce31e593f16b4fff5fe4e01cd981"
+    },
+    {
+      "id": "S7",
+      "sha256": "eb209d94001ea1c5851d5d91b711ca53d396156bcce9d4adf7ffdccb99ec23aa"
+    },
+    {
+      "id": "S8",
+      "sha256": "6981956ffe42f7bd06e27d3568117be9c349ea7e1e9307060da7fde4c9369f82"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31731",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Agentic workflow construction for complex LLM tasks requires substantial human effort, limiting scalability and generalizability.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing workflow-generation methods still require manual initialization and do not yet provide fully automated and effective generation.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Reformulates workflow optimization as search over code-represented workflows composed of connected LLM-invoking nodes.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Introduces AFLOW, which uses Monte Carlo Tree Search, code modification, tree-structured experience, and execution feedback to iteratively refine workflows.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present AFLOW as an automated framework for efficiently exploring and refining code-represented agentic workflows through Monte Carlo Tree Search.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that evaluations on six benchmark datasets show a 5.7% average improvement over state-of-the-art baselines.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that smaller models outperform GPT-4o on specific tasks at 4.55% of GPT-4o's dollar inference cost.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "LLMs address complex tasks using detailed agentic workflows.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "Human-intensive workflow construction limits scalability and generalizability.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Prior automation methods retain manual setup and fall short of fully automated, effective generation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "AFLOW searches and iteratively refines code-represented workflows with Monte Carlo Tree Search and execution feedback.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_outcomes",
+        "summary": "The authors report gains over baselines and lower-cost performance relative to GPT-4o on specific tasks.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a representation choice—code-represented workflows—to a search procedure using tree-structured experience and execution feedback.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A concrete search space and feedback loop can make workflow automation operational rather than purely descriptive.",
+        "application": "When proposing automated orchestration, define the workflow representation, editable operations, search mechanism, and feedback signal as one aligned design.",
+        "exception": "This framing may be unsuitable when workflows cannot be executed safely or evaluated with meaningful feedback."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the six datasets, task-level variance, statistical uncertainty, or evaluation protocol behind the reported 5.7% improvement.",
+      "The tasks and model configurations underlying the GPT-4o cost comparison are unspecified; the 4.55% figure is not characterized beyond selected tasks."
+    ]
+  }
+}

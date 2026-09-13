@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97946",
+    "title": "Human Expertise in Algorithmic Prediction",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97946"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "2b11c5592f80016c3e997c45697f41b9ddd54d4798fdff28ee23948ba442c249",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "cdd8e59d83962451e604980f51b29ef0757ee6542a360b271bdf8e6622e54de0",
+    "extracted_at": "2026-09-12T23:40:41.002662+00:00",
+    "session_id": "01a097fe-534f-7542-82bd-16cd05868ed7",
+    "usage": {
+      "input_tokens": 12710,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 859,
+      "reasoning_output_tokens": 120
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e31ee64b19be0573abdd4314a4cd1ac3c9c5ac081fe48cc4724dde1129ff048a"
+    },
+    {
+      "id": "S2",
+      "sha256": "3f37db2b413e611e7ea46fdb85e65ceb212005b9afcbc0a651107b7007d34e75"
+    },
+    {
+      "id": "S3",
+      "sha256": "3f2296610087c983890f1cd1eb30fe692a180d99df935262b18e6770871832a1"
+    },
+    {
+      "id": "S4",
+      "sha256": "7a6c9b1205caf39db36685c7e6d9d29f3e85b806a51f587e887231a40279fcd1"
+    },
+    {
+      "id": "S5",
+      "sha256": "d5bfab935f6eeab410d230006657f1bf0b938bdcf7a1715894d7544c40a72234"
+    },
+    {
+      "id": "S6",
+      "sha256": "952951f1f76dc6ed85c2c2ef4941154f891adcdae0e9e6a4ccaccf2efec021d9"
+    },
+    {
+      "id": "S7",
+      "sha256": "81c3d58a1cab9494c05b606484c9dd0744c8d47a669c856c5c4936562adf2a78"
+    },
+    {
+      "id": "S8",
+      "sha256": "8ce88f3861c4bea0f6370c4e828e29ffdfbc813c4bbd9e4787e39f08b14876f0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97946",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to incorporate human expertise into algorithmic prediction by using human judgment on inputs that algorithms cannot distinguish.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Predictive algorithms may lack information used by experts because it is not encoded in their training data; the framework addresses this human-AI collaboration challenge.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces a framework that selectively incorporates human feedback using algorithmic indistinguishability.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Shows that the method provably improves any feasible algorithmic predictor and quantifies the improvement.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Demonstrates instance-level human complementarity in an X-ray classification task, where the identifiable subset is nearly 30% of patients.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe their framework for incorporating human expertise into algorithmic predictions as novel.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a provable performance improvement for any feasible algorithmic predictor, with the improvement precisely quantified.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that algorithms often outperform humans on average, while human judgment improves predictions on specific instances identifiable ex ante.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "In an X-ray classification task, the authors report that this subset comprises nearly 30% of the patient population.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "framework",
+        "summary": "Introduces a framework for incorporating human expertise into prediction.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framing",
+        "summary": "Defines algorithmic indistinguishability as inputs that look the same to predictive algorithms, then links expert judgments to unencoded information.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism and theory",
+        "summary": "Uses indistinguishability to test for side information and selectively incorporate feedback, with a claimed provable improvement.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "empirical demonstration",
+        "summary": "Reports average algorithmic superiority alongside instance-specific human gains, including a nearly 30% X-ray-task subset.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "Positions heterogeneity discovery as a way to enable human-AI collaboration.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a diagnostic test for expert side information with a selective feedback mechanism, and then reports both theoretical and task-specific evidence.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A strong learning-card pattern is to connect the proposed construct, operational test, intervention, and evidence in one chain.",
+        "application": "For a new human-AI prediction method, define the disagreement or indistinguishability condition, explain how it triggers human input, and report theory and instance-level evaluation separately.",
+        "exception": "This structure is unsuitable when the work has no operational criterion for selecting cases or no evidence beyond a proposal."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the predictor class or meaning of “feasible,” nor the formula or magnitude of the quantified improvement.",
+      "It does not describe how the ex-ante identifiable subset is detected, the X-ray dataset or protocol, or the comparison details."
+    ]
+  }
+}

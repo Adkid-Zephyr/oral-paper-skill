@@ -1,0 +1,172 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31909",
+    "title": "Amortized Control of Continuous State Space Feynman-Kac Model for Irregular Time Series",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31909"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "195f029e4953a50738c2225d10363df86d11a1ff85eff8f168bb9e872ed9d73c",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "818ce1b818a786813fd8a869fa4d0fed139153fdcdfd5e9e3a0a262439f0e9f9",
+    "extracted_at": "2026-09-12T23:56:45.183369+00:00",
+    "session_id": "01a0980d-0ea4-7763-8e0f-57e8c93b9423",
+    "usage": {
+      "input_tokens": 12725,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 723,
+      "reasoning_output_tokens": 79
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c1f85728f0ac5e71d13c361304b371edb4bef4b60c26c4a36a1a0784378a86a0"
+    },
+    {
+      "id": "S2",
+      "sha256": "c8555ff419a0b46ed50de05c48e68d1705ee360c8152c43a1035c1b007066a8d"
+    },
+    {
+      "id": "S3",
+      "sha256": "f440d21a6a08982b052fd9ac955fa2a2f4e35b5378a8846bf5bf5e26aa3c9f08"
+    },
+    {
+      "id": "S4",
+      "sha256": "f15614f3d30862678cfc92adbf185458ddd5e0a8f9baa9ab528979719d4c1d9e"
+    },
+    {
+      "id": "S5",
+      "sha256": "8d2196522a8c6b27d35b2b5ebb3d5292748b2cf45a2cf68abbe94e3b3a80b087"
+    },
+    {
+      "id": "S6",
+      "sha256": "e002963886f46b8a1a5e92416144f48b559c2400638708f46cdee496d60649db"
+    },
+    {
+      "id": "S7",
+      "sha256": "5017d675c5da08dbb87d2369d75102b91034c1e65fd201fb8a9f0c3b462a98d7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31909",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Accurately modeling irregular time-series data from domains such as healthcare, climate, and economics is challenging.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes ACSSM, a continuous dynamical modeling approach for irregular and discrete observations.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "theory and inference",
+        "claim": "Uses a multi-marginal Doob h-transform and an SOC-based variational inference algorithm with a tight ELBO to approximate conditioned dynamics.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "scalable system",
+        "claim": "Combines auxiliary-variable parameterization, simulation-free latent dynamics, and transformer-based data assimilation for more efficient training and parallel inference.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper distinguishes ACSSM through its combination of continuous-state conditioning, SOC-based amortized control, simulation-free latent dynamics, and transformer-based assimilation.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report superior performance across multiple real-world datasets on classification, regression, interpolation, and extrapolation tasks, while maintaining computational efficiency.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Irregular sampling creates modeling challenges in real-world time series.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "proposed framework",
+        "summary": "ACSSM models continuous dynamics for irregular and discrete observations.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "conditioning and inference",
+        "summary": "A multi-marginal Doob h-transform conditions the dynamics, while SOC supplies a variational approximation with a tight ELBO.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "scalability and results",
+        "summary": "Auxiliary variables, simulation-free dynamics, and transformer assimilation support efficient parallel computation; reported evaluations cover four task types and show superior performance with computational efficiency.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each proposed mechanism with a concrete modeling or computation challenge: conditioning irregular observations, approximating an intractable transform, and enabling scalable parallel inference.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This mechanism-to-bottleneck mapping helps readers understand why the architecture contains multiple specialized components.",
+        "application": "When presenting a multi-component method, explicitly connect each component to the specific mathematical or computational obstacle it addresses.",
+        "exception": "Avoid this structure when components are merely implementation details or when the abstract cannot support distinct roles."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, metrics, numerical gains, or the conditions underlying the reported superiority and efficiency.",
+      "It does not provide theoretical guarantees or enough detail to assess the tightness of the ELBO or the approximation quality of the Doob h-transform."
+    ]
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31805",
+    "title": "BIRD: A Trustworthy Bayesian Inference Framework for Large Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31805"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "74bc55f5de585c0c53f5209a69ed5e08c7e058dfd00fb07d360c3287d57ba63d",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "6e5ec4b70374e8052f90bd3a094d42fb1aa58a1bfd2bac1fc81a252bf12319ed",
+    "extracted_at": "2026-09-12T23:52:41.515700+00:00",
+    "session_id": "01a09809-5d0a-7510-bf3f-df1eb5bcf5ec",
+    "usage": {
+      "input_tokens": 12664,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 658,
+      "reasoning_output_tokens": 63
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cea6f3d278a6243439621f5513009ebf91af58ebe1c353fd183a46657aa04c22"
+    },
+    {
+      "id": "S2",
+      "sha256": "0fd6bca942c579f532490f466dc115586ca681d0eae7d52e27ce9fa4c5afb3ad"
+    },
+    {
+      "id": "S3",
+      "sha256": "51107b9f4a94ee984eed0a48529a2e1696d29b49561f8afd974657cafcb14b4c"
+    },
+    {
+      "id": "S4",
+      "sha256": "95cf543dbf2bf901d9295e944d5877ace023346dd25c684e241b2ef9b182fe9a"
+    },
+    {
+      "id": "S5",
+      "sha256": "b1bdb4897fa97156a27235d47452a15157ae14f1ab72e13870c8e7a8339c58fb"
+    },
+    {
+      "id": "S6",
+      "sha256": "3cd1953eb55e9014e96a5f645824f9f70c517b680bdb21e71ce89092357fc2ab"
+    },
+    {
+      "id": "S7",
+      "sha256": "3e5d1c5d889c1919c8a9e5e126a2c4caafaecf7f35d3d633959b1b42dd527d26"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31805",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Predictive models need reliable probability or confidence estimates when making decisions with incomplete information.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "LLMs are insufficient for accurate probability estimation, despite offering relevant factors, coarse probabilities, and contextual relevance judgments.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "BIRD aligns a Bayesian network with LLM-generated abductions, then performs deduction to estimate probabilities.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "decision-support finding",
+        "claim": "The framework is intended to improve the trustworthiness of downstream decision making through more accurate probability estimates.",
+        "source_ids": [
+          "S4",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present BIRD as a novel probabilistic inference framework combining Bayesian networks with LLM abductions and deduction.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that BIRD provides reliable probability estimates 30% better than direct LLM baselines.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that these estimates contribute to better and more trustworthy decision making.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Incomplete-information tasks require reliable probability or confidence estimation for large-scale decisions and planning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "capability and limitation",
+        "summary": "LLMs are inaccurate estimators but can identify relevant factors and provide coarse probabilities or contextual relevance judgments.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "BIRD uses those LLM capabilities to construct a Bayesian-network-based inference process with a deduction step.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report a 30% improvement over direct LLM baselines and downstream gains in decision trustworthiness.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract lists factor generation, coarse probability estimation, and relevance assessment as useful LLM capabilities, then proposes a Bayesian-network framework using LLM abductions followed by deduction.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "Decomposing a model's partial strengths can make a hybrid method's design rationale more concrete.",
+        "application": "When proposing a hybrid system, explicitly assign each component's observed capability to a named inference stage and state how the stages interact.",
+        "exception": "This framing is unsuitable when the component capabilities are not independently identified or the pipeline introduces no meaningful role separation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluation datasets, tasks, baseline implementation, or statistical meaning of “30% better.”",
+      "The reported reliability and decision-making improvements lack quantitative details and experimental conditions."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "lessons[0].source_observation.claim",
+      "before": "The abstract maps distinct LLM capabilities—factor generation, coarse probability estimation, and relevance assessment—to separate stages of a Bayesian inference framework.",
+      "after": "The abstract lists factor generation, coarse probability estimation, and relevance assessment as useful LLM capabilities, then proposes a Bayesian-network framework using LLM abductions followed by deduction.",
+      "review_file": "reviews/flagged-batch-01.json",
+      "review_sha256": "b7ba5492b24b672d551bcb1ba390c5351017aa8b3168c19950ca75f30a878af4",
+      "applied_at": "2026-09-13T00:20:52.606817+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

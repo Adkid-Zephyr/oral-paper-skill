@@ -1,0 +1,173 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71138",
+    "title": "Path-dependent Discrete Amortized Inference",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71138"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "05520427664819ae0d6f5c4304ea4ea2302a99c08bd198abf3fbf475a7076137",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "81d0d10cfc9624b14561cd0a87641b5f2da5947437a8764ccce84b2d694e8e99",
+    "extracted_at": "2026-09-13T00:15:33.815716+00:00",
+    "session_id": "01a0981e-4174-7d80-88d2-711533f5efdd",
+    "usage": {
+      "input_tokens": 12680,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 717,
+      "reasoning_output_tokens": 87
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "79b92f41aaeedd450713450cdc7a8144dd2ba796318fc0740de185e7e4582eea"
+    },
+    {
+      "id": "S2",
+      "sha256": "fec86b1f91a9d6c6c3f7e5d5ad554a110e175c576ae4138fb9fcaff0702affee"
+    },
+    {
+      "id": "S3",
+      "sha256": "18b369896508cee1b46dd5ef1515b1dee5fd56fee5db88ba16cad09cf12e255b"
+    },
+    {
+      "id": "S4",
+      "sha256": "e56116f607befe6fd9f027ed667588600854f83032c48a4f63f134827fd6625f"
+    },
+    {
+      "id": "S5",
+      "sha256": "f0e3685ffd7147548be1c4f45d5856f96fa8bf86756a8fcd2a68d7698a2fc3ec"
+    },
+    {
+      "id": "S6",
+      "sha256": "492689db0b23ac579aa72355e33e0442ab2f1bce9055297117911a5a5449a6c2"
+    },
+    {
+      "id": "S7",
+      "sha256": "7ae50b0fff9d9b22539aef023daa4a31ff3463a717245bd88d00260f3e23540a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71138",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Sampling compositional and discrete objects from an unnormalized posterior distribution.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that Markovian samplers can hamper training signal propagation and catastrophically reduce expressivity through state aliasing.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes lifting a deterministic MDP with learnable latent dynamics so the policy can depend on the entire past trajectory.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces the resulting approach as path-dependent discrete amortized inference.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Provably extends existing learning algorithms for amortized samplers to the proposed setting.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated distinction is replacing current-state-only Markovian dependence with learnable trajectory-dependent latent dynamics, together with an extension of existing amortized-sampler algorithms.",
+      "source_ids": [
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, on standard benchmark problems, the approach often achieves faster learning convergence than prior techniques.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report improved state-space exploration relative to prior techniques on those benchmarks.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Frames sampling compositional and discrete objects from an unnormalized posterior.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "context",
+        "summary": "Describes prior approaches that learn deterministic MDPs progressively building objects in proportion to the posterior.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Argues that the Markovian assumption can impair signal propagation and sampler expressivity through state aliasing.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal_and_results",
+        "summary": "Introduces trajectory-dependent latent dynamics, extends amortized-sampler algorithms, and reports faster convergence and improved exploration on standard benchmarks.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific modeling assumption—dependence only on the current state—to two distinct failure modes, then matches the proposal to both by using full-trajectory dependence.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A strong abstract can make a method feel motivated by pairing each identified limitation with an explicit design change.",
+        "application": "When presenting a new architecture, map each claimed failure mode to the mechanism intended to address it, while preserving the claim's scope.",
+        "exception": "This framing is unsuitable when the abstract lacks evidence or when the proposed mechanism is not clearly connected to the stated limitation."
+      }
+    ],
+    "unknowns": [
+      "The abstract provides no quantitative benchmark results, convergence definitions, exploration metrics, or details about the standard problems and prior techniques.",
+      "The scope of “often” and the conditions of the reported improvements are unspecified."
+    ]
+  }
+}

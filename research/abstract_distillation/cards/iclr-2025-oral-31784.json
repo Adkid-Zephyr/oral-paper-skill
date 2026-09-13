@@ -1,0 +1,198 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31784",
+    "title": "Standard Gaussian Process is All You Need for High-Dimensional Bayesian Optimization",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31784"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d862dd6dcbfd365899e2a384ada87ee9938b4e30f4bf38da7d545744256a3754",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "f1297d82a587bfd03a9fa2649fba9802379e970161acd66b3ad702358d91d9a4",
+    "extracted_at": "2026-09-12T23:51:52.457554+00:00",
+    "session_id": "01a09808-8cd7-7610-a4c2-e34b2907e46d",
+    "usage": {
+      "input_tokens": 12769,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 911,
+      "reasoning_output_tokens": 75
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6af78e3fb8235fc2433daf4e729c7a47b1bfdfa9fb5bca3893c6226a45a67db6"
+    },
+    {
+      "id": "S2",
+      "sha256": "f38fa91696198fe43d5135a052e33b58247bf499dee699746568f84e50b86c4c"
+    },
+    {
+      "id": "S3",
+      "sha256": "20cef6341175933c22fe0707ed56f0570b55e47b8b577bc94a1a703fd783f434"
+    },
+    {
+      "id": "S4",
+      "sha256": "ec5e7e16fc112e1427678ababbd5f03c5ac6757302b3ac016437168006f82807"
+    },
+    {
+      "id": "S5",
+      "sha256": "e807ae4c1491c42a00ae0b07de04ced3ee936532c1c393972bdba8ad379107a7"
+    },
+    {
+      "id": "S6",
+      "sha256": "d32ef5be99c668d343374bcc493f46c7ea3fbda245ba6b8f9b2eec86f73ea915"
+    },
+    {
+      "id": "S7",
+      "sha256": "416abf4c2fd288d09ff0687993ac91a8b1ffb1358189d629d4c83dfd56d9cbeb"
+    },
+    {
+      "id": "S8",
+      "sha256": "2e37db0e3038348740d3ce4100a2d65e33d6a9cf90cfa2031a1ee99b9d0c3e62"
+    },
+    {
+      "id": "S9",
+      "sha256": "36ab7fecebc0560332fcd789a8745a2e56f572b90f32e75868c29028d2bd22e1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31784",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Whether standard Gaussian-process Bayesian optimization can perform well in high-dimensional optimization.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The belief that standard BO underperforms in high dimensions lacked robust empirical evidence and theoretical justification.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "A systematic evaluation reports that Matérn kernels enable standard BO to achieve top-tier results across twelve benchmarks, often surpassing methods designed for high-dimensional optimization.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "A theoretical analysis attributes the SE kernel’s failure primarily to commonly used length-scale initialization that can cause gradient vanishing; probabilistic bounds characterize the issue and indicate greater robustness of Matérn kernels at higher dimensions.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A robust initialization strategy for the SE kernel is proposed, reportedly bringing its performance close to state-of-the-art without additional priors or regularization, with a further probabilistic bound addressing gradient vanishing.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper presents a systematic empirical and theoretical re-evaluation of standard BO in high-dimensional settings, together with a simple robust SE-kernel initialization strategy.",
+      "source_ids": [
+        "S3",
+        "S7",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report results from a comprehensive evaluation across twelve benchmarks: SE kernels often perform poorly, whereas Matérn kernels consistently achieve top-tier results and frequently surpass specialized high-dimensional methods.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report a probabilistic bound characterizing the SE length-scale initialization problem and showing that Matérn kernels are less susceptible and can handle much higher dimensions more robustly.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that their initialization strategy dramatically improves SE-kernel performance, bringing it close to state-of-the-art, and provide a bound showing mitigation of gradient vanishing.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "A prevailing belief says standard BO with standard GPs underperforms in high-dimensional optimization, but the belief lacks robust evidence and theory.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "investigation",
+        "summary": "The paper introduces a systematic investigation of standard BO’s high-dimensional behavior.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "empirical result",
+        "summary": "Across twelve benchmarks, kernel choice differentiates outcomes: SE often performs poorly, while Matérn frequently outperforms specialized methods.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "explanation_and_intervention",
+        "summary": "The analysis links SE failure to length-scale initialization and gradient vanishing, then proposes robust initialization and supporting probabilistic bounds.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a comparative evaluation with a proposed mechanism: kernel-dependent performance patterns are followed by an explanation involving length-scale initialization and gradient vanishing.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This pairing can make an empirical claim more informative by connecting observed differences to a testable technical cause.",
+        "application": "When reporting a method comparison, separately state the performance pattern and formulate a measurable mechanism that could explain it, then connect the intervention to that mechanism.",
+        "exception": "This framing is unsuitable when the study has no plausible mechanism or lacks measurements that distinguish competing explanations."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the twelve benchmarks, dimensions, baselines, metrics, or statistical details behind the reported comparisons.",
+      "The exact initialization strategy, probabilistic bounds, assumptions, and meaning of “close to state-of-the-art” are unspecified.",
+      "The abstract does not report numerical effect sizes, uncertainty, or whether all claims hold uniformly across tested settings."
+    ]
+  }
+}

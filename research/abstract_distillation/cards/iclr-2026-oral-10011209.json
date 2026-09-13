@@ -1,0 +1,206 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011209",
+    "title": "CounselBench: A Large-Scale Expert Evaluation and Adversarial Benchmarking of Large Language Models in Mental Health Question Answering",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011209"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "da0760ce0319bfb50dd0a9fb5e01970e1f05a7fd64797549205505b4ae0bb037",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "f3914de514182ff5eeb3a732e813c1a52aba80f85ed6caca3ec2b55b63538c4a",
+    "extracted_at": "2026-09-13T00:05:46.470532+00:00",
+    "session_id": "01a09815-460b-7902-bbbb-3cf41f98bd8f",
+    "usage": {
+      "input_tokens": 12852,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 779,
+      "reasoning_output_tokens": 63
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0c73800249279c748be4db4384650ec97ae1679a7c8b9a22e4e4312e0563c514"
+    },
+    {
+      "id": "S2",
+      "sha256": "ead478c9a8b66870fc2deafb89b53e72dd3a91d2054c619ae7e1283719db99f0"
+    },
+    {
+      "id": "S3",
+      "sha256": "284f5ee803ac415d7f2a1056574d38af7d62cb2c556ab733c944f959c7aad438"
+    },
+    {
+      "id": "S4",
+      "sha256": "2211de261fcfe85fcfe22f6c4ece89a32a21bd7154dec81305c50dcee95b33cb"
+    },
+    {
+      "id": "S5",
+      "sha256": "e81db46244e253d804aaad749d21b2d5de6563cb029029afde1ce3b92f4a6453"
+    },
+    {
+      "id": "S6",
+      "sha256": "4e303c468120b51b227b31374a7a20649fb933f4183cbbb28f09c1af077b06b8"
+    },
+    {
+      "id": "S7",
+      "sha256": "a29e050448bd685e40bc87523622f08f8966858fa0754a26013f98de08feb67d"
+    },
+    {
+      "id": "S8",
+      "sha256": "5c9fe86f4d4758eb50a7ddfa652191b4087d965b4948e803d137877401db4817"
+    },
+    {
+      "id": "S9",
+      "sha256": "b952c6b242ac2bb6054c6f0571a68e5c6dfb2f513aae41ae3d8e9db2384ec4ab"
+    },
+    {
+      "id": "S10",
+      "sha256": "09ea3df51406d96a762e13793db7d8c239deab0973044a996088bbce082c45d2"
+    },
+    {
+      "id": "S11",
+      "sha256": "e411b9d9e8381f51a1b84d8b5ec541e06cd8467f44ce08e842592f105d8b00c5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011209",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate and stress-test LLM answers to realistic mental-health help-seeking questions, including clinical and emotional considerations.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing medical QA benchmarks often underexplore open-ended answers to real patient questions, especially questions combining symptoms, treatment concerns, and emotional needs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "CounselBench, developed with 100 mental-health professionals, provides a large-scale benchmark for realistic mental-health QA.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "CounselBench-EVAL contains 2,000 expert evaluations covering four answer sources, six clinically grounded dimensions, span-level annotations, and written rationales.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "adversarial benchmark",
+        "claim": "CounselBench-Adv contains 120 expert-authored questions designed to trigger specific model issues and supports evaluation across nine LLMs.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a clinically grounded framework that combines expert evaluation with adversarial benchmarking for LLM mental-health QA.",
+      "source_ids": [
+        "S3",
+        "S11"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that LLMs score highly on several dimensions but repeatedly show unconstructive feedback, overgeneralization, and limited personalization or relevance.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "Authors report frequent safety flags, especially unauthorized medical advice, in expert evaluations.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "Authors report that LLM judges systematically overrate model responses and miss safety concerns identified by human experts.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Medical QA benchmarks leave open-ended real-patient answers underexplored.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "clinical framing",
+        "summary": "Mental-health questions require balancing clinical caution with contextual sensitivity.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark construction",
+        "summary": "CounselBench-EVAL uses professional ratings, multidimensional scoring, span annotations, and rationales on CounselChat answers.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "failure analysis",
+        "summary": "Expert reports identify recurring answer and safety problems, judge–expert disagreement, and model-specific adversarial failure patterns.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The benchmark reports both dimension-level quality issues and safety risks, while comparing LLM judges with human experts.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "Separating general answer quality from safety review can expose failures that aggregate or automated scoring may conceal.",
+        "application": "Design evaluations with explicit safety dimensions and expert rationales, then audit automated judges against those annotations.",
+        "exception": "This approach may be unsuitable when qualified domain experts or span-level annotation resources are unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the six evaluation dimensions, rating scales, sampling procedures, or statistical results.",
+      "It does not quantify the reported failure rates, judge overrating, or model-specific patterns.",
+      "The abstract does not provide details needed to assess the adversarial questions’ coverage or representativeness."
+    ]
+  }
+}

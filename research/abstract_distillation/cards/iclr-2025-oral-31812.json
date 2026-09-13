@@ -1,0 +1,157 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31812",
+    "title": "Data Selection via Optimal Control for Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31812"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b489c328ce2391fb0f52b59850d61da40a894d7189b1b31c3909682a64ddcd50",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "cc43de978878c0fd06fd8869c4172b40f7321bf57a5a6b8d31bf1f7978b7aa87",
+    "extracted_at": "2026-09-12T23:52:58.606672+00:00",
+    "session_id": "01a09809-9a14-7800-948b-97f74eade1d6",
+    "usage": {
+      "input_tokens": 12702,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 776,
+      "reasoning_output_tokens": 88
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d5e31a0676a03b8442a12f449fcfa66531ec61a5c371c89fa2d98a33feaae546"
+    },
+    {
+      "id": "S2",
+      "sha256": "989acf5f5ea880da1408ffa83cc9fc3c4de3177630c9d57f39357ec9709b8e28"
+    },
+    {
+      "id": "S3",
+      "sha256": "ef392be6e97c60749bb2313b9771a9da145f54626a44e69160e0861d64f10dd5"
+    },
+    {
+      "id": "S4",
+      "sha256": "b18dca0f9a5b29df88742157e77faca6b7e8815f57ea666244f3b56f16363efc"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31812",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Select high-quality pre-training data from massive corpora to improve language-model capabilities on downstream tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory and method",
+        "claim": "Formulates data selection as generalized optimal control, derives PMP necessary conditions for optimal selection and training dynamics, and introduces PDS to approximate those conditions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Applies PDS to CommonCrawl data selection and reports benefits across model sizes, including improved data utilization under limited pre-training data.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present PMP-based Data Selection (PDS), derived from an optimal-control formulation of data selection.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that PDS-selected corpora accelerate language-model learning and consistently improve downstream performance across various model sizes and tasks.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that Scaling-Law extrapolation of test-loss curves indicates benefits extending to approximately 400B-parameter models trained on approximately 10T tokens.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "With limited pre-training data, the authors report a 1.8× reduction in data demand, helping delay exhaustion of web-crawled corpora.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The work targets high-quality pre-training data selection from massive corpora for downstream language-model capability.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "formulation",
+        "summary": "Data selection is cast as generalized optimal control, with PMP supplying necessary conditions linking selection to training dynamics.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "PDS is introduced as an approximation that solves the PMP conditions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "results and release",
+        "summary": "CommonCrawl experiments report faster learning, broad downstream gains, scaling-law-based projected benefits for very large models, lower data demand, and public code, models, and data.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a theoretical formulation and necessary conditions directly to an operational data-selection framework, then reports effects at multiple model scales and data regimes.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A compact theory-to-method-to-scope narrative can make a proposed intervention and its claimed applicability easier to assess.",
+        "application": "When presenting a new selection or optimization method, state the governing conditions, the approximation used in practice, and the distinct regimes in which evidence is reported.",
+        "exception": "This framing is unsuitable when the method has no meaningful theoretical characterization or when the available evaluation does not cover the claimed regimes."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baselines, quantitative downstream gains, statistical variation, or details of the PMP approximation.",
+      "The approximately 400B-model claim is based on test-loss-curve extrapolation via Scaling Laws rather than reported direct training at that scale.",
+      "The basis and scope of the reported 1.8× data-demand reduction are not detailed."
+    ]
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010798",
+    "title": "On the Generalization Capacities of MLLMs for Spatial Intelligence",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010798"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4eee795a5a9bd7cbe96714d312247f3273f6989e06bdefe0b0b7a7b872a411cb",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "7b8d89e10c721082e8b06c2edf44d09f91ef6a9c340c65797c5e8bb838ab7e86",
+    "extracted_at": "2026-09-13T00:05:00.096835+00:00",
+    "session_id": "01a09814-990d-7d51-9707-8046b06221c7",
+    "usage": {
+      "input_tokens": 12734,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 736,
+      "reasoning_output_tokens": 62
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0626f42009b0d4b61da1bfbc9cd6a87b57c19e5b6109a25c0c57805f484260bd"
+    },
+    {
+      "id": "S2",
+      "sha256": "40db201857095785be77928fdf2702e730bc0a6709e5d47661cfe187e524ad6b"
+    },
+    {
+      "id": "S3",
+      "sha256": "e33d6239453fedebc2715cf5a3aebef0206fdc0fc08aceec16bdb954039ee2d7"
+    },
+    {
+      "id": "S4",
+      "sha256": "ad3d422e83c3052b6ffd1fb618fc9715a6184e58bf0e849c1c85343749d0b93e"
+    },
+    {
+      "id": "S5",
+      "sha256": "552d66344dc42b2b630241cf2b052a7fac492e25395f87dc92c40a9e126ce620"
+    },
+    {
+      "id": "S6",
+      "sha256": "60aa9f106e416bd214377187bc2a29f202fa4d9b850f31f8cf23c8d51f72c5c3"
+    },
+    {
+      "id": "S7",
+      "sha256": "90c1d0763a1a0c09d8201b34bd49cb3492a95e1938abf8b526634bd7063b2a5c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010798",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how MLLMs processing RGB inputs for spatial tasks such as 3D localization and navigation generalize across cameras.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors argue that RGB-only approaches ignore camera parameters, entangle object properties with viewpoint, and therefore overfit training-camera distributions instead of learning generalizable 3D geometry.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Proposes a Camera-Aware MLLM framework for spatial MLLMs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Combines per-visual-token camera-intrinsics embeddings, camera-parameter-varying augmentation, and distillation of geometric priors from a 3D vision foundation model.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present camera awareness as a framework-level approach that explicitly conditions spatial reasoning on camera intrinsics, augments camera variation, and transfers 3D geometric priors.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that camera-aware MLLMs substantially outperform naive counterparts, especially on cross-camera generalization tests for spatially grounded tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors interpret these results as indicating that camera awareness is beneficial and a prerequisite for robust, generalizable spatial intelligence in MLLMs.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "RGB-based MLLMs show potential for 3D localization and navigation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors argue RGB-only models cannot reliably generalize across cameras because omitted camera parameters create an irresolvable viewpoint–object ambiguity and encourage training-camera overfitting.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "They propose Camera-Aware MLLM, using camera-conditioned visual tokens, synthetic camera variation, and distilled 3D geometric priors.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "The abstract reports substantial gains over naive counterparts, particularly in cross-camera tests.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific failure mode—camera/object entanglement—to three design choices targeting conditioning, data variation, and geometric priors.",
+          "source_ids": [
+            "S3",
+            "S6"
+          ]
+        },
+        "interpretation": "A strong method narrative can align each architectural component with a diagnosed source of non-generalization.",
+        "application": "When presenting a robustness method, map each intervention explicitly to the mechanism believed to cause the target failure.",
+        "exception": "This mapping is unsuitable when the proposed components are exploratory or their causal roles are not separately motivated."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, camera ranges, baselines, metrics, or numerical effect sizes.",
+      "It does not report ablations separating the contributions of the three framework components.",
+      "The claimed prerequisite status is an author interpretation, not independently verified here."
+    ]
+  }
+}

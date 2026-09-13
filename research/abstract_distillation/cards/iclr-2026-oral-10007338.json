@@ -1,0 +1,201 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007338",
+    "title": "Learning to Segment for Vehicle Routing Problems",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007338"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c8ac289339b0755e1e22b736c332425ba3c4e28061eeaded076472bc3ef40a6a",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "c63de174adaa5c885ee194ce4afa7770824ece88a67840f41b6c97e0d27ecd2c",
+    "extracted_at": "2026-09-12T23:59:23.310840+00:00",
+    "session_id": "01a0980f-710c-7ac1-8719-806e7b5876b3",
+    "usage": {
+      "input_tokens": 12788,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 846,
+      "reasoning_output_tokens": 72
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "beb6e193c407f5d7719bfc0ca2c6e9a0779561c9f9c0123744a2c382dda7ffcd"
+    },
+    {
+      "id": "S2",
+      "sha256": "a5f4b46574e580d479df39d671608d9dfceb4ede7462b06934eb39ce945bb9ea"
+    },
+    {
+      "id": "S3",
+      "sha256": "6b238c20cdad862fd859ed134bfb71c0bb832a055a2fa1e19f0a116aeb81b403"
+    },
+    {
+      "id": "S4",
+      "sha256": "d44a3ba8ab8227c1b430fce2595d8cae3fbc768b48518c662260106dc1002fbe"
+    },
+    {
+      "id": "S5",
+      "sha256": "bf30c53c08c3719fad8c330f939810f9c19bf0bfab46393a330546056064a43f"
+    },
+    {
+      "id": "S6",
+      "sha256": "7dd7731682c7bb186d0402093fc25a517eada15a5716edefab787b2e08e9979c"
+    },
+    {
+      "id": "S7",
+      "sha256": "765307b59f11a5cea73c63c82bea3566dd12492e9b1d5d6f9e0bcb5cffc4a23a"
+    },
+    {
+      "id": "S8",
+      "sha256": "83341ff7c944cd948ff657c5035142b1af2c160d7003c1091a12cf18125fb9b6"
+    },
+    {
+      "id": "S9",
+      "sha256": "04c48507d3847a197b383f0ed6944b405bc7e81e4396a56b5fcc236f7ef09c0e"
+    },
+    {
+      "id": "S10",
+      "sha256": "b52077f49dd03e18df9dde852fb717206c59949095c3cdc1e44d033053619c37"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007338",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Iterative VRP solvers waste computation recomputing solution portions that remain stable across search iterations, particularly in large-scale instances with long subtours.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing decomposition requires identifying which solution segments are stable enough to aggregate, but the abstract presents this identification as an unresolved challenge.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A formal study of First-Segment-Then-Aggregate (FSTA), which preserves stable segments, converts their nodes into fixed hypernodes, and searches unstable portions.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Learning-to-Segment (L2Seg), a neural framework for distinguishing potentially stable and unstable portions for FSTA decomposition.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method analysis",
+        "claim": "Three L2Seg variants are presented: non-autoregressive, autoregressive, and a synergistic combination of both.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe their work as pioneering the formal study of FSTA and introduce L2Seg as a novel neural framework for intelligent segmentation.",
+      "source_ids": [
+        "S3",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that L2Seg accelerates state-of-the-art solvers by 2x–7x on CVRP and VRPTW.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that the synergistic variant achieves the best performance and provide an in-depth analysis of why.",
+        "source_ids": [
+          "S7",
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report compatibility with traditional, learning-based, and hybrid solvers, as well as support for various VRPs.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Iterative VRP heuristics repeatedly recompute portions that remain unchanged across iterations.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "decomposition",
+        "summary": "FSTA reduces this redundancy by fixing stable segments as hypernodes and concentrating search on unstable portions.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "challenge and method",
+        "summary": "Because aggregation depends on correctly identifying stable segments, the authors introduce L2Seg and its three variant designs.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "results and scope",
+        "summary": "The authors report 2x–7x speedups, best performance from synergy, and broad solver and VRP compatibility.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly links each model variant to a complementary limitation: global coverage with weak local discrimination, versus local refinement with weaker global coverage; their synergy is reported as best-performing.",
+          "source_ids": [
+            "S7",
+            "S9"
+          ]
+        },
+        "interpretation": "Designing complementary components around explicit global–local trade-offs can make the method rationale and ablation story more informative.",
+        "application": "Describe each component by the failure mode it addresses, then test the combined design against both components using the same task and metric.",
+        "exception": "This framing is unsuitable when component roles or comparisons cannot be isolated under controlled evaluation conditions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, instance scales, baselines, runtime measurement protocol, or statistical variability for the reported 2x–7x acceleration.",
+      "The details of the synergy mechanism and the evidence supporting its explanation are not given.",
+      "The scope of “various VRPs” and the conditions for compatibility are unspecified."
+    ]
+  }
+}

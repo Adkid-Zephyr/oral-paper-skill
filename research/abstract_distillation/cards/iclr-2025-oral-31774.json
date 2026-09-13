@@ -1,0 +1,191 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31774",
+    "title": "CAX: Cellular Automata Accelerated in JAX",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31774"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "553053dea7fc576562503cdb14e47ef14ed76362bc58657fd5a6fabc27e1928b",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "457bf8bb5650408ca43fa6d058052d84c1407df6cc5cd2402f7ea7e81875db29",
+    "extracted_at": "2026-09-12T23:51:31.050704+00:00",
+    "session_id": "01a09808-3a46-7642-a225-5b16d7d124a0",
+    "usage": {
+      "input_tokens": 12750,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 858,
+      "reasoning_output_tokens": 87
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "157e51a4a130701d70afbc042852891b0a691491fa8f42b486f2852ebca9fdcb"
+    },
+    {
+      "id": "S2",
+      "sha256": "b2a26d5962de128755e8856d6357a02248ed5018b7c91e680f4e8bba2c259fa7"
+    },
+    {
+      "id": "S3",
+      "sha256": "ba8acbba0558eb5e3d28e24f8e250caefe6890047d99947a04ce31937754de79"
+    },
+    {
+      "id": "S4",
+      "sha256": "8bfec846bf448480ac67846be945bb9607450ef28ca7bc1186c745d66daabc80"
+    },
+    {
+      "id": "S5",
+      "sha256": "a201f1d7ce20ec4f61d697c50a01f66d11547d1a186c9642cd345c37f156787b"
+    },
+    {
+      "id": "S6",
+      "sha256": "55c45479582b16e7f73a48226ab66761b09a319b4a57247b48a9b768f776474c"
+    },
+    {
+      "id": "S7",
+      "sha256": "6c6c94a78a263dc9d25374b42c827719b638f0dac1e613b149b56d90fd329db0"
+    },
+    {
+      "id": "S8",
+      "sha256": "bcf0a6d5553375f3e22749547e29e078f33ba39088959b8b05d07a9915414624"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31774",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable faster, more flexible, and reproducible exploration of cellular automata across scientific applications.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify the lack of a hardware-accelerated cellular-automata library as limiting research directions, collaboration, and reproducibility.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "system",
+        "claim": "Introduces CAX, a high-performance, flexible, open-source cellular-automata library built in JAX.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Provides a modular, user-friendly interface supporting discrete and continuous cellular automata in arbitrary dimensions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "experiments",
+        "claim": "Presents three cellular-automata experiments implemented in a few lines of code using the library’s modular architecture.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish CAX as a hardware-accelerated, modular library intended to broaden cellular-automata research, including support for discrete and continuous models of any dimensionality.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that CAX speeds simulations by up to 2,000× across examples ranging from elementary cellular automata and Conway’s Game of Life to growing neural cellular automata and self-classifying MNIST digits.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report three novel cellular-automata experiments implemented in only a few lines of code.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that a simple one-dimensional cellular automaton outperforms GPT-4 on the 1D-ARC challenge.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Cellular automata are used to study emergence and self-organization across several disciplines.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The authors link limited exploration, collaboration, and reproducibility to the absence of hardware-accelerated library support.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "system",
+        "summary": "CAX is introduced as an accelerated, flexible, open-source library with modular support for discrete and continuous models in any number of dimensions.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "demonstration",
+        "summary": "Benchmarks, applications, three compact experiments, and a 1D-ARC comparison are used to illustrate performance and research potential.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a reusable system contribution with concrete benchmarks, varied applications, compact experiments, and a task-specific comparison.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A systems paper can make its research-enabling claim more tangible by connecting infrastructure properties to both performance and downstream use cases.",
+        "application": "Frame a tool contribution around a small set of representative workloads, a quantitative performance result, and one demonstration of how its design lowers experimentation effort.",
+        "exception": "This framing is unsuitable when workloads are not comparable or when speed and implementation brevity are not the intended contribution."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify hardware, baselines, benchmark settings, or whether the reported 2,000× speedup is typical or an upper bound.",
+      "Details and evaluation criteria for the three experiments and the 1D-ARC comparison are not provided.",
+      "The abstract does not establish independently verified correctness, reproducibility, or priority of the claimed novelty."
+    ]
+  }
+}

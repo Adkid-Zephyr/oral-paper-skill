@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47270",
+    "title": "Beyond Self-Repellent Kernels: History-Driven Target Towards Efficient Nonlinear MCMC on General Graphs",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47270"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6110ce951794ade322d1c62d4ddde11ba151fe5e4518f3600ed348eefc9ce82f",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "cfc3ec9ff05361bb5fbccafb79d5f9fedb0c4b788690468ae3a558d0b66e63d1",
+    "extracted_at": "2026-09-13T00:11:12.786805+00:00",
+    "session_id": "01a0981a-439a-7531-8aab-dffcf7147806",
+    "usage": {
+      "input_tokens": 12769,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 812,
+      "reasoning_output_tokens": 78
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2d5bc0ac92b7177e2346eb5904e418dbdc99d9d7afdabd3693aba82dcdf0536b"
+    },
+    {
+      "id": "S2",
+      "sha256": "11b8cd10a6d51fdbbadb4645ad8e9eb0760ec8b931afd39200921499717efe24"
+    },
+    {
+      "id": "S3",
+      "sha256": "b7cbb8517bd2f884e602946a6e0dba0d263313f32da874f1439e96183b953aa4"
+    },
+    {
+      "id": "S4",
+      "sha256": "d0619a5ca9360ff77c29dc4c36906a088d7395fc546fdfeda84466de5d7b8703"
+    },
+    {
+      "id": "S5",
+      "sha256": "85ea90d858175755524fe62c94b71d22b4b09457ab859864c21db60bd4a4e58c"
+    },
+    {
+      "id": "S6",
+      "sha256": "3be7575ee3bfb72ae9cceb21f7978c315fa7c1670460699e3e72a8226ff56f5d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47270",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve random-walk algorithms on discrete state spaces, including general undirected graphs, for efficient sampling from a target distribution.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Self-repellent random walks incur overhead from computing all-neighbor transition probabilities and are restricted to time-reversible MCMC, limiting compatibility with non-reversible methods.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces a history-driven target framework that replaces the original target with a history-dependent target based on empirical past visits, rather than directly modifying the transition kernel.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Designs the framework to use only local current/proposed-state information and support both reversible and non-reversible samplers.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Provides a memory-efficient Least Recently Used cache for scaling graph sampling to large general graphs.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated distinction is to drive sampling through a history-dependent target distribution instead of direct transition-kernel modification, while preserving lightweight local implementation and sampler compatibility.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that HDT retains unbiased samples for target distribution μ and near-zero variance performance.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report consistent performance gains in extensive graph-sampling experiments.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that an LRU cache ensures scalability to large general graphs.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The paper proposes improving random-walk sampling on discrete spaces such as general graphs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "context",
+        "summary": "It situates the problem alongside self-repellent random walks, which use past visit frequencies to prioritize under-sampled states.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "It identifies computational overhead and exclusion of non-reversible MCMC as limitations of SRRW.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "HDT replaces the original target with a history-dependent target derived from empirical visit history.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported-outcome",
+        "summary": "The abstract reports local-information implementation, reversible and non-reversible compatibility, retained sampling properties, performance gains, and LRU-based scalability.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly links an implementation choice—history-dependent target substitution—to local-information requirements and compatibility with both reversible and non-reversible samplers.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A method claim becomes more informative when its design mechanism is tied directly to operational and compatibility consequences.",
+        "application": "When presenting a new sampling method, state the central design substitution and immediately map it to computational locality and the class of algorithms it supports.",
+        "exception": "This framing is unsuitable when those consequences are not established by the reported method or when the design has multiple interacting mechanisms that cannot be isolated."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the conditions, guarantees, or evaluation protocol supporting unbiasedness and near-zero variance.",
+      "Experiment datasets, baselines, metrics, and quantitative performance gains are not reported.",
+      "The mechanism and measured scaling behavior of the LRU cache are unspecified."
+    ]
+  }
+}

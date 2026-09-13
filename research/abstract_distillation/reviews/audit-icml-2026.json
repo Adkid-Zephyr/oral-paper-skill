@@ -1,0 +1,82 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "records": [
+    {
+      "paper_id": "icml-2026-oral-71169",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "contributions[2].claim",
+          "source_ids": ["S7", "S8"],
+          "issue": "The source says the dataset is released and the algorithm is introduced. The current shared verb 'Releases' also attributes release to the algorithm, which is not established by the abstract. The algorithm and its approximately 20% evaluation-budget result are otherwise accurately summarized.",
+          "severity": "minor",
+          "correction": "Distinguish the dataset release from introduction of the algorithm.",
+          "replacement_value": "Releases the Proteus-2k evaluation dataset and introduces an algorithm that recovers near-full-data frontiers using roughly 20% of the evaluation budget."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "icml-2026-oral-71065",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71072",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "unknowns[1]",
+          "source_ids": ["S2", "S4", "S5"],
+          "issue": "The abstract does explain the compute-indexed interpolation at a conceptual level: increasing sampling compute moves the objectives between expected-reward RL and maximum likelihood. It also identifies terminal binary feedback as the setting. What is missing is the precise objective and full proof conditions, not all meaning of the interpolation.",
+          "severity": "minor",
+          "correction": "Retain the known feedback setting and interpolation meaning, and restrict the unknowns to the mathematical details and full assumptions.",
+          "replacement_value": "The abstract identifies terminal binary feedback and describes interpolation from expected-reward RL toward maximum likelihood as sampling compute increases, but does not give the precise objective formula or full proof assumptions."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "icml-2026-oral-71043",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "icml-2026-oral-71157",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "narrative_sequence[3].summary",
+          "source_ids": ["S6"],
+          "issue": "S6 describes bounded, gauge-invariant perturbations enabling stable privacy-utility trade-offs. The summary instead makes the trade-offs themselves 'bounded', moving the qualifier to a different object. The method and characterization fields preserve the intended claim, so this is a local summary imprecision.",
+          "severity": "minor",
+          "correction": "Attach boundedness to perturbations and stability to the privacy-utility trade-off.",
+          "replacement_value": "A closed-form intrinsic-noise characterization enables stable privacy-utility trade-offs through bounded, gauge-invariant perturbations."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "icml-2026-oral-71158",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 6,
+    "full_original_abstracts_read": 6,
+    "first_pass_pass": 3,
+    "first_pass_minor": 3,
+    "first_pass_material_error": 0,
+    "material_findings": 0,
+    "minor_findings": 3,
+    "requires_correction": 3,
+    "scope": "Read every supplied original source unit and all extraction fields in runs/audit-source-review-icml-2026/packet-01.json. Checked attribution, entailment, qualifiers, resource denominators, numerical comparators, theory and transfer scope, narrative, unknowns, and lesson observation versus interpretation. Prescriptive scaling retains 5k observational plus 2k newly sampled performance data, roughly 20% evaluation budget, and the advancing math boundary exception. MaxRL retains terminal binary feedback, all tested models/tasks, and up to 20x test-time scaling efficiency over GRPO. Obfuscation distinguishes representation drift with or without penalties from policy-level evasion and retains conditional honesty outcomes. The learning-dynamics position leaves guaranteed training design as an envisioned level. PRISM retains standard (epsilon, delta)-DP as author-reported theory; contextual optimization retains partial-data/missingness structure and finite-sample out-of-sample guarantees without inventing their conditions. No material errors found; three local minor corrections are proposed.",
+    "limitations": "AI source checking only, not independent validation of experiments, proofs, novelty, reproducibility, or lesson effectiveness. Initial random-audit counts are preserved. No cards were edited, no additional model calls were made, and no corpus-wide accuracy or gate decision is issued."
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009928",
+    "title": "Actions Speak Louder than Prompts: A Large-Scale Study of LLMs for Graph Inference",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009928"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b72ee483f38ade5b9ec21d5dc499dde5f5cc0cc69c61636ed0dae0b932dcc3b4",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "0aab5cabccefc76e087348faa70abab6bc1360c96677b8ef58ea5d4a91f8b75c",
+    "extracted_at": "2026-09-13T00:03:43.566637+00:00",
+    "session_id": "01a09813-62c1-7543-b043-d04fbbbe7b5a",
+    "usage": {
+      "input_tokens": 12810,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 899,
+      "reasoning_output_tokens": 92
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "861568cc794b4ff5cc6434927f96cb3c64be8d0acc3146f0c72ca37d6bebefdc"
+    },
+    {
+      "id": "S2",
+      "sha256": "7d654d1c2426c223d06343e87178a008978d16e0486346455d35e8eb3eb834db"
+    },
+    {
+      "id": "S3",
+      "sha256": "953d5af7d2c6b13f8f39333cc02354898e27a4be79f0f2cd31caeab09c355a41"
+    },
+    {
+      "id": "S4",
+      "sha256": "fc5d299c7ce5077e10fd5fbd7797b65c08500d18a198474603a44fc2d443257e"
+    },
+    {
+      "id": "S5",
+      "sha256": "e21360e49edfca14979cab2f5a25406dac69d6455c6b3150efcc52a55ffd68d1"
+    },
+    {
+      "id": "S6",
+      "sha256": "8fd90196db170bd8bed9c7f218730e202038e5a00a03920a827f0b8bf55a6cd7"
+    },
+    {
+      "id": "S7",
+      "sha256": "9ab0e6af1a9c53f5c5d4f4c30fb2916dad9ed719a9605699062fda5389ad7c13"
+    },
+    {
+      "id": "S8",
+      "sha256": "e427bdd2f9846956ba5473a2074d1f33b857737966df4345bd675c44ad452573"
+    },
+    {
+      "id": "S9",
+      "sha256": "65507751a27ab5cac6aa4291fbecabe35e6d5170aa1694a26496044dcadf4abf"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009928",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize how LLMs perform on text-rich graph tasks, especially node classification, across interaction modes and graph conditions.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The field lacks a principled understanding of LLM capabilities for processing graph data.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical study",
+        "claim": "A large-scale, controlled evaluation varying interaction mode, graph domain, homophily, text length, LLM size, and reasoning capability.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "dependency analysis",
+        "claim": "An analysis of reliance on features, edges, and labels through independent truncation or deletion.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "design guidance",
+        "claim": "Actionable conclusions about the strengths, limitations, and future design principles of LLM–graph interaction modes.",
+        "source_ids": [
+          "S5",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a large-scale controlled study spanning multiple LLM–graph interaction modes and graph conditions, with targeted input-dependency analysis.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that code generation has the strongest overall performance, with especially large gains on long-text or high-degree graphs where prompting quickly exceeds the token budget.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that all interaction strategies remain effective on heterophilic graphs, challenging the assumption that LLM-based methods collapse under low homophily.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that code generation can shift reliance toward whichever input type—structure, features, or labels—is most informative.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "LLMs are increasingly used for text-rich graph tasks, including high-impact node classification applications.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "The authors identify a lack of principled understanding of LLM graph-processing capabilities.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "study design",
+        "summary": "They conduct a controlled evaluation across interaction modes, graph regimes, domains, text lengths, model sizes, reasoning capabilities, and input dependencies.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "They report advantages for code generation, continued effectiveness under heterophily, and adaptive reliance on informative inputs.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The study varies interaction mode and graph conditions jointly, then separately removes or truncates input types.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Factorized evaluation can reveal when a method’s apparent advantage depends on particular data regimes or inputs.",
+        "application": "Report results in a matrix crossing interaction mode with graph regime, text length, degree, and input ablations.",
+        "exception": "This may be unsuitable when the task lacks enough data or compute to support controlled factorial comparisons."
+      },
+      {
+        "source_observation": {
+          "claim": "The reported code-generation advantage is qualified by long-text and high-degree settings, while prompting may exceed the token budget.",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        "interpretation": "Method claims become more informative when tied to concrete operational constraints and failure conditions.",
+        "application": "State the regime and resource constraint under which a proposed method is expected to outperform alternatives.",
+        "exception": "Avoid this framing when no meaningful regime-specific mechanism or constraint has been identified."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no dataset sizes, model identities or sizes, metrics, baselines, statistical uncertainty, or numerical results.",
+      "The meaning of “effective” across heterophilic graphs and the conditions behind adaptive input reliance are unspecified.",
+      "The abstract does not establish independently verified validity, reproducibility, or priority of the stated novelty."
+    ]
+  }
+}

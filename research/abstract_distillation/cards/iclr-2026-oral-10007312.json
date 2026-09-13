@@ -1,0 +1,215 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007312",
+    "title": "Learning to See Before Seeing: Demystifying LLM Visual Priors from Language Pre-training",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007312"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ebd382f1346af314e9801e30c9220e7beb907bb4232854be1bcbe141a08afa14",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "d8888727870ad5c7a954d7da8a883cbedc8812067a648bf7334d392b3b5a5c0a",
+    "extracted_at": "2026-09-12T23:59:24.943223+00:00",
+    "session_id": "01a0980f-6f96-77a2-899b-a3cd32569ce7",
+    "usage": {
+      "input_tokens": 12935,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 920,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e6a15f4814de7cc6a9bebd6f94cc91a2c0fcf06c8c0d5da45e030e1ab75593e7"
+    },
+    {
+      "id": "S2",
+      "sha256": "8f2a0aad9ec345595273f3d352507d80231b9d65162d04da96097d2e8e4616a8"
+    },
+    {
+      "id": "S3",
+      "sha256": "2e3bb56f7c9f094fbbd6e6b37a0b01207a6b6e328538fbda2f0b171bfcd5599d"
+    },
+    {
+      "id": "S4",
+      "sha256": "231d142d6e85cc4ae6564a0b784389a1ba1357a028911811a5f951c159028eee"
+    },
+    {
+      "id": "S5",
+      "sha256": "195f7af25ec7ec5247db7dd5dd4ba202ed2e599f035a5e84a9e04d35976abe24"
+    },
+    {
+      "id": "S6",
+      "sha256": "62ddf417f7b4ab4b9d2172aa4d1f3fe323e695d2296994132d1a423b99aaebcc"
+    },
+    {
+      "id": "S7",
+      "sha256": "381ce2377091e1be5f0ecc49010a10f8b2a7af7461f48843f49b1a33c1872187"
+    },
+    {
+      "id": "S8",
+      "sha256": "a6ef635e75cb4ae5b564371af1b0578673092e74d052105e4cdc1753eb976782"
+    },
+    {
+      "id": "S9",
+      "sha256": "2177342fe96159008813ae3da8c7c87ac80eba9a275e38d188c083e7dc1ed339"
+    },
+    {
+      "id": "S10",
+      "sha256": "3eb94c6c75adedce8b2807c5f36826b2078a709a9efda5e46b0ad604125037be"
+    },
+    {
+      "id": "S11",
+      "sha256": "2ab82eb637355c66d965fb5ab3b803d4f86644a19bbc82880ab164a4beb707c6"
+    },
+    {
+      "id": "S12",
+      "sha256": "cf518b2f088cadfc6d1f63397cd67b7f46c5fa1c2e3c0bcc291d15a96a0ab6dd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007312",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper investigates how visual priors emerge during language pre-training and how they can be deliberately cultivated for multimodal LLMs.",
+        "source_ids": [
+          "S3",
+          "S8",
+          "S11"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "analysis",
+        "claim": "Decomposes visual priors into separable perception and reasoning priors with distinct scaling trends and origins.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes a data-centric recipe for pre-training vision-aware LLMs, verified in 1T-token-scale pre-training.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Introduces the Multi-Level Existence Bench (MLE-Bench) for future research.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a new way to deliberately cultivate visual priors from language pre-training.",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that latent visual reasoning is predominantly developed by reasoning-centric pre-training data such as code, mathematics, and academia, and scales progressively.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that this language-acquired reasoning prior transfers and applies universally to visual reasoning.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report over 100 controlled experiments across five model scales and the full MLLM construction pipeline, consuming 500,000 GPU-hours.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Text-only LLMs develop rich visual priors that can support vision tasks after limited multimodal data and symbolic visual generation without images.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "decomposition",
+        "summary": "Systematic analysis separates visual priors into perception and reasoning components with different origins and scaling behavior.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "Reasoning priors mainly arise from reasoning-centric data and scale progressively, whereas perception priors emerge diffusely and depend more on the vision encoder and visual instruction tuning; visual-world text matters but saturates quickly.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "translation",
+        "summary": "The paper turns these findings into a data-centric pre-training recipe, verifies it at 1T-token scale, and adds hypotheses plus MLE-Bench.",
+        "source_ids": [
+          "S8",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly separates perception and reasoning priors, then links each to different data sources, scaling trends, and adaptation sensitivities.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A component-wise account can make a broad multimodal claim more diagnostically useful.",
+        "application": "When presenting a multimodal intervention, partition the target capability into distinct priors and align each with its proposed data and scaling mechanism.",
+        "exception": "This framing may be unsuitable when the capability cannot be meaningfully decomposed or the available evidence does not distinguish components."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract pairs broad findings with a concrete recipe and reports verification across scales, data mixtures, and adaptation setups.",
+          "source_ids": [
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "Connecting explanatory findings to an operational recipe clarifies how analysis informs practice.",
+        "application": "After identifying a data-dependent mechanism, state the resulting training recipe and specify the scale and variation dimensions used to test it.",
+        "exception": "Do not present a recipe as broadly applicable when the abstract omits the recipe’s exact components or decisive evaluation conditions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not state a specific limitation or gap in prior work.",
+      "Exact contents of the proposed recipe, MLE-Bench, hypotheses, and 1T-token verification results are unspecified.",
+      "The meaning and measurement of “universally applicable,” “predominantly,” and rapid performance saturation are not detailed."
+    ]
+  }
+}

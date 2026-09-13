@@ -1,0 +1,180 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31919",
+    "title": "Energy-based Backdoor Defense Against Federated Graph Learning",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31919"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "fa5442de263771ceee387f31884df6a2ee8a8f707e4c88ee4d010c07fd8cc6b6",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "681b0ef85269f4b949dd1f63faab02f0b5f13b10f6f69df5a5c8534a82e10e5b",
+    "extracted_at": "2026-09-12T23:57:07.610634+00:00",
+    "session_id": "01a0980d-67ca-7382-a232-2afa711d1052",
+    "usage": {
+      "input_tokens": 12709,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 751,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6fc2a3d5de8fc6b10af8965b011c6d442c39498da56306e72254374655c9b9dc"
+    },
+    {
+      "id": "S2",
+      "sha256": "0b5a19f9f8e585cd2cd9bb5bd7e962dd34afc5d7c3934d3a220bc4e4dd40b965"
+    },
+    {
+      "id": "S3",
+      "sha256": "3687d12ad8c4e5636fb2aa849b95fc822c32bf6374273e217ef7a354ad57631b"
+    },
+    {
+      "id": "S4",
+      "sha256": "270c9a3571998d472f515d8cfbcd415ad816c842d3a18507c9df8ca2cbfa530f"
+    },
+    {
+      "id": "S5",
+      "sha256": "21d1a0da91f351e9b93855978ccbaa279eb85d15396524a5cc837fa8e1817bdb"
+    },
+    {
+      "id": "S6",
+      "sha256": "8068a819bc8ef5eb60e405950b7aa344b0a7eb7aad530792e184a3bc3f268f34"
+    },
+    {
+      "id": "S7",
+      "sha256": "c6791a5251fa08e08261cc709b37e5640d1157eab1a71e8799028d1c444f7fae"
+    },
+    {
+      "id": "S8",
+      "sha256": "c5211b587db0827e08d169556436bc5629808dab710f971c0a439c2b33971306"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31919",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Defend federated graph learning models against backdoor attacks that cause incorrect predictions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The diversity of trigger structures and injection locations makes traditional federated defenses less effective.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes FedTGE, a federated graph backdoor defense based on Topological Graph Energy.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Combines client-level energy-based benign-client selection with server-level global energy-graph propagation and aggregation-weight adjustment.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "reported capability",
+        "claim": "The method is designed to handle high data heterogeneity without a validation dataset and across small and large malicious proportions.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed defense uses uploaded client energy elements as nodes in a global energy graph for propagation and aggregation adjustment.",
+      "source_ids": [
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report effectiveness across various federated graph scenarios under backdoor attacks.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that FedTGE remains effective under both small and large malicious proportions, handles high data heterogeneity, and requires no validation dataset.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context and threat",
+        "summary": "Federated graph learning is presented as privacy-preserving collaborative learning, but backdoor triggers can induce incorrect predictions.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Trigger diversity and varied injection locations are described as weakening traditional federated defenses.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "FedTGE assigns low energy to benign samples, high energy to malicious substitutes, clusters clients locally, and propagates client energy through a global graph to adjust aggregation weights.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report effectiveness across varied attack settings, including heterogeneous data and different malicious proportions, without a validation dataset.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each defense stage with a distinct federated level: local energy scoring and clustering at clients, followed by global energy propagation and aggregation adjustment at the server.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This separation makes the method's system-level logic easier to trace from local signals to global coordination.",
+        "application": "For a federated defense paper, map each proposed mechanism explicitly to the client or server operation it changes, then state how the signals flow between levels.",
+        "exception": "This framing is less suitable when the method has no meaningful client-server decomposition or when the abstract cannot support the claimed signal flow."
+      }
+    ],
+    "unknowns": [
+      "No quantitative results, baselines, datasets, attack configurations, or ablations are reported in the abstract.",
+      "The abstract does not specify how clustering, energy propagation, or aggregation-weight adjustment are implemented or compared."
+    ]
+  }
+}

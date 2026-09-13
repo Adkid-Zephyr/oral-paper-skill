@@ -1,0 +1,199 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31921",
+    "title": "A Probabilistic Perspective on Unlearning and Alignment for Large Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31921"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8d965e48c240c280d9ff7f69dc08d641036cbe45b343a4ea694f00557b0a4720",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "ada5421bb9eeb37dd091cc1fec4cfa3f6773e2f4d38bdd2fcb612caff6e77a10",
+    "extracted_at": "2026-09-12T23:57:18.725133+00:00",
+    "session_id": "01a0980d-8e0f-7fb0-bedf-b493eae07b97",
+    "usage": {
+      "input_tokens": 12770,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 769,
+      "reasoning_output_tokens": 90
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d1e131c099f481295ecf235f332b223fef474ffb8bc46aaf81a710b412ea4e7b"
+    },
+    {
+      "id": "S2",
+      "sha256": "7e97fd90d80cc0b47aeff67a9d7e064219ed2b604fb3756779117d5ee0db7340"
+    },
+    {
+      "id": "S3",
+      "sha256": "f65e9d297d7e5479b4a6f23f3db0b80b90aa8762e9c9af20bc5808907934cb31"
+    },
+    {
+      "id": "S4",
+      "sha256": "c51df7a57cbfecfa51e500872381eda469c2738c129b4e804906a25474c88fb4"
+    },
+    {
+      "id": "S5",
+      "sha256": "4c86aed42a39f61a5c210f9aa803115db9848336d7aaeb0acebcd264c3fcec94"
+    },
+    {
+      "id": "S6",
+      "sha256": "b673d1f53b2c75547614c65f4a840cb89d45392c3c4a24d87fe7ef872168ff6d"
+    },
+    {
+      "id": "S7",
+      "sha256": "3327f5ca0e5cc5e5ec5d8691c2a59710df21eba530029ccf47faaf8cc72aad3e"
+    },
+    {
+      "id": "S8",
+      "sha256": "68ec59485abf3691a6667b0db3c61eaa72f8e4947ed1d97d4ca6dde914840b9c"
+    },
+    {
+      "id": "S9",
+      "sha256": "3372670fad01a37a5ba752db8028261f88c507d0abe3cee08f01f71796acea73"
+    },
+    {
+      "id": "S10",
+      "sha256": "5cdd8c4711617c72512fa4878c765b70b4fb558494510b05cf7ac1b4620578bd"
+    },
+    {
+      "id": "S11",
+      "sha256": "c6a865712fc5f68d7731947b60a69440962c2f24f9b46e214ea5405c0370d867"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31921",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Comprehensively evaluating LLM capabilities, especially for unlearning and alignment, is difficult and important before deployment.",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S7"
+        ]
+      },
+      "gap": {
+        "claim": "Existing greedy-decoding evaluations use deterministic point estimates that the authors report can miss the full output distribution and inaccurately estimate capabilities.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Introduces a formal probabilistic evaluation framework for LLMs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "metrics",
+        "claim": "Proposes application-independent metrics with high-probability guarantees about model output distributions.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "For unlearning with probabilistic outputs, introduces an entropy-optimization loss and adaptive temperature scaling.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe the framework as the first formal probabilistic evaluation framework for LLMs and identify the metrics and unlearning components as novel.",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that deterministic evaluations falsely indicate successful unlearning and alignment, while probabilistic evaluations better capture model capabilities.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "In a case study, the authors report that the proposed approach significantly enhances unlearning in probabilistic settings on recent benchmarks.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Comprehensive LLM evaluation is framed as an open problem, with particular stakes for unlearning and alignment.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors argue that greedy-decoding point estimates overlook the model’s output distribution and can misestimate capabilities.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "They introduce probabilistic evaluation metrics intended to provide high-probability, application-independent capability estimates.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "case-study method and findings",
+        "summary": "They address probabilistic-output challenges in unlearning with entropy optimization and adaptive temperature scaling, reporting improved benchmark performance.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a concrete evaluation failure—deterministic tests falsely signaling successful unlearning or alignment—to a distribution-aware evaluation framework.",
+          "source_ids": [
+            "S3",
+            "S8"
+          ]
+        },
+        "interpretation": "A claim becomes more informative when the proposed method directly targets a named failure mode of the baseline evaluation.",
+        "application": "Frame a paper around a specific way the standard measurement can mislead, then align the method and evidence to that failure mode.",
+        "exception": "This framing is unsuitable when the baseline’s failure mode has not been established or the proposed method does not measure the implicated quantity."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, benchmark names, sample sizes, or comparison details.",
+      "The conditions and formal statements behind the claimed high-probability guarantees are unspecified.",
+      "It is unclear how much the reported improvements depend on entropy optimization versus adaptive temperature scaling."
+    ]
+  }
+}

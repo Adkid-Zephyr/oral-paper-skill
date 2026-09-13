@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47268",
+    "title": "Implicit Regularization for Tubal Tensor Factorizations via Gradient Descent",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47268"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9e43dc3696e2ef3a71ca52d2317fc846c925a67af019ae6092c2933c7ae9c068",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "8f5e2f87cf3f1e2033835e16953dc2c87b1488f5229c11d0b07c21df2bd8213d",
+    "extracted_at": "2026-09-13T00:11:08.141262+00:00",
+    "session_id": "01a0981a-3450-7ae0-a2f8-d3e2768c252d",
+    "usage": {
+      "input_tokens": 12759,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 717,
+      "reasoning_output_tokens": 59
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "eabd36cf04788d0ce68e79afbc259888935f7aaeabd3ea4c6e28099e0bea57b7"
+    },
+    {
+      "id": "S2",
+      "sha256": "405f6212544fe08bb291cd0b2ce4117004bb4801b87ef388881b0d40eb6386e9"
+    },
+    {
+      "id": "S3",
+      "sha256": "700470e8c1bfe18da2422477469cad052456637174cf67178bc685ea25cf2e6d"
+    },
+    {
+      "id": "S4",
+      "sha256": "51f401e5962efb06e56d57ba5ecd5a8bd805b621ad9b00829a118630e066a353"
+    },
+    {
+      "id": "S5",
+      "sha256": "2f30df3a1a965e1fe913ceb32b2be48515ad0c965f2b4a7bbd12a5f3effa3c52"
+    },
+    {
+      "id": "S6",
+      "sha256": "452850bcec8ed8b66141a81f843c774c3411f3bb9459d299bbd8cfcc948459ee"
+    },
+    {
+      "id": "S7",
+      "sha256": "8c2bdcda71bf9e85c06361b5ec7165f7094a7105d7cee9384e4b0f0361b4d47b"
+    },
+    {
+      "id": "S8",
+      "sha256": "c89d82e4a81cdc2ae9fb18606c4cb86360a0ebfc504d13e89d2b186b6bb5ba34"
+    },
+    {
+      "id": "S9",
+      "sha256": "56c0e3f1941bb98f62af8927e68ce93a957d2578fd20152f0972f5c5eb1d8553"
+    },
+    {
+      "id": "S10",
+      "sha256": "ecf08faae2322058ca2cc9a6d31cbe9c11273dac57d5774c1ca66ead976376be"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47268",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Analyze implicit regularization in overparameterized tubal tensor factorization trained by gradient descent.",
+        "source_ids": [
+          "S1",
+          "S8"
+        ]
+      },
+      "gap": {
+        "claim": "For tensor factorizations, implicit regularization had been rigorously established only for gradient flow or lazy training, while universal initialization strategies remained challenging.",
+        "source_ids": [
+          "S3",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Proves that, with small random initialization, gradient descent in an overparameterized tubal tensor factorization model has an implicit bias toward low-tubal-rank solutions.",
+        "source_ids": [
+          "S7",
+          "S9"
+        ]
+      },
+      {
+        "type": "empirical illustration",
+        "claim": "Uses numerical simulations to illustrate the dynamics predicted by the theory and the role of small random initialization.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state this is the first tensor implicit-regularization result of its kind for gradient descent rather than gradient flow.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a theoretical low-tubal-rank implicit bias for gradient descent under small random initialization in an overparameterized model.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report extensive numerical simulations showcasing dynamics predicted by the theory and the crucial role of small random initialization.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context and challenge",
+        "summary": "Implicit regularization is established in matrix factorization, but universal initialization strategies are challenging.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Tensor-factorization results had been rigorously established only for gradient flow or lazy training.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "theoretical result",
+        "summary": "The paper studies tubal tensor products and states a first gradient-descent result showing bias toward low tubal rank with small random initialization.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "numerical support",
+        "summary": "Simulations illustrate the predicted dynamics and the importance of the initialization scale and randomness.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a specific algorithmic condition—small random initialization—with a specific structural outcome—bias toward low tubal rank—and then tests predicted dynamics numerically.",
+          "source_ids": [
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "Aligning a theoretical claim with its operative condition and a directly corresponding observable makes the claim-evidence relationship easier to inspect.",
+        "application": "State the training condition, induced structure, and simulation observable together when presenting an implicit-bias result.",
+        "exception": "This framing is unsuitable when the abstract does not establish a condition-outcome link or lacks an observable tied to the theoretical prediction."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact initialization scale, step-size conditions, factorization dimensions, convergence guarantees, or formal definition of the implicit bias.",
+      "The simulations' datasets, baselines, quantitative results, and whether low-tubal-rank recovery is measured are not reported."
+    ]
+  }
+}

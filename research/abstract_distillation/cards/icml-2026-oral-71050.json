@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71050",
+    "title": "PhotoAgent: Exploratory Visual Aesthetic Planning with Large Vision Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71050"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c9fe810482cbf91bee6947ae975683e5d2fa25282191a8f033d448f90d911863",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "772a94ccd112c58414820bc358715426b4859bf8e126191efde4c26d0fa65222",
+    "extracted_at": "2026-09-13T00:12:04.864759+00:00",
+    "session_id": "01a0981b-1095-7010-b52e-bd7c8212eaab",
+    "usage": {
+      "input_tokens": 12707,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 758,
+      "reasoning_output_tokens": 77
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8dba77de706bf6d64502003ce8cde1c178419f202cbc5cda13213566e3ff8af6"
+    },
+    {
+      "id": "S2",
+      "sha256": "2f35f215bbbb878bbdab751d2ee5fd6dc3d9e1020a73c1c0e382971ab5596b4c"
+    },
+    {
+      "id": "S3",
+      "sha256": "029d409cc7f9ab24b03f145fa89c9b9aececcb64f77a22554b0f36c5b36a1137"
+    },
+    {
+      "id": "S4",
+      "sha256": "60e213e3da0efc7783179433608017b6d6857f30f1a7d471bda7f4bf328302e9"
+    },
+    {
+      "id": "S5",
+      "sha256": "de620bb84ca86a85aea1bc259b8efd85176434fca65914a713fe57a4f19318fd"
+    },
+    {
+      "id": "S6",
+      "sha256": "c8285b2ad060170ca601bf4149673dc559e36c1152a4d75b7b8dcc8e1f71b880"
+    },
+    {
+      "id": "S7",
+      "sha256": "2b0c34d844b5ad081ad771033c0caa4ef39f817dea0def4df7373224ba9d6d1b"
+    },
+    {
+      "id": "S8",
+      "sha256": "12d9661bd1ff63cd275d44a87b79e3568efc58c08ca97387225d61091a087c5b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71050",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable autonomous image editing that can interpret aesthetic intent and execute multi-step edits without step-by-step prompts.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Existing instruction-based editing places task decomposition and action sequencing on the user, so performance depends on carefully designed instructions.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "system",
+        "claim": "PhotoAgent formulates autonomous image editing as long-horizon decision-making, using aesthetic-intent reasoning, tree-search planning, and closed-loop refinement with memory and visual feedback.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "benchmark and reward model",
+        "claim": "UGC-Edit provides 7,000 photos and a learned aesthetic reward model for evaluation in real-world scenarios.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "test resource",
+        "claim": "A 1,017-photo test set is constructed to assess autonomous photo-editing performance systematically.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present explicit aesthetic planning as the basis for advancing autonomous image editing.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive experiments show PhotoAgent significantly outperforms existing methods in instruction faithfulness and visual quality across diverse editing scenarios.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Generative models make instruction-based image editing promising for high-quality image generation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Instruction quality remains dependent on users decomposing and sequencing editing tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "PhotoAgent addresses this through explicit aesthetic planning, long-horizon decision-making, tree search, and closed-loop visual refinement.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation resources",
+        "summary": "The paper introduces UGC-Edit, a learned aesthetic reward model, and a 1,017-photo test set.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported result",
+        "summary": "The authors report gains over existing methods in instruction faithfulness and visual quality across diverse scenarios.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the user-burden diagnosis with a concrete planning mechanism and names the feedback and memory signals used during iterative refinement.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A strong abstract can make a system contribution legible by mapping the diagnosed bottleneck to explicit operational components.",
+        "application": "State the user or system bottleneck, then name the decision formulation and the specific mechanisms that address it.",
+        "exception": "This framing is unsuitable when the work does not actually introduce an operational mechanism or when the bottleneck is not central to the evaluation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baselines, metric definitions, numerical effect sizes, or experimental protocols for the reported improvements.",
+      "It does not clarify how the learned aesthetic reward model is trained or used, or whether the 1,017-photo test set is distinct from UGC-Edit."
+    ]
+  }
+}

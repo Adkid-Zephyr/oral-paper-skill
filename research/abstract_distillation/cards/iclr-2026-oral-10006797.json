@@ -1,0 +1,151 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006797",
+    "title": "Non-Asymptotic Analysis of (Sticky) Track-and-Stop",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006797"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4d33c51b4faac2ad1a3fc8eddc2065f5c24b827f2c1eddcd8d2f04c886fed2c1",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "79836f8a48072f3a316de04c273830f6ffdf36f8964428c0ed685cccc2102e70",
+    "extracted_at": "2026-09-12T23:58:33.812502+00:00",
+    "session_id": "01a0980e-be3a-7851-a2a0-07bb10bd8176",
+    "usage": {
+      "input_tokens": 12686,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 636,
+      "reasoning_output_tokens": 93
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0ad10c9653197d39953d0d72567bd256553194635dfcaccdb5a5685580587b9d"
+    },
+    {
+      "id": "S2",
+      "sha256": "84e4709153d6592061b0e9a8efd885cf54e614fea7ad20df84f6363f541f0340"
+    },
+    {
+      "id": "S3",
+      "sha256": "bb3db5ec7e89375b9a93cef68a18aff543c9b0e790eee0887401419eb4046be9"
+    },
+    {
+      "id": "S4",
+      "sha256": "c34eaa466a099679e9dd7e6ce755e2f779bbadbc99bd58c5df322cd70dd3c1f0"
+    },
+    {
+      "id": "S5",
+      "sha256": "5ae6444d0fadd86aecf74d43124f04ad65ba6bf445c7cfcba99c17469b546df9"
+    },
+    {
+      "id": "S6",
+      "sha256": "c9a89205aedae698937abd31f41cfabeb4555a73b43d5d338c81520be90718d3"
+    },
+    {
+      "id": "S7",
+      "sha256": "65021235ea9a0ebbf7564cf1f25ad5a8631aef21acd4d8967d85e45acbe8ba88"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006797",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design pure-exploration algorithms that answer questions about unknown stochastic environments with error risk at most δ while using few environment queries.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Track-and-Stop and Sticky Track-and-Stop were asymptotically optimal, but their non-asymptotic guarantees were unknown.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Provides non-asymptotic guarantees for Track-and-Stop and Sticky Track-and-Stop.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that the work fills the gap in non-asymptotic analysis for both algorithms.",
+      "source_ids": [
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [],
+    "narrative_sequence": [
+      {
+        "role": "task context",
+        "summary": "Pure exploration asks a statistician to answer a question about an unknown stochastic environment under a risk and query-efficiency constraint.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "prior method",
+        "summary": "Track-and-Stop is presented as a pioneering method with asymptotic optimality when each environment has a single correct answer.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "extension",
+        "summary": "Sticky Track-and-Stop extends the setting to environments that may have multiple correct answers.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "gap and response",
+        "summary": "Despite asymptotic optimality, non-asymptotic guarantees were unknown; this work states that it provides them for both algorithms.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates single-valued-answer settings from multiple-correct-answer settings before stating the shared non-asymptotic gap.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Explicitly partitioning the problem by answer-map structure can clarify which assumptions a result depends on.",
+        "application": "When presenting a sequential decision method, define whether each environment has one correct answer or a set of correct answers, then state guarantees separately if needed.",
+        "exception": "This framing is unsuitable when the task's answer structure is not meaningfully single-valued or set-valued."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not state the form, constants, or conditions of the non-asymptotic guarantees.",
+      "No concrete theorem, numerical result, comparison, or empirical demonstration is reported in the supplied units."
+    ]
+  }
+}

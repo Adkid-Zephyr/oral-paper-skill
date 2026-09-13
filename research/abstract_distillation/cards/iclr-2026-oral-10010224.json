@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010224",
+    "title": "MC-Search: Evaluating and Enhancing Multimodal Agentic Search with Structured Long Reasoning Chains",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010224"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "01fd7845e1578e8a4e1598bd663a1688da5562ff3a2259a1742ebbb7af41fc68",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "73d1d6662af697192254fe4525d8492cb6dd65426db4909fb25f0f573c552180",
+    "extracted_at": "2026-09-13T00:04:11.674735+00:00",
+    "session_id": "01a09813-dbbf-7cc2-8e7e-839c32216359",
+    "usage": {
+      "input_tokens": 12754,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 743,
+      "reasoning_output_tokens": 83
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "317dbb663254e1a5da07d88b550a4ce42711e1053970959d11af7f21004afb64"
+    },
+    {
+      "id": "S2",
+      "sha256": "82c328e9277c8caf36b314a3df8f1e6a9bdfc03e5fcdc105eec6e96bbe31d115"
+    },
+    {
+      "id": "S3",
+      "sha256": "2a1f5e6b986686dbf1b613cb0957fe2c3cc3b0cd36be88d4f832018c5be55972"
+    },
+    {
+      "id": "S4",
+      "sha256": "35c3fd31e7f8da96ef1706b027188f50a1079d60004bd67d5d003b88867df601"
+    },
+    {
+      "id": "S5",
+      "sha256": "d231ee94a21690f8777d6ae5d0991f546f35b949013b6c9e14c03ce5912cdbd8"
+    },
+    {
+      "id": "S6",
+      "sha256": "e7013a2bd724ff27c499df069c374c27725170694d0f7da22b0b8aba2cd4a49e"
+    },
+    {
+      "id": "S7",
+      "sha256": "25d1f16d81075989649c284ac2e33352fe30b1aa1e1339cee8dc26d605354257"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010224",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate and improve adaptive, multimodal agentic retrieval-augmented reasoning with long, step-wise search processes.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S7"
+        ]
+      },
+      "gap": {
+        "claim": "Existing benchmarks largely use simplified QA and short retrieval chains, underrepresenting adaptive planning and multimodal reasoning.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "MC-Search, a benchmark with long, step-wise annotated reasoning chains across five reasoning structures.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource_and_metrics",
+        "claim": "A 3,333-example dataset averaging 3.7 hops, with hop-wise evidence verification and process-level metrics for reasoning, retrieval, and planning.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "Search-Align, a process-supervised fine-tuning framework based on verified reasoning chains.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe MC-Search as the first benchmark for agentic MM-RAG with long, step-wise annotated reasoning chains.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report benchmarking six leading MLLMs and finding systematic over-retrieval, under-retrieval, and modality-misaligned planning.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that Search-Align data improves planning and retrieval fidelity in open-source MLLMs.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation_and_gap",
+        "summary": "Multimodal systems are moving toward adaptive, knowledge-grounded agentic retrieval, while benchmarks remain focused on short-chain QA.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark_design",
+        "summary": "MC-Search supplies annotated sub-questions, retrieval modalities, supporting facts, and intermediate answers across five reasoning structures.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The benchmark adds process-level measures and is used to assess six MLLMs, exposing retrieval and modality-planning issues.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "improvement_method",
+        "summary": "Search-Align uses verified reasoning chains for process-supervised fine-tuning and is reported to improve planning and retrieval fidelity.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper aligns benchmark annotations and metrics with intermediate search steps, not only final-answer accuracy.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Process decomposition can make distinct failure modes observable and connect evaluation to targeted training.",
+        "application": "For a multi-step system, annotate intermediate decisions and report step-level metrics alongside end-task scores.",
+        "exception": "This is unsuitable when intermediate states are unavailable, too costly to label, or not meaningful for the task."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark task distributions, modality composition, baselines, metric definitions, or quantitative comparison results.",
+      "The reported improvements and failure patterns lack numerical effect sizes and experimental conditions in the supplied units."
+    ]
+  }
+}

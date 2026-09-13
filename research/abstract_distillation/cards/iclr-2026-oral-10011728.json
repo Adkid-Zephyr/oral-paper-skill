@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011728",
+    "title": "CyberGym: Evaluating AI Agents' Real-World Cybersecurity Capabilities at Scale",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011728"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3fc5ff6728f21337663916f9f6d4f8b69dc8efd1aebdb8363a5af0788385728f",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "86184f3045f6b6dfb4fafc4b6df12781b3741857e8434c51d6da2c179d419619",
+    "extracted_at": "2026-09-13T00:06:23.920155+00:00",
+    "session_id": "01a09815-dca6-7693-bf5f-88e9b2042528",
+    "usage": {
+      "input_tokens": 12716,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 778,
+      "reasoning_output_tokens": 73
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6b28a32221a10a67a44b94e8106ae4ba5c36705b2fd452de96e6ce13d959e4eb"
+    },
+    {
+      "id": "S2",
+      "sha256": "b7f37b2065db33dca2e20050b6e0cdfef00b8ffcd459a20b91af9dd0e7c4e7a3"
+    },
+    {
+      "id": "S3",
+      "sha256": "e0ee7029c47027f5c1209b83d8ba9c47afc88a6b61d2487b095af851f7c54921"
+    },
+    {
+      "id": "S4",
+      "sha256": "efd66e3577d59e87d1464267b09c690a4a7edc822f70f203ac82ffb07aa566ff"
+    },
+    {
+      "id": "S5",
+      "sha256": "32c0d508aae82ae0b28ec2e7d411eb9a807248ca74426e41a0ac3859fe4311be"
+    },
+    {
+      "id": "S6",
+      "sha256": "cd678bff7ed1d4bf9b3c7589b37a94ee7a30da0df158c7f6916bddd635840a17"
+    },
+    {
+      "id": "S7",
+      "sha256": "6cdbf96a11b0b52476d3225ac25c4ceaca9b634f743a8ccc069f345fae65f437"
+    },
+    {
+      "id": "S8",
+      "sha256": "770070bcfeee75301a30478adaca79a91a51d12c573ebfbf6bceaf64d81ceb2e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011728",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess AI agents’ cybersecurity capabilities, including performance on dynamic, real-world security challenges.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing evaluations rely on small benchmarks and static outcomes, so they do not capture the full range of real-world security challenges.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces CyberGym, a large-scale benchmark containing 1,507 real-world vulnerabilities from 188 software projects.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "task design",
+        "claim": "Defines adjustable vulnerability-analysis settings, primarily asking agents to generate proof-of-concept tests reproducing vulnerabilities from textual descriptions and codebases.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "platform",
+        "claim": "Presents CyberGym as both a capability-measurement benchmark and a platform intended to produce direct real-world security impact.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish CyberGym from static, small-scale evaluations through its large-scale, real-world vulnerability suite, reproducibility task, and reported vulnerability-discovery outcomes.",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that CyberGym differentiates the cybersecurity capabilities of agents and models.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that even the best-performing agent–model combinations achieve only about a 20% success rate, indicating substantial task difficulty.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report discovery of 34 zero-day vulnerabilities and 18 historically incomplete patches beyond static benchmarking.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "AI agents may reshape cybersecurity, motivating comprehensive capability assessment.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing small-scale, static evaluations miss the dynamic breadth of real-world security challenges.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark and task",
+        "summary": "CyberGym addresses this with 1,507 vulnerabilities across 188 projects and a proof-of-concept reproduction task based on descriptions and codebases.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report capability differentiation, roughly 20% peak success, and discoveries of zero-days and incomplete patches.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a benchmark-scale specification with a concrete task and reports both capability scores and real-world discoveries.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "This aligns what is being measured with an external-impact pathway, rather than relying on a single static score.",
+        "application": "When presenting an evaluation resource, specify the task inputs and outputs, quantify its coverage, and report a downstream-impact signal alongside benchmark performance.",
+        "exception": "This pattern may be unsuitable when downstream impact cannot be safely or credibly measured."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify evaluation participants, baselines, protocols, or statistical uncertainty for the reported success rate.",
+      "It does not explain how zero-day discoveries and incomplete patches were validated or attributed.",
+      "The scope and operational differences among the adjustable vulnerability-analysis settings are unspecified."
+    ]
+  }
+}

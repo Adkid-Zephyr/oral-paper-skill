@@ -1,0 +1,144 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31844",
+    "title": "Transfusion: Predict the Next Token and Diffuse Images with One Multi-Modal Model",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31844"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b66957b7d6410f900e5294015d9bf640599216dda8cfbd46213080441d0325a2",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "c7799131cb8c5fb2f96115b98abb62f2019b67a401a49ce53ba05b749ed27986",
+    "extracted_at": "2026-09-12T23:54:12.563957+00:00",
+    "session_id": "01a0980a-bd33-7713-b1c7-6656a3d5e614",
+    "usage": {
+      "input_tokens": 12597,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 729,
+      "reasoning_output_tokens": 74
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b66957b7d6410f900e5294015d9bf640599216dda8cfbd46213080441d0325a2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31844",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Train one multimodal transformer on mixed discrete text and continuous image data using next-token prediction and diffusion.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The authors position image quantization followed by language modeling as scaling less favorably than their mixed-modality approach.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Transfusion combines language-modeling loss with diffusion through modality-specific encoding and decoding layers for mixed-modality sequences.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "scaling study",
+        "claim": "The authors pretrain models up to 7B parameters and report scaling laws across unimodal and cross-modal benchmarks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "compression and generation",
+        "claim": "The recipe is reported to support image compression to 16 patches and joint text-and-image generation at 7B parameters and 2T multimodal tokens.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "A single transformer recipe is proposed that combines next-token prediction for language with diffusion for images.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Transfusion scales significantly better than quantizing images and training a language model over discrete image tokens.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report that modality-specific encoding and decoding layers improve model performance and enable compressing each image to 16 patches.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report that the 7B-parameter, 2T-token model generates images and text on a par with similarly scaled diffusion models and language models.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "proposal",
+        "summary": "The paper introduces Transfusion to combine language modeling and diffusion in one transformer over mixed-modality sequences.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "scaling and comparison",
+        "summary": "The authors pretrain models from scratch, study scaling, and compare the approach with discrete image-token modeling.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "refinement and endpoint",
+        "summary": "Modality-specific layers are reported to improve performance and compression, followed by a large-scale generation demonstration.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the architectural recipe with separate modality-specific layers, then reports both scaling comparisons and a concrete compression target.",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        "interpretation": "A contribution is easier to assess when the design choice, comparison baseline, and measurable endpoint are stated together.",
+        "application": "When presenting a multimodal method, connect each architectural mechanism to a named baseline and an explicit outcome such as scaling, compression, or generation quality.",
+        "exception": "This framing is unsuitable when the work is primarily theoretical or lacks meaningful baselines and measurable endpoints."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark names, quantitative gains, training details, or the precise conditions behind the reported parity and scaling claims.",
+      "The claimed performance improvements and comparisons are author-reported and cannot be independently assessed from the abstract alone."
+    ]
+  }
+}

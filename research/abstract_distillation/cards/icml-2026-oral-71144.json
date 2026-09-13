@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71144",
+    "title": "On the Difficulty of Learning a Meta-network for Training Data Selection",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71144"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c534c82066ea504f5058fc932cf956f72306ca42c2aa150fe76bef0b9174d92e",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "f812f65803205af06595a9e087ce98af6713c51066546b79fc896ada98a47efd",
+    "extracted_at": "2026-09-13T00:15:51.189875+00:00",
+    "session_id": "01a0981e-7f76-7aa3-a8c4-7f07d79a9501",
+    "usage": {
+      "input_tokens": 12699,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 868,
+      "reasoning_output_tokens": 123
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "57f27ec88abfe3976f19b4c62f108caa0e0c04d66ee4d63892c8bc47ac522572"
+    },
+    {
+      "id": "S2",
+      "sha256": "29eb9550297474b973dd9a2bb206ad940c56e58b46234893ff14f4e80fc35657"
+    },
+    {
+      "id": "S3",
+      "sha256": "1a7572a5090653f11cedec1e443e3ea380097233ab4c1b01d093a91d5f74b47a"
+    },
+    {
+      "id": "S4",
+      "sha256": "26faa443c30a197ad25c1018d0cb931a2ab8f50c9877bce05b38d08810ee3a8d"
+    },
+    {
+      "id": "S5",
+      "sha256": "55c4fb4b3fad80263df5135d5553185f4cd5a38bd2e4b6fd74e7914b80a283ef"
+    },
+    {
+      "id": "S6",
+      "sha256": "e371095c9a9b4b5d8f5740695786b1b315fbdeeeb11b09fe9df404830b4c73d5"
+    },
+    {
+      "id": "S7",
+      "sha256": "20e7e9b1a6b42b6a0e64868ac7e6d761fca1294932a09df2b5dc7871caf4c43c"
+    },
+    {
+      "id": "S8",
+      "sha256": "7bb272e7bc6003adf463682e3fc124e9d2a2c5b438b68e7692572bdff7c3d992"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71144",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Indiscriminate use of synthetic training data is limited by distributional mismatch with real data; the paper considers learning data weights through bi-level optimization (MTS) for training-data selection.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "MTS often underperforms in practice, with obstacles attributed to poor gradient signal-to-noise ratio and insufficiently informative features for data quality.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A mathematical analysis of MTS characterizes normalized data-weight dynamics and relates disparate data quality to poor GSNR.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A simple proposed remedy is to increase batch size, alongside informative features capturing training-data positions in their distributions and training dynamics.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Experiments across four benchmarks report consistent improvements from the proposed approach.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present an MTS analysis together with a batch-size solution and features designed to capture distributional position and training dynamics.",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report average gains of 5.49% over training without selection and 2.89% over the strongest baseline across four benchmarks.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that their analysis reveals a relation between disparate data quality and poor GSNR in MTS.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Synthetic data can suffer from distributional mismatch when used indiscriminately.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "existing approach",
+        "summary": "MTS learns training-data weights using bi-level optimization, but often performs below expectation in practice.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The paper identifies poor GSNR and a lack of features correlated with data quality as training obstacles.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "analysis and response",
+        "summary": "It analyzes weight dynamics and data-quality effects, then proposes larger batches and informative distributional/training-dynamics features.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Four benchmark experiments report average improvements over both no selection and the strongest baseline.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links specific failure modes—poor GSNR and uninformative quality features—to MTS underperformance, then maps them to batch-size and feature-design interventions.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A useful research pattern is to connect an observed failure mode to a targeted intervention rather than presenting a method without a mechanism.",
+        "application": "When introducing a data-selection method, explicitly name the diagnosed optimization or representation bottleneck and design an intervention whose stated purpose addresses that bottleneck.",
+        "exception": "This framing is unsuitable when the proposed intervention has no plausible connection to the diagnosed failure mode or when the bottleneck has not been established."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the four benchmarks, tasks, batch sizes, feature construction, or baseline identities.",
+      "The reported gains lack uncertainty estimates and experimental-condition details in the supplied material.",
+      "It is unclear whether batch-size increases and informative features were evaluated separately or jointly."
+    ]
+  }
+}

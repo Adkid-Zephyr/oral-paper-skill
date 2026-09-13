@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71088",
+    "title": "DR Tulu: Reinforcement Learning with Evolving Rubrics for Deep Research",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71088"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e31ecbb8f63a9bd40c549e54898bbf2933f13653076fb9ca8686932183795d79",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "f92d0b12d8ca6db1c069055e254aa7ad62c461ba0e2ab30a0fb64b91d10b6be7",
+    "extracted_at": "2026-09-13T00:13:36.615346+00:00",
+    "session_id": "01a0981c-77c8-71e1-a84e-88b1431904b2",
+    "usage": {
+      "input_tokens": 12709,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 747,
+      "reasoning_output_tokens": 66
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f1730f7c0217af5d9a98130605efeac0f1548c1bddb3b3fc7a2df868d38c3b1c"
+    },
+    {
+      "id": "S2",
+      "sha256": "52cbb5351a52f115e08199e6b65394ebc4b8f76a2674233fed2007361dcc2e7e"
+    },
+    {
+      "id": "S3",
+      "sha256": "1af16e4825c291f3d9deb18509a8eab9e449492202540de90c8968e807531a38"
+    },
+    {
+      "id": "S4",
+      "sha256": "cadef93a17fd1a580f55d56a303bcdb44004d73d2ea6664d2e055fbdea7eb3c8"
+    },
+    {
+      "id": "S5",
+      "sha256": "94c7fa9032c08be8078f857714c8f77bb738d90207e44b65777756202503a923"
+    },
+    {
+      "id": "S6",
+      "sha256": "097498ac2d3d5c1d331e7774eba21c906b2089a2b4408fa7e5ebecca94214211"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71088",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Train deep-research agents for open-ended, long-form, well-attributed answers.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Reinforcement learning with verifiable rewards has mostly used easily verifiable short-form QA, limiting extension to realistic long-form research.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Reinforcement Learning with Evolving Rubrics (RLER), in which rubrics co-evolve with the policy model and incorporate information from search and contrasting responses.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "DR Tulu-8B, an open model directly trained for open-ended, long-form deep research.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe DR Tulu-8B as the first fully open model directly trained for open-ended, long-form deep research.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that DR Tulu-8B substantially outperforms existing open agents across four long-form benchmarks, averaging 15.6% over Tongyi DR.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that it matches or exceeds proprietary agents, averaging 0.7% over OpenAI DR, while being significantly smaller and 1000× cheaper per query than OpenAI DR.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that evolving rubrics enable more discriminative on-policy feedback and better fact checking.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Deep-research agents produce long-form answers through multi-step research and attribution.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing reinforcement-learning practice centers on short-form QA with easily verifiable rewards.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "RLER co-evolves maintained rubrics with the policy, using newly searched information and contrasting responses.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "system_and_results",
+        "summary": "The resulting DR Tulu-8B is evaluated across four science, healthcare, and general-domain benchmarks with reported performance and cost advantages.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links rubric maintenance to newly explored search information and contrasting model responses, then reports benchmark and cost comparisons for the resulting model.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A research narrative can connect an adaptive feedback mechanism to both its information sources and downstream evaluation dimensions.",
+        "application": "When presenting a training method, specify how feedback changes during training and evaluate capability, comparator-relative performance, and resource cost together.",
+        "exception": "This framing is unsuitable when feedback is fixed or when resource measurements are unavailable or not comparable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not define the benchmark metrics, aggregation method, or statistical uncertainty behind the reported percentage differences.",
+      "It does not specify the evaluation protocols, model sizes and costs used for comparison, or what conditions underlie the fact-checking claim."
+    ]
+  }
+}

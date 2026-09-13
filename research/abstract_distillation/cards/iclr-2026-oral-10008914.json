@@ -1,0 +1,159 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008914",
+    "title": "AnyUp: Universal Feature Upsampling",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008914"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "04f7eb996a724a28ae788ceb0d0ad0debff8f63a37c8925745ad6b445dc29651",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "ab4bd142cf7d849d0166402f43c431bac525a0f18642179f78a3144ae54950db",
+    "extracted_at": "2026-09-13T00:02:03.944996+00:00",
+    "session_id": "01a09811-df63-7ec3-92a4-53e0e92cfffd",
+    "usage": {
+      "input_tokens": 12580,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 756,
+      "reasoning_output_tokens": 121
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6f2410391e6cd8d58e09e97899d5f90e6319e34d6856d0522927cb903a66eb73"
+    },
+    {
+      "id": "S2",
+      "sha256": "50ce0b16a844ea0e218f76b3c3ba15b2ecefa06372cc2132d9dbde1b8374e194"
+    },
+    {
+      "id": "S3",
+      "sha256": "bd6eced113904bf1c534f046a35f85ae114691808f6fb82b56688f7fd46c61e9"
+    },
+    {
+      "id": "S4",
+      "sha256": "f16a070584c260d25b36fabe64d7ba58bda3634d324ba563735725333dccf829"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008914",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Feature upsampling across arbitrary vision features and resolutions without encoder-specific training.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing learning-based upsamplers require retraining for each feature extractor and therefore do not generalize to different feature types at inference time.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "AnyUp is an inference-time, feature-agnostic upsampling architecture applicable across feature types and resolutions without encoder-specific training.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report that AnyUp supports varied feature types, preserves feature semantics, and applies efficiently across downstream tasks.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "An inference-time feature-agnostic architecture for universal feature upsampling.",
+      "source_ids": [
+        "S1",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that AnyUp achieves a new state of the art for upsampled features.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report generalization across different feature types while preserving feature semantics.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that the method is efficient and easy to apply to a wide range of downstream tasks.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The work targets feature upsampling across arbitrary vision features and resolutions without encoder-specific training.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Prior learning-based upsamplers are described as requiring retraining for each feature extractor, limiting inference-time generalization across feature types.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "AnyUp is proposed as an inference-time, feature-agnostic architecture intended to address this limitation and improve upsampling quality.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report state-of-the-art upsampled-feature performance, cross-feature generalization, semantic preservation, and practical efficiency.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a concrete deployment constraint—retraining for each extractor—with an architecture explicitly designed for inference-time feature agnosticism.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A strong method framing can connect a specific limitation directly to a matching design property.",
+        "application": "When presenting a general-purpose method, state the recurring adaptation burden precisely, then name the design property that removes or reduces it.",
+        "exception": "This framing is unsuitable when the method is intentionally specialized to one encoder, task, or feature family."
+      }
+    ],
+    "unknowns": [
+      "The abstract provides no metrics, datasets, baselines, or experimental conditions supporting the state-of-the-art, generalization, semantic-preservation, or efficiency claims.",
+      "The downstream tasks, supported resolutions and feature types, and meaning of “preserves feature semantics” are unspecified."
+    ]
+  }
+}

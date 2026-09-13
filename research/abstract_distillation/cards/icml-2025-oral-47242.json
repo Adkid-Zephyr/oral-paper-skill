@@ -1,0 +1,210 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47242",
+    "title": "Orthogonal Subspace Decomposition for Generalizable AI-Generated Image Detection",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47242"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b04df40635b887a50e2f4629c0f28829c2ee1f3a293976fd2dc0e84edee49948",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "6294a0a8eea2db7bbd86787ca13ae197c003896a2ca35a87dc862f43e1c87f3f",
+    "extracted_at": "2026-09-13T00:10:10.647453+00:00",
+    "session_id": "01a09819-3e15-7d83-9151-52004c088708",
+    "usage": {
+      "input_tokens": 12804,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 961,
+      "reasoning_output_tokens": 105
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b4263f0d55b6dc1314759b00648cf9f084b7a9c4d30fbd836da67896e5c1a908"
+    },
+    {
+      "id": "S2",
+      "sha256": "a613abbea29e6e031d45cc115c1552d44c911c3037f48eb260ac49e9a68fdcd0"
+    },
+    {
+      "id": "S3",
+      "sha256": "e7d2f0c0b6c6b31521b35679b7bf827669348947ae70850b9106390bd2a6da6c"
+    },
+    {
+      "id": "S4",
+      "sha256": "8ca638ccaf668288f7404f53b5fc52394cb603b941089efbaeaad3a0427d2c17"
+    },
+    {
+      "id": "S5",
+      "sha256": "f289d60dbfbc98a2309157ad3a7a5cf4d60551f5e6bb3a94baf5df0e4fa93c99"
+    },
+    {
+      "id": "S6",
+      "sha256": "c039738c206ffe1d8c0d359d7fe6195bc03fdcf2ae82427b37c954390388b4bb"
+    },
+    {
+      "id": "S7",
+      "sha256": "65412146eadbc8f3cfc9fb44db1716a81368c066a0fd044a959c19ebe1f52afb"
+    },
+    {
+      "id": "S8",
+      "sha256": "9e56a14fc669850c4c912f1a0e5e85c0cb175e8171e9fe37e6ce90ba726825ca"
+    },
+    {
+      "id": "S9",
+      "sha256": "ee5713e6e4662d44aa9a1bac2ba993238fecb44a73bc12e2d122f363c757a989"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47242",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve detection of AI-generated natural and face images, which is important but challenging.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify failure to generalize as arising from detectors overfitting limited, monotonous fake patterns, constraining the feature space and limiting expressivity and generalization.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "An SVD-based orthogonal subspace decomposition that freezes principal components and adapts the remaining components to preserve pretrained knowledge while learning fake patterns.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theoretical perspective",
+        "claim": "An asymmetry-based account of why naive AIGI detectors fail to generalize.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "insight",
+        "claim": "A prior that fake images derive from real images and therefore exhibit a hierarchical rather than independent relationship.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper presents a new perspective on AIGI detection generalization failure and explicitly enforces orthogonality during tuning.",
+      "source_ids": [
+        "S2",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the constrained, low-ranked feature space is proved to seriously limit expressivity and generalization.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "Relative to full-parameter and LoRA-based tuning, the authors report that explicit orthogonality enables a higher-rank overall feature space and minimizes overfitting while enhancing generalization.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report identifying a learned prior that fakes are derived from real images, suggesting a hierarchical relationship.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "AIGI detection is important yet challenging.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors attribute generalization failure to asymmetric overfitting of limited fake patterns and a resulting low-ranked feature space.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "remedy",
+        "summary": "They propose combining pretrained foundation-model knowledge with SVD decomposition into orthogonal subspaces, freezing principal components and adapting the remainder.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "comparison_and_insight",
+        "summary": "They distinguish the method from full-parameter and LoRA tuning through explicit orthogonality, then identify a real-to-fake hierarchical prior as important for generalization.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "availability",
+        "summary": "Implementation code is reported as publicly available.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific failure mechanism—overfitting fake patterns and low feature-space rank—to a structural intervention that preserves principal components and adapts orthogonal residual components.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A mechanism-to-design mapping can make a method’s motivation and claimed benefit easier to assess.",
+        "application": "When presenting a generalization method, explicitly connect the diagnosed representation failure to the component or constraint introduced to address it.",
+        "exception": "This framing is unsuitable when the proposed intervention is not designed around a stated failure mechanism or when the mechanism is only speculative."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract states both a comparison target—full-parameter and LoRA tuning—and the distinguishing property of the proposed method: explicit orthogonality.",
+          "source_ids": [
+            "S6"
+          ]
+        },
+        "interpretation": "Naming the comparison axis and differentiating property sharpens a contribution claim.",
+        "application": "Frame comparisons around the precise property that supposedly changes the outcome, then state the reported directional effect.",
+        "exception": "Do not use this pattern to imply superiority when the source provides no comparative result or conditions."
+      }
+    ],
+    "unknowns": [
+      "No quantitative results, datasets, evaluation protocols, or implementation details are provided.",
+      "The conditions and basis for the reported proof of limitation are unspecified.",
+      "The abstract does not establish whether the claimed generalization improvements hold across particular generators, domains, or tuning settings."
+    ]
+  }
+}

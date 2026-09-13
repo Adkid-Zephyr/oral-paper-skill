@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71161",
+    "title": "PhenoBrain: Phenotype-Conditioned Long-Range Communication for Multi-Modal Brain Network Analysis",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71161"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f53ce40b7a29ff6a65d6a16ef97e3ebdbd68d15a37971da644d77b8fe2900a66",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "c4346ecef6820ee5251ef91e6a701a1f7d8ca95bfc2111568ecc7c4fb5a1097f",
+    "extracted_at": "2026-09-13T00:16:28.106249+00:00",
+    "session_id": "01a0981f-1797-7980-9d84-9654e6b4e722",
+    "usage": {
+      "input_tokens": 12717,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 760,
+      "reasoning_output_tokens": 94
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "18ee12da13cd68e8a50bb6a3365920d72a293ddbdb1683fa4654f011e0f26cf6"
+    },
+    {
+      "id": "S2",
+      "sha256": "b6aaaa7564d070dda681258e2896422dfecdea8ce230c5e0d5a41fe1761e3c80"
+    },
+    {
+      "id": "S3",
+      "sha256": "55788ecf558cc7d91b2291276cea97b50381781a049a8b094f34c9e32ac75c37"
+    },
+    {
+      "id": "S4",
+      "sha256": "580a314f5c77138522333edbd0fb742724a71b710ac2e054847f40ef8d1e11bd"
+    },
+    {
+      "id": "S5",
+      "sha256": "4ec7b174348e5bcb985e024ce72904cae73b6a814f500a9c4b02c5f41d9f0832"
+    },
+    {
+      "id": "S6",
+      "sha256": "90a1fc365103c1c5d30c111f53fea57e8ede6eef69df9b8419aca1388afbbb19"
+    },
+    {
+      "id": "S7",
+      "sha256": "d9bc9aa06a22e91e072047d6803b06a406bee455757cba51b2c80a758d85b7d7"
+    },
+    {
+      "id": "S8",
+      "sha256": "0704f6a0d6b01b080f0e46bfd19df70141a9228bceeb15eaa0acbe5d99c6a92b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71161",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Predict neuropsychiatric status from functional connectomes while incorporating heterogeneous phenotypes in multi-modal brain network analysis.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods typically treat phenotypes as auxiliary features through late fusion, assuming phenotype-independent connectome representation learning, despite context-dependent interpretation of connectivity patterns.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "PhenoBrain injects phenotype information at the mechanism level through phenotype-conditioned long-range routing that learns a subject-specific multi-hop communication kernel for connectome interactions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A phenotypic-guided attention regulation mechanism uses phenotype information as a conditional prior during attention learning in brain networks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors constructed two multi-modal brain network analysis datasets from open-source image data.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize PhenoBrain as a novel framework that conditions core representation mechanisms on phenotype information rather than applying it only at the classifier level.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report constructing two datasets based on open-source image data to verify the method.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that extensive experiments show PhenoBrain achieves state-of-the-art performance.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The paper frames multi-modal brain network analysis as predicting neuropsychiatric status from functional connectomes with heterogeneous phenotypes.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "It identifies late phenotype fusion and phenotype-independent representation learning as mismatched with context-sensitive clinical interpretation.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "PhenoBrain addresses this by conditioning long-range routing and attention regulation on phenotype information.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors introduce two image-derived datasets and report state-of-the-art performance in extensive experiments.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a domain-specific ambiguity—identical connectivity patterns can support different conclusions across phenotype contexts—to mechanisms that condition routing and attention on phenotype information.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A strong method narrative can connect the motivating ambiguity directly to named architectural mechanisms.",
+        "application": "When proposing context-aware modeling, state the concrete context-dependent ambiguity first, then map each mechanism to how it resolves that ambiguity.",
+        "exception": "This framing is unsuitable when context is not expected to alter interpretation or when the proposed mechanism has no explicit context-conditioning path."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dataset names, sizes, task definitions, metrics, baselines, or the extent of the reported state-of-the-art comparisons.",
+      "The reported effectiveness and state-of-the-art claim cannot be independently assessed from the abstract alone."
+    ]
+  }
+}

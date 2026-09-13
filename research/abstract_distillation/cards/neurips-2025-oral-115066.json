@@ -1,0 +1,186 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-115066",
+    "title": "PhySense: Sensor Placement Optimization for Accurate Physics Sensing",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/115066"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f1592999cb21492085a0a9d1a1912b5aeea6c690bf0686b47b4c3ba6e5ff8eb0",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "8d81ecb63deab45d726d61a2e74665a3473548c8b06cc3a5be063a0b9c0efd9b",
+    "extracted_at": "2026-09-13T00:20:36.552791+00:00",
+    "session_id": "01a09822-e9c9-7532-8d00-dce656921d29",
+    "usage": {
+      "input_tokens": 12725,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 710,
+      "reasoning_output_tokens": 83
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b13904e8fbc88ff3b04a654a9d074c08544963fc1b43379a5ed4a69288d954bb"
+    },
+    {
+      "id": "S2",
+      "sha256": "55d5980491668f582ecbcd7b9cb2d0ccf9ac8cdf5aab2fb06285dc04a185084f"
+    },
+    {
+      "id": "S3",
+      "sha256": "25931f1e7090b5e25146b4ed4b5e3e2a7fe3577600ac47ea61fd8ecea3935750"
+    },
+    {
+      "id": "S4",
+      "sha256": "a7acaefa2062bcc0fb3549842eb3ac72fd1ec32d84128d20049a5a8e756d417a"
+    },
+    {
+      "id": "S5",
+      "sha256": "fcfcbbde08a33ea6949460d91c650085153683006710cbd98bcf2eeed06a1f10"
+    },
+    {
+      "id": "S6",
+      "sha256": "dc65b350630f55b42cf73fca0a1e31f2f15c6be461bff31e5ae63a54b451e61f"
+    },
+    {
+      "id": "S7",
+      "sha256": "9852b8b885fb41dfb28704f5043d30c9512ee389d901f14e3552a098aaded521"
+    },
+    {
+      "id": "S8",
+      "sha256": "6c944cd139ed9e0bc49b23ee53dc9e966828e8609024a41105424770f29e97a0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-115066",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Physics sensing requires reconstructing dense fields from sparse observations while placing sensors to maximize information.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing sparse-data reconstruction methods generally omit sensor-placement optimization, leaving reconstruction and placement insufficiently integrated.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "PhySense is a two-stage framework for jointly reconstructing physical fields and optimizing sensor placements.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It combines a cross-attention-enhanced flow-based generative reconstruction model with projected-gradient sensor placement under spatial constraints.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The authors prove that both stages' learning objectives are consistent with classical variance-minimization principles.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish PhySense as a synergistic framework coupling reconstruction feedback with sensor-placement optimization for physics sensing.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art physics-sensing accuracy across three challenging benchmarks, particularly a 3D geometry dataset.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that the method discovers informative sensor placements not previously considered.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report theoretical guarantees from consistency with classical variance-minimization principles.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Physics sensing couples sparse-field reconstruction with informative sensor placement.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Existing deep-learning reconstruction methods generally leave placement optimization unaddressed.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "PhySense reconstructs fields with cross-attention-enhanced flow modeling, then uses reconstruction feedback for constrained projected-gradient placement.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "support",
+        "summary": "The authors report theoretical guarantees and strong benchmark results, including newly identified informative placements.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly links the placement stage to reconstruction feedback and separately aligns both objectives with a classical principle.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A coupled method is easier to assess when the interaction mechanism and its conceptual justification are stated separately.",
+        "application": "For a multi-stage system, name the information passed between stages and connect each objective to a recognizable analytical principle.",
+        "exception": "This framing may be unsuitable when stages are independent or when no meaningful theoretical correspondence is available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the three benchmarks, baselines, metrics, numerical gains, or experimental conditions.",
+      "The scope and assumptions of the claimed theoretical guarantees are unspecified.",
+      "The spatial constraints and procedure for defining previously unconsidered placements are not detailed."
+    ]
+  }
+}

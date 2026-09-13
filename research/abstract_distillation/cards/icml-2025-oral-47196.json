@@ -1,0 +1,159 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47196",
+    "title": "Nonlinearly Preconditioned Gradient Methods under Generalized Smoothness",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47196"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "558b0eb3fc6bc7c6980bdb69a1afeb98d68c6d02d02140369d02064547c9d05b",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "06c2bae1d3d3245bd3b9d7d118cc2281a63cce628afa0a269e1101ed7811819e",
+    "extracted_at": "2026-09-13T00:08:20.056764+00:00",
+    "session_id": "01a09817-a2c5-7de0-92ff-6c5f7827546c",
+    "usage": {
+      "input_tokens": 12567,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 771,
+      "reasoning_output_tokens": 132
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d51002be515be8cf3add3dad4ab06c84925a17e313895504905409d39ba233d6"
+    },
+    {
+      "id": "S2",
+      "sha256": "476f11999b8443b293b72a9fa05aed9a2bacec0177a7199d1eb09e4512ecf3dc"
+    },
+    {
+      "id": "S3",
+      "sha256": "528ca40ea40eecd64d76d74a223cf6bc402ee725c5bcba7f9ed7da03ef863ade"
+    },
+    {
+      "id": "S4",
+      "sha256": "db8c8511e8b2b604b08fd959b0504b6dbdfc988df327c86b554102e4d2f6215a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47196",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper analyzes nonlinearly preconditioned gradient methods for smooth minimization.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "It aims to go beyond Lipschitz-smoothness-based and already established methods by using a broader framework, including for $(L_0,L_1)$-smooth functions.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Introduces an abstract-convexity-based generalized smoothness property broader than Lipschitz smoothness, with sufficient first- and second-order conditions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "Provides a framework encompassing gradient clipping and offering insights for $(L_0,L_1)$-smooth functions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "convergence analysis",
+        "claim": "Investigates convergence in both convex and nonconvex settings.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their framework brings novel insights for $(L_0,L_1)$-smooth functions and extends beyond established methods.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the framework encapsulates algorithms associated with gradient clipping.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report convergence investigations for both convex and nonconvex settings.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Analyzes nonlinearly preconditioned gradient methods for smooth minimization.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "generalization",
+        "summary": "Introduces a generalized smoothness property based on abstract convexity, together with sufficient first- and second-order conditions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "scope and connection",
+        "summary": "Connects the framework to gradient clipping and $(L_0,L_1)$-smooth functions, positioning it beyond established methods.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "convergence scope",
+        "summary": "Studies convergence in convex and nonconvex settings.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract defines a broader smoothness property, states its sufficient conditions, and then connects it to a recognizable algorithm class and a recently studied function class.",
+          "source_ids": [
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A layered abstract can make a theoretical framework concrete by pairing its formal generalization with algorithmic and problem-class coverage.",
+        "application": "When presenting a new analysis framework, state the generalized property and its usable conditions, then name the established algorithms or function classes it subsumes or extends.",
+        "exception": "This framing is less suitable when the work has no formal abstraction or meaningful connections to existing methods or problem classes."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not state specific convergence rates, assumptions, guarantees, or quantitative comparisons.",
+      "It does not specify the exact nonlinearly preconditioned method or how the gradient-clipping connection is established."
+    ]
+  }
+}

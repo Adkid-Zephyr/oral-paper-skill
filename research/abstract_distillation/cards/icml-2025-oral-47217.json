@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47217",
+    "title": "Suitability Filter: A Statistical Framework for Classifier Evaluation in Real-World Deployment Settings",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47217"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "620e22eb67c465149c532faa09dec7d294234a773124952752d1929a475d9063",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "67033023aee362eb773dff864b6a107bc889059ffe371353a32c554708e4a9a9",
+    "extracted_at": "2026-09-13T00:09:05.143080+00:00",
+    "session_id": "01a09818-4d7c-71c0-9e25-41e8a4e00e4c",
+    "usage": {
+      "input_tokens": 12705,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 820,
+      "reasoning_output_tokens": 126
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d150afd0716c036c565484fc553a9a4c549921e063af685cde769967ae8f018a"
+    },
+    {
+      "id": "S2",
+      "sha256": "1ad7f33085c0d2d5ec7a061386fc93d103f36f7b1b06d613fddbe6d08626b1f5"
+    },
+    {
+      "id": "S3",
+      "sha256": "8feeb19a5574e0b88e428824c48d5556eb6a6a4ad414c088e785ea42f53dc19c"
+    },
+    {
+      "id": "S4",
+      "sha256": "514b9b2853a50cb1e0b5c2dafd8d8106182babbe183c5382a23628799006df60"
+    },
+    {
+      "id": "S5",
+      "sha256": "89e4adf002b37b062e3a5dbb27f326e8ec3bcab4e777f23b7c8f0509aa9fadbd"
+    },
+    {
+      "id": "S6",
+      "sha256": "d0aec03ecce4aa1f44022296d2a3e05354f11ed7e742b596c220d602c34f8dac"
+    },
+    {
+      "id": "S7",
+      "sha256": "a75160f9f0c02fc11f665491bc452677680d24b7071a348f8bbcafdd3ddb88d9"
+    },
+    {
+      "id": "S8",
+      "sha256": "223be35f1cce445054a4fa5fb5f4a6652f18f769d33e9b4b4c4e22f619882e69"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47217",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Safety-critical deployment requires assessing downstream model reliability when user-data ground-truth labels are unavailable.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Direct validation of deployed performance is limited by the absence of ground-truth labels on user data.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces the suitability filter, which uses output-derived suitability signals sensitive to covariate shift to detect possible performance deterioration.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "evaluation framework",
+        "claim": "Defines deployment evaluation as testing whether unlabeled-user accuracy degradation relative to labeled-test accuracy stays within a pre-specified acceptable margin.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "statistical procedure",
+        "claim": "Aggregates suitability signals across test and user data and compares their empirical distributions through hypothesis testing to characterize decision uncertainty.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe the suitability filter as a novel framework for evaluating classifier suitability without labeled user data.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that evaluations across different classification tasks reliably detected performance deviations caused by covariate shift.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that the framework enables proactive mitigation of potential failures in high-stakes applications.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "deployment challenge",
+        "summary": "Unlabeled user data makes direct validation of safety-critical model performance difficult.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework proposal",
+        "summary": "The paper proposes suitability signals and the suitability filter to identify possible degradation under covariate shift.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "decision criterion",
+        "summary": "The filter checks whether degradation relative to labeled-test accuracy exceeds a pre-specified acceptable margin.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "uncertainty and scope",
+        "summary": "Distributional hypothesis testing supplies decision-uncertainty information, while the modular method is intended for varied models and domains.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Across classification tasks, the authors report reliable detection of covariate-shift-related deviations and support for proactive failure mitigation.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns an unlabeled deployment decision with a measurable tolerance margin and explicitly reports decision uncertainty from distributional testing.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A deployment-oriented evaluation claim becomes more actionable when its acceptance rule and uncertainty signal are specified together.",
+        "application": "For a method evaluated under distribution shift, state the operational pass/fail margin and the statistical quantity used to express uncertainty.",
+        "exception": "This framing may be unsuitable when no defensible tolerance can be defined or when output signals are not meaningfully shift-sensitive."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical results, task details, or baselines for the reported evaluations.",
+      "The pre-specified margin, suitability-signal construction, hypothesis test, and conditions behind the reliability claim are unspecified.",
+      "The abstract does not establish that the proposed framework prevents failures or that its stated novelty is prior-art verified."
+    ]
+  }
+}

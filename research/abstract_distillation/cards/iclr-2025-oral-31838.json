@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31838",
+    "title": "Trust or Escalate: LLM Judges with Provable Guarantees for Human Agreement",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31838"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d4d75d9d0f9c28943ca58cb8b5ce89f212e69baaf24edc542022c9eb4a650e66",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "445fc3a9a7bc3c430bb4afe3fa1c144874133c933b00aa1d6f44d6952c98c26b",
+    "extracted_at": "2026-09-12T23:54:01.405572+00:00",
+    "session_id": "01a0980a-8973-7bc3-93b1-3c54c066c939",
+    "usage": {
+      "input_tokens": 12747,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 776,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "143bc3817c406bee0fa5cf6a53e3404238d008b2c12924d719813a405181ba23"
+    },
+    {
+      "id": "S2",
+      "sha256": "d000950f683b746b112b494a6798d03ac8be58aa7d57521bd40f648bb2ac0bd2"
+    },
+    {
+      "id": "S3",
+      "sha256": "91c982ec61457b9173ee9a95db826986a234471d1c5f3fbd4144e289888a3b87"
+    },
+    {
+      "id": "S4",
+      "sha256": "5dbe4919faa6dd59727dfb17935f2bda811d33aa2832a86120773a35968bf33c"
+    },
+    {
+      "id": "S5",
+      "sha256": "aad04970eda0a2f886ffac9e53891eed5a245ce8a33d3e37a7b4732a5647e742"
+    },
+    {
+      "id": "S6",
+      "sha256": "5dfe7bc3e3a51cdac347174e79d06f7cf72233c96c7762b47929bf9c161871a5"
+    },
+    {
+      "id": "S7",
+      "sha256": "98b0cdf735e6a37167b576016d0aff8f7fc16dab96302f24122ede11812322d5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31838",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop LLM-based evaluation that selectively trusts judge-model decisions to align with human judgments at a user-specified agreement level.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Selective Evaluation assesses judge confidence and escalates uncertain cases instead of relying uncritically on model preferences.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Simulated Annotators is introduced as a confidence-estimation method intended to improve judge calibration and coverage.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Cascaded Selective Evaluation uses cheaper initial judges and escalates only when necessary while retaining the stated human-agreement guarantee.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize Simulated Annotators as a novel confidence-estimation method.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Cascaded Selective Evaluation guarantees strong human alignment beyond LLM judging without selective evaluation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "On a Chatbot Arena subset, the authors report that their method, using cost-effective models such as Mistral-7B, guarantees over 80% human agreement with almost 80% test coverage, whereas GPT-4 almost never reaches 80% agreement there.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper argues that pairwise evaluation should estimate judge confidence and selectively trust decisions rather than rely uncritically on model preferences.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "core framework",
+        "summary": "It presents Selective Evaluation with a stated provable guarantee of human agreement at a user-specified level.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "role": "confidence method",
+        "summary": "It introduces Simulated Annotators to improve calibration and enable high evaluation coverage.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "cascaded evaluation",
+        "summary": "It proposes escalating from cheaper to stronger judges only when needed, while preserving the stated guarantee.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported result",
+        "summary": "The authors report over 80% agreement at almost 80% coverage on a Chatbot Arena subset using substantially cheaper models.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract couples a selective decision rule with an explicit agreement target and reports coverage alongside agreement.",
+          "source_ids": [
+            "S3",
+            "S7"
+          ]
+        },
+        "interpretation": "This links the quality objective to the fraction of cases handled automatically, making the operating tradeoff visible.",
+        "application": "When presenting an evaluation method, state the target agreement level together with achieved coverage and the escalation policy.",
+        "exception": "This framing is unsuitable when no human reference standard or meaningful selective-decision threshold is available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the assumptions, calibration procedure, or statistical construction underlying the claimed guarantees.",
+      "Exact baselines, datasets beyond the cited subset, uncertainty ranges, and cost measurements are not reported.",
+      "The meaning of “almost 80% test coverage” and the conditions for escalation are unspecified."
+    ]
+  }
+}

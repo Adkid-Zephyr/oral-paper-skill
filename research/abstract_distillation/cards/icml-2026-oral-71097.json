@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71097",
+    "title": "Lottery Prior: Randomized Neural Compression for Zero-Shot Inverse Problems",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71097"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "57f0ea60907aa0b02b4640b3f38d974792e82bff90d7599db06d83f377311b20",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "3f5fb46dbc1e73b86f04f18438da4cdf4817b29e09124919953b1ed46da7a5e0",
+    "extracted_at": "2026-09-13T00:13:56.231384+00:00",
+    "session_id": "01a0981c-c657-7e00-98d1-75e9a972f1ee",
+    "usage": {
+      "input_tokens": 12647,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 777,
+      "reasoning_output_tokens": 117
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "dee7c8324375cd98d98459a1ed667dc500121d0352e031a6f8a25b352bc6d792"
+    },
+    {
+      "id": "S2",
+      "sha256": "a9f355e60735c309645040e6bdddcae7019a75187504396dca0f274f9a16f813"
+    },
+    {
+      "id": "S3",
+      "sha256": "5f928c4bb0ab1c09b59475f38d379264148aa93316eaa9b6aea97ae08809c1b2"
+    },
+    {
+      "id": "S4",
+      "sha256": "72c583ada9f02a9c46382567739fad110844f5e10167d9d2add91a6b8f328805"
+    },
+    {
+      "id": "S5",
+      "sha256": "a9bb55e1a6212420ce4280f5d7294f22d4b897d6d1be45cf5db3c01f0113ee8b"
+    },
+    {
+      "id": "S6",
+      "sha256": "2b40962b00475570165b9027538989357fc4f1d66361945aa0769537909d2637"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71097",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Recover a clean signal from a single degraded observation without external training data in zero-shot inverse problems.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract challenges the common belief that high-quality zero-shot restoration requires highly complex models.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Lottery Prior uses random-network architectural priors, compression-based regularization, and randomness-induced implicit priors for ensemble refinement.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The paper derives non-asymptotic error bounds for compression-based maximum-likelihood inverse solvers and characterizes rate–distortion constraints as implicit regularizers.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "A compression-based inverse solver that exploits randomized neural architectures to induce a family of implicit priors and support ensemble-based refinement.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art results on denoising, noisy super-resolution, and inpainting, using significantly fewer effective parameters.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that a lightweight network with entropy and complexity regularization is sufficient for high-quality restoration in their compression-based formulation.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Defines zero-shot inverse problems as single-observation recovery without external training data.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "empirical claim",
+        "summary": "Argues that lightweight networks can provide high-quality restoration when paired with entropy and complexity regularization.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Introduces Lottery Prior, combining random-network architectural priors with randomness-induced implicit priors and ensemble refinement.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "Derives non-asymptotic error bounds and interprets rate–distortion constraints as implicit regularization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Reports state-of-the-art performance across three inverse-problem settings with fewer effective parameters.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a compression-based solver, randomized architectural priors, and error bounds explaining rate–distortion regularization.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A method claim becomes more interpretable when its design mechanism and a formal account of the relevant constraint are presented together.",
+        "application": "When proposing a regularized inverse solver, connect each design component to a stated mechanism and, where possible, a bound or characterization of its effect.",
+        "exception": "This framing may be unsuitable when the method has no tractable formalization or when theoretical assumptions do not match the intended operating regime."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, quantitative metrics, baselines, or the conditions behind the state-of-the-art comparison.",
+      "The assumptions, constants, and practical implications of the reported error bounds are not given.",
+      "The abstract does not quantify the parameter reduction or define effective parameters."
+    ]
+  }
+}

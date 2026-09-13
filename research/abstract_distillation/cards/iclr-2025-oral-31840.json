@@ -1,0 +1,197 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31840",
+    "title": "Proteina: Scaling Flow-based Protein Structure Generative Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31840"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "da233acb99af226d260ed3bfe0e76329e43145c6b0bc51e3f193221dcc5b9490",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "ace4507d10d61bf66d0f3e1980cc718176f86c3529b12f3dc59834cbfb419246",
+    "extracted_at": "2026-09-12T23:54:06.419886+00:00",
+    "session_id": "01a0980a-96df-75d2-9011-974e5870dcc3",
+    "usage": {
+      "input_tokens": 12700,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 866,
+      "reasoning_output_tokens": 78
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c2d436a2aa3b87de548d18e96d83fa38447721a26dc5596310b6f32cdf3efc72"
+    },
+    {
+      "id": "S2",
+      "sha256": "59e8817a66e1d720b4ff9a0b36f0c7d768d84afb3add328fbb8d55625a7f0974"
+    },
+    {
+      "id": "S3",
+      "sha256": "94d6f12d7eafb4efc73443e6da1d6ab220b1ce5e3082a445adbbee528ca345ec"
+    },
+    {
+      "id": "S4",
+      "sha256": "19692dc98a33727fca1e67bbe3eb66484451d58528f13a5b7b43f12df44b4b37"
+    },
+    {
+      "id": "S5",
+      "sha256": "817e6fd09e27ed257208e3214b25537e8ead05c729ffd327a42dfa5be302942d"
+    },
+    {
+      "id": "S6",
+      "sha256": "92deba44a791afb23912de54c3f4af8e89c14fdae8651e48ad6b35745bc610c0"
+    },
+    {
+      "id": "S7",
+      "sha256": "79b90aa8003ce6d18875c78235a99b4eb93d633562a74d21d8165e9f1498d0b4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31840",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop scalable flow-based generative models for de novo protein backbone design.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proteina combines hierarchical fold-class conditioning with a scalable transformer architecture using up to 5× as many parameters as previous models.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "evaluation resource",
+        "claim": "The authors introduce metrics that directly measure distributional similarity between generated proteins and reference sets, complementing existing metrics.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "training and sampling study",
+        "claim": "The work explores millions of synthetic structures, protein-specific training and sampling recipes, LoRA fine-tuning, classifier-free guidance, autoguidance, and adjusted training objectives.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe hierarchical conditioning as enabling control from high-level secondary-structure guidance to low-level fold-specific generation.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art performance on de novo protein backbone design.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report diverse and designable proteins at lengths up to 800 residues.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that hierarchical conditioning enables both secondary-structure-level and fold-specific generation control.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Diffusion- and flow-based protein-structure generators are presented as tools for de novo design.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "system",
+        "summary": "Proteina is introduced as a large-scale flow-based backbone generator with hierarchical fold labels and a substantially larger transformer.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors add distributional-similarity metrics to complement existing evaluation measures.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "scaling and recipes",
+        "summary": "The work investigates millions of synthetic structures and protein-adapted training, fine-tuning, guidance, and sampling choices.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "The authors report state-of-the-art design performance, diverse designable proteins up to 800 residues, and multilevel structural control.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a distribution-level metric with existing metrics when quantifying generated-protein performance.",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "interpretation": "This frames evaluation as covering both aggregate similarity and complementary properties.",
+        "application": "When introducing a generative system, add an evaluation measure aligned with reference-distribution similarity alongside task-specific metrics.",
+        "exception": "This is unsuitable when no credible reference distribution exists or when distributional similarity conflicts with the target objective."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract connects hierarchical conditioning to distinct control granularities: secondary structure and fold identity.",
+          "source_ids": [
+            "S2",
+            "S7"
+          ]
+        },
+        "interpretation": "Conditioning hierarchies can make controllability claims concrete by mapping levels of input to levels of structure.",
+        "application": "Design conditioning variables at multiple semantic resolutions and state the corresponding control scope explicitly.",
+        "exception": "Avoid this hierarchy when the domain lacks stable multiscale labels or when added controls create conflicting objectives."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify metric definitions, datasets, baselines, numerical scores, or evaluation protocols behind the state-of-the-art claim.",
+      "The operational criteria and validation conditions for “diverse” and “designable” are not given.",
+      "It is unclear which reported outcomes are attributable to scaling, architecture, conditioning, or the individual training and sampling techniques."
+    ]
+  }
+}

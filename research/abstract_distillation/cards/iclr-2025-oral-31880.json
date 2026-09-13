@@ -1,0 +1,213 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31880",
+    "title": "Oscillatory State-Space Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31880"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "dda8464232205c876d674221a4936deb002628527bf5513f4699c714c0ed31de",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "bdb337f96e4e965f47aecf69f3b7470d5ef326d5bb23392cb00b3e7d37e2ec32",
+    "extracted_at": "2026-09-12T23:55:41.606303+00:00",
+    "session_id": "01a0980c-0865-7083-bbf9-dabcb8652deb",
+    "usage": {
+      "input_tokens": 12780,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 895,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4e048b5ed11b60e7d936fa0fc20ad7924c1f82e33dfd2badc9c6ee4f814516ee"
+    },
+    {
+      "id": "S2",
+      "sha256": "337ca7c43901177248343c8eaec5f05da0d24dcc87280a75130e5f5b2c66751d"
+    },
+    {
+      "id": "S3",
+      "sha256": "c43c5389759ef3af5f20a1e641457c1572d251d3ef0a45928333879444aa611f"
+    },
+    {
+      "id": "S4",
+      "sha256": "8e1b8122b9e35152e3f9e776b495bf75fb9d8bd7dacc4f1552a06fbcebb09a3c"
+    },
+    {
+      "id": "S5",
+      "sha256": "19e1756371b36684d7414e161ca01df248afe7ea210f6eed0397e0aa5541a4b8"
+    },
+    {
+      "id": "S6",
+      "sha256": "18c974f660b766df85fd7af2ec513d1e032f3b5652984e809ca9d57408219267"
+    },
+    {
+      "id": "S7",
+      "sha256": "8481dbd4ae62904e843b050269f3048b75666426cdc95bf2225854652389891b"
+    },
+    {
+      "id": "S8",
+      "sha256": "7ea6bab674189a4efa9dbb98e6e96209a89969cd660a59634960d208d12d6aea"
+    },
+    {
+      "id": "S9",
+      "sha256": "10c4b78393832aba89eaab7c31d2a00d5da3fb0c8276df0f0ce52c540a1c73b2"
+    },
+    {
+      "id": "S10",
+      "sha256": "9e1cbf91f1e6376561dcb9a9a483881e225988947c7f165d9c83f2da95620874"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31880",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Efficiently learn and model long sequences, including long-horizon forecasting.",
+        "source_ids": [
+          "S1",
+          "S8"
+        ]
+      },
+      "gap": {
+        "claim": "The authors contrast LinOSS with prior state-space models that rely heavily on restrictive parameterizations.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "LinOSS, a linear oscillatory state-space model based on forced harmonic oscillators and stable discretization with fast associative parallel scans.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The authors report stable dynamics with only a nonnegative diagonal state matrix, universality for continuous causal operators, and symmetry-preserving time reversibility under an implicit-explicit discretization.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report consistent outperformance of state-of-the-art sequence models across mid-range to very long-range classification, regression, and long-horizon forecasting tasks.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish LinOSS by combining oscillator-based dynamics, a less restrictive stability condition, universality, and preservation of time-reversibility symmetry.",
+      "source_ids": [
+        "S2",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that LinOSS outperforms Mamba and LRU by nearly 2× on a sequence-modeling task with sequence length 50k.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report consistent outperformance across a broad set of time-series classification, regression, and forecasting tasks.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors state theoretical results for stability, universality, and symmetry preservation under the specified discretizations.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "proposal",
+        "summary": "Introduces LinOSS for efficient learning on long sequences, motivated by cortical dynamics and forced harmonic oscillators.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "construction",
+        "summary": "Uses stable discretization and fast associative parallel scans to obtain the state-space model.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "theory",
+        "summary": "States stability, universality, and time-reversibility properties of LinOSS and its discretizations.",
+        "source_ids": [
+          "S4",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "Links these properties to efficient long-range interaction modeling and stable, accurate long-horizon forecasting.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "role": "empirical evaluation",
+        "summary": "Reports broad task-level gains, including nearly 2× over Mamba and LRU at sequence length 50k.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns architectural choices with formal properties: stable discretization supports stability, while an implicit-explicit discretization preserves time-reversibility symmetry.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "A method description can be more informative when each design choice is connected to a specific claimed guarantee.",
+        "application": "When presenting a new sequence model, pair each numerical or architectural mechanism with the exact theoretical property it is intended to preserve.",
+        "exception": "This framing is unsuitable when the claimed property has no formal statement or when the design-property link is only speculative."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide datasets, baselines beyond Mamba and LRU for the 50k result, statistical variation, or detailed metrics.",
+      "The conditions and proof details for stability, universality, and exact time-reversibility are not specified.",
+      "The basis for the reported consistency across tasks and the meaning of nearly 2× are not detailed."
+    ]
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97970",
+    "title": "PV-Tuning: Beyond Straight-Through Estimation for Extreme LLM Compression",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97970"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8a8e8615a2f71850c1235a84d6452a2d9448196521170ba525f4c5f3a4c55dd6",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "620d95fc6715260a97d7317131db200959fe4644ec38dc72fff83eba9af3fba0",
+    "extracted_at": "2026-09-13T00:18:43.783454+00:00",
+    "session_id": "01a09821-2a4e-7c42-9894-c2a5811c37e1",
+    "usage": {
+      "input_tokens": 12751,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 790,
+      "reasoning_output_tokens": 59
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bb18ed3bb94092f70a022860615fa9f91482f418a690001326b1cc8ce1cfead8"
+    },
+    {
+      "id": "S2",
+      "sha256": "024b4f58919fc57e2ecdfe3d003a090c3ed532b600a753e7512a7394b7beabe6"
+    },
+    {
+      "id": "S3",
+      "sha256": "e6be82d96ff7f2d004a0b9115ff0e801f2fb194dbfc7963ef1486ba19598da8f"
+    },
+    {
+      "id": "S4",
+      "sha256": "914231b8c83373990934f2c7163a62aaf9b7401c5d9ad08e313d63408dfc0c1f"
+    },
+    {
+      "id": "S5",
+      "sha256": "dee82af8f5cbffe52daf4338cbe773ca4b6cf70a469fd546bb3884d0e343295f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97970",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve quantization-aware fine-tuning for LLMs compressed to roughly 1–2 bits per parameter.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Post-training methods face diminishing accuracy–bit-width returns, while STE-based fine-tuning for compressed weights is not well understood and may be sub-optimal.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "PV-Tuning, a representation-agnostic framework that generalizes and improves existing fine-tuning strategies and offers convergence guarantees in restricted cases.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory and empirical finding",
+        "claim": "A systematic study questions STE for extreme LLM compression and reports that it can be sub-optimal.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "For 1–2-bit vector quantization, PV-Tuning is reported to outperform prior techniques on Llama and Mistral models.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that PV-Tuning achieves the first Pareto-optimal quantization for Llama-2 family models at 2 bits per parameter.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that PV-Tuning outperforms prior techniques for highly performant Llama and Mistral models under 1–2-bit vector quantization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report the first Pareto-optimal quantization for the Llama-2 family at 2 bits per parameter.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Extreme LLM compression to 1–2 bits per parameter is motivated by efficient execution on resource-constrained devices.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing post-training approaches are reaching diminishing returns in the accuracy–bit-width trade-off.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "technical gap",
+        "summary": "Recent fine-tuning methods use STE on compressed weights, but STE performance in this setting is not well understood.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal and results",
+        "summary": "The work studies quantization-aware fine-tuning, proposes PV-Tuning, and reports convergence guarantees in restricted cases plus improvements for Llama and Mistral.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "headline result",
+        "summary": "The authors report Pareto-optimal 2-bit quantization for the Llama-2 family.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a targeted critique of STE with both a general framework and model-specific compression results.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A concrete diagnosis can make a methods contribution more informative when paired with a remedy and scoped evidence.",
+        "application": "Frame a compression paper around one questioned optimization assumption, then align the proposed replacement with both theoretical conditions and named practical settings.",
+        "exception": "This framing is unsuitable when the work does not investigate the criticized assumption or lacks evidence tied to the proposed replacement."
+      }
+    ],
+    "unknowns": [
+      "No accuracy, bit-width trade-off, baseline, calibration-data, or evaluation details are provided.",
+      "The restricted cases for the convergence guarantees are unspecified.",
+      "The meaning and criterion of Pareto-optimality are not defined in the abstract."
+    ]
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31740",
+    "title": "Open-World Reinforcement Learning over Long Short-Term Imagination",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31740"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b87972e1af89eda149f34ac2ce88c6a21d6a44ae691d544ee907c84c66a4a2b9",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "0b45e7ec61d3af1c9f262968af5a0f6852aec579207bdaffc4af8fe9cfaf45b5",
+    "extracted_at": "2026-09-12T23:50:10.888134+00:00",
+    "session_id": "01a09807-001a-7c91-b538-a279f10505b8",
+    "usage": {
+      "input_tokens": 12697,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 788,
+      "reasoning_output_tokens": 107
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fd573f30fd280c34df49db822f5f2b8bdcf95afe5c19780202a0e0e9356c5557"
+    },
+    {
+      "id": "S2",
+      "sha256": "99f1464e12593d52e3b51ee5802e9e1492cda6a3beabbaf3a4eba3d36b1d3643"
+    },
+    {
+      "id": "S3",
+      "sha256": "7ddfd171d12a4fc68248f3a3b35cb1b69adee91c3e48e137ca5eed591111e832"
+    },
+    {
+      "id": "S4",
+      "sha256": "d35f7325dc7eeb7fcdc1a732b8ea8bf97e3db90355abe4f042e167736e0e40ff"
+    },
+    {
+      "id": "S5",
+      "sha256": "124ddf1a19d9b8ef80f08337b6ed068cca207fbf505bd15c885e9dde27fcee0a"
+    },
+    {
+      "id": "S6",
+      "sha256": "97286114ea9355821808c34e4162f37df07fc60e0be3389a070a831ed0d60557"
+    },
+    {
+      "id": "S7",
+      "sha256": "0fe46a255b75192f1062129ccac050776861d802b5f4b26dbde1a6d59b541f9b"
+    },
+    {
+      "id": "S8",
+      "sha256": "3bf0d01b5d4441d2e333986873397958311e3c751a9b0979ebb48823bac6811a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31740",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve exploration efficiency for visual reinforcement-learning agents making open-world decisions across vast state spaces, particularly when long-horizon payoffs matter.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing model-based agents are described as short-sighted because they are generally trained on short snippets of imagined experience.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "LS-Imagine extends the imagination horizon using a limited number of state-transition steps to explore behaviors that may yield promising long-term feedback.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "world model",
+        "claim": "The approach builds a long short-term world model using goal-conditioned jumpy state transitions and affordance maps derived by zooming into areas of single images.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "learning mechanism",
+        "claim": "The method integrates direct long-term values into behavior learning.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish LS-Imagine by extending imagination over a long short-term world model while retaining a limited number of state-transition steps.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report significant improvements over state-of-the-art techniques in MineDojo.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "challenge",
+        "summary": "Visual reinforcement learning in high-dimensional open worlds is difficult, with exploration spanning a vast state space and potentially long-horizon payoffs.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The abstract characterizes existing model-based agents as short-sighted because their imagined experiences are short.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposed_method",
+        "summary": "LS-Imagine lengthens the imagination horizon within a limited transition budget, supported by a long short-term world model and image-based affordance maps.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "learning_effect",
+        "summary": "The resulting mechanism incorporates direct long-term values into behavior learning.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "The authors report improvements over state-of-the-art methods in MineDojo.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the exploration problem to long-horizon payoffs and describes a method that combines extended imagination with direct long-term values.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "A useful research framing can connect the decision-making difficulty, the mechanism, and the value signal in one causal-looking design rationale without claiming independent validation.",
+        "application": "When presenting a planning method, explicitly map the target horizon problem to the planning-horizon mechanism and the value information it injects into learning.",
+        "exception": "This framing is unsuitable when the task objective is primarily short-horizon or when long-term value estimates are unavailable or unreliable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify MineDojo tasks, baselines, metrics, improvement magnitudes, or evaluation conditions.",
+      "It does not provide quantitative evidence or details sufficient to assess how the limited transition budget compares with the effective imagination horizon."
+    ]
+  }
+}

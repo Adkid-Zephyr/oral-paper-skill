@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010942",
+    "title": "On the Reasoning Abilities of Masked Diffusion Language Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010942"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "94b20e2c08ef11f841bc73235e83af9206d015a25447a0cfc7d4fe01a938b1cf",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "6082d0d258a756b9ed0d85ed56461332c130b905650fd0162b35b4a0d9cdbb64",
+    "extracted_at": "2026-09-13T00:05:18.800213+00:00",
+    "session_id": "01a09814-d6e4-7ed0-9b8e-84c093d004d7",
+    "usage": {
+      "input_tokens": 12641,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 901,
+      "reasoning_output_tokens": 63
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cbdf8663318c2bca7af6ed6a7c4985cff43e5e1953cda82a1da43dea1d2f89d0"
+    },
+    {
+      "id": "S2",
+      "sha256": "d8e551cfac557351b798e22afdc200a62ce950ff350f651708c9278ae8fd83f8"
+    },
+    {
+      "id": "S3",
+      "sha256": "bb1aec2e263c923eef6de8636bd5d5ef7658039617c9a11cce0604017a64ac48"
+    },
+    {
+      "id": "S4",
+      "sha256": "14b172ca5da798bd4766588b4ae0da7209621d704ed5f78600d490a2a4aa4dcf"
+    },
+    {
+      "id": "S5",
+      "sha256": "bd1bb3ef87d6088a94d69713464f7f9d3043bb455a1101764cac8d47640d20ea"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010942",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize which reasoning problems masked diffusion language models (MDMs) can solve and how efficiently.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "MDM computational capabilities and limitations arising from parallelism are largely unexplored.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Connects MDMs with chain-of-thought (CoT) and padded looped transformer (PLT) frameworks in the finite-precision log-width setting.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theoretical result",
+        "claim": "Reports equivalence between MDMs and polynomially-padded PLTs in that setting, and states that MDMs can solve all problems solvable by CoT-augmented transformers.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "efficiency characterization",
+        "claim": "Identifies problem classes, including regular languages, where MDMs are inherently more efficient than CoT transformers because of parallel generation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish MDMs through an equivalence characterization with polynomially-padded PLTs and an efficiency advantage for certain problem classes over CoT transformers.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report equivalence between MDMs and polynomially-padded PLTs under finite precision and log width.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that MDMs can solve all problems that CoT-augmented transformers can.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report substantially faster reasoning for certain classes, including regular languages, using parallel generation relative to CoT transformers.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "MDMs are presented as an alternative to autoregressive language models, with parallel generation as an efficiency advantage.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "open question",
+        "summary": "The abstract identifies their computational capabilities and parallelism-related limitations as largely unexplored.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The work connects MDMs to CoT and PLT reasoning frameworks in a finite-precision log-width setting.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "main characterization",
+        "summary": "It reports MDM–polynomially-padded-PLT equivalence and coverage of problems solvable by CoT-augmented transformers.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "efficiency result",
+        "summary": "It reports inherent efficiency advantages for MDMs on classes including regular languages.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract states its setting before presenting equivalence and capability claims, and qualifies those claims by finite precision and log width.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "Explicit scope conditions make theoretical claims easier to interpret without overstating them.",
+        "application": "State the computational regime immediately alongside any theorem-level capability or equivalence claim.",
+        "exception": "This is less useful when the result is genuinely setting-independent or the application requires a deliberately informal summary."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract pairs broad capability claims with a separate claim about problem classes where parallel generation yields substantially faster reasoning.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Separating solvability from efficiency preserves an important distinction in reasoning results.",
+        "application": "Report whether a method changes what can be solved, how efficiently it can be solved, or both.",
+        "exception": "Avoid this separation when only one of those dimensions is actually studied."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact formal definitions of MDMs, CoT transformers, PLTs, or the finite-precision log-width setting.",
+      "It does not quantify the reported speedups or identify the full set of efficiently handled problem classes.",
+      "The abstract alone does not provide proof details or independently verifiable evidence."
+    ]
+  }
+}

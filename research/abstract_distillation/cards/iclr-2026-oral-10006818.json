@@ -1,0 +1,198 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006818",
+    "title": "Every Language Model Has a Forgery-Resistant Signature",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006818"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c3a3ea883055fdc98678602b2cf713e2785cb92561d71e1ee0f467891c338859",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "68586f166dfffa40ad9790e9f24754fd7e2eb1e525ec7c36bad7ccd6380107cd",
+    "extracted_at": "2026-09-12T23:58:39.630113+00:00",
+    "session_id": "01a0980e-c50f-7eb0-99fa-cfaf32fc93c6",
+    "usage": {
+      "input_tokens": 12806,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 782,
+      "reasoning_output_tokens": 96
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8dbe33af22acd6bed6e8f936c986af7132a29e05329ea79abad1d9a43cce15a2"
+    },
+    {
+      "id": "S2",
+      "sha256": "79344c51706ffb7a643cef5a03b16da79af53efe0fa70e3cf26535544b2bff30"
+    },
+    {
+      "id": "S3",
+      "sha256": "af8f2b0276cd4b5f0e7588d756ab4d11826932c4284c74aa3045d4516e1484ad"
+    },
+    {
+      "id": "S4",
+      "sha256": "f8ae064057ad86202fda6aaeb0a9811adf557e446cac7dddb40985bc1f1be711"
+    },
+    {
+      "id": "S5",
+      "sha256": "7c399e8b6db3df625cf4fcb9f62d11e5d91ab65f9db90e9fbe25581785680c7e"
+    },
+    {
+      "id": "S6",
+      "sha256": "d3181514c19544bdc346583fc473f854447585d7f0f073f8ad031cab8c010cf9"
+    },
+    {
+      "id": "S7",
+      "sha256": "f05c9111ee9b5d216f2e4624485ef91f47960ce4e3ce87c91d9f46026962650d"
+    },
+    {
+      "id": "S8",
+      "sha256": "eb30ca95b283ab1b971a01f5ca9f65290b8a86b720aea4d0443991d650a0210f"
+    },
+    {
+      "id": "S9",
+      "sha256": "b17b7b02313b0de1e6113540c9362857919762055b73a8d87cdd916457fc0288"
+    },
+    {
+      "id": "S10",
+      "sha256": "e2a710078f7982fb1f22632ef79d56923c7e0f9d31741bae6ce2e1217a8679ae"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006818",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work addresses identifying which closed-weight language model produced an output and verifying model outputs through forensic signals.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S10"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces an ellipse-based signature derived from the geometric constraint that language-model outputs lie on a high-dimensional ellipse.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "characterization",
+        "claim": "Characterizes the signature as difficult to forge, naturally occurring, self-contained, and redundantly detectable across logprob outputs.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "protocol",
+        "claim": "Proposes an output-verification protocol analogous to cryptographic symmetric-key message authentication.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish the ellipse signature from existing output-association methods such as language-model watermarks through its stated geometric basis and properties.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report evaluating a novel ellipse-extraction technique on small models.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that practical hurdles make ellipse extraction infeasible for production-size models, supporting their characterization of the signature as hard to forge.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Closed-weight models with public APIs motivate forensic methods for extracting hidden details and identifying models from outputs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framing",
+        "summary": "The paper focuses on geometric constraints imposed by model architecture and parameters, highlighting an underused constraint.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "signature_properties",
+        "summary": "The ellipse signature is presented as distinct from watermarks and as hard to forge, naturally occurring, self-contained, and redundantly detectable.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "evaluation_and_application",
+        "summary": "The authors evaluate ellipse extraction on small models, discuss production-scale hurdles, and propose an output-verification protocol.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract makes the signature’s value concrete by listing distinct operational properties—forge resistance, natural occurrence, self-contained detection, and redundancy—before describing evaluation and a verification protocol.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7",
+            "S8",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "A technical contribution becomes easier to assess when its properties are tied to an explicit adversarial or deployment use case.",
+        "application": "When presenting a forensic mechanism, enumerate the threat-relevant properties separately, then connect each to a reported test or downstream protocol.",
+        "exception": "This framing is less suitable when the contribution is exploratory and its intended threat model or deployment setting is not yet defined."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report quantitative identification, extraction, or forgery rates, nor the exact conditions of the small-model evaluation.",
+      "It does not specify the verification protocol’s operational steps, threat model, or production-scale feasibility beyond the stated hurdles."
+    ]
+  }
+}

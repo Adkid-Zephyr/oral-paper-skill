@@ -1,0 +1,161 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006663",
+    "title": "CauKer: Classification Time Series Foundation Models Can Be Pretrained on Synthetic Data",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006663"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "24a7a4c84db251d8e0c50d2666b93278490555ff5d900c897b5a0551a3e07554",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "0d938dc4fe17cce0f2b7bd4a5f11ab08cfd11f9455367e93949a331f8834ddd2",
+    "extracted_at": "2026-09-12T23:58:17.101231+00:00",
+    "session_id": "01a0980e-7850-71b2-a3e7-6179d7ab1e6d",
+    "usage": {
+      "input_tokens": 12651,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 737,
+      "reasoning_output_tokens": 94
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c3735f79f4a37d4f70a905945d197a5e248b90caa027ec30b32b0552d27e067e"
+    },
+    {
+      "id": "S2",
+      "sha256": "a4c136bcc3815d5ad430ca9ebbb5fa4a8235950de7520e6625c25c3f59611a8f"
+    },
+    {
+      "id": "S3",
+      "sha256": "1977115069b2156faacb601528feefb5fc244007ea5004d4f7737c5ce74c0785"
+    },
+    {
+      "id": "S4",
+      "sha256": "1978a9a50e30fd100991160c2ad07734b18c9193b030554fef04a0c83e503989"
+    },
+    {
+      "id": "S5",
+      "sha256": "9ebad2231b05440e207a580eca4036a5154ae84d9065a63ec294cd867e4626a9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006663",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "TSFMs typically require costly pretraining on large, carefully curated real-world sequence collections.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "CauKer generates diverse, causally coherent synthetic time series with realistic trends, seasonality, and nonlinear interactions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It combines GP kernel composition with SCMs to support sample-efficient pretraining across classification TSFMs with different architectures and pretraining approaches.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report clear scaling laws for synthetic datasets across dataset size and model capacity, unlike the irregular scaling behavior of real-world datasets.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe CauKer as a novel algorithm for generating synthetic time series for sample-efficient TSFM pretraining.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report clear scaling laws as dataset size increases from 10K to 10M samples.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report clear scaling laws as model capacity increases from 1M to 783M parameters, contrasting with irregular scaling on real-world datasets.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "TSFMs attract interest because of reported zero-shot capabilities and real-world applications.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "Their usual pretraining depends on computationally costly, curated real-world sequences.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "CauKer combines GP kernel composition and SCMs to generate realistic, causally coherent synthetic data for sample-efficient classification-TSFM pretraining.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported result",
+        "summary": "Experiments report regular scaling behavior over dataset sizes of 10K–10M and model capacities of 1M–783M, unlike real-world datasets.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the proposed data generator to explicit variation in dataset size and model capacity, then reports scaling behavior over stated ranges.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "A method claim becomes more informative when paired with a measurable resource-scaling axis and a comparison condition.",
+        "application": "When presenting a data-generation or pretraining method, define resource ranges and report how performance or behavior changes across them, with a relevant baseline condition.",
+        "exception": "This framing is unsuitable when the work has no meaningful scaling variable or lacks measurements across the proposed range."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide classification performance values, baselines, statistical uncertainty, or details of the architectures and pretraining approaches tested.",
+      "It does not specify how causal coherence, realism, sample efficiency, or the reported scaling laws were measured."
+    ]
+  }
+}

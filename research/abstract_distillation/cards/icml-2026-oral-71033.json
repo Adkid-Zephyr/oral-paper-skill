@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71033",
+    "title": "Strategic Navigation or Stochastic Search? How Agents and Humans Reason Over Document Collections",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71033"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b62e35906b33036a29b26c06d24ee65690cef9bdac78eb90dc06183f44bc4285",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "b6ddbc089f598f07c1016261a64bc510fa799d919718dcfc11beefb734ec2a4f",
+    "extracted_at": "2026-09-13T00:11:26.015939+00:00",
+    "session_id": "01a0981a-7e25-74b2-ac9e-cb44800e7006",
+    "usage": {
+      "input_tokens": 12689,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 740,
+      "reasoning_output_tokens": 69
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1ef252e1dfd31f797983194e372fcbff65d9ed5bd0dece4e76e56b4576c7ee7f"
+    },
+    {
+      "id": "S2",
+      "sha256": "0c04fc971f8e3d53f9d51b28d9841454f16ab7355dbf7f71cb37a4d96aec90c4"
+    },
+    {
+      "id": "S3",
+      "sha256": "d008034f3f6cc289bdcf181899553c7b0a01f07ddd717aa46dc780c6af2671a4"
+    },
+    {
+      "id": "S4",
+      "sha256": "2aa8c81d316954499522ae1f24094b9790c6f1b251a76e37ac7a1e7622401742"
+    },
+    {
+      "id": "S5",
+      "sha256": "efd603a5c279c851a98f8c3b6b15aacaa2b905003b6d463c164602c70d31cfa0"
+    },
+    {
+      "id": "S6",
+      "sha256": "319cf61feda9a905572dd80849eb8de76a61dfdd14c5c0ee9da191f9332ee68c"
+    },
+    {
+      "id": "S7",
+      "sha256": "21ec1f99916fde1f51d3361dbaa6b7f51bc854d154c07f6f7c3f5f3ea74d0e3f"
+    },
+    {
+      "id": "S8",
+      "sha256": "664d4b9d8da454c4269d082e56ff943ed85e25f44d6b362f542a17ae35866b27"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71033",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine whether multimodal agents reason strategically over document collections or rely on stochastic trial-and-error search.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing understanding lacks a direct account of agents' strategic behavior and its accuracy-effort trade-off in document-intensive search.",
+        "source_ids": [
+          "S2",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "MADQA, a benchmark containing 2,250 human-authored questions grounded in 800 heterogeneous PDF documents.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "evaluation protocol",
+        "claim": "A protocol measuring the accuracy-effort trade-off to evaluate agentic behavior.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Release of the dataset and evaluation harness for studying efficient document retrieval and reasoning.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce MADQA and describe the accuracy-effort evaluation protocol as novel.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the best agents match human searchers in raw accuracy, but succeed on largely different questions.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that these agents rely on brute-force search to compensate for weak strategic planning and fail to close a nearly 20% gap to oracle performance.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that agents persist in unproductive loops.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames document-intensive automation as promising while questioning whether agents' behavior reflects strategic reasoning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "benchmark design",
+        "summary": "The authors introduce MADQA and use Classical Test Theory to target discriminative power across agentic-ability levels.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "They introduce an accuracy-effort trade-off protocol for measuring agentic behavior.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "findings and release",
+        "summary": "They report human-level raw accuracy alongside different question success, brute-force compensation, a nearly 20% oracle gap, and release the dataset and harness.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs raw accuracy with effort, question overlap, planning behavior, and oracle-gap outcomes rather than treating accuracy alone as sufficient.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This suggests that evaluations of search agents can expose behavioral differences hidden by aggregate accuracy.",
+        "application": "Report accuracy together with effort, solved-question overlap, loop behavior, and an oracle-relative gap when assessing retrieval agents.",
+        "exception": "This framing may be unsuitable when effort is not measurable or when the task has no meaningful oracle or search trajectory."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify how effort, strategic planning, unproductive loops, or oracle performance are operationalized.",
+      "It does not provide numerical raw-accuracy results, statistical uncertainty, or details of the human and agent comparison samples."
+    ]
+  }
+}

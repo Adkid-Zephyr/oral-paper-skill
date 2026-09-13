@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008975",
+    "title": "TabStruct: Measuring Structural Fidelity of Tabular Data",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008975"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "91fb474585b3a62d47d62ca37349556bae2dc83bfc1fae1a927f96a6870cd648",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "3d208b5ca7f2027e6674ec6d753096e370a85c4e78b151b837e0bbf1977e9e91",
+    "extracted_at": "2026-09-13T00:02:05.986137+00:00",
+    "session_id": "01a09811-f341-7870-844a-ffb97d6f2452",
+    "usage": {
+      "input_tokens": 12775,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 780,
+      "reasoning_output_tokens": 62
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7b1ee47a4aa237ad79989449ba8c18dc702f111e15b2629fd8dd5a269d886f27"
+    },
+    {
+      "id": "S2",
+      "sha256": "0dde30f61147886bde587b6a7dee0e6beb4789d2e5294b05bdc906ce84e5c106"
+    },
+    {
+      "id": "S3",
+      "sha256": "01b9e5e9c3f7268e18b32613a9c8571e8a6577e49f525401e6ab0fcc0af30ce9"
+    },
+    {
+      "id": "S4",
+      "sha256": "7cdc1e846f84a67630cb90880a26a94c8be24c65d023e8addf23fecad7657376"
+    },
+    {
+      "id": "S5",
+      "sha256": "eda2493f4d096219d809713f6681ce1b0d6f849beda9982f3cbd705517025aba"
+    },
+    {
+      "id": "S6",
+      "sha256": "f9d5f4309a984431d38533976b74ec2abef5d028174f379f0f0c1eeda413ae39"
+    },
+    {
+      "id": "S7",
+      "sha256": "2d7d88f4b81fc5cccab40c9b96e7cfd8f624812b82f9eac895a73252e6bcb917"
+    },
+    {
+      "id": "S8",
+      "sha256": "a00545e5b33a486703edb00dca9aedf1d67c33da7281de12e73dffa7af50ea3a"
+    },
+    {
+      "id": "S9",
+      "sha256": "600aa2a9e3b66ab3991bb47d80696499ea4db534f4c3afd0910148e43d47ad3b"
+    },
+    {
+      "id": "S10",
+      "sha256": "4024aa2b226d0802c4faf18f82f38b116b9a7333fd0a27247818abbc83977954"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008975",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate tabular data generators when heterogeneous data’s causal structure is difficult to inspect intuitively.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing benchmarks do not jointly analyze structural fidelity with conventional dimensions and often rely on toy datasets because ground-truth causal structures are rarely available for real-world data.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "A proposed evaluation framework jointly considers structural fidelity and conventional evaluation dimensions.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "metric",
+        "claim": "Global utility is introduced to assess structural fidelity without ground-truth causal structures.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "benchmark and resource",
+        "claim": "TabStruct provides quantitative analysis of 13 tabular generators across nine categories and 29 datasets, with released datasets, pipelines, and raw results.",
+        "source_ids": [
+          "S7",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe their evaluation framework as novel and distinguish global utility as enabling structural-fidelity assessment without ground-truth causal structures.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that global utility offers a task-independent, domain-agnostic lens for tabular-generator performance.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report large-scale quantitative analysis covering 13 generators, nine categories, and 29 datasets.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report releasing the benchmark suite, including datasets, evaluation pipelines, and raw results.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Tabular-generator evaluation is difficult because causal structure in heterogeneous data is not readily human-inspectable.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "context",
+        "summary": "Structural fidelity has emerged as a tabular-specific evaluation dimension tied to real-data causal structure.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing benchmarks overlook interactions with conventional dimensions and are often restricted to toy datasets by missing causal ground truth.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper proposes joint evaluation and introduces global utility for settings without causal ground truth.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "benchmark_and_release",
+        "summary": "TabStruct evaluates generators across 29 datasets and releases the supporting benchmark materials.",
+        "source_ids": [
+          "S7",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a newly defined metric with an explicit statement of the unavailable prerequisite it is intended to avoid: ground-truth causal structures.",
+          "source_ids": [
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A method’s motivation becomes more testable when the proposed mechanism is directly linked to a concrete deployment constraint.",
+        "application": "When presenting a new evaluation metric, state the missing or costly prerequisite it addresses and specify the scope in which it is intended to operate.",
+        "exception": "This framing is unsuitable when the prerequisite is actually available and central to the metric’s intended definition."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report numerical results, baselines, statistical tests, or dataset composition beyond the stated counts.",
+      "It does not define how global utility is computed or establish whether the claimed lens improves evaluation decisions.",
+      "The abstract does not provide details permitting independent assessment of the framework’s or metric’s validity."
+    ]
+  }
+}

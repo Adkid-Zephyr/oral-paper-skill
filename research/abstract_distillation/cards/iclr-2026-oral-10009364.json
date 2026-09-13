@@ -1,0 +1,217 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009364",
+    "title": "Information Shapes Koopman Representation",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009364"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "00531c7ddd368c896af0e0c10a2746b9dad4841217bfb45a8a883ffc025036b4",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "1310ab8bc8aca03cf28a933f8875b29c67f6986e36cb9e2200bacda456c39a91",
+    "extracted_at": "2026-09-13T00:02:49.812310+00:00",
+    "session_id": "01a09812-891d-73e2-af36-95ebc3745f36",
+    "usage": {
+      "input_tokens": 12768,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 948,
+      "reasoning_output_tokens": 89
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bf91ca0741aa4ed92e6fac15ea6793c6decfa9bc93f4d523586a16890dfd9aae"
+    },
+    {
+      "id": "S2",
+      "sha256": "a8d6d4b928cd1dd48120e20982a4b5b8a74102ec81d7d8998fd92a0ffb97bd31"
+    },
+    {
+      "id": "S3",
+      "sha256": "837e2be3e8c440e88a5caae0f43ab16996a526c54478a48f439aed9379924668"
+    },
+    {
+      "id": "S4",
+      "sha256": "8761137a864a07d9f4a15fc3fb101d7e0f2547f371551f2ad0f731d240f542ed"
+    },
+    {
+      "id": "S5",
+      "sha256": "096c39ef2958fdfdee2a4e82f21be7b83a166a73bcb1eca6704380f93db0c364"
+    },
+    {
+      "id": "S6",
+      "sha256": "7e9fe073bce900867a26ec15da39f892f81999cf530500969783e0b3de2b597d"
+    },
+    {
+      "id": "S7",
+      "sha256": "a3b85b3bff37a3182a526186351b37e13e405bcacaf3b7ab75c87965a5e20ac1"
+    },
+    {
+      "id": "S8",
+      "sha256": "5104aba960f053097017af6f71473a5b765b3bf6bbd1aae6957dfad903cb5012"
+    },
+    {
+      "id": "S9",
+      "sha256": "0c17fadced05f6937690968a0606a0778bae0f5ff23bb8c9f62736ae1547305e"
+    },
+    {
+      "id": "S10",
+      "sha256": "8b0b546182fa714137fee0b654a027afe672cd1f7873c0c270465262c369ba51"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009364",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Identify finite-dimensional Koopman representations for dynamical systems, particularly in deep architectures, while balancing latent simplicity and expressiveness.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract attributes current difficulty to suboptimal representation learning and the unresolved tradeoff between compactness/predictiveness and expressive, diverse latent modes.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory-informed formulation",
+        "claim": "An information-theoretic Lagrangian formulation explicitly balances simplicity and expressiveness in Koopman representation learning.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A Lagrangian-based algorithm is proposed to encourage both simplicity and expressiveness in learned Koopman representations.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "type": "empirical analysis",
+        "claim": "The approach includes learned-manifold visualization and validation across diverse dynamical systems.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by reframing Koopman learning through the information-bottleneck lens and combining latent mutual information with von Neumann entropy in a balancing formulation.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that latent mutual information promotes simplicity, whereas excessive simplicity can collapse the latent space onto a few dominant modes; von Neumann entropy is reported to prevent collapse and encourage mode diversity.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report manifold visualizations whose empirical results are consistent with their theoretical predictions.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "Across a diverse range of dynamical systems, the authors report improved performance over existing Koopman learning methods.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background and challenge",
+        "summary": "Koopman modeling is presented as powerful, but its infinite-dimensional nature makes suitable finite-dimensional subspaces difficult to identify, especially for deep architectures.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis and framing",
+        "summary": "The abstract attributes the difficulty to representation learning and frames the simplicity–expressiveness tension as an information-bottleneck dilemma.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "mechanistic insight",
+        "summary": "Latent mutual information is associated with simplicity but possible mode collapse, while von Neumann entropy is associated with sustained expressiveness and mode diversity.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "An information-theoretic Lagrangian and corresponding algorithm are proposed to balance the two properties.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported validation",
+        "summary": "The authors report visualization results consistent with their predictions and improved performance across diverse dynamical systems relative to existing methods.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links separate representation properties to specific information measures and then uses those measures in an explicit balancing formulation.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A claim can be made more actionable by connecting each desired property to a measurable quantity before proposing the objective.",
+        "application": "For a representation-learning paper, map each target property to an explicit statistic or regularizer, state its anticipated failure mode, and combine them in one declared tradeoff.",
+        "exception": "This move is unsuitable when the properties lack defensible measurable proxies or when the abstract cannot support a mechanistic link between the proxy and the claimed behavior."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, dynamical systems, metrics, baseline methods, improvement magnitudes, or statistical conditions for the reported performance comparison.",
+      "The theoretical predictions, guarantees, optimization details, and conditions under which mutual information or von Neumann entropy produce the stated effects are unspecified.",
+      "The meaning of “stable” and “interpretable” representation is not operationalized in the abstract."
+    ]
+  }
+}

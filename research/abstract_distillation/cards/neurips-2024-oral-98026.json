@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-98026",
+    "title": "AgentBoard: An Analytical Evaluation Board of Multi-turn LLM Agents",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/98026"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0ac3dfded639a844793c9b341d62680e60cd66a5bbd270f016b5799a2af2f1f4",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "4a517663cf891c07c39528279f196ac3c55346eb450ce0e141b194c7259553b2",
+    "extracted_at": "2026-09-13T00:20:25.482843+00:00",
+    "session_id": "01a09822-c00a-7012-994b-e03774053941",
+    "usage": {
+      "input_tokens": 12709,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 628,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f05a9d039d4dc34a9e7e3eb9f3f24baf2120016f5df957806d872fd2ba06863e"
+    },
+    {
+      "id": "S2",
+      "sha256": "07e2459db016496dc328f13844fef4c7f1dc8ec6418581537fad67ff582160bc"
+    },
+    {
+      "id": "S3",
+      "sha256": "c03c7db88869865ab78af0086ae1a95596780f5f5a8651096f6a7d4f2f5caf60"
+    },
+    {
+      "id": "S4",
+      "sha256": "d334eed99e52213ecb7a51836597e9b4de718e5dda1ba3656a07fd2359760c11"
+    },
+    {
+      "id": "S5",
+      "sha256": "3a1bdf23506ff555c0c91c7716a61070bb99f974406e4465ecc962eb686edb21"
+    },
+    {
+      "id": "S6",
+      "sha256": "b4ce4589c63a8e42803e767fa0ba70b674466be0d2c5bb541a6193b54f25c8f9"
+    },
+    {
+      "id": "S7",
+      "sha256": "56e1e3d473cc14ab9c5bce161061172e340251f64dd7360f52541ad4de7ce23a"
+    },
+    {
+      "id": "S8",
+      "sha256": "e88136d5982d89657f0bb29fb74b69ece4e7d04f533ae3adf7b58d11d2071b9e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-98026",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate general-purpose LLM agents across diverse scenarios, including partially observable environments and multi-round interactions, within a unified framework.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing evaluation frameworks mainly report final success rates, offering limited process insight and an insufficiently deep account of agent abilities.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark and evaluation framework",
+        "claim": "Introduces AgentBoard, a comprehensive benchmark with an accompanying open-source framework for analytical evaluation of LLM agents.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "metric and toolkit",
+        "claim": "Provides a fine-grained progress-rate metric for incremental advancement and an evaluation toolkit supporting multifaceted analysis through interactive visualization.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize AgentBoard as a pioneering comprehensive benchmark and open-source analytical evaluation framework tailored to LLM agents.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the progress-rate metric captures incremental advancements during agent evaluation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that interactive visualization enables multifaceted assessment and helps expose agent capabilities and limitations.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLM-agent evaluation is presented as important for understanding capabilities and supporting practical integration.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "The paper identifies difficulties in unified benchmarking across diverse, partially observable, multi-round settings.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "It argues that final-success-rate evaluation provides little insight into the interaction process or underlying abilities.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "AgentBoard combines a comprehensive benchmark, an open-source toolkit, a progress-rate metric, and interactive visualization for analytical evaluation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "claimed significance",
+        "summary": "The authors say this supports interpretation of agent performance and helps demystify agent behavior.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a process-sensitive progress metric with interactive visualization to address the limited insight of final success rates.",
+          "source_ids": [
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "Intermediate measurements can make multi-turn agent behavior more interpretable than endpoint scores alone.",
+        "application": "For a multi-step system, report trajectory-level progress alongside final outcomes and visualize where advancement stalls.",
+        "exception": "This may be unsuitable when intermediate states are unavailable, poorly defined, or not meaningfully comparable across tasks."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report benchmark tasks, dataset scale, baselines, numerical results, or details of how progress rate is computed.",
+      "The abstract does not establish that AgentBoard improves agent performance, nor does it independently verify the authors' claims of pioneering status or significance."
+    ]
+  }
+}

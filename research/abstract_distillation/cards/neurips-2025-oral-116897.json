@@ -1,0 +1,205 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-116897",
+    "title": "MaxSup: Overcoming Representation Collapse in Label Smoothing",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/116897"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7ee688513ee5bb6cc9ccf25bf66b7454400be65e59505fcd7606404b69d3e25b",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "2bdd346fd4939fca01e383dff3cec3bd377b70810cb106a987432dad54a09f9a",
+    "extracted_at": "2026-09-13T00:21:35.242038+00:00",
+    "session_id": "01a09823-c177-78a2-8aa3-f9dd7cab6395",
+    "usage": {
+      "input_tokens": 12741,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 811,
+      "reasoning_output_tokens": 94
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0cf6ec4597345260d043ffe29d4649a9447003914a509278fefe80ca46e8d47d"
+    },
+    {
+      "id": "S2",
+      "sha256": "b4f51be0d1fbd27ff7e862b9358d5e23cc7273c9e5a54973e91ff5ea544c9b84"
+    },
+    {
+      "id": "S3",
+      "sha256": "c47111fab7c98daa5ecaa7da74e318001984d9f557d34bf28eff6fbc42ceb93f"
+    },
+    {
+      "id": "S4",
+      "sha256": "9624935bf26a206926f681ae9f52706afb26dbdc83780817c061b0d394ec8f51"
+    },
+    {
+      "id": "S5",
+      "sha256": "94d7244f8936c905b262224149f249774037e8e57872525c675eddb6cdfa31fe"
+    },
+    {
+      "id": "S6",
+      "sha256": "3a36a9ec9df1c3cfb8330905f5ba17351b2a6432d705342d97c587a543105ae1"
+    },
+    {
+      "id": "S7",
+      "sha256": "cb89ad46ebb6e0c6c3301ccb05eed46f634149d452c42050602e05b13f0df267"
+    },
+    {
+      "id": "S8",
+      "sha256": "92c08880fd547b5b7faf0f10798602d0ef1d9638e2da8bd4b14d98cb708e526f"
+    },
+    {
+      "id": "S9",
+      "sha256": "aec64ca11939bbdbbf3e16f1b7ec40469717a3f6810baec52f6755e13972ff16"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-116897",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses representation collapse and misclassification overconfidence induced by Label Smoothing (LS).",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "The precise cause of LS's overly tight feature clusters had remained unclear.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "analysis",
+        "claim": "Decomposes the LS-induced loss into correct-prediction regularization and misclassification error-amplification terms.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes Max Suppression (MaxSup), applying uniform regularization by penalizing the top-1 logit rather than the ground-truth logit.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that MaxSup restores intra-class variation, sharpens inter-class boundaries, and performs robustly across image classification and downstream tasks.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish MaxSup from LS through uniform treatment of correct and incorrect predictions and top-1-logit penalization.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that LS's error-amplification term reinforces incorrect predictions with undue certainty and exacerbates representation collapse.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report feature-space analyses showing restored intra-class variation and sharper inter-class boundaries with MaxSup.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report experiments on large-scale image classification and multiple downstream tasks confirming MaxSup as a more robust alternative to LS.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LS is widely used for calibration and generalization, but is associated with misclassified-sample overconfidence and compacted representations.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The paper analytically attributes these problems to a correct-only regularization term and a misclassification error-amplification term.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "MaxSup penalizes the top-1 logit to regularize correct and incorrect predictions uniformly.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "Feature analyses and experiments report improved representation structure and robustness across classification and downstream tasks.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a loss decomposition to a specific failure mode, then aligns the proposed modification with that diagnosed term.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "Separating objective components by prediction condition can make a mechanistic explanation and intervention directly traceable.",
+        "application": "When introducing a training-objective change, decompose its terms under relevant error conditions and state which term the change targets.",
+        "exception": "This framing is less suitable when the abstract lacks an analyzable objective or when performance claims depend mainly on factors outside the loss."
+      }
+    ],
+    "unknowns": [
+      "No quantitative metrics, dataset names, baselines beyond Label Smoothing, or experimental conditions are provided.",
+      "The abstract does not specify the exact loss decomposition, the meaning of “more robust,” or whether all reported gains are statistically assessed.",
+      "The reported feature-space effects and task results are author claims and are not independently verified here."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "unknowns[0]",
+      "before": "No quantitative metrics, dataset names, baselines, or experimental conditions are provided.",
+      "after": "No quantitative metrics, dataset names, baselines beyond Label Smoothing, or experimental conditions are provided.",
+      "review_file": "reviews/audit-neurips-2025.json",
+      "review_sha256": "079eb7ffb690a0165c91f704b9564c45997aabb0a7be4169da64e04491f044d4",
+      "applied_at": "2026-09-13T00:27:36.272703+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

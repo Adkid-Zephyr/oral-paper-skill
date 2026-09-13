@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-117519",
+    "title": "Depth-Bounds for Neural Networks via the Braid Arrangement",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/117519"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:38:53.939049+00:00",
+    "abstract_sha256": "ce5bd312e6c6d65300390d021f0d8179d4cdb4c01bb175d4de95301c9cb3108d",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "d7d94dd0b72221ea7e2d3eb6dafdfd80da35dd7ce1182b2745c35e16b4bae024",
+    "extracted_at": "2026-09-12T23:41:16.843150+00:00",
+    "session_id": "01a097fe-e3f5-79d2-9319-a1e74e6b3f90",
+    "usage": {
+      "input_tokens": 12681,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 797,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1971a12809e87a4669aa0c047c39041680965bf778545da5dea1d198136db43c"
+    },
+    {
+      "id": "S2",
+      "sha256": "a3e6ced2370ba8a35826665305201dccb14721efd10cee28cf103cbc633c7f9d"
+    },
+    {
+      "id": "S3",
+      "sha256": "808ae123aad65b3530773bf3091f8c25e282fb0c87a688acd36c0e23e3718aad"
+    },
+    {
+      "id": "S4",
+      "sha256": "de5e8bd49d266c52a2c7b88746d68b44ead33fe3d485553654d5b2f1ed8a8738"
+    },
+    {
+      "id": "S5",
+      "sha256": "99f48d68b544c0942369a847abd334e5959bce7c0614079503368231a4a545b2"
+    },
+    {
+      "id": "S6",
+      "sha256": "b1d973e22e7bf5601adf748295f5fc45efdec2d312ae6f50baac346911814b55"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-117519",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine how many hidden layers ReLU networks need to exactly represent all continuous piecewise-linear functions on R^d.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Outside special cases, the best known general lower bound is two hidden layers.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "For braid-fan-compatible networks, proves an Ω(log log d) hidden-layer lower bound for exactly computing the maximum of d numbers.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "proof",
+        "claim": "Gives a combinatorial proof that the same assumption requires three hidden layers to compute the maximum of five numbers.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "type": "upper-bound result",
+        "claim": "Shows that a rank-3 maxout layer followed by a rank-2 layer suffices to represent the maximum of seven numbers, so a natural generalized upper bound is not tight.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The abstract distinguishes a non-constant dimension-dependent lower bound, a combinatorial proof for five inputs, and a tighter maxout construction for seven inputs.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report an Ω(log log d) lower bound under braid-fan compatibility.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report replacing an earlier excessive computation for the five-number case with a combinatorial proof.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that two successive maxout layers of ranks 3 and 2 represent the maximum of seven numbers.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "question",
+        "summary": "Frames the open depth question for exact representation by ReLU networks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "context",
+        "summary": "Notes that special cases are resolved, but the general lower bound remains two hidden layers.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "assumption_and_lower_bounds",
+        "summary": "Restricts attention to braid-fan-compatible networks and derives dimension-dependent and finite-case depth lower bounds.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "upper-bound refinement",
+        "summary": "Provides a rank-3-then-rank-2 maxout construction for seven inputs and uses it to challenge tightness of a natural upper-bound generalization.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs an explicit structural assumption (braid-fan compatibility) with both asymptotic and finite-case depth statements.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Making the scope condition explicit helps align a theoretical claim with the class of models to which it applies.",
+        "application": "State the architectural or geometric restriction immediately before each depth bound, then separate asymptotic claims from fixed-size results.",
+        "exception": "This is less suitable when the intended result is explicitly unrestricted and the restriction would change the main question."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal compatibility definition, proof details, network width or other model constraints.",
+      "It does not quantify the prior maxout upper bound or explain the exact sense in which the generalization is not tight.",
+      "No broader empirical evaluation or verification details are provided."
+    ]
+  }
+}

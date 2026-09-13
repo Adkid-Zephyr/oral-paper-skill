@@ -1,0 +1,171 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31801",
+    "title": "Composing Unbalanced Flows for Flexible Docking and Relaxation",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31801"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f871fadde9d4f684a50c168d6c1897b2111ba354cdd8f805fa5bcf464dc0dfc5",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "698d09155ccac7eac178f4e389512482aefb5c5db6f2cc70efa64e5dbdc52947",
+    "extracted_at": "2026-09-12T23:52:31.242786+00:00",
+    "session_id": "01a09809-3100-7330-a95a-6ac747f6825e",
+    "usage": {
+      "input_tokens": 12630,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 707,
+      "reasoning_output_tokens": 59
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fc19b440b719e497f078e4aa879d439830ba77597c94a51dbfb9948783e11d92"
+    },
+    {
+      "id": "S2",
+      "sha256": "3831c0b9ff12ad37db1d03e31cbdc9046f182baeae915f81e1552aa6e8af60a4"
+    },
+    {
+      "id": "S3",
+      "sha256": "99c67a03ae9c35f174ddbf8b7ff6904f6007f73a1c4052bc380493f173d9fa51"
+    },
+    {
+      "id": "S4",
+      "sha256": "fb8f0f66072b368faf1ecbef12382e0398399595433103b8404cfab0390a1f3b"
+    },
+    {
+      "id": "S5",
+      "sha256": "3a918d00b19216329fe091035d23f4494e45626dfac82c34552dea5c2465df7b"
+    },
+    {
+      "id": "S6",
+      "sha256": "2157c715b459ff82a4d7f9896d2e3e285b69441c91d011129a7002fa085bc418"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31801",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Molecular docking must account for protein flexibility while avoiding nonphysical poses.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing transport paradigms lack sufficient flexibility to define effective maps between complex molecular distributions.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Unbalanced Flow Matching generalizes Flow Matching by trading off sample efficiency and approximation accuracy to enable more accurate transport.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "FlexDock applies Unbalanced Flow Matching to flexible docking and structure relaxation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors propose Unbalanced Flow Matching as a flexible transport framework for these molecular tasks.",
+      "source_ids": [
+        "S2",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Unbalanced Flow Matching models protein flexibility and generates energetically favorable poses in flexible docking and structure relaxation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "On PDBBind, the authors report that FlexDock improves docking performance and raises the proportion of energetically favorable poses from 30% to 73%.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Diffusion models are reported to struggle with protein flexibility and nonphysical docking poses.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framing",
+        "summary": "The authors frame both challenges as transport between distributions.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "They identify insufficient flexibility in existing paradigms for mapping complex distributions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "They propose Unbalanced Flow Matching to balance sample efficiency against approximation accuracy.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "application_result",
+        "summary": "They apply the method to flexible docking and relaxation; on PDBBind, favorable poses reportedly increase from 30% to 73%.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly connects a modeling failure, a transport-based problem framing, a limitation of existing paradigms, and a tunable method addressing that limitation.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A compact problem-to-method chain can make the rationale for a new technique easy to assess.",
+        "application": "When presenting a new generative method, state the target failure, reframe it mathematically, identify the existing flexibility bottleneck, and name the design trade-off the method exposes.",
+        "exception": "This framing is unsuitable when the task is not naturally expressible as distribution transport or when the key limitation is unrelated to map flexibility."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the docking-performance metric, statistical uncertainty, baselines, sample sizes, or whether the 30% to 73% change is measured under identical conditions.",
+      "Details of the transport formulation, trade-off mechanism, datasets beyond PDBBind, and structure-relaxation evaluation are not provided."
+    ]
+  }
+}

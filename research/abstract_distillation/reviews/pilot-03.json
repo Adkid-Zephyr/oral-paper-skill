@@ -1,0 +1,81 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "records": [
+    {
+      "paper_id": "neurips-2024-oral-97946",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2024-oral-97948",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2024-oral-97950",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2024-oral-97963",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "narrative_sequence[2].summary",
+          "source_ids": ["S4", "S5"],
+          "issue": "The narrative says representations are generated with the encoder. The source instead says they are generated in the representation space produced by that encoder. The main contribution field already preserves this distinction correctly.",
+          "severity": "minor",
+          "correction": "Proposes generating semantic representations in a self-supervised encoder's representation space and using them to condition the image generator."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "neurips-2025-oral-115363",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "author_reported_evidence[1].claim",
+          "source_ids": ["S8"],
+          "issue": "The source gives approximately 50,000 as the sequence length reached across a mid-to-long-range task collection, not the sequence length of the collection generally. The narrative already preserves the upper-extent qualifier.",
+          "severity": "minor",
+          "correction": "The authors report training HSSMs on mid- to long-range time-series classification and regression tasks with sequence lengths reaching approximately 50,000."
+        }
+      ],
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "neurips-2025-oral-116048",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2025-oral-117519",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "neurips-2025-oral-118167",
+      "first_pass_status": "pass",
+      "findings": [],
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 8,
+    "first_pass_pass": 6,
+    "first_pass_minor": 2,
+    "first_pass_material_error": 0,
+    "material_findings": 0,
+    "minor_findings": 2,
+    "requires_correction": 2,
+    "scope": "Read all eight supplied original abstracts and complete extractions. Two local summary precision errors require correction; the corresponding main-method or narrative fields already preserve the intended meaning. No material fabrication or misattribution found. This is AI source checking, not scientific validation or a lesson-effectiveness assessment. No cards or gate were edited. The pre-existing CLI failure provenance file was preserved and is not the provenance of this review."
+  }
+}

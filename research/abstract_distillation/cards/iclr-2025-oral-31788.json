@@ -1,0 +1,157 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31788",
+    "title": "Root Cause Analysis of Anomalies in Multivariate Time Series through Granger Causal Discovery",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31788"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d9ea2b9069044a7f40b484fdf5deb3116ad2fa445e62b0dd82c1556743ffca5a",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "bea019253c89844c28878d438549436fca385ea2509fb6783ab14ddeafb0d5d4",
+    "extracted_at": "2026-09-12T23:52:01.824547+00:00",
+    "session_id": "01a09808-c182-72c1-a79f-afaa4c41f3db",
+    "usage": {
+      "input_tokens": 12608,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 674,
+      "reasoning_output_tokens": 94
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8f6f814537f6f113295c64cb377c19249d3b600084a5df757107cf7153f0f283"
+    },
+    {
+      "id": "S2",
+      "sha256": "6ae709764290eef3abc641b8f698b085802a2f23ba50b9b970600fd28431dab0"
+    },
+    {
+      "id": "S3",
+      "sha256": "c77944199b744eba15adcf12c1edf00422a195816dddf6dfffebd8e350a06ecc"
+    },
+    {
+      "id": "S4",
+      "sha256": "2ed65d7f818a7b876efcfdc6b874cc5849fbd9acd6fb421eb5a4ed4c038dee6b"
+    },
+    {
+      "id": "S5",
+      "sha256": "8483c3d51ba229bb7208f327f73fc80aa17332ed71d8b8dc680067c410f5bb16"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31788",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Identifying anomaly root causes in multivariate time series is difficult because the series have complex dependencies.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces AERCA, which integrates Granger causal discovery with root cause analysis.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Defines anomalies as interventions on exogenous variables, learns Granger causality, and models exogenous-variable distributions under normal conditions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Identifies root causes by highlighting exogenous variables that significantly deviate from their normal states.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish AERCA as a comprehensive approach that inherently integrates Granger causal discovery and root cause analysis.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments on multiple synthetic and real-world datasets show AERCA accurately captures causal relationships and effectively identifies anomaly root causes.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Complex dependencies make anomaly root-cause identification challenging.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "AERCA integrates Granger causal discovery with root-cause analysis and treats anomalies as interventions on exogenous variables.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "The method models normal exogenous-variable distributions and flags significant deviations as root causes.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "Experiments across synthetic and real-world datasets are reported to support causal capture and root-cause identification.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links its anomaly definition, normal-state distribution model, and root-cause criterion into one explicit pipeline.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A tightly specified chain from problem definition to decision rule can make a proposed method's intended reasoning easier to assess.",
+        "application": "Define the target phenomenon operationally, state the reference distribution or baseline, and connect deviations from it to the final decision.",
+        "exception": "This framing may be unsuitable when anomalies cannot reasonably be represented as interventions on exogenous variables."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, evaluation metrics, baselines, numerical results, or experimental conditions.",
+      "It does not state a limitation of existing approaches, so the research gap cannot be extracted.",
+      "The causal and root-cause claims are author-reported; proof details and implementation specifics are not provided."
+    ]
+  }
+}

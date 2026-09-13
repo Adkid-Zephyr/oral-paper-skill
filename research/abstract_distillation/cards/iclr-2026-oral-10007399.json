@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007399",
+    "title": "Decentralized Attention Fails Centralized Signals: Rethinking Transformers for Medical Time Series",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007399"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a3c40f130274ef3aeb626b54be349c763166f3ad8a4fa05e84dd92c983b34466",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "6a73f480b327372164fff9ee9a7a187c5999571f7bbd7e114d6df514a984e4c9",
+    "extracted_at": "2026-09-12T23:59:26.813217+00:00",
+    "session_id": "01a0980f-808f-7af3-9396-b976427e2034",
+    "usage": {
+      "input_tokens": 12834,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 780,
+      "reasoning_output_tokens": 72
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "130ee70656c6721bb719387bceb16948960cde05dc87cdfad7ac4515d3eff863"
+    },
+    {
+      "id": "S2",
+      "sha256": "fb00f57d104bfde9ce6d3e56e6f1ec0634d51fab50fb24819fed5ab0f36d97da"
+    },
+    {
+      "id": "S3",
+      "sha256": "3633a0fbf664f755018e5be48a2af8ee4c5792a2edb0b50e65631399edb4cd81"
+    },
+    {
+      "id": "S4",
+      "sha256": "2f9b72a5e37fdcbfb37400d27325cc877427a66d53e0d958d5b01b66ddc2a1ca"
+    },
+    {
+      "id": "S5",
+      "sha256": "d53de9c717c64496139812d2d660c68db5d5378c4e20dedece1e36051d21fc74"
+    },
+    {
+      "id": "S6",
+      "sha256": "e0e51c38423f5b24466dc62de5475c96bbfc33af7bc3eca4adfeeac0739c8fa6"
+    },
+    {
+      "id": "S7",
+      "sha256": "9605ce6f8c9a74b98b91066374904e6320626e8931e142564d5f14380f15e58a"
+    },
+    {
+      "id": "S8",
+      "sha256": "8dbabd0b954ceead7b10e121bc9db073f39fdb9550e0968fff64fab704ad2794"
+    },
+    {
+      "id": "S9",
+      "sha256": "2fd889f56ef4ac08699afeb07d4ce7914b35aee02518690dd5648398db9bc96a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007399",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Analyze medical time-series signals containing both within-channel temporal dependencies and cross-channel dependencies.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Transformer-based models often capture temporal dependencies but struggle with channel dependencies because decentralized attention mismatches the centralized structure of medical signals.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "CoTAR, a centralized MLP-based module, replaces decentralized attention with a global core token that mediates token interaction through centralized aggregation and redistribution.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "efficiency claim",
+        "claim": "The proposed design is intended to align with centralized medical signals while reducing computational complexity from quadratic to linear.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish CoTAR by using a global core-token aggregation-redistribution mechanism as a centralized alternative to direct all-token attention.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments on five benchmarks showing superiority in effectiveness and efficiency.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "On APAVA, the authors report up to a 12.13% improvement, with 33% memory usage and 20% inference time relative to the previous state of the art.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that code and all training scripts are available.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "application context",
+        "summary": "Medical time-series analysis is presented as relevant to diagnosing brain and heart diseases.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "data structure",
+        "summary": "The abstract identifies temporal dependencies within channels and channel dependencies across channels.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation and explanation",
+        "summary": "Transformers are described as effective for temporal modeling but weaker on channel dependencies because decentralized attention mismatches centralized signals.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed solution",
+        "summary": "CoTAR uses a global core token to centralize inter-token aggregation and redistribution, with linear rather than quadratic complexity.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "The authors report gains across five benchmarks, including APAVA improvement and reduced memory and inference time.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly connects a signal's centralized structure to a replacement for decentralized attention, rather than presenting the module independently of the data geometry.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Matching an architecture's interaction pattern to the dominant structure of the data can make the design rationale more explanatory.",
+        "application": "When proposing a sequence model, state the data's dependency geometry, identify the mismatch in the baseline interaction mechanism, and make the replacement mechanism directly address that mismatch.",
+        "exception": "This framing is unsuitable when the data genuinely requires unconstrained pairwise interactions or when centralization discards important localized relationships."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the five benchmarks, task metrics, baselines, statistical variability, or experimental settings.",
+      "The reported APAVA improvement and resource ratios lack metric definitions and normalization details; the abstract does not establish independent validity or reproducibility."
+    ]
+  }
+}

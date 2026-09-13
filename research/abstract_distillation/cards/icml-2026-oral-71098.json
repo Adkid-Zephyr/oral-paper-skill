@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71098",
+    "title": "Scalable Event Cloud Network for Event-based Classification",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71098"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d45f566a93cc45c8b35bf8a5cf5bf0635cfcd27971a52db09cd6eee3d0c7b62b",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "8aaf7976a4e157109e86cbcf9f8411a7f3d89b88939db94c65818f5455cefe6f",
+    "extracted_at": "2026-09-13T00:13:58.212220+00:00",
+    "session_id": "01a0981c-c880-7c12-b8fd-8d6bc2346b38",
+    "usage": {
+      "input_tokens": 12719,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 769,
+      "reasoning_output_tokens": 109
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d55d80136cd203173bc0bc220c7c9a70dff24b2d3934dd3d9ad1f363991463a3"
+    },
+    {
+      "id": "S2",
+      "sha256": "308c5380fe1efef71742bd1b17871a3c41b94967d33db6802c7bfd1c2b4980e1"
+    },
+    {
+      "id": "S3",
+      "sha256": "fedf4d435a439831d3639517d8185cc369e910d10fe3e8c1e97b401330baef83"
+    },
+    {
+      "id": "S4",
+      "sha256": "9d17762bda96d77d228e721aaaedf34cca2adfa7e22e620c8c0a6bfc2982c269"
+    },
+    {
+      "id": "S5",
+      "sha256": "b2eb8b02d1b26c7c977cc21918665d20f5bf9c8df1b41a846e850a1f8f11f8dd"
+    },
+    {
+      "id": "S6",
+      "sha256": "209c1885d3495bce10559a7f220975e2a9efb51059ab584ba881ab49c48f874a"
+    },
+    {
+      "id": "S7",
+      "sha256": "fc9a1b7fbadad10b33515cb8d8e32c286a91ffafc204a0576d52c25d0d2e1ee4"
+    },
+    {
+      "id": "S8",
+      "sha256": "0705b6824285d0f93541e389e4324cba1c04b2852e51b4333ab77352a26f1453"
+    },
+    {
+      "id": "S9",
+      "sha256": "d91a54c94423545f84b9b73b2915c520ecf3926c6d8407416eee45937cac92e7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71098",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop a scalable event-cloud network for event-based classification while preserving spatio-temporal information and controlling computation.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Frame/voxel methods incur costly transformations, bulky models, and temporal-information loss, while point-cloud methods have limited scalability for higher spatial resolution and longer event sequences.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes SECNet, a scalable network using Event Cloud representation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces structural-level polarity integration through an Event-based Group and Sampling module.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses Fourier-transform frequency-domain feature extraction to handle increasing event counts and target computational reduction with spatio-temporal abstraction.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish SECNet by integrating polarity structurally rather than only at the input level, and by extracting features in the frequency domain.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report extensive experiments across ten event-based datasets supporting SECNet's scalability, effectiveness, and efficiency.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Event cameras are presented as biologically inspired sensors receiving substantial research and industry attention.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The abstract contrasts mainstream frame/voxel representations with point clouds, identifying transformation, model-size, temporal-detail, and scalability limitations.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "SECNet is introduced with structural polarity handling and frequency-domain feature extraction via Fourier transform.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_evaluation",
+        "summary": "The authors report experiments on ten event-based datasets and claim evidence for scalability, effectiveness, and efficiency.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract ties a representation-level limitation to two targeted design choices: structural polarity integration and frequency-domain extraction for event surges.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This offers a compact claim-to-mechanism framing in which each major weakness is paired with an explicit architectural response.",
+        "application": "When presenting a new architecture, map each identified representation bottleneck to a named module or operation and state the intended computational or information-preservation role.",
+        "exception": "This framing is unsuitable when the abstract lacks a concrete bottleneck or when a module has no clearly stated relationship to the claimed limitation."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no dataset names, numerical results, baselines, or details of the reported scalability, effectiveness, and efficiency evidence.",
+      "The extent of Multiply Accumulate Operation reduction and the conditions under which spatio-temporal abstraction improves are unspecified.",
+      "Code availability is stated as future availability; its current status is not established."
+    ]
+  }
+}

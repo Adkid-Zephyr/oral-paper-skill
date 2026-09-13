@@ -1,0 +1,194 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009494",
+    "title": "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009494"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "de1c7b900daab1fbbcbdbd19ef48ac5ac2eb7e0eb0f689699e76f80c4831a7ba",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "128f936026849b81400414d6cd5ad8598912efd99c8a1fff4605aea3c029d943",
+    "extracted_at": "2026-09-13T00:03:02.570108+00:00",
+    "session_id": "01a09812-c321-71a1-8b06-59439eef25d5",
+    "usage": {
+      "input_tokens": 12790,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 889,
+      "reasoning_output_tokens": 116
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "ed4ec4eef1dc61d04682dd387a544403caaf077fa0fa18074e381fca026aa29b"
+    },
+    {
+      "id": "S2",
+      "sha256": "090f2f6fcc658945864a4bac78d29ff60ef779751397d3a512f721f25c0a0af7"
+    },
+    {
+      "id": "S3",
+      "sha256": "b70d026aa2177e7e0431a685c69bd9c62bf1f29a92e26d384449dfa02a835892"
+    },
+    {
+      "id": "S4",
+      "sha256": "33214d7174edbea5344fa6e730f736dd44954c25857b21ba1c2ec9e2e319efae"
+    },
+    {
+      "id": "S5",
+      "sha256": "096b826fce99d6a2bdbbad9a0daa10d3b5af4c74e8e0ae75748dcfdfec492b38"
+    },
+    {
+      "id": "S6",
+      "sha256": "8bd3a39bb8674882af8c680111f6c9d87d2ac39ac9f9fa3092c040f54be9a807"
+    },
+    {
+      "id": "S7",
+      "sha256": "fe0f55bf02a6f538749b1e04a4680fec0b47624c88ca8dd4b518035222a84352"
+    },
+    {
+      "id": "S8",
+      "sha256": "d8a54bf891f8ad455b3a03d853f38a29e088d59c8d6413d5b209f46230f368b9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009494",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Adapt LLM-based systems to downstream tasks with fewer trial-and-error rollouts.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract contrasts rollout-intensive RL and sparse scalar policy-gradient feedback with the richer learning signal potentially available through interpretable natural language.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces GEPA (Genetic-Pareto), a prompt optimizer that uses natural-language reflection to learn high-level rules from trial and error.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Defines a general procedure for sampling trajectories, diagnosing problems, proposing and testing prompt updates, and combining complementary lessons from a Pareto frontier.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports improvements over GRPO and MIPROv2 across multiple tasks, including promising inference-time code-optimization results.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present GEPA as a prompt optimizer that thoroughly incorporates natural-language reflection and Pareto-frontier lesson combination.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Across six tasks, the authors report that GEPA exceeds GRPO by 6 percentage points on average and by up to 19 percentage points, while using up to 35× fewer rollouts.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that GEPA exceeds MIPROv2 by over 10 percentage points, including a 12-point improvement on AIME-2025.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report promising results when using GEPA as an inference-time search strategy for code optimization.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "RL adaptation methods such as GRPO often require thousands of rollouts.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framing",
+        "summary": "The authors argue that natural language can provide a richer learning medium than sparse scalar rewards.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "GEPA reflects on sampled trajectories, diagnoses failures, tests prompt updates, and combines Pareto-frontier lessons.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The abstract reports fewer-rollout gains over GRPO and score improvements over MIPROv2, plus code-optimization applications.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "release",
+        "summary": "The authors provide the implementation as open-source code.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The method links trajectory diagnosis in natural language to proposed and tested prompt updates, while retaining complementary lessons from a Pareto frontier.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "This suggests a useful design pattern for turning qualitative failure analysis into iterative optimization without collapsing all feedback into one scalar objective.",
+        "application": "For a system with multiple prompts, record interpretable trajectory diagnoses, test targeted prompt edits, and preserve non-dominated improvements rather than selecting only one aggregate winner.",
+        "exception": "This may be unsuitable when trajectory text is unavailable, reflection is unreliable, or the task requires a single objective and has no meaningful trade-offs."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not identify the six tasks, evaluation protocols, rollout budgets in absolute terms, or statistical uncertainty.",
+      "The conditions behind the reported gains and the meaning of “promising” for code optimization are unspecified.",
+      "The abstract does not provide comparative details sufficient to assess reproducibility or independent validity."
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71110",
+    "title": "A Causal Decomposition Approach for Fair Contextual Multi-Armed Bandits",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71110"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e42a7aa08c6d21d6c1671318d56c51fe00917f21154a5c346dc90b82ddf0b262",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "5ba04dab98bfd1d9831f70bdcd3928ef1fe8648cc3326e4976c2daa3c76cb6c9",
+    "extracted_at": "2026-09-13T00:14:34.565930+00:00",
+    "session_id": "01a0981d-598a-7220-8f2e-9ef330113b64",
+    "usage": {
+      "input_tokens": 14224,
+      "cached_input_tokens": 13056,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 799,
+      "reasoning_output_tokens": 141
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0996885ae834c5ae004964e1e1d0b401321694e4084b7f09c9dc5ba8cdc5180b"
+    },
+    {
+      "id": "S2",
+      "sha256": "026ebd66fbd722a6b1411e5021db0929d904c2173471bedfadf9b757b6b8fdd5"
+    },
+    {
+      "id": "S3",
+      "sha256": "15d6e0ec8f7d08188bbfa9694a1db7f1d0e5bbe40b9757b6ed425e89dd08f44a"
+    },
+    {
+      "id": "S4",
+      "sha256": "91de385f85e5afc4cecb719e8c4b1652b78d7c9b39547411a87b3790c5c97923"
+    },
+    {
+      "id": "S5",
+      "sha256": "6781e94592ad8069422d2de83e70a07eb7e81fb1bea3e3091f7ffcbed6f15ea9"
+    },
+    {
+      "id": "S6",
+      "sha256": "e34b3e2839032058f0fb131780b3d2fd98bccb85ff654babae69ba2757510551"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71110",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies counterfactual direct, indirect, and spurious effects as fairness measures for sequential decision-making, then formulates an online causally fair learning problem with multiple long-term constraints.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "A causal decomposition framework using counterfactual direct, indirect, and spurious effects to quantify fairness in contextual bandits.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Sublinear regret and constraint-violation bounds for non-parametric contextual and parametric logistic bandits under roundwise, initially unknown counterfactual-fairness constraints, without Slater’s condition.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "For logistic bandits, an online mirror-descent estimator gives an algorithm with reported O(1) per-round time complexity.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": null,
+      "source_ids": []
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report sublinear regret and violation bounds in both bandit settings without Slater’s condition.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report O(1) per-round time complexity for their logistic-bandit method using an online mirror-descent estimator.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Counterfactual reasoning is introduced as relevant to explanation, credit assignment, blame, and responsibility.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "fairness measures",
+        "summary": "The project defines direct, indirect, and spurious counterfactual effects for fairness quantification in sequential decisions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "problem formulation",
+        "summary": "These measures support an online causally fair learning problem with multiple long-term constraints in two contextual-bandit settings.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The authors report sublinear regret and violation bounds without Slater’s condition, plus O(1) per-round logistic-bandit computation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract decomposes fairness into direct, indirect, and spurious counterfactual effects, then uses those measures as constraints in an online learning formulation.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A multi-part construct can become operational when each component is explicitly connected to a controllable constraint.",
+        "application": "When proposing a fairness framework, define distinct causal components and map each to the optimization constraints they induce.",
+        "exception": "This move is unsuitable when the application lacks an interpretable causal structure or cannot support the required counterfactual quantities."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal definitions of the three effects, the constraint-violation metric, or the exact regret and violation rates.",
+      "It does not report experimental settings, numerical comparisons, or conditions underlying the O(1) complexity claim."
+    ]
+  }
+}

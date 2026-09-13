@@ -1,0 +1,171 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011187",
+    "title": "A Scalable Distributed Framework for Multimodal GigaVoxel Image Registration",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011187"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8f1f624429e8669a87265cf4447d6f744893a83fa53c8e764c3ffed876b1d008",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "c0c5d2ae16d12dbea64c3e45d8a8e0e196165c0ccd66455e30eb53cd536ffeea",
+    "extracted_at": "2026-09-13T00:05:36.111087+00:00",
+    "session_id": "01a09815-2a0d-7a93-9f5f-8beebe01300d",
+    "usage": {
+      "input_tokens": 12699,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 726,
+      "reasoning_output_tokens": 49
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3e72e61e2cd5c308be53b141b2e56cbea025187fbfd8d5822c4d8f69f2278cbe"
+    },
+    {
+      "id": "S2",
+      "sha256": "b2daf9130f1495c0afc2a1c9beb941b87cd2ab22a653e1c6563a26efe0ff0b38"
+    },
+    {
+      "id": "S3",
+      "sha256": "e279404d28c82e131b4e73a9b1cf6614a29acbc36c10ba0a34bbf0cd39dbbd37"
+    },
+    {
+      "id": "S4",
+      "sha256": "52344a5f924f24bff05d58fe2a0a9145bb858b8d845e2519a199635a8cc556ad"
+    },
+    {
+      "id": "S5",
+      "sha256": "39c254e54e90d26bc20deed44029cfdd74ff20bb096bfa8692b082266500aaba"
+    },
+    {
+      "id": "S6",
+      "sha256": "369afef6b484576fdf59cfebc602e9b34004ce69bf2ca8e865026a5832da8a55"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011187",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Scaling multimodal biomedical image registration to image-acquisition sizes, including gigavoxel-scale volumes.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing registration algorithms have not scaled alongside image acquisition capabilities.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "FFDP: IO-aware non-GEMM fused kernels combined with a distributed registration framework.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "systems integration",
+        "claim": "The framework optimizes non-GEMM bottlenecks and supports convolution-aware tensor sharding alongside existing model-parallel techniques.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present registration capabilities at unprecedented scales through FFDP and its distributed framework.",
+      "source_ids": [
+        "S1",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report multimodal registration of a native-resolution 100μm ex-vivo human brain MRI volume, described as over 570× larger than a standard clinical datum, in about one minute using eight A6000 GPUs.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report 6–7× acceleration of existing state-of-the-art optimization and deep-learning registration pipelines, with 20–59% lower peak memory consumption.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "On a 250μm dataset, the authors report fitting up to 64× larger problems than existing state of the art on one GPU, alongside performance and efficiency gains.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Registration is fundamental to biomedical and life sciences, but algorithmic scaling has lagged image acquisition.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "FFDP combines fused kernels and distributed execution, extending model-parallel ideas with non-GEMM optimization and convolution-aware sharding.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "role": "demonstration",
+        "summary": "The framework is applied to native-resolution multimodal human-brain MRI registration at extreme scale.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "comparison",
+        "summary": "Reported speed, memory, and single-GPU capacity comparisons favor FFDP over stated SOTA pipelines or methods.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs system-design choices with concrete scale, runtime, memory, and capacity figures.",
+          "source_ids": [
+            "S1",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This links architectural mechanisms to operational consequences and makes a scalability claim more inspectable.",
+        "application": "For a systems paper, state the bottleneck addressed, the enabling mechanism, and matched scale/resource metrics together.",
+        "exception": "This format is less suitable when the work is primarily conceptual or when comparable resource and workload measurements are unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report registration accuracy, image-quality outcomes, or task-specific scientific utility.",
+      "Baseline identities, hardware and implementation details, dataset sizes beyond the stated resolutions, and evaluation protocols are unspecified.",
+      "The abstract does not establish independently verified correctness, effectiveness, reproducibility, or priority of novelty."
+    ]
+  }
+}

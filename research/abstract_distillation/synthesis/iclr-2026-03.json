@@ -1,0 +1,674 @@
+{
+  "batch_id": "iclr-2026-03",
+  "covered_ids": [
+    "iclr-2026-oral-10008715",
+    "iclr-2026-oral-10008745",
+    "iclr-2026-oral-10008760",
+    "iclr-2026-oral-10008765",
+    "iclr-2026-oral-10008786",
+    "iclr-2026-oral-10008789",
+    "iclr-2026-oral-10008833",
+    "iclr-2026-oral-10008861",
+    "iclr-2026-oral-10008865",
+    "iclr-2026-oral-10008914",
+    "iclr-2026-oral-10008921",
+    "iclr-2026-oral-10008975",
+    "iclr-2026-oral-10008991",
+    "iclr-2026-oral-10008999",
+    "iclr-2026-oral-10009001",
+    "iclr-2026-oral-10009050",
+    "iclr-2026-oral-10009094",
+    "iclr-2026-oral-10009121",
+    "iclr-2026-oral-10009147",
+    "iclr-2026-oral-10009150",
+    "iclr-2026-oral-10009222",
+    "iclr-2026-oral-10009244",
+    "iclr-2026-oral-10009279",
+    "iclr-2026-oral-10009295",
+    "iclr-2026-oral-10009321",
+    "iclr-2026-oral-10009352",
+    "iclr-2026-oral-10009360",
+    "iclr-2026-oral-10009364",
+    "iclr-2026-oral-10009367",
+    "iclr-2026-oral-10009426",
+    "iclr-2026-oral-10009442",
+    "iclr-2026-oral-10009461",
+    "iclr-2026-oral-10009494",
+    "iclr-2026-oral-10009550",
+    "iclr-2026-oral-10009598",
+    "iclr-2026-oral-10009625",
+    "iclr-2026-oral-10009682",
+    "iclr-2026-oral-10009693",
+    "iclr-2026-oral-10009701",
+    "iclr-2026-oral-10009713",
+    "iclr-2026-oral-10009727",
+    "iclr-2026-oral-10009731",
+    "iclr-2026-oral-10009768",
+    "iclr-2026-oral-10009781",
+    "iclr-2026-oral-10009795",
+    "iclr-2026-oral-10009845",
+    "iclr-2026-oral-10009910",
+    "iclr-2026-oral-10009913"
+  ],
+  "candidate_practices": [
+    {
+      "name": "先确定评估对象，再选择指标或协议",
+      "source_observation": "这些摘要区分目标性质与现有代理，并据此提出测量或比较方式。",
+      "why_it_may_help": "解释：可避免读者把不同研究问题的分数当成同一能力；有效性尚未验证。",
+      "application": "把“提升性能”改写为要判断的性质、原代理遗漏什么、采用什么测量。",
+      "when_not_to_use": "既有指标已直接回答研究问题时，不必另造指标。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10008715",
+          "source_ids": [
+            "S1",
+            "S6"
+          ],
+          "specific_example": "以跨场景复现相机轨迹定义 transferability，并提出对应指标。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10008975",
+          "source_ids": [
+            "S4",
+            "S6"
+          ],
+          "specific_example": "global utility 针对缺少真实因果结构的评估条件。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009360",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "用后代表现聚合表示改进潜力，区别于当前编码分数。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009781",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S11"
+          ],
+          "specific_example": "相同微调后的潜力比较与直接部署表现分别对应不同协议。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10009701",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S8"
+          ],
+          "contrast": "意图与行为评分提供另一种操作化，但无 ground truth 时不能直接等同于实际欺骗。"
+        }
+      ],
+      "full_text_needed_for": "指标定义、构念效度、协议可比性，以及代理是否真正测到目标。"
+    },
+    {
+      "name": "按可定位的失败信号解释干预",
+      "source_observation": "摘要先描述具体错误，再介绍与之相关的输入、约束或修复机制。",
+      "why_it_may_help": "解释：可让读者判断设计是否回应诊断，而非只看到组件清单。",
+      "application": "为关键机制补一句：针对什么可观察失败，改变哪一步；不要臆造逐组件因果贡献。",
+      "when_not_to_use": "错误不可定位或多个机制强耦合时，只陈述整体设计理由。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10008745",
+          "source_ids": [
+            "S3",
+            "S5"
+          ],
+          "specific_example": "区分类别、样本错配及无对应样本，介绍软对应与降权。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009768",
+          "source_ids": [
+            "S8"
+          ],
+          "specific_example": "像素指代与相机歧义对应视觉提示和内参条件增强。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009426",
+          "source_ids": [
+            "S3"
+          ],
+          "specific_example": "可靠性诊断失败后重采样 prior 或 likelihood 组件。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009910",
+          "source_ids": [
+            "S1",
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "同时陈述类别与拓扑失衡，以及扰动、原型和负载平衡机制。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10008765",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5"
+          ],
+          "contrast": "通过重新解释已有编码解码操作建立分析对象，无须先构造缺陷诊断。"
+        }
+      ],
+      "full_text_needed_for": "诊断依据、组件归因、失败定位准确性及干预副作用。"
+    },
+    {
+      "name": "把新能力写成明确的依赖变更",
+      "source_observation": "摘要通过取消或改变训练、求解器、监督与辅助模型要求来界定贡献。",
+      "why_it_may_help": "解释：使新颖性成为可检查的使用条件变化，而非优先权口号。",
+      "application": "写清原先需要什么、现在需要什么，以及新增成本落在哪个阶段。",
+      "when_not_to_use": "依赖只是转移到预处理或隐藏训练时，不能宣称消除。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10008914",
+          "source_ids": [
+            "S2",
+            "S3"
+          ],
+          "specific_example": "将每个特征提取器都需重训改为推理时 feature-agnostic 上采样。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009150",
+          "source_ids": [
+            "S3",
+            "S5"
+          ],
+          "specific_example": "前向过程优化使用 clean images，宣称免似然估计并支持黑箱求解器。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009094",
+          "source_ids": [
+            "S4",
+            "S7"
+          ],
+          "specific_example": "以模型似然驱动迭代采样，声明不需训练、精选数据或 verifier。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009693",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S7"
+          ],
+          "specific_example": "等价直接目标用偏好数据和安全标记替代 reward/cost models 与在线采样。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10009713",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "contrast": "为轨迹可行性主动加入 manifold 与 least-action 偏置；减少假设不是普遍目标。"
+        }
+      ],
+      "full_text_needed_for": "被移除依赖的精确定义、替代成本及理论等价条件。"
+    },
+    {
+      "name": "用条件关系替代单一总体结论",
+      "source_observation": "这些摘要报告数据、优化、能力或参与者条件改变时，结果如何变化。",
+      "why_it_may_help": "解释：条件关系可能比一个总体增益更能指导后续设计选择。",
+      "application": "将主结果改为“在条件 A 下出现 X，在条件 B 下减弱或不同”，标出控制量。",
+      "when_not_to_use": "设计未区分这些因素时，不可从汇总结果推断交互。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10008789",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "记忆随语料相对频率及插入阶段、后续暴露而变化。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009352",
+          "source_ids": [
+            "S5",
+            "S8"
+          ],
+          "specific_example": "课程优势在恒定学习率下明显，在衰减下减弱，并给出模型与 token 范围。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10008991",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "固定 compute、相同 loss 时，推理仍与 active compute 相关，且不同于记忆规律。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009050",
+          "source_ids": [
+            "S5",
+            "S7"
+          ],
+          "specific_example": "agent awareness 与 monitor awareness 效果不对称；升级处理结果附固定 FPR。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10009147",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "contrast": "先给多轮下降，再分解 aptitude 与 unreliability，形成诊断而非条件最优策略。"
+        }
+      ],
+      "full_text_needed_for": "是否独立操纵因素、条件覆盖、分解定义及不确定性。"
+    },
+    {
+      "name": "把理论结论与适用范围一起写",
+      "source_observation": "摘要分别标出模型类别、参数依赖、分析场景或理想化条件。",
+      "why_it_may_help": "解释：有助于区分定理、经验延伸与更广泛解释。",
+      "application": "让每个保证紧邻其模型范围、依赖变量及必要条件；另起一句陈述实验延伸。",
+      "when_not_to_use": "没有正式保证时，改用观察或猜想措辞。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10008921",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "线性模型区分均值与协方差影响；最优性仅限某些 regimes，另述深网延伸。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009295",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "specific_example": "全连接 ReLU 图平均度界依赖输入维度、独立于宽深；直径界另述。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009321",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "specific_example": "共同 simulation 条件限定于所分析的误差、精度和一至二层情境。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009367",
+          "source_ids": [
+            "S7",
+            "S8"
+          ],
+          "specific_example": "不坍缩结论限理想化变体与适当初始化，另报实际 benchmark 表现。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10009625",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5"
+          ],
+          "contrast": "以 sample complexity、weight decay 的 regime map 组织理论，适合多区域而非单一保证。"
+        }
+      ],
+      "full_text_needed_for": "完整假设、公式、证明及理论对象与实现之间的对应。"
+    },
+    {
+      "name": "让资源或分析对象承担独立贡献",
+      "source_observation": "这些摘要介绍可复用的数据、环境或表示，并连接其生成方式与研究用途。",
+      "why_it_may_help": "解释：可避免把非算法贡献缩减为性能结果的附件。",
+      "application": "说明交付物包含什么、如何构建，以及支持哪种原本难开展的比较或分析。",
+      "when_not_to_use": "只服务一次实验的材料，不应夸大为通用研究基础设施。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10008760",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "由对比 VQA 的 cue 观察连接配对策划、rationale 生成和 VisCoR-55K。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10008786",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "模块化环境训练框架与 staged-horizon 算法是相连但不同的贡献。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10008861",
+          "source_ids": [
+            "S2",
+            "S3"
+          ],
+          "specific_example": "submitter、reviewer、CI 交互定义评估对象，retrieval 支持长代码上下文。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009244",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S8"
+          ],
+          "specific_example": "functional representation 经提取流程用于模型关系树分析。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10009550",
+          "source_ids": [
+            "S4",
+            "S7",
+            "S8"
+          ],
+          "contrast": "einx 的贡献是统一 vectorization 语义与实现，不依赖提出新 benchmark。"
+        }
+      ],
+      "full_text_needed_for": "资源组成、可用性、覆盖、复用条件及关系分析验证依据。"
+    },
+    {
+      "name": "分开写加速目标与保留性质",
+      "source_observation": "摘要同时交代效率机制和不改变、近似保留或放宽的行为。",
+      "why_it_may_help": "解释：使速度主张与质量或正确性范围能够分别审查。",
+      "application": "在加速结论旁注明保留性质、接受规则及损失版本；避免把成本单位混用。",
+      "when_not_to_use": "没有质量测量或保证时，不使用 lossless 或近乎无损结论。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10008999",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "specific_example": "稀疏 token-logit projection 控制训练成本，声明推理行为不变。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009222",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "specific_example": "按维度选择 caching，报告免重训速度与 near-lossless 性质。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009727",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S8"
+          ],
+          "specific_example": "只提交匹配预测，分列 lossy 扩展与 speculation cost–latency 分析。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10009682",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S8"
+          ],
+          "specific_example": "保护 thinking-token 相关特征，分别报告指令遵循改善与推理保持。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10008833",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "contrast": "预训练、推理、forward-pass 数与下游表现是不同轴，不能合并为一个速度优势。"
+        }
+      ],
+      "full_text_needed_for": "成本基准、硬件、质量阈值、保证条件及端到端开销。"
+    }
+  ],
+  "unusual_but_useful": [
+    {
+      "paper_id": "iclr-2026-oral-10008865",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "practice": "把单实例表示扩展到数据集学习作为贡献。",
+      "application": "写清表示、domain 与两阶段训练的变化。",
+      "limit": "摘要不能逐项归因效率收益。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009001",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "practice": "把反馈生成的错误写成训练分布来源。",
+      "application": "说明错误如何注入、估计、存储和再采样。",
+      "limit": "不能据此证明无限时长稳定。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009121",
+      "source_ids": [
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "practice": "分列代码可生成性与执行效率。",
+      "application": "分别陈述 compilation 与 runtime 结果。",
+      "limit": "编译成功不等于语义正确。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009279",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "practice": "分开支持统一任务能力与跨模态中间推理。",
+      "application": "分别写 specialized-model 比较和 subjective evaluation。",
+      "limit": "主观评价不能替代所有性能测量。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009364",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "practice": "写出单一目标过度优化的失败。",
+      "application": "将 simplicity、collapse、entropy 和 balancing objective 连成因果假说。",
+      "limit": "信息量定义及作用条件待核。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009442",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "practice": "把优化任务重写为 trade-off 条件采样。",
+      "application": "说明 conditioning 与探索方向各承担什么角色。",
+      "limit": "不能推断生成点可行。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009461",
+      "source_ids": [
+        "S10",
+        "S11",
+        "S12"
+      ],
+      "practice": "同时报告理论趋势吻合与模拟偏离。",
+      "application": "保留 transparency 条件及非 Bayesian 解释的推断身份。",
+      "limit": "不是现实社会福利实证。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009494",
+      "source_ids": [
+        "S4",
+        "S6"
+      ],
+      "practice": "连接文本诊断、prompt 更新与 rollout 成本。",
+      "application": "说明如何测试更新并保留互补候选。",
+      "limit": "rollout 数不能直接等同总 compute。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009598",
+      "source_ids": [
+        "S4",
+        "S5"
+      ],
+      "practice": "区分 gradient conflict 与 dominance。",
+      "application": "解释动态权衡和 projection 的目标，而非只称 balanced。",
+      "limit": "摘要不足以确认两类问题各自改善。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009731",
+      "source_ids": [
+        "S7",
+        "S9"
+      ],
+      "practice": "将 trusted-server 假设变化单列。",
+      "application": "区分敏感度噪声机制和 LDP 扩展。",
+      "limit": "不能沿用中央 DP 的保证解释 LDP。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009795",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "practice": "先结构化特例，再更一般计算表示。",
+      "application": "分别呈现 Gaussian lift 与 absolutely-continuous geodesic 参数化。",
+      "limit": "比较不意味着优于 tangent PCA。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009845",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "practice": "以 token 类型和组件规模具体化统一系统。",
+      "application": "连接 discrete text、continuous image、flow head 与生成和编辑。",
+      "limit": "不能从整体结果归因某组件。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009913",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7",
+        "S8"
+      ],
+      "practice": "把 alignment 展开为双向偏好约束。",
+      "application": "分别写 expert 对 proxy 和 proxy 对 expert 的要求。",
+      "limit": "n² 固定于 batch，不是独立于所有规模。"
+    }
+  ],
+  "discarded_generalizations": [
+    {
+      "generalization": "所有摘要都应遵循问题—缺口—方法—胜出模板或 ORAL。",
+      "reason": "分析、资源、符号系统和结构化数学案例采用不同贡献逻辑；没有选择原因证据。",
+      "paper_ids": [
+        "iclr-2026-oral-10008765",
+        "iclr-2026-oral-10009550",
+        "iclr-2026-oral-10009795"
+      ]
+    },
+    {
+      "generalization": "更好的预训练 loss 总能预测下游优势。",
+      "reason": "MoE 与 EBT 报告脱钩；train-before-test 的恢复关联限定于另一协议。",
+      "paper_ids": [
+        "iclr-2026-oral-10008991",
+        "iclr-2026-oral-10008833",
+        "iclr-2026-oral-10009781"
+      ]
+    },
+    {
+      "generalization": "组件对应问题就证明了机制有效。",
+      "reason": "摘要级设计理由没有建立独立归因。",
+      "paper_ids": [
+        "iclr-2026-oral-10008865",
+        "iclr-2026-oral-10009910"
+      ]
+    },
+    {
+      "generalization": "理论必须以新实验或用户收益完成闭环。",
+      "reason": "谱理论可连接既有经验现象；notation 实现未提供用户研究。",
+      "paper_ids": [
+        "iclr-2026-oral-10009625",
+        "iclr-2026-oral-10009550"
+      ]
+    }
+  ],
+  "source_checks_needed": [
+    {
+      "paper_id": "iclr-2026-oral-10009360",
+      "field": "S9 human-level",
+      "issue": "比较对象是 human-engineered agents；核对是否误写成人类编码水平。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009001",
+      "field": "S7 duration/cost",
+      "issue": "核对 infinite 与 no additional inference cost 的单位和限定。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009731",
+      "field": "stated_novelty",
+      "issue": "标题为 PateGAIL++，提取却称 extends PateGAIL++；核对版本关系。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009693",
+      "field": "S10 optimality",
+      "issue": "核对是否把 ablation 的调参观察与理论最优性保证混写。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009701",
+      "field": "S7–S8 construct",
+      "issue": "核对 internal belief、hidden objective 的实际观测定义，避免把评分当作意图证据。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009321",
+      "field": "S4/S7 bounds",
+      "issue": "核对 quantitative bounds 与 qualitative estimates 的原文关系。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009050",
+      "field": "S7 15%",
+      "issue": "确认相对百分比或百分点，以及固定 FPR 比较对象。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009768",
+      "field": "S9 over 2×",
+      "issue": "核对 metric 方向与倍数定义；不能默认是 accuracy 倍增。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10008760",
+      "field": "release status",
+      "issue": "仅提取到 upon acceptance 承诺，不能据此确认当前已发布。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10008789",
+      "field": "lessons.application",
+      "issue": "独立操纵多个因素是 AI 建议；S3–S4 不足以证明完整 factorial design。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009781",
+      "field": "lessons.application",
+      "issue": "prespecified proxy 是 AI 建议，不能作为作者预注册或预先指定分析的证据。"
+    }
+  ]
+}

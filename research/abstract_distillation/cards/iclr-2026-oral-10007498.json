@@ -1,0 +1,190 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007498",
+    "title": "Probabilistic Kernel Function for Fast Angle Testing",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007498"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "deeee5fcd73e61aaf86b2bb8cf5aa40de3c87103ee1640fb62dd814f1a2f6589",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "2c7af5b8e120bea3287cb9b2223d88548a340ecd1e91992f0b69c879cf053b86",
+    "extracted_at": "2026-09-12T23:59:37.366377+00:00",
+    "session_id": "01a0980f-a54c-7f42-ba4c-0ce4aa0ae163",
+    "usage": {
+      "input_tokens": 12645,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 836,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cdad8434bfb365ece96e5d97c8099eb0a1dde14c3fb4263e13a39c3dd7787400"
+    },
+    {
+      "id": "S2",
+      "sha256": "5db46648478af2b87203c29442dc3cafac3d874de8cbbf60678006e40ab92639"
+    },
+    {
+      "id": "S3",
+      "sha256": "8aeb303688856d75e5794ecc053d06a3b740b96b3dfd11371562ed3db7f42416"
+    },
+    {
+      "id": "S4",
+      "sha256": "01bb6c03ec716a12f1a67a68be7469567ab5e1cf655f4a6addd765c91df51ebc"
+    },
+    {
+      "id": "S5",
+      "sha256": "b34569651f7b1b13d2a850e139e8f531a8b39beecff941fcd4c7c01efdbc0f01"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007498",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies angle testing for similarity search in high-dimensional Euclidean spaces, covering angle comparison and angle thresholding.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches use random projection vectors drawn from Gaussian distributions; the abstract does not state a broader limitation beyond this design choice.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes two projection-based probabilistic kernel functions: one for angle comparison and one for angle thresholding.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses reference angles and deterministic projection-vector structure instead of Gaussian-drawn random projection vectors, without requiring asymptotic assumptions about the number of projections tending to infinity.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "system application",
+        "claim": "Applies the proposed kernel function to Approximate Nearest Neighbor Search (ANNS).",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by combining reference angles with deterministic projection vectors, in contrast to Gaussian-based random projections.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the kernels can be theoretically and experimentally shown to outperform Gaussian-distribution-based kernel functions; the abstract gives no quantitative comparison for this result.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report 2.5x--3x higher query-per-second throughput than HNSW when applying the approach to ANNS.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that code and data are publicly available.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Studies angle testing for similarity search in high-dimensional Euclidean spaces, targeting comparison and thresholding.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "Introduces two projection-based probabilistic kernels and replaces Gaussian random projections with reference-angle-based deterministic projection structure.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "claimed properties",
+        "summary": "Reports that the kernels require no asymptotic projection-count assumption and outperform Gaussian-based kernels theoretically and experimentally.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "application result",
+        "summary": "Reports a 2.5x--3x QPS advantage over HNSW in ANNS.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "availability",
+        "summary": "States that the implementation and data are available online.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates two related target operations—angle comparison and angle thresholding—and maps them to two kernels.",
+          "source_ids": [
+            "S1"
+          ]
+        },
+        "interpretation": "When a task has distinct operational goals, naming the corresponding method variants can make scope and contribution boundaries more precise.",
+        "application": "Define separate method variants when the decision rule or output objective changes, and state the mapping explicitly in the abstract.",
+        "exception": "Avoid splitting variants when they share the same objective and separation would add labels without meaningful functional distinction."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a design distinction, removal of an asymptotic requirement, and comparisons against Gaussian-based kernels and HNSW.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Aligning each methodological distinction with a property claim and a concrete benchmark comparison helps connect mechanism, benefit, and deployment relevance.",
+        "application": "For each proposed design change, state the claimed technical consequence and identify the comparison setting and metric used to support it.",
+        "exception": "Do not imply broad superiority when comparisons use different tasks, baselines, or metrics."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, evaluation settings, statistical uncertainty, or the conditions behind the theoretical and experimental comparisons.",
+      "The HNSW comparison reports QPS throughput but does not state recall, latency constraints, hardware, or workload details.",
+      "The abstract does not provide theorem statements or proof conditions, so theoretical claims cannot be independently assessed here."
+    ]
+  }
+}

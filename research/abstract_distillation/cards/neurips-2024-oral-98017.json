@@ -1,0 +1,213 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-98017",
+    "title": "ChaosBench: A Multi-Channel, Physics-Based Benchmark for Subseasonal-to-Seasonal Climate Prediction",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/98017"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "bec6bd833696b8f8f7757fa944d931d425975e6106b8560695c56b586c8b015f",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "115318298d8bc1b00d1ac494056a3b1e606182ad783ed865c1a912a13a9648f1",
+    "extracted_at": "2026-09-13T00:20:09.542082+00:00",
+    "session_id": "01a09822-7118-7d72-8833-8b22de33b5eb",
+    "usage": {
+      "input_tokens": 12872,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 866,
+      "reasoning_output_tokens": 74
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7c1f6bf1fc0857544b6cce4af8f547a4b41389ca5b1ed187817d475b5c958fb7"
+    },
+    {
+      "id": "S2",
+      "sha256": "86b89c0bab847bea20ff982b20d1473de72a94df320c25d10a9be2e1a65fa3a7"
+    },
+    {
+      "id": "S3",
+      "sha256": "3bdc3ad18fa564aa8f50899cfd245f74d00327fb5bc541a3ab1739ab6a925db0"
+    },
+    {
+      "id": "S4",
+      "sha256": "5d1275e3c5e645021503d069e62fdecb072b853506e3454aa7b49a07a1725134"
+    },
+    {
+      "id": "S5",
+      "sha256": "3f3be2f3d91782873793e4a466e2056a4e530ba27faa0fb68c19f00f6b1d588f"
+    },
+    {
+      "id": "S6",
+      "sha256": "616491f8220145304d0f48f98fe2fb362a7fd5d9696dc2baef3af93d33d78d32"
+    },
+    {
+      "id": "S7",
+      "sha256": "f1d47e2b31f487e112a6f4376a96bab66fcd992ad2ec54009ea161724cd8cb7e"
+    },
+    {
+      "id": "S8",
+      "sha256": "0bf3872eddb49db1c07d2a5fa06a0c796d4ea475c9a8cba3d4bac26e34995976"
+    },
+    {
+      "id": "S9",
+      "sha256": "43bd6a87bb4c9373309eed60fa55a550e5023d492b640a8863904f6dfaf4c346"
+    },
+    {
+      "id": "S10",
+      "sha256": "a06974ce316f7f4b3917758835c547a0fc69429458cdc960748cd58f8e550fef"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-98017",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Extend data-driven weather emulators to subseasonal-to-seasonal climate prediction for full Earth-system forecasting.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing benchmarks generally forecast only up to 15 days, lack broad operational baselines, and do not impose physics-based constraints for explainability.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark and resource",
+        "claim": "ChaosBench combines over 45 years of ocean, ice, land, and atmospheric reanalysis variables for Earth-system emulation with boundary conditions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "evaluation framework",
+        "claim": "It adds physics-based metrics alongside deterministic and probabilistic metrics to assess physically consistent ensembles accounting for the butterfly effect.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding and guidance",
+        "claim": "It evaluates data-driven emulators against forecasts from four national weather agencies and reports strategies involving ensembles, error-propagation control, and physics-informed models.",
+        "source_ids": [
+          "S7",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present ChaosBench as a challenging S2S benchmark integrating multi-component Earth-system data, physics-based metrics, and diverse agency forecast baselines.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that weather-scale methods fail on the S2S task, with performance collapsing to an unskilled climatology.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report demonstrating several strategies intended to extend existing weather emulators' predictability range, including ensembles, robust error-propagation control, and physics-informed models.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that the benchmark, datasets, and instructions are publicly available.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "S2S climate prediction is presented as important for disaster preparedness and decision making, but harder than weather forecasting because of boundary interactions, the butterfly effect, and limited physical understanding.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Existing benchmarks are described as short-range, narrow in baseline coverage, and lacking physics-based explainability constraints.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "benchmark design",
+        "summary": "ChaosBench extends the range to S2S, incorporates multi-component reanalysis over more than 45 years, adds physics-based metrics, and compares against agency forecasts and major data-driven models.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "findings and resource",
+        "summary": "The authors report collapse of weather-scale methods to climatology, identify several extension strategies, and provide the benchmark materials online.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects expanded Earth-system variables to boundary conditions and physics-based metrics to physical consistency and the butterfly effect; it also includes forecasts from four national weather agencies, addressing the separately stated gap in operational baseline coverage.",
+          "source_ids": [
+            "S2",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This makes the benchmark rationale traceable from task difficulty to evaluation design.",
+        "application": "When introducing a benchmark, map each omitted capability to a specific failure mode and add a corresponding data, metric, or comparison component.",
+        "exception": "This mapping may be unsuitable when the task's failure modes are not sufficiently established or cannot be operationalized."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative performance values, forecast horizons beyond the S2S label, dataset split details, or metric definitions.",
+      "The reported demonstrations and climatology collapse are not detailed enough to determine conditions, scope, or comparative effect sizes."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "lessons[0].source_observation.claim",
+      "before": "The abstract aligns each benchmark design choice with a named S2S difficulty: boundary-aware variables, physics-based metrics for nonlinear divergence, and operational forecast baselines.",
+      "after": "The abstract connects expanded Earth-system variables to boundary conditions and physics-based metrics to physical consistency and the butterfly effect; it also includes forecasts from four national weather agencies, addressing the separately stated gap in operational baseline coverage.",
+      "review_file": "reviews/flagged-batch-14.json",
+      "review_sha256": "ff9c3edd278c3f414d5a8ebc4a74177286b64d696386f76cb1a334980eb249a7",
+      "applied_at": "2026-09-13T00:42:27.405514+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

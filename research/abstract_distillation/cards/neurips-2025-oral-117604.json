@@ -1,0 +1,162 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-117604",
+    "title": "FuXi-Ocean: A Global Ocean Forecasting System with Sub-Daily Resolution",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/117604"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e797655af3ef022e80b8c8a40b1cce27da1bdd1ed9a5f913b8c16365c71fa73d",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "3e394f859bc7345eae3215c74d3f3ba5cd3e698011b820e16a3d8480a47507ac",
+    "extracted_at": "2026-09-13T00:22:03.430590+00:00",
+    "session_id": "01a09824-35e4-7f40-b448-19b44d553eb0",
+    "usage": {
+      "input_tokens": 12703,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 749,
+      "reasoning_output_tokens": 117
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "766b9188fbcc0d0d567735647d419ab747413c0a3979cef988616aa0b6fcf360"
+    },
+    {
+      "id": "S2",
+      "sha256": "1e13a5af7a61640defbda6fb8604304544be4c623d1728862423d73a435b8767"
+    },
+    {
+      "id": "S3",
+      "sha256": "9e6024a6d4d76b0aedcda248ab4f36e4f0a17b61baf828d80a68d249c16bc720"
+    },
+    {
+      "id": "S4",
+      "sha256": "9d268edc80a8408fba09d9c180a37c59c0e4565b5862d7d5e3a968e17a051070"
+    },
+    {
+      "id": "S5",
+      "sha256": "b84a69d434c5e9795eea830ace1ca1218e9545c09a63fc4d63bc8cd888fe8f49"
+    },
+    {
+      "id": "S6",
+      "sha256": "68939f99f093b1ed0fe234cda4a256d7096c3e636ccf4b6a0aa456ab3831ab62"
+    },
+    {
+      "id": "S7",
+      "sha256": "80534aa55a221ef8865b59b5fa475749020574dd332d3b7d48ecdf56ccb7066b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-117604",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable accurate, high-resolution global ocean forecasting for maritime operations and environmental monitoring.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Traditional numerical models are computationally intensive at fine scales, while data-driven methods generally operate daily and struggle with sub-daily error accumulation.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "system",
+        "claim": "Introduces FuXi-Ocean, a data-driven global ocean forecasting model targeting six-hourly, eddy-resolving 1/12° predictions to depths of 1500 meters.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Combines context-aware feature extraction and stacked-attention prediction with a Mixture-of-Time module that learns variable-specific reliability across temporal contexts.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe FuXi-Ocean as the first data-driven global ocean model achieving the stated six-hourly, 1/12° eddy-resolving resolution and 1500-meter depth.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report comprehensive experiments showing superior skill for temperature, salinity, and currents across multiple depths.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "High-resolution ocean forecasts are important, but conventional numerical models are costly and fine-scale accuracy is difficult to maintain.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Recent data-driven approaches improve computational efficiency but typically remain daily and accumulate errors in sub-daily forecasting.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "system_and_method",
+        "summary": "FuXi-Ocean targets six-hourly global forecasts at 1/12° resolution and uses temporal-context integration through the MoT module.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_evidence",
+        "summary": "The authors report superior prediction skill for key ocean variables across depths.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific failure mode—error accumulation in sequential sub-daily prediction—to a targeted mechanism that combines multiple temporal contexts and learns variable-specific reliability.",
+          "source_ids": [
+            "S3",
+            "S6"
+          ]
+        },
+        "interpretation": "A strong abstract can make the method–problem relationship explicit by matching a named mechanism to a named limitation.",
+        "application": "When presenting a forecasting method, state the operational failure mode first, then identify which component is intended to address it and how.",
+        "exception": "Avoid this framing when the proposed component is not directly motivated by a clearly stated failure mode or when the abstract lacks supporting evaluation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report quantitative metrics, baselines, dataset details, forecast lead times, or the conditions behind the claimed superior skill.",
+      "The stated first-of-kind distinction is author-reported and is not independently verified here."
+    ]
+  }
+}

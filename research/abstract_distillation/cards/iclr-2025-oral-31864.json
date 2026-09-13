@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31864",
+    "title": "Limits to scalable evaluation at the frontier: LLM as judge won’t beat twice the data",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31864"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "19d64685b9a5b688713d19d704517ebfaf4d37307d502dbbff42c1ea8a867728",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "cac1c7a2921e25c7c6f4edc2967eff40729826c943c0fcd0340ee0811921723d",
+    "extracted_at": "2026-09-12T23:55:02.683419+00:00",
+    "session_id": "01a0980b-7890-7810-86ac-bf0e2f219d84",
+    "usage": {
+      "input_tokens": 12773,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 746,
+      "reasoning_output_tokens": 67
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1554506943f4cbaa274e2c6ad42dbc994a7911a9a1a24ac5dd1b0f059f0379d7"
+    },
+    {
+      "id": "S2",
+      "sha256": "d6863a9e3a61189c201021a266e9e25092f66bd27bc730fc5c04946315e3c1f3"
+    },
+    {
+      "id": "S3",
+      "sha256": "c85bc1f9abcb862e3e0447580db66b26631403bd0b418b233c01afac1bc29d35"
+    },
+    {
+      "id": "S4",
+      "sha256": "aed6a3a88c3cb2dea303d5971b00de08c8055409dd3b03b7b619210bec115fa4"
+    },
+    {
+      "id": "S5",
+      "sha256": "0e05cde24804c347f058d3cfa85ae7e1cf49d1cb696930a38f2ba0d23db18774"
+    },
+    {
+      "id": "S6",
+      "sha256": "ef3c871c8a6bd3da59e380b35e67490866f5de6254f07b691466f0726029cce5"
+    },
+    {
+      "id": "S7",
+      "sha256": "f479fa4ecedd1845afe5c66250e9b8010e2fef3bc3c2fffc9637732893d193e2"
+    },
+    {
+      "id": "S8",
+      "sha256": "82e24dc5bcf1ed8267f8cc79915c13ef441102492c4e764498a38f913facb194"
+    },
+    {
+      "id": "S9",
+      "sha256": "0640be8b6132a3ec3bbe7631661a8f3b14340897fce775234280e117a1a917ae"
+    },
+    {
+      "id": "S10",
+      "sha256": "ea4ab0343f03e6cf89c19348682eab66155e2f8cc8f4b0123e9fb49e8044b1c2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31864",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how much a small set of high-quality labels can debias a large number of model-based judgments for scalable evaluation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Existing model-as-judge evaluation can introduce biases, while the achievable limits of debiasing were not established in the supplied abstract.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Derives a limit on ground-truth-label savings for debiasing model judgments.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that practical sample-size savings are more modest than the theoretical limit.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "type": "observations and future directions",
+        "claim": "Reports new observations about evaluation debiasing methods and identifies possible future-work avenues.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work by studying, in principle, how far debiasing methods can go and by providing a corresponding limit plus empirical observations.",
+      "source_ids": [
+        "S6",
+        "S7",
+        "S10"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that when the judge is no more accurate than the evaluated model, no debiasing method can reduce the required ground-truth labels by more than half.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report empirically that achievable sample-size savings in practice are even smaller than their theoretical limit suggests.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "High-quality annotations are becoming a bottleneck, motivating scalable evaluation without costly labeling.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "approach context",
+        "summary": "Using strong existing models as judges is presented as a cheap alternative, but self-preferencing and other biases can distort comparisons.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "theoretical result",
+        "summary": "The paper studies the principled ceiling on debiasing and reports a maximum twofold reduction in labels under the stated accuracy condition.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "practical implication",
+        "summary": "The authors report that real-world savings are more modest, especially when evaluating models that may outperform the judge.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract states the central limit together with the condition that the judge is no more accurate than the evaluated model, then contrasts it with empirical savings.",
+          "source_ids": [
+            "S7",
+            "S9"
+          ]
+        },
+        "interpretation": "Pairing a quantitative claim with its operating condition and a practical comparison makes the scope of the result easier to assess.",
+        "application": "State a method or scaling claim alongside its key regime condition, theoretical ceiling, and observed practical outcome.",
+        "exception": "This framing is less suitable when the relevant conditions or empirical benchmark are not yet defined."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal accuracy model, evaluation task, or assumptions underlying the theoretical limit.",
+      "The empirical evaluation's datasets, baselines, metrics, and numerical savings are not provided."
+    ]
+  }
+}

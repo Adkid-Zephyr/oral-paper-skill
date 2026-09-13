@@ -1,0 +1,227 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009781",
+    "title": "Train-before-Test Harmonizes Language Model Rankings",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009781"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "45a4dfcdeaf61242534adc48361ebf71b8aea5527cbe174d93fcbe29c4b69eff",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "110571b54f90734f99c80ef84402ee7f6cd8cb6e4b4040e2b92bb5b35f6f2d2a",
+    "extracted_at": "2026-09-13T00:03:30.453517+00:00",
+    "session_id": "01a09813-2d4e-7762-ba4c-167846927bdf",
+    "usage": {
+      "input_tokens": 12816,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 941,
+      "reasoning_output_tokens": 82
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5b3bef70e2a0ec68994362d6dd244621a05ec1bfbf597461d246aaf3b81fd584"
+    },
+    {
+      "id": "S2",
+      "sha256": "9e317d0fa2e5743771a39f5fa6ebd79c976a598923fc1a3573fffc12e2dd3054"
+    },
+    {
+      "id": "S3",
+      "sha256": "7ec192fbf68b58ab4b856322dddb6f3f79fa11e063c8e062db34b79387b56224"
+    },
+    {
+      "id": "S4",
+      "sha256": "a353227d9ea79c625e0594ece35c46cfaab076546a27c2fe58dfea5a568d9d20"
+    },
+    {
+      "id": "S5",
+      "sha256": "225e8bc1acb49002a905c25cbecfaca20434b72f7ff633d02c3b447744fc3f29"
+    },
+    {
+      "id": "S6",
+      "sha256": "c7153f14b953b6d074a588bca35b201262d7001c930db65a7af30cc790cf8f95"
+    },
+    {
+      "id": "S7",
+      "sha256": "86e0f4e0dce03c8b35dbed75cdfda0fd4178f1b28bc1a084572ae9d34ee4d120"
+    },
+    {
+      "id": "S8",
+      "sha256": "a5c99dc5fd5f3ed60b22c348da8cddcd1a46df1efb425f2222bccd1692c306d6"
+    },
+    {
+      "id": "S9",
+      "sha256": "31b7cf91b5da257d5b31e13f38422b4273e2aeeaf8272b8e479ace5bc08f8679"
+    },
+    {
+      "id": "S10",
+      "sha256": "de3b4b44c4c7a462f518961caa3fa64c4982dd52c2d9e826e009bbf463a66576"
+    },
+    {
+      "id": "S11",
+      "sha256": "8c7473bee4d730a6d2a643b96902cb843d974a31c853371e0ec5b2a13d4f297d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009781",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Language-model benchmarks can produce contradictory rankings, complicating model selection and comparison.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Direct-evaluation rankings are reported to have little external validity across benchmarks, motivating a complementary comparison perspective.",
+        "source_ids": [
+          "S3",
+          "S7"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces train-before-test: identical benchmark-specific fine-tuning precedes evaluation to compare model potential.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical evaluation",
+        "claim": "Evaluates model potential across 24 benchmarks and 61 models.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports consistent cross-benchmark model-potential rankings, restored perplexity–downstream-performance association, and an essentially rank-one model-score matrix.",
+        "source_ids": [
+          "S6",
+          "S8",
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish model-potential comparison through identical pre-evaluation fine-tuning from out-of-the-box direct evaluation.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that train-before-test rankings show remarkable consistency across all evaluated benchmarks.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "claim": "Authors report that model-potential rankings transfer across benchmarks, unlike traditional direct-evaluation rankings, which show little external validity.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "Authors report that pre-finetuning base-model perplexity predicts post-finetuning downstream performance and that the resulting score matrix is essentially rank one.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "problem",
+        "summary": "Contradictory benchmark rankings hinder model selection and comparison.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The paper compares achievable model performance by applying identical benchmark-specific fine-tuning before testing.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "cross-benchmark result",
+        "summary": "The authors report highly consistent rankings and stronger transfer between benchmarks under train-before-test.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "mechanistic interpretation",
+        "summary": "The authors report restored perplexity predictiveness and an essentially rank-one score matrix, associating consistency with a latent factor and inherent potential rather than fine-tuning artifacts.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "Direct evaluation is retained for deployment-ready performance, while train-before-test is framed as complementary for post-adaptation potential.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates deployment-ready performance under direct evaluation from achievable post-adaptation performance under train-before-test.",
+          "source_ids": [
+            "S3",
+            "S11"
+          ]
+        },
+        "interpretation": "A paper can make its evaluation target explicit when different protocols answer different practical questions.",
+        "application": "Define whether each experiment measures current usability or post-adaptation potential, and align the comparison protocol with that target.",
+        "exception": "This separation is unsuitable when the research question concerns only unadapted deployment behavior."
+      },
+      {
+        "source_observation": {
+          "claim": "The authors connect cross-benchmark ranking consistency with perplexity predictiveness and a rank-one score structure.",
+          "source_ids": [
+            "S8",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "Linking headline ranking results to an independent proxy and compact structural summary can support a more explanatory narrative.",
+        "application": "When reporting ranking stability, add a prespecified proxy or low-dimensional analysis that tests whether the pattern reflects a shared factor.",
+        "exception": "Such analyses may mislead when the proxy or factor model is not justified for the task family."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the 24 benchmarks, 61 models, fine-tuning data or procedures, statistical criteria, or effect sizes.",
+      "The basis for the claim that direct rankings have little external validity and the meaning of “essentially rank one” are not detailed.",
+      "The abstract does not establish whether train-before-test is operationally feasible or preferable for particular deployment settings."
+    ]
+  }
+}

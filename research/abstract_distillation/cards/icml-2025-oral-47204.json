@@ -1,0 +1,171 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47204",
+    "title": "AutoGFM: Automated Graph Foundation Model with Adaptive Architecture Customization",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47204"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4678789ac73e6a72317840cceee50d5400e0cc2b42fa44ae4110a8754bf43e12",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "b7ed976abd91aaa7d813317674f9859b75f7d2d33ad8375e6dc372a73ff3ca30",
+    "extracted_at": "2026-09-13T00:08:34.963853+00:00",
+    "session_id": "01a09817-ea1e-7ec1-b8c9-e10c4ddf3bc7",
+    "usage": {
+      "input_tokens": 12805,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 627,
+      "reasoning_output_tokens": 39
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9e299b1bf36b522bb3fe7155b1df84d8e7a4c41be10c50e19255e3b136770179"
+    },
+    {
+      "id": "S2",
+      "sha256": "4b27e5630826f4c4af8f61ad63326c910045b48d336d891b738a1ff4f83018d6"
+    },
+    {
+      "id": "S3",
+      "sha256": "87da46c3d1999241e6b2a5614c053976416aaae9f9bf6b3fda3141bc767ed010"
+    },
+    {
+      "id": "S4",
+      "sha256": "ce5c95622ba8d19ce73f051fa4432f5112feab9ce4b9f5fa8a1f54c56a12f7c8"
+    },
+    {
+      "id": "S5",
+      "sha256": "574136400158990ee26950fe3ddc4ea39b80edad20d3b30b7c9f4ff83df2d108"
+    },
+    {
+      "id": "S6",
+      "sha256": "b009a221abc4b29de8185ea0c6da81cd9f3fd5115ee000ac76f8a37390e7604b"
+    },
+    {
+      "id": "S7",
+      "sha256": "afe1e7d1d81ecd06ead1c3024576110585222861aec21096efaa2ae0d8b4c538"
+    },
+    {
+      "id": "S8",
+      "sha256": "634d9024b70eea70e5d33eec7d3b4e7add84b0bed41b0472e4ce6b8b97361a98"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47204",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses how to customize graph foundation model architectures across diverse graph domains and tasks.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing graph foundation models use hand-designed, fixed GNN architectures and therefore do not adapt architecture choice to specific domains and tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "AutoGFM discovers an invariant graph–architecture relationship and combines disentangled contrastive encoding, invariant-guided customization, and curriculum architecture customization.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The paper provides a theoretical analysis of limitations in existing graph neural architecture search.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that they explore graph neural architecture search for graph foundation models for the first time.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive experiments show AutoGFM outperforms baselines and achieves state-of-the-art performance.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Graph foundation models seek to transfer graph knowledge across domains and tasks, but existing models rely on fixed, hand-designed architectures.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "problem formulation",
+        "summary": "The paper frames graph neural architecture search for foundation models as challenged by architecture inconsistency: optimal architectures vary across domains and tasks.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "AutoGFM targets an invariant graph–architecture relationship through pattern disentanglement, adaptive customization, and curriculum-based search control.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report superior performance to baselines in extensive experiments.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract maps three explicitly named search challenges to three corresponding mechanisms: disentangled encoding, invariant-guided customization, and curriculum customization.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A contribution can be easier to assess when each stated obstacle has a visibly paired design response.",
+        "application": "For a multi-factor method, enumerate the central challenges and state one mechanism or analysis component addressing each.",
+        "exception": "This mapping may be unsuitable when the proposed components are tightly coupled or when the work has only one dominant challenge."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report datasets, task counts, numerical gains, baseline identities, or experimental conditions.",
+      "The abstract does not provide details of the theoretical analysis or establish the claimed firstness independently."
+    ]
+  }
+}

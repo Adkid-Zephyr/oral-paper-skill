@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31749",
+    "title": "Block Diffusion: Interpolating Between Autoregressive and Diffusion Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31749"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "212778b101d6b6c417ccacb845a893b28c7ae18722156e67a85c424730f06e78",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "941c3d5e0e853f68aefab9d6f51bdc397b1e58d495470f0124ac32a40bb65b06",
+    "extracted_at": "2026-09-12T23:50:31.829964+00:00",
+    "session_id": "01a09807-4edc-7742-b5f7-36729f0f844f",
+    "usage": {
+      "input_tokens": 12650,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 790,
+      "reasoning_output_tokens": 133
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "39e12e0c40784540529f153a2ed200cedf1df25b588d55e7c2d7966b7ece362f"
+    },
+    {
+      "id": "S2",
+      "sha256": "be6d22326468e6201ababd3265d00a346760b5a572a6da4d350ca8f51895568b"
+    },
+    {
+      "id": "S3",
+      "sha256": "01a2269c841cb7d10981f2b2ab11c6a23f45935b8d6810b2252f97d22ab50216"
+    },
+    {
+      "id": "S4",
+      "sha256": "5c344973f9b89382068281a6102befd679aeb2c74f0188fe2047ce21f8715ff5"
+    },
+    {
+      "id": "S5",
+      "sha256": "0cf1e9186a305da8cf045575e096fd00c6a38922fcbb65c81ea83ae07f1e82eb"
+    },
+    {
+      "id": "S6",
+      "sha256": "b0b9e0d9666af8de5177170d8bd2b534b056111668cfe3f8cd5e552882253f7c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31749",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work addresses language generation and modeling across diffusion and autoregressive paradigms.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies diffusion language models as limited by weaker likelihood modeling and fixed-length generation, despite benefits in parallelization and controllability.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces block diffusion language models that interpolate between discrete denoising diffusion and autoregressive models.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "training recipe",
+        "claim": "Proposes efficient training with gradient-variance estimators and data-driven noise schedules intended to reduce variance.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system and resource",
+        "claim": "Provides code and model weights through the project page.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish block diffusion as a class that bridges discrete denoising diffusion and autoregressive modeling while supporting flexible-length generation and faster inference mechanisms.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art performance among diffusion models on language-modeling benchmarks and generation of arbitrary-length sequences.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Diffusion language models offer potential parallelized generation and controllability but are described as weaker in likelihood modeling and restricted to fixed lengths.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The paper introduces block diffusion to interpolate between diffusion and autoregressive models.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "design",
+        "summary": "The proposed recipe combines efficient training, gradient-variance estimation, and data-driven noise scheduling; inference uses KV caching and parallel token sampling.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report leading diffusion-model benchmark performance and arbitrary-length generation, and release implementation artifacts.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a hybrid modeling design to specific implementation mechanisms—KV caching, parallel token sampling, variance estimators, and data-driven noise schedules—and then states capability and benchmark outcomes.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A method claim is more informative when the abstract links the conceptual idea, operational recipe, and reported consequences.",
+        "application": "When presenting a new hybrid architecture, map each claimed advantage to the concrete mechanism intended to produce it, then report the corresponding evaluation or capability.",
+        "exception": "This structure is unsuitable when the mechanism-to-outcome relationship is only speculative or when the abstract lacks evidence for the claimed consequence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide benchmark names, scores, baselines, or quantitative evidence for the claimed state-of-the-art result.",
+      "The extent of inference speedup, likelihood-modeling improvement, and conditions for flexible- or arbitrary-length generation are unspecified.",
+      "The abstract does not establish independent verification of the reported results or priority of the stated distinction."
+    ]
+  }
+}

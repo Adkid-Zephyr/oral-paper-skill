@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-116803",
+    "title": "Interactive Cross-modal Learning for Text-3D Scene Retrieval",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/116803"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "96b6fbfced9e34f6e74f2f5d6a68fe52e94ed397e03dd6e51db4e94680fe7135",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "9c34a9fc45069d0cd13f4faf1264807d19f849c637b2afd184bce7113fa13179",
+    "extracted_at": "2026-09-13T00:21:31.151596+00:00",
+    "session_id": "01a09823-ba41-7d50-8afa-40ac8daad48c",
+    "usage": {
+      "input_tokens": 12822,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 747,
+      "reasoning_output_tokens": 79
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "270f74d95d34b65c6b0cb6cb7053b1a78c0bc6f0e593791ec9ee3e0c5a4e5b54"
+    },
+    {
+      "id": "S2",
+      "sha256": "c158f664a8821da5897dfb46a963676a88c9b8c070398475404976ac09c7c1a0"
+    },
+    {
+      "id": "S3",
+      "sha256": "264114569c00a3fffb61f2c82c3fa3711b9831465ad65d3e645d337b654445a4"
+    },
+    {
+      "id": "S4",
+      "sha256": "4ee143703b23eca91a5e18028ef6bba78ebb9ed394a110fbf157b4647922efaa"
+    },
+    {
+      "id": "S5",
+      "sha256": "a20f4a826f98c57ef7a9589c4d48d8b7c6c1f6b9d1c8ba4e185ae0047821d1a4"
+    },
+    {
+      "id": "S6",
+      "sha256": "49cbce0995d20af48aaf40a3f7d26ccc4d699057e3db80396a083d97efc0867e"
+    },
+    {
+      "id": "S7",
+      "sha256": "b739817539e76c7cd85d2f25accf383389604ccff7449a5ea65a2c43ee91c8ad"
+    },
+    {
+      "id": "S8",
+      "sha256": "0d7d24de82a960a6fc1e25390d896b2ceda6d961e9c9b4399d1cadf0abf3b945"
+    },
+    {
+      "id": "S9",
+      "sha256": "9b82db45bd2e1ba5f7439ebf465dbe91a91aca7ae5f7bcb5043e3ce9fbd5fc80"
+    },
+    {
+      "id": "S10",
+      "sha256": "ddac59ae659fd579cd57a7774c862f8164f80c0e0ab712e4b19899daacea894f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-116803",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Retrieve relevant 3D scenes from linguistic queries despite incomplete user descriptions.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing T3SR methods implicitly assume information-complete queries, which is difficult to obtain in practical deployments and can degrade performance.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes IDeal, an interactive text–3D scene retrieval method that iteratively improves text–scene alignment.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "Introduces IRR, using successive questioner–answerer rounds for detailed probing or exploratory divergence, followed by feature- and semantic-level fusion for scene reranking.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "adaptation strategy",
+        "claim": "Introduces IAT for contrastive domain adaptation between queries and interactive texts, addressing discriminability and diversity risks in augmented text features.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe IDeal as a novel interactive retrieval method centered on continuous interaction for text–3D scene alignment.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report extensive experiments on three datasets demonstrating IDeal's superiority.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "T3SR retrieves relevant scenes from linguistic queries.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Traditional methods assume complete query descriptions, whereas practical users and models may not provide them.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "IDeal addresses this through continuous interaction, with IRR conducting successive questioner–answerer refinement rounds and multimodal fusion.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "domain adaptation",
+        "summary": "IAT adapts augmented interactive-text features toward the interaction-text domain using contrastive learning.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "evaluation and access",
+        "summary": "The authors report results across three datasets and provide code.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper separates interactive query refinement from domain adaptation: IRR generates and fuses interaction information, while IAT addresses the resulting query-domain mismatch.",
+          "source_ids": [
+            "S5",
+            "S8"
+          ]
+        },
+        "interpretation": "This decomposition can make a multimodal retrieval proposal easier to explain and align each component with a distinct failure mode.",
+        "application": "When proposing an interactive retrieval system, explicitly map each module to either information acquisition, representation fusion, or domain alignment, then evaluate those roles separately.",
+        "exception": "This decomposition may be unsuitable when interaction text is already in-domain or when the application cannot support multi-round questioning."
+      }
+    ],
+    "unknowns": [
+      "No dataset names, metrics, baselines, numerical results, or ablation findings are given, so the reported superiority cannot be quantified or attributed to individual components.",
+      "The abstract does not specify how questions and answers are generated or how many interaction rounds are used."
+    ]
+  }
+}

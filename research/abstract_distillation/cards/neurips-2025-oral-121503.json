@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-121503",
+    "title": "BEDLAM2.0: Synthetic humans and cameras in motion",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/121503"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "793269d08cd9d9fbf99796ea8038bf35e22415d198f1f468bcc242a34e5ed0ef",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "3c53217c9cca944f1af148e792ad49b22a8af68a99a6843021ce7780b8735e5f",
+    "extracted_at": "2026-09-13T00:23:29.866502+00:00",
+    "session_id": "01a09825-80eb-7561-a254-db5b0078aa2e",
+    "usage": {
+      "input_tokens": 12795,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 819,
+      "reasoning_output_tokens": 67
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fe23fc4ca6340d4f572930be641194d8c7a3f707ad83d0d1ef9001b598fce9b1"
+    },
+    {
+      "id": "S2",
+      "sha256": "361ad34cbbdf81325702b937529a04a8f526e3f1d9c611350f53d6c4134075f2"
+    },
+    {
+      "id": "S3",
+      "sha256": "5817d85ffc803189f897959201270249821ed1f85fc731526a9b0334a6d3decc"
+    },
+    {
+      "id": "S4",
+      "sha256": "c554bb1fefa386d5d03a31f91dcfc011c3aebd6f0ea405d4ffda8b21318ea32e"
+    },
+    {
+      "id": "S5",
+      "sha256": "f241092b096e990c52f4beb002ec39ba914164d67efcfe6ced8bdc0b53e697d9"
+    },
+    {
+      "id": "S6",
+      "sha256": "c90fa4a23ce209176d1bf417b2bacb47a35c2662d5cabe693e201413b2a9b38f"
+    },
+    {
+      "id": "S7",
+      "sha256": "86bd3a6b4d689f3cc141ab45eb922887492a6be95611fa9202a3e89960d08064"
+    },
+    {
+      "id": "S8",
+      "sha256": "ac72287511e15979a95d1c69d89fa16e9a27499e0184709e43f09844e7163313"
+    },
+    {
+      "id": "S9",
+      "sha256": "e9b013a59b2022cb892b56d44fd75837c18370bb8e2caae09a62b64cd7dd9f6d"
+    },
+    {
+      "id": "S10",
+      "sha256": "b6db04510d61019df35325f56921e427e9ca08b66675ce17ab03d0d8187956ce"
+    },
+    {
+      "id": "S11",
+      "sha256": "df2d16c815a1bacf49f2ac0ee8f98809430baad8b017ecee98b5b505086cec76"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-121503",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Estimate 3D human motion in world coordinates from video when both the human and camera may move.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Progress is limited by the lack of rich video data containing ground-truth human and camera movement.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "dataset",
+        "claim": "Introduces BEDLAM2.0, extending BEDLAM with more diverse and realistic cameras, camera motions, body shapes, motions, clothing, hair, and 3D environments, plus shoes.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Provides rendered videos, ground-truth body parameters, camera motions, and available 3D assets or third-party links for research use.",
+        "source_ids": [
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish BEDLAM2.0 from BEDLAM through expanded realism and diversity, especially for cameras and camera motion, and by adding shoes absent from BEDLAM.",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that BEDLAM2.0 is significantly better than BEDLAM, particularly for methods estimating humans in world coordinates.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that state-of-the-art methods trained on BEDLAM2.0 achieve significantly higher accuracy than the same comparison using BEDLAM.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "World-coordinate 3D human-motion estimation is difficult, especially with simultaneous human and camera motion.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "The authors identify missing video data with ground-truth human and camera movement as limiting progress.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "dataset",
+        "summary": "BEDLAM2.0 addresses this gap by broadening camera, human, appearance, and environment diversity and adding shoes.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "comparison",
+        "summary": "The authors compare methods trained on BEDLAM versus BEDLAM2.0 and report significantly improved accuracy with BEDLAM2.0.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "release",
+        "summary": "The dataset release includes rendered videos, ground truth, camera motions, and accessible 3D assets or links.",
+        "source_ids": [
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects dataset design choices—realistic camera motion and world-coordinate ground truth—to the target estimation setting, then reports a direct BEDLAM-versus-BEDLAM2.0 training comparison.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S6",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "A dataset contribution is more persuasive when its added variation is explicitly aligned with the failure conditions of the target task and tested through a matched baseline comparison.",
+        "application": "When presenting a new benchmark, map each added data factor to a stated deployment challenge and compare identical methods trained on the old and new resources.",
+        "exception": "This framing is unsuitable when the proposed resource is not intended for model training or when matched training comparisons are impossible."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical accuracy gains, dataset size, splits, evaluation protocol, or details of the compared methods.",
+      "It does not specify how the provided assets and third-party links may be used or whether all released components are equally available."
+    ]
+  }
+}

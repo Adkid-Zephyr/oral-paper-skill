@@ -1,0 +1,157 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97994",
+    "title": "The Sample-Communication Complexity Trade-off in Federated Q-Learning",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97994"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5d234e3e8d4ec65e433392c9ad668d3278dafe72ff37fa0a57176e5a157b48f2",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "76e1799ec39cf43a4781d66ff4fe805b2eb1cdcc2272e3bf13db07d74c988efa",
+    "extracted_at": "2026-09-13T00:19:41.146488+00:00",
+    "session_id": "01a09822-03b5-71a3-95d9-71dc06cdd4c1",
+    "usage": {
+      "input_tokens": 12642,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 788,
+      "reasoning_output_tokens": 131
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c23fb69fbcd58505540edaf51fe15695ac36c35dc775bbfad9c4fa1aece678e7"
+    },
+    {
+      "id": "S2",
+      "sha256": "4237c979b40fa5808a389eaccc3e7717127fd9b8238e2f9f494f2fcbd3362182"
+    },
+    {
+      "id": "S3",
+      "sha256": "ebf5141752148a14efad2eadcda09a22c823aecd23aa152a3995e6e069e7c83e"
+    },
+    {
+      "id": "S4",
+      "sha256": "dfef453df79123995eb7fbf6f8c8258334445992d892a69f6972cb5d4612a464"
+    },
+    {
+      "id": "S5",
+      "sha256": "8d5f1ba5466130c8200cdc1d3dcc0d52e972731c7a855112f86cbd2dd2e6ee0f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97994",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies Federated Q-learning, in which M agents collaboratively learn the optimal Q-function of an unknown infinite-horizon MDP with finite state and action spaces, focusing on the sample–communication trade-off for intermittent-communication algorithms.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Establishes a converse lower bound: linear sample-complexity speedup in the number of agents requires communication cost at least Ω(1/(1−γ)).",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes Fed-DVR-Q, stated to be the first Federated Q-learning algorithm achieving order-optimal sample and communication complexities simultaneously.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "characterization",
+        "claim": "Combines the converse and algorithmic results to provide a complete characterization of the sample–communication complexity trade-off.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "Fed-DVR-Q is presented as the first Federated Q-learning algorithm to simultaneously achieve order-optimal sample and communication complexities.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that any Federated Q-learning method with linear sample-complexity speedup in the number of agents must incur communication cost at least Ω(1/(1−γ)), where γ is the discount factor.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that Fed-DVR-Q simultaneously achieves order-optimal sample and communication complexities.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Defines collaborative Federated Q-learning for finite-state, finite-action, infinite-horizon MDPs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "Focuses the analysis on the sample–communication trade-off for intermittent communication algorithms.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "Provides a converse lower bound and introduces Fed-DVR-Q, which together are claimed to characterize the trade-off completely.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a converse lower bound with a constructive algorithmic result and then frames their combination as a complete trade-off characterization.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Matching limits with an algorithm can make a complexity claim more structurally informative than presenting either result alone.",
+        "application": "When studying a resource trade-off, state a necessary lower bound and design an approach that matches it under the same complexity measures.",
+        "exception": "This framing is unsuitable when matching bounds are unavailable or when the lower bound and algorithm rely on incompatible assumptions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the assumptions, exact complexity definitions, or conditions under which the Ω(1/(1−γ)) lower bound and Fed-DVR-Q guarantees hold.",
+      "Details of Fed-DVR-Q and the meaning of order-optimal are not provided."
+    ]
+  }
+}

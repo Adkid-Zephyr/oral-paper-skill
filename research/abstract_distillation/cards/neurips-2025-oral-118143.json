@@ -1,0 +1,211 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-118143",
+    "title": "Learning Linear Attention in Polynomial Time",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/118143"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "931dfc14090f24c693281345fbdafb3ace76298c48771483d49f5a6a0bc12952",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "04d4d2c3eb4f6a95f60168148dbc44db5bd6be393b60117a6202babb2800d617",
+    "extracted_at": "2026-09-13T00:22:26.470064+00:00",
+    "session_id": "01a09824-7d8b-7013-9a10-15e340d485c3",
+    "usage": {
+      "input_tokens": 12667,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 870,
+      "reasoning_output_tokens": 101
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "17b25294132658f186bfb30f2dd357f5850b310f53ab27356630b22e864273ae"
+    },
+    {
+      "id": "S2",
+      "sha256": "37a30b5c0e05fb50f8447978fa7040e0366e0b9ae0ea263d04853c05e4c33b87"
+    },
+    {
+      "id": "S3",
+      "sha256": "c7e2c55c79a9b7b5e2ead43a88df6abb54ca10aee88f6287eeb2ff4256b971bd"
+    },
+    {
+      "id": "S4",
+      "sha256": "196a2a67f313ba01e8dc56b16d1fc3ba3f0492c9bcb239281ac57f5564893443"
+    },
+    {
+      "id": "S5",
+      "sha256": "37df7ab99185b5e75e0a8d17b83131cfbd47c65cd548c10aed603a25297a26f2"
+    },
+    {
+      "id": "S6",
+      "sha256": "9e3c09b3890bb16f8d49faf19a01931756eea5c35a0bce65172f01ffdc7e3db1"
+    },
+    {
+      "id": "S7",
+      "sha256": "ded87857dd050905b8fba59bae9c145467d675a4fda2c4dd960a8ec5b57e6ec3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-118143",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine whether single-layer Transformers with linear attention can be efficiently learned from data.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Prior work addressed Transformer expressivity, but efficient learnability from data remained open.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Provides polynomial-time strong, agnostic PAC learning results for single-layer linear-attention Transformers.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Recasts optimal multi-head linear-attention learning as optimal kernel prediction in a suitably defined RKHS.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "generalization method",
+        "claim": "Constructs a polynomial-time dataset check for whether all best-fit multi-head networks compute identically, proposed as a notion relevant to out-of-distribution generalization.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize their results as the first polynomial-time learnability results of this type for single-layer Transformers with linear attention.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report empirical validation on learning random linear-attention networks, key–value associations, and executing finite automata.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report a polynomial-time test for identical computation among all best-fit networks on a dataset.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Prior research studied Transformer expressivity through Boolean-circuit and Turing-machine simulation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "open question",
+        "summary": "Efficient learning of Transformers from data is identified as unresolved.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "core result",
+        "summary": "The study introduces polynomial-time strong, agnostic PAC learnability results for single-layer linear attention and connects optimal learning to RKHS prediction.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "generalization and validation",
+        "summary": "It proposes a polynomial-time identical-computation check for best-fit networks and reports validation on three canonical task families.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "positioning",
+        "summary": "The authors frame the findings as bridging Transformer expressivity and learnability.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links an attention-learning problem to optimal kernel prediction in a suitably defined RKHS.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "A representation change can make the computational structure of a learning problem more tractable and expose applicable theory.",
+        "application": "When presenting a theoretical learning result, explicitly identify an equivalent optimization or prediction formulation and state what it enables computationally.",
+        "exception": "This framing is unsuitable when the equivalence is only heuristic or does not preserve the target objective."
+      },
+      {
+        "source_observation": {
+          "claim": "Given a dataset, the abstract describes a polynomial-time check of whether all best-fit multi-head linear-attention networks perform an identical computation, and connects this property to out-of-distribution generalization.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "Generalization claims can be sharpened by defining a concrete, testable property of the solution set.",
+        "application": "For models with multiple empirical optima, define and analyze a solution-set property that is computable from observed data before making broader generalization claims.",
+        "exception": "This approach may be unsuitable when the relevant model class is misspecified or when its best-fit solution set cannot be characterized by a tractable check."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the precise model assumptions, RKHS construction, dataset conditions, or polynomial-time complexity bounds.",
+      "The empirical abstract does not report metrics, baselines, dataset sizes, or quantitative results."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "lessons[1].source_observation.claim",
+      "before": "The abstract separates fitting behavior from a polynomial-time check that all best-fit models compute identically on the dataset, connecting this property to out-of-distribution generalization.",
+      "after": "Given a dataset, the abstract describes a polynomial-time check of whether all best-fit multi-head linear-attention networks perform an identical computation, and connects this property to out-of-distribution generalization.",
+      "review_file": "reviews/audit-neurips-2025.json",
+      "review_sha256": "079eb7ffb690a0165c91f704b9564c45997aabb0a7be4169da64e04491f044d4",
+      "applied_at": "2026-09-13T00:27:36.270230+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "lessons[1].exception",
+      "before": "Identical computation on the supplied data need not address distribution shifts outside the stated setting.",
+      "after": "This approach may be unsuitable when the relevant model class is misspecified or when its best-fit solution set cannot be characterized by a tractable check.",
+      "review_file": "reviews/audit-neurips-2025.json",
+      "review_sha256": "079eb7ffb690a0165c91f704b9564c45997aabb0a7be4169da64e04491f044d4",
+      "applied_at": "2026-09-13T00:27:36.271300+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

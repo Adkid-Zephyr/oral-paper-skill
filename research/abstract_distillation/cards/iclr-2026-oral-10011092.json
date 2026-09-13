@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011092",
+    "title": "Gaia2: Benchmarking LLM Agents on Dynamic and Asynchronous Environments",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011092"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "86c02767fece57fe5d267d5d5b451a4872d7dd9fc0ac2174889aceebff6a6491",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "f38918d487db14dd3e82ddc48174bd0693a7c040785deedbbe5164db4af75421",
+    "extracted_at": "2026-09-13T00:05:29.681204+00:00",
+    "session_id": "01a09815-0aeb-7270-9463-dc9c9f87f8a8",
+    "usage": {
+      "input_tokens": 12745,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 809,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4e5702fa4406ee7eec3f78860dd322e56ed9f46f5e13334ab87233d0e94e2d3d"
+    },
+    {
+      "id": "S2",
+      "sha256": "fa6f05f91096c7f49997322bef4b6fb8150fa32cd7004430e7fcba5c701b54c3"
+    },
+    {
+      "id": "S3",
+      "sha256": "b2b30f4c6b541ca4bc18b5405f8755c810c02b2bcddb190a55b93744681eac1d"
+    },
+    {
+      "id": "S4",
+      "sha256": "12e8a4d5fc9bab276a3d7011ebe23533c950be4337cae8183d2d6fb072e3f424"
+    },
+    {
+      "id": "S5",
+      "sha256": "1ecabd86510152baf941e8350c45a6b6eabc556c2daf3c4cb691502902517175"
+    },
+    {
+      "id": "S6",
+      "sha256": "024574fa9cbeab40db5bb16d7cc86c5e7d404f3f6b38c672d5e95fa54a1604fb"
+    },
+    {
+      "id": "S7",
+      "sha256": "0a92f9d30ba7193b98e3a38e4fad725a436cbea86ff67dc46f2f64473dfabd49"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011092",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate LLM agents in realistic asynchronous environments with temporal constraints, dynamic events, ambiguity, and multi-agent collaboration.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Prior evaluations are described as predominantly static or synchronous and do not capture these conditions.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces Gaia2 for evaluating LLM agents in dynamic, asynchronous environments.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "evaluation infrastructure",
+        "claim": "Pairs each scenario with a write-action verifier for fine-grained action-level evaluation and potential reinforcement learning from verifiable rewards.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "system and resource",
+        "claim": "Releases Gaia2 with the open-source Agents Research Environments platform, using a consumer environment and an extensible design.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The benchmark combines independently evolving environments, temporal constraints, noisy dynamic events, ambiguity, collaboration, and write-action verification in one evaluation setting.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that no evaluated model dominates across capabilities; GPT-5 achieves the strongest overall score at 42% pass@1 but fails on time-sensitive tasks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that Claude-4 Sonnet trades accuracy and speed for cost, while Kimi-K2 leads among open-source models at 21% pass@1.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report trade-offs among reasoning, efficiency, and robustness, alongside challenges in closing the sim2real gap.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "benchmark motivation",
+        "summary": "Gaia2 targets realistic asynchronous agent evaluation beyond static or synchronous settings.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "evaluation mechanism",
+        "summary": "Scenario-specific write-action verifiers support fine-grained action-level assessment and verifiable-reward training.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "reported model results",
+        "summary": "Model comparisons show capability trade-offs rather than a single dominant system, with reported pass@1 figures and time-sensitive failures.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "release goal",
+        "summary": "Gaia2 and the ARE framework are presented as extensible infrastructure for developing, benchmarking, and training practical agents.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links specific environment demands to a write-action verifier and then reports capability-specific model trade-offs.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Aligning benchmark conditions, evaluation granularity, and reported outcomes can make aggregate scores less misleading.",
+        "application": "For an agent benchmark, define scenario-level environmental demands and evaluate the concrete actions that satisfy them, then report per-capability failures alongside aggregate scores.",
+        "exception": "This approach may be unsuitable when outcomes cannot be represented as verifiable writes or when interaction timing is irrelevant."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the number or composition of scenarios, verifier implementation, or evaluation protocol.",
+      "The reported model comparisons lack details on prompts, budgets, hardware, cost measurement, and statistical uncertainty.",
+      "The basis and evaluation procedure for the claimed sim2real challenges are not described."
+    ]
+  }
+}

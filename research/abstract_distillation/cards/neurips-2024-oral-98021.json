@@ -1,0 +1,208 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-98021",
+    "title": "MedCalc-Bench: Evaluating Large Language Models for Medical Calculations",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/98021"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3b83f0ef20e7feb2c222a00a6670df71a9c94dba604d50b4862ff57ef399cab6",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "2bd34a45967622307ef26e9c2c68ffcff1e7d8850669dbe664258a692c026de5",
+    "extracted_at": "2026-09-13T00:20:21.514722+00:00",
+    "session_id": "01a09822-9829-7143-a452-a6383a47bd48",
+    "usage": {
+      "input_tokens": 12775,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 968,
+      "reasoning_output_tokens": 146
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3c2a50307165dabd7637ffe40a22018a24251f0f629e725b330294c494ef4bf0"
+    },
+    {
+      "id": "S2",
+      "sha256": "19495e81d3f44beea877f2682bd935fb451f16ed93c3ffd56ecac34d7fc89713"
+    },
+    {
+      "id": "S3",
+      "sha256": "6e44e4170fa6a694e50078effe6d5c426c428d6e36997e8386a16f1a1316e74c"
+    },
+    {
+      "id": "S4",
+      "sha256": "4b12e2e72943dc80965de9c424ebbd7b665d16d3461e8be82c8878714e863410"
+    },
+    {
+      "id": "S5",
+      "sha256": "52d30176efa01822c3d29cd826d182e08b171c4fbc630081ee6b8679d30f99a0"
+    },
+    {
+      "id": "S6",
+      "sha256": "17ef1f2fde13ce1eaa73612230ef8a0f22eca1a11f3c81ed35f4d64032aaa258"
+    },
+    {
+      "id": "S7",
+      "sha256": "ca99cc43d27dbdf7580e47210edcce6ac5b84f2f8dd33b559076794228b720c9"
+    },
+    {
+      "id": "S8",
+      "sha256": "a575dc42eeb7aa813b00236287521edf5f9c0a50744a36d229e76ff4202b613e"
+    },
+    {
+      "id": "S9",
+      "sha256": "c0b2d10271be27ec6a8a57df36b6a74bd6a49b49844cfcfae05c2acfff23c51d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-98021",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate whether LLMs can perform quantitative medical calculations used in clinical decision support, including equation- and rule-based reasoning.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing medical LLM benchmarks primarily assess domain-knowledge question answering and descriptive reasoning, leaving medical calculation capability insufficiently evaluated.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "Introduces MedCalc-Bench, an evaluation dataset with over 1,000 manually reviewed instances spanning 55 medical calculation tasks.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "dataset design",
+        "claim": "Each instance pairs a patient note and calculation question with a ground-truth value and step-by-step solution explanation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that current LLMs show potential but are not effective enough for clinical settings, with errors in entity extraction, equation or rule selection, and arithmetic.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe MedCalc-Bench as a first-of-its-kind dataset focused on evaluating LLM medical calculation capability.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that evaluation results indicate potential for LLMs in medical calculation, while none of the evaluated models are effective enough for clinical settings.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report recurring failure modes involving incorrect entity extraction, inappropriate equations or rules, and arithmetic mistakes.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report public availability of the benchmark and its associated resource.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Medical LLM benchmarks mainly target knowledge-based question answering and descriptive reasoning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "Clinical calculators add quantitative, equation-based, and rule-based reasoning to evidence-based decision support.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "resource",
+        "summary": "The authors introduce MedCalc-Bench, covering more than 1,000 manually reviewed instances across 55 calculation tasks, with answers and solution steps.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "Evaluation reportedly shows potential but insufficient clinical effectiveness, with errors spanning extraction, rule or equation selection, and arithmetic.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The study aims to expose quantitative reasoning gaps and encourage future improvements.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The benchmark defines each task instance with the clinical context, requested calculation, ground truth, and step-by-step derivation.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "This structure aligns evaluation targets with both the final answer and the reasoning process needed to obtain it.",
+        "application": "For a specialized reasoning benchmark, specify inputs, target outputs, reference answers, and an inspectable derivation format per instance.",
+        "exception": "A derivation may be unsuitable when the task has multiple equally valid solution paths or when exposing intermediate reasoning is not part of the evaluation goal."
+      },
+      {
+        "source_observation": {
+          "claim": "The authors distinguish three error sources: entity extraction, equation or rule selection, and arithmetic execution.",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        "interpretation": "Breaking failures into stages can make aggregate performance results more actionable.",
+        "application": "Report error categories that map directly to the task pipeline, then connect each category to a targeted improvement direction.",
+        "exception": "Such categories may oversimplify failures when errors interact or when the pipeline boundaries cannot be reliably annotated."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify which models were evaluated, the metrics, task distribution, or comparative baselines.",
+      "The reported claim about clinical effectiveness lacks details on clinical context, threshold, and evaluation conditions."
+    ]
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47165",
+    "title": "Cross-environment Cooperation Enables Zero-shot Multi-agent Coordination",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47165"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9d9f070aa959c1a6ff6059d819d17462ab2fa9854c1a948ac368fb7ea26139d9",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "9aa48ef0bf22bf42e4074cfe3e7d1d6d56134e8519bf49e4bfb43d5d52be2338",
+    "extracted_at": "2026-09-13T00:07:05.892761+00:00",
+    "session_id": "01a09816-82fc-7e12-8fda-4702c9b12e33",
+    "usage": {
+      "input_tokens": 12685,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 741,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "734aa8c5c79db9811bcb34ba8bf67bb56570f760de6e3901f75728e3c476e3aa"
+    },
+    {
+      "id": "S2",
+      "sha256": "264433dde75e5e851a58edba46c1adda83f34f76332913b497ecade2180234a3"
+    },
+    {
+      "id": "S3",
+      "sha256": "271118833f0e30ee622a5dbe8f344d80bfc34bdef0c9130af492fba000125035"
+    },
+    {
+      "id": "S4",
+      "sha256": "d756da7d6f4480ab3be8cde7e4319eb5dfece6f01fc943950f90a0db8472d469"
+    },
+    {
+      "id": "S5",
+      "sha256": "bef30d4e024033e4cc7fd8aa540f659c1cdd3b5718523c529e2d68c644bbe4c7"
+    },
+    {
+      "id": "S6",
+      "sha256": "413e91dca819878af942974931a32a4d152b1a1995a4657143aeaa1c9085ef67"
+    },
+    {
+      "id": "S7",
+      "sha256": "acd30dd725d0d6c98a2ef1f2e453f60c06e381d27eb67374196ebffed8990cab"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47165",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable zero-shot coordination with unfamiliar partners across unfamiliar cooperative tasks.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Prior approaches specialized to a single task and therefore did not generalize to new tasks, including similar ones.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Cross-Environment Cooperation (CEC), training with one partner across a distribution of environments to develop general cooperative skills.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Introduces two JAX-based procedural generators for creating billions of solvable coordination challenges.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that CEC outperforms competitive baselines quantitatively and qualitatively when collaborating with real people.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish CEC as a new paradigm for cross-environment cooperation and propose procedural generators at billion-challenge scale.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report quantitative and qualitative outperformance over competitive baselines in collaboration with real people.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that agents trained across many unique scenarios develop general norms that are effective with different partners.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Frames zero-shot adaptation to new cooperative partners as important for human-compatible AI.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Identifies single-task cooperative training as insufficient for generalization to new tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "Studies reinforcement learning across an environment distribution with a single partner, targeting transfer to many partners and problems.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "infrastructure",
+        "summary": "Provides two procedural JAX generators capable of producing billions of solvable coordination challenges.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported implication",
+        "summary": "Presents CEC results against baselines and connects cross-scenario training to general norms and human interaction without human data.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly aligns training diversity—many environments—with the intended transfer target of many new partners and problems.",
+          "source_ids": [
+            "S3",
+            "S6"
+          ]
+        },
+        "interpretation": "Matching variation in training conditions to variation at deployment can make a generalization claim more concrete.",
+        "application": "Define training and evaluation axes separately, then report whether held-out variation spans both task environments and interaction partners.",
+        "exception": "This framing may be unsuitable when deployment conditions are fixed or when diversity introduces solvability, optimization, or compute constraints that dominate the result."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the environments, partner-training setup, baseline identities, metrics, effect sizes, or statistical conditions behind the reported outperformance.",
+      "It does not detail how general norms are measured or how the claim about avoiding human data is experimentally established."
+    ]
+  }
+}

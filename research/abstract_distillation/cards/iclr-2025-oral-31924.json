@@ -1,0 +1,198 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31924",
+    "title": "Scaling LLM Test-Time Compute Optimally Can be More Effective than Scaling Parameters for Reasoning",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31924"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "792978aac95734e46cfc85b534010d167d61acc4878cb624d28d487239b340ac",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "ecb2e2773eae706e5d6cca0439e0267bfbb1d418ef297e18ef615d6f0a08e567",
+    "extracted_at": "2026-09-12T23:57:23.969594+00:00",
+    "session_id": "01a0980d-96de-7b12-8b49-450ef8264354",
+    "usage": {
+      "input_tokens": 12852,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 832,
+      "reasoning_output_tokens": 53
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7f9fecbb250be449f6aff5b17b5cf5074cb2001f2d9e6bc4e4d924bb10fa1789"
+    },
+    {
+      "id": "S2",
+      "sha256": "e765ff6ef5e7cca1dc165978e6b65bfea85b8c0f64d73c646b7dbd3f62813372"
+    },
+    {
+      "id": "S3",
+      "sha256": "7f771be4e05468de81b29ef1dd4912af616f3d5ed8d64b62eed70abb65385907"
+    },
+    {
+      "id": "S4",
+      "sha256": "f8b13ed2fbd18e390afa51a1410b122452b49161afe266a284d11fa29a35e172"
+    },
+    {
+      "id": "S5",
+      "sha256": "22ba5bcf77a1cc546110ee592626ba652379ba63e844df4b2c40723961aa2e65"
+    },
+    {
+      "id": "S6",
+      "sha256": "e5fb0626b2125eb05541027912b1dd30c6ef6900b3e22f40a6a8b4f00bac23d9"
+    },
+    {
+      "id": "S7",
+      "sha256": "c47d95985f3c02168a5247c6171a37ab2dc614b1166538393c83f6683c7e893d"
+    },
+    {
+      "id": "S8",
+      "sha256": "99f61742800ab28e9fe3608979a11cc7b227f0865d798083ce79a35b54c283bf"
+    },
+    {
+      "id": "S9",
+      "sha256": "3b3db0d592318042489fcd5044ee06eb389eb95418bc83d542a6e18305ad9dbf"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31924",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks how much a language model can improve on a challenging prompt when given a fixed, non-trivial amount of inference-time compute.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that test-time inference scaling behavior is little studied, with prior work largely reporting negative results for several strategies.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "analysis",
+        "claim": "Analyzes test-time scaling through searches against dense process-based verifier reward models and adaptive updates to the response distribution conditioned on the prompt.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "strategy",
+        "claim": "Motivates a compute-optimal strategy that adaptively allocates test-time compute per prompt.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that test-time compute can outperform parameter scaling under a FLOPs-matched evaluation in a specified smaller-model regime.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work by analyzing prompt-dependent effectiveness across two test-time computation mechanisms and using this variation to motivate compute-optimal allocation.",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the effectiveness of test-time scaling approaches critically depends on prompt difficulty for both analyzed mechanisms.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report over 4× greater efficiency than a best-of-N baseline for scaling test-time compute on math reasoning problems.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "In a FLOPs-matched evaluation, the authors report that test-time compute outperforms a 14× larger model on problems where the smaller base model has somewhat non-trivial success rates.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Frames improved outputs from additional test-time compute as relevant to self-improving agents.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "question",
+        "summary": "Asks how much performance can improve under a fixed, non-trivial inference-compute budget, with implications for pretraining–inference tradeoffs.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanisms",
+        "summary": "Studies verifier-guided search and prompt-conditioned adaptive response-distribution updates.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "observation_and_strategy",
+        "summary": "Finds prompt-difficulty dependence and motivates adaptive compute-optimal allocation.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported outcomes",
+        "summary": "Reports over 4× efficiency versus best-of-N and superiority over a 14× larger model in a FLOPs-matched regime.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links variation by prompt difficulty to an adaptive strategy for allocating test-time compute.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A method’s aggregate scaling result may conceal meaningful prompt-level heterogeneity; exposing that heterogeneity can motivate conditional resource allocation.",
+        "application": "Report performance or compute allocation stratified by prompt difficulty, then test a difficulty-aware budget policy.",
+        "exception": "This move may be unsuitable when prompt difficulty cannot be estimated reliably or when only a uniform-budget deployment is permitted."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify how prompt difficulty is measured or how compute-optimal allocation is implemented.",
+      "The reported 4× efficiency, 14× size comparison, FLOPs matching, and smaller-model success-rate regime lack detailed datasets, baselines, budgets, and statistical conditions.",
+      "The abstract does not establish whether the reported gains generalize beyond the stated math-reasoning and evaluation settings."
+    ]
+  }
+}

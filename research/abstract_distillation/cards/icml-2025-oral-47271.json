@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47271",
+    "title": "Improving the Scaling Laws of Synthetic Data with Deliberate Practice",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47271"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6cc8683248da5e34b73e1b57e41849e5f90b5863f665345ea2425aaa9d5308f2",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "b23ee4ae21752bef8b66f3ff2d54afa50c3756ae83bcbbfa3397e75d7498c03d",
+    "extracted_at": "2026-09-13T00:11:12.368445+00:00",
+    "session_id": "01a0981a-449d-7332-bb41-30894c517b87",
+    "usage": {
+      "input_tokens": 12665,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 799,
+      "reasoning_output_tokens": 100
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2287c6489e5934b35c1b18d69b494d3f63476544acd051ed4525b6eb9ad63372"
+    },
+    {
+      "id": "S2",
+      "sha256": "59cfdfc8e0da99aa6e216e8601dba85474098a44356675ac61c8bbfb83ea9dc2"
+    },
+    {
+      "id": "S3",
+      "sha256": "90843de3c08ddc85b0c9b636c4f3fc4ffc6bbf9853423ba650214127223b72b7"
+    },
+    {
+      "id": "S4",
+      "sha256": "0fc6f31b30999650c1a875edcf94a55771ad009f81cbf7c29f52505bd8e1410f"
+    },
+    {
+      "id": "S5",
+      "sha256": "1b4b48344d2404f63ec18c02ac979a081207cb0af96e44428f098672bbb89ea1"
+    },
+    {
+      "id": "S6",
+      "sha256": "b0c0bd72bb2336602440af0c8e96a40731107de63adfe8cd693e79df49ae8e80"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47271",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve the sample efficiency and scaling of synthetic-data generation.",
+        "source_ids": [
+          "S1",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Naively scaling synthetic data produces diminishing returns, while generating large datasets and pruning afterward is inefficient.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Deliberate Practice for Synthetic Data Generation (DP), which dynamically targets informative synthetic samples.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Provides a theoretical account of how training on challenging, informative examples can improve scaling laws.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports improved scaling performance using substantially fewer samples and training iterations than prior work.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "DP is presented as a novel framework that directly approximates the generation of informative samples instead of pruning a large generated dataset afterward.",
+      "source_ids": [
+        "S1",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that on ImageNet-100, DP uses 3.4× fewer samples and six times fewer iterations while achieving superior performance compared with prior work.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that on ImageNet-1k, DP uses 8× fewer samples and reduces iterations by 30%, while achieving superior performance compared with prior work.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report theoretical and empirical support for improved scaling from challenging, informative examples.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Synthetic-data scaling is described as difficult because simply adding data yields diminishing returns.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "design principle",
+        "summary": "Pruning is identified as a way to emphasize informative samples, but DP instead approximates their direct generation.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "DP applies deliberate-practice-inspired dynamic synthetic-data generation to improve sample efficiency.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "support",
+        "summary": "The abstract reports theoretical analysis and ImageNet-100/ImageNet-1k results showing lower data and iteration requirements with superior performance versus prior work.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects its method to a human-learning principle, then operationalizes that principle as dynamically generated challenging and informative examples rather than post-hoc pruning.",
+          "source_ids": [
+            "S1",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A motivating analogy is most useful when translated into a concrete data-selection or generation mechanism.",
+        "application": "When proposing a learning strategy inspired by another domain, explicitly map the principle to the mechanism that produces the claimed training signal.",
+        "exception": "This move is unsuitable when the analogy cannot yield an operational mechanism or when the target domain lacks a measurable notion of informative difficulty."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the theoretical assumptions, scaling-law form, evaluation metrics, prior-work baselines, or statistical details behind the reported comparisons.",
+      "It does not explain how DP identifies challenging or informative samples or whether the reported savings generalize beyond the two ImageNet settings."
+    ]
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011624",
+    "title": "MomaGraph: State-Aware Unified Scene Graphs with Vision-Language Models for Embodied Task Planning",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011624"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "742b851efb9ef231bddcee0bb4f20bda9dd72dbba29524dab28438d54e4c0fff",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "cefba96e4f3fa295c23be1a6ecebc491c2a911bf9f586d0cce4785954c814990",
+    "extracted_at": "2026-09-13T00:06:06.607661+00:00",
+    "session_id": "01a09815-9668-7b00-ab17-aaace1270df8",
+    "usage": {
+      "input_tokens": 12844,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 856,
+      "reasoning_output_tokens": 76
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c4f4bd9fe18683f4e57e04cd94497e9287881a0d2de3b932bed1e9e77c4893a5"
+    },
+    {
+      "id": "S2",
+      "sha256": "c257276266c91dfc8712f024ad88722a663d82e3ec654a822f43fd11e92e27da"
+    },
+    {
+      "id": "S3",
+      "sha256": "86db54464b542cc8a5142cd391028d6f2611da89a1fb3bdfad5a677b48c1d1cb"
+    },
+    {
+      "id": "S4",
+      "sha256": "4ae5827566d17f719801df6a08a455c9e4f6e3e297dc9420069b34d22ebfe4a1"
+    },
+    {
+      "id": "S5",
+      "sha256": "5142c8c06d382eb3b1f43cd9363d518ee58cecb93bc5c2d987c93ad87119a8c2"
+    },
+    {
+      "id": "S6",
+      "sha256": "22ae02618a6490f4fa694d395513aa7df31b1c8233dddcc3eac1e02e84803374"
+    },
+    {
+      "id": "S7",
+      "sha256": "6542ccf10e0f4a622d2379e00bb50870029c23b57f5d11f50eda488be5a0084b"
+    },
+    {
+      "id": "S8",
+      "sha256": "62f4615caa22342de184d5f25c271f3bf641701ceaeea37c28af53ed37d2d80f"
+    },
+    {
+      "id": "S9",
+      "sha256": "2d31e899355ac6630b085ce41b7f42894d45e18c7ae7d9bc5b86aa18496f6d08"
+    },
+    {
+      "id": "S10",
+      "sha256": "cadf78af87221b3eb3e5d3cc11987933491bcfaad3696fc47aeba14d79b75e1d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011624",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable household mobile manipulators to navigate and manipulate using compact, semantically rich, task-relevant scene representations.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Prior scene-graph approaches often separate spatial and functional relations, omit object states and temporal updates, and overlook task-relevant information; suitable data and rigorous evaluation were also largely missing.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "MomaGraph unifies spatial-functional relationships with part-level interactive elements for embodied agents.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "MomaGraph-Scenes is presented as a large-scale dataset of richly annotated, task-driven household scene graphs, paired with MomaGraph-Bench, an evaluation suite covering six reasoning capabilities.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "model",
+        "claim": "MomaGraph-R1 is a 7B vision-language model trained with reinforcement learning to predict task-oriented scene graphs and perform zero-shot planning under Graph-then-Plan.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work through a unified task-driven scene-graph representation, a claimed first large-scale dataset of richly annotated task-driven household scene graphs, and a six-capability evaluation suite.",
+      "source_ids": [
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report 71.6% benchmark accuracy, 11.4 percentage points above the best baseline, with state-of-the-art performance among open-source models.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report generalization across public benchmarks and effective transfer to real-robot experiments.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setting",
+        "summary": "Household mobile manipulators require both navigation and manipulation, motivating a compact, semantically rich representation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing scene graphs are described as fragmented, static, and insufficiently focused on current-task information; data and evaluation are also missing.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "role": "resources",
+        "summary": "The work introduces MomaGraph-Scenes and MomaGraph-Bench to provide task-driven data and systematic evaluation across six reasoning capabilities.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "model",
+        "summary": "Using this foundation, the authors develop MomaGraph-R1 for task-oriented graph prediction and zero-shot Graph-then-Plan task planning.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The authors report strong benchmark performance plus cross-benchmark generalization and real-robot transfer.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a representation, purpose-built dataset, multi-capability benchmark, and downstream planner, then reports results tied to that benchmark and transfer settings.",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "A coherent contribution chain can make the relationship between representation design, evaluation, and deployment claims easy to follow.",
+        "application": "When presenting a systems paper, explicitly connect each artifact to the capability it enables and report evidence in the same task-oriented terms.",
+        "exception": "This structure may be unsuitable when the work has one isolated result or when artifacts are not genuinely coupled."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the six benchmark capabilities, dataset scale or annotation process, baseline identities, statistical details, or real-robot task and transfer metrics.",
+      "The reported accuracy and transfer claims lack experimental conditions and uncertainty information in the supplied units."
+    ]
+  }
+}

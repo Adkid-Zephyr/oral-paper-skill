@@ -1,0 +1,195 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31895",
+    "title": "Interpreting Emergent Planning in Model-Free Reinforcement Learning",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31895"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f3e1c338ae64d1e16cf3e781621013f0869e044102066101f6b9904421f06ecf",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "322237adfd7356404d2154a9e958df32e1dff2f03a9cd0e55d577b905850f232",
+    "extracted_at": "2026-09-12T23:56:15.737176+00:00",
+    "session_id": "01a0980c-9861-72e3-88d8-d209a71591e0",
+    "usage": {
+      "input_tokens": 12750,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 754,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b141152287806b2a9eaded54487200301aa08f69eb9f5e17c57dd3ce648e2b98"
+    },
+    {
+      "id": "S2",
+      "sha256": "75ae3af0867f55f2e6adf7c41e3cb5b70e7e71effc22add8065153af1bd1c89a"
+    },
+    {
+      "id": "S3",
+      "sha256": "3af6d1604aa7669285eabe5e16d9596fe7cf4b40201f9217f9c0c64c3c8504c2"
+    },
+    {
+      "id": "S4",
+      "sha256": "a07591193e5246020568ecb71e26be8f613cb52207263c3462af6ca92c72df38"
+    },
+    {
+      "id": "S5",
+      "sha256": "8ca05ada0cf712835905d12664c9a41017ede93f40385497d6c715c39431d029"
+    },
+    {
+      "id": "S6",
+      "sha256": "a8db490c721b7bf173d0ed54ba2e4feae0a7ca012c3ccd7c04e27e3f482fdf17"
+    },
+    {
+      "id": "S7",
+      "sha256": "fee201c4353e5b2420fc6890d905f0b80a0bd9614a8d7a804ada51fdf1edec52"
+    },
+    {
+      "id": "S8",
+      "sha256": "362235262caac94bb6a66d32a03dd362dafbf60abafe59d7088f94442f4bc383"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31895",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks whether model-free reinforcement learning agents can learn to plan, and how such planning is internally represented and affects behavior.",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that mechanistic evidence for planning learned by model-free reinforcement learning agents was previously lacking.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Applies concept-based interpretability to a model-free agent playing Sokoban, probing planning-relevant concepts, examining plan formation, and using interventions to test behavioral influence.",
+        "source_ids": [
+          "S2",
+          "S5"
+        ]
+      },
+      {
+        "type": "mechanistic finding",
+        "claim": "Reports that DRC uses learned concept representations to formulate plans that predict long-term action effects and influence action selection.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "qualitative analysis",
+        "claim": "Analyzes the learned planning algorithm and reports a strong resemblance to parallelized bidirectional search.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present their work as the first mechanistic evidence that model-free reinforcement learning agents can learn to plan.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that interventions on discovered plans in the agent’s representations show a causal effect on behavior.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that plan emergence coincides with the ability to benefit from additional test-time compute.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report a strong resemblance between the learned planning algorithm and parallelized bidirectional search.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "research question and claimed advance",
+        "summary": "Frames whether model-free agents can learn to plan and presents the work as mechanistic evidence that they can.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method and setting",
+        "summary": "Uses concept-based interpretability on the DRC model-free agent in Sokoban.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanistic analysis",
+        "summary": "Probes concepts, examines plan formation, and intervenes on representations to test behavioral influence.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "associated capability",
+        "summary": "Links plan emergence with benefiting from additional test-time compute.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "algorithm characterization and significance",
+        "summary": "Characterizes the learned algorithm as resembling parallelized bidirectional search and connects the findings to emergent planning and reasoning in RL-trained LLMs.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a mechanistic claim with three analysis steps: concept probing, representation-level plan analysis, and behavioral interventions.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This makes the proposed internal mechanism and its behavioral relevance explicit at separate levels of analysis.",
+        "application": "When presenting an interpretability result, map each internal representation claim to a targeted probe and an intervention that tests whether it affects behavior.",
+        "exception": "This framing may be unsuitable when interventions are impossible, poorly controlled, or unrelated to the proposed mechanism."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify intervention design, controls, effect sizes, task scale, or the conditions under which additional test-time compute helps.",
+      "The reported resemblance to parallelized bidirectional search is qualitative; the abstract does not define the comparison criteria or establish algorithmic equivalence.",
+      "The abstract does not provide details sufficient to assess the scope of the claimed causal or mechanistic conclusions beyond DRC in Sokoban."
+    ]
+  }
+}

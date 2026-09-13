@@ -1,0 +1,149 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31903",
+    "title": "Spread Preference Annotation: Direct Preference Judgment for Efficient LLM Alignment",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31903"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "30ea25dcc26b3454e60688cae3393d43c52160612b6e967760e646c59908f877",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "b28539698052b2598040e4c37bcc34c649d94a959b7d0fc4c837f5760866b747",
+    "extracted_at": "2026-09-12T23:56:32.642876+00:00",
+    "session_id": "01a0980c-e012-7ca3-a9a1-297c9145420d",
+    "usage": {
+      "input_tokens": 12699,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 738,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "67a721dfd08c6a0180d5dc764244ef7d8d2542102f7aebbbf40ead87e904dccb"
+    },
+    {
+      "id": "S2",
+      "sha256": "835104d29e4d65d265dabc43e99f1a88955c40fc61834306c1a48657fb0a6419"
+    },
+    {
+      "id": "S3",
+      "sha256": "d0fd4dc6c88ecb1bfe46b77c9d72b0792a11d0c60e897d35ddc45a1f2bedd637"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31903",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "LLM alignment with human preferences requires constructing costly, large human-annotated preference datasets.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies a need for alignment approaches that can work with substantially less human-annotated preference data.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "SPA uses a small seed preference dataset, iterative response generation, self-annotated preference data, and logits-derived preference labels for direct preference judgment.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "The authors introduce noise-aware preference learning to mitigate low quality in generated preference data.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish SPA by deriving preference labels directly from LLM logits and progressively learning from self-annotated data, rather than relying on external reward models or implicit in-context learning.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that SPA is significantly more effective than approaches using external reward models or implicit in-context learning.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report superior AlpacaEval 2.0 alignment performance using 3.3% of Ultrafeedback's ground-truth preference labels, compared with using the full data or state-of-the-art baselines.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Large human preference datasets make LLM alignment costly.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "SPA starts from a small seed set and iteratively generates responses while learning from self-annotated preferences.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "labeling mechanism",
+        "summary": "Preference labels are derived from the LLM's logits to expose its inherent preference.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "evidence",
+        "summary": "The authors report stronger comparative alignment and a 3.3%-label AlpacaEval 2.0 result, alongside noise-aware learning.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the data-efficiency claim to a concrete label budget—3.3% of ground-truth preference labels—and names the evaluation benchmark and comparison conditions.",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "interpretation": "A resource-efficiency claim becomes more interpretable when its budget, benchmark, and reference conditions are stated together.",
+        "application": "When presenting a data-efficient alignment method, report the retained-label fraction alongside the benchmark and the full-data or baseline comparison.",
+        "exception": "This framing is unsuitable when label usage cannot be measured consistently across methods or when the evaluation has no meaningful comparable reference."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no absolute performance values, variance, number of runs, or experimental setup.",
+      "It does not specify how logits are converted into preference labels or how the noise-aware algorithm operates.",
+      "The reported 3.3% comparison lacks details about model versions, data splits, and statistical significance."
+    ]
+  }
+}

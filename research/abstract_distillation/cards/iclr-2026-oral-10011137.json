@@ -1,0 +1,137 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011137",
+    "title": "Omni-Reward: Towards Generalist Omni-Modal Reward Modeling with Free-Form Preferences",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011137"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d671fd9d77ecd7484c2c77baec099108b02fe2cef19390d465995c80e889cc1d",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "682e24053d27bd3e1ba7658b5bcce995c76fde838651fba4b39bb695722363e1",
+    "extracted_at": "2026-09-13T00:05:35.909495+00:00",
+    "session_id": "01a09815-2967-7663-bf52-6671063d1862",
+    "usage": {
+      "input_tokens": 12669,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 697,
+      "reasoning_output_tokens": 99
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "77c472d7692b92bbb49859b3c145464a6885432b6b8b62810d3f12962330ff64"
+    },
+    {
+      "id": "S2",
+      "sha256": "c6982573f8022465891182bd0edf410489f0b7f7ac78b2d3cbda8facb323b002"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011137",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reward models need to align AI behavior with human preferences across multiple modalities and varied personal preferences.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing reward models are concentrated on text and images, provide limited support for other modalities, and commonly rely on fixed binary preference pairs that do not capture preference complexity and diversity.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces Omni-RewardBench, described by the authors as an omni-modal reward-model benchmark with free-form preferences, covering nine tasks across text, image, video, audio, and 3D.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "dataset",
+        "claim": "Constructs Omni-RewardData with 248K general preference pairs and 69K instruction-tuning pairs for training generalist omni-modal reward models.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "model",
+        "claim": "Proposes Omni-RewardModel combining discriminative and generative reward models.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe Omni-RewardBench as the first omni-modal reward-model benchmark with free-form preferences.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Omni-RewardModel achieves strong performance on Omni-RewardBench and other widely used reward-modeling benchmarks.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Identifies modality imbalance and rigidity from fixed binary preference pairs as two challenges for reward modeling.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Addresses evaluation with a nine-task, five-modality benchmark supporting free-form preferences.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "data_and_model",
+        "summary": "Adds a multimodal preference dataset and a model combining discriminative and generative reward modeling, with reported benchmark performance.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The proposal jointly specifies benchmark coverage, training data composition, and model architecture to address distinct limitations.",
+          "source_ids": [
+            "S1",
+            "S2"
+          ]
+        },
+        "interpretation": "A contribution can be easier to assess when each stated limitation is paired with an explicit artifact or design choice.",
+        "application": "When presenting a multi-part system, map each motivating limitation to a named benchmark, dataset property, or model component.",
+        "exception": "This framing may be unsuitable when the work has one narrowly scoped contribution or when such mapping would oversimplify dependencies."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no task-level scores, baselines, evaluation conditions, or modality-specific results behind the claim of strong performance.",
+      "It does not specify how free-form preferences are represented, collected, or evaluated, nor how the discriminative and generative components are integrated."
+    ]
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47267",
+    "title": "Going Deeper into Locally Differentially Private Graph Neural Networks",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47267"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "049b8fad58c1352b476d9291c79866f1beaa17777379fd8a85e36a13ee3d24c6",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "19c8d481d1edb9dd06e12faddbcf82048675a81728c455f56da8aac15bd73b9f",
+    "extracted_at": "2026-09-13T00:11:06.397396+00:00",
+    "session_id": "01a0981a-2ff4-7282-8cee-0350f1aebbc0",
+    "usage": {
+      "input_tokens": 12728,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 780,
+      "reasoning_output_tokens": 100
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e448b5bc2f4e5b963346a335d1bd7d075608191398f717337af15c37ff353816"
+    },
+    {
+      "id": "S2",
+      "sha256": "36652fe1923e934b5210d72aedd49110f740c864e773fe380ae6cce2b2719088"
+    },
+    {
+      "id": "S3",
+      "sha256": "7bf57b104b200012365d35036b7d0e8dbba8ccc987c02337431a8b394c8a48b2"
+    },
+    {
+      "id": "S4",
+      "sha256": "4b900fd2a0adcbb96c6ce0765646a5b074c09dc0d48a66330cd61235269b1b10"
+    },
+    {
+      "id": "S5",
+      "sha256": "2f9ca88553052f39995bc9fe4e370cc1bf9fad1b1e0c6827fd3a8c830c1c1fbd"
+    },
+    {
+      "id": "S6",
+      "sha256": "7eff6d80bbfa76366efa70e3137f867e27b911f4e032e6f6cfa341fdd96d3cb6"
+    },
+    {
+      "id": "S7",
+      "sha256": "744da2ff622b211b5d348612caa540bc49a0d8783e257a934c51692fb17f130b"
+    },
+    {
+      "id": "S8",
+      "sha256": "eabcbe4067108a7452fec8c71ca823e903662e66970d16b99e1f14eb0320da75"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47267",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable graph learning with local differential privacy when node representations contain sensitive personal information, while retaining learning utility.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing LDP approaches often distort graph data and substantially reduce private-learning utility, including node-classification accuracy.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "UPGNET, an LDP-based privacy-preserving graph-learning framework intended to improve utility while protecting user-data privacy.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A three-stage pipeline generalizing LDP protocols for node features, plus High-Order Aggregator and Node Feature Regularization layers.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "An analysis identifying feature dimension and neighborhood size as two factors affecting privacy-preserving graph-learning utility.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper distinguishes UPGNET through its three-stage node-feature LDP pipeline and two utility-oriented layers, HOA and NFR.",
+      "source_ids": [
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments on real-world datasets found UPGNET significantly outperformed existing methods in both privacy protection and learning utility.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "GNNs perform strongly on graph-learning tasks, but sensitive node representations create privacy concerns.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Prior LDP studies are described as distorting graph data and degrading private-learning utility.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper introduces UPGNET with a three-stage node-feature LDP pipeline and two core layers, HOA and NFR.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S7"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "The authors identify feature dimension and neighborhood size as key utility-related factors.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "Experiments on real-world datasets are reported to show stronger privacy protection and learning utility than existing methods.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links two analyzed utility factors—feature dimension and neighborhood size—to the design of HOA and NFR layers.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A useful research pattern is to connect an explicit factor analysis to named architectural interventions.",
+        "application": "When proposing a privacy-preserving model, analyze which data or graph properties drive utility loss, then map each important factor to a clearly named design component.",
+        "exception": "This framing may be unsuitable when the abstract lacks evidence that the analyzed factors are actionable or when the method is not architecture-based."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify privacy budgets, threat-model details, datasets, baselines, metrics, or the magnitude of reported improvements.",
+      "The roles and mechanisms of the three stages, HOA, and NFR are not described in enough detail to assess their separate effects.",
+      "The abstract does not provide conditions under which the reported privacy and utility comparison holds."
+    ]
+  }
+}

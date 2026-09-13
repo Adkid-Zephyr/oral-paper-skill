@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31869",
+    "title": "ShEPhERD: Diffusing shape, electrostatics, and pharmacophores for bioisosteric drug design",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31869"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "db3c6f1d112265012ee7e70749eeeab9f39f6c85ea2a0aa91dce2513071adf94",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "01e7b85025e3c12e47271fa231bd53be930bd8f1848b35e4ad8e0a5c37952cba",
+    "extracted_at": "2026-09-12T23:55:13.063887+00:00",
+    "session_id": "01a0980b-a1a7-7a53-86f7-4cfda99995cf",
+    "usage": {
+      "input_tokens": 12703,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 846,
+      "reasoning_output_tokens": 149
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0533c92a4e35f11d355c62d72a715b03b8d1678c4f4241cb9e84da252194923f"
+    },
+    {
+      "id": "S2",
+      "sha256": "9d762bd3f494b44cf7824c0c3899fd53089662738ca084638edfe392481f0a8f"
+    },
+    {
+      "id": "S3",
+      "sha256": "86dc7147c8668741c3328292d21b8bfb399e4e380b76c81c3033321702d279b9"
+    },
+    {
+      "id": "S4",
+      "sha256": "fb664a088574c92db158206e0367cad9e241418d65097fd639af3671b37fd578"
+    },
+    {
+      "id": "S5",
+      "sha256": "98eee1b3a16b42154616614c33c9751014a40407ecdeabbdd21d4ad45b7a199b"
+    },
+    {
+      "id": "S6",
+      "sha256": "625f06ebb23353c5ae0ee6b94c4d4d909ea302cf95428c8771d220d03298374d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31869",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design bioisosteric or related drug analogues with precise 3D interaction profiles by generating molecules conditioned on shape, electrostatics, and pharmacophores.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "ShEPhERD: an SE(3)-equivariant diffusion model that jointly denoises 3D molecular graphs and representations of shape, electrostatic potential surfaces, and directional pharmacophores.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "evaluation framework",
+        "claim": "A composition of 3D similarity scoring functions for assessing conditional generation against desired interaction profiles.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "Demonstrations on natural-product ligand hopping, protein-blind bioactive-hit diversification, and bioisosteric fragment merging.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors propose learning the joint distribution of 3D molecular structures and interaction profiles through joint diffusion of both molecule and interaction representations.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report demonstrating ShEPhERD’s potential through three exemplary drug-design tasks: natural-product ligand hopping, protein-blind bioactive-hit diversification, and bioisosteric fragment merging.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report using composed 3D similarity scores to assess conditional generation of novel molecules with desired interaction profiles.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Chemical design is framed around engineering precise 3D intermolecular interactions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "existing practice",
+        "summary": "Bioisosteric analogues are commonly sought by virtual screening with shape, electrostatic, and pharmacophore similarity scores.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "hypothesis and method",
+        "summary": "The authors hypothesize that joint modeling of 3D structures and interaction profiles can support interaction-aware design, and instantiate this in ShEPhERD.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "assessment and demonstrations",
+        "summary": "They compose similarity scores for conditional-generation assessment and report application demonstrations across three drug-design tasks.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a conventional screening representation—shape, electrostatics, and pharmacophores—to both the model’s denoised outputs and its assessment scores.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Reusing task-relevant representations across modeling and evaluation can make the intended design objective easier to track.",
+        "application": "Define the target interaction descriptors before modeling, expose them as controllable outputs, and evaluate generated candidates with aligned descriptor-level scores.",
+        "exception": "This alignment may be unsuitable when the descriptors omit important biological or chemical constraints not represented by the scoring functions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report numerical results, baselines, dataset details, or the conditions under which the three demonstrations succeed.",
+      "It does not specify whether the proposed joint model outperforms virtual screening or other generative approaches."
+    ]
+  }
+}

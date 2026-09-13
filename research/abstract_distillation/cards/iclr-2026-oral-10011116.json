@@ -1,0 +1,224 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011116",
+    "title": "Taming Momentum: Rethinking Optimizer States Through Low-Rank Approximation",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011116"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8e5728584d561b0455781a3c84b62d96a2d26d27523652477129a3b955b2c479",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "6bb15ff9c27c0b36defd4b0cf4c4aae8804a2ab6b2b0f7ade71b67df5cfbcb45",
+    "extracted_at": "2026-09-13T00:05:38.529978+00:00",
+    "session_id": "01a09815-1e66-7fc3-932d-c595754b0fee",
+    "usage": {
+      "input_tokens": 12870,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1042,
+      "reasoning_output_tokens": 146
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "19a44d38e5035ec95aa3446baac360a3dadbc160a8d548c5678f43df9c338079"
+    },
+    {
+      "id": "S2",
+      "sha256": "2f22492c131917074b9d98c8f9e0e2e781c43080e9471c047ee296a1359220fa"
+    },
+    {
+      "id": "S3",
+      "sha256": "db582c5781227c0d58a5f7d8d49e7a64bb9c6c1ebd402c883c3d1b163a954463"
+    },
+    {
+      "id": "S4",
+      "sha256": "04cbe551401fd4e0ba6f0f62aabde34e4dd0172d5666c5a91270e1f67aa6193b"
+    },
+    {
+      "id": "S5",
+      "sha256": "bd2be810a3fc745eacf43efe0d55caab2b85d5a32fced924531385baef8d2de7"
+    },
+    {
+      "id": "S6",
+      "sha256": "c36b938c9b7bee8cc3064f597db6624ea861f0cf251c3bb3b7bde0ea9790519c"
+    },
+    {
+      "id": "S7",
+      "sha256": "f3f5378330bea218214b6997c2b3ec155d5da4b962b75b5782ac6385ccbbd99d"
+    },
+    {
+      "id": "S8",
+      "sha256": "1e065fbe56558e13929a927494a89ac710790edae0c882dc75d2eeb0fc457ca3"
+    },
+    {
+      "id": "S9",
+      "sha256": "b63d5a5e47f7b7b5d80fdd0b5307e13309f6700c45ae1f751c47f5a40952a415"
+    },
+    {
+      "id": "S10",
+      "sha256": "a554eee581b35dc8d77d78ad3b7bac493cd14ece4aa5dbb51103dcf32dbfadc5"
+    },
+    {
+      "id": "S11",
+      "sha256": "af1bc0bcf37808cf35d4776c5bb6c6f365fa245cece366d43a7c7e99b322d659"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011116",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Large-model optimizers such as Adam and Muon incur substantial memory overhead from first- and second-order momentum states, limiting scalability and computational efficiency.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Reframes EMA momentum as online gradient-flow training of a linear regressor and introduces LoRA-Pre, a low-rank optimizer for efficient pre-training.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Decomposes the full momentum matrix into a compact low-rank subspace to reduce optimizer memory while aiming to maintain optimization performance.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Evaluates LoRA-Pre in both pre-training and fine-tuning settings across Llama-family models.",
+        "source_ids": [
+          "S5",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe LoRA-Pre as a novel low-rank optimizer derived from the EMA–online-linear-learner equivalence.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report highest performance across all tested model sizes when pre-training Llama-family models from 60M to 1B parameters.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report comparable or superior results using one-eighth the rank of baseline methods.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "In fine-tuning, the authors report that LoRA-Pre with the same rank consistently outperforms efficient fine-tuning baselines, including gains of 3.14 points on Llama-3.1-8B and 6.17 points on Llama-2-7B versus standard LoRA.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Optimizer momentum states create memory overhead that constrains large-model training.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "conceptual reframing",
+        "summary": "EMA momentum is recast as online gradient-flow training of a linear regressor.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "LoRA-Pre applies a compact low-rank decomposition to momentum states for memory-efficient pre-training.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The method is reported to perform strongly in Llama-family pre-training and fine-tuning, including rank efficiency and improvements over baselines.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10"
+        ]
+      },
+      {
+        "role": "availability",
+        "summary": "The authors provide a public code repository.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a conceptual equivalence between EMA and online linear learning directly to the design of a low-rank optimizer.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A mechanistic reframing can supply a clear bridge from optimizer-state structure to a concrete memory-saving design.",
+        "application": "When proposing a state-compression method, first identify an equivalent learning process whose structure motivates the compression.",
+        "exception": "This framing may be unsuitable when the claimed equivalence does not preserve the optimization behavior relevant to the target setting."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract reports both scale coverage and rank-matched comparisons, including a one-eighth-rank result and fine-tuning gains against standard LoRA.",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S9",
+            "S10"
+          ]
+        },
+        "interpretation": "Reporting resource efficiency alongside task performance makes the practical tradeoff more explicit.",
+        "application": "Pair performance comparisons with matched-budget or compressed-resource comparisons and state the relevant scale.",
+        "exception": "A rank- or budget-matched comparison is insufficient when methods differ materially in other training conditions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluation metric, baseline identities beyond standard LoRA, statistical variability, or detailed training conditions.",
+      "The meaning of “highest performance,” “comparable,” and “substantial improvements” is not operationally defined.",
+      "The abstract does not quantify absolute memory savings or establish whether the reported results generalize beyond the tested Llama-family settings."
+    ]
+  }
+}

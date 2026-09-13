@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71047",
+    "title": "Are VLMs Seeing or Just Saying? Uncovering the Illusion of Visual Re-examination",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71047"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "598e7ad2bf65e19feca2c062086c90024aed6043ae75bfec152645e8b12e277d",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "b12942d51768dd21a799921d5d415ce9829dc62f91aeaaaa1baf753c044394f8",
+    "extracted_at": "2026-09-13T00:12:05.784547+00:00",
+    "session_id": "01a0981b-097c-7e93-a954-d4e93ae0b298",
+    "usage": {
+      "input_tokens": 12813,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 909,
+      "reasoning_output_tokens": 113
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "dacb900d535a4255f7c4d36452ab0dcb5758718f482ac910b2ccf731fef2d141"
+    },
+    {
+      "id": "S2",
+      "sha256": "95a1d9fbb1d24c0a4b6c8e41467fd9b7e42f527c1c526711808a0f58331acc77"
+    },
+    {
+      "id": "S3",
+      "sha256": "752abaaac84ec3214c498ebd54c77d40dc7bc1bcf46517b92c22204f6c574c2f"
+    },
+    {
+      "id": "S4",
+      "sha256": "ce961b89aaf7858211864fd94e5f093449487d8ac6f697d9a8b20b513066aeb9"
+    },
+    {
+      "id": "S5",
+      "sha256": "9f2f99dac96354fc26de31144edf7ba5bc6778074299684f4802359447044071"
+    },
+    {
+      "id": "S6",
+      "sha256": "a5435f1dde3e110bbf7b1f34bf1ca9d5efb4ee7c1f64c2e5f56be8f9c132399b"
+    },
+    {
+      "id": "S7",
+      "sha256": "b9def2d10179e660594e843f28c6629a1cacef0ad929091f95c9993b7a2f5b07"
+    },
+    {
+      "id": "S8",
+      "sha256": "0f2988bdec50db878a37b2f492245af700f66a962f77104253b7d7e5c9a1744f"
+    },
+    {
+      "id": "S9",
+      "sha256": "da034e15acced540e4aaf00c78550f7b6f73fba98be65390a2e238013004ad92"
+    },
+    {
+      "id": "S10",
+      "sha256": "b6beb9ab99c69cd1b8ca97b592a88e94f1a48ba988e8ec1a7b35e0e325791535"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71047",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks whether VLMs’ self-reflective statements about checking an image correspond to genuine visual re-examination or learned textual patterns.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces VISUALSWAP, which replaces a reasoned-over image with a visually similar but semantically different image to probe whether the model notices.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Introduces VS-BENCH, a benchmark of 800 image pairs curated from four multimodal-math datasets.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that visual re-examination claims often fail to reflect actual visual re-examination, with distinct vulnerability across model settings and generation behaviors.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present VISUALSWAP and VS-BENCH as their framework and benchmark for probing the gap between reflective language and visual re-examination.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "In experiments on Qwen3-VL, Kimi-VL, and ERNIE-VL, models overwhelmingly missed image swaps, with accuracy dropping by up to 60%.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that thinking models were nearly three times more vulnerable than instructed counterparts, while scaling did not mitigate the vulnerability.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "Multi-turn user instructions restored visual grounding, whereas self-generated reflective statements during continuous generation did not; the authors associate this with increased attention to visual tokens under user instructions but not self-reflection.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "VLMs commonly generate statements about checking the figure again, motivating a test of whether those statements reflect actual visual inspection.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "probe",
+        "summary": "VISUALSWAP tests visual re-examination by swapping in a visually similar but semantically different image after initial reasoning.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "benchmark",
+        "summary": "VS-BENCH provides 800 image pairs drawn from MathVista, MathVerse, MathVision, and MMMU-Pro.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "Experiments report widespread swap blindness, greater vulnerability in thinking models, no scaling mitigation, and restoration by user instruction but not self-reflection.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "explanation",
+        "summary": "Attention analysis links restored grounding to elevated attention on visual tokens under user instructions, unlike self-reflection.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper probes reflective claims by changing the visual input while preserving visual similarity and testing whether the model notices.",
+          "source_ids": [
+            "S3"
+          ]
+        },
+        "interpretation": "Counterfactual input changes can distinguish language about a reasoning action from behavior that depends on performing it.",
+        "application": "For claims about tool use, retrieval, or re-reading, construct minimally changed inputs that preserve surface form but alter decisive semantics, then test action sensitivity.",
+        "exception": "This design is unsuitable when no controlled input substitution can isolate the claimed operation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact evaluation task, baseline accuracies, swap-construction protocol, or statistical details behind the reported 60% drop and nearly 3x vulnerability.",
+      "The abstract does not establish whether the reported patterns generalize beyond the named models, datasets, or visual-swap benchmark."
+    ]
+  }
+}

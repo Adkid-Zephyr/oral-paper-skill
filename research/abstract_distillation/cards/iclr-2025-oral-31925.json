@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31925",
+    "title": "Compositional Entailment Learning for Hyperbolic Vision-Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31925"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d0a0a31ccb5a6c531870c423ce877f254c4b401c1576bb9dca7b5e002f5ea369",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "9125ba88e89d8189f45327563021d142949f36c736e291a6ef3d5e95c17367ea",
+    "extracted_at": "2026-09-12T23:57:22.266923+00:00",
+    "session_id": "01a0980d-9d7e-7251-97a4-05617fbaf204",
+    "usage": {
+      "input_tokens": 12742,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 767,
+      "reasoning_output_tokens": 69
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "71e18b6b32742acea57a6aa768e0347b942675eb963103fb3a14e3974735e811"
+    },
+    {
+      "id": "S2",
+      "sha256": "477532578fa3a8317f5c12f07a31b91b44ab91c97e9c45c79d7f361175180dbf"
+    },
+    {
+      "id": "S3",
+      "sha256": "3790ea66a014e2da00d65bdf876b1c88a112741e70fc5226a789d21ba19e3263"
+    },
+    {
+      "id": "S4",
+      "sha256": "ed986adf7be885f78707e3d2c6aa3c1d4150cc199de865e6d5fb875c43f57e8b"
+    },
+    {
+      "id": "S5",
+      "sha256": "ac1481812ffbf364d9131ea05d344e6dc2100cb0863db73e5109483cf3627727"
+    },
+    {
+      "id": "S6",
+      "sha256": "7b12631a4badd3be621451c36111b32563274e5734e1105d2de247c626660b1c"
+    },
+    {
+      "id": "S7",
+      "sha256": "74b576ea439338aa7dbf66008994cbca576a4141613518afcf907006743d7de6"
+    },
+    {
+      "id": "S8",
+      "sha256": "fbac9f56e31e3861fddd821f10edaecf0dd7d299324b257d44e5416372ccd7a3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31925",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Learn vision-language representations that exploit the hierarchical structure of visual and textual concepts, including relationships among images, object boxes, and descriptions.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify a gap in leveraging hyperbolic embeddings beyond individual image-text pairs to represent their innate hierarchy.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Compositional Entailment Learning for hyperbolic vision-language models, organizing images, image boxes, and textual descriptions with contrastive and entailment-based objectives.",
+        "source_ids": [
+          "S4",
+          "S7"
+        ]
+      },
+      {
+        "type": "data construction",
+        "claim": "Uses nouns extracted from sentences and openly available localized grounding models to obtain object-box information without separately described annotation costs.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that this is the first work to fully leverage the hierarchical nature of hyperbolic embeddings beyond individual image-text pairs.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, on a hyperbolic vision-language model trained with millions of image-text pairs, their compositional approach outperforms conventional Euclidean CLIP learning and recent hyperbolic alternatives.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report better zero-shot and retrieval generalization, together with clearly stronger hierarchical performance, under that evaluation.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Vision-language learning conventionally contrastively aligns image-text pairs in a shared embedding space, while concepts are described as naturally hierarchical.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The authors motivate extending hyperbolic representation learning beyond isolated image-text pairs to capture hierarchy.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "They propose Compositional Entailment Learning, treating an image as a composition of object boxes with textual descriptions and organizing these elements through contrastive and entailment objectives.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S7"
+        ]
+      },
+      {
+        "role": "evidence",
+        "summary": "The authors report gains over Euclidean CLIP and recent hyperbolic alternatives in zero-shot, retrieval, and hierarchical performance.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a hierarchical modeling goal to explicit compositional units—images, object boxes, and text—and then to entailment-based objectives.",
+          "source_ids": [
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A paper can make an architectural motivation more concrete by mapping abstract structure to observable components and matching losses.",
+        "application": "For a structured representation task, define the constituent entities and add an objective that encodes the intended relation between levels, alongside the task’s standard objective.",
+        "exception": "This move is unsuitable when reliable decomposition or meaningful relations between components cannot be obtained from available data."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report dataset names, metric values, baselines' implementation details, or statistical uncertainty.",
+      "It does not specify which hierarchical metrics or zero-shot and retrieval settings produced the reported comparisons.",
+      "The claim that localized grounding information can be obtained freely is not quantified or independently assessed here."
+    ]
+  }
+}

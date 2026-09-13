@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31893",
+    "title": "SymmetricDiffusers: Learning Discrete Diffusion Models over Finite Symmetric Groups",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31893"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1128494b6e102d2edeff514e08d7c50b96f3b96e4047ec52d2d930672a3d0bb0",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "8f4cc95dc4f5efd7b37633adbaa83182ced4c575b4be060a5277773f55543792",
+    "extracted_at": "2026-09-12T23:56:09.693305+00:00",
+    "session_id": "01a0980c-80e5-73c3-8691-13bdb889b56a",
+    "usage": {
+      "input_tokens": 12724,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 762,
+      "reasoning_output_tokens": 127
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5b0b24c56fe1bd5758fc5dcab08c0a73b97fe1142734b0ce82386a2bbdbc048e"
+    },
+    {
+      "id": "S2",
+      "sha256": "d58a76c852d2fb43977afa2247ae983a8bf72a4c7d538922835784cd57322f31"
+    },
+    {
+      "id": "S3",
+      "sha256": "540db50b4bc6dd3e22c1afee8fced94aeed68be0d154d513d1cea3b1bbb41a62"
+    },
+    {
+      "id": "S4",
+      "sha256": "15b30264a8795221db66b0f44c3a6d981d66c5cc562f61f8907f52d1e6d04692"
+    },
+    {
+      "id": "S5",
+      "sha256": "ec4507edd545b6f5cf5730dd00d5c69f2082ebbc60e1cadb14a79e2f35d39e40"
+    },
+    {
+      "id": "S6",
+      "sha256": "11b014f4567dee5cd75617c083d061bd91adad8dded319414b99d27e563e43fa"
+    },
+    {
+      "id": "S7",
+      "sha256": "eeee843e0dd1f5d0d64274f112d3a50308582bf9b657b27b08527efc1b0624b7"
+    },
+    {
+      "id": "S8",
+      "sha256": "25f86f732b8409b6347e4d032eeb321ac47393457681ad75117a5579cd7e5f8a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31893",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Learn probability distributions over finite symmetric groups S_n despite their discrete nature and intractable size.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces SymmetricDiffusers, decomposing reverse diffusion into simpler transitions learned with deep neural networks.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes a generalized Plackett–Luce reverse-transition distribution that is claimed to be provably more expressive than PL.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory-guided design",
+        "claim": "Identifies riffle shuffle as a forward transition and introduces theory-grounded diffusion-length and denoising-schedule guidance.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize SymmetricDiffusers as a novel discrete diffusion model and claim a more expressive generalized PL reverse transition.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art or comparable performance on sorting 4-digit MNIST images, jigsaw puzzles, and traveling salesman problems.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report empirical guidelines for selecting diffusion length based on random-walk theory on finite groups.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Permutation groups are important, but distributions over S_n are difficult to learn because of discreteness and scale.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "core approach",
+        "summary": "SymmetricDiffusers learns reverse diffusion through simpler neural-network transitions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "design choices",
+        "summary": "The paper selects riffle shuffle for the forward process and proposes generalized PL reverse transitions plus a denoising schedule.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "Experiments cover MNIST sorting, jigsaw puzzles, and traveling salesman problems, with state-of-the-art or comparable reported performance.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects transition-design choices to finite-group random-walk theory and separately introduces a denoising schedule for efficiency.",
+          "source_ids": [
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A method description can make algorithmic choices more legible by tying them to distinct theoretical or computational objectives.",
+        "application": "When presenting a discrete generative model, map each transition or schedule component to the specific objective and supporting principle it addresses.",
+        "exception": "This framing is unsuitable when the component’s rationale is genuinely empirical or remains unexplained."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, baselines, dataset details, or experimental conditions for the reported comparisons.",
+      "The code-release location is absent.",
+      "The abstract does not state a specific limitation of existing approaches beyond the general learning challenge."
+    ]
+  }
+}

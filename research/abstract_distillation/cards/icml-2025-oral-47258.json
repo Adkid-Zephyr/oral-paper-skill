@@ -1,0 +1,197 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47258",
+    "title": "rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep Thinking",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47258"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "beb864031d0b566a5586518ade563ceb18466392db140dffb8467719cde731d7",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "d4b4d8744afb619823c180a59073b17690d03229f1c7c6a481d0674c3982a271",
+    "extracted_at": "2026-09-13T00:10:47.634046+00:00",
+    "session_id": "01a09819-e110-7d63-8e1f-e93d4756077e",
+    "usage": {
+      "input_tokens": 12802,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 891,
+      "reasoning_output_tokens": 119
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "be3c551165aa842ee90cf35eccd9580166e71fdcd95c7404326347d12bd56b73"
+    },
+    {
+      "id": "S2",
+      "sha256": "31047e27248c8d5e3aaa80395a3523be4e7091f4e56dfca59556ee6245fa4b65"
+    },
+    {
+      "id": "S3",
+      "sha256": "fb3c57bc7d207de49ef208c51403682e65de619bb426e58c2db0dcde3db04cdf"
+    },
+    {
+      "id": "S4",
+      "sha256": "4d6a0068f43aec618dd7f6619d95601891e957559e45c0e126ba0d6dbbb01338"
+    },
+    {
+      "id": "S5",
+      "sha256": "0ef3c9325e25a3418045f74373a6df2c9916484af882a4a9b9a2cb2aa92ded6e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47258",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Can small language models achieve strong mathematical reasoning through self-evolved test-time search, without distillation from superior models?",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "rStar-Math combines MCTS test-time search, an SLM math policy, and an SLM-based process reward model.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "data and training method",
+        "claim": "It introduces code-augmented CoT synthesis with verified trajectories, process reward-model training without naive step-level score annotation, and iterative self-evolution of both SLMs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "The authors report releasing code and data.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish rStar-Math by its three innovations: code-augmented MCTS reasoning-data synthesis, process reward-model training that avoids naive step-level annotation, and from-scratch iterative self-evolution.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that four self-evolution rounds using millions of synthesized solutions for 747k math problems brought SLMs to state-of-the-art levels.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report improving Qwen2.5-Math-7B on MATH from 58.8% to 90.0%, surpassing o1-preview by a stated +4.5%, whose relative-versus-percentage-point interpretation is unspecified.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report solving an average of 53.3% (8/15) of AIME problems and describe this as among the top 20% of the brightest high-school math students; the comparison basis is unspecified.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "aim",
+        "summary": "The paper presents rStar-Math to test whether small language models can rival or surpass OpenAI o1 without distillation from stronger models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "core approach",
+        "summary": "It uses MCTS-guided deep thinking with a policy SLM and process reward model, supported by code-augmented verified reasoning synthesis.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "training evolution",
+        "summary": "The policy SLM and process reward model are built from scratch and iteratively evolved across four rounds using large-scale synthesized solutions.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "reported results",
+        "summary": "The authors report large MATH gains and an AIME result framed as comparable to performance among top high-school students.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "availability",
+        "summary": "Code and data are reported as publicly available.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a distinctive mechanism—MCTS guided by an SLM process reward model—with concrete benchmark deltas and problem counts.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A mechanism-to-evidence pairing makes it easier to connect the proposed training recipe with the reported outcome.",
+        "application": "When presenting a new reasoning system, name the search or training mechanism alongside dataset scale, iteration count, and benchmark change.",
+        "exception": "This framing is less suitable when the work is primarily conceptual or lacks quantitative evaluation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify evaluation protocols, sampling or search budgets, statistical variation, or the precise o1 comparison setup.",
+      "The basis and source of the AIME student-ranking comparison are not described.",
+      "The abstract does not identify which model sizes or configurations achieved the reported state-of-the-art results."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "author_reported_evidence[1].claim",
+      "before": "The authors report improving Qwen2.5-Math-7B on MATH from 58.8% to 90.0%, exceeding o1-preview by 4.5 percentage points.",
+      "after": "The authors report improving Qwen2.5-Math-7B on MATH from 58.8% to 90.0%, surpassing o1-preview by a stated +4.5%, whose relative-versus-percentage-point interpretation is unspecified.",
+      "review_file": "reviews/flagged-batch-10.json",
+      "review_sha256": "f8a74e34c47e62f0714a839ccc201719d983b2c8e4ded9590045bc92b01af376",
+      "applied_at": "2026-09-13T00:42:27.383124+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "author_reported_evidence[2].claim",
+      "before": "The authors report solving 53.3% (8/15) of AIME problems, described as ranking among the top 20% of high-school math students.",
+      "after": "The authors report solving an average of 53.3% (8/15) of AIME problems and describe this as among the top 20% of the brightest high-school math students; the comparison basis is unspecified.",
+      "review_file": "reviews/flagged-batch-10.json",
+      "review_sha256": "f8a74e34c47e62f0714a839ccc201719d983b2c8e4ded9590045bc92b01af376",
+      "applied_at": "2026-09-13T00:42:27.384195+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

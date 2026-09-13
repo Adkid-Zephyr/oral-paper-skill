@@ -1,0 +1,185 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71037",
+    "title": "Protein Autoregressive Modeling via Multiscale Structure Generation",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71037"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2dbe592e5eb7eb123dee6d4443ce4f5d0663dd8f5c533003a8faf84872571c17",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "3cce66e041cd68a6ae0cfa37e5bb73246d6062f112570ba5dda929b405565bab",
+    "extracted_at": "2026-09-13T00:11:40.634085+00:00",
+    "session_id": "01a0981a-b246-7510-b11b-3c52155d257b",
+    "usage": {
+      "input_tokens": 12733,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 799,
+      "reasoning_output_tokens": 94
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "72cf0a66673f25311fc4d428bd197b69396063e70fcb21b3c5f72773be10583b"
+    },
+    {
+      "id": "S2",
+      "sha256": "5d11af3189e101173003a758178b892b3bfe6c84ee6d931cb640231b46252453"
+    },
+    {
+      "id": "S3",
+      "sha256": "0eace2dba6468c6593ccc9c1771f1faf9d0f061a8720c13c956eb8e4075ddd5c"
+    },
+    {
+      "id": "S4",
+      "sha256": "748800dbf442229992a3ee52dd729c181102e55c6a88ad59d36a20bad16a8b87"
+    },
+    {
+      "id": "S5",
+      "sha256": "8e61feb7cabac0abcd7b963a44cc22077752904c143cd7c7191d990eb19f0fb9"
+    },
+    {
+      "id": "S6",
+      "sha256": "fb7717d893dae8e81a706b1bbc584393e25781cc8d9752bb728bdcc4a66b49ad"
+    },
+    {
+      "id": "S7",
+      "sha256": "aec29e453e3eb31438fe52d962ef14f2d8d3eea05c10a603e3fa1847d77e2998"
+    },
+    {
+      "id": "S8",
+      "sha256": "dd8bca39cd6b2e78dc8aba749f7357d7ad6c1d287516118d8b2cd9acf3496d65"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71037",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate protein backbones autoregressively across structural scales, from coarse topology to fine detail.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Autoregressive protein generation is limited by exposure bias from the mismatch between training and generation procedures, which the authors state substantially degrades quality.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "PAR is presented as a multiscale, coarse-to-fine autoregressive framework combining multiscale representations, an autoregressive transformer, and a flow-based backbone decoder.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "type": "training method",
+        "claim": "The framework adopts noisy context learning and scheduled sampling to alleviate exposure bias.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "generation capability",
+        "claim": "PAR supports zero-shot human-prompted conditional generation and motif scaffolding without fine-tuning.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe PAR as the first multiscale autoregressive framework for protein backbone generation via next-scale prediction.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report strong zero-shot generalization for flexible conditional generation and motif scaffolding without fine-tuning.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "On an unconditional generation benchmark, the authors report that PAR learns protein distributions, produces backbones of high design quality, and shows favorable scaling behavior.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that noisy context learning and scheduled sampling enable robust backbone generation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The paper presents multiscale autoregressive protein backbone generation through coarse-to-fine next-scale prediction.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "design",
+        "summary": "PAR mirrors hierarchical structure formation by first establishing coarse topology and then refining details.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "architecture",
+        "summary": "Its architecture combines multiscale downsampling, a transformer producing conditional embeddings, and a flow-based backbone decoder.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "training_and_results",
+        "summary": "Noisy context learning and scheduled sampling address exposure bias; the authors then report zero-shot conditional capabilities and favorable unconditional-generation results.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a named failure mode—exposure bias—to two explicit training interventions, noisy context learning and scheduled sampling.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This creates a compact problem-to-remedy explanation that aligns a method choice with a concrete generation risk.",
+        "application": "When introducing an autoregressive generation method, pair each stated train–generation mismatch with the specific training mechanism intended to reduce it.",
+        "exception": "This framing is unsuitable when the method is non-autoregressive or when no mechanism is actually designed to address the identified mismatch."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative metrics, baseline comparisons, dataset details, or definitions for “high design quality” and “favorable scaling behavior.”",
+      "The scope and evaluation criteria of human-prompted generation and motif scaffolding are unspecified.",
+      "The abstract does not report quantitative evidence isolating the effects of noisy context learning versus scheduled sampling."
+    ]
+  }
+}

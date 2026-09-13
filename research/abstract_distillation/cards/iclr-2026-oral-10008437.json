@@ -1,0 +1,180 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008437",
+    "title": "Monocular Normal Estimation via Shading Sequence Estimation",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008437"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f77e96e5f53dcff5e51bea288f68c887dc274b825b6f1d08cb8d128cbefb08cf",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "7e7bdb002c2fe185e221379c888a772848435231113dc953c49ef9158d1e05b4",
+    "extracted_at": "2026-09-13T00:01:02.331019+00:00",
+    "session_id": "01a09810-f947-7de3-adc8-d125537e3d1f",
+    "usage": {
+      "input_tokens": 12781,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 797,
+      "reasoning_output_tokens": 99
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c5ee15e453b7f0ad441fddb4d40bf5b24bb9333ba7ad3cc5ab2617f217f35a15"
+    },
+    {
+      "id": "S2",
+      "sha256": "7ab3d70dea3588d184259937b360bfaf7588eabc3c868e98d4c6a30263e9fa7d"
+    },
+    {
+      "id": "S3",
+      "sha256": "1c327cd1bd5eb315b4ed7b3385422678c82e2c3d213e35bd4961bc8823b62aa7"
+    },
+    {
+      "id": "S4",
+      "sha256": "87d75d6844480adbed5d11f88dce661990a7ddd02682195c8ad69c7cdafe3fa0"
+    },
+    {
+      "id": "S5",
+      "sha256": "0d2932638595f851e4b78824f61a37879f0fc733e99b49b9bf4cdeed741da5e4"
+    },
+    {
+      "id": "S6",
+      "sha256": "62c679853bb7be7c0020a39b22fad6fef65790d3f6c1a8dc228b11943f9b0e49"
+    },
+    {
+      "id": "S7",
+      "sha256": "1a52d017e292d09dc1ea6632868a9f4a36be5defedefe0ff305b1a819535f018"
+    },
+    {
+      "id": "S8",
+      "sha256": "6878fc693cd42fed69addd2032a931dab852e6f6c415ba39ff43a048439e3005"
+    },
+    {
+      "id": "S9",
+      "sha256": "3e30e8fecf473622e02070e813153450e07afd4410110dd7d279a0781606920c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008437",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Estimate an object’s normal map from a single RGB image under arbitrary lighting.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing direct-prediction methods often produce normal maps whose apparent correctness does not translate to 3D-aligned reconstructed surfaces; the authors attribute this to subtle color differences encoding geometry variation.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "paradigm",
+        "claim": "Reformulates monocular normal estimation as shading-sequence estimation, which the authors argue is more sensitive to geometry information.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces RoSE, using image-to-video generative models to predict shading sequences and converting them to normal maps via ordinary least squares.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Presents MultiShade, a synthetic training dataset covering diverse shapes, materials, and lighting conditions.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state a new estimation paradigm centered on predicting shading sequences rather than directly predicting normal maps.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that RoSE achieves state-of-the-art performance on synthetic and real-world benchmark datasets for object-based monocular normal estimation.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Defines monocular normal estimation from one RGB image under arbitrary lighting.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Identifies 3D misalignment in direct normal-map prediction and links it to geometry being expressed through subtle color variations.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "Recasts the task as shading-sequence estimation and instantiates the idea in RoSE with image-to-video generation and least-squares conversion.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      },
+      {
+        "role": "training_and_result",
+        "summary": "Trains on the diverse synthetic MultiShade dataset and reports state-of-the-art benchmark performance across synthetic and real-world data.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper connects a specific failure mode—3D misalignment—to a representation issue, then changes the prediction target to shading sequences that are argued to expose geometry more sensitively.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A concrete representation-level diagnosis can motivate a more testable redesign than simply enlarging a direct predictor.",
+        "application": "When a predicted representation looks plausible but fails downstream geometrically, identify what information is weakly encoded and consider predicting an intermediate representation with stronger sensitivity to the target structure.",
+        "exception": "This move may be unsuitable when the intermediate representation is difficult to obtain reliably, adds substantial computation, or lacks a well-defined conversion to the desired output."
+      }
+    ],
+    "unknowns": [
+      "No quantitative metrics, baselines, dataset sizes, or evaluation protocol are provided.",
+      "The abstract does not specify how shading sequences are generated, how least-squares conversion is formulated, or whether the reported gains hold across all benchmark conditions.",
+      "The claimed state-of-the-art performance is author-reported and cannot be independently assessed from the abstract."
+    ]
+  }
+}

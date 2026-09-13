@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-115732",
+    "title": "1000 Layer Networks for Self-Supervised RL: Scaling Depth Can Enable New Goal-Reaching Capabilities",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/115732"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8a6b586a614b915b9c19449b3aa0ab958b02bc38c41371767bdf91eab563e377",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "e2a7b42d4b6eaadcb2cdd7080d9a67d4ed7fd77ce8fcc36dafd05e57092da98b",
+    "extracted_at": "2026-09-13T00:20:47.515019+00:00",
+    "session_id": "01a09823-0eaf-7220-bcff-6ea4abe76aab",
+    "usage": {
+      "input_tokens": 12675,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 761,
+      "reasoning_output_tokens": 107
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "b92a66b26d56ff376f6e5ebcdab11815746fecf205409e9611629418a6b4961a"
+    },
+    {
+      "id": "S2",
+      "sha256": "150b9a131d048befd52e597329716eba0517a3344e53e60c48369339da0c1fb8"
+    },
+    {
+      "id": "S3",
+      "sha256": "e92f672614d25c7ea80cdadec9f79d733b7de9ed1a8d91c9c1be012448a160f9"
+    },
+    {
+      "id": "S4",
+      "sha256": "8c78138781cc9840d18a4314c99ecbf99d2674b768df0f6a9c496c99a5b8893d"
+    },
+    {
+      "id": "S5",
+      "sha256": "45987246c02046bd2da669b49328247c00cac390d81ae779dc1f35fbdd79cd05"
+    },
+    {
+      "id": "S6",
+      "sha256": "e85430dab3e4c3fe8bbaf6f9b9e5850f7565d004ad3f7d568f812d8525d1fb2d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-115732",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how to improve scalability in self-supervised reinforcement learning.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Progress from scaling self-supervised learning has been less evident in reinforcement learning than in language and vision.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A self-supervised RL approach that treats network depth as a key scalability factor, reaching up to 1024 layers.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "In unsupervised goal-conditioned RL, increasing depth is reported to improve performance and alter learned behaviors.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work by demonstrating substantial gains from scaling RL networks far beyond the shallow 2–5-layer architectures commonly used in recent RL papers.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report 2×–50× performance increases for a self-supervised contrastive RL algorithm on simulated locomotion and manipulation tasks, outperforming other goal-conditioned baselines.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that greater depth increases success rates and qualitatively changes the behaviors learned.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Scaling has produced major gains in language and vision, but comparable progress has remained elusive in RL.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "study focus",
+        "summary": "The paper investigates self-supervised RL building blocks and identifies network depth as a critical scalability factor.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "experimental setting",
+        "summary": "Experiments use unsupervised goal-conditioned tasks without demonstrations or rewards, requiring exploration from scratch.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "On simulated locomotion and manipulation, deep networks reportedly yield large performance gains and qualitatively different behaviors.",
+        "source_ids": [
+          "S3",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a concrete architectural scaling choice—depth up to 1024 layers—to both quantitative gains and qualitative behavioral changes in a specified unsupervised goal-conditioned setting.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This framing connects an intervention, evaluation context, measurable outcome, and behavioral consequence in one claim.",
+        "application": "When presenting a systems or learning-method contribution, pair the design variable with its evaluation regime and report both numerical and qualitative effects if both are observed.",
+        "exception": "This format is unsuitable when qualitative behavior is not assessed or when the intervention cannot be isolated from other design changes."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact architecture, training procedure, task counts, metrics, or conditions behind the 2×–50× range.",
+      "It does not identify the compared baselines or quantify the reported qualitative behavior changes.",
+      "The abstract alone does not establish whether depth caused the gains independently of other factors."
+    ]
+  }
+}

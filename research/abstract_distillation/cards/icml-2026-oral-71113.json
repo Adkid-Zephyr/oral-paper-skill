@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71113",
+    "title": "ReQAT: Achieving Full-Precision Reasoning Accuracy with 4-bit Floating-Point Quantization-Aware Training",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71113"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "12e14eff1aec4e333519ad5e886e1c1f4788aae456d08e5b229e61fd6e44f5f3",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "b315029b0b4e958915a4dd85741b9ccf219faa7b1c8d2f10ad50d8d7052bb323",
+    "extracted_at": "2026-09-13T00:14:36.549990+00:00",
+    "session_id": "01a0981d-5c8d-78e3-b8b3-a9459d4db94e",
+    "usage": {
+      "input_tokens": 12777,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 806,
+      "reasoning_output_tokens": 52
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "697eb87262f8d1414b4953d06f0d68b441edcd526d31f7d87f8785736c49f79d"
+    },
+    {
+      "id": "S2",
+      "sha256": "42ced3cbffec74252d90c20f257f90db3debb522cf9b556820aae4ab7da36b3a"
+    },
+    {
+      "id": "S3",
+      "sha256": "efe679040d7f4acc9797a31a84a083c19c45bb51121b6674e028b16e796cae57"
+    },
+    {
+      "id": "S4",
+      "sha256": "6f5d9992120cddb49286ce87d6c0a32115ba0ccafd265f08d8f5a484d6378bee"
+    },
+    {
+      "id": "S5",
+      "sha256": "21b6aae0a5d132d55f39783f13cd488fcaa3b4bc3872ce2a8830410fa86f085e"
+    },
+    {
+      "id": "S6",
+      "sha256": "ad229832704082601435a4570408b89dfc749819aaef0ecc7333c94b34c59dc1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71113",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Deploying large reasoning models efficiently while preserving reasoning accuracy under 4-bit floating-point quantization.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Fully quantized W4A4KV4 deployment causes severe reasoning degradation, and existing PTQ and QAT reportedly fail to recover it.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "ReQAT, a reasoning-centric FP4 quantization-aware training framework combining Trace-Aligned QAT, Selective Entropy Minimization, and Q-FIT initialization with RoPE-consistent KV-cache calibration.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "An identified failure pattern: FP4 errors concentrate on low-entropy symbolic decisions, where sampling errors can cascade through reasoning traces.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report accuracy recovery beyond BF16 fine-tuning under the same training budget, alongside substantial hardware-specific throughput gains.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present ReQAT as a reasoning-centric FP4 training framework centered on low-entropy decision preservation and jointly calibrated KV-cache transformations.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that ReQAT recovers and surpasses BF16 fine-tuning accuracy under the same training budget.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report up to 3.9× throughput speedup on NVIDIA DGX Spark and 3.1× on B200.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Large reasoning models incur costly full-precision inference and growing KV-cache footprints.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Microscaled FP4 supports efficient deployment, but fully quantizing weights, activations, and KV caches severely degrades reasoning, beyond reported recovery by existing PTQ and QAT.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors attribute concentrated FP4 failures to noisy low-entropy symbolic commitments whose sampling errors cascade through reasoning traces.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "ReQAT addresses this with trace-aligned updates, entropy minimization at critical positions, and quantization-friendly KV-cache-aware initialization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The authors report exceeding BF16 fine-tuning accuracy and achieving hardware-dependent throughput speedups.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links quantization failures to low-entropy symbolic decisions and then aligns training updates and confidence reinforcement with those positions.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Error localization can motivate targeted optimization objectives instead of uniform treatment of all tokens.",
+        "application": "For another sequence-model compression problem, identify decision positions associated with downstream error cascades and weight training or calibration toward them.",
+        "exception": "This move may be unsuitable when failure localization is unverified, unavailable, or when errors do not propagate through identifiable decision points."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, model sizes, accuracy values, baselines beyond BF16 fine-tuning, or statistical variability.",
+      "The reported speedups are hardware-specific; runtime settings and comparison implementations are not given.",
+      "The causal account connecting low-entropy quantization noise to cascading errors is presented but not experimentally detailed in the abstract."
+    ]
+  }
+}

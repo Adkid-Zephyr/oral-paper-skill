@@ -1,0 +1,205 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31778",
+    "title": "Judge Decoding: Faster Speculative Sampling Requires Going Beyond Model Alignment",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31778"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "762186d2bae3097b2b468be1ca6169f19de5b87589ddcc667864da5678984b07",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "34aca21e25e7606ec5425432d81d777cd0145b46c2849e8f37ed40ee83aa1dde",
+    "extracted_at": "2026-09-12T23:51:36.006675+00:00",
+    "session_id": "01a09808-421a-76e0-ac80-c91db94b7ca9",
+    "usage": {
+      "input_tokens": 12868,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 941,
+      "reasoning_output_tokens": 106
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "23faa844bf903c0b40ac1f22c328ba5618a8e026019ae042cfa0abafb3bb8eae"
+    },
+    {
+      "id": "S2",
+      "sha256": "fb02de0a9ba46022ba142dde74ffe34bd4caf1041f2443b4499c2c530b0a9b8a"
+    },
+    {
+      "id": "S3",
+      "sha256": "818bc678930a7d2c19989880f332ae84d872461ca067f06e27499d09405b60ea"
+    },
+    {
+      "id": "S4",
+      "sha256": "df2fc494abfc0d91cbd8e0c6f561b15afcc18b8814d90573331e4c73e6f8906b"
+    },
+    {
+      "id": "S5",
+      "sha256": "5c8ce36e976d24c3cac57e82b23f2cad6c628cb45fbe75236e94e9a89ba661c9"
+    },
+    {
+      "id": "S6",
+      "sha256": "38a8404214fa48220f9f7ab05e00213fb4ca3a7ba1962bbb9a9b04277f5f4f07"
+    },
+    {
+      "id": "S7",
+      "sha256": "02a7b49a9f7f7f1c2196cf9e2df4bf0a5c5581f1922a1034f30b158a7aa2ba00"
+    },
+    {
+      "id": "S8",
+      "sha256": "eb5e6205f36cee6dc35f5f127387d72680a63b715c86f1ddc949662d37febd69"
+    },
+    {
+      "id": "S9",
+      "sha256": "4a1fb79720b52ac17396044697b73c949ba05cbdd6179739cf0ec9d126bf1f0c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31778",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "LLM inference slows as model size grows, motivating faster autoregressive generation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Standard speculative decoding rejects many objectively valid draft continuations because verification depends on draft–target alignment, limiting speedup.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A judge-based verification strategy that trains a compact module over target-model embeddings to judge the current continuation.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "TokenCourt, a dataset designed to elicit continuation-judgement capability in the target model.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "system demonstration",
+        "claim": "An 8B/405B-Judge configuration for the Llama-3.1 family.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their approach by adapting speculative-decoding verification to recognize correct but non-aligned replies, drawing on LLM-as-a-judge capabilities.",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that GPT-4o and human text do not achieve high acceptance rates under standard verification.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "On Llama-3.1, the authors report a 9× speedup over Llama-405B while maintaining quality across a large range of benchmarks.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "In optimized inference frameworks, they report up to 141 tokens/s for 8B/70B-Judge on 2 H100s and 129 tokens/s for 8B/405B on 8 H100s.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Growing LLM size improves performance but makes inference slower.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior approach and limitation",
+        "summary": "Speculative decoding proposes tokens with a fast draft model and verifies them in parallel, but often rejects valid continuations under alignment-based verification.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "diagnosis and question",
+        "summary": "The authors report low acceptance even for GPT-4o and human text, then ask whether verification can recognize correct non-aligned replies.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "proposed approach and results",
+        "summary": "They use judge-style continuation scoring with TokenCourt and a compact embedding module, reporting speed and quality results on Llama-3.1.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a concrete failure mode—rejection of valid but non-aligned continuations—to a revised verification objective.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "A useful research framing can target the evaluator or acceptance rule rather than only improving the proposal generator.",
+        "application": "When a pipeline rejects acceptable outputs, define and test an acceptance criterion that captures task correctness beyond exact agreement with a reference model.",
+        "exception": "This is unsuitable when exact target-model sampling fidelity is the primary requirement."
+      },
+      {
+        "source_observation": {
+          "claim": "The method is introduced through a compact module and a purpose-built dataset, followed by deployment-oriented throughput reports.",
+          "source_ids": [
+            "S7",
+            "S9"
+          ]
+        },
+        "interpretation": "A focused auxiliary component can make a verification redesign operationally measurable.",
+        "application": "Pair a specialized supervision resource with explicit system-level metrics when proposing an inference-time module.",
+        "exception": "Throughput metrics alone are insufficient when the main contribution is theoretical or when quality cannot be summarized by the reported benchmarks."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark identities, quality metrics, acceptance rates, training details, or the exact verification rule.",
+      "The reported speedups and throughput are author-reported; conditions needed to assess comparability and trade-offs are not fully given."
+    ]
+  }
+}

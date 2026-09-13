@@ -1,0 +1,172 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31849",
+    "title": "LVSM: A Large View Synthesis Model with Minimal 3D Inductive Bias",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31849"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f808400956fcfaa50ab5f4a7664a9eada9a55974b32b1c12dfa2376e90719986",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "0e74a5a58493273da4a19a4f0793cefc2e0cd3bec2aa63eb065a719e73af396c",
+    "extracted_at": "2026-09-12T23:54:22.823545+00:00",
+    "session_id": "01a0980a-e362-7c01-acea-45b5913c60f0",
+    "usage": {
+      "input_tokens": 12753,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 765,
+      "reasoning_output_tokens": 87
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9e6473e710e9e7caded1166db1aae573743b82708ff97b893a02da6c3e51acec"
+    },
+    {
+      "id": "S2",
+      "sha256": "708b3b940df8195ea1f2cb37b23e5d514109e5c06ed97f408c129a4e713e82bd"
+    },
+    {
+      "id": "S3",
+      "sha256": "c375572873fb51de6e3e1b657c47ed7e9a125383aedd3f8d0fafd0fb244b6f4b"
+    },
+    {
+      "id": "S4",
+      "sha256": "5bd4846e7f285a9359040915f0b251803e69304a4e62427b895c8dc5e4576a2d"
+    },
+    {
+      "id": "S5",
+      "sha256": "96f76a13d366983fc0454004829e6336d9001c218081634b93d627ab899d92f2"
+    },
+    {
+      "id": "S6",
+      "sha256": "8b0e48f8625f5c4324925fc17d9351d9da4a321750356828dfc1686d5369f323"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31849",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop a scalable, generalizable method for novel view synthesis from sparse-view inputs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "LVSM provides encoder-decoder and decoder-only transformer architectures for novel view synthesis, using learned latent tokens or direct image-to-image mapping.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "design",
+        "claim": "Both variants remove explicit 3D representations and 3D-specific network designs in favor of a fully data-driven approach.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish LVSM by pursuing large-scale view synthesis with minimal 3D inductive bias, including a decoder-only design without an intermediate scene representation.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that decoder-only LVSM provides higher quality, scalability, and zero-shot generalization than prior state-of-the-art methods, with gains of 1.5–3.5 dB PSNR.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "Across multiple datasets, the authors report state-of-the-art quality for both variants, including strong performance with 1–2 GPUs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report faster inference for the encoder-decoder model, attributed to its independent latent representation.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "The paper targets scalable and generalizable sparse-view novel view synthesis.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "architecture",
+        "summary": "It introduces encoder-decoder and decoder-only LVSM variants with different uses of intermediate scene representations.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "design stance",
+        "summary": "Both variants avoid prior 3D representations and 3D-specific architectural biases.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "comparison",
+        "summary": "The encoder-decoder variant is reported as faster, while the decoder-only variant is reported as stronger in quality, scalability, and zero-shot generalization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Multi-dataset evaluations report state-of-the-art quality and strong performance under limited GPU resources.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly presents complementary tradeoffs: encoder-decoder LVSM favors inference speed, whereas decoder-only LVSM favors quality, scalability, and zero-shot generalization.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "Separating model variants by operational tradeoffs makes architectural choices easier to evaluate against deployment goals.",
+        "application": "When proposing related architectures, state the specific advantage and cost of each variant and connect them to distinct use conditions.",
+        "exception": "This framing is unsuitable when variants have no clearly reported, condition-dependent differences."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dataset names, baseline identities, evaluation protocols, or whether the reported PSNR gains are statistically tested.",
+      "The reported resource advantage is not quantified beyond the 1–2 GPU setting.",
+      "The abstract does not establish priority or independently verify the authors’ novelty and performance claims."
+    ]
+  }
+}

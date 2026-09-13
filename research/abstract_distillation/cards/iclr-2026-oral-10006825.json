@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006825",
+    "title": "GLASS Flows: Efficient Inference for Reward Alignment of Flow and Diffusion Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006825"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0148b2dc21092bdf49e84cd9c901a888d193c802fd38876577046796873498dd",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "24bb64c5a1ec28b5999a98725ccc191835dec6bd0ebab614048a3ccd27f37f08",
+    "extracted_at": "2026-09-12T23:58:40.227611+00:00",
+    "session_id": "01a0980e-cb7e-75d0-bf2d-5bbdd17488b2",
+    "usage": {
+      "input_tokens": 12693,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 801,
+      "reasoning_output_tokens": 104
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "67d8bc928b1afa9c461e4f73526d4d57c619da5657e05ca681eb4c677cd311ca"
+    },
+    {
+      "id": "S2",
+      "sha256": "76aba44a03886f4e6f02a94b8c8fdf828fb05c0469259cf5277603592759b6d0"
+    },
+    {
+      "id": "S3",
+      "sha256": "e9a7ee5d6ad531bed28d41da6397746347c852d845d9dd0c813e2735bcf44dd1"
+    },
+    {
+      "id": "S4",
+      "sha256": "77f37a65c570b26962d1527cfff6a69e33e79147ccc3c26da8a6acd482ecacea"
+    },
+    {
+      "id": "S5",
+      "sha256": "8d692d280dcbee43e5c82e215972979468f9b2e95794db3c4df205d5ccb5a8dc"
+    },
+    {
+      "id": "S6",
+      "sha256": "78b76946479c0b1155b5734f40c1130ae2887f5bac765dcf17a114b8908e00ac"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006825",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Inference-time reward adaptation can improve flow-matching and diffusion models, but efficient sampling remains a central challenge.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing reward-alignment algorithms often rely on SDE sampling of Markov transitions, which the authors report is less efficient and often less performant than ODE sampling.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces GLASS Flows, a sampling paradigm that simulates a flow-matching model within another flow-matching model to sample Markov transitions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Retrieves the inner flow-matching model from any pretrained model without retraining, combining ODE efficiency with SDE-like stochastic evolution.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish GLASS Flows as a new sampling paradigm for removing the sampling bottleneck in reward-alignment algorithms.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "On large-scale text-to-image models, the authors report that GLASS Flows eliminate the trade-off between stochastic evolution and efficiency.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report improved state-of-the-art performance in text-to-image generation and characterize GLASS Flows as a simple drop-in solution for inference-time scaling.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Inference-time reward adaptation improves flow and diffusion models, but efficiency remains limiting.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors identify SDE-based sampling of Markov transitions as a common bottleneck relative to ODE sampling.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "GLASS Flows address the bottleneck by nesting a flow-matching model to generate the transitions.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "The inner model is retrieved from a pretrained model without retraining, combining ODE efficiency with stochastic evolution.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "Experiments on large-scale text-to-image models are reported to remove the efficiency–stochasticity trade-off and improve performance.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a specific bottleneck diagnosis with a mechanism that preserves the desired stochastic behavior while removing retraining requirements.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A compact abstract can make a method’s rationale legible by aligning the identified failure point, the proposed mechanism, and the claimed operational benefit.",
+        "application": "When presenting an inference or systems method, explicitly map each major limitation to a design choice and state whether deployment requires retraining.",
+        "exception": "This framing is less suitable when the method has multiple interacting bottlenecks or when retraining assumptions vary substantially across settings."
+      }
+    ],
+    "unknowns": [
+      "No quantitative efficiency, performance, or trade-off measurements are provided.",
+      "The abstract does not specify datasets, baselines, sampling budgets, or evaluation conditions.",
+      "The scope of retrieval from pretrained models and the meaning of “state-of-the-art” are not detailed."
+    ]
+  }
+}

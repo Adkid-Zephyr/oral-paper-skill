@@ -1,10 +1,10 @@
 # Sources, reading levels, and current evidence
 
-Updated 2026-09-12. This file distinguishes the project's learning materials from completed corpus analysis. A paper appearing here is not evidence that every page was deeply read.
+Updated 2026-09-13. This file distinguishes abstract-level evidence, earlier reading leads, and what has actually been checked. A paper appearing here is not evidence that every page was deeply read.
 
-## Historical index
+## Rebuilt corpus and completed abstract-level work
 
-The September 2 extraction log reported these official Oral entries:
+The six official lists were rebuilt. Entry counts remain:
 
 | Cycle | Entries |
 |---|---:|
@@ -16,7 +16,11 @@ The September 2 extraction log reported these official Oral entries:
 | NeurIPS 2025 | 87 |
 | Total | 884 |
 
-The same run reported 883 available abstracts. The raw index and collection scripts were not included in the initial release. These are historical extraction counts, not a newly verified count of 884 unique full papers. Rebuild the manifest, resolve event-to-paper IDs, check duplicates and exclusions, and report any changed denominator.
+One ICML 2026 entry points to a [workshop/session](https://icml.cc/virtual/2026/workshop/54094), not a paper. It is retained as excluded; 883 abstracts are eligible. No duplicate entry IDs, event URLs, or normalized titles were found. The public index stores identities, source links and hashes; raw source pages and full abstracts are retained locally.
+
+All 883 eligible abstracts received one-paper-per-context Luna extraction. Astra medium performed 21 batch syntheses, the 24-paper pilot review, a separately fixed random 36-paper audit, and targeted source checks. Astra xhigh consolidated the results into seven practices. Fourteen selected examples were directly rechecked against original abstracts; one model-class qualifier was restored before publication.
+
+Use [the seven practices and examples](abstract-derived-practices.md) for application. The [run results](https://github.com/Adkid-Zephyr/oral-paper-skill/blob/main/research/abstract_distillation/RESULTS.md) link the index, cards, checks, corrections and available model-usage records. These are AI source checks, not independent human scientific validation.
 
 Official starting points:
 
@@ -27,16 +31,17 @@ Official starting points:
 - [NeurIPS 2024](https://neurips.cc/virtual/2024/events/oral)
 - [NeurIPS 2025](https://neurips.cc/virtual/2025/events/oral)
 
-## Completed and pending work
+## Scope and historical boundary
 
-- **Completed historically:** index/abstract extraction; keyword-based scans and rough classifications; selected text passages and rendered figure pages from eight ICLR papers; official award-commentary reading.
-- **Not established:** structured semantic extraction for every abstract; a full-text deep-reading sample spanning all six archetypes and all three venues; full-paper distillation of 884 papers.
+- **Before this run:** the initial release used index/abstract extraction, keyword scans, rough classifications, selected passages and figures from eight ICLR papers, and award commentary. That stage did not complete per-abstract semantic distillation.
+- **Completed in this run:** semantic records for all 883 eligible abstracts, cross-batch synthesis, source-check correction trails, and seven curated practices with checked examples.
+- **Not established:** full-paper distillation, a systematic full-text/figure sample covering every type and venue, or verification of the underlying scientific claims.
 - **Unavailable in the original reading run:** OpenReview reviews and author responses, because access was blocked. No actual reviewer objections were verified.
 - **Not measured:** improvement over ordinary prompting, time savings, acceptance probability, or durable impact of the Skill.
 - The early keyword counts cannot establish argument quality. Detecting “however,” “we propose,” or digits is not semantic evidence for the ORAL framework.
 - The original dry runs were author-generated examples and self-reviews. File validation checks packaging, not user benefit.
 
-The work needed to complete abstract-level extraction is specified in [the repository research plan](https://github.com/Adkid-Zephyr/oral-paper-skill/blob/main/docs/ABSTRACT_DISTILLATION.md). Applying the installed Skill does not require that plan.
+The [repository workflow](https://github.com/Adkid-Zephyr/oral-paper-skill/blob/main/docs/ABSTRACT_DISTILLATION.md) describes the process. Applying the installed Skill does not require rerunning the corpus.
 
 ## Original ICLR case-study leads
 
@@ -63,8 +68,8 @@ The initial synthesis also consulted these announcements. Committee explanations
 
 ## Learning guidance versus empirical findings
 
-ORAL is currently an editorial framework inspired by these materials and general research practice. It is useful as a set of questions to consider, not a measured law shared by all papers.
+The seven practices are editorial guidance distilled from the abstract material, not measured laws shared by every paper. The older ORAL mnemonic remains optional; it was not treated as the answer the corpus had to confirm.
 
-Future rules should connect an inspected source practice to a purpose, an application, and an exception. Record whether evidence comes from an abstract, a full-text passage, a figure, or committee commentary. General guidance without an exemplar remains valid if labeled as general guidance.
+Connect an inspected source practice to a purpose, an application, and an exception. Record whether evidence comes from an abstract, full-text passage, figure, or committee commentary. General guidance without an exemplar remains valid if labeled as such. Source-review corrections override earlier synthesis snapshots when they disagree.
 
 Abstract-level extraction may describe framing, stated novelty, and author-reported evidence. Experimental adequacy, causal identification, plot design, and proof correctness require their own relevant sources. Do not infer them from an abstract or from a paper's selection status.

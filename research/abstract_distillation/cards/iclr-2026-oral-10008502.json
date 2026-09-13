@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008502",
+    "title": "Generating metamers of human scene understanding",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008502"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e210f6c3608d152fc2830b78d1b3ef4dde3fe26b8c85087bac167979c247cbe9",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "139ec601c7ab3ddbae997670f06fc9fea8b27716c6ed30f65eb5fd6f34131334",
+    "extracted_at": "2026-09-13T00:01:09.828117+00:00",
+    "session_id": "01a09811-10ee-7251-b6e8-90d4f99bb36f",
+    "usage": {
+      "input_tokens": 12809,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 807,
+      "reasoning_output_tokens": 100
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3cc9781a84fbfaea1f24cda6cfb405cfe35fee434837f593d73cc5bdea4823f8"
+    },
+    {
+      "id": "S2",
+      "sha256": "104d33cc8be2abb0b890e12ed55930c86584e59a9a021bd2925462349f00bb9e"
+    },
+    {
+      "id": "S3",
+      "sha256": "f8ef77f3fadf0bb17eedfc513e3723d56d59e69069ce0c02f38dccac44395330"
+    },
+    {
+      "id": "S4",
+      "sha256": "237d05dce8140e79a6776ff4881364f91f0de6d8fc256e2a875ffbd313b730f4"
+    },
+    {
+      "id": "S5",
+      "sha256": "98f6374a8a79302663b57e942e5e28122e0f2b8634939632cc2d582a21cb7428"
+    },
+    {
+      "id": "S6",
+      "sha256": "09a425ae1f9e530dae272299f0bace0fcd11b2b9461bc54141ebc6b81bacb159"
+    },
+    {
+      "id": "S7",
+      "sha256": "a7a582cd2dc6d6015e6ae06f9703d50fdde941b23ab8d460dcb9c099ecb59f42"
+    },
+    {
+      "id": "S8",
+      "sha256": "053a5b3ce925f801d2b6e8cab458d4b0d970f3a405da7759d742fa854885a537"
+    },
+    {
+      "id": "S9",
+      "sha256": "bc8c01f218d46a34dacf5062cf8b055df98263028e73555ad80862742fe61fc6"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008502",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate image metamers from both peripheral low-resolution scene gist and fixation-based high-resolution information, aligned with latent human scene representations.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "tool and method",
+        "claim": "Introduces MetamerGen, a latent diffusion model using a dual-stream DINOv2-token representation that combines fixation details with degraded peripheral context.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that high-level semantic alignment most strongly predicts metamerism when generation is conditioned on viewers’ own fixated regions.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "Reports proof-of-concept analyses identifying features at multiple visual-processing levels associated with human judgments.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize generation from combined high- and low-resolution foveated inputs as a novel image-to-image synthesis problem and introduce a dual-stream representation to address it.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report evaluating perceptual alignment with a same-different behavioral experiment comparing generated and original images.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report identifying scene generations that function as metamers for viewers’ latent scene representations.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that MetamerGen can generate metamers with random fixations, while semantic alignment is the strongest predictor under viewers’ own fixations.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Human scene understanding combines peripheral gist with sparse, high-resolution information at fixations.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "MetamerGen generates scenes from these two information sources using latent diffusion and dual-stream DINOv2 tokens.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "A same-different behavioral experiment tests perceptual alignment between generated and original images.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "The authors report metamers, multilevel judgment-relevant features, and strongest semantic prediction when using viewers’ own fixations.",
+        "source_ids": [
+          "S6",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a perceptual-generation objective to a behavioral same-different test and separately reports which conditioning information predicts metamerism.",
+          "source_ids": [
+            "S5",
+            "S9"
+          ]
+        },
+        "interpretation": "A useful pattern is to align the evaluation task directly with the claimed perceptual property, then analyze predictors of success.",
+        "application": "For a representation intended to match human perception, define a task-specific human judgment test and report conditional predictors rather than only aggregate generation results.",
+        "exception": "This may be unsuitable when human judgments are unavailable, prohibitively costly, or not the target criterion."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify participant counts, stimuli, statistical results, or operational criteria for identifying metamers.",
+      "It does not report the precise behavioral effect sizes or how semantic alignment was measured.",
+      "The abstract does not establish priority beyond the authors’ characterization of the synthesis problem as novel."
+    ]
+  }
+}

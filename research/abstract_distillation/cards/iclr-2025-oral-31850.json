@@ -1,0 +1,200 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31850",
+    "title": "From Exploration to Mastery: Enabling LLMs to Master Tools via Self-Driven Interactions",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31850"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "54bf64972fe618282474e6938c428e9f6919f318cdf5d93ba5d4aaedbc0ede5d",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "8fe3882a18d81ab7c5b5a9ddf2268d0ae25e3adbe0cf52faa53f004b5e0707c1",
+    "extracted_at": "2026-09-12T23:54:27.099873+00:00",
+    "session_id": "01a0980a-e6ec-7e12-b68e-1b80ab866130",
+    "usage": {
+      "input_tokens": 12762,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 889,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "527bf90fb866cf20abaf6998bfd6e1b299abb31c0483445d22be7b5feada2b06"
+    },
+    {
+      "id": "S2",
+      "sha256": "c82f7124d8c80c4456e6240e90f757f297fdf962de78f835ba673c991f62dc06"
+    },
+    {
+      "id": "S3",
+      "sha256": "1c8fcb97cd5ae3def3b19f45c80bc609f2bfeeb9fb298c4e1b8faa1a843dd629"
+    },
+    {
+      "id": "S4",
+      "sha256": "c1372b821ed86549d5f4cd04c67e677cc05a8c0f348f726df8444c5e9157ddec"
+    },
+    {
+      "id": "S5",
+      "sha256": "e291acc604a52213ffcd86d9c33bb85a33848b3e33b3705469dbeebb567a2581"
+    },
+    {
+      "id": "S6",
+      "sha256": "e5217bf9ff194bfdf763b372037ce4941bb00c9adec14f04f92cb71bdcfdeb4f"
+    },
+    {
+      "id": "S7",
+      "sha256": "0878edcab87f15f6deb821d95bb5221888fc385b26bbc25772651381b1b807b2"
+    },
+    {
+      "id": "S8",
+      "sha256": "9b20d991fba1bda7207da6099f04010c1a07ac264bd6fe2466c4adb29bdaf0f3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31850",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses how LLMs can better comprehend and use external tools through tool documentation.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing human-centric tool documentation is described as inadequate and inaccurate, creating a comprehension gap between LLMs and external tools.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "The authors propose DRAFT, which dynamically refines tool documentation using feedback and trials from LLM–tool interactions.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "DRAFT uses iterative experience gathering, learning from experience, and documentation rewriting, with diversity-promoting exploration and tool-adaptive termination.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report improved documentation quality, tool comprehension, and tool utilization, along with robust cross-model generalization of refined documentation.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe DRAFT as a novel framework for dynamically refining tool documentation from LLM interaction feedback and trials.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments across multiple datasets found DRAFT’s iterative, feedback-based refinement improved documentation quality and supported more effective tool use.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that documentation refined by DRAFT showed robust cross-model generalization.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Tool learning can extend LLM interaction with external environments, while documentation guides tool use.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "The paper identifies inadequate and inaccurate human-centric documentation as a source of LLM–tool comprehension mismatch.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "DRAFT refines documentation from interaction feedback through three iterative learning phases.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "optimization",
+        "summary": "DRAFT adds diversity-promoting exploration and tool-adaptive termination for exploration diversity, efficiency, and overfitting prevention.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "reported-outcomes",
+        "summary": "Experiments reportedly show better documentation and tool use, with cross-model generalization of refined documentation.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper links documentation rewriting to accumulated interaction experience and explicitly separates experience gathering, learning, and rewriting phases.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "A staged pipeline can make the path from behavioral feedback to revised instructions explicit and inspectable.",
+        "application": "Describe an adaptive-instruction method as separate data collection, feedback interpretation, and artifact-revision stages, and state what each stage consumes and produces.",
+        "exception": "This framing may be unsuitable when the system cannot obtain interaction feedback or when documentation is fixed by external governance."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract pairs exploration diversity with a tool-adaptive stopping mechanism and reports cross-model generalization as an outcome.",
+          "source_ids": [
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "Resource-control mechanisms and transfer behavior can be presented as integral design concerns rather than afterthoughts.",
+        "application": "When proposing self-improvement through trials, specify both how exploration is diversified and how termination adapts to the tool, then report transfer across models if evaluated.",
+        "exception": "Cross-model transfer is not a meaningful target when the artifact is deliberately model-specific."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the datasets, baselines, metrics, effect sizes, or statistical conditions behind the reported improvements.",
+      "The mechanism and evaluation details supporting the claimed cross-model generalization are unspecified.",
+      "The abstract does not establish independent verification of the proposed method’s effectiveness or novelty."
+    ]
+  }
+}

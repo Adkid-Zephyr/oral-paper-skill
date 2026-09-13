@@ -1,0 +1,162 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31741",
+    "title": "Faster Cascades via Speculative Decoding",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31741"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f12c8abb1c50fc9772bd15c8c4476c5e5741558d2eddb039b47d31fc4541ea14",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "82dabb858d31a7eb8711a7e045ba98c643cb8ac59964cc7785965a7f28c08d2b",
+    "extracted_at": "2026-09-12T23:50:11.089819+00:00",
+    "session_id": "01a09807-061c-7a20-b88b-fa2892c8dde9",
+    "usage": {
+      "input_tokens": 12653,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 717,
+      "reasoning_output_tokens": 98
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9ec19aa1efa8b726929f28a22865c183576a7d5176b7488184936525b1420861"
+    },
+    {
+      "id": "S2",
+      "sha256": "1cd079b0c596ea239f51b1d36cd19baca03ccbdbe71bbffc814ebb3882e5e828"
+    },
+    {
+      "id": "S3",
+      "sha256": "44118ea26b10e558579d39f68417001a5f6225256c9f301f79cb8d9e5d18909e"
+    },
+    {
+      "id": "S4",
+      "sha256": "11e630164bf46ff77b2d25c9269ce4614d4ff496b5c814b561ffbac79773b2c9"
+    },
+    {
+      "id": "S5",
+      "sha256": "3edd593d7190892731990dcd91bc4b9a50ea6280ac6f3c0ea1b68338b004e77b"
+    },
+    {
+      "id": "S6",
+      "sha256": "8a548062e3e290d6563e15805506e10cb1d568519f1e480b8abc5d25bc5338c5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31741",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve language-model inference efficiency while balancing cost, quality, and speed.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Designs speculative cascading techniques that implement cascades’ deferral rule through speculative execution.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory and method",
+        "claim": "Characterizes an optimal deferral rule for speculative cascades and uses a plug-in approximation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper combines cascade-style deferral with speculative execution in new speculative cascading techniques.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments with Gemma and T5 across multiple language benchmarks produce better cost-quality trade-offs than cascading and speculative-decoding baselines.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The abstract reports that cascades can offer compelling cost-quality trade-offs, sometimes outperforming the large model, while speculative cascades provide speed-ups with quality-neutrality guarantees.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Cascades and speculative decoding are presented as common approaches to improving language-model inference efficiency.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "contrast",
+        "summary": "Both interleave two models but differ in mechanism: cascades defer hard inputs to the larger model, whereas speculative decoding uses parallel speculative execution and scoring.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "design",
+        "summary": "The paper combines these mechanisms by implementing deferral through speculative execution and characterizing an optimal rule with a plug-in approximation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Experiments on Gemma and T5 across language benchmarks are reported to outperform both baseline approaches on cost-quality trade-offs.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly separates the two mechanisms, identifies their different benefits, and then states which mechanism is retained from each in the proposed design.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A compact mechanism–benefit–design mapping can make a hybrid method’s rationale easy to follow.",
+        "application": "When introducing a hybrid approach, name the operational mechanism and benefit inherited from each component, then state how the hybrid combines them.",
+        "exception": "This framing is less suitable when components cannot be cleanly separated or their benefits are not supported by the available evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative speed, cost, quality, or trade-off values.",
+      "The conditions and scope of the reported quality-neutrality guarantee are unspecified.",
+      "The optimal-rule characterization and plug-in approximation are not detailed enough to assess their assumptions or approximation quality.",
+      "Benchmark identities, baselines, and experimental settings are not provided."
+    ]
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007212",
+    "title": "Scaling Atomistic Protein Binder Design with Generative Pretraining and Test-Time Compute",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007212"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "54b220b7cf8a6bfb5bc80ef6d973f21853915f2ba57af92c533ef85f63ba2167",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "3106f7904f38e892f95b64efb19245c588f121ab60e368e6d9ee14e9f78f3fb3",
+    "extracted_at": "2026-09-12T23:59:14.227380+00:00",
+    "session_id": "01a0980f-4a73-7221-b797-c4bdfe615865",
+    "usage": {
+      "input_tokens": 12775,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 876,
+      "reasoning_output_tokens": 86
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e35fa8104f3cf8621801528afb47802388fec78f58111c31d7b80dffaef5d239"
+    },
+    {
+      "id": "S2",
+      "sha256": "537768dae7ebee4cb1d59f6160519fdc846914be05b8c2cbc7871ab349aef046"
+    },
+    {
+      "id": "S3",
+      "sha256": "764c11ff49a8f5e0f7bbdcecf86b4b393e4cff5cd54296c4e5e78dbe8f98a521"
+    },
+    {
+      "id": "S4",
+      "sha256": "f641b3e6e6f8457543830fb636b7f1713b5fc4e4f9055e2c306c66809714f180"
+    },
+    {
+      "id": "S5",
+      "sha256": "69c53e3b019b8d6b9205b4d78a2c31e31881de272bb19233286cd3af8a82de7d"
+    },
+    {
+      "id": "S6",
+      "sha256": "a6e2f370945455a4d99f085077e2f3ddbc69ce2fd23db33de7623b213d595deb"
+    },
+    {
+      "id": "S7",
+      "sha256": "07706d7f4fdd4d2bd155a28df4526e565db7678b3f22f705cce0ec6df5f966b9"
+    },
+    {
+      "id": "S8",
+      "sha256": "8970bb1df91421e9891cc3e848d4fb7f0f65304d6391df6fdb29be37f7062f9a"
+    },
+    {
+      "id": "S9",
+      "sha256": "93af47bc645932607930792813f8e207fc5d1d94c9b316a8730a452afb0c1f2b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007212",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Atomistic de novo protein binder design must generate binders against target structures while supporting broader design objectives.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies a false dichotomy between conditional generation and sequence optimization through structure predictors, motivating a unified approach.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proteina-Complexa, a fully atomistic binder-generation method that unifies generative modeling with hallucination-style sequence optimization.",
+        "source_ids": [
+          "S3",
+          "S6"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "Teddymer, a large-scale synthetic binder-target dataset constructed from domain-domain interactions in monomeric predicted structures for pretraining.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Inference-time optimization strategies built on a generative prior, extending the unified design framework to interface, fold-class, small-molecule, and enzyme-design objectives.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that Proteina-Complexa is novel in fully atomistically unifying previously presented generative and hallucination paradigms, alongside new Teddymer data and test-time optimization strategies.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report markedly higher in-silico success rates than existing generative approaches on computational binder-design benchmarks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that their test-time optimization strategies greatly outperform previous hallucination methods under normalized compute budgets.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report surpassing prior methods on interface hydrogen-bond optimization, fold-class-guided generation, and extensions to small-molecule targets and enzyme-design tasks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "framing",
+        "summary": "The abstract positions structure-based de novo binder design as conditional generation or hallucination-style sequence optimization.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "It challenges that separation and introduces the fully atomistic Proteina-Complexa framework.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "data_and_training",
+        "summary": "It extends flow-based latent generation architectures, creates Teddymer from predicted-structure interactions, and combines it with experimental multimers to train a base model.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "inference_and_results",
+        "summary": "It applies inference-time optimization and reports benchmark gains, broader design demonstrations, and public release plans.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a conceptual unification of two design paradigms to a concrete generative prior, a pretraining dataset, and test-time optimization.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A strong paper narrative can make a framing claim actionable by mapping it to distinct system components and evaluation settings.",
+        "application": "When arguing that two approaches are not truly separate, define the shared mechanism, identify the data or model component that connects them, and evaluate both the unified system and paradigm-specific baselines.",
+        "exception": "This framing is unsuitable when the approaches address genuinely different objectives or cannot share representations without obscuring important constraints."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide benchmark names, numerical success rates, sample sizes, statistical uncertainty, or details of the normalized compute budgets.",
+      "It does not specify the experimental multimer data, training procedure, or whether the reported extensions were evaluated under comparable conditions.",
+      "The promised public release is stated, but availability and exact contents are not established here."
+    ]
+  }
+}

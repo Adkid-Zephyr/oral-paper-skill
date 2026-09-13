@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47261",
+    "title": "Statistical Test for Feature Selection Pipelines by Selective Inference",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47261"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "357aed1c7312b6fd13ccf88946263b0c0a9ad6b96e8499e89477e341bd532cec",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "e367efad3e4d41c98ee2eceb9630097841cf3928222538f5c064c61e480780d5",
+    "extracted_at": "2026-09-13T00:10:49.746797+00:00",
+    "session_id": "01a09819-f15d-7c00-b49e-72b78eed8d3c",
+    "usage": {
+      "input_tokens": 12661,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 762,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bde19bfbe0d02ba02e7bed5f286ee0201e48c3ceb9e24fb654c959b4d18f7ed2"
+    },
+    {
+      "id": "S2",
+      "sha256": "9fddb369f488745aa672722eea8d15abf751b03b79af601188be77b135925559"
+    },
+    {
+      "id": "S3",
+      "sha256": "d5896f339de14428288910dab31e52b89074990f2973ba2704223c2a183b9a08"
+    },
+    {
+      "id": "S4",
+      "sha256": "5309da7e2d2f3a10573789fb87de8538e2ce8198d2c7335ff3148b6bea5ea9f3"
+    },
+    {
+      "id": "S5",
+      "sha256": "b1ebd1e669a6fbfe59fb4add1ddae9cebfb32892a5031b5e3243a90d0fbbcadd"
+    },
+    {
+      "id": "S6",
+      "sha256": "a39a00124fb0958753d7e53f0063a7f1d742cd921f411e4e839629ea29a84a33"
+    },
+    {
+      "id": "S7",
+      "sha256": "c2ed6f5c043f0901f0167d1e47b29fe3d18cac39c50eead711c4614909ec465d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47261",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Assess the statistical significance of data-analysis pipelines, particularly feature-selection pipelines.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A selective-inference framework for constructing statistical tests applicable to feature-selection pipelines built from predefined components.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "A theoretical guarantee for controlling false-positive feature selection probability at any desired level.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "implementation framework",
+        "claim": "A framework for testing any configuration of the specified feature-selection pipelines without extra implementation costs.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe their statistical test as novel and distinguish the framework by supporting arbitrary predefined-component feature-selection pipelines.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a proof that the test controls false-positive feature selection probability at any desired level.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report demonstrating validity and effectiveness on synthetic and real data.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "As a proof of concept, the framework covers linear-model pipelines combining three imputation, three outlier-detection, and three feature-selection algorithms.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Defines data-analysis pipelines as structured sequences integrating analysis algorithms to transform raw data into insights.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "Introduces a statistical test for assessing pipeline significance, based on selective inference.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "Claims systematic applicability to feature-selection pipelines composed of predefined components and instantiates this for linear models with three algorithm choices in each of three stages.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "role": "guarantee_and_demonstration",
+        "summary": "Reports false-positive control at any desired level and experiments on synthetic and real data.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "implementation",
+        "summary": "Presents an implementation framework intended to test every pipeline configuration without additional implementation cost.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a broad applicability claim with a concrete proof-of-concept pipeline space and a stated statistical error-control guarantee.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A claim becomes easier to assess when its scope and decisive guarantee are stated alongside a concrete instantiation.",
+        "application": "State the supported component space, instantiate it with explicit algorithm counts or categories, and name the controlled error quantity and target level.",
+        "exception": "This framing is unsuitable when component choices or the relevant error criterion cannot be specified in advance."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the test statistic, selective-inference construction, or how arbitrary component configurations are represented.",
+      "Experimental sample sizes, baselines, metrics, and numerical results are not reported.",
+      "The meaning of “without extra implementation costs” and the conditions underlying the theoretical guarantee are unspecified."
+    ]
+  }
+}

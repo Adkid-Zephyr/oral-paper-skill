@@ -1,0 +1,201 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007267",
+    "title": "The Spacetime of Diffusion Models: An Information Geometry Perspective",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007267"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "77a046e5d0536c89cf20cf1ff57252e24ee6792065b47d31a9ab156531f9bc47",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "26eac19e04384570a0a8989f098ac773f101cbdeda7fbe832c9ec051da12d37f",
+    "extracted_at": "2026-09-12T23:59:17.290313+00:00",
+    "session_id": "01a0980f-597a-70c2-97ec-ea718434e1f0",
+    "usage": {
+      "input_tokens": 12800,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 839,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2282b28e3013fe2cdde15ec795361e3a42201d3553447b658e69b8427973ccfb"
+    },
+    {
+      "id": "S2",
+      "sha256": "69dc8841793af61924e53342ff6778c1871749a673cd70aba39c35c4b5bca52e"
+    },
+    {
+      "id": "S3",
+      "sha256": "a4514886f20112bbb6d2dbee21fefe79c0af32471a439cffda311330a4dfe770"
+    },
+    {
+      "id": "S4",
+      "sha256": "f1b7cfe4f6eddaffbbeed01f86ba9c6b8293a73ce4f46a7e494bfbff4b6ac208"
+    },
+    {
+      "id": "S5",
+      "sha256": "f80c2177898252e7435b58f84d9a646647188d68ac2b1a4a0344e4d4b33c29da"
+    },
+    {
+      "id": "S6",
+      "sha256": "736a6d0b0e3b27f569fae66cbdb8545df636c13c5ef5e4ff1fc3588ce3e3db85"
+    },
+    {
+      "id": "S7",
+      "sha256": "03df14f2a6140e38da2eebeabe11676f0346e7d6cd468c0eff87ef549431d06d"
+    },
+    {
+      "id": "S8",
+      "sha256": "3daa94eb6cf29a5aeef9d8f1d1e2c67c5d0856caf52aa739f6f5e55dfc60d64c"
+    },
+    {
+      "id": "S9",
+      "sha256": "bef625d6a92373327ea412939aa4ce3c41872e33de0907f1d0140dda8d181ed4"
+    },
+    {
+      "id": "S10",
+      "sha256": "5756aea2304715ef4a4b0ee6a7b7478bcd8f81f00e7d22b7031f8d20413d95f1"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007267",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies geometric structure and geodesics in diffusion-model latent spaces, including their use for editing and molecular transition-path sampling.",
+        "source_ids": [
+          "S1",
+          "S8",
+          "S9"
+        ]
+      },
+      "gap": {
+        "claim": "The authors report that deterministic probability-flow pullbacks ignore intrinsic data geometry, while an endpoint latent x_T makes the Fisher-Rao metric collapse due to memorylessness.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces latent spacetime z=(x_t,t), indexing denoising distributions across noise scales to obtain a nontrivial geometry.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "theory and estimator",
+        "claim": "Proves the denoising distributions form an exponential family and derives simulation-free curve-length estimators for geodesic computation.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "Defines a Diffusion Edit Distance from geodesics and applies the resulting structure to constrained molecular transition-path sampling.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a geometric perspective based on latent diffusion spacetime and Fisher-Rao geometry rather than the standard deterministic pullback.",
+      "source_ids": [
+        "S1",
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a proof that the family of denoising distributions is exponential and an associated simulation-free estimator for curve lengths.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that the induced geodesics define minimal sequences of noise and denoise edits between data.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report benefits for molecular transition-path sampling, including low-variance transitions and region avoidance.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "diagnosis",
+        "summary": "The paper first identifies shortcomings of deterministic pullback geometry and endpoint-latent Fisher-Rao geometry.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "construction",
+        "summary": "It introduces latent spacetime to retain denoising distributions across noise scales and recover nontrivial structure.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "derivation",
+        "summary": "It establishes an exponential-family characterization and simulation-free length estimation for geodesics.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "applications",
+        "summary": "It uses the geometry for Diffusion Edit Distance and constrained molecular transition-path sampling.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each geometric failure mode with a representation change: endpoint x_T is replaced by spacetime (x_t,t), which indexes conditional denoising distributions across scales.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Representing the full family of task-relevant conditional distributions can preserve structure lost by a single endpoint representation.",
+        "application": "When a latent metric degenerates, define coordinates that explicitly retain the progression or scale of the underlying conditional process, then state which distributions those coordinates index.",
+        "exception": "This framing may be unsuitable when the added process coordinate is not identifiable, meaningful, or computationally tractable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the assumptions or proof details behind the claimed exponential-family result.",
+      "It does not report quantitative baselines, datasets, sampling costs, or metrics supporting the stated application benefits.",
+      "The precise geodesic algorithms, estimator variance, and conditions under which the standard pullback is considered fundamentally flawed are unspecified."
+    ]
+  }
+}

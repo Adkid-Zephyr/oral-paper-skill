@@ -1,0 +1,178 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47240",
+    "title": "Flowing Datasets with Wasserstein over Wasserstein Gradient Flows",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47240"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "969cfb7a4f426d52b26b159fe29c83015188b292f011b9282cef0322fa1e6b3d",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "707e2ab71b24a0f36cc68b9a70b48bb27fda654bed35d062ddf22a32ca4984f9",
+    "extracted_at": "2026-09-13T00:10:04.370192+00:00",
+    "session_id": "01a09819-3ac6-78b0-8881-c0b2f617fd2b",
+    "usage": {
+      "input_tokens": 14241,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 793,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f64512a1e247fe19243d375d3d0883daebe5cee03b7f7b844a8b8027b877d5e7"
+    },
+    {
+      "id": "S2",
+      "sha256": "b5097dd0a9499fbbc1982daa4df2f179d0ee6cb387e7ac9418555f2a7a731d0a"
+    },
+    {
+      "id": "S3",
+      "sha256": "94f19d614e05ee9caada761e48c032151000840139870aa39165f0db0ed69876"
+    },
+    {
+      "id": "S4",
+      "sha256": "0f1721ebd75ae9dbccb0f804a97916d8166e9074e4d56d4d0ce25d6f7d43e2b3"
+    },
+    {
+      "id": "S5",
+      "sha256": "d4383bbce223090efd5e98202f4f8b37d13a442af6ce34c4c9fb7c2d314f2fb5"
+    },
+    {
+      "id": "S6",
+      "sha256": "409fa5a64f8c5fdfc8b1ef67e71ae3db5836dbcf53b500a897d199a1dfc6a07d"
+    },
+    {
+      "id": "S7",
+      "sha256": "f1a5f9ed481498f7b2240dacce86e0270a2494e95bf077f607564f68b64b7796"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47240",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Design tractable gradient-flow dynamics for labeled datasets represented as probability distributions over probability distributions.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies a need for radically new techniques to construct tractable gradient flows on these infinite-dimensional distribution-valued objects.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "representation",
+        "claim": "Models each labeled dataset as a mixture over classes, with each class represented by its conditional feature distribution.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory and method",
+        "claim": "Introduces the Wasserstein-over-Wasserstein metric structure, derives a differential structure, and defines corresponding gradient flows.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "Applies the framework to transfer learning and dataset distillation using tractable Maximum Mean Discrepancy functionals with Sliced-Wasserstein-based kernels.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a Wasserstein-over-Wasserstein framework combining a metric and differential structure with gradient flows for distribution-valued datasets, alongside tractable Sliced-Wasserstein-kernel functionals.",
+      "source_ids": [
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the defined gradient flows produce dynamics that decrease a specified objective functional.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report applying the construction and proposed functionals to transfer learning and dataset distillation tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Distribution-valued data create a need for tractable gradient flows on infinite-dimensional objects.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "task framing",
+        "summary": "Flowing labeled datasets is framed as relevant to domain adaptation, transfer learning, and dataset distillation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "representation and framework",
+        "summary": "Datasets are represented as distributions over class-conditional distributions, then equipped with WoW geometry and gradient flows.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "functional design and applications",
+        "summary": "The framework uses Sliced-Wasserstein-kernel MMD functionals and is applied to transfer learning and dataset distillation.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a nested probabilistic representation to a matching nested optimal-transport geometry, then connects that geometry to objective-decreasing flows and applications.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A paper can make an abstract methodological proposal more concrete by aligning representation, mathematical structure, optimization behavior, and target tasks.",
+        "application": "When introducing a method for structured data, explicitly map the data representation to its geometry, optimization dynamics, and intended applications in sequence.",
+        "exception": "This framing may be unsuitable when the method does not rely on a meaningful geometric structure or when applications require empirical outcomes that are not yet available."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, baselines, dataset details, or task-specific outcomes for transfer learning or dataset distillation.",
+      "It does not specify the precise WoW differential construction, objectives, computational complexity, or conditions for the reported objective decrease."
+    ]
+  }
+}

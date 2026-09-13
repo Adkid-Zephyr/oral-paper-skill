@@ -1,0 +1,164 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31729",
+    "title": "Kinetix: Investigating the Training of General Agents through Open-Ended Physics-Based Control Tasks",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31729"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b871b5d4ca53b1c6eaf029ab3064ab17a73117a7c4a292db15983dbbfff38c36",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "9a6ed266a04dab9222a67b7810d6b1da206164675df0b5d097d987d08d943e95",
+    "extracted_at": "2026-09-12T23:49:54.924058+00:00",
+    "session_id": "01a09806-bbcb-7483-a05c-45d621a41a75",
+    "usage": {
+      "input_tokens": 12485,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 878,
+      "reasoning_output_tokens": 150
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bce80b2430304b387d84acbce85e168e4cb70137910f8f8851854d2b6b9e1971"
+    },
+    {
+      "id": "S2",
+      "sha256": "28be03fd9276abecd493e4f37d4413be0b35a81939270707481851c1234d701c"
+    },
+    {
+      "id": "S3",
+      "sha256": "bf3b93c81db4c9134ceb6674511b63b61433ddba46bd51eb345ef9befa22ec76"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31729",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generalizing capable agents to sequential decision problems remains an open challenge.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract contrasts strong offline self-supervised results in text and images with the unresolved generalization problem for acting agents.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "Introduces Kinetix, an open-ended unified space of procedurally generated 2D physics-based RL environments spanning robotics, games, and classic RL tasks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Introduces Jax2D, a hardware-accelerated physics engine intended to enable inexpensive large-scale simulation during training.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that a general RL agent trained with Kinetix transfers to unseen human-designed environments and benefits from fine-tuning on target tasks.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe Kinetix as a novel open-ended physics-based RL environment space and Jax2D as a novel hardware-accelerated physics engine.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their trained agent zero-shot solves unseen human-designed 2D environments.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "claim": "The authors report significantly stronger performance after fine-tuning the general agent than when training an RL agent tabula rasa.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report success on some environments where standard RL training completely fails.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies generalization in sequential decision-making as unresolved despite progress from offline self-supervised learning in text and images.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "It proposes procedurally generating tens of millions of 2D physics tasks and training a general RL agent in the Kinetix environment space.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "enabling system",
+        "summary": "Jax2D is presented as the hardware-accelerated simulator supporting billions of environment steps during training.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The agent is reported to solve unseen environments zero-shot, outperform tabula-rasa training after fine-tuning, and solve some tasks standard RL fails on.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns its central generalization claim with zero-shot transfer, target-task fine-tuning comparisons, and failures of standard RL.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S3"
+          ]
+        },
+        "interpretation": "A compact abstract can make a broad capability claim more concrete by pairing distinct evaluation modes with the claim.",
+        "application": "For a general-agent paper, state separate transfer, adaptation, and baseline-failure outcomes rather than relying on one aggregate performance claim.",
+        "exception": "This framing is unsuitable when the work has no meaningful unseen tasks, adaptation setting, or baseline comparison."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no task counts beyond “tens of millions,” quantitative metrics, variance, task-selection procedure, or definitions of “significantly stronger” and “completely fails.”",
+      "The conditions and scope of zero-shot transfer, fine-tuning, and comparisons with standard RL are unspecified."
+    ]
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71060",
+    "title": "Evaluating Robustness of Reasoning Models on Parameterized Logical Problems",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71060"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2957af7e98b24298b8c478aa54487538d6196a05fc3aa28ba41c3f3755f65894",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "884526c9a40b513a58ecb4ffb4d6a6dd9f4728642b52bc4c76879dbc80bff7a8",
+    "extracted_at": "2026-09-13T00:12:25.229263+00:00",
+    "session_id": "01a0981b-6371-74d1-acba-1c4f223e61be",
+    "usage": {
+      "input_tokens": 12703,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 767,
+      "reasoning_output_tokens": 121
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8abf9ea5779da41ff824ec6884020611a76568098b4660ff8db2c23b9a4a92ef"
+    },
+    {
+      "id": "S2",
+      "sha256": "0cb14561ad60e38d230e8b8ec91e463e2788fbdaec878143f7c00d2352341a3a"
+    },
+    {
+      "id": "S3",
+      "sha256": "037c541f1b1300d5d08ae152cb904f46651c0060de7d18a1a4e450aad4ddf25f"
+    },
+    {
+      "id": "S4",
+      "sha256": "24988bf78cffa91811932da5b3fa94f547ef95b4d7aa7eb8b444e960b8f0239c"
+    },
+    {
+      "id": "S5",
+      "sha256": "bfe18f2d01f032ab3f1b0f2cb256e184c2dc69d954c6237251798b82738e151f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71060",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Evaluate LLM-based reasoners on structured logical problems and their robustness to semantics-preserving changes.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Standard SAT-style benchmarks may conflate surface difficulty with structural factors determining satisfiability, obscuring distinct brittleness regimes.",
+        "source_ids": [
+          "S1",
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "benchmark",
+        "claim": "Introduces a diagnostic 2-SAT benchmark based on parameterized structured 2-CNF families with interpretable control axes.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "test suite",
+        "claim": "Provides generators targeting contradiction cores, solution multiplicity, propagation, late clause coupling, and symmetry or redundancy handling.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "evaluation framework",
+        "claim": "Evaluates decision accuracy, assignment validity, and robustness to clause reordering, filler clauses, and variable renaming.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed benchmark distinguishes structural reasoning phenomena through parameterized 2-SAT families and targeted interventions.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report sharp performance transitions under targeted structural interventions, including when surface statistics are held fixed.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that these interventions reveal brittleness regimes not visible in aggregate SAT accuracy.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Logic is presented as a controlled testbed, while standard SAT benchmarks may confound surface and structural difficulty.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "benchmark design",
+        "summary": "A parameterized structured 2-SAT benchmark is introduced, with satisfiability characterized through implication graphs.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnostic axes",
+        "summary": "Generators vary contradiction cores, free variables, planted backbones, late bridges, and symmetry or duplication.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Reasoners are assessed on decisions, assignments, and robustness to semantics-preserving perturbations.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Targeted structural changes produce sharp performance transitions and expose hidden brittleness.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract varies specific structural properties while holding surface statistics fixed and reports transitions that aggregate accuracy misses.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "Parameterizing one interpretable factor at a time can make failure boundaries more diagnostically legible.",
+        "application": "Construct evaluation families that sweep a structural variable while matching length, wording, and clause-order statistics.",
+        "exception": "This is unsuitable when the target task lacks a meaningful structural parameter or matched perturbations cannot preserve semantics."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report model identities, dataset sizes, numerical accuracies, transition thresholds, or statistical uncertainty.",
+      "It does not specify how assignment validity is checked or which structural axes drive particular model failures."
+    ]
+  }
+}

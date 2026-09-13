@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31851",
+    "title": "Advantage Alignment Algorithms",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31851"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "0975b273dd5ce323db92a146472bc39810de87171882d0446e99cd46b727ac89",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "c1d09ad49cb0263d1e0784b905bd370c3a9d9b3a0a8e380f8be24fc94c59ccdd",
+    "extracted_at": "2026-09-12T23:54:28.319306+00:00",
+    "session_id": "01a0980a-f6c1-7c23-a373-7de3e863a9d6",
+    "usage": {
+      "input_tokens": 12684,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 754,
+      "reasoning_output_tokens": 94
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "04b5d0340f83082c7940d1b6143cc7386d88b1dfd0277de99f45ce547f5c7e13"
+    },
+    {
+      "id": "S2",
+      "sha256": "ff32b04831f1e1e1bd2c553b96fec6b0c43f0813f298040b60cef6cea2eb61c0"
+    },
+    {
+      "id": "S3",
+      "sha256": "b41792d064149d0945a3860fcd935e75869619ceca1c8d2d84d65cf5a540c615"
+    },
+    {
+      "id": "S4",
+      "sha256": "8046ee7abc0dbf03262e67071c40faf6cf79b85fb3a1a26f68b09b8e1bc33f72"
+    },
+    {
+      "id": "S5",
+      "sha256": "45d2cf3b461306d0657f2df2b023240bc3cf18d1c9436a6771945fa7817be5b1"
+    },
+    {
+      "id": "S6",
+      "sha256": "5c053efa3e098bd17aa445fad02160bb9ee312f5953c61e120c4327a9d4ce77a"
+    },
+    {
+      "id": "S7",
+      "sha256": "5fce45e2c9065c7ac95469a2288075e022a82cbb9d5866e6d2f80690225a5350"
+    },
+    {
+      "id": "S8",
+      "sha256": "81673c399533e91377e86ecd64bf6394fdbfdfabe8a88e3d216a21aeb0066983"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31851",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable AI agents in general-sum interactions to reach socially beneficial equilibria instead of individually optimized, Pareto-suboptimal Nash equilibria.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing opponent-shaping methods are described as mathematically complex, computationally burdensome, and not extending to continuous action domains.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method family",
+        "claim": "Introduces Advantage Alignment, a first-principles family of algorithms for efficient and intuitive opponent shaping by aligning agents’ advantages.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Shows that existing opponent-shaping methods implicitly perform Advantage Alignment.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "method extension",
+        "claim": "Simplifies the mathematical formulation, reduces computational burden, and extends opponent shaping to continuous action domains.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Advantage Alignment as a first-principles, efficient, intuitive formulation of opponent shaping that also covers continuous action domains.",
+      "source_ids": [
+        "S4",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a proof that existing opponent-shaping methods implicitly perform Advantage Alignment.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "Across a range of social dilemmas, the authors report state-of-the-art cooperation and robustness against exploitation.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "AI agents increasingly participate in human decision-making, while individual objectives can create conflicts in general-sum games.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "prior approach",
+        "summary": "Opponent shaping is presented as a paradigm for finding socially beneficial equilibria.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "Advantage Alignment aligns interacting agents’ advantages so positive interactions increase the likelihood of mutually beneficial actions.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "theoretical and practical claims",
+        "summary": "The authors connect prior methods to Advantage Alignment, then report simplification, lower computational burden, continuous-action applicability, and strong cooperation results.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the algorithmic mechanism—aligning agents’ advantages—to a specific behavioral effect: increasing mutually beneficial actions after positive interaction.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A compact mechanism-to-behavior explanation can make a multi-part method contribution easier to evaluate conceptually.",
+        "application": "When presenting a new interaction algorithm, explicitly map its internal optimization target to the behavioral change it is intended to produce.",
+        "exception": "This framing is unsuitable when the claimed behavioral effect is not theoretically connected to the mechanism or is not measured."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal advantage definition, algorithm details, proof assumptions, or computational measurements.",
+      "The reported state-of-the-art cooperation and exploitation robustness lack named baselines, tasks, metrics, and quantitative results."
+    ]
+  }
+}

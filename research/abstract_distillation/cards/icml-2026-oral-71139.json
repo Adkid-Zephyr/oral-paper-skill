@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71139",
+    "title": "Midtraining Bridges Pretraining and Posttraining Distributions",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71139"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "72b934cd4be27e541f69a2a4badad323c9be982582253db6d91cf37d370211ee",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "c93f3f74160358d34a357d762a378c29f282d9a56c723834f2769ee7b49f3360",
+    "extracted_at": "2026-09-13T00:15:34.299055+00:00",
+    "session_id": "01a0981e-460c-7aa0-94c6-0ca17f5a3b49",
+    "usage": {
+      "input_tokens": 12713,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 792,
+      "reasoning_output_tokens": 71
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e94d7748d63d3527fccfdf14ebd1d7e8b0defbe42685925461879e437da0cf3e"
+    },
+    {
+      "id": "S2",
+      "sha256": "28d44d8e18394f1740f62cc21916940554fdb47f0d802e9a39741fdab99045a6"
+    },
+    {
+      "id": "S3",
+      "sha256": "60b2eb0b799d13a8ed7e76e8d392a87fa7d32a49d080fd3ba7ae3fc3f600c097"
+    },
+    {
+      "id": "S4",
+      "sha256": "47b4181f254836d566662b4a426fc5c232729cafdc1a7f388a4f64ffaadc24ef"
+    },
+    {
+      "id": "S5",
+      "sha256": "322e13c0787b4296ab7598b9bce40d487b007e9ecca7ac968d48a8e63a51f313"
+    },
+    {
+      "id": "S6",
+      "sha256": "0c2a4eca307ac8397bc0d6af272b3f21a5088b392ab1420e402cee85a349bf3a"
+    },
+    {
+      "id": "S7",
+      "sha256": "32bec1d83958d29f3e33b179aab4c6da6c3aeb26d5fa84fbcd0bffe2e7728469"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71139",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain what makes midtraining—mixing specialized and general pretraining data in an intermediate phase—effective.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The effectiveness of widespread midtraining practice is poorly understood.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "position",
+        "claim": "Proposes viewing midtraining as distributional bridging that improves initialization for posttraining.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Characterizes how domain distance, introduction time, and mixture weight relate to midtraining benefits.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "type": "generalization",
+        "claim": "Suggests applying analogous bridging strategies to distributional transitions between other training phases.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper frames midtraining as distributional bridging between pretraining and posttraining distributions.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "In controlled pretraining experiments, benefits were largest for domains distant from general pretraining data, including code and math, and increased with the midtraining data’s proximity advantage toward the target distribution.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "For code and math-like domains, midtraining consistently outperformed continued pretraining on specialized data alone both in-domain and in mitigating forgetting.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "In a code case study, early specialized-data introduction supported higher mixture weights, whereas late introduction required lower weights; introduction time and mixture weight interacted strongly.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context and gap",
+        "summary": "Midtraining is widespread, but the basis of its effectiveness is not well understood.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "hypothesis",
+        "summary": "The authors propose that midtraining bridges distributions and improves posttraining initialization.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "controlled findings",
+        "summary": "Benefits were strongest for distant domains and exceeded specialized-data-only continued pretraining on in-domain performance and forgetting mitigation.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "timing and mixture analysis",
+        "summary": "The code study reports a strong interaction: early introduction permits higher mixture weights, while late introduction requires lower weights.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "Late introduction outside a plasticity window may not be recoverable by increasing later data mixtures, motivating bridging across training phases.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links benefit magnitude to domain distance and to a data mixture’s proximity advantage, while separately showing that timing and mixture weight interact.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "Training-transition interventions may need to be matched jointly to distributional distance and the model’s stage-dependent plasticity.",
+        "application": "When presenting or designing a staged-training method, specify both the transition’s distributional relation and how intervention strength changes with introduction time.",
+        "exception": "This framing may be unsuitable when the target transition, plasticity behavior, or distributional proximity cannot be characterized."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative effect sizes, model scales, datasets, or evaluation protocols.",
+      "The operational definitions of proximity advantage, forgetting, and the plasticity window are unspecified.",
+      "The abstract does not establish whether the proposed bridging view applies beyond the reported domains and settings."
+    ]
+  }
+}

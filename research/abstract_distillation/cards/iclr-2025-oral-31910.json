@@ -1,0 +1,166 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31910",
+    "title": "TetSphere Splatting: Representing High-Quality Geometry with Lagrangian Volumetric Meshes",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31910"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6c80e780b9c58afbc8f316ebec78e35bd82732edb6170bd09a684eb43369c276",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "ef11f9eaf05c7a6cf2cc3f73e2c009898b5d26810010ca9ecda416ea69aea9db",
+    "extracted_at": "2026-09-12T23:56:46.412127+00:00",
+    "session_id": "01a0980d-1492-7722-a2ac-bc252355d211",
+    "usage": {
+      "input_tokens": 12614,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 714,
+      "reasoning_output_tokens": 103
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "af79658dd941ba52239eedf751e2923739d367295cb1f8ae5befec69566610fa"
+    },
+    {
+      "id": "S2",
+      "sha256": "7d1f928177fef9d9789b99dc35f4df7a68ebc5c2f0d0d79231013d0466ceca2b"
+    },
+    {
+      "id": "S3",
+      "sha256": "e6794de687908860787a0168578be5d4a677ba82d9c9a07f8fe71091d2328b70"
+    },
+    {
+      "id": "S4",
+      "sha256": "4f8f648503e2f7cf497984cb3780b579d7537d75ed7e248345382f90c1ab62b7"
+    },
+    {
+      "id": "S5",
+      "sha256": "67ee0c73c97647a1c0218640227952b6378938c94a73f5734a664268ed057904"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31910",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "High-quality 3D shape modeling",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces TetSphere Splatting, a Lagrangian geometry representation based on deforming tetrahedral spheres.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      {
+        "type": "geometric design",
+        "claim": "Uses volumetric tetrahedral meshes with geometric regularizations and constraints to address irregular triangles, non-manifoldness, and floating artifacts.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Extends the representation to image-to-3D and text-to-3D generative modeling.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present TetSphere Splatting as a new Lagrangian representation for high-quality 3D shape modeling, centered on tetrahedral spheres.",
+      "source_ids": [
+        "S1",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report superior mesh quality with competitive reconstruction accuracy against state-of-the-art methods on multi-view and single-view reconstruction.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report seamless integration into image-to-3D and text-to-3D generation tasks.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "proposal",
+        "summary": "Introduces a Lagrangian representation for high-quality 3D shape modeling.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "representation and safeguards",
+        "summary": "Builds shapes by deforming tetrahedral spheres and applies regularizations and constraints to address several mesh artifacts.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "reconstruction results",
+        "summary": "Reports improved mesh quality while retaining competitive reconstruction accuracy in multi-view and single-view settings.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "generative extension",
+        "summary": "Reports use in image-to-3D and text-to-3D generation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific geometric primitive and constraint design to named mesh problems, then reports separate reconstruction and generative uses.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "This provides a compact claim-to-evidence progression: design rationale, targeted issues, task-level results, and scope extension.",
+        "application": "Structure an abstract by connecting each design choice to a concrete failure mode, then report results and downstream applicability separately.",
+        "exception": "Avoid this structure when the work has no distinct design rationale or when downstream applications are only speculative."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not quantify mesh-quality gains, reconstruction accuracy, or comparison margins.",
+      "It does not specify datasets, baselines, evaluation metrics, or the conditions under which generative integration was tested."
+    ]
+  }
+}

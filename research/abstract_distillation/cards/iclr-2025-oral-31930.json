@@ -1,0 +1,200 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31930",
+    "title": "Open-Vocabulary Customization from CLIP via Data-Free Knowledge Distillation",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31930"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3d89d392622960f9a08a156eb0e35108373d9dbf29f41a7a8e388971ba3a370b",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "a0899beee22e39a9889dbd065d3bf10df2b3d93cfa4f5c617cd202b1d28ff41c",
+    "extracted_at": "2026-09-12T23:57:37.703726+00:00",
+    "session_id": "01a0980d-d77b-7a42-93da-8d9d8a4556ff",
+    "usage": {
+      "input_tokens": 12820,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 777,
+      "reasoning_output_tokens": 49
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e026e74e6a6161517ed6283b0f28020e68246dcb622c6143b0f622f44e1168cf"
+    },
+    {
+      "id": "S2",
+      "sha256": "909c3e6c880933c0c1c0b07574ca5b058d6719ff49f0c72f4217a45286fce74d"
+    },
+    {
+      "id": "S3",
+      "sha256": "664bd99ae257627cb8e54ea2ca63dc22b8f1a1822fe4c33a833969ff98d54f8b"
+    },
+    {
+      "id": "S4",
+      "sha256": "4eba9ddaf40c945a54f42990f65de436fac49ebce1c7ac13f91a2879e4ec246e"
+    },
+    {
+      "id": "S5",
+      "sha256": "5dda3b5893adfefaebfd8232213f94279c83532c67e482c50cef2917c0fe48bf"
+    },
+    {
+      "id": "S6",
+      "sha256": "7c55086c6e668c0e83f594b3439fcc7edf7c8b18ac9baaf36790af71ddb440df"
+    },
+    {
+      "id": "S7",
+      "sha256": "f55773b7fa393e6b0751cd431b4ce23c5c9497e7d045ca191e25eda0aecd6f64"
+    },
+    {
+      "id": "S8",
+      "sha256": "97a4c2e9bdcb163b1067633dc6b9fe8a780425ee4c1f69618247f66976c4c3e9"
+    },
+    {
+      "id": "S9",
+      "sha256": "4059f52221e67f2b79d9b5000976046538431e76c34fb32a67da09e6d5bfdece"
+    },
+    {
+      "id": "S10",
+      "sha256": "626ea020e84931740230497104ac1bfe30648cccc3bc3dd7afefded01412396c"
+    },
+    {
+      "id": "S11",
+      "sha256": "7324f9dfc917393a93ba7f052ae49d9db8ad40b3b0abf984eaf3ce251f61b82b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31930",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable open-vocabulary customization of CLIP for more deployable user settings, including customization from arbitrary class texts and few example images.",
+        "source_ids": [
+          "S1",
+          "S5",
+          "S10"
+        ]
+      },
+      "gap": {
+        "claim": "Existing data-free knowledge-distillation methods fail on CLIP because they rely heavily on BatchNorm layers, which the authors report are unusable in CLIP; ordinary distillation also requires potentially unavailable original data.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A CLIP-specific data-free distillation approach that inverts a surrogate dataset from text prompts and distills a student model from it.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Style dictionary diversification, class-consistency maintenance, and meta knowledge distillation to improve synthetic-image diversity, preserve semantics, and support student generalization.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A method for customization from a few example images.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state an image-text-matching formulation of data-free knowledge distillation for CLIP, supporting customization from arbitrary class texts.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report comprehensive experiments across twelve customized tasks, with a 9.33% improvement over existing data-free knowledge-distillation methods.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "CLIP offers strong zero-shot performance, but its size and inefficient inference hinder customizable deployment.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "constraint",
+        "summary": "Knowledge distillation is limited when original data cannot be accessed because of copyright or privacy concerns.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors report that existing data-free methods fail on CLIP because of their reliance on unusable BatchNorm layers.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "They use image-text matching, prompt-based surrogate-data inversion, and student distillation, adding style diversification, class consistency, and meta distillation.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report gains across twelve customized tasks and an additional few-example-image customization capability.",
+        "source_ids": [
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links each synthetic-data modification to a specific risk or objective: diversification targets image variety, consistency targets semantic drift, and meta distillation targets generalization.",
+          "source_ids": [
+            "S7",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "Coupling each design component to an explicit failure mode makes a multi-stage method easier to motivate and assess.",
+        "application": "When presenting a synthetic-data pipeline, map every augmentation or training stage to the concrete artifact it is intended to improve or constrain.",
+        "exception": "This framing is less useful when component-level effects are not separately measurable or the pipeline has no identifiable failure modes."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, metrics, baselines, statistical variation, or whether the 9.33% improvement is absolute or relative.",
+      "It does not report separate evidence for the text-only and few-example-image customization settings or isolate the effects of individual components."
+    ]
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "reviewer_model": "gpt-6-astra",
+  "effort": "medium",
+  "review_type": "AI source checking",
+  "scope": "Targeted resolution of synthesis flags, not random or full semantic audit",
+  "records": [
+    {
+      "paper_id": "iclr-2026-oral-10008641",
+      "first_pass_status": "material_error",
+      "findings": [
+        {
+          "field": "problem_and_gap.gap.claim",
+          "source_ids": ["S2", "S3"],
+          "issue": "The card drops structural from structural-assumption-free, broadening the scope to freedom from all assumptions despite the retained linear non-Gaussian setting.",
+          "severity": "material_error",
+          "replacement_value": "Existing methods use strong structural assumptions, while a general approach without structural assumptions lacks an equivalence characterization needed to determine what is identifiable."
+        },
+        {
+          "field": "narrative_sequence[2].summary",
+          "source_ids": ["S3", "S4"],
+          "issue": "The same structural qualifier is missing in the narrative. Parametric assumptions remain essential to the stated scope.",
+          "severity": "material_error",
+          "replacement_value": "The authors identify missing equivalence characterization as an obstacle to methods without structural assumptions and address this gap for linear non-Gaussian models."
+        }
+      ],
+      "flag_resolution": "S8 and the novelty field retain structural assumptions correctly, but two other fields broaden the claim. Restore the qualifier without changing the author-reported priority claim.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009360",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S9 itself uses human-level and immediately defines the comparator as officially checked human-engineered coding agents. The card's evidence retains this comparator, both model settings, and the optimization/evaluation benchmarks. Synthesis must use that explicit comparison rather than claim measured parity with human programmers; CPU-hour savings also do not establish lower total model/API cost.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009001",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S7 directly says infinite durations with no additional inference cost. The card reports this wording and explicitly leaves the operational duration and cost conditions unknown. Synthesis must not infer infinite validated rollouts, constant total cost as duration grows, or a per-frame overhead measurement absent from the source.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009731",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "Despite the title, S7 explicitly says the new framework builds on PateGAIL++. The extraction follows that source wording rather than inventing a version relationship. The exact naming/version history is unresolved in the abstract; do not silently replace PateGAIL++ with PateGAIL or name an additional version.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009693",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S10 itself combines ablations, flexible tuning, and preserving the theoretical optimum. The card attributes this report and separately locates formal results in S4/S5 under mild assumptions. Synthesis must keep the formal claim grounded in the derivation, not say ablations prove optimality or that every tuning configuration has an independently verified guarantee.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009701",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S7/S8 supply the named intent and behavior constructs but not operational access to belief or hidden objectives. The card labels them measures and explicitly says accurate detection of actual deception is not established given absent ground truth. Synthesis must discuss score trends rather than verified intentional motives, and cannot infer direct internal-belief measurement from these labels.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009321",
+      "first_pass_status": "minor",
+      "findings": [
+        {
+          "field": "narrative_sequence[4].summary",
+          "source_ids": ["S7", "S8"],
+          "issue": "S7 says the bounds give qualitative estimates; it does not relabel the bounds themselves as qualitative. Contributions correctly retain S4's quantitative-bounds claim.",
+          "severity": "minor",
+          "replacement_value": "Reports qualitative estimates derived from the bounds, empirical verification of their insights, and a sharper account of extrapolation mechanisms."
+        },
+        {
+          "field": "lessons[0].source_observation.claim",
+          "source_ids": ["S5", "S6", "S7"],
+          "issue": "The source observation repeats qualitative bounds instead of qualitative estimates derived from bounds.",
+          "severity": "minor",
+          "replacement_value": "The abstract states a common simulation condition spanning distinct error, precision, and depth settings, while separately reporting qualitative estimates derived from its bounds and empirical verification of the insights."
+        }
+      ],
+      "flag_resolution": "S4 quantitative bounds and S7 qualitative estimates can coexist; no source inconsistency or correction of formulas is established. Restore their distinct roles in the two compressed summaries.",
+      "final_disposition": "requires_correction"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009050",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S7 directly gives a 15% TPR improvement at FPR 0.01, which the card preserves. The percentage convention, baseline TPR, and precise comparator are absent from the abstract. Do not turn this into a 15-percentage-point gain or a fully specified fixed-FPR comparison protocol.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009768",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S9 itself says surpasses accuracy by over 2x; the extraction did not introduce accuracy terminology. The card explicitly leaves the metric and multiplier meaning unknown. Synthesis should preserve the author-reported comparison without deriving a numerical accuracy ratio, an error reduction, or an expert-level benchmark guarantee from that phrase.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10008760",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S9 promises release upon acceptance and the card preserves this conditional future status in unknowns. It does not assert that code, data, or trained models are presently available. Acceptance status alone would not establish completed release, and no availability verification was performed.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10008789",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "S3/S4 support variation in model/corpus scale and insertion timing. The source observation reports varied factors without calling them independently crossed; independent manipulation is an application proposal. Synthesis must not attribute a complete factorial design or disentangled causal effects to the authors from this abstract.",
+      "final_disposition": "pass"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10009781",
+      "first_pass_status": "pass",
+      "findings": [],
+      "flag_resolution": "The source reports perplexity predictiveness and score-matrix structure. Prespecification appears only in the proposed application, not the source observation. No preregistration, prospective analysis choice, or independent validation is established; synthesis must keep those as advice rather than author actions.",
+      "final_disposition": "pass"
+    }
+  ],
+  "summary": {
+    "reviewed": 12,
+    "first_pass_pass": 10,
+    "first_pass_minor": 1,
+    "first_pass_material_error": 1,
+    "material_findings": 2,
+    "minor_findings": 2,
+    "requires_correction": 2,
+    "scope": "Targeted resolution of the 12 supplied flags against original units and current cards. Two fields in one card omit an essential structural qualifier; two fields in another conflate bounds with the qualitative estimates they yield. Ten other flags concern preserved source wording, unresolved measurement definitions, or explicit application advice. These judgments are not random-sample error estimates, full semantic certification, proof validation, or actual release verification. No cards or other files were edited."
+  }
+}

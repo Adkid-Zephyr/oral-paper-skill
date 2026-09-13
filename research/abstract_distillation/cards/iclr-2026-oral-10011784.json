@@ -1,0 +1,173 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011784",
+    "title": "Plug-and-Play Compositionality for Boosting Continual Learning with Foundation Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011784"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "73305121dc30dda1e515240211c78fd06bed587f2ef8327bbd919f22e675b965",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "808f8f334c4eb7c2b171b17330a23309245e90900bdc6766e7883be63e94a5f4",
+    "extracted_at": "2026-09-13T00:06:25.087637+00:00",
+    "session_id": "01a09815-e425-7562-8b47-b48c9a39cfba",
+    "usage": {
+      "input_tokens": 12681,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 743,
+      "reasoning_output_tokens": 90
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "19202abf51ae96e615ba0842cb0dc9e0efe00297ce9b228228e6f5a1ff8700e6"
+    },
+    {
+      "id": "S2",
+      "sha256": "f16a53b1beaf7d09756848d8ab58c2a206a245511c4bcaa99471f33169bd31fd"
+    },
+    {
+      "id": "S3",
+      "sha256": "14061f6acc863046d5679a118da32d517602d1ce8b68ab1f51ab0bab39a923d6"
+    },
+    {
+      "id": "S4",
+      "sha256": "f2b9710188c2b7eb3c1871df253401659797d072940d9956db91657d419e12c5"
+    },
+    {
+      "id": "S5",
+      "sha256": "6e9355188b969e988b3c08641e66676e3cee3befccfae4a3014a6fffb1f1e5ec"
+    },
+    {
+      "id": "S6",
+      "sha256": "29b9440c1ea349fe02100071dadb4cda8ae6792be284cd08847279c428a5f606"
+    },
+    {
+      "id": "S7",
+      "sha256": "0b524fa498c4695883eb0ecdcb8e16b0381aff9897d7f3b2b952f60c5aad0e5b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011784",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Continual vision learners need to reduce catastrophic forgetting, especially when new tasks contain few classes.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing continual learners, including foundation-model-based methods, often recognize classes comparatively rather than compositionally and therefore remain vulnerable to forgetting.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework",
+        "claim": "CompSLOT is presented as a universal framework for guiding concept learning across diverse continual learners.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The framework analyzes concept properties to learn semantically meaningful slots from ImageNet-pretrained vision transformers and adds primitive selection and aggregation for concept-level image understanding.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It introduces method-agnostic self-supervision that distills sample-wise concept-similarity information into the classifier to reduce reliance on incorrect or partial concepts.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish CompSLOT as a universal, method-agnostic concept-level module intended to work across diverse continual learners.",
+      "source_ids": [
+        "S3",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments show CompSLOT significantly enhances various continual learners.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper attributes catastrophic forgetting in vision learners to comparative class recognition instead of compositional concept understanding.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "scope_of_gap",
+        "summary": "It states that this limitation persists in foundation-model-based continual learners and becomes worse for few-class current tasks.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The authors introduce CompSLOT to guide concept learning across diverse continual-learning methods.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanisms_and_outcome",
+        "summary": "They combine slot extraction informed by concept properties, primitive selection and aggregation, and concept-similarity distillation; experiments are reported to show gains across various learners.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the failure mode, compositional concept representation, and classifier self-supervision in a single intervention pipeline.",
+          "source_ids": [
+            "S1",
+            "S3",
+            "S6"
+          ]
+        },
+        "interpretation": "This alignment makes the proposed components interpretable as responses to specifically identified error sources.",
+        "application": "Frame a method by mapping each module to a named failure mode, then state how the module changes the relevant representation or decision signal.",
+        "exception": "This framing is less suitable when the method has no clearly separable failure modes or when module-to-problem mappings are only speculative."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report benchmark names, metrics, numerical gains, baselines, or task settings for the claimed experimental improvements.",
+      "It does not specify how concept properties, primitives, or slots are operationalized, nor which continual learners were evaluated."
+    ]
+  }
+}

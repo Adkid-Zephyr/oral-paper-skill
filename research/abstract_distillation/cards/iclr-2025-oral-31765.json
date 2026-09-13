@@ -1,0 +1,206 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31765",
+    "title": "PathGen-1.6M: 1.6 Million Pathology Image-text Pairs Generation through Multi-agent Collaboration",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31765"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "72f39626064c429f8239ba9779f1708fa0dff3840ea2b1dbd99153d1d2caa0e4",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "e84a5be851f9068fa5b0265865e7e556e4d83eb4eb223fdcc505abc3655501de",
+    "extracted_at": "2026-09-12T23:51:09.943609+00:00",
+    "session_id": "01a09807-e6a9-7230-89a5-6c8af8f62c7b",
+    "usage": {
+      "input_tokens": 12874,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 831,
+      "reasoning_output_tokens": 62
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4dbad4035f5d0740453011aac1e4ac5f709639205a25148a82988c8ae91c0111"
+    },
+    {
+      "id": "S2",
+      "sha256": "c011209a40215040ed91c00e3ab1a2c58e192de913b669c8f205418613525cc7"
+    },
+    {
+      "id": "S3",
+      "sha256": "4b29147c2d8e7e10a7e44bda30e52294ec51cb118538290cb71db635a0a517b5"
+    },
+    {
+      "id": "S4",
+      "sha256": "d136e93530ae16d0e3c350a38354ab7115a6955de9819dd653eb02a3b2aeec84"
+    },
+    {
+      "id": "S5",
+      "sha256": "299eac34c808153c1fc2c3fc886ea79b827ebb79b151ded12bf7462c72a52070"
+    },
+    {
+      "id": "S6",
+      "sha256": "da82fd4896db8452e0142c87c953fab0a5e341371d7a0d4135bd87db82f80d66"
+    },
+    {
+      "id": "S7",
+      "sha256": "110fa32e8016e2e38343dbcf6c503e24917f2994db8731ba52fa3d774db8d99f"
+    },
+    {
+      "id": "S8",
+      "sha256": "962a0e48e595ab80235886b106cee1af97db1455eed6f52ad4d3425eb54da8f6"
+    },
+    {
+      "id": "S9",
+      "sha256": "786aa2da95ad74356acce4f807b71fe0dd653c09af4479229399cb2817a5051b"
+    },
+    {
+      "id": "S10",
+      "sha256": "0fd8179325e37fdd5482247d606f309d3b12811031336d424ba4c51db9459b60"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31765",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "How to create scalable, high-quality pathology image-text data and use it to improve pathology multimodal models.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Existing pathology VLM training data from online platforms is described as limited, difficult to scale, and generally suboptimal in image quality.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "dataset",
+        "claim": "PathGen-1.6M, a dataset of 1.6 million generated high-quality pathology image-caption pairs.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A multi-agent pipeline for selecting representative WSI patches and generating and refining captions.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "model",
+        "claim": "PathGen-CLIP and instruction-tuned multimodal models combining PathGen-CLIP with Vicuna, using derived instruction data.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work presents a scalable pathway for generating high-quality pathology image-text data from large-scale WSI datasets through multi-agent collaboration.",
+      "source_ids": [
+        "S4",
+        "S6",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report substantial improvements across nine pathology-related zero-shot image-classification tasks and three whole-slide-image tasks when generated pairs are combined with existing data to train PathGen-CLIP.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report constructing 200K instruction-tuning examples from PathGen-1.6M and using them with PathGen-CLIP and Vicuna to build multimodal models.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The dataset, code, and model are reported as open-access.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Pathology VLMs support zero-shot classification, WSI analysis, and broader LLM-linked capabilities.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Existing image-text sources are limited, hard to scale, and often lower quality.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "data_generation",
+        "summary": "Large WSI datasets supply patches, while an LMM and collaborating agents generate and refine captions into 1.6 million pairs.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report gains for PathGen-CLIP across nine zero-shot classification and three WSI tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "role": "extension",
+        "summary": "The dataset is further used to create 200K instruction examples and Vicuna-based multimodal models.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links data construction, downstream task results, and a later instruction-tuning extension in sequence.",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A contribution is easier to assess when the data resource, its immediate model use, and its broader reuse are explicitly connected.",
+        "application": "Structure a paper’s abstract by stating the resource, naming the model trained with it, reporting task-level scope, then describing downstream reuse.",
+        "exception": "This sequence may be unsuitable when the work has no resource-to-model dependency or when results cannot be summarized at task level."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical improvement magnitudes, baselines, dataset splits, or evaluation protocols.",
+      "It does not specify how patch representativeness, caption quality, or instruction-tuning data quality were validated.",
+      "The abstract does not establish priority or independently verified effectiveness."
+    ]
+  }
+}

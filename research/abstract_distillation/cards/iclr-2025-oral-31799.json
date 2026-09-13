@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31799",
+    "title": "Unlocking the Power of Function Vectors for Characterizing and Mitigating Catastrophic Forgetting in Continual Instruction Tuning",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31799"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3ec3589092db205bc2a3f5e99c7e1af4224c919087e66e45363d087391776702",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "7eb40d24a143d1ddb803e17e56fc282978ff73281d239a78c7dd49b0adff26cc",
+    "extracted_at": "2026-09-12T23:52:31.638642+00:00",
+    "session_id": "01a09809-23e4-7a92-b168-114f86f728db",
+    "usage": {
+      "input_tokens": 12514,
+      "cached_input_tokens": 6912,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 826,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c9db192d7ed4bd8eecb1a7c6f8f70351c74821a888c42a4270dc5e8e3f8957ae"
+    },
+    {
+      "id": "S2",
+      "sha256": "a794af5a677da5343dde1f623a8dae9c365564cc4aa99abc01dad3b50596c03d"
+    },
+    {
+      "id": "S3",
+      "sha256": "37360b4e0a345aa4934fc6f85537fbd447140989120b30cf4b7e6b2c9699e739"
+    },
+    {
+      "id": "S4",
+      "sha256": "17682107d35f5bab8ded5c9f89266ca9025336a407cb4eefddae902120495b76"
+    },
+    {
+      "id": "S5",
+      "sha256": "b8d12e6895674d23fc0d23e70b540ae99cffe50e9e45c1467469c718e2a06c53"
+    },
+    {
+      "id": "S6",
+      "sha256": "d5a2b5a20c1f5e1d259821e218700a5f1340bf024239ef8f113934fe1cb16e03"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31799",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses catastrophic forgetting in LLMs during continual instruction tuning, where learning new tasks can impair previously learned information.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Prior work largely studies forgetting under a single training sequence, leaving the effects of diverse tasks and model differences insufficiently characterized.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "analysis framework",
+        "claim": "It uses function vectors as compact, model-dependent indicators for interpreting catastrophic forgetting in LLMs.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory and empirical finding",
+        "claim": "The authors report that forgetting primarily arises from biases in function activation rather than overwriting task-processing functions.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It proposes function-vector-guided training with regularization intended to stabilize function vectors and mitigate forgetting.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe their function-vector-guided training methodology as novel.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical and empirical analyses supporting the account that activation bias, rather than function overwriting, is the primary source of forgetting.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that tests on four benchmarks confirm the effectiveness of the proposed training method and support their theoretical framework.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "Across varied settings, the authors report that forgetting depends on both the training tasks and the model.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "challenge",
+        "summary": "Catastrophic forgetting is introduced as the loss of previously learned information after new-task learning, including in LLM continual learning.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap and investigation",
+        "summary": "The paper identifies the single-sequence focus of much prior work and examines forgetting across varied tasks and settings.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "interpretive lens",
+        "summary": "Function vectors are presented as compact, model-dependent indicators for characterizing forgetting.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "mechanism and intervention",
+        "summary": "The authors attribute forgetting mainly to function-activation bias and derive a regularized, function-vector-guided training method.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported support",
+        "summary": "Four-benchmark tests are reported to support the method and the proposed account of model-function dynamics.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects variation in forgetting across tasks and models to a model-dependent function-vector analysis, then links that analysis to a targeted regularizer.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A useful research pattern is to align an explanatory representation with the mechanism targeted by an intervention.",
+        "application": "For a continual-learning paper, define a task- and model-sensitive internal representation, state the hypothesized failure mechanism, and make the training constraint explicitly act on that representation.",
+        "exception": "This move is unsuitable when the representation is not shown to track the target behavior or when internal representations cannot be measured reliably."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not name the four benchmarks, baselines, metrics, model families, task settings, or regularization details.",
+      "The reported confirmation does not specify effect sizes, statistical uncertainty, or the conditions under which the method may fail.",
+      "The abstract does not provide enough detail to assess the theoretical analyses or independently verify the stated novelty."
+    ]
+  }
+}

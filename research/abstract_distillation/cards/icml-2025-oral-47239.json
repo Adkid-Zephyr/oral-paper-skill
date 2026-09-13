@@ -1,0 +1,204 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47239",
+    "title": "Learning dynamics in linear recurrent neural networks",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47239"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c6cb570b39035008b923f0eef04f69230283fc2302905f66660b49d2594486c0",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "8ae0280ea72bbccb91bf49bd8ae84eb95b627868c39813c70ee3a9ccba5f2b6c",
+    "extracted_at": "2026-09-13T00:09:59.765988+00:00",
+    "session_id": "01a09819-25ea-7353-adae-bc960e5a6ff1",
+    "usage": {
+      "input_tokens": 12773,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 824,
+      "reasoning_output_tokens": 55
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bd03071ff607ef34a396853057d8b6072fb5d312030deca8bb8a9592f5ab6d80"
+    },
+    {
+      "id": "S2",
+      "sha256": "edc23bedc237ec5a4a3d5fb86722177134b4611099e8c13f20032ab6e302d455"
+    },
+    {
+      "id": "S3",
+      "sha256": "909f6730f04ef914f29abfab9516a9e3351b20f88b20a5bf97fc0dc1a3219b8a"
+    },
+    {
+      "id": "S4",
+      "sha256": "7abcebee6a13dd5c9fc6f775728ae51fa449ddca4948af6a3833f4927f6c8c73"
+    },
+    {
+      "id": "S5",
+      "sha256": "a8a57d808066d2197f79618f27f2965cf52f40f673b6f9b0aff4225ea0334531"
+    },
+    {
+      "id": "S6",
+      "sha256": "b1084199b5def12c05a337b43c88d4756cd31f257fe1cb84b3b57c82260cd9d8"
+    },
+    {
+      "id": "S7",
+      "sha256": "9ee559b6459c66a07bc5d4cee87d9742ee9b618d1cb116354bfd1aec515671ef"
+    },
+    {
+      "id": "S8",
+      "sha256": "81f5b71dd3c8f123fe788e3087f0bd1016fa2828d7bc98d32e8da1fb211f57ee"
+    },
+    {
+      "id": "S9",
+      "sha256": "357a0338a10451c6bdaf9dd680037d85339fa7d85c45a95e9978815a77948acf"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47239",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Analyze how linear recurrent neural networks learn tasks with temporal dependencies, including how task temporal structure affects learning.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing RNN theory leaves limited understanding of the learning process and the impact of temporal data structure.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "An analytical framework for LRNN learning dynamics that accounts for task dynamics.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theoretical findings",
+        "claim": "Four reported properties concerning singular-value learning order, stability and extrapolation, effective regularization and computation tradeoffs, and recurrence-driven feature learning.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "A proof-of-concept application of the framework to LRNNs performing sensory integration tasks.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their work provides a first analytical treatment of the relationship between temporal task dependencies and LRNN learning dynamics, including a novel finite-width LRNN neural tangent kernel derivation.",
+      "source_ids": [
+        "S7",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that larger singular values and singular values associated with later temporal positions are learned faster.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that task dynamics affect solution stability and extrapolation ability, while the loss induces effective small-weight regularization and a recurrent-versus-feedforward computation tradeoff.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report using the framework to explain LRNN behavior on sensory integration tasks as a proof of concept.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "RNNs are used for temporal tasks and neural-dynamics modeling, but their learning process and sensitivity to temporal data structure remain insufficiently understood.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The paper introduces an analytical LRNN framework that incorporates task dynamics.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The analysis reports four properties linking temporal order and scale to learning, task dynamics to stability and extrapolation, loss geometry to computation allocation, and recurrence to feature learning.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "demonstration",
+        "summary": "The framework is applied as a proof of concept to sensory integration behavior.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "role": "significance",
+        "summary": "The authors position the analysis as a foundation for understanding emergent dynamic behavior in cognitive models.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract states a compact set of distinct theoretical properties and connects each to a specific mechanism or consequence, such as temporal precedence, stability, regularization, or feature learning.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A contribution can be made more informative by pairing each formal result with the behavior or design tradeoff it explains.",
+        "application": "When presenting theory, organize results as mechanism-to-consequence claims and preserve decisive qualifiers such as scale, temporal position, or finite width.",
+        "exception": "This structure is unsuitable when the work does not establish distinct mechanisms or when the abstract cannot support the claimed consequences."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify assumptions, model parameterization, optimization regime, task distributions, or quantitative sensory-integration results.",
+      "The reported proof-of-concept explanation is not accompanied by comparison metrics or experimental conditions."
+    ]
+  }
+}

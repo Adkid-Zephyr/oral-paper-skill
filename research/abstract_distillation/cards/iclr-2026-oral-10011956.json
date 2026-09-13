@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011956",
+    "title": "Gaussian certified unlearning in high dimensions: A hypothesis testing approach",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011956"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "540bee0cebfe1b8835385824d10894baa7f34425cd217ff2e67685257f2776c5",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "f37bbcc038e631c73c8889badb876ba8086a4a7e3c3e906ab3322821f04be5e9",
+    "extracted_at": "2026-09-13T00:06:43.922985+00:00",
+    "session_id": "01a09816-27c9-7a40-aaf5-7fbac3090b85",
+    "usage": {
+      "input_tokens": 12856,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 832,
+      "reasoning_output_tokens": 61
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "435de2c4dd10afe6ce41ae296d7b1f3f23659fab2a37a2779eadd1b9fa71be02"
+    },
+    {
+      "id": "S2",
+      "sha256": "1d51f1f43bea0bc1c98403e6bb91eb4dff29bef2c2c78b42298e0bda41602cfa"
+    },
+    {
+      "id": "S3",
+      "sha256": "52800f0f0550f7f8ff50259cf3bd75ac7316652a086c882554230bc1bad0da0c"
+    },
+    {
+      "id": "S4",
+      "sha256": "1d8ff1c5654ca4289923a6a73c1bc4a35519e087a6cae7e63609b3d08dfa938d"
+    },
+    {
+      "id": "S5",
+      "sha256": "921f085c7b5576b770283ba769ee6cb3d7bf9a5d08724e8aaebca9cc6b128908"
+    },
+    {
+      "id": "S6",
+      "sha256": "50c24f49d713be884a115ee51ce648653191ed11d7d871527c46c04e2f55b0b5"
+    },
+    {
+      "id": "S7",
+      "sha256": "eeb70e3c2329ba9b3812c3bc20a8ffe96d9ef9296e630128a4edb8485ec547cb"
+    },
+    {
+      "id": "S8",
+      "sha256": "4e20b156d25c94cc0442a8881e772fea157564eb867607adffb8bed28f84b431"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011956",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop and analyze certified machine unlearning for high-dimensional regimes, including proportional dimension–sample settings, while preserving privacy and accuracy.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing high-dimensional analysis uses ε-certifiability and concludes that one Newton step is insufficient; the authors identify this notion as suboptimal for noise-adding mechanisms.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "notion",
+        "claim": "Introduces ε-Gaussian certifiability as a robust high-dimensional notion intended to capture a broad class of noise-adding mechanisms optimally.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Theoretically analyzes a widely used one-step Newton unlearning algorithm in the stated high-dimensional setting.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theoretical finding",
+        "claim": "Reports that one Newton step followed by well-calibrated Gaussian noise suffices for both privacy and accuracy.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish ε-Gaussian certifiability from prior ε-certifiability and attribute the different step requirement to the former’s compatibility with noise-adding mechanisms.",
+      "source_ids": [
+        "S3",
+        "S6",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that a single Newton step plus well-calibrated Gaussian noise achieves both privacy and accuracy in their high-dimensional setting.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "They contrast this with prior work, which reports that one Newton step cannot suffice even for deleting one point and requires at least two steps.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that the discrepancy in step counts arises from the suboptimality and noise-mechanism incompatibility of ε-certifiability.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Machine unlearning aims to remove selected data influence efficiently while preserving generalization.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "High-dimensional and proportional regimes are difficult because standard strong-convexity and smoothness assumptions rarely hold together.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "framework",
+        "summary": "The work proposes ε-Gaussian certifiability and analyzes one-step Newton unlearning under it.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "result_and_interpretation",
+        "summary": "The authors report sufficiency of one Newton step with calibrated Gaussian noise and attribute the contrast with prior work to the certification notion.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a changed algorithmic conclusion—one versus two Newton steps—to the certification notion’s compatibility with noise-adding mechanisms.",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "When a guarantee changes sharply across analyses, the choice of certification definition may be a substantive explanatory variable rather than a minor technical detail.",
+        "application": "In a theory paper, explicitly compare alternative guarantee notions and state how each interacts with the mechanism used to obtain privacy or robustness.",
+        "exception": "This framing is unsuitable when the notions are not formally comparable or when the difference is driven by unrelated assumptions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal definition of ε-Gaussian certifiability or what “optimally” means.",
+      "The calibration, privacy and accuracy criteria, parameter regimes, and proof conditions for the reported one-step result are unspecified.",
+      "No empirical evaluation or quantitative comparison details are provided."
+    ]
+  }
+}

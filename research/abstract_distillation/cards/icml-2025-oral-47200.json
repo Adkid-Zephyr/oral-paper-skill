@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47200",
+    "title": "Temporal Difference Flows",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47200"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "afe64da70343e9abe1463904cd01f650cb0cc6c95b87bad90cc4936a61999ab9",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "f12c1eaff19cfcf0ec754ef54426945b5b3cad0c5eff7283c828c6c1bff1eb59",
+    "extracted_at": "2026-09-13T00:08:26.260859+00:00",
+    "session_id": "01a09817-b90d-7941-a159-26a04da77513",
+    "usage": {
+      "input_tokens": 12755,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 812,
+      "reasoning_output_tokens": 80
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8aeea948561ff8d2bd04a6153468e43630aaf2f1be6cb7f851193d65a0eff1ef"
+    },
+    {
+      "id": "S2",
+      "sha256": "c2f28ba6f4d4be8ddde86ae338607a6a8ed1dab513737eb50fdfca95a2c57172"
+    },
+    {
+      "id": "S3",
+      "sha256": "178b50189c19be6577ddb81db12d5d6bee58281b3d2364568e311e55166e0d17"
+    },
+    {
+      "id": "S4",
+      "sha256": "0a74e94abc37fee37f31f988dc359fd1700531a0fa45a0d3a52c9d9ed5e18cd9"
+    },
+    {
+      "id": "S5",
+      "sha256": "745d421a3a2bcf95250fa274936df397a2dc98d99d9bcf078e31bfbe86a9cec0"
+    },
+    {
+      "id": "S6",
+      "sha256": "bd7f2fb26120e5309b2506f659090a05fc2ea15567557e35d133a177dd051668"
+    },
+    {
+      "id": "S7",
+      "sha256": "c1d7d7547af3a247c41148936a20946426ede6b292a426010405a4a9784418c6"
+    },
+    {
+      "id": "S8",
+      "sha256": "8420ff74060b0d2f800cd99f5302d28e6d03e0d7df878bde9e84e838aeb6de99"
+    },
+    {
+      "id": "S9",
+      "sha256": "ef3ce67899a86a1528696d5746e622165f168057cc06b1b80344608d9b7834f9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47200",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Learn accurate long-horizon geometric horizon models for future-state prediction and planning without compounding rollout errors.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing generative TD-style methods for GHMs are impaired by training-time bootstrapping and struggle with high-quality long-horizon predictions.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces TD-Flow, combining a Bellman equation on probability paths with flow matching to learn GHMs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Establishes a new convergence result and attributes TD-Flow’s efficacy primarily to reduced training gradient variance.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "extension",
+        "claim": "Shows that similar arguments can extend to diffusion-based methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper presents a novel Bellman equation on probability paths and uses it with flow matching for TD-based GHM learning.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that TD-Flow learns accurate GHMs at over 5× the horizon length of prior methods.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report validation across diverse domains using generative metrics and downstream tasks, including policy evaluation.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report substantial performance gains when TD-Flow is integrated with recent behavior foundation models for policy planning.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Future prediction supports agent reasoning and planning, but stepwise world-model inference can compound small errors.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "prior approach and limitation",
+        "summary": "GHMs avoid cumulative inference errors, yet existing generative TD methods suffer from bootstrapping and weak long-horizon generation.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed approach and theory",
+        "summary": "TD-Flow applies a probability-path Bellman equation with flow matching; the paper reports a convergence result and reduced gradient variance as a main explanation.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "extension and evaluation",
+        "summary": "The paper extends similar reasoning to diffusion methods and reports broad metric, task, and planning evaluations with substantial gains in the latter setting.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a training-dynamics explanation—reduced gradient variance—to a method designed for longer-horizon prediction, then reports both generative and downstream-task evaluations.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "Aligning a mechanism-level explanation with evaluations at both the representation/output level and the intended decision task makes the contribution easier to assess.",
+        "application": "For a long-horizon prediction paper, state the hypothesized optimization mechanism and pair generation-quality measurements with a downstream planning or policy task.",
+        "exception": "This framing is unsuitable when the work has no credible mechanism hypothesis or no meaningful downstream use case."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the convergence conditions or theorem details.",
+      "The prior-method baselines, domains, metrics, task results, and numerical size of the reported gains are unspecified.",
+      "The meaning of “over 5× the horizon length” and the scope of the diffusion extension are not detailed."
+    ]
+  }
+}

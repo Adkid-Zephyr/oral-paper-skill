@@ -1,0 +1,159 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71057",
+    "title": "ECHO: Elastic Speculative Decoding with Sparse Gating for High-Concurrency Scenarios",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71057"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "be6343361606018ab159a978a0b2d73f574339fb5933e26ad23f12f78508ace5",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "c261cd31b960102082357b96b74cd531cd4c4595cef4fc30720297a461a34b1b",
+    "extracted_at": "2026-09-13T00:12:25.088780+00:00",
+    "session_id": "01a0981b-564f-7783-a7da-2003f23e3bd8",
+    "usage": {
+      "input_tokens": 12705,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 740,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4be807f240e4adb93368120e32b7dff9a07158c83ef60bb9cc7b1d7742f3bfb0"
+    },
+    {
+      "id": "S2",
+      "sha256": "6f7d30333dd3de15f53b5c6b3db9a3de6e537ea9da6edea4dd1740a1979a7749"
+    },
+    {
+      "id": "S3",
+      "sha256": "9ddbc04870c652188bbb5755e26070830a5daefdc508ebe944cbbd56a2d7d44a"
+    },
+    {
+      "id": "S4",
+      "sha256": "f7e163815e375d865434aee01f6d7c0b4d42e315fe1cb3b8c96ac9e72181025d"
+    },
+    {
+      "id": "S5",
+      "sha256": "81118830b628afde5cbf638d677e37f212598b28e00e062a38e66ed497862938"
+    },
+    {
+      "id": "S6",
+      "sha256": "ee5608217d9c188891599c06c3a398b59bc35948f585b9e59b727a646fb593e9"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71057",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Speculative decoding often loses effectiveness in production-grade, high-concurrency LLM inference because verification compute becomes the bottleneck.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing approaches and evaluations do not adequately address compute-bound high-concurrency regimes: static trees waste verification, while dynamic trees accumulate misjudgments and face kernel incompatibility.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method/framework",
+        "claim": "The authors introduce ECHO, an SGLang-integrated framework that formulates speculative execution as budgeted scheduling for high-concurrency inference.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "ECHO uses sparse confidence gating and a unified super-tree to elastically allocate budget between depth and width, targeting both fewer global verification steps and higher per-step efficiency.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors' stated distinction is to combine sparse confidence gating, unified super-tree scheduling, and elastic depth–width budget allocation for high-concurrency speculative decoding.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that ECHO outperforms state-of-the-art baselines across low-load and high-load scenarios and model scales, including industrial-grade Qwen3-235B, with up to 5.35× walltime speedup and over 20% relative speedup against the strongest baselines.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Speculative decoding is described as promising but less effective in production settings.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "evaluation gap",
+        "summary": "The abstract identifies overlooked compute-bound behavior in high-concurrency regimes, where verification dominates.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "prior-method limitation",
+        "summary": "Static and dynamic tree strategies are framed as trading verification waste against misjudgments and kernel incompatibility.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach and result",
+        "summary": "ECHO reframes execution as budgeted scheduling with sparse gating and reports substantial speedups over baselines.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a deployment regime, its dominant bottleneck, and a scheduling mechanism that explicitly balances depth against width.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A regime-specific bottleneck analysis can make a systems contribution's design rationale more traceable.",
+        "application": "When presenting an inference method, identify the target load regime and bottleneck first, then map each control variable to the stated system trade-off.",
+        "exception": "This framing is less suitable when the method is intended to be regime-agnostic or when the abstract lacks a measurable bottleneck diagnosis."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify workload sizes, hardware, latency methodology, baseline identities, or the conditions producing the reported maxima.",
+      "It does not quantify how much of the gain comes from sparse gating, super-tree scheduling, or elastic depth–width allocation individually."
+    ]
+  }
+}

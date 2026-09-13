@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31833",
+    "title": "LoRA Done RITE: Robust Invariant Transformation Equilibration for LoRA Optimization",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31833"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a1e9a2df996a014cc33462d3c0d658be26501826192233cce37216bbc80ada00",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "67bb9aab3ffac2a68b0018c90cde1c5c0ec100163dab04116356d633bfa3b145",
+    "extracted_at": "2026-09-12T23:53:47.801518+00:00",
+    "session_id": "01a0980a-5217-70f1-9905-aca433c0a5ea",
+    "usage": {
+      "input_tokens": 12703,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 801,
+      "reasoning_output_tokens": 95
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c50dc62bfdc3298600d46c1ebd2792115f5354dcca717ec8e86c1001d8cde964"
+    },
+    {
+      "id": "S2",
+      "sha256": "94df0e0c7a36e57385716de366eea5478f5de91b7f5b22100fc78b586041b58a"
+    },
+    {
+      "id": "S3",
+      "sha256": "310a00321923086367443dec7d5ce533dc0bba634661774c412c0956bc117df3"
+    },
+    {
+      "id": "S4",
+      "sha256": "8223c0429e5a654cd4a7092f03b78f8d780af954f053ae46561e4ad119033aef"
+    },
+    {
+      "id": "S5",
+      "sha256": "039134ebd4bfb51e5363173fce7241ae120f75c03051845d9b3b4a689c600f32"
+    },
+    {
+      "id": "S6",
+      "sha256": "f40128bcd146dbcc248556ff4c505d44aa63102a14ca491e12cd8bced9005f2a"
+    },
+    {
+      "id": "S7",
+      "sha256": "cbfa10b947828d0ce8e3b5f5e09d8d619d8de3cc0ad6217185db7cd277f650ad"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31833",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve LoRA optimization while preserving efficiency and making updates invariant to factor transformations.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing LoRA optimizers lack transformation invariance: updates depend on how the two factors are scaled or rotated.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces LoRA-RITE, an adaptive matrix-preconditioning method intended to provide transformation invariance with computational efficiency.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory and empirical study",
+        "claim": "Provides theoretical analysis and evaluates the method across multiple LLM tasks and models.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize LoRA-RITE as a novel adaptive matrix-preconditioning approach combining transformation invariance with computational efficiency.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical analysis demonstrating benefits of their method.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report consistent improvements over existing optimizers across experiments involving Gemma 2B, 7B, and mT5-XXL.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "claim": "Replacing Adam with LoRA-RITE for Gemma-2B LoRA fine-tuning reportedly improved accuracy by 4.6% on Super-Natural Instructions and 3.5% across HellaSwag, ArcChallenge, GSM8K, and OpenBookQA.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "LoRA is presented as a memory-saving parameter-efficient fine-tuning method for LLMs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Current LoRA optimizers are described as non-invariant to scaling or rotation of the LoRA factors, leading to inefficient learning and sub-optimal solutions in practice.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "The paper introduces LoRA-RITE, an adaptive matrix-preconditioning method targeting transformation invariance and computational efficiency.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "support",
+        "summary": "The authors report theoretical analysis and multi-model, multi-task experiments, including accuracy gains over Adam on specified benchmarks.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific optimizer deficiency—factor-transformation dependence—to practical learning consequences, then evaluates the proposed method across models and tasks with a concrete benchmark example.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "A compact problem-to-mechanism-to-evidence chain makes the claimed contribution and its scope easier to assess.",
+        "application": "Frame an optimization paper by naming the exact invariance or dependency failure, explaining its practical implication, and pairing broad evaluation scope with one fully specified result.",
+        "exception": "This framing is unsuitable when the work has no identifiable mechanism-level limitation or when evidence cannot support the stated scope."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the theoretical claims, experimental protocols, statistical variability, or which existing optimizers were included beyond the Adam example.",
+      "The reported gains do not state baseline accuracies, confidence intervals, or whether compute and tuning budgets were matched."
+    ]
+  }
+}

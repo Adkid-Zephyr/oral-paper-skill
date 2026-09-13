@@ -1,0 +1,169 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47245",
+    "title": "In-Context Denoising with One-Layer Transformers: Connections between Attention and Associative Memory Retrieval",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47245"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7b612f2fd4aaa5ff8d312ab4bf7a6e265f6fa934f0ef2893f3b388de0547c2aa",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "c337f0c27c66a4adf768dab6c0ae379579744b9fc302a6c3467de92c5eac2d95",
+    "extracted_at": "2026-09-13T00:10:11.758500+00:00",
+    "session_id": "01a09819-5917-7440-9f02-4fab0eaa32c8",
+    "usage": {
+      "input_tokens": 12649,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 765,
+      "reasoning_output_tokens": 115
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "be972b9a71b4125f5eb6446319f968e209a7835cfa0cc4c202c9e7aef103f223"
+    },
+    {
+      "id": "S2",
+      "sha256": "251da7dbc0fa4f1251bdb88a4e36481be3cf24c985bcbf157d11e7856e64d2c6"
+    },
+    {
+      "id": "S3",
+      "sha256": "fd6a42fed047a1c1691a017e1e52bb7b0cd9a1ecef1ed2af3522b7e578fa2dac"
+    },
+    {
+      "id": "S4",
+      "sha256": "8132ef892f2f9a51c582797a45c52c668a7be298f95f41b59a1e9f85312f4803"
+    },
+    {
+      "id": "S5",
+      "sha256": "727564176e9c9074ca5c44accdc9534849f1dd2ffbb0ce4677a38eafc1947856"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47245",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies in-context denoising and its relationship to attention-based architectures and dense associative memory networks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "task",
+        "claim": "Introduces in-context denoising as a framework connecting attention with dense associative memory retrieval.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "theory_and_empirical_finding",
+        "claim": "Shows that certain restricted denoising problems can reportedly be solved optimally by a single-layer transformer under a Bayesian framework.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "mechanistic_analysis",
+        "claim": "Characterizes a trained attention layer as performing one gradient-descent update on a context-aware dense-associative-memory energy landscape.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The work presents a concrete example in which associative-memory dynamics extend beyond standard retrieval, with attention implementing a one-step update.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical and empirical evidence for optimal solutions on certain restricted denoising problems using a single-layer transformer.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report that the one-step update produces better solutions than exact retrieval of either a context token or a spurious local minimum.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task_and_connection",
+        "summary": "Defines in-context denoising to sharpen the connection between attention and dense associative memory.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "Uses a Bayesian framework to study restricted denoising with a single-layer transformer.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "Interprets context tokens as associative memories and the query token as an initial state for one energy-landscape update.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "comparison",
+        "summary": "Reports that this update outperforms exact retrieval of a context token or a spurious local minimum.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "broader implication",
+        "summary": "Positions the result as reinforcing the relevance of associative-memory models for in-context learning.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a mechanistic interpretation of attention with a concrete comparison against exact retrieval baselines.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A claim about architectural connections becomes more informative when paired with an operational mechanism and a behavior-level contrast.",
+        "application": "When presenting a conceptual bridge, specify the computation performed and compare its output with the corresponding simpler retrieval behavior.",
+        "exception": "This framing is unsuitable when the mechanism or comparison is not directly supported by the available analysis."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact restricted denoising assumptions, Bayesian model, or meaning of “optimal.”",
+      "Details of the reported empirical setup, metrics, and comparison conditions are not provided.",
+      "The abstract does not establish independent verification or priority of the stated novelty."
+    ]
+  }
+}

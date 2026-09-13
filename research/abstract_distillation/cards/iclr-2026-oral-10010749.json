@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010749",
+    "title": "Reasoning as Representation: Rethinking Visual Reinforcement Learning in Image Quality Assessment",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010749"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c487fb368e0a5a24cbbaab221898b42486a220cfa9c00c6553a01a72d86e0770",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "c1a3eaccef6b77d57fb8afd6563e6220caac87748b7203a6ba72112882909e14",
+    "extracted_at": "2026-09-13T00:04:57.675753+00:00",
+    "session_id": "01a09814-891f-7493-9a1b-dd262ecd56ce",
+    "usage": {
+      "input_tokens": 12700,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 760,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a24be6b06f9260ef580e357caa76c033522e3d32a5760d60359147c816b5332f"
+    },
+    {
+      "id": "S2",
+      "sha256": "b0587d123655a6b449106677b4f6997a086ab576572a94ca091ada8c5511dfdb"
+    },
+    {
+      "id": "S3",
+      "sha256": "5d92d5787048fdca5e1b767396123f98c95c07e20a4e32d8d30cd28513f9320e"
+    },
+    {
+      "id": "S4",
+      "sha256": "e51f5dbe5d75ce365a847925bfa4aab25efbb2f66a7e0e68a615a1238ee07afe"
+    },
+    {
+      "id": "S5",
+      "sha256": "61be2d21b982d7641590e39fbefe4694e15205442d3396acfa989fd618a3e83a"
+    },
+    {
+      "id": "S6",
+      "sha256": "ab21fcce955d11faddafddc80277ca5a99315853423fe409b4edcd0e9830dc1a"
+    },
+    {
+      "id": "S7",
+      "sha256": "6ba91af885501bbc4b4ba4bea4c8fa35b921294454caba12dfc7b37a13c4bf7c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010749",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain why reinforcement-learning-trained reasoning-based IQA models generalize well and how to retain that capability with lower deployment cost.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S5",
+          "S7"
+        ]
+      },
+      "gap": {
+        "claim": "The mechanisms and critical factors underlying these models’ generalization remain underexplored.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory/empirical finding",
+        "claim": "The authors report that RL training converts redundant visual representations into compact, cross-domain-aligned text representations, identifying this conversion as the source of observed generalization.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "RALI uses contrastive learning to align images directly with the generalizable text representations learned through RL, avoiding reasoning processes and loading an LLM.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper proposes RALI as a direct image-to-generalizable-text alignment approach that removes the need for reasoning during inference and for an LLM.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report extensive experiments supporting the interpretation that RL-trained MLLMs perform the visual-to-compact-text conversion described above.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that RALI achieves quality-scoring generalization comparable to reasoning-based models while using less than 5% of their model parameters and inference time.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Reasoning-based RL IQA models show exceptional generalization, but their mechanisms are insufficiently understood.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "deployment constraint",
+        "summary": "Their inference energy use and latency are reported to be orders of magnitude higher than those of earlier models.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "mechanistic account",
+        "summary": "Experiments are reported to link generalization to conversion of redundant visual representations into compact, cross-domain-aligned text representations.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method and result",
+        "summary": "RALI directly aligns images with those text representations, removes reasoning and LLM loading, and reportedly preserves comparable generalization at under 5% of the parameters and inference time.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a costly capability to an intermediate representation and then designs a method that targets that representation directly.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Making the proposed mechanism explicit can guide efficiency interventions more precisely than reproducing the full original computation.",
+        "application": "When presenting an efficiency method, identify the representation associated with the target capability and align the cheaper model directly to it.",
+        "exception": "This move is unsuitable when the intermediate representation is not observable, learnable, or sufficient for the task."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, exact energy or latency measurements, or experimental protocols.",
+      "The meaning of “comparable” generalization and the scope of “cross-domain” alignment are not quantified.",
+      "The abstract does not establish independent verification of the reported mechanism or performance."
+    ]
+  }
+}

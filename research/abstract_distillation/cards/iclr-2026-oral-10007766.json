@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007766",
+    "title": "Overthinking Reduction with Decoupled Rewards and Curriculum Data Scheduling",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007766"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "222be6d9bd60c813761e89ce636753b2d32e52b91fc8072fe0becf943a52a402",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "b3e3c4a24e12f236fe8c59755a2f6948333de02306072b19e7f94c75625de3fb",
+    "extracted_at": "2026-09-13T00:00:19.203677+00:00",
+    "session_id": "01a09810-530a-7103-aec9-80e903ef1fea",
+    "usage": {
+      "input_tokens": 12733,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 695,
+      "reasoning_output_tokens": 55
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "39047989a6203e4af17315da9c90e2e26f61a0a2de8c8c52e22b99881da35654"
+    },
+    {
+      "id": "S2",
+      "sha256": "c01bb9bc657aaf136cd46ad97cc7d6472d593793d7e7aaf90f99b909534669f2"
+    },
+    {
+      "id": "S3",
+      "sha256": "73052912afe304f64bc08076e9027c9b165e235005cf57b89e63f478c85c8352"
+    },
+    {
+      "id": "S4",
+      "sha256": "7907611fb1488e0dc256c58596ea5088071c49567d04564ccd00a52e67c3da20"
+    },
+    {
+      "id": "S5",
+      "sha256": "e4950ea70697981009446334f83159e659f63d2ce9b099f43b5ee42c06b07db4"
+    },
+    {
+      "id": "S6",
+      "sha256": "d0ae6dd6907e061f215552f3b00aae98d1c74685903a7a499e79cefa1403af3b"
+    },
+    {
+      "id": "S7",
+      "sha256": "cd39f07b06e65a24ab5f2e9ab5efbf54abfbcf192bf695c3eb7afa093027a09d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007766",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reduce excessive reasoning length in RLVR-trained reasoning models without reducing task performance.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing length-penalty methods can degrade performance because trajectory-level rewards are misaligned with token-level optimization.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "DECS, a framework with decoupled token-level rewards that distinguish and penalize redundant tokens.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A curriculum batch-scheduling strategy intended to balance reasoning efficiency and efficacy.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "An analysis identifying two flaws in current length rewards: penalizing essential exploratory tokens and rewarding partial redundancy.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe DECS's decoupled token-level reward mechanism and curriculum scheduling as novel, including the claimed first-of-its-kind characterization of the reward mechanism.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that DECS reduced reasoning tokens by more than 50% across seven benchmarks while maintaining or improving performance.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that reasoning-efficiency gains were achieved without compromising underlying reasoning power.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "RLVR-trained reasoning models may overproduce reasoning tokens without performance benefit, limiting practical utility.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Length penalties can hurt performance because trajectory-level rewards do not align with token-level optimization.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors identify erroneous penalties on exploratory tokens and inadvertent rewards for partial redundancy.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "DECS combines decoupled token-level redundancy penalties with curriculum batch scheduling.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "The authors report over 50% token reduction across seven benchmarks with maintained or improved performance.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links failure of length penalties to reward-granularity misalignment and separates exploratory from redundant tokens.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Efficiency objectives may need token-level distinctions that preserve useful search while targeting redundancy.",
+        "application": "When proposing a reasoning-efficiency method, define which tokens are useful exploration versus redundancy and align the reward at that granularity.",
+        "exception": "This framing may be unsuitable when token roles cannot be identified reliably or when sequence-level outcomes are the only trustworthy supervision."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark identities, baseline methods, statistical results, or the conditions under which performance was maintained or improved.",
+      "The claimed theoretical discovery and conclusions are author-reported and cannot be independently assessed from the abstract alone."
+    ]
+  }
+}

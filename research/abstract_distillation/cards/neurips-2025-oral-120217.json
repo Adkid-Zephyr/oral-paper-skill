@@ -1,0 +1,216 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-120217",
+    "title": "Gated Attention for Large Language Models: Non-linearity, Sparsity, and Attention-Sink-Free",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/120217"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "901b6604ebd077eb0160a3202268f5dfa9efbf0035cc225ecfff53a0454ee05a",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "441c16fdb3979532967365162ae774bfbe7c53219ef129a08f1d282e012b602b",
+    "extracted_at": "2026-09-13T00:23:24.537302+00:00",
+    "session_id": "01a09825-656b-7132-b480-dba5b34ac5a4",
+    "usage": {
+      "input_tokens": 12847,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 907,
+      "reasoning_output_tokens": 54
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "40c7e4cb9ab3564b54c8e29068f2855e84a8857db3b6291bc47f9e847e6c3c90"
+    },
+    {
+      "id": "S2",
+      "sha256": "0ff20856f45f5c930ce1e3b5379befddc4aaad5bbe2abb2bccda5b83f5dccdc2"
+    },
+    {
+      "id": "S3",
+      "sha256": "a8b6ff9b68026385ff2588981e442c162756b40f4d0b0bc6dc009c90c4ad1840"
+    },
+    {
+      "id": "S4",
+      "sha256": "1520cb32ce7b14ef060a31ca87913e4284e1b9cbcc6468fc8650d2e8a177d8ed"
+    },
+    {
+      "id": "S5",
+      "sha256": "6f014ca928b3d0553bfa03408e47f7c048941b4a8d53a547ef6280a76c273ab3"
+    },
+    {
+      "id": "S6",
+      "sha256": "61ea7baabfaf10aa580739d3e1bb61e16cecb1cf6b4c3e80017ac9ebaba741a1"
+    },
+    {
+      "id": "S7",
+      "sha256": "282ed45a683e1802b0b80f05f5d1b8f83f35e8198cd841f615bd7a60358ef9dc"
+    },
+    {
+      "id": "S8",
+      "sha256": "0e28ff22d755f84be77b88f81f56a570c5d5c04e586469d847f30ec1b68e2666"
+    },
+    {
+      "id": "S9",
+      "sha256": "ae1e86add15bb954f4500bdd95fdc933c58184904e4f3b3a175f25c033d8ed50"
+    },
+    {
+      "id": "S10",
+      "sha256": "62b41a67123c139f468741f53ac7214ba4f20cbbc767e287a89545b2464b8696"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-120217",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work investigates how gating affects softmax attention in large language models.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing literature rarely examines the specific effects of gating.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical study",
+        "claim": "A systematic comparison of 30 gating variants across 15B Mixture-of-Experts and 1.7B dense models trained on 3.5 trillion tokens.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A head-specific sigmoid gate applied after Scaled Dot-Product Attention (SDPA).",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "mechanistic interpretation",
+        "claim": "The reported effectiveness is attributed to non-linearity over softmax attention’s low-rank mapping and query-dependent sparse gating of SDPA outputs.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a systematic investigation of gating-augmented softmax attention and identify a simple post-SDPA gating modification as consistently beneficial in their comparisons.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that head-specific post-SDPA sigmoid gating consistently improves performance.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report improved training stability, tolerance of larger learning rates, and improved scaling properties.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that sparse gating mitigates massive activation and attention sink, while improving long-context extrapolation performance.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Gating is widespread, but its specific effects are rarely examined.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "study design",
+        "summary": "The authors systematically compare 30 variants across large MoE and dense language models trained on a 3.5-trillion-token dataset.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "central result",
+        "summary": "A head-specific sigmoid gate after SDPA is reported to improve performance, stability, learning-rate tolerance, and scaling.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "interpretation and implications",
+        "summary": "The authors link the result to non-linearity and query-dependent sparse modulation, reporting mitigation of activation and attention-sink issues plus better long-context extrapolation.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "release and adoption",
+        "summary": "Codes and models are released, and the most effective SDPA output gate is used in Qwen3-Next models.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a broad variant comparison with a proposed mechanistic attribution based on gating position and computational variants.",
+          "source_ids": [
+            "S4",
+            "S7"
+          ]
+        },
+        "interpretation": "Comparing controlled design variants can support a more explanatory account than reporting aggregate performance alone.",
+        "application": "When introducing an architectural modification, compare placement and computational alternatives, then state which observed differences motivate the mechanism claimed.",
+        "exception": "This framing is unsuitable when the study cannot isolate variants or lacks evidence connecting the comparisons to the proposed mechanism."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract connects the method’s reported benefits to concrete training and inference-related phenomena, including stability, learning-rate tolerance, massive activation, attention sink, and long-context extrapolation.",
+          "source_ids": [
+            "S6",
+            "S8"
+          ]
+        },
+        "interpretation": "Linking headline gains to operational behaviors makes an architectural claim more diagnostically useful.",
+        "application": "Report whether a proposed change affects specific failure modes or scaling behaviors, alongside general performance.",
+        "exception": "Do not generalize this practice when those behaviors are not measured or are outside the method’s intended scope."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide numerical effect sizes, baselines, statistical treatment, or detailed experimental conditions.",
+      "The abstract does not specify which model scales or tasks yield each reported benefit.",
+      "The abstract reports mechanistic attribution but does not provide the underlying analyses needed to assess it here."
+    ]
+  }
+}

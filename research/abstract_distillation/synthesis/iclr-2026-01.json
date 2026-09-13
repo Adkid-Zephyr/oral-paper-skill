@@ -1,0 +1,658 @@
+{
+  "batch_id": "iclr-2026-01",
+  "covered_ids": [
+    "iclr-2026-oral-10006417",
+    "iclr-2026-oral-10006532",
+    "iclr-2026-oral-10006542",
+    "iclr-2026-oral-10006549",
+    "iclr-2026-oral-10006554",
+    "iclr-2026-oral-10006563",
+    "iclr-2026-oral-10006575",
+    "iclr-2026-oral-10006582",
+    "iclr-2026-oral-10006584",
+    "iclr-2026-oral-10006600",
+    "iclr-2026-oral-10006659",
+    "iclr-2026-oral-10006663",
+    "iclr-2026-oral-10006670",
+    "iclr-2026-oral-10006689",
+    "iclr-2026-oral-10006696",
+    "iclr-2026-oral-10006717",
+    "iclr-2026-oral-10006729",
+    "iclr-2026-oral-10006783",
+    "iclr-2026-oral-10006797",
+    "iclr-2026-oral-10006818",
+    "iclr-2026-oral-10006825",
+    "iclr-2026-oral-10006830",
+    "iclr-2026-oral-10006847",
+    "iclr-2026-oral-10006850",
+    "iclr-2026-oral-10006909",
+    "iclr-2026-oral-10006994",
+    "iclr-2026-oral-10007014",
+    "iclr-2026-oral-10007021",
+    "iclr-2026-oral-10007035",
+    "iclr-2026-oral-10007057",
+    "iclr-2026-oral-10007082",
+    "iclr-2026-oral-10007120",
+    "iclr-2026-oral-10007173",
+    "iclr-2026-oral-10007185",
+    "iclr-2026-oral-10007212",
+    "iclr-2026-oral-10007250",
+    "iclr-2026-oral-10007267",
+    "iclr-2026-oral-10007312",
+    "iclr-2026-oral-10007338",
+    "iclr-2026-oral-10007385",
+    "iclr-2026-oral-10007399",
+    "iclr-2026-oral-10007429",
+    "iclr-2026-oral-10007440",
+    "iclr-2026-oral-10007487",
+    "iclr-2026-oral-10007498",
+    "iclr-2026-oral-10007521",
+    "iclr-2026-oral-10007523",
+    "iclr-2026-oral-10007564"
+  ],
+  "candidate_practices": [
+    {
+      "name": "把创新写成可指认的表示或交互结构变化",
+      "source_observation": "这些摘要明确命名原有结构、替代结构及其目标能力，而不只使用“新框架”标签。",
+      "why_it_may_help": "解释：这种写法可能让读者判断贡献改变了什么；并不证明替代结构造成性能提升。",
+      "application": "将创新句改成“原先用X表示或交互；现在改用Y，以保留或处理Z”，随后给出相应任务证据。",
+      "when_not_to_use": "贡献仅是分析既有方法或建立新保证时，不必虚构结构替换。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10006670",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S8"
+          ],
+          "specific_example": "MNPO把单一对手交互扩展为对手群体，并报告异质标注者及混合策略评估。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10006696",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5",
+            "S7"
+          ],
+          "specific_example": "Visual Planning将空间规划步骤编码为图像序列，并比较文本规划变体。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007185",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "mCLM以功能构件替代原子级语言，将表示选择连接到功能描述和合成兼容性。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007267",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "扩散几何从退化的端点表示转向(x_t,t)，再推导曲线长度估计。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10006847",
+          "source_ids": [
+            "S3",
+            "S6",
+            "S8"
+          ],
+          "contrast": "持久同调研究增加分析视角、描述拓扑压缩，并未替换模型表示；分析工具本身也可构成贡献。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007021",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "contrast": "Triple-BERT转向集中式单智能体，而MNPO增加参与者；不能把更分散或更多交互方概括为进步方向。"
+        }
+      ],
+      "full_text_needed_for": "表示定义、适用假设、组件作用及比较是否隔离结构变化。"
+    },
+    {
+      "name": "让干预位置对应具体失败信号",
+      "source_observation": "这些摘要先描述容量、saliency、信念或对应关系上的问题，再说明干预作用的位置。",
+      "why_it_may_help": "解释：可能使方法选择及干预范围更可审查；诊断与干预相邻不等于因果链已证实。",
+      "application": "把组件清单改写为“观察到的信号→干预对象→预期改变”，区分观测关联与机制解释。",
+      "when_not_to_use": "没有可识别中间信号，或组件共同作用无法合理拆分时，保留整体目标描述。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10006729",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "CM由多数类占用过多容量的诊断，引出为少数类保留容量的参数分解和损失。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007035",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "低上下文saliency与幻觉关联，继而引出候选拒绝及近期输出注意力增强。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007173",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "T^3检测过度信念偏离后截断轨迹尾部，保留此前前缀。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007523",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "RULE区分实体内部和跨图噪声，将可靠性估计用于属性融合和跨图训练。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10006542",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S8"
+          ],
+          "contrast": "FAB的关键结构是微调前状态、激活事件与变化条件；条件性威胁不必组织成修复组件清单。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007338",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "contrast": "L2Seg固定稳定片段、继续搜索不稳定部分；局部干预不总意味着丢弃不稳定部分。"
+        }
+      ],
+      "full_text_needed_for": "信号如何测量、检测误差、机制证据以及干预是否误伤有效行为。"
+    },
+    {
+      "name": "拆开会导向不同结论的测量层次",
+      "source_observation": "这些摘要区分尝试与成功、视觉质量与任务成功、可测偏好与表达偏好，或用主观评分检验客观指标。",
+      "why_it_may_help": "解释：这种区分可能阻止一个汇总指标承担其无法支持的结论。",
+      "application": "找出研究中容易混同的两个量，分别命名，并说明主要结论由哪个量支持。",
+      "when_not_to_use": "研究目标确实只涉及单一构念，或第二个量无法可靠定义时，不要机械增加指标。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10006549",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "specific_example": "RedTeamCUA同时报告攻击成功率和最高92.5%的尝试率，并将部分未完成归于能力限制。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10006575",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "specific_example": "World-In-World以任务成功为主指标，报告视觉质量不能保证闭环成功。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007082",
+          "source_ids": [
+            "S4",
+            "S6"
+          ],
+          "specific_example": "WIMHF区分数据可测偏好和标注者实际表达，并展示不同数据背景下对幽默的相反偏好。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10006909",
+          "source_ids": [
+            "S6"
+          ],
+          "specific_example": "TTSDS2报告在16种指标中，只有它在每个所评领域和主观评分上均超过0.50相关阈值。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10007120",
+          "source_ids": [
+            "S5"
+          ],
+          "contrast": "Anti-Physics任务有意要求违反物理规律；物理逼真度不能无条件充当指令遵循指标。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007250",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S6"
+          ],
+          "contrast": "AdAEM改变问题生成以提高区分度，处理的是测量材料不敏感，单纯增加结果指标未必足够。"
+        }
+      ],
+      "full_text_needed_for": "指标定义、效度、标注协议、误差与各测量层次之间的关系。"
+    },
+    {
+      "name": "用资源结构说明它新增了什么研究能力",
+      "source_observation": "资源贡献被具体描述为任务覆盖、平台覆盖、域间配对或格式转换，并与相应评估连接。",
+      "why_it_may_help": "解释：可能帮助读者判断资源价值，避免仅凭数据量推断贡献。",
+      "application": "在资源名称后补一句“它连接哪些对象、覆盖哪些条件、允许检验什么问题”；另写模型或实证贡献。",
+      "when_not_to_use": "数据仅服务于内部训练且没有独立用途时，不必包装成独立资源贡献。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10006532",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "DA3同时提出单一depth-ray目标及覆盖姿态、几何、渲染的基准。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10006584",
+          "source_ids": [
+            "S3",
+            "S5"
+          ],
+          "specific_example": "ScaleCUA明确六个操作系统、三个任务域及人机数据管线，再给出基准分数。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10006600",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S9"
+          ],
+          "specific_example": "RealPDEBench配对测量与模拟，报告域间差异及模拟预训练收益。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10006994",
+          "source_ids": [
+            "S3",
+            "S5"
+          ],
+          "specific_example": "ADP将13个已有数据集转换为共同表示并面向多个训练框架。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10007487",
+          "source_ids": [
+            "S3",
+            "S6"
+          ],
+          "contrast": "BIRD-INTERACT的资源价值还来自规定式和自主式交互协议；任务数量不能代替交互条件。"
+        }
+      ],
+      "full_text_needed_for": "构建方法、配对或转换保真度、覆盖缺口、泄漏及实际发布状态。"
+    },
+    {
+      "name": "把效率数字绑定到比较条件和保留的能力",
+      "source_observation": "这些摘要有的明确匹配资源，有的同时报告质量与吞吐量，有的给出硬件、精度和工作负载。",
+      "why_it_may_help": "解释：可能使读者判断速度收益回答了哪个问题；条件齐全程度在摘要之间不同。",
+      "application": "将“更快”改为“在条件C、相对B，资源指标变化R，同时质量指标为Q”；缺失条件不要补写。",
+      "when_not_to_use": "仅有复杂度定理时，直接陈述计算模型和界，不编造运行时间或下游性能。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10006830",
+          "source_ids": [
+            "S8",
+            "S9"
+          ],
+          "specific_example": "PGM报告可比FID下7.5倍吞吐量，增加采样步数后给出FID 4.56和3.9倍速度。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007429",
+          "source_ids": [
+            "S2",
+            "S6"
+          ],
+          "specific_example": "MoE研究将总参数、训练计算和数据预算相等作为激活率比较的前提。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007521",
+          "source_ids": [
+            "S8"
+          ],
+          "specific_example": "SANA-Video给出RTX 5090、NVFP4、五秒720p视频及71到29秒的变化。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007212",
+          "source_ids": [
+            "S7"
+          ],
+          "specific_example": "Proteina-Complexa分别报告生成基线上的计算成功率和归一化计算预算下的优化比较。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10007564",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "contrast": "ParaRNN的665倍速度针对朴素串行实现；与Transformer、Mamba2的困惑度比较是另一组证据。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007498",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "contrast": "角测试核的理论比较与ANNS相对HNSW的QPS结果属于不同层次，后者未给召回率条件。"
+        }
+      ],
+      "full_text_needed_for": "预算核算、硬件、实现、质量匹配、吞吐量协议及比较公平性。"
+    },
+    {
+      "name": "让保证与其条件、量和极限同句出现",
+      "source_observation": "这些理论摘要通过分布、误差范数、有限规模、答案结构或工具条件限定贡献。",
+      "why_it_may_help": "解释：可能防止把不同保证合并为不受限制的能力结论。",
+      "application": "把“获得最优保证”拆成“在A条件下，对B量得到C”；改变条件后的结果另起一句。",
+      "when_not_to_use": "纯经验研究不应套用定理语言；可改写为测试范围与观测结果。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10006582",
+          "source_ids": [
+            "S2",
+            "S3"
+          ],
+          "specific_example": "WGM区分Zipfian数据上的ℓ1近最优缺失质量与无分布假设的ℓ∞保证，再连接下游任务。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10006659",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ],
+          "specific_example": "BBP研究区分预测转变、有限N修正和完全无信息的更低SNR阈值。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10006797",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Track-and-Stop摘要先区分单答案和多答案，再提出两者的非渐近保证。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007057",
+          "source_ids": [
+            "S3",
+            "S5"
+          ],
+          "specific_example": "SSM限制针对正式定义的问题类，扩展能力则附带合适工具与问题相关训练数据。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10006818",
+          "source_ids": [
+            "S9",
+            "S10"
+          ],
+          "contrast": "椭圆签名使用小模型提取实验和生产规模障碍讨论；与消息认证的类比不能代替密码学安全保证。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10006554",
+          "source_ids": [
+            "S7",
+            "S8",
+            "S9"
+          ],
+          "contrast": "Polar Express并列最坏误差结果、bfloat16可用性和GPT-2损失；理论最优性不能自动覆盖有限精度及下游收益。"
+        }
+      ],
+      "full_text_needed_for": "正式定义、定理条件、最优性比较类、证明及有限精度影响。"
+    },
+    {
+      "name": "将规模叙事改成具体变量与响应关系",
+      "source_observation": "这些摘要分别研究通信时机、数据量与容量、上下文条件，或不同能力成分的来源和趋势。",
+      "why_it_may_help": "解释：可能把“扩大规模有益”改成可用于选择训练或推理方案的条件性认识。",
+      "application": "明确改变哪个变量、观察哪个响应、在哪个范围成立；若各能力趋势不同，分别写出。",
+      "when_not_to_use": "只测一个规模或单个配置时，不将结果写成缩放规律。",
+      "support": [
+        {
+          "paper_id": "iclr-2026-oral-10006417",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "去中心化学习将问题落在何时通信，并突出高异质性下最后一步全局合并。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10006663",
+          "source_ids": [
+            "S5"
+          ],
+          "specific_example": "CauKer报告10K–10M样本和1M–783M参数范围内的趋势，并与真实数据的不规则趋势比较。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10006783",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Intrinsic Entropy从相关与无关长上下文的不同结果出发，提出数据量相关的最优上下文及条件性界。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10007312",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "视觉先验研究拆开推理和感知先验，报告不同数据来源、适配依赖和饱和趋势。"
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "iclr-2026-oral-10006563",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "contrast": "MetaEmbed提供推理时token预算控制，但摘要未给出质量—效率曲线；可调能力不等于已量化规律。"
+        },
+        {
+          "paper_id": "iclr-2026-oral-10006689",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S10"
+          ],
+          "contrast": "Prism报告长序列可能降效、短序列配合多模态信号仍有优势；有用结论也可能是改变投入方向。"
+        }
+      ],
+      "full_text_needed_for": "变量是否独立变化、拟合形式、具体预算、响应测量及外推范围。"
+    }
+  ],
+  "unusual_but_useful": [
+    {
+      "paper_id": "iclr-2026-oral-10006717",
+      "source_ids": [
+        "S6",
+        "S8",
+        "S9",
+        "S11"
+      ],
+      "practice": "将感知增强、解释训练及数据资源作为连贯的多项贡献。",
+      "application": "分别说明韵律输入、解释奖励及数据各承担什么任务。",
+      "limit": "解释评分提高不证明解释忠实。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006825",
+      "source_ids": [
+        "S3",
+        "S4"
+      ],
+      "practice": "把部署是否需要再训练写入方法定义。",
+      "application": "说明内层流如何来自预训练模型及保留的随机演化能力。",
+      "limit": "不能据此接受任意模型适用或消除全部权衡。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006850",
+      "source_ids": [
+        "S4",
+        "S7",
+        "S9"
+      ],
+      "practice": "将因果流式生成与生成中可操作的控制分别描述。",
+      "application": "写明何时输入轨迹、相机或运动控制。",
+      "limit": "无限长度表述不证明无限时域质量。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10007014",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S4"
+      ],
+      "practice": "同时说明触发集合和检测信号的替换。",
+      "application": "分别写固定查询如何变为语义域、特殊密钥如何变为分布式水印。",
+      "limit": "摘要未枚举全部部署鲁棒性条件。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10007385",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "practice": "用领域类比解释控制轴，并用可感知操作约束类比。",
+      "application": "说明潜频控制对应结构时间尺度、变化与混合。",
+      "limit": "不要把潜频等同于可听音色频率。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10007399",
+      "source_ids": [
+        "S2",
+        "S4",
+        "S6"
+      ],
+      "practice": "用数据依赖结构解释交互模块选择。",
+      "application": "先区分时间与通道依赖，再解释全局核心token。",
+      "limit": "医学信号集中性仍需检查依据与范围。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10007440",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "practice": "把合成任务结构与报告的推理行为、训练测试长度连接。",
+      "application": "说明UUID链和干扰文档，再分别报告行为观察及16K到128K迁移。",
+      "limit": "不能认定该结构必然迫使模型执行所述步骤。"
+    }
+  ],
+  "discarded_generalizations": [
+    {
+      "generalization": "所有摘要都应遵循ORAL或问题—方法—实验的统一模板。",
+      "reason": "这些材料包括窄理论保证、资源、分析和控制接口；没有框架效果或入选原因证据。",
+      "paper_ids": [
+        "iclr-2026-oral-10006797",
+        "iclr-2026-oral-10006909",
+        "iclr-2026-oral-10007385"
+      ]
+    },
+    {
+      "generalization": "每篇论文必须同时有理论、实验和单一核心方法。",
+      "reason": "多项连贯贡献与仅陈述理论保证的摘要均存在。",
+      "paper_ids": [
+        "iclr-2026-oral-10006797",
+        "iclr-2026-oral-10006717",
+        "iclr-2026-oral-10007212"
+      ]
+    },
+    {
+      "generalization": "更多上下文、算力或更复杂模型必然更好。",
+      "reason": "摘要报告条件性优势、退化或替代投入方向。",
+      "paper_ids": [
+        "iclr-2026-oral-10006689",
+        "iclr-2026-oral-10006783",
+        "iclr-2026-oral-10006532"
+      ]
+    },
+    {
+      "generalization": "摘要中的机制解释和性能收益证明了组件因果作用。",
+      "reason": "提取缺少隔离组件的证据；关联、解释和结果须分开。",
+      "paper_ids": [
+        "iclr-2026-oral-10007035",
+        "iclr-2026-oral-10006729",
+        "iclr-2026-oral-10006532"
+      ]
+    }
+  ],
+  "source_checks_needed": [
+    {
+      "paper_id": "iclr-2026-oral-10007338",
+      "field": "lessons.source_observation",
+      "issue": "S7/S9的全局覆盖与局部辨别详细分工只见于lesson；核查原摘要是否真的陈述。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006600",
+      "field": "lessons.application及指标定位",
+      "issue": "配对数据不等于配对split；核查九项指标及data/physics分类究竟对应S7还是S8。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006563",
+      "field": "lessons.application",
+      "issue": "前缀或任意子集的有效性超出所提取的可变token数能力，需核查原文。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006847",
+      "field": "lessons.application",
+      "issue": "补充线性解释方法不代表作者实际联合运行线性探针。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006696",
+      "field": "contributions与stated_novelty",
+      "issue": "“纯视觉”与“补充语言推理”需明确指内部规划通道还是整个系统。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10007523",
+      "field": "unknowns",
+      "issue": "出现“claimed guarantee”，但贡献和证据字段没有明确形式保证；需检查来源。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10007429",
+      "field": "预算条件",
+      "issue": "核查相等数据预算、训练计算与数据复用如何同时定义。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10007312",
+      "field": "author_reported_evidence S5",
+      "issue": "核查“universally”原文范围，不升级为普遍迁移事实。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10007185",
+      "field": "功能及合成结果",
+      "issue": "核查哪些结果是预测分数、合成可达性估计或实际实验，不能从makeable推断已合成。"
+    },
+    {
+      "paper_id": "iclr-2026-oral-10006584",
+      "field": "author_reported_evidence S5",
+      "issue": "+26.6和+10.7的单位及基线未明确，不能自行写成相对百分比。"
+    }
+  ]
+}

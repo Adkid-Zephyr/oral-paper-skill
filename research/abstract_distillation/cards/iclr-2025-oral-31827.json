@@ -1,0 +1,207 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31827",
+    "title": "EmbodiedSAM: Online Segment Any 3D Thing in Real Time",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31827"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "749cefb29dcef5c33464d870dc5b612fca132a745a34f8614733f90acd56b3e1",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "f9ae96815705db9fb9665a7bdb7667fce79180c08e143152d7561c3f15eed0e4",
+    "extracted_at": "2026-09-12T23:53:35.008357+00:00",
+    "session_id": "01a0980a-1dd9-7893-9589-8cde72eb9895",
+    "usage": {
+      "input_tokens": 12907,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 894,
+      "reasoning_output_tokens": 109
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d826c139293c241fc4506d9af7cb0e77712a00990119bc20b37393da3ebf43ea"
+    },
+    {
+      "id": "S2",
+      "sha256": "27b56493b1b9749a1f056075ccc6956ab3da510cf900149f55fb3b7f51326aa3"
+    },
+    {
+      "id": "S3",
+      "sha256": "51aafbffba575612d720347fa0931192322c777b7cec54097c52c2c747a11906"
+    },
+    {
+      "id": "S4",
+      "sha256": "3577043e4fde3a4bcf55bc86b0e1451c99fc268959671e12a99edc7119d769df"
+    },
+    {
+      "id": "S5",
+      "sha256": "8189a3a569a3d2ee8b56f2ba3fa965ccb3655219f9187044dd2e48228000fb4f"
+    },
+    {
+      "id": "S6",
+      "sha256": "8094b3cdd3012fba00c04dd997b8b6e29c2eef356136a71374b12e7fd7987ca8"
+    },
+    {
+      "id": "S7",
+      "sha256": "e6f6cb4d88122b42a6a6e9ddb9656075e5fdb9d3b012cacdaca3f1f2ab4d903a"
+    },
+    {
+      "id": "S8",
+      "sha256": "94234d99d1b46c5da86897de3fec3fe2a046e14b792b0c244d8efc160a3bc1b0"
+    },
+    {
+      "id": "S9",
+      "sha256": "385189d1c8874396599451ebdab8476a04b2273bf907e3a6178229da71794ec1"
+    },
+    {
+      "id": "S10",
+      "sha256": "0654c971010d127880b3384efe7ca02a94cec194c285fdf36a4d6870f20f186e"
+    },
+    {
+      "id": "S11",
+      "sha256": "d80db9465d25c2d1cc6cbe307d4beb19a8994b4ee01dad6fac70d73feed2aed8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31827",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Enable online, real-time, fine-grained, generalized 3D instance segmentation for embodied agents using streaming RGB-D input, despite unavailable future frames and repeated observations requiring cross-frame matching.",
+        "source_ids": [
+          "S1",
+          "S5",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Existing VFM-assisted 3D perception methods are mostly offline or too slow for practical embodied tasks, while limited high-quality 3D data makes direct 3D training infeasible.",
+        "source_ids": [
+          "S2",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A geometric-aware query lifting module converts SAM-generated 2D masks into 3D-aware queries, followed by iterative refinement with a dual-level query decoder.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "A query-based 3D mask representation supports efficient cross-view similarity computation through matrix operations for real-time inference.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "An online SAM-assisted pipeline transfers 2D masks to fine-grained 3D point-cloud shapes for real-time 3D instance segmentation.",
+        "source_ids": [
+          "S5",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present geometric-aware query lifting and dual-level query decoding as their approach to online real-time 3D instance segmentation with SAM.",
+      "source_ids": [
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art performance among online 3D perception models on ScanNet, ScanNet200, SceneNN, and 3RScan, and report substantially exceeding offline VFM-assisted 3D instance-segmentation methods.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report strong generalization in several zero-shot dataset-transfer experiments and potential for data-efficient use.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Embodied agents need simultaneous scene understanding and exploration, but high-quality 3D data is limited.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "VFM assistance is promising, yet existing methods are commonly offline or too slow for embodied deployment.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "Online RGB-D processing must operate without future frames and match instances across observations.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The method lifts SAM masks into 3D-aware queries, refines them, and uses efficient cross-view similarity computation.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "Experiments report strong online performance, zero-shot transfer, and data-efficient potential.",
+        "source_ids": [
+          "S10",
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly links streaming constraints and repeated observations to architectural choices: 3D-aware queries, iterative refinement, and efficient matrix-based matching.",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S9"
+          ]
+        },
+        "interpretation": "A compelling method narrative can map each deployment constraint to a corresponding design mechanism.",
+        "application": "When presenting a real-time perception method, state the operational bottleneck first and identify the module or computation intended to address it.",
+        "exception": "This framing is less suitable when the main contribution is theoretical or when deployment constraints are not central to the work."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative metrics, runtime, hardware, baselines, or evaluation protocols for the reported comparisons.",
+      "The zero-shot transfer settings and the meaning of data-efficient potential are unspecified.",
+      "The abstract does not define the claimed real-time threshold or detail how instance matching handles difficult cases."
+    ]
+  }
+}

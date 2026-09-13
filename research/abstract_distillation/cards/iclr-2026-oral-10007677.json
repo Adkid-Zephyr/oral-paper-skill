@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007677",
+    "title": "Latent Particle World Models: Self-supervised Object-centric Stochastic Dynamics Modeling",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007677"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "22ab10d43a2ef3c205c4b0b5e71dd77e64f4df8ebee30446b8b6c0574dcad961",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "6f280803527d82a51323d152aa13d33439c0eaaf6256ca16096233967b8c3578",
+    "extracted_at": "2026-09-13T00:00:03.641688+00:00",
+    "session_id": "01a09810-0ead-7362-a6a2-d83151f70e4b",
+    "usage": {
+      "input_tokens": 12637,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 772,
+      "reasoning_output_tokens": 124
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6fc813b545f8b0455a15b5b166d7004e8a9345351d6ea364f4ef0d3612945968"
+    },
+    {
+      "id": "S2",
+      "sha256": "38daa50b9f5c077c8e3e5b4f0452b8a3111ec4cd961a44ebb27d24d187ad4bbf"
+    },
+    {
+      "id": "S3",
+      "sha256": "600684f8dea911ec41f2553fd61cce1317924cdfb1c6dbe7de20888bfb605eb8"
+    },
+    {
+      "id": "S4",
+      "sha256": "86c596a61f7de6b340ecab5a854c3b4344a8bb865c9560c914e015466bba90bd"
+    },
+    {
+      "id": "S5",
+      "sha256": "7c6c48cce5f2ce2bab4e7e99cf386e82ef4d43e8395af3fd48e5350258abdcb1"
+    },
+    {
+      "id": "S6",
+      "sha256": "46261aefcabf7f8a34052f017cbcc238c1fce14cbb676f74fb9cc25638d13079"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007677",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop a self-supervised, object-centric world model for stochastic multi-object dynamics and decision-making.",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "LPWM learns object-centric scene decompositions from video, autonomously discovering keypoints, bounding boxes, and masks, with end-to-end training and conditioning on actions, language, or image goals.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It models stochastic particle dynamics using a latent action module.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system/application",
+        "claim": "It extends beyond video modeling to decision-making, including goal-conditioned imitation learning.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe the latent action module for stochastic particle dynamics as novel.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art results on diverse real-world and synthetic datasets.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report demonstrating LPWM in goal-conditioned imitation learning.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report releasing code, data, pretrained models, and video rollouts.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "introduction",
+        "summary": "Introduces LPWM as a self-supervised object-centric world model for real-world multi-object data and decision-making.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "representation",
+        "summary": "Describes unsupervised discovery of keypoints, bounding boxes, and masks from video.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "architecture",
+        "summary": "States that video-only end-to-end training supports conditioning on actions, language, and image goals.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "dynamics_and_results",
+        "summary": "Presents stochastic particle dynamics modeling with a latent action module and reports state-of-the-art results across real-world and synthetic datasets.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "application_and_release",
+        "summary": "Positions the model for decision-making, reports a goal-conditioned imitation-learning demonstration, and lists released resources.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links representation learning, conditioning interfaces, dynamics modeling, benchmark results, and a decision-making demonstration in sequence.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A capability-to-evidence chain can make a broad system contribution easier to assess.",
+        "application": "Organize an abstract by mapping each claimed capability to its corresponding reported result or demonstration.",
+        "exception": "This structure is less suitable when the work has one narrow theoretical result rather than an integrated system."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no metrics, dataset names, baselines, or experimental conditions for the state-of-the-art claim.",
+      "It does not specify how the latent action module works or what the decision-making demonstration measures."
+    ]
+  }
+}

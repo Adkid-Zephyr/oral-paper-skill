@@ -1,0 +1,197 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-115856",
+    "title": "Boosting Knowledge Utilization in Multimodal Large Language Models via Adaptive Logits Fusion and Attention Reallocation",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/115856"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "479467f5c1c5881c58ce66a1ac960a03ca86ac15d93afd3d8809f997e3717344",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "3054e497206468add8934e15eb9ed5cd24fcdb402c38a8b7b5802bc71454df25",
+    "extracted_at": "2026-09-13T00:20:59.517033+00:00",
+    "session_id": "01a09823-3da6-7512-af47-f3b87710f2cb",
+    "usage": {
+      "input_tokens": 12827,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 753,
+      "reasoning_output_tokens": 106
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8e310ba10eb4482250be51c2a7194312450a6d6f9031b367c5c8369fd6ef0877"
+    },
+    {
+      "id": "S2",
+      "sha256": "67460277835c39488f6d2b5f9890545efa9918546943fcbd15978f41f24c8fb2"
+    },
+    {
+      "id": "S3",
+      "sha256": "c657a5cbeb1d84aef729a1a2e9bcfb6fdb6ad8ebcedd77fc8869f795d9dddf5a"
+    },
+    {
+      "id": "S4",
+      "sha256": "2381491fde151c54cc842fdf2ee942e22628d2a0133142f1da46f98f0d0589a8"
+    },
+    {
+      "id": "S5",
+      "sha256": "185df22570ff02da31da34ba27823b158d609137f8f5f7cf7b6a7c4478382f0e"
+    },
+    {
+      "id": "S6",
+      "sha256": "7b1c4ebe31124ac3167cf9a2486c7b78fd1cbaf99ae448e7ed9b309615382e67"
+    },
+    {
+      "id": "S7",
+      "sha256": "8c5953a772c8a2cc7ab30ff1cf0b2b91e1d219bc4fbb52b1ff60b6a495f2f40e"
+    },
+    {
+      "id": "S8",
+      "sha256": "d144e0778c6a075a46338fc743176bd39ca2ac263956d85608ec91ee7e091e41"
+    },
+    {
+      "id": "S9",
+      "sha256": "cf6c6d7e70d3a14c5ecc78ce7e68516399d32cde2a9bb58dac636dbce9146cc2"
+    },
+    {
+      "id": "S10",
+      "sha256": "a16c0c01f1d894792a37f7dbd14c4142da684b67809699865e4388d1c8560656"
+    },
+    {
+      "id": "S11",
+      "sha256": "ed2842c66678e419def31ee8d731131daa6e2b6aa17c5340414b8c65f60df6ad"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-115856",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "MLLMs struggle with knowledge-intensive tasks because their parametric knowledge is limited and outdated.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Although retrieval supplies external context, MLLMs often fail to fully use it during response generation, reportedly due to attention bias and conflicts between parametric and contextual knowledge.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces ALFAR, a training-free, plug-and-play approach for improving the use of retrieved knowledge in MLLMs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Combines relevance-based attention reallocation from visual to context tokens with output-logit decoupling and weighting of parametric versus contextual knowledge.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize ALFAR as a training-free, plug-and-play method that addresses both attention bias and knowledge conflict through complementary interventions.",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report superior performance across diverse datasets without additional training or external tools.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that experiments across multiple MLLMs and benchmarks consistently outperform the state of the art by large margins.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "claim": "The authors report releasing code and data publicly.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "MLLMs have limited and outdated parametric knowledge, motivating retrieval of external contextual knowledge.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "Retrieved knowledge is underused; the authors identify attention bias and conflicts between knowledge sources as major causes.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "ALFAR reallocates attention toward relevant context and separately weights parametric and contextual knowledge at the logits.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "The authors report strong cross-dataset and cross-benchmark performance without extra training or tools.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links two diagnosed failure modes to two corresponding interventions: attention reallocation for token-level bias and logit weighting for knowledge conflict.",
+          "source_ids": [
+            "S4",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A compact problem-to-mechanism mapping can make a method's rationale and scope easy to assess.",
+        "application": "When presenting a new system, explicitly pair each diagnosed failure mode with the component intended to address it.",
+        "exception": "This framing is unsuitable when the abstract lacks evidence that the proposed components correspond to distinct diagnosed causes."
+      }
+    ],
+    "unknowns": [
+      "No numerical results, dataset names, baseline identities, or evaluation conditions are provided.",
+      "The abstract does not establish independent verification of the reported superiority or the claimed causes."
+    ]
+  }
+}

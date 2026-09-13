@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71058",
+    "title": "MuonSSM: Orthogonalizing State Space Models for Sequence Modeling",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71058"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "00c8f84e865e7969ef09ab3126ab6dac7ab5863df55b0f24dcbbbd2522316ebe",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "da449ff3a865b355191d03ac237b4ed879bc89a154347b0fe5723e824be730dd",
+    "extracted_at": "2026-09-13T00:12:25.180653+00:00",
+    "session_id": "01a0981b-5b96-7a91-81d1-1f9e2703eeec",
+    "usage": {
+      "input_tokens": 12682,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 764,
+      "reasoning_output_tokens": 63
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0770be9149d967a4df31ab1e94f86d5ea3e51cc1ab750a1ec085ed0d96be36f2"
+    },
+    {
+      "id": "S2",
+      "sha256": "866f7ec36d30b186697ca9882ad5afd6bf739ab80e1b9ab618715b2501ad090d"
+    },
+    {
+      "id": "S3",
+      "sha256": "66b71e9449fa7e66e5f24ad7af18c52ad5f982e28b388cb97baf864ae41abfa0"
+    },
+    {
+      "id": "S4",
+      "sha256": "0402f6a9dfc97952a7ceae42a5a1aa35ed638407686bfe0349dd6a47317f6339"
+    },
+    {
+      "id": "S5",
+      "sha256": "02704fcc5cc5df563749ca1950d14e125efa40aa91eccc1d1bc921998a53c3fb"
+    },
+    {
+      "id": "S6",
+      "sha256": "99878bd38a45a345edb9c7c3773c2e9ec7c1157f7a470d6affc2fa13ce8a4e38"
+    },
+    {
+      "id": "S7",
+      "sha256": "3a7f52bc6cb1f063a1f863247f2abba0d05738a7c6f62592dc2e3be3d8e83b1b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71058",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop stable, scalable long-sequence modeling with efficient SSMs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing SSMs are reported to experience instability and memory degradation over long horizons, associated with poorly conditioned first-order updates and unbalanced update geometry.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces MuonSSM, which conditions the geometry of memory updates rather than the recurrent transition matrix.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "architecture",
+        "claim": "Adds a momentum pathway and lightweight Newton–Schulz transformation on low-rank input injections, while preserving parallel-scan complexity.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Provides theoretical results on gradient propagation, spectral amplification, and long-horizon memory representations.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish MuonSSM by explicitly geometrically conditioning memory updates instead of conditioning the recurrent transition matrix.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that theory shows improved gradient propagation, reduced spectral amplification, and richer long-horizon memory representations.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Across language, vision, and time-series benchmarks, the authors report consistent gains in accuracy, robustness, and long-context performance when MuonSSM is integrated into diverse SSM backbones.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "SSMs are presented as efficient linear-time alternatives to attention for long sequences.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The abstract identifies instability and memory degradation over extended horizons, linked to update conditioning and geometry.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "MuonSSM conditions memory-update geometry using momentum and a low-rank Newton–Schulz transformation while retaining parallel scans.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "support",
+        "summary": "Theory and cross-domain benchmarks are reported to support improved propagation, memory behavior, robustness, and long-context performance.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The authors frame update geometry conditioning as a principled route to stable, scalable sequence modeling.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a specific failure mode—long-horizon instability and memory degradation—to update geometry, then aligns the proposed mechanism and reported evidence with that diagnosis.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A focused problem–mechanism–evidence chain can make a technical contribution easier to assess.",
+        "application": "Frame a model paper by naming the failure mode, identifying the targeted structural cause, and reporting evidence that directly tests the corresponding behavior.",
+        "exception": "This framing is unsuitable when the claimed cause is only speculative or when available evaluations do not measure the targeted behavior."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no benchmark names, dataset sizes, numerical gains, baselines, or ablations.",
+      "The conditions and formal assumptions behind the theoretical claims are unspecified.",
+      "The abstract does not detail what robustness measures or long-context settings were used."
+    ]
+  }
+}

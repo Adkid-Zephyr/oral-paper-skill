@@ -1,0 +1,200 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71160",
+    "title": "MV-FGAD: Towards Efficient and Effective Federated Graph Anomaly Detection via Multi-view Learning",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71160"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7ee2b2caeb38cfc89e1ebae4da4a3eb69b3818e00accd1411eb6814e211816f3",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "f9e81600d939c521892b64d397722088467790f21bd90f5bd762de18a1a12cf4",
+    "extracted_at": "2026-09-13T00:16:28.320675+00:00",
+    "session_id": "01a0981f-1687-7ef0-8201-a2ecb6883207",
+    "usage": {
+      "input_tokens": 12760,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 777,
+      "reasoning_output_tokens": 87
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "aed7ea96ac5b75b1bfaaaae1aef11a8d58228020d65028046747d7f82954b14c"
+    },
+    {
+      "id": "S2",
+      "sha256": "2708cc760d11a4785c8ac52cb862fcb43fa0c1570c1aa5d4b74e7cb690c07656"
+    },
+    {
+      "id": "S3",
+      "sha256": "dcc689e3b9306690e1ddc6264c1f463c9280b1c52a6f22e4018b65d311bf2208"
+    },
+    {
+      "id": "S4",
+      "sha256": "0321da80b3286f64a9de5b78da43b9c17e5f44e40e05117b5880f466312d53d8"
+    },
+    {
+      "id": "S5",
+      "sha256": "f40e73b84eedc382a30c64ceb8ac0386eaedd375d7a81ab9e4ad903fead92935"
+    },
+    {
+      "id": "S6",
+      "sha256": "b8056e07fc0e4a6eaace8736b4e32e807c31ab7a497a83d47028a1ed5e62050a"
+    },
+    {
+      "id": "S7",
+      "sha256": "f808f3ea9efde0d588f9af9fb4582f1c319a65b4292e6d18c0a21a2365015715"
+    },
+    {
+      "id": "S8",
+      "sha256": "3e2657dceff253687d5a7d7f5298ffa43a2bc0a637228bc08fca22c84e44e3e9"
+    },
+    {
+      "id": "S9",
+      "sha256": "44e6bd08333fe35ac7cf1fffbcfdf0e581f737d3bf8dde72ade954cdc814339c"
+    },
+    {
+      "id": "S10",
+      "sha256": "14437e82f8406f5e9127157bf4e2c177fae7a6e90b5ef772ad05697649cb46ca"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71160",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses detecting abnormal nodes in distributed subgraphs through federated learning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods are limited by neighborhood aggregation under partitioned client subgraphs and by overlooking weak attribute or structural anomalies.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "The authors propose MV-FGAD, a federated graph anomaly detection framework for anomalies of varying strengths.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It aggregates and broadcasts shared knowledge, then uses that knowledge to optimize local topological structures.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It combines multi-view anomaly-pattern learning with Mahalanobis-distance scoring across views.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish MV-FGAD through federated knowledge learning for local topology optimization and multi-view scoring aimed at anomalies with different strengths.",
+      "source_ids": [
+        "S6",
+        "S7",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that weak anomalies exhibit harder-to-detect signals than strong anomalies.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report extensive experiments on real-world datasets with varying types and scales demonstrating MV-FGAD's efficiency and effectiveness.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Federated graph anomaly detection targets abnormal nodes in distributed subgraphs.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitations",
+        "summary": "Existing neighborhood aggregation can fail with partitioned client subgraphs, while weak anomalies create an overlooked detection bottleneck.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors report that weak anomalies are harder to detect than strong anomalies.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "MV-FGAD addresses these issues with federated knowledge learning, local topology optimization, multi-view learning, and cross-view Mahalanobis scoring.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report experiments across real-world datasets of varying types and scales, plus public code availability.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific failure mode—partitioned client subgraphs—to a corresponding design choice: broadcasting shared knowledge for local topological optimization.",
+          "source_ids": [
+            "S3",
+            "S7"
+          ]
+        },
+        "interpretation": "Aligning each identified deployment bottleneck with an explicit mechanism makes a method's motivation easier to audit.",
+        "application": "Structure a method introduction by pairing each operational failure with the module intended to address it, then test those pairings separately.",
+        "exception": "This framing is unsuitable when the proposed modules do not map cleanly to independently stated failure modes."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative efficiency or effectiveness results, dataset names, baselines, or experimental protocol.",
+      "It does not specify how weak and strong anomalies are defined or how the claimed cross-view scores are evaluated.",
+      "The abstract does not establish priority or independently verify the stated novelty, effectiveness, or code reproducibility."
+    ]
+  }
+}

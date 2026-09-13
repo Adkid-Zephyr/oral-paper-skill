@@ -1,0 +1,205 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31810",
+    "title": "Your Mixture-of-Experts LLM Is Secretly an Embedding Model for Free",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31810"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "9c3b2cd0f593ff6e7e0b903f3028159af4a2b6c5337caec9b5c2291295e0fd47",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "d0ca527b3956894ca83c3289bab2baceb3122bea9510ec4a581eb4b63b53843a",
+    "extracted_at": "2026-09-12T23:52:52.650657+00:00",
+    "session_id": "01a09809-77c2-7a43-aa87-c98f15053139",
+    "usage": {
+      "input_tokens": 12792,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 860,
+      "reasoning_output_tokens": 99
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fec9e1f6fa68b32d726ed43aacca2330ca8959eef2783ddbf13203188eb7f202"
+    },
+    {
+      "id": "S2",
+      "sha256": "165936661816c1e75d2b7d67b291ee547259cdbdc30ddee0820caf22fc55a16c"
+    },
+    {
+      "id": "S3",
+      "sha256": "c1e5ec6805c2de4446b561a0c34c1b3130bd7059b50a00d1ae3bd88099918776"
+    },
+    {
+      "id": "S4",
+      "sha256": "e4e3eb0f01a2356b8491c2e50a3a520aa3285a866ff1f71afd90346ebeb60945"
+    },
+    {
+      "id": "S5",
+      "sha256": "4aec2744881240fe54b6b3a2e6bc7fddf41051a4a4abfc9506375013220d5451"
+    },
+    {
+      "id": "S6",
+      "sha256": "04508008596f7d623123b83130e522448260582237d91cfce903ae742e221213"
+    },
+    {
+      "id": "S7",
+      "sha256": "bf94168d5231801ab55b0c0156a6fa8ddd1af3a4a0ba99cfd3e3c6315373bd02"
+    },
+    {
+      "id": "S8",
+      "sha256": "ff36291f0607ad6e8a1effb90e37e1143e139cebb97496162ac70ef9bc19b46d"
+    },
+    {
+      "id": "S9",
+      "sha256": "386c6e66de1bdd8eaeb9595f2f5668006f2f25abb082ff5a63210cd1529320d5"
+    },
+    {
+      "id": "S10",
+      "sha256": "5c5dacde2de1bc436fbcd5be4b8a84fd8172ab8d3f7ff42e2f506b3132eda1b0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31810",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The study asks whether MoE LLM components can provide useful text embeddings without additional representation finetuning.",
+        "source_ids": [
+          "S1",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Decoder-only LLM architecture is described as limiting embedding use when representation finetuning is absent.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "system",
+        "claim": "An off-the-shelf MoE expert router is used as an embedding model without finetuning.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Routing weights are reported as complementary to hidden states, more prompt-robust, and focused on high-level semantics relative to hidden states.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "MoEE combines routing weights and hidden states, with a weighted sum of their similarities outperforming similarity on their concatenation.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present novel insights about combining MoE routing weights, hidden states, and prompting, including the advantage of weighted similarity combination over concatenation similarity.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report promising performance from expert-router embeddings across diverse embedding-focused tasks without finetuning.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report experiments on 6 embedding tasks spanning 20 MTEB datasets.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that MoEE significantly improves LLM-based embedding without further finetuning.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLM decoder-only architecture is presented as a limitation for embedding use without representation finetuning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "question and approach",
+        "summary": "The study frames a generalist-model question and examines MoE LLMs.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "core observation",
+        "summary": "Expert routers are presented as usable off-the-shelf embeddings; routing weights are analyzed against hidden states for complementarity, prompt robustness, and semantic focus.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "proposed combination",
+        "summary": "MoEE combines routing weights and hidden states, with a weighted similarity strategy reported as superior to concatenation similarity.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The authors report evaluation across 6 tasks and 20 MTEB datasets, with significant improvement from MoEE without finetuning.",
+        "source_ids": [
+          "S9",
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links an analysis of routing weights versus hidden states to the design of MoEE and specifies that weighted similarity combination outperforms concatenation similarity.",
+          "source_ids": [
+            "S5",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A component-level analysis can motivate a targeted composition rule rather than treating representations as interchangeable.",
+        "application": "When combining embedding signals, compare fusion operators explicitly and connect the selected operator to observed differences in robustness or semantic content.",
+        "exception": "This move is unsuitable when the available evidence does not distinguish component behavior or when the application requires a single representation with no tunable fusion stage."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical results, task-level breakdown, model identities, or comparator details, so the magnitude and scope of the reported improvements are unspecified.",
+      "The basis and evaluation conditions for claims such as “promising,” “more robust,” and “significant” are not detailed."
+    ]
+  }
+}

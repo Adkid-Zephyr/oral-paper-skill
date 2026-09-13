@@ -1,0 +1,631 @@
+{
+  "batch_id": "icml-2026-01",
+  "covered_ids": [
+    "icml-2026-oral-71027",
+    "icml-2026-oral-71028",
+    "icml-2026-oral-71029",
+    "icml-2026-oral-71030",
+    "icml-2026-oral-71031",
+    "icml-2026-oral-71032",
+    "icml-2026-oral-71033",
+    "icml-2026-oral-71034",
+    "icml-2026-oral-71035",
+    "icml-2026-oral-71036",
+    "icml-2026-oral-71037",
+    "icml-2026-oral-71038",
+    "icml-2026-oral-71039",
+    "icml-2026-oral-71040",
+    "icml-2026-oral-71041",
+    "icml-2026-oral-71042",
+    "icml-2026-oral-71043",
+    "icml-2026-oral-71044",
+    "icml-2026-oral-71045",
+    "icml-2026-oral-71046",
+    "icml-2026-oral-71047",
+    "icml-2026-oral-71048",
+    "icml-2026-oral-71049",
+    "icml-2026-oral-71050",
+    "icml-2026-oral-71051",
+    "icml-2026-oral-71052",
+    "icml-2026-oral-71053",
+    "icml-2026-oral-71054",
+    "icml-2026-oral-71055",
+    "icml-2026-oral-71056",
+    "icml-2026-oral-71057",
+    "icml-2026-oral-71058",
+    "icml-2026-oral-71059",
+    "icml-2026-oral-71060",
+    "icml-2026-oral-71061",
+    "icml-2026-oral-71062",
+    "icml-2026-oral-71063",
+    "icml-2026-oral-71064",
+    "icml-2026-oral-71065",
+    "icml-2026-oral-71066",
+    "icml-2026-oral-71067",
+    "icml-2026-oral-71068",
+    "icml-2026-oral-71069",
+    "icml-2026-oral-71070",
+    "icml-2026-oral-71071",
+    "icml-2026-oral-71072",
+    "icml-2026-oral-71073",
+    "icml-2026-oral-71074"
+  ],
+  "candidate_practices": [
+    {
+      "name": "Specify what the existing signal misses",
+      "source_observation": "These abstracts distinguish a target property from a convenient measurement or training signal.",
+      "why_it_may_help": "Interpretation: this makes changing the signal a substantive contribution.",
+      "application": "Replace 'better metric/objective' with the omitted property, its operational signal, and the decision that signal changes.",
+      "when_not_to_use": "When the replacement's relationship to the target remains undefined.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71029",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "FAC replaces textual variation with feature coverage and guides missing-feature synthesis."
+        },
+        {
+          "paper_id": "icml-2026-oral-71049",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Motion-weighted masks target temporal influence before clip curation."
+        },
+        {
+          "paper_id": "icml-2026-oral-71059",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "BLL limits low-probability-token influence after distinguishing reasoning validity from wording."
+        },
+        {
+          "paper_id": "icml-2026-oral-71062",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "An MI proxy targets cross-input distinguishability missed by entropy."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71030",
+          "source_ids": [
+            "S2",
+            "S4"
+          ],
+          "contrast": "OPUS changes utility geometry to effective optimizer updates; it does not merely replace an evaluation metric."
+        }
+      ],
+      "full_text_needed_for": "Signal definitions, validity, and whether intervention gains substantiate the proposed explanation."
+    },
+    {
+      "name": "Describe components through decisions and feedback",
+      "source_observation": "The abstracts assign operational roles to policies, modules, and refinement stages.",
+      "why_it_may_help": "Interpretation: readers can reconstruct the method's operation instead of memorizing component names.",
+      "application": "For each essential component, state its input, decision or transformation, and feedback when present.",
+      "when_not_to_use": "Do not invent distinct causal roles for inseparable components.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71028",
+          "source_ids": [
+            "S5",
+            "S6"
+          ],
+          "specific_example": "An MDP policy maps token confidences to unmasking decisions."
+        },
+        {
+          "paper_id": "icml-2026-oral-71040",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "Latent dynamics and intrinsic rewards support counterfactual sensing and movement."
+        },
+        {
+          "paper_id": "icml-2026-oral-71041",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Independent outer optimization streams accompany inner multi-timescale fusion."
+        },
+        {
+          "paper_id": "icml-2026-oral-71048",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Pixel differences supply guidance; LoRA supports adaptation; local quality modulates prior weighting."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71037",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "contrast": "Exposure bias motivates training interventions, without requiring a runtime feedback loop."
+        },
+        {
+          "paper_id": "icml-2026-oral-71061",
+          "source_ids": [
+            "S2",
+            "S3"
+          ],
+          "contrast": "Step-specific SOP injection is operationally named, but Cognitive Drift remains unquantified in the extraction."
+        }
+      ],
+      "full_text_needed_for": "Component interactions and evidence isolating their effects."
+    },
+    {
+      "name": "Keep comparison conditions beside the result",
+      "source_observation": "These abstracts retain training regime, matched inputs, or resource conditions in comparative claims.",
+      "why_it_may_help": "Interpretation: the claim becomes a conditional author decision rather than an unrestricted ranking.",
+      "application": "Write 'under X, relative to Y, with Z held fixed' before the gain or trade-off.",
+      "when_not_to_use": "Do not imply matching beyond the variables actually controlled.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71027",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "specific_example": "SGD's favorable RL comparison is distinguished from optimizer behavior in SFT."
+        },
+        {
+          "paper_id": "icml-2026-oral-71032",
+          "source_ids": [
+            "S4"
+          ],
+          "specific_example": "Kimi-Dev comparison retains the same base model and scaffold, with 73.1B mid-training tokens."
+        },
+        {
+          "paper_id": "icml-2026-oral-71070",
+          "source_ids": [
+            "S5",
+            "S9"
+          ],
+          "specific_example": "Blind and interface-informed accuracy comparisons are separated; runtime names hardware and complex size."
+        },
+        {
+          "paper_id": "icml-2026-oral-71064",
+          "source_ids": [
+            "S6"
+          ],
+          "specific_example": "At fixed capability, smaller models with more reasoning effort trade compute for monitorability."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71057",
+          "source_ids": [
+            "S2",
+            "S6"
+          ],
+          "contrast": "High-concurrency framing identifies the target regime, but maximum speedups lack workload conditions here."
+        },
+        {
+          "paper_id": "icml-2026-oral-71056",
+          "source_ids": [
+            "S9",
+            "S10"
+          ],
+          "contrast": "FLOP savings and retained accuracy specify an efficiency trade-off, not measured walltime."
+        }
+      ],
+      "full_text_needed_for": "Baseline configurations, denominators, budgets, and comparison protocols."
+    },
+    {
+      "name": "Make resource design answer the evaluation gap",
+      "source_observation": "Benchmark contributions specify changes in coverage, splits, annotations, or source construction.",
+      "why_it_may_help": "Interpretation: resource value becomes an identifiable measurement capability.",
+      "application": "Name the previously untestable distinction and the dataset or protocol feature enabling it.",
+      "when_not_to_use": "A larger collection alone cannot substantiate diagnostic validity or realism.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71033",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "MADQA pairs document questions with effort measurement; human-level accuracy masks different solved questions."
+        },
+        {
+          "paper_id": "icml-2026-oral-71034",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "User-intent tasks, capability annotations, and environment variations expose distinct failures."
+        },
+        {
+          "paper_id": "icml-2026-oral-71036",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "FLIP2 adds engineering domains and generalization splits, reports simple-model competitiveness, and records provenance and licensing."
+        },
+        {
+          "paper_id": "icml-2026-oral-71038",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S7"
+          ],
+          "specific_example": "TEDBench and MiAE form a benchmark-plus-method contribution with an experimental-structure transfer evaluation."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71050",
+          "source_ids": [
+            "S6",
+            "S7"
+          ],
+          "contrast": "Photos, a reward model, and a test set serve different evaluation roles; their relationship needs clarification."
+        },
+        {
+          "paper_id": "icml-2026-oral-71044",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S9"
+          ],
+          "contrast": "Synthetic workflow tasks support process findings while positioning real-world annotation as future work."
+        }
+      ],
+      "full_text_needed_for": "Construction, splits, annotation reliability, release contents, and transfer outcomes."
+    },
+    {
+      "name": "State the assumption change and exact guarantee",
+      "source_observation": "Theoretical abstracts retain conditions, parameter dependence, and different forms of convergence.",
+      "why_it_may_help": "Interpretation: novelty can be assessed as a changed theorem scope.",
+      "application": "Place setting, relaxed assumption, guarantee target, and qualifying condition together.",
+      "when_not_to_use": "Do not replace an unavailable theorem statement with an unqualified optimality claim.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71051",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Sufficiently small one-sided perturbation preserves an equilibrium strategy and supports linear last-iterate convergence."
+        },
+        {
+          "paper_id": "icml-2026-oral-71052",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ],
+          "specific_example": "A nonfinite semi-algebraic domain accompanies asymptotic convergence; finite recovery requires a rank condition."
+        },
+        {
+          "paper_id": "icml-2026-oral-71054",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S4"
+          ],
+          "specific_example": "Auction bounds retain grid, approximation-error, and round-complexity dependence."
+        },
+        {
+          "paper_id": "icml-2026-oral-71073",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Tabular regret has a matching lower bound up to logarithms; broader structured-transition results are separately introduced."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71053",
+          "source_ids": [
+            "S5",
+            "S7"
+          ],
+          "contrast": "Removing boundedness assumptions yields a stationary-point rate, not global optimality."
+        },
+        {
+          "paper_id": "icml-2026-oral-71046",
+          "source_ids": [
+            "S4",
+            "S7"
+          ],
+          "contrast": "An optimal search framework and a guided beam variant should retain separate guarantee descriptions."
+        }
+      ],
+      "full_text_needed_for": "Complete assumptions, theorem targets, constants, and proof scope."
+    },
+    {
+      "name": "Connect a formal object to an enabled operation",
+      "source_observation": "These abstracts link mathematical formulations to estimators, inference, or manipulation.",
+      "why_it_may_help": "Interpretation: theory's role becomes concrete without treating it as empirical validation.",
+      "application": "State the mathematical object, the relationship established, and the operation it enables.",
+      "when_not_to_use": "Do not label a motivating analogy as an equivalence or theorem.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71039",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Attention can recover normalized KDE; joint density/score estimation supplies plug-in score operations."
+        },
+        {
+          "paper_id": "icml-2026-oral-71042",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "specific_example": "A conditional-expectation formulation of carré du champ enables sample-wise training and amortized inference."
+        },
+        {
+          "paper_id": "icml-2026-oral-71045",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ],
+          "specific_example": "Engram criteria become an inverse problem with a closed-form estimator and linear memory operations."
+        },
+        {
+          "paper_id": "icml-2026-oral-71072",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Binary terminal feedback motivates a likelihood and a compute-indexed objective family."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71035",
+          "source_ids": [
+            "S4",
+            "S7"
+          ],
+          "contrast": "Adaptive chunking and reported biological hierarchy discovery do not establish a formal biological equivalence."
+        },
+        {
+          "paper_id": "icml-2026-oral-71058",
+          "source_ids": [
+            "S4",
+            "S5"
+          ],
+          "contrast": "Update-conditioning theory and preserved parallel-scan complexity are distinct supporting claims."
+        }
+      ],
+      "full_text_needed_for": "Derivations, applicable domains, and boundaries of enabled capabilities."
+    },
+    {
+      "name": "Define the output around the downstream decision",
+      "source_observation": "These frameworks change what is returned, judged, or controlled.",
+      "why_it_may_help": "Interpretation: contribution scope becomes a concrete decision interface.",
+      "application": "Specify who uses the output, what choice it supports, and its retained constraints.",
+      "when_not_to_use": "When downstream preferences or losses are unavailable, avoid asserting decision optimality.",
+      "support": [
+        {
+          "paper_id": "icml-2026-oral-71031",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Critique-resilient judgments use localized human verification and joint solving/question-generation rankings."
+        },
+        {
+          "paper_id": "icml-2026-oral-71066",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ],
+          "specific_example": "Hierarchical extraction, intensity references, and scoring support controlled value-intensity study."
+        },
+        {
+          "paper_id": "icml-2026-oral-71067",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5"
+          ],
+          "specific_example": "Pareto route sets expose competing synthesis criteria under a conditional search guarantee."
+        },
+        {
+          "paper_id": "icml-2026-oral-71074",
+          "source_ids": [
+            "S3",
+            "S6",
+            "S7"
+          ],
+          "specific_example": "Risk-oriented prediction sets retain marginal coverage while addressing costly errors."
+        }
+      ],
+      "contrasts": [
+        {
+          "paper_id": "icml-2026-oral-71043",
+          "source_ids": [
+            "S3",
+            "S4"
+          ],
+          "contrast": "Prediction, intervention, and guaranteed design organize an agenda, not demonstrated capabilities at every level."
+        },
+        {
+          "paper_id": "icml-2026-oral-71063",
+          "source_ids": [
+            "S2",
+            "S4"
+          ],
+          "contrast": "Evidence levels and a checklist structure criticism; improved decision quality is not demonstrated here."
+        }
+      ],
+      "full_text_needed_for": "Decision rules, calibration, validity, and actual downstream evaluation."
+    }
+  ],
+  "unusual_but_useful": [
+    {
+      "paper_id": "icml-2026-oral-71047",
+      "source_ids": [
+        "S3",
+        "S7"
+      ],
+      "practice": "Test claimed re-examination through semantic input substitution.",
+      "application": "Contrast sensitivity to changed evidence under self-reflection and user instruction.",
+      "limit": "Swap sensitivity does not establish a complete reasoning mechanism."
+    },
+    {
+      "paper_id": "icml-2026-oral-71060",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ],
+      "practice": "Separate structural sweeps from semantics-preserving perturbations.",
+      "application": "Describe which intervention changes difficulty and which should preserve the answer.",
+      "limit": "The extraction's lesson overextends matching to specific surface statistics."
+    },
+    {
+      "paper_id": "icml-2026-oral-71065",
+      "source_ids": [
+        "S7",
+        "S8",
+        "S9",
+        "S10"
+      ],
+      "practice": "Split detector evasion by mechanism.",
+      "application": "Distinguish representation drift from policy obfuscation before discussing penalties.",
+      "limit": "Reported categories require operational definitions."
+    },
+    {
+      "paper_id": "icml-2026-oral-71068",
+      "source_ids": [
+        "S3"
+      ],
+      "practice": "Separate exact and approximate symmetry claims.",
+      "application": "Name discrete groups separately from bounded continuous-rotation equivariance.",
+      "limit": "Bounds are unspecified."
+    },
+    {
+      "paper_id": "icml-2026-oral-71069",
+      "source_ids": [
+        "S5",
+        "S6"
+      ],
+      "practice": "Separate algebraic reversibility from numerical reconstruction.",
+      "application": "Label structural, convergence, and reconstruction claims individually.",
+      "limit": "Near-machine precision is not exact continuous-solution recovery."
+    },
+    {
+      "paper_id": "icml-2026-oral-71071",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "practice": "Use an analytical optimum to motivate a policy class.",
+      "application": "Explain which solution structure informs parameterization.",
+      "limit": "Transfer beyond Mountain Car needs separate evidence."
+    },
+    {
+      "paper_id": "icml-2026-oral-71055",
+      "source_ids": [
+        "S2",
+        "S3",
+        "S5",
+        "S7"
+      ],
+      "practice": "Identify both constrained objects and implementation.",
+      "application": "Connect weight/update constraints to Megatron integration and reported stability outcomes.",
+      "limit": "The abstract cannot isolate causal contributions."
+    }
+  ],
+  "discarded_generalizations": [
+    {
+      "generalization": "Every abstract needs a new method and experiments.",
+      "reason": "Position frameworks and theorem-centered contributions support different evidence structures.",
+      "paper_ids": [
+        "icml-2026-oral-71043",
+        "icml-2026-oral-71054",
+        "icml-2026-oral-71063",
+        "icml-2026-oral-71073"
+      ]
+    },
+    {
+      "generalization": "Simpler methods or larger models universally win.",
+      "reason": "Reported comparisons depend on training stage, benchmark, and scale range.",
+      "paper_ids": [
+        "icml-2026-oral-71027",
+        "icml-2026-oral-71036",
+        "icml-2026-oral-71044",
+        "icml-2026-oral-71071"
+      ]
+    },
+    {
+      "generalization": "These patterns explain Oral selection or establish ORAL as the framework.",
+      "reason": "Selected abstract extractions provide neither selection evidence nor framework comparisons.",
+      "paper_ids": [
+        "icml-2026-oral-71031",
+        "icml-2026-oral-71069",
+        "icml-2026-oral-71074"
+      ]
+    }
+  ],
+  "source_checks_needed": [
+    {
+      "paper_id": "icml-2026-oral-71027",
+      "field": "S6 update sparsity",
+      "issue": "Check what counts as an updated parameter and over which interval."
+    },
+    {
+      "paper_id": "icml-2026-oral-71034",
+      "field": "S4 realism inference",
+      "issue": "Lower performance alone does not establish realism; verify author wording."
+    },
+    {
+      "paper_id": "icml-2026-oral-71038",
+      "field": "S7 transfer",
+      "issue": "An evaluation is named without its outcome; do not infer successful transfer."
+    },
+    {
+      "paper_id": "icml-2026-oral-71042",
+      "field": "S4 constant cost",
+      "issue": "Verify which variable inference cost is constant with respect to."
+    },
+    {
+      "paper_id": "icml-2026-oral-71047",
+      "field": "S5 accuracy drop",
+      "issue": "Check relative percentage versus percentage points."
+    },
+    {
+      "paper_id": "icml-2026-oral-71060",
+      "field": "lesson application",
+      "issue": "Specific length, wording, and clause-order matching is not established by 'surface statistics held fixed'."
+    },
+    {
+      "paper_id": "icml-2026-oral-71074",
+      "field": "lesson observation S3–S4",
+      "issue": "Explicit out-of-set penalty appears in the lesson but not the supplied contribution paraphrases; verify original support."
+    }
+  ]
+}

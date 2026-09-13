@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31931",
+    "title": "Wide Neural Networks Trained with Weight Decay Provably Exhibit Neural Collapse",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31931"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5dcd3170c1d5ce43e015b809f3433d93d016fb8064555442e0b219cde55b7ba0",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "e07d947380f9820982c974d0e25b29129fb41c69be0cda59be266dc02d9302a3",
+    "extracted_at": "2026-09-12T23:57:40.839704+00:00",
+    "session_id": "01a0980d-e063-7491-945b-937a7bb8d204",
+    "usage": {
+      "input_tokens": 12844,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 789,
+      "reasoning_output_tokens": 54
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "7aae924aca67702aa4c1f93b9f0cbf9d1430dc2c7813d667d054e51e827c1681"
+    },
+    {
+      "id": "S2",
+      "sha256": "a900992a4b0c081c09e07294e84e2761519a4c8b3a3e4d14b719d41de0f2d9c5"
+    },
+    {
+      "id": "S3",
+      "sha256": "aa2d3a483ea235e362f49a2ac3468fc2737abaf89ee7a9ab809b71d43d783d3c"
+    },
+    {
+      "id": "S4",
+      "sha256": "f5c17633508c9ebc483186440389d225c2f06cab20030b56b05946dc09486c1e"
+    },
+    {
+      "id": "S5",
+      "sha256": "a81460850a50531cbe41cd9691c4a8840d27268422e240111d29eb9c179d46be"
+    },
+    {
+      "id": "S6",
+      "sha256": "2e41359cdde167020ac245701e5313c6ad08ce597a0deb556229768d2d9229a0"
+    },
+    {
+      "id": "S7",
+      "sha256": "ed281b441b2a3226af8f3b8bf08876573c3a1b9a69d53e07a04227930cd30ecf"
+    },
+    {
+      "id": "S8",
+      "sha256": "b6988176794f33d4bb2b2bea1c94ab1a4080e26dd05aa7f0c81465442904c326"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31931",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain neural collapse in end-to-end training of DNNs whose final component contains at least two linear layers.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Prior theory largely used unconstrained features, whose data-agnostic formulation may not capture DNN training.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Derives generic neural-collapse guarantees from low training error, balanced linear layers, and bounded feature conditioning.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Shows that weight-decay gradient descent provides these assumptions under width, near-optimality, or large-learning-rate stability conditions.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "type": "claimed novelty",
+        "claim": "Claims the first demonstration of neural collapse for end-to-end DNN training.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their analysis by moving beyond unconstrained features to end-to-end DNNs with at least two terminal linear layers, and claim the first corresponding neural-collapse result.",
+      "source_ids": [
+        "S4",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report low training error and balancedness for gradient descent with weight decay when the first layer is wide.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report bounded feature conditioning additionally for solutions that are nearly optimal or stable under large learning rates.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "Under the stated assumptions, the authors report guarantees for within-class variability collapse, class-mean orthogonality, and alignment with weight matrices.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "phenomenon",
+        "summary": "Neural collapse is described as a consistent last-layer geometric representation of training data at convergence.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior-theory limitation",
+        "summary": "Existing theory mostly studies unconstrained features, which are data-agnostic and may not reflect DNN training.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "model shift",
+        "summary": "The work studies DNNs ending in at least two linear layers instead of unconstrained features.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "conditional guarantees",
+        "summary": "Generic collapse guarantees are established from error, balancedness, and conditioning assumptions, then connected to weight-decay gradient descent under specified conditions.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      },
+      {
+        "role": "claimed culmination",
+        "summary": "The authors claim these results provide the first neural-collapse result for end-to-end DNN training.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates generic guarantees from a second step showing when their assumptions arise during weight-decay training.",
+          "source_ids": [
+            "S5",
+            "S7"
+          ]
+        },
+        "interpretation": "This modular structure makes the logical dependencies of a theory claim easier to inspect.",
+        "application": "Present a theoretical result in two linked layers: state the conditional guarantee, then identify an optimization regime that establishes each condition.",
+        "exception": "This structure is unsuitable when the assumptions cannot be connected to the training procedure or when the work is purely empirical."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact width threshold, convergence requirements, quantitative bounds, or definitions of “nearly optimal” and “stable under large learning rates.”",
+      "It does not provide empirical comparisons, proof details, or conditions beyond those summarized in the abstract."
+    ]
+  }
+}

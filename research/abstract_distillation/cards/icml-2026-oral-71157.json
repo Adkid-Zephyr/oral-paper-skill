@@ -1,0 +1,203 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71157",
+    "title": "PRISM: Gauge-Invariant Tangent-Space Differentially Private LoRA",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71157"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1c80170e155580878664602db01ccf5e6c74d98c8ab02def2f75f2e47e91d0a7",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "8b4025d4451d28d8655188ecfff7e314f3704b9fca288bc882cfca5d7a727116",
+    "extracted_at": "2026-09-13T00:16:23.193397+00:00",
+    "session_id": "01a0981f-025d-7580-ac4d-b0b253b3a540",
+    "usage": {
+      "input_tokens": 12738,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 832,
+      "reasoning_output_tokens": 67
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3dc7bcf153f752fe79f477cd733b029fc436f58616be7de12251597ab053035f"
+    },
+    {
+      "id": "S2",
+      "sha256": "f9cb7edf70b8101206d8b1cbe970f4ad2fd62196e8918485715b923b31f5f1b5"
+    },
+    {
+      "id": "S3",
+      "sha256": "5fb062fc1e4a3dee64a002c22a4bf05953b3015a973e1fc81d97acf6a244e561"
+    },
+    {
+      "id": "S4",
+      "sha256": "28a346b0f0700f16612e3fcbac2e873e76f5fbe74251cbf93d4f22fb96f3aa06"
+    },
+    {
+      "id": "S5",
+      "sha256": "cfe2d8faac8e562a3daf7c825f9819de3b8cf42d8020eb4848fd763d590e90fa"
+    },
+    {
+      "id": "S6",
+      "sha256": "fef261dc70f854806ebc5e0e1d2b806c261e95b4b80b3fbd6ad23eb8f276686b"
+    },
+    {
+      "id": "S7",
+      "sha256": "13ce7fef35fcfe8fbe9a09b767b7977a642e35c3a6fad79dce52d82c01188db4"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71157",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Apply differential privacy to LoRA fine-tuning while controlling perturbations of the represented low-rank update.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Directly perturbing LoRA factors is problematic because their factorization is non-identifiable, making induced update noise gauge-dependent and potentially unboundedly amplified.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "PRISM is an intrinsic, gauge-invariant DP mechanism for LoRA that avoids bilinear noise amplification and supports efficient low-dimensional noise sampling.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "The method provides a closed-form characterization of effective intrinsic noise on the update matrix and standard (ε,δ)-DP guarantees.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "optimization rule",
+        "claim": "A DP-aware, gauge-invariant adaptive update rule is introduced to prevent adaptive optimization from amplifying injected privacy noise.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish PRISM as gauge-invariant by construction, with intrinsic noise handling and an adaptive update rule designed for gauge-invariant private LoRA.",
+      "source_ids": [
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that naive DP-LoRA can produce unbounded noise amplification on the represented update matrix.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report standard (ε,δ)-DP guarantees for PRISM.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that the adaptive update rule improves numerical stability in practice.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "DP-SGD applied to LoRA is presented as a natural privacy-preserving fine-tuning approach.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "LoRA’s non-identifiable factorization means direct factor perturbations depend on the gauge and can amplify noise without bound.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed_method",
+        "summary": "PRISM applies intrinsic, gauge-invariant perturbations and uses an efficient low-dimensional sampler.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "characterization",
+        "summary": "A closed-form intrinsic-noise characterization enables stable privacy-utility trade-offs through bounded, gauge-invariant perturbations.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "guarantees_and_stability",
+        "summary": "The paper states DP guarantees and adds a gauge-invariant adaptive rule intended to improve numerical stability.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a representation symmetry—non-identifiability—to gauge-dependent perturbations, then designs the privacy mechanism on the intrinsic update rather than directly on arbitrary factors.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "When parameterizations contain equivalent representations, analyzing and perturbing the represented object can make guarantees less dependent on coordinates.",
+        "application": "For another reparameterized model, explicitly identify its symmetry, show how coordinate-level noise changes under that symmetry, and formulate the mechanism on the invariant object.",
+        "exception": "This move may be unsuitable when the invariant object is inaccessible, too costly to sample from, or does not support the required privacy accounting."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no datasets, baselines, quantitative stability results, or experimental conditions.",
+      "The stated DP guarantees and bounded-noise characterization are not independently verifiable from the abstract alone.",
+      "The extent and conditions of the reported practical numerical-stability improvement are unspecified."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "narrative_sequence[3].summary",
+      "before": "A closed-form intrinsic-noise description is used to frame bounded privacy–utility trade-offs.",
+      "after": "A closed-form intrinsic-noise characterization enables stable privacy-utility trade-offs through bounded, gauge-invariant perturbations.",
+      "review_file": "reviews/audit-icml-2026.json",
+      "review_sha256": "2c724561fe80e956c191114320b9c01b2a2474bd8ecec0af311473a21fdb94f3",
+      "applied_at": "2026-09-13T00:20:52.601388+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

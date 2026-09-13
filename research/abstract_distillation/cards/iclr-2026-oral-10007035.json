@@ -1,0 +1,165 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007035",
+    "title": "Hallucination Begins Where Saliency Drops",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007035"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ec974c186085675f57853c46b1af9c7c54bd77a0de15efde05786b6ef38bf592",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "a4b4711929d090287cdc8ac4a9a639ac2b74be60feba0280a63a1935df941957",
+    "extracted_at": "2026-09-12T23:58:57.734687+00:00",
+    "session_id": "01a0980f-1479-71d2-a146-40903b7959a7",
+    "usage": {
+      "input_tokens": 12734,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 734,
+      "reasoning_output_tokens": 84
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bcfb7679a88ad5750e2eeb03edf8cc3c733dbc8150cdff910db0e555ad68d97e"
+    },
+    {
+      "id": "S2",
+      "sha256": "89b287aca3150f9f582ef936383b85722af22b8b1903084c8066d2bad2158fa9"
+    },
+    {
+      "id": "S3",
+      "sha256": "15bc42f5659b8af186365f65527732e59275f6c7c013ce5c81fad0269f8dd830"
+    },
+    {
+      "id": "S4",
+      "sha256": "4a34b7400b47695c67a98e05f1bee5be8863fdc0498864c840d7b1dcdda0de87"
+    },
+    {
+      "id": "S5",
+      "sha256": "998dd1758a6390b562d9e857328a5b0352f169737c636f7ac9200495b76f77f0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007035",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reliably distinguish hallucinated from correct outputs in large vision-language models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods primarily use forward-pass attention and overlook gradient-based signals about token influence propagation.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "diagnostic tool",
+        "claim": "LVLMs-Saliency fuses attention weights with their gradients to quantify each output token’s grounding strength.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "The authors identify low saliency from prior output tokens to the next-token prediction as a pattern associated with hallucinations and contextual-memory failure.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "inference-time framework",
+        "claim": "The proposed framework combines Saliency-Guided Rejection Sampling, which rejects tokens below a context-adaptive saliency threshold, with Local Coherence Reinforcement, which strengthens attention to recent outputs.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a gradient-aware saliency diagnostic and a dual-mechanism inference-time framework for hallucination mitigation.",
+      "source_ids": [
+        "S2",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their method significantly reduces hallucinations across multiple LVLMs.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors’ analysis reports that hallucinations occur when prior output tokens have low saliency for the next-token prediction.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation and gap",
+        "summary": "Existing attention-dynamics methods are described as unreliable for separating hallucinated and correct outputs because they omit gradient signals.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnostic insight",
+        "summary": "LVLMs-Saliency measures token grounding by combining attention and gradients; the analysis links hallucinations to low saliency of prior outputs.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The framework uses saliency-guided candidate rejection and recent-output attention reinforcement during inference.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Experiments are reported to reduce hallucinations across multiple LVLMs.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a measurable token-level diagnostic pattern to two targeted decoding or attention interventions.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A compact abstract can make a method’s rationale legible by aligning diagnosis, mechanism, and intervention.",
+        "application": "When presenting a mitigation method, state the observed failure signal first, then map each component explicitly to that signal.",
+        "exception": "This framing is less suitable when the method has no interpretable intermediate signal or uses a purely end-to-end objective."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no datasets, baselines, quantitative reductions, statistical conditions, or details on how saliency thresholds are set.",
+      "It does not specify whether the reported pattern is causal, nor the scope of the multiple LVLMs tested."
+    ]
+  }
+}

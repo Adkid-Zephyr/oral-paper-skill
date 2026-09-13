@@ -1,0 +1,179 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31813",
+    "title": "Feedback Favors the Generalization of Neural ODEs",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31813"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4911bd63965130cc2d8888f7e082ad7899a1916768d574e3591e53b497b61491",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "cdcbb5e956b551d3f3831a8985c07e751a5a9e7f14e63dfe6639463f047cf369",
+    "extracted_at": "2026-09-12T23:52:59.309754+00:00",
+    "session_id": "01a09809-9b4a-7b63-a12f-b247317593d8",
+    "usage": {
+      "input_tokens": 12675,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 764,
+      "reasoning_output_tokens": 116
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cb10551358758f3f5d10635eae003c11f19fc72a0751fcfb075e29910a480e3a"
+    },
+    {
+      "id": "S2",
+      "sha256": "e6efe611e47954a27f7c0d5035085f05242da6c3c46ced0e6958603e58726b6c"
+    },
+    {
+      "id": "S3",
+      "sha256": "82466a474e989a3de5876d562cd029cad503d795f3fcd880dad8297898f73428"
+    },
+    {
+      "id": "S4",
+      "sha256": "dcfe7722006bd78411f53ebc4a79a8135d90e5f5e29505e0d74a7e739707b987"
+    },
+    {
+      "id": "S5",
+      "sha256": "c11ef43a68175ee0918f7a5fed4c7605dfb17563db2f6e361c705cd1aa10a190"
+    },
+    {
+      "id": "S6",
+      "sha256": "866ef6e90584a69b4971294508922c38a311cb30cb7d84baaacffb21d11a4669"
+    },
+    {
+      "id": "S7",
+      "sha256": "1d31e4e07605bfb1afca2b144fa4d301ca8bed538fb771e623a7cdba3cbccf4d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31813",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generalization limits neural networks in continuous-time prediction when latent dynamics vary.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A feedback neural network for neural ODEs that uses a feedback loop to correct learned latent dynamics.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "A linear feedback correction with a convergence guarantee, followed by a domain-randomized nonlinear feedback form.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "A two-degree-of-freedom neural network intended to perform robustly in unseen scenarios without losing accuracy on prior tasks.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe the feedback neural network as a novel two-DOF architecture for correcting neural ODE latent dynamics.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report robust performance in unseen scenarios with no loss of accuracy on previous tasks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report tests on trajectory prediction for a real irregular object and model-predictive control of a quadrotor under various uncertainties.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report significant improvements over state-of-the-art model-based and learning-based methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Varying latent dynamics create a generalization obstacle for continuous-time prediction.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "inspiration",
+        "summary": "Biological adaptation through real-time feedback motivates the proposed approach.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "A feedback loop is introduced to correct neural ODE latent dynamics, using linear feedback with a convergence guarantee and then nonlinear feedback learned through domain randomization.",
+        "source_ids": [
+          "S3",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "Tests cover irregular-object trajectory prediction and uncertain quadrotor control, with reported gains over model-based and learning-based methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a staged method description—guaranteed linear correction followed by learned nonlinear feedback—with application tests under varied uncertainties.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A staged claim structure can connect an interpretable or analyzable component to broader adaptability claims.",
+        "application": "When presenting an adaptive dynamical-system method, separate the analyzable baseline mechanism from the learned extension, then map each to tests that expose the claimed uncertainty or variation.",
+        "exception": "This framing is unsuitable when no meaningful theoretical component exists or when the application setting does not involve changing dynamics or uncertainty."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative metrics, uncertainty ranges, dataset or protocol details, or definitions of the claimed convergence guarantee.",
+      "The specific state-of-the-art baselines and conditions supporting the reported improvements are unspecified."
+    ]
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31754",
+    "title": "Booster: Tackling Harmful Fine-tuning for Large Language Models via Attenuating Harmful Perturbation",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31754"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8826f0d8e1df99fc23b21f2c7278658b86e2d5e0bf481b19631411505103f7e6",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "0a2cecf1265b12adf1485e4f7e98ea20c8cc2c4e9f3a4067e5d85e9539c0be8f",
+    "extracted_at": "2026-09-12T23:50:47.738412+00:00",
+    "session_id": "01a09807-9224-7a91-a84e-b8c88698f1cf",
+    "usage": {
+      "input_tokens": 12709,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 670,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "674278f76b4d530a23a0c333db391eca2e3de7b804fd839f4d8cd1a865c5d27c"
+    },
+    {
+      "id": "S2",
+      "sha256": "b897666d2a82785a7196a5821f31c9e2a59b42ec06f15b75d722300b4fa53183"
+    },
+    {
+      "id": "S3",
+      "sha256": "3a2e3de57547365fcd55ea16af4bd44a6b2e63020ff363be6fcd230aedbf3233"
+    },
+    {
+      "id": "S4",
+      "sha256": "9f541893dcadfe3e0451321f209e1f70021a23ceb1b804b06daa7f999dc84c48"
+    },
+    {
+      "id": "S5",
+      "sha256": "b50c37a9b6c19db1413bde8d8b52d5080ceb5c24aa4f72e3275cdb9b8dfd57af"
+    },
+    {
+      "id": "S6",
+      "sha256": "d89b26700f9a37665c8e98d4b8ba8d18cc17dbc327e8400e2df144a9f0fe52a5"
+    },
+    {
+      "id": "S7",
+      "sha256": "8773a4e12f6b4c9e77309a7f026ebfcd5c3da6fbe09954c68a1b9f36a0601434"
+    },
+    {
+      "id": "S8",
+      "sha256": "0d9386df31b9c8625c055bc03c5d0dbab785145e7db252092b15dff13de8f7fd"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31754",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Harmful fine-tuning threatens the safety of large language models offered through fine-tuning-as-a-service.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing defenses are reported as unsatisfactory, and the root cause of alignment breakage remains incompletely understood.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory/mechanism",
+        "claim": "The authors identify harmful perturbations to model weights as a probable cause of alignment breakage.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "They propose Booster, an alignment-stage regularization method that attenuates the model’s harmful-loss reduction after simulated harmful perturbations.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The stated new contribution is an alignment-stage solution, Booster, targeting harmful perturbations through an added loss regularizer.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Booster reduces the harmful score of fine-tuned models while maintaining downstream-task performance.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Harmful fine-tuning creates a safety concern for fine-tuning-as-a-service.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "Existing defenses are reported as inadequate, motivating investigation of harmful perturbations to model weights as a probable cause of alignment breakage.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method and result",
+        "summary": "Booster adds a regularizer during alignment to attenuate harmful-loss reduction after simulated perturbation; the authors report lower harmful scores with maintained downstream performance.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a hypothesized failure mechanism—harmful weight perturbation—to a specific training-time regularizer designed to counter its effect.",
+          "source_ids": [
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "Mechanism-to-intervention alignment can make a safety method’s rationale easy to trace.",
+        "application": "Frame a robustness method by explicitly connecting the suspected failure mode, the simulated stressor, and the optimization term intended to reduce its impact.",
+        "exception": "This framing is unsuitable when the mechanism is only weakly supported or when the intervention targets a different failure process."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide harmful-score values, downstream-task metrics, datasets, baselines, or evaluation conditions.",
+      "The phrase “probable cause” does not establish a verified causal explanation.",
+      "The abstract does not specify the regularizer’s mathematical form or the scope of fine-tuning risks addressed."
+    ]
+  }
+}

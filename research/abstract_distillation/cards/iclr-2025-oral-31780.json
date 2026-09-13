@@ -1,0 +1,211 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31780",
+    "title": "Predictive Inverse Dynamics Models are Scalable Learners for Robotic Manipulation",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31780"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "e6485a113ef97c2c76598e3cc864c5ed76f31260295793c1455e78ab2d854a65",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "2ddf8807cfec19976681e4559f6037489f95447edea7f4198bbeb00325316512",
+    "extracted_at": "2026-09-12T23:51:47.866778+00:00",
+    "session_id": "01a09808-6d5a-7a30-8cc6-852ad22e2141",
+    "usage": {
+      "input_tokens": 12789,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 874,
+      "reasoning_output_tokens": 130
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "31ed2b39eae4c8c868ae878713bc5bfb8d6671738ed4ebc3f9212aa000c14d0b"
+    },
+    {
+      "id": "S2",
+      "sha256": "211dc9acbe56c6f872994cc044856c35456e9fdbf2bd1d8d373276a62adad658"
+    },
+    {
+      "id": "S3",
+      "sha256": "985e36189302846393f01bcf90aa2a14a07f6b4f4717ec94b9417c75ce54a82e"
+    },
+    {
+      "id": "S4",
+      "sha256": "f66c63f84ed45ca0590275a2d0522d59220d1df2116e265a980c96f8bad6b574"
+    },
+    {
+      "id": "S5",
+      "sha256": "98279947ffcea5fad8eeb0cc722138350b532b0d68d8975aeb057d2d4794c2c5"
+    },
+    {
+      "id": "S6",
+      "sha256": "12f182c5a4e593a5e0398e58f9aaf5232bb19ce97b3c996300e9a7796b387634"
+    },
+    {
+      "id": "S7",
+      "sha256": "2a09336f4ad4109d7e765e838d0379f71adb7f5502acf60e8629dad5b6598955"
+    },
+    {
+      "id": "S8",
+      "sha256": "810a3c4a13822fda41a8033540aacbe5e2236c3c56bf2113b445e64e7f5051fc"
+    },
+    {
+      "id": "S9",
+      "sha256": "503b0ca304ac55fd82fa3c28892a31983ed701e866797fd8ae76efa8c620c041"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31780",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Learn scalable policies for robotic manipulation across simulation and real-world settings.",
+        "source_ids": [
+          "S1",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Predictive Inverse Dynamics Models (PIDM), an end-to-end paradigm that predicts actions from forecasted visual states, linking vision and action.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Implements PIDM as Seer, a Transformer-based model pretrained on large-scale robotic datasets and adaptable with limited fine-tuning data.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports strong performance and generalization across simulation and real-world manipulation tasks.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish PIDM as an end-to-end approach that closes the loop between visual-state prediction and action prediction for scalable action learning.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that Seer significantly outperforms state-of-the-art methods in simulation and real-world experiments.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report improvements of 13% on LIBERO-LONG, 22% on CALVIN ABC-D, and 43% on real-world tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report superior generalization to novel objects, lighting conditions, and environments under high-intensity disturbances.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Scalable robotic-policy learning is described as mainly pursuing either action learning through behavior cloning or vision learning through large-scale visual pretraining.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "The paper proposes PIDM, which predicts actions conditioned on forecasted robot visual states to connect vision and action end to end.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "implementation",
+        "summary": "The practical model, Seer, uses Transformers for visual states and actions, with large-scale robotic pretraining and limited-data adaptation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The authors report broad gains across benchmarks and real-world tasks, plus stronger generalization under varied objects, lighting, environments, and disturbances.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "availability",
+        "summary": "The authors state that code and models will be publicly available.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract frames the method around an explicit vision–action feedback loop and reports benchmark-specific gains alongside generalization claims.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A method’s central mechanism and its intended robustness targets can be presented together, making the claimed benefit traceable to the design.",
+        "application": "When proposing a multimodal control method, state the cross-modal loop explicitly and pair each robustness claim with the relevant task or condition.",
+        "exception": "This framing is unsuitable when the method has no meaningful interaction between modalities or when the abstract lacks condition-specific evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify baseline identities, evaluation metrics, statistical variation, or experimental protocols behind the reported percentage improvements.",
+      "The amount and composition of fine-tuning data, details of high-intensity disturbances, and the precise meaning of the real-world-task percentage are unspecified."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "narrative_sequence[4].summary",
+      "before": "Code and models are stated to be publicly available.",
+      "after": "The authors state that code and models will be publicly available.",
+      "review_file": "reviews/audit-iclr-2025.json",
+      "review_sha256": "d4904729924df90bdac59649dfddc019d2cec0d72b6d91c391649d23295d1f06",
+      "applied_at": "2026-09-13T00:00:49.787491+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

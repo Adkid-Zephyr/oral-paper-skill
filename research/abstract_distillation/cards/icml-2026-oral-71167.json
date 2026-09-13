@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71167",
+    "title": "Expressivity-Efficiency Tradeoffs for Hybrid Sequence Models",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71167"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "611a24157f930a5cc0c8d800222e9aa5337be929656f6842103e2db272204248",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "444b6d06c72768f107b4a4fd3b0420144762af4479fc631579c68bd14487d0ac",
+    "extracted_at": "2026-09-13T00:16:44.818421+00:00",
+    "session_id": "01a0981f-56cd-7231-8d15-9285aa85b4f6",
+    "usage": {
+      "input_tokens": 12754,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 763,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a7fde712be5d78e35b73e2c5817b8a31868ad9257f15339a3aa1a87503813318"
+    },
+    {
+      "id": "S2",
+      "sha256": "ea1ee6141ab8bae7b6b289e36fde22009ff73c878c0ffa038049164d6fed4f35"
+    },
+    {
+      "id": "S3",
+      "sha256": "764f1f1c41b53060b6dd5d03859b53854a7238cd27506808f3da3f87159a0979"
+    },
+    {
+      "id": "S4",
+      "sha256": "5d12c505708d4b4bd6db17a050a8921dab52bdaa47934c6dc652ef9206fee562"
+    },
+    {
+      "id": "S5",
+      "sha256": "208edb291a2462fe3727ef4d6da147bcea563470a5977ccda779d24da8264a28"
+    },
+    {
+      "id": "S6",
+      "sha256": "11c65dcd77bb564ebd519bf31bda21ccb6a35618ce86d3b58a203f5f56ffdb93"
+    },
+    {
+      "id": "S7",
+      "sha256": "92484544d15e7161b57e33216c5b2751103fff4803991a979ea7f40458e32e7c"
+    },
+    {
+      "id": "S8",
+      "sha256": "b5eb1dfe66977d86db164616955d9a7b84bc5e9cb7ce1fed4e729cbd445af071"
+    },
+    {
+      "id": "S9",
+      "sha256": "349f06252199a1b4b24785af1bc325ca9af787ebf71f4919635709054ce4a88b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71167",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies when and why combining Transformer and state-space model layers benefits sequence modeling, focusing on a broad family of synthetic tasks.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing understanding lacks basic characterization of the settings and mechanisms through which hybrid models outperform their constituent non-hybrid models.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Proves fundamental limitations for non-hybrid Transformers and state-space models on the task family: solving the underlying task requires either many parameters or large working memory.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method and theory",
+        "claim": "Constructs small hybrid models with small working memory that provably solve selective copying and associative recall.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that learned hybrids outperform non-hybrids with up to six times as many parameters, and show stronger length generalization and out-of-distribution robustness beyond the theoretical settings.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a combined theoretical and empirical analysis linking hybrid-model benefits to parameter and working-memory tradeoffs, including constructed small hybrids for two prototypical tasks.",
+      "source_ids": [
+        "S4",
+        "S6",
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments empirically validate their theoretical findings.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that learned hybrids outperform non-hybrid models using up to six times as many parameters.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report stronger length generalization and out-of-distribution robustness for hybrid models than for non-hybrids.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Hybrid models aim to combine attention's expressive versatility with state-space layers' computational efficiency.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap and question",
+        "summary": "The paper identifies limited understanding of when and through what mechanisms hybrids provide benefits, then studies the question on synthetic tasks.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "theoretical result",
+        "summary": "It proves parameter-or-working-memory limitations for non-hybrid models on the task family.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "constructive result",
+        "summary": "It constructs provably solving hybrids that remain small in size and working memory for selective copying and associative recall.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "broader empirical results",
+        "summary": "Experiments are reported to validate the theory and show advantages of learned hybrids beyond the analyzed settings.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a general limitation theorem with explicit constructive examples and then tests whether the pattern extends beyond the theoretical setting.",
+          "source_ids": [
+            "S4",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "This alignment connects an explanatory mechanism to concrete cases and a broader empirical check.",
+        "application": "When proposing an architectural advantage, another author could state a resource-based limitation, construct matching counterexamples, and separately test learned systems outside the formal regime.",
+        "exception": "This structure may be unsuitable when the claimed mechanism cannot be formalized or when no meaningful out-of-regime evaluation is available."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify task definitions, parameter or working-memory thresholds, model architectures, dataset sizes, evaluation metrics, or statistical details.",
+      "The reported sixfold comparison and robustness/generalization results lack quantitative performance values and experimental conditions."
+    ]
+  }
+}

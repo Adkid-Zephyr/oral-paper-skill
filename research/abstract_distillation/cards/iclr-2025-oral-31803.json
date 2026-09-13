@@ -1,0 +1,160 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31803",
+    "title": "Improving Probabilistic Diffusion Models With Optimal Diagonal Covariance Matching",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31803"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "bda25d72702a1aa0df736a74d8e21a404d2b0e01c9717bfd348bad8673c3b9a2",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "f6565d94442f60e4bbe527b142cdc5f321bc72b16f7d6aa65ccf146bbf1aba4d",
+    "extracted_at": "2026-09-12T23:52:32.428783+00:00",
+    "session_id": "01a09809-33c1-7c73-ad72-424f39c9b622",
+    "usage": {
+      "input_tokens": 12611,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 662,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f9ef043d64f5779f880ab87c21ae2dee68819913d4e179673c2f119b38805f31"
+    },
+    {
+      "id": "S2",
+      "sha256": "7413138eccc1795f886b3e1dc56f7b8d18a2cbbd12ef967f482759b51ff36ff3"
+    },
+    {
+      "id": "S3",
+      "sha256": "f59ea566f89e36bc64ff4a74cfceef22c1e6971be267facd62d73b037df9fdd0"
+    },
+    {
+      "id": "S4",
+      "sha256": "5c6eadf22daea1ec2527e86dd133716f21352e60680d96e0c5e862c40382c202"
+    },
+    {
+      "id": "S5",
+      "sha256": "3f97509e55c2f4a12607191c4921107ea1d69e6c111d7f154f15ee80e88025e3"
+    },
+    {
+      "id": "S6",
+      "sha256": "f12f76e83d2b8fe2e687393e599d060026ba5d1d929e0ec4003e85cc7545826d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31803",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Learn effective diagonal covariances for the Gaussian denoising distributions used in diffusion-model sampling.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Traditional data-driven covariance approximation approaches do not directly regress the optimal analytic covariance.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Optimal Covariance Matching (OCM), an unbiased objective for directly regressing optimal analytic diagonal covariances.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Applies covariance moment matching to learning diagonal covariances in diffusion and latent diffusion models.",
+        "source_ids": [
+          "S3",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present OCM as a novel unbiased objective for learning diagonal covariances through direct regression of the analytic optimum.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that OCM can significantly reduce covariance-prediction approximation error.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report substantially improved sampling efficiency, recall rate, and likelihood for both diffusion and latent diffusion models.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Diffusion sampling uses Gaussian denoising distributions with learned means and fixed or learned covariances.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper combines covariance moment matching with direct regression of optimal diagonal covariances using the unbiased OCM objective.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_outcomes",
+        "summary": "The authors report lower covariance approximation error and gains in sampling efficiency, recall, and likelihood across diffusion-model variants.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a named training objective with the specific analytic quantity it targets, then connects that quantity to both approximation error and downstream model metrics.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "This framing makes the proposed mechanism and its intended benefits traceable.",
+        "application": "When presenting a new objective, explicitly state the target quantity, why the objective matches it, and which downstream metrics should reflect improvement.",
+        "exception": "This framing is insufficient when the abstract lacks quantitative results or the target quantity is not meaningfully linked to downstream behavior."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical effect sizes, datasets, baselines, or evaluation conditions for the reported improvements.",
+      "It does not specify the exact covariance parameterization, model configurations, or scope of the unbiasedness claim."
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008574",
+    "title": "Temporal Sparse Autoencoders: Leveraging the Sequential Nature of Language for Interpretability",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008574"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "45b7099c19581693233e41b2ecd9d2dc99912711d991b7f071eaefafafccdf22",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "fdecc56645de89902309c6602202135b5de26eb3f9ed24ad09d1e54c40c925a0",
+    "extracted_at": "2026-09-13T00:01:27.830939+00:00",
+    "session_id": "01a09811-5ce3-7f60-964f-a4f613b3fdb3",
+    "usage": {
+      "input_tokens": 12686,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 697,
+      "reasoning_output_tokens": 87
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6b8c35a1ba9a8bc2999fa4df8954904db42672577f22c15dd0df4b1506b05461"
+    },
+    {
+      "id": "S2",
+      "sha256": "72c8cd2f213070cc67731923a2342c1d9b0c670961c1908dcf9893e05e87946d"
+    },
+    {
+      "id": "S3",
+      "sha256": "f9a6b122ca11e12a6ab2ca58261c2f9c5a7c2a5ff2760369b5c49403ec265e69"
+    },
+    {
+      "id": "S4",
+      "sha256": "97abf6d313a8dd56ded787a4e8810a25d8bdb9306fc0343a2eecb2362b4ecc00"
+    },
+    {
+      "id": "S5",
+      "sha256": "b923434c84cd32c2936324585026464e336ec7a17daead4ddd4bceeba097214e"
+    },
+    {
+      "id": "S6",
+      "sha256": "5b67e3e859decd239c449c71c9c5ce24a99892ee85e0da340f5f2ebf0e16882c"
+    },
+    {
+      "id": "S7",
+      "sha256": "182902d8498ecc3d0b9c2c149f8111cb71bdcc3a96bc6e977c4edbed6f60d00e"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008574",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Interpret model representations and computations as human-understandable concepts.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing Sparse Autoencoders often recover token-specific, noisy, or highly local concepts, partly because they neglect language's temporal structure.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Temporal Sparse Autoencoders with a contrastive loss that encourages high-level feature activations to remain consistent across adjacent tokens.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that the modification separates semantic and syntactic features in a self-supervised setting and recovers smoother, more coherent semantic concepts.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "A contrastive temporal-consistency modification to SAEs for unsupervised language-model interpretability.",
+      "source_ids": [
+        "S4",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report smoother and more coherent semantic concepts across multiple datasets and models, without sacrificing reconstruction quality.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report clear semantic structure despite training without explicit semantic supervision.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Interpretability seeks human-understandable concepts from model representations and computations.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Recent SAEs often produce token-specific, noisy, or local concepts.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis_and_method",
+        "summary": "The abstract attributes this limitation to neglected temporal structure and proposes T-SAEs with adjacent-token contrastive consistency.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_outcome",
+        "summary": "The authors report semantic–syntactic disentanglement, smoother concepts, preserved reconstruction quality, and emergent semantic structure without explicit semantic signals.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a concrete failure mode—local, noisy features—to a structural property of language and then modifies the objective to reflect that property.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A useful research framing connects an observed representation failure to an omitted data structure, making the proposed intervention diagnostically motivated.",
+        "application": "When presenting a representation-learning method, identify the specific structure omitted by the baseline and encode it directly in the training objective.",
+        "exception": "This framing may be unsuitable when the target phenomenon is intentionally local or when enforcing cross-position consistency could erase meaningful changes."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, baselines, dataset/model identities, or definition of the reconstruction-quality comparison.",
+      "The extent and evaluation of semantic–syntactic disentanglement are unspecified."
+    ]
+  }
+}

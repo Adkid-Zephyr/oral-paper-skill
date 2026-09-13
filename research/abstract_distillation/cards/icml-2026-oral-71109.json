@@ -1,0 +1,168 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71109",
+    "title": "SVRG and Beyond via Posterior Correction",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71109"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8fc10b1bf7b68bf741feb23d22d66d38de17a2d0bdeb6a182d686a6269598d48",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "4bcd9fbd667ca900327ae2e283255b888ea6157f372ac3ca28168152e59d5d7d",
+    "extracted_at": "2026-09-13T00:14:22.118128+00:00",
+    "session_id": "01a0981d-30e2-7393-a76f-442f185c5bea",
+    "usage": {
+      "input_tokens": 12648,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 689,
+      "reasoning_output_tokens": 77
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "4109c795b710170752b147526b8ca20931b70ac1d7fd901e78f5cb4fa637c849"
+    },
+    {
+      "id": "S2",
+      "sha256": "a03abf081b0d1d1157fcbb240db7a3758f8dac2d4b6ed11a2f66826affebbb27"
+    },
+    {
+      "id": "S3",
+      "sha256": "4528993f064b81d0366958e72b8e56ab1d08c630e21c8d6342a6849f258acdc2"
+    },
+    {
+      "id": "S4",
+      "sha256": "3c42159c01b7902adffec5b9cf5e6e247a04df7d0cb1f787cc193444823bd1d7"
+    },
+    {
+      "id": "S5",
+      "sha256": "9ea85c7630aa52b431f1c0d78978cf1f05f86a1d17325451adebccb289b3ae81"
+    },
+    {
+      "id": "S6",
+      "sha256": "d941eaae5983c57341f14d55b9c51ba79ca78f8082d0ed327ec46a9266b5d6d5"
+    },
+    {
+      "id": "S7",
+      "sha256": "91634ea072f17998002217570a15ee493e5633ece5d9c40b17046b063d551d70"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71109",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work examines how SVRG and its variants can be understood and extended through Bayesian posterior correction.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that SVRG had not previously been connected to a Bayesian method at a fundamental level.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Shows that SVRG is recoverable as a special case of posterior correction with isotropic-Gaussian posteriors.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Derives SVRG extensions using more flexible exponential-family posteriors, including a Newton-like variant with Hessian corrections and an Adam-like extension intended to scale to large problems.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that this is the first work to connect SVRG to Bayes and use that connection to speed up training.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report the theoretical recovery of SVRG from posterior correction under isotropic-Gaussian posteriors.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report two derived Gaussian-family extensions: a Newton-like method with new Hessian corrections and an Adam-like method intended for large problems.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "SVRG and related methods use gradient corrections to accelerate training.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The authors identify the absence of a fundamental Bayesian connection for these methods.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "unifying connection",
+        "summary": "They connect SVRG to posterior correction and recover it under isotropic-Gaussian posteriors.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "extensions",
+        "summary": "More flexible exponential-family posteriors yield Newton-like and Adam-like SVRG extensions.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract frames algorithmic extensions as consequences of changing the posterior family, after first deriving a known method as a special case.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A unifying derivation can make extensions feel systematic rather than ad hoc.",
+        "application": "When proposing variants, first identify a broader formal mechanism that recovers the baseline, then state which structural choice produces each variant.",
+        "exception": "This framing may be unsuitable when no credible unifying mechanism or formal recovery of the baseline is available."
+      }
+    ],
+    "unknowns": [
+      "The abstract provides no experimental results, datasets, quantitative comparisons, or details supporting the claimed scalability of the Adam-like extension.",
+      "It does not specify the exact posterior-correction formulation, Hessian corrections, or conditions under which the derivations hold."
+    ]
+  }
+}

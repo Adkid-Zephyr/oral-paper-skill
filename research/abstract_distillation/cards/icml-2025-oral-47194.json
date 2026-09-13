@@ -1,0 +1,178 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47194",
+    "title": "Score Matching with Missing Data",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47194"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "01d02b0e0a27a779d863ccdb21f81058375b3cdad0e745971bbd3245f3950afc",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "3da4b8f9b35b2bc2ae7b3349707b5e5d4380735f89a20b31daf4dd9261e99965",
+    "extracted_at": "2026-09-13T00:08:12.690589+00:00",
+    "session_id": "01a09817-86ac-7231-8d92-5772bf95e1cc",
+    "usage": {
+      "input_tokens": 12628,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 787,
+      "reasoning_output_tokens": 71
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2cd6d821830d03f1ddc207df1a8a48738b1fc1746a30dc7b0f77743cdf23c601"
+    },
+    {
+      "id": "S2",
+      "sha256": "83f844f08b3b4e58761d55db3b5169ea1d8a57773924abc17cf79f7678573faa"
+    },
+    {
+      "id": "S3",
+      "sha256": "337a916350953de9daaee6087c2fbfbf854180edba7b181b635cdda8ac01077b"
+    },
+    {
+      "id": "S4",
+      "sha256": "245cb3e2b35f011446fd138bdf356faab5da492bbd4696607d3f25bdba2858ba"
+    },
+    {
+      "id": "S5",
+      "sha256": "8313d0562bb174cde4c794bd1f605e0eb61845fa4eb2fe8fa485161e0b19727e"
+    },
+    {
+      "id": "S6",
+      "sha256": "71dc9ffb1bee63b889d03d829e13e3cf44ca6fbd6371dfa48a51998e2e5a7fd5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47194",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Adapt score matching and its major extensions to partially observed data, allowing any subset of coordinates to be missing.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies limited prior work on score matching when data is incomplete.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces two general-purpose approaches for missing-data score matching: importance weighting and a variational method.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Provides finite-sample bounds for the importance-weighting approach in finite-domain settings.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that importance weighting is especially strong for small-sample, lower-dimensional cases, while the variational approach is strongest in complex high-dimensional graphical-model estimation settings.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their work by extending score matching and its major extensions to flexible partial-missingness settings and by proposing separate importance-weighted and variational approaches.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report finite-sample bounds for the importance-weighting approach in finite-domain settings.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report especially strong importance-weighting performance in small-sample, lower-dimensional cases.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report demonstrating the variational approach on graphical-model estimation with both real and simulated data, where it is strongest in more complex high-dimensional settings.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Score matching is presented as a tool for learning data distributions across diffusion, energy-based, and graphical-model applications.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The abstract notes limited exploration of score matching with incomplete data.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The paper adapts score matching to arbitrary coordinate subsets being missing and introduces importance-weighting and variational variants.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "It reports finite-sample bounds and stronger importance-weighting results in small, lower-dimensional regimes, while highlighting the variational method for complex high-dimensional graphical-model tasks on real and simulated data.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates two methods and links each to a different reported regime: importance weighting to small-sample, lower-dimensional cases and the variational approach to complex high-dimensional settings.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A method-specific regime map can make a multi-method contribution more actionable and prevent an undifferentiated effectiveness claim.",
+        "application": "When presenting several approaches, state the concrete data or task regime associated with each reported strength and place any supporting bound or demonstration beside it.",
+        "exception": "Do not generalize the regime map beyond the domains, sample conditions, and tasks actually reported."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the missingness mechanism, exact assumptions, bound form, datasets, baselines, metrics, or quantitative performance differences.",
+      "The reported high-dimensional demonstration is limited in the abstract to graphical-model estimation on real and simulated data."
+    ]
+  }
+}

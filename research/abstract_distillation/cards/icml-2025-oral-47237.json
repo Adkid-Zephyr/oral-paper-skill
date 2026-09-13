@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47237",
+    "title": "LoRA-One: One-Step Full Gradient Could Suffice for Fine-Tuning Large Language Models, Provably and Efficiently",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47237"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "598260f6c40722729eadb231fd99805087efafe118326ddcbbc7224f1f77ccfe",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "2da93a76c0f1812d81aa65ca7a151c3f61d3b476a6ecb1374819b72da57daf8f",
+    "extracted_at": "2026-09-13T00:09:53.142324+00:00",
+    "session_id": "01a09819-0eae-7ad2-b957-676fe8ced356",
+    "usage": {
+      "input_tokens": 12712,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 806,
+      "reasoning_output_tokens": 115
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8da9a3cd0c9e33f7b61e77e5f75bb819a85c15ab824d4cc336d5b9b1fba1f805"
+    },
+    {
+      "id": "S2",
+      "sha256": "f219695069b1c50e5f175e4bf52464dfe4a8264dc23061a9b9a35ff7e435bf5f"
+    },
+    {
+      "id": "S3",
+      "sha256": "e5150115e986e83a8f0892a960e618a01acbe207b9dce3f98acb1a9599b3a332"
+    },
+    {
+      "id": "S4",
+      "sha256": "4119a58c431e342e608e106f257a4ab5dc7483680951b0bd83959e887a9213b8"
+    },
+    {
+      "id": "S5",
+      "sha256": "d007899c80df718514840d1870bdc88cb62dd7b19182bb6c997d5d700ed2db58"
+    },
+    {
+      "id": "S6",
+      "sha256": "3ab347235a223922774617ed222397e382ae84787e3f0bf836fac88e6664e992"
+    },
+    {
+      "id": "S7",
+      "sha256": "14d3c6b0ca361acd6f8c4d8d8a1fe897aaf98d0bb02f1f6eb83bfce429addec3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47237",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how theory can guide practical large-language-model fine-tuning algorithms, using LoRA as a case study.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "The authors report a proof that, under gradient descent, LoRA adapters align with singular subspaces of the one-step full fine-tuning gradient.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "They propose LoRA-One, which initializes adapters from the one-step full gradient and incorporates theoretically motivated preconditioners to address ill-conditioning; linear convergence and generalization are included in the theoretical framing.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "analysis",
+        "claim": "The theory connects LoRA-One with other gradient-alignment methods and is used to clarify design misconceptions.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a theory-driven LoRA algorithm based on immediate subspace alignment from the one-step full gradient, applicable to linear and nonlinear models.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report significant empirical improvements over LoRA and its variants across benchmarks covering natural language understanding, mathematical reasoning, and code generation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that implementation code is publicly available.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper frames LoRA fine-tuning as a case study for theory-guided algorithm design.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "theoretical result",
+        "summary": "It reports a gradient-descent proof linking LoRA adapter alignment to singular subspaces of the one-step full gradient.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "algorithm and implications",
+        "summary": "This motivates immediate-gradient initialization, LoRA-One, preconditioning, and connections to related alignment methods.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "empirical report",
+        "summary": "The authors report improvements over LoRA and variants across language understanding, reasoning, and code benchmarks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract couples a specific theoretical alignment result with an initialization rule and then names the algorithmic conditions it is intended to address, including ill-conditioning.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A useful research pattern is to translate a structural theorem into a concrete initialization or optimization design choice, while retaining the theorem's scope and qualifications.",
+        "application": "When proposing a parameter-efficient fine-tuning method, derive a measurable structural property and make it directly determine initialization or preconditioning, then state the applicable model and optimization assumptions.",
+        "exception": "This move is unsuitable when no reliable structural result links the proposed design choice to the target training behavior."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the assumptions, exact convergence/generalization statements, or which singular subspaces are selected.",
+      "It reports significant empirical improvements without giving datasets, metrics, baselines, numerical gains, or statistical conditions.",
+      "The abstract does not establish independent proof validity, reproducibility, or priority relative to prior work."
+    ]
+  }
+}

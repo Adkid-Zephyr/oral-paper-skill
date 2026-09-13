@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31841",
+    "title": "REEF: Representation Encoding Fingerprints for Large Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31841"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c9384060712e86ec111bf027b9e3a2e42d1e5b0f5dc482c903350d5ce108cc37",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "3cf6aa489ea0948a416a924b5b4aef59b131854d7bd5686fa1601334f82ad79a",
+    "extracted_at": "2026-09-12T23:54:03.431538+00:00",
+    "session_id": "01a0980a-9a24-75a3-b7ce-55c9cb2e2bc2",
+    "usage": {
+      "input_tokens": 12671,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 647,
+      "reasoning_output_tokens": 66
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "071b28b8db361eb3d399db0b01fc87890c1273afe20bf7d5b3b0a34aeb73950c"
+    },
+    {
+      "id": "S2",
+      "sha256": "dfc5beede8afc64d7015660d9ebc507c4a6f7aa96fcc552da348a88f10b30294"
+    },
+    {
+      "id": "S3",
+      "sha256": "9d9081a7551fc19caad9f0e46ff4649526296bcb27dc4588b29baee718feef23"
+    },
+    {
+      "id": "S4",
+      "sha256": "550312e503007e33711b70640b9f865884ec1a21bf2e2a46d6451e6f237d6a07"
+    },
+    {
+      "id": "S5",
+      "sha256": "bb8757561981ba9cb71eb0e670b73895308123591838fe08b67793565f6cf90b"
+    },
+    {
+      "id": "S6",
+      "sha256": "e2c9644986334f5a80de577ba6b51eded87db2d433e4a50087e5ddaf799957ed"
+    },
+    {
+      "id": "S7",
+      "sha256": "fa07f2f2eafca72235adf8a52b9a0f5d8c20bf0a6f4ca208fa8f9a923ff4c2ef"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31841",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine whether a suspect LLM is a subsequent development of a victim model to help protect the victim model’s intellectual property.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes REEF, a training-free method that compares centered kernel alignment similarity between suspect- and victim-model representations on identical samples.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "reported capability",
+        "claim": "Reports that REEF preserves general capabilities and is robust to sequential fine-tuning, pruning, model merging, and permutations.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed approach identifies model relationships from feature representations without training.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that REEF does not impair the model’s general capabilities.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report robustness to sequential fine-tuning, pruning, model merging, and permutations.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLM training requires substantial computation and data, making protection of open-source model intellectual property important.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "task",
+        "summary": "Owners and third parties need to identify whether a suspect model derives from a victim model.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "REEF addresses this by comparing centered kernel alignment between the two models’ representations on the same samples, without training.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "claimed properties",
+        "summary": "The authors report capability preservation and robustness to several model transformations, positioning REEF as a simple protection mechanism.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract defines the relationship test operationally through a specific representation similarity measure applied to the same samples.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A concrete decision variable and controlled comparison make the proposed identification task easier to understand and evaluate.",
+        "application": "When introducing a model-attribution method, explicitly state the compared objects, shared inputs, similarity metric, and whether training is required.",
+        "exception": "This framing is unsuitable when attribution depends on outputs, metadata, or behavioral evidence rather than internal representations."
+      }
+    ],
+    "unknowns": [
+      "The abstract provides no quantitative results, datasets, baselines, decision thresholds, or evaluation protocol.",
+      "It does not specify how similarity is converted into an identification decision or how robustness was measured.",
+      "The abstract states that code is publicly accessible but gives no reproducibility details beyond the repository link."
+    ]
+  }
+}

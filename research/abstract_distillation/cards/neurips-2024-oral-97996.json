@@ -1,0 +1,170 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97996",
+    "title": "Do Finetti: On Causal Effects for Exchangeable Data",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97996"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "28c76451b0e1e41ec3d1a442da829e566571d196b744956663a094c4ca899929",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "3308c7da1789f6e046307dca09f953afccab00553ab599dc9b84730def8ad2ba",
+    "extracted_at": "2026-09-13T00:19:43.593980+00:00",
+    "session_id": "01a09822-16c5-7d43-bc7a-c4f574f07964",
+    "usage": {
+      "input_tokens": 12641,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 760,
+      "reasoning_output_tokens": 91
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "e4dea9820ea1af11f1088450ad67ab9e84d1839795a21de98d0e44290d1bea42"
+    },
+    {
+      "id": "S2",
+      "sha256": "8a56d6221b7ff7e83746a3be90333f32d80fe901d1e0772d059c98c5ed7410f2"
+    },
+    {
+      "id": "S3",
+      "sha256": "b850ac26769f645d873a22f34fd4adb0573e0fc78d90ea4a5fcc293bc54a75ee"
+    },
+    {
+      "id": "S4",
+      "sha256": "f1da5dad0fe38951718e532d27902c0267c44c8da026b8a030624cfcb266750b"
+    },
+    {
+      "id": "S5",
+      "sha256": "9c6e0d07d1bacb0e29632b051c3f8003700fc1794f6bb05d84ef37e9c964afae"
+    },
+    {
+      "id": "S6",
+      "sha256": "382ceffc6554e1e5fdd51ca709c5877b1c0fd0a14171e274f304333820304773"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97996",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Estimate causal effects for exchangeable, non-i.i.d. data under independent causal mechanisms.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that traditional frameworks based on structural causal models and do-calculus typically assume i.i.d. data and do not extend to general exchangeable processes arising in multi-environment data.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "framework and theory",
+        "claim": "Develops a generalized causal framework for exchangeable data and introduces a truncated factorization formula intended to support causal-effect identification and estimation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "model and demonstration",
+        "claim": "Introduces a causal Pólya urn model to illustrate intervention propagation in exchangeable data settings.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "algorithm",
+        "claim": "Develops an algorithm for simultaneous causal discovery and effect estimation from multi-environment data.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present the generalized exchangeable-data framework, truncated factorization formula, causal Pólya urn model, and joint discovery–estimation algorithm as their additions for this setting.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that the causal Pólya urn model demonstrates how interventions propagate effects in exchangeable data settings.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report developing an algorithm that jointly performs causal discovery and effect estimation given multi-environment data.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Positions causal-effect estimation beyond the i.i.d. setting.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "Restricts attention to exchangeable data with independent causal mechanisms.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation and response",
+        "summary": "Contrasts existing i.i.d.-oriented causal frameworks with a generalized exchangeable-data framework and truncated factorization formula.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "illustration and procedure",
+        "summary": "Uses a causal Pólya urn model to illustrate intervention propagation, then presents an algorithm combining causal discovery with effect estimation for multi-environment data.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a generalized factorization formula explicitly to both identification and estimation, rather than presenting it as an isolated formal device.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "This links a technical construct to the exact downstream tasks it is meant to enable.",
+        "application": "When introducing a new formalism, state which inferential or computational tasks it supports and connect each later method or example to that role.",
+        "exception": "This framing is unsuitable when the formalism is purely descriptive or its downstream use is not established in the available evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, comparison outcomes, or conditions under which the proposed algorithm succeeds.",
+      "It does not specify the truncated factorization formula, the causal Pólya urn construction, or the algorithm's assumptions and guarantees."
+    ]
+  }
+}

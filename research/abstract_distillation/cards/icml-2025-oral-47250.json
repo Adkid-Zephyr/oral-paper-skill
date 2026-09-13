@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47250",
+    "title": "CollabLLM: From Passive Responders to Active Collaborators",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47250"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8b7aa1e4f61e67c2759e11f308e919bfadd18ca14cfda096a2534c122cdcb32a",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "4feab457c3d3f162ccc5568175a0ccba5b6076d7217f970ceb2b761a54a60f25",
+    "extracted_at": "2026-09-13T00:10:27.958151+00:00",
+    "session_id": "01a09819-90a1-7502-a580-b7a91febda18",
+    "usage": {
+      "input_tokens": 12725,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 823,
+      "reasoning_output_tokens": 112
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8648035704be2607986153cb61a9f982e2434ae2f13f15b36aa320a6aff6f48b"
+    },
+    {
+      "id": "S2",
+      "sha256": "c9952a3403810ac7f40c637166e55d5dc1e91e82cb7a62ab1b49b3986b225db7"
+    },
+    {
+      "id": "S3",
+      "sha256": "a24ecd37608a854a558335099c2f55b5be65ea5de99544bd59380040acbad172"
+    },
+    {
+      "id": "S4",
+      "sha256": "0942dda2a7da0316348c46605d659332214a42f29bb0b4c3573e3e8c72555858"
+    },
+    {
+      "id": "S5",
+      "sha256": "ddc95a1d8317f0c2f587265ed9863ed020c42a435477df19a8f8bf4486e99f75"
+    },
+    {
+      "id": "S6",
+      "sha256": "4d4952408b0e700ccf1fc2140aebd69b4894bcca696d401b81e8fbfc7ed3f27c"
+    },
+    {
+      "id": "S7",
+      "sha256": "7cf4181f4b41888cf68e553ce2fbe9b5566726622419366c26099bbe1fd867de"
+    },
+    {
+      "id": "S8",
+      "sha256": "06226c896e6c0a62c6295611225275e2dcf1b40d774ed9505f12f700b914e779"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47250",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "LLMs often handle ambiguous or open-ended requests passively, making multiturn conversations inefficient and failing to support users’ ultimate intents.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Next-turn reward training is presented as limiting long-term interaction optimization.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "CollabLLM, a general training framework using collaborative simulation and Multiturn-aware Rewards for multiturn human–LLM collaboration.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "A multiturn interaction benchmark covering three challenging tasks, including document creation.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The framework is reported to improve task performance, interactivity, satisfaction, and time spent relative to stated baselines or prior user-study conditions.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors identify collaborative simulation to estimate responses’ long-term contribution through Multiturn-aware Rewards as the framework’s key innovation.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report 18.5% higher average task performance and 46.3% improved interactivity than their baselines, judged by LLMs.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "In a user study with 201 judges, the authors report 17.6% higher user satisfaction and 10.4% less user-spent time.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Next-turn rewards are linked to limited long-term interaction optimization.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem consequence",
+        "summary": "This limitation is associated with passive responses and inefficient conversations on ambiguous or open-ended requests.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "CollabLLM combines collaborative simulation, Multiturn-aware Rewards, and reinforcement fine-tuning to uncover intent and offer suggestions.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "The paper introduces a three-task multiturn benchmark and reports gains in benchmark performance, interactivity, satisfaction, and time spent.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a training limitation to a concrete interaction failure, then aligns the proposed reward design with long-term collaboration and evaluates both task and user-centered outcomes.",
+          "source_ids": [
+            "S1",
+            "S2",
+            "S4",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "A compact problem–mechanism–multi-outcome chain can make a systems contribution’s rationale and evidence easier to assess.",
+        "application": "Frame another interactive-AI paper by mapping its optimization target to an observed interaction failure, then report both task-level and user-level outcomes.",
+        "exception": "This framing is unsuitable when the work has no interaction loop or lacks measures that correspond to both the proposed mechanism and user impact."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the three benchmark tasks, baseline identities, absolute scores, study protocol, or whether the reported percentage changes are relative or absolute.",
+      "The abstract does not provide details sufficient to assess the reported comparisons, judge agreement, or user-study generalizability."
+    ]
+  }
+}

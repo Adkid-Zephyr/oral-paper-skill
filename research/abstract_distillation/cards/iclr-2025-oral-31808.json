@@ -1,0 +1,158 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31808",
+    "title": "Language Representations Can be What Recommenders Need: Findings and Potentials",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31808"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "35375f512cdabe4f7571ad063b9be821f1a509c360390bc4b6c189d10539d65b",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "5a3d234181c1a8267c94e33bb88467c7e3d051a2929884f10d0761490f84347a",
+    "extracted_at": "2026-09-12T23:52:50.312127+00:00",
+    "session_id": "01a09809-74ab-7ab2-a094-40529c37ac6a",
+    "usage": {
+      "input_tokens": 12765,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 757,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "59a2c8f1eac8b8ad3be716f672fe4b11032291ee7325b93b1040ab0ffbec56e7"
+    },
+    {
+      "id": "S2",
+      "sha256": "0754a7360b8e6c6c416826c022f225cf20cfe4b06fa10e0f12782dbf040daa2d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31808",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The work investigates whether recommendation-relevant user preference information is implicitly encoded in language-model representations and whether recommendation spaces can be extracted directly from them.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing understanding treats language-model and traditional recommender representations as distinct because their language- and behavior-modeling objectives differ substantially; it remains uncertain whether language models encode user preferences.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "empirical finding",
+        "claim": "Shows that linearly mapped item representations from advanced language-model representations achieve superior recommendation performance, suggesting a possible homomorphism with an effective item-representation space.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces a simple ID-free collaborative-filtering model using item-title language representations with an MLP, graph convolution, and contrastive-learning loss.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "type": "empirical analysis",
+        "claim": "Identifies good item-representation initialization, stronger zero-shot recommendation on new datasets, and awareness of user intention as key features of advanced language representations.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors re-examine the presumed separation between language and recommendation representation spaces and explore collaborative filtering built purely from language representations without ID-based embeddings.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that linearly mapped advanced language-model item representations yield superior recommendation performance.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report that their simple language-representation-based model outperforms leading ID-based collaborative-filtering models on multiple datasets.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation and gap",
+        "summary": "Language models encode rich world knowledge, but whether they implicitly encode user preferences for recommendation is uncertain.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "challenge to prevailing view",
+        "summary": "The work re-examines the assumption that language-model and recommender representations occupy distinct spaces.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "initial finding",
+        "summary": "Linearly mapping advanced language representations to item representations reportedly produces superior recommendation performance, motivating a possible homomorphism hypothesis.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "model proposal and reported outcome",
+        "summary": "An ID-free model combines title representations, an MLP, graph convolution, and contrastive loss; the authors report outperforming leading ID-based models across multiple datasets.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "analysis and implications",
+        "summary": "The authors highlight initialization, zero-shot transfer to new datasets, and user-intention awareness as key features, linking language and behavior modeling.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a broad representational hypothesis with a concrete model that operationalizes it and then names analyzed features supporting the design.",
+          "source_ids": [
+            "S2"
+          ]
+        },
+        "interpretation": "A compact progression from hypothesis to mechanism to diagnostic properties can make an abstract's central claim easier to evaluate conceptually.",
+        "application": "When proposing a cross-domain representation transfer, state the suspected correspondence, show how the architecture instantiates it, and identify which representation properties the analysis examines.",
+        "exception": "This framing is unsuitable when the work has no explicit hypothesis-to-mechanism link or no analysis that distinguishes relevant properties."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, metrics, numerical gains, or experimental conditions behind the reported performance comparisons.",
+      "The claimed homomorphism is presented as a possibility suggested by findings, not as a formally established result."
+    ]
+  }
+}

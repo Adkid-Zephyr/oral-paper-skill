@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009001",
+    "title": "Stable Video Infinity: Infinite-Length Video Generation with Error Recycling",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009001"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b5263975a19661eb5b432eedf76524efba8e0a31a453fc6a11f1c15e891a0471",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "e58a803cba420471bb5d8b69cc5da24f5ed3f4a0de138821af52714f63e34659",
+    "extracted_at": "2026-09-13T00:02:18.031053+00:00",
+    "session_id": "01a09812-167f-7b41-82ff-2d98574cff0c",
+    "usage": {
+      "input_tokens": 12844,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 895,
+      "reasoning_output_tokens": 102
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "bcd26450ad29afe84348651c3614050e7c1d5bb5774cb6376946ca95af72a4ed"
+    },
+    {
+      "id": "S2",
+      "sha256": "d21371c2168e0506d98df34745421dbdf2f4ce5cab60017a584c7875bc4b15db"
+    },
+    {
+      "id": "S3",
+      "sha256": "d07674483192ec41bfe1ec1bf2272db430a965df559f6b912efc85587ee064fe"
+    },
+    {
+      "id": "S4",
+      "sha256": "64a87ab9f5fbd522a1ac159d10d25ff0de68d2381cc1f305384151e648af4d5c"
+    },
+    {
+      "id": "S5",
+      "sha256": "54deca1a43621743192ff01ea0c9747e7d0e4f851366b1215d6df63f3a717f83"
+    },
+    {
+      "id": "S6",
+      "sha256": "1e7d2c6d42bf0fafc63b8a5af1e24c96a683f68b7898cb3ae4b6600591c5f791"
+    },
+    {
+      "id": "S7",
+      "sha256": "e06d7677e0bc1ab4174b9718a92b40b01500fa91366b254a297a5cd88171563e"
+    },
+    {
+      "id": "S8",
+      "sha256": "1a954d7e606a422cfb3bf736679d73a4173fb1f535a407c8d030aefa52933c16"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009001",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Generate non-looping, ultra-long videos with stable visual quality, per-clip prompt control, and multimodal conditioning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing anti-drifting approaches are limited to single-prompt extrapolation and tend to produce homogeneous scenes with repetitive motion; the authors also identify a mismatch between clean-data training and autoregressive inference on error-prone outputs.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Stable Video Infinity (SVI), incorporating Error-Recycling Fine-Tuning to use self-generated errors as supervisory prompts for error identification and correction.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      {
+        "type": "training procedure",
+        "claim": "A closed-loop recycling process that injects historical errors, estimates residual errors efficiently, and banks them in timestep-aware replay memory for resampling.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "system capability",
+        "claim": "A video-generation approach designed to scale from seconds to infinite durations without additional inference cost while supporting audio, skeleton, and text conditions.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe Error-Recycling Fine-Tuning as a new type of efficient training that recycles the DiT's self-generated errors into supervisory prompts.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that SVI scales videos from seconds to infinite durations with no additional inference cost and remains compatible with audio, skeleton, and text streams.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report evaluation on three benchmarks spanning consistent, creative, and conditional settings, describing the results as verifying versatility and a state-of-the-art role.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "capability",
+        "summary": "The paper introduces SVI for stable, non-looping ultra-long video generation with per-clip prompts and multimodal controls.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "It contrasts SVI with existing anti-drifting methods, which the authors say remain single-prompt and visually repetitive.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors frame the deeper issue as a training–inference discrepancy: clean training inputs versus autoregressive self-generated errors at test time.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "Error-Recycling Fine-Tuning closes this gap through closed-loop error injection, residual-based estimation, and replay-memory banking across timesteps.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported_evaluation",
+        "summary": "The authors report long-duration scaling, multimodal compatibility, and evaluation across consistent, creative, and conditional benchmarks.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper explicitly connects a deployment-time distribution mismatch to a training procedure that recycles model-generated errors as supervision.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "When inference feeds model outputs back into the model, training on clean inputs alone may omit the states that drive failure.",
+        "application": "For an autoregressive system, define a closed-loop training path that injects representative historical errors and uses the resulting deviations as replayable supervision.",
+        "exception": "This move may be unsuitable when deployment inputs are not autoregressively generated or when storing and sampling error states is impractical."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide benchmark names, metrics, baselines, quantitative results, or the operational meaning of “infinite” duration.",
+      "The stated no-additional-inference-cost and state-of-the-art claims lack decisive conditions and numerical evidence in the supplied units."
+    ]
+  }
+}

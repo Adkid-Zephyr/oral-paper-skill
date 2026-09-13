@@ -1,0 +1,188 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71180",
+    "title": "FlashSinkhorn: IO-Aware Entropic Optimal Transport on GPU",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71180"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f65e53badb81ae4e6afceaed065390c56585cf1945c6e35adecb622ffa486461",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "46e49f04f32b997b83cf8214751158715f3c0ed3e178da1e453269ab26b44607",
+    "extracted_at": "2026-09-13T00:17:18.911522+00:00",
+    "session_id": "01a0981f-d8fd-7ec1-ae23-84208e75f8fc",
+    "usage": {
+      "input_tokens": 14270,
+      "cached_input_tokens": 9984,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 821,
+      "reasoning_output_tokens": 89
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "eb651e214904f361214910dd5f41764b5dcdf94b29149a7987fd9c7e411801c8"
+    },
+    {
+      "id": "S2",
+      "sha256": "417b3c30d40fa6018273b03fb24cb8ef7dc8ed4814061f684e4c49a56141d1c8"
+    },
+    {
+      "id": "S3",
+      "sha256": "d284034b9a7d4d07a9dc80dae2192e2eb4f8d93a8c5571807929a98f469a1427"
+    },
+    {
+      "id": "S4",
+      "sha256": "e763835c7a9d0caf866097d7d6f4ec2084f4664ce4c3f32379bd976866c19dc0"
+    },
+    {
+      "id": "S5",
+      "sha256": "1a6ec3d5f12b489bcd8f85f4e59e3ba1fd23f798205f1a4e40a266f6f71686b3"
+    },
+    {
+      "id": "S6",
+      "sha256": "d1fef2e28a8a7eb3078af61f4106c15a1643add1a2b359483bb4d3560a510c17"
+    },
+    {
+      "id": "S7",
+      "sha256": "1919e37587bac5ebca8b3cb3450e06dc792f1058dda63ea4c48f786daa2f6be5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71180",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "GPU solvers for entropic optimal transport via Sinkhorn iterations remain inefficient at scale.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Dense tensorized implementations incur quadratic HBM traffic, while existing online backends still depend on generic tiled map-reduce kernels with limited fusion.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "FlashSinkhorn rewrites stabilized log-domain Sinkhorn updates for squared Euclidean cost as row-wise LogSumExp reductions of biased dot-product scores, enabling attention-style fusion and tiling.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The solver uses fused Triton kernels that stream tiles through on-chip SRAM, update dual potentials in one pass, and retain linear-memory operations.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Streaming kernels are provided for transport application to support scalable first- and second-order optimization.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present an IO-aware EOT solver that applies FlashAttention-style fusion and tiling to stabilized Sinkhorn updates.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report up to 32× forward-pass and 161× end-to-end speedups over state-of-the-art online baselines on point-cloud OT on A100 GPUs.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report improved scalability on OT-based downstream tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report releasing an open-source implementation for reproducibility.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper identifies poor scalability of GPU Sinkhorn solvers for entropic optimal transport.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "It contrasts quadratic HBM traffic in dense tensorized methods with limited fusion in online backends.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "FlashSinkhorn converts stabilized Sinkhorn updates into attention-like LogSumExp reductions and uses fused, SRAM-streaming Triton kernels.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "extension",
+        "summary": "Streaming transport-application kernels target scalable first- and second-order optimization.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "The authors report large A100 speedups on point-cloud OT and improved downstream scalability, alongside an open-source release.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects an algebraic reformulation of Sinkhorn updates to a known hardware-efficient attention pattern, then ties that reformulation to reduced HBM IO.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A precise equivalence can make an optimization idea legible while exposing reusable systems primitives.",
+        "application": "When proposing a hardware-aware algorithm, explicitly identify the computational pattern it reduces to and state which memory movement or fusion bottleneck that mapping addresses.",
+        "exception": "This framing may be unsuitable when the reformulation changes numerical behavior materially or lacks a compatible fused kernel."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark sizes, baseline identities, speedup measurement conditions, or statistical variability.",
+      "The downstream tasks and the meaning of improved scalability are not described.",
+      "Numerical accuracy, convergence behavior, hardware utilization, and implementation details are not reported in the abstract."
+    ]
+  }
+}

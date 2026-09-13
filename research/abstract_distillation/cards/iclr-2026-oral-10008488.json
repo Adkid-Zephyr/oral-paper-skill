@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10008488",
+    "title": "Addressing divergent representations from causal interventions on neural networks",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10008488"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "8485fa090e240a15ee023a1def0184806f00249facd4585c9d3038cef305bbf1",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "620903cf394d80115a00a221fb896573b7aba7511777e9982e7ace595689a33d",
+    "extracted_at": "2026-09-13T00:01:11.821951+00:00",
+    "session_id": "01a09811-0b78-70b1-b2df-7bde3a651da7",
+    "usage": {
+      "input_tokens": 12693,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 923,
+      "reasoning_output_tokens": 103
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c18f29d20e4a448223a7e0e4482cbbdb54d1f1826841bd94616cb8195d2bbc1b"
+    },
+    {
+      "id": "S2",
+      "sha256": "9d9641ca3daa483ee3752116c7491cf57b6f9e3e5da373cee47de62ea8703a68"
+    },
+    {
+      "id": "S3",
+      "sha256": "f174c0e322358011378e7fdb052845e060bc9ff37f1c7596daca9601368cf897"
+    },
+    {
+      "id": "S4",
+      "sha256": "0205e20f7737c7251a972ad95861a30b0803b3df05c0af58cb243710d25720d8"
+    },
+    {
+      "id": "S5",
+      "sha256": "3c57787e7e963296e86fe68bcbc417ea1b029ede8ffc47ad7b26d536e683fbb4"
+    },
+    {
+      "id": "S6",
+      "sha256": "7b45feb4cea6a162408153d4b75c389225ba1750ece803d448e36045430257e7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10008488",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks whether causal interventions on neural representations create out-of-distribution states and compromise explanation faithfulness to the model’s natural behavior.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory and empirical finding",
+        "claim": "Shows that common causal intervention techniques often shift internal representations away from the target model’s natural distribution.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Analyzes harmless divergences in a layer’s behavioral null-space and pernicious divergences that activate hidden pathways and produce dormant behavioral changes.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Applies and modifies the Counterfactual Latent loss to keep intervention-generated representations closer to the natural distribution while retaining interpretive power.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish harmless from pernicious intervention-induced divergences and propose a modified Counterfactual Latent loss to mitigate the latter.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical and empirical evidence that common causal interventions often move representations off the natural distribution.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report theoretical analyses linking behavioral-null-space shifts to harmless divergence and hidden-pathway activation to pernicious divergence with dormant behavioral changes.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that their applied and modified CL loss reduces the likelihood of harmful divergences while preserving interpretive power.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation and question",
+        "summary": "Causal representation manipulation is introduced as a mechanistic-interpretability practice, followed by the question of whether it creates divergent states that weaken faithfulness.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "core result",
+        "summary": "The authors report theoretical and empirical evidence that common interventions often shift representations away from the natural distribution.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "Two divergence types are analyzed: behavioral-null-space divergences and hidden-pathway divergences that cause dormant behavioral changes.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "mitigation",
+        "summary": "The authors apply and modify the CL loss to keep intervention representations closer to the natural distribution and reduce harmful divergences.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The results are presented as a path toward more reliable interpretability methods.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates representation distribution shift into behaviorally null-space cases and cases that activate hidden pathways with behavioral consequences.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "This taxonomy links an internal-state discrepancy to its potential behavioral significance, making the interpretability risk more precise.",
+        "application": "When presenting an intervention method, classify observed divergences by whether they lie in the relevant behavioral null-space or trigger latent pathways.",
+        "exception": "This framing may not apply when behavioral null-spaces or hidden pathways cannot be characterized for the model or layer under study."
+      },
+      {
+        "source_observation": {
+          "claim": "The mitigation is framed as keeping intervention representations closer to the natural distribution while preserving interpretive power.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "A method claim can be sharpened by stating both the failure mode it targets and the capability it aims to preserve.",
+        "application": "Describe proposed mitigations with an explicit tradeoff pair: the targeted artifact and the interpretive function retained.",
+        "exception": "The tradeoff may be unsuitable when preserving interpretive power and reducing distribution shift require incompatible objectives."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative effect sizes, benchmark details, model or intervention coverage, or conditions under which “often” holds.",
+      "The reported preservation of interpretive power and reduction in harmful divergences lack concrete evaluation details in the supplied units."
+    ]
+  }
+}

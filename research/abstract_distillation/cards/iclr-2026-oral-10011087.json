@@ -1,0 +1,175 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011087",
+    "title": "Compactness and Consistency: A Conjoint Framework for Deep Graph Clustering",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011087"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1d3c8f910365f9dc7f47cf1587402e77051a25627760ec0e2ddee5826894cdff",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "a17521afd47ad6e27b7013d23dce2239c163f6b047711aeb47cff811e49d1923",
+    "extracted_at": "2026-09-13T00:05:26.127395+00:00",
+    "session_id": "01a09815-03ed-74b0-a960-b347cc1ac274",
+    "usage": {
+      "input_tokens": 12755,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 673,
+      "reasoning_output_tokens": 82
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2d7c0cc3d22b4e3e79416396927f7a70d5bcef1001a7541361e368f382b961f4"
+    },
+    {
+      "id": "S2",
+      "sha256": "354e528df1bd9f2022d691e0a46c2b71d375b15967ee307c9a4b24fb0d225e58"
+    },
+    {
+      "id": "S3",
+      "sha256": "ef09c59605f331bbca196e061d2ac8d6d2d28d20140b19e7f807ed26f35c2c37"
+    },
+    {
+      "id": "S4",
+      "sha256": "2f538cbdb8dc17e0ad4b49e632ef96777f2d02f54c5ba015c705bff6cba88a21"
+    },
+    {
+      "id": "S5",
+      "sha256": "3e45d675f5f2af4145fada2f3de70038c7bc700f25377d78a046a8bd017d46d2"
+    },
+    {
+      "id": "S6",
+      "sha256": "df4fd45f0596d93c31712266c53b083a242e48ac154131c113d3348a88789a4f"
+    },
+    {
+      "id": "S7",
+      "sha256": "d15fd1693f9d68a36c06ba81aee677db5604167805bfaf941396f594a45bb65d"
+    },
+    {
+      "id": "S8",
+      "sha256": "3f9d70d4f6521e46bcd1a278aefceabfac73776dc5acb9f0d2046ff543dc1946"
+    },
+    {
+      "id": "S9",
+      "sha256": "e25c8c5cf705813ec8e3e8ae81ad0aa6c3790a44c2990de8ff78f9f58b8879e5"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011087",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Group graph nodes with similar characteristics into clusters.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "GNN-based clustering representations may miss global node relationships because of local message passing and may lack compactness and robustness due to graph redundancy and noise.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes CoCo, a conjoint framework for deep graph clustering that targets compactness and consistency in learned node representations.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Uses graph convolutional filters over local and global views, low-rank compact embeddings, and consistency learning to transfer knowledge between the two perspectives.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish CoCo by jointly capturing compactness and consistency through local/global representation learning, low-rank embeddings, and consistency learning.",
+      "source_ids": [
+        "S5",
+        "S6",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that CoCo outperforms state-of-the-art counterparts on various datasets.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Frames graph clustering as grouping nodes with similar characteristics.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Identifies shortcomings of local GNN message passing and of representations affected by redundancy and noise.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "Introduces CoCo, combining local/global filtering, low-rank compact embeddings, and consistency learning.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported evaluation",
+        "summary": "Reports superiority over state-of-the-art counterparts across various datasets and provides code.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each diagnosed issue with a corresponding mechanism: local/global views address relationship scope, low-rank embeddings address redundancy and noise, and consistency learning links the perspectives.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A problem-to-mechanism mapping can make a method’s design rationale easy to inspect.",
+        "application": "For a multi-failure learning problem, explicitly map each claimed limitation to a named component and state how the components interact.",
+        "exception": "This framing is unsuitable when component responsibilities cannot be isolated or the abstract lacks evidence connecting mechanisms to the diagnosed failures."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify dataset identities, baselines, metrics, or numerical margins for the reported comparison.",
+      "It does not provide theoretical guarantees, ablations, or details sufficient to assess which CoCo component drives the reported results."
+    ]
+  }
+}

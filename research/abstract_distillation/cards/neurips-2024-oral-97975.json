@@ -1,0 +1,158 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97975",
+    "title": "CAT3D: Create Anything in 3D with Multi-View Diffusion Models",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97975"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "3caebed997f85a1158498cbe99c90383c75967c7167d12844c5a532472346160",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "712588ae4abad558e79df985f41fce6bb882202c87b3d19b72630c58a5d5da1c",
+    "extracted_at": "2026-09-13T00:18:52.886190+00:00",
+    "session_id": "01a09821-537b-7771-87e3-41bca8f9c84b",
+    "usage": {
+      "input_tokens": 12619,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 653,
+      "reasoning_output_tokens": 52
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "210ccd1e9de8b050285b3da1d61e70b9c7fab9a57dc4670c842dce0c19bb71f7"
+    },
+    {
+      "id": "S2",
+      "sha256": "2fe4383ed3092a06e6bea80dcd48d2d109d5f5378e3c06eca797dac374a8b898"
+    },
+    {
+      "id": "S3",
+      "sha256": "fab730e3f6964bd51f3a005d5bbacc33d1ebe838d3ce5ada9daf4c3126b114cf"
+    },
+    {
+      "id": "S4",
+      "sha256": "a4bc9604baa2aa72cbf3d96e61674149c1fbab95cffdf9ce6852b7a748aabf1f"
+    },
+    {
+      "id": "S5",
+      "sha256": "25336241faa8aae26ecb3a27db2d5e1c9588c6e003ad92501b536d456af48e76"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97975",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Create 3D scenes from any number of input images and target novel viewpoints, without requiring extensive real-world image capture.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing high-quality 3D capture requires hundreds to thousands of images from the user.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "CAT3D simulates the real-world capture process using a multi-view diffusion model to generate consistent novel views.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "The generated views can feed robust 3D reconstruction methods, yielding representations renderable from arbitrary viewpoints in real time.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present CAT3D as a multi-view-diffusion approach for creating anything in 3D by simulating image capture.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that CAT3D can create complete 3D scenes in as little as one minute.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that CAT3D outperforms existing methods for single-image and few-view 3D scene creation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "High-quality 3D reconstruction is presented as image-intensive, often requiring hundreds to thousands of captures.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "CAT3D simulates this capture process with a multi-view diffusion model.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "pipeline",
+        "summary": "Given input images and target viewpoints, it generates consistent novel views for downstream 3D reconstruction and real-time rendering.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "The authors report scene creation in as little as one minute and superiority over existing single-image and few-view methods.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly connects generated novel views to downstream reconstruction and specifies the resulting rendering capability.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A contribution is easier to assess when the intermediate representation, downstream use, and concrete capability are linked.",
+        "application": "Describe a generative component together with the representation it produces, its downstream consumer, and the resulting user-visible capability.",
+        "exception": "This framing is unsuitable when the work is purely theoretical or has no meaningful downstream pipeline."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the number or type of input images, target viewpoints, datasets, evaluation metrics, or the basis and magnitude of the reported comparisons.",
+      "The conditions under which the one-minute creation time and real-time rendering claims hold are unspecified."
+    ]
+  }
+}

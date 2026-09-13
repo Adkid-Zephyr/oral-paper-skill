@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-116475",
+    "title": "The emergence of sparse attention: impact of data distribution and benefits of repetition",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/116475"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "be8229142d5cf1c409c19d9c679f2d7081320a7a3affbd2e1e3d765add595208",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "258ded31da238e1dc1a1e8a00e779ab2d46b561b4f3264c6020c308208feed77",
+    "extracted_at": "2026-09-13T00:21:18.597852+00:00",
+    "session_id": "01a09823-8419-7842-8d97-aa3d0013abe8",
+    "usage": {
+      "input_tokens": 12663,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 738,
+      "reasoning_output_tokens": 72
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d813d51b1ef1da391140a0f05d3f98f6b2f65142cfbebeadadfe7bc497ca3324"
+    },
+    {
+      "id": "S2",
+      "sha256": "d4d625b881509b8217772739768b6d1ef9dbe1ed31ebbeb91be31041ea097d14"
+    },
+    {
+      "id": "S3",
+      "sha256": "5e4a1e873ef79f0c09bf51ccddeeac3d5e67edae97d6aa4b340ebf5905bc453c"
+    },
+    {
+      "id": "S4",
+      "sha256": "ebd80de5540b35912083d82a72269dc72f37e23f8bb326b9c520f307ffa9cd50"
+    },
+    {
+      "id": "S5",
+      "sha256": "e81941dff0d464149ecebe8486eb9a5dac974bdd6eb029f0451b9cafb4c79ca6"
+    },
+    {
+      "id": "S6",
+      "sha256": "7ec7eaf59b4d6fc5e5729d1c3208dc4303cf5d265ab7c43648e1d3915a735198"
+    },
+    {
+      "id": "S7",
+      "sha256": "22867594f51f2ffa02a17c0967ddfab87d58ff2e5070337061d4ba5f12416655"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-116475",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies how sparse attention emerges during training in Transformers.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The authors state that how and when emergent abilities arise remains insufficiently understood.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory and empirical analysis",
+        "claim": "A theoretical toy-model analysis combined with observations from small Transformers trained on a linear-regression variant to analyze sparse-attention emergence.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report that emergence timing follows power laws determined by task structure, architecture, and optimizer choice, and that repetition can substantially accelerate emergence.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "A simple theoretically grounded framework linking data distributions and model design to learning dynamics behind sparse attention.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish their contribution as a theoretically grounded account of how data distributions and model design influence one form of emergence.",
+      "source_ids": [
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report power-law emergence timing across changes in task structure, architecture, and optimizer choice.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that repetition can greatly speed up sparse-attention emergence.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report confirming these results on an in-context associative recall task.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation and gap",
+        "summary": "Emergent abilities can appear suddenly with scale and training, but their timing and conditions are not comprehensively understood.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "study design",
+        "summary": "The paper examines sparse-attention emergence using a toy-model theory analysis and small-Transformer experiments on a linear-regression variant.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "mechanistic results",
+        "summary": "The authors report power-law timing shaped by task structure, architecture, and optimizer choice, with repetition accelerating emergence.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "external task check",
+        "summary": "The authors report confirmation on an in-context associative recall task and present a broader explanatory framework.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects emergence timing to task structure, architecture, optimizer choice, and repetition rather than describing it as a model-scale-only phenomenon.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Separating data, model, and optimization factors can make an emergence claim more diagnostically informative.",
+        "application": "When framing a learning-dynamics result, organize analyses around explicit task-distribution, architecture, optimizer, and repetition variables.",
+        "exception": "This framing may be unsuitable when a study varies none of these factors or addresses a different phenomenon."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the power-law forms, parameter regimes, quantitative speedups, or experimental baselines.",
+      "It does not detail how sparse attention or emergence timing is operationalized, nor the scope of confirmation on associative recall."
+    ]
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97969",
+    "title": "Enhancing Preference-based Linear Bandits via Human Response Time",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97969"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6255526f5cd62636f965f4e925f57a57f6101aff7dc9d44a38aad3ab9363071b",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "44737153a438cfe30d41e18aac3c4420bc6ca534a1383ed37a10d2083d826a1d",
+    "extracted_at": "2026-09-13T00:18:41.674080+00:00",
+    "session_id": "01a09821-24d6-7ab2-80df-aa86452c17bc",
+    "usage": {
+      "input_tokens": 12683,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 762,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "0581fd779e478b350deb7a3862592c0a1afcea46216f8b15cc508186eb221af8"
+    },
+    {
+      "id": "S2",
+      "sha256": "8857b3ee9d5844e6e81389fff0246a4720b46ef9195ddbb5ef94014a72f95ca8"
+    },
+    {
+      "id": "S3",
+      "sha256": "d41059417782fdbcac5dc81e321be9ba867b6bfd39f8c041f40a499625bf3e90"
+    },
+    {
+      "id": "S4",
+      "sha256": "2999daf88b0569bbe91f613a192b4e984f362225fd3268d9f6b2a9d5c48e1948"
+    },
+    {
+      "id": "S5",
+      "sha256": "1cfcb1e4a3d40008bdfc7f98fcc80d001a6823f2272ffe1165cadb23bf09f7f7"
+    },
+    {
+      "id": "S6",
+      "sha256": "dbbe8a07c05b9fa2e7be44ec1d21ff0db2a8b4adf9cd3df51c5ff55894adb8cf"
+    },
+    {
+      "id": "S7",
+      "sha256": "945d698ba0de66b3d655f6c420aff488d1ef3cb5e6a0bdcc708e7ba2e8faad7a"
+    },
+    {
+      "id": "S8",
+      "sha256": "625606cfdc0155b11a0df0468738b721e7d6f3fac1392ad5acb0441b4133089d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97969",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Estimate human utility functions and identify the best arm in preference-based linear bandits using binary choices and response times.",
+        "source_ids": [
+          "S1",
+          "S4",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Binary choices are widely used but provide limited information about preference strength.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A computationally efficient utility estimator combines binary choices with response times, grounded in the EZ diffusion model.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "theory and empirical finding",
+        "claim": "The authors report that response times add information about preference strength for queries involving strong preferences.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "bandit application",
+        "claim": "The estimator is incorporated into preference-based linear bandits for fixed-budget best-arm identification.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed approach uses human response time as an additional preference-strength signal alongside binary choices, within an EZ-diffusion-model-based estimator.",
+      "source_ids": [
+        "S3",
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical and empirical analyses showing that response times complement choices for strong-preference queries and improve utility estimation.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report that simulations on three real-world datasets show significantly faster preference learning than choice-only approaches when response times are used.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "setting",
+        "summary": "Interactive preference learning infers preferences by presenting option pairs and collecting binary choices.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation and signal",
+        "summary": "Binary choices give limited preference-strength information, motivating response times as an inversely related additional signal.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "The paper proposes an efficient choice-and-response-time utility estimator grounded in the EZ diffusion model.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "analysis and application",
+        "summary": "Reported analyses support added information for strong preferences; the estimator is then used for fixed-budget best-arm identification and evaluated in simulations against choice-only learning.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a specific information limitation—binary choices underrepresent preference strength—to a complementary behavioral signal, response time, and preserves the strong-preference condition in its reported benefit.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "A focused problem-to-signal rationale can make a method’s intended value and scope easier to assess.",
+        "application": "When introducing an auxiliary signal, explicitly identify what information the primary signal lacks, explain why the auxiliary signal addresses that gap, and state the conditions under which the benefit is expected.",
+        "exception": "This framing is unsuitable when the auxiliary signal has no justified relationship to the missing information or when its measurement conditions are uncontrolled."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no numerical utility-estimation gains, acceleration factors, dataset names, or simulation settings.",
+      "The stated relationship between response time and preference strength, and the EZ diffusion model’s assumptions, are not detailed enough here to assess applicability or implementation."
+    ]
+  }
+}

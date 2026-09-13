@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006847",
+    "title": "The Shape of Adversarial Influence: Characterizing LLM Latent Spaces with Persistent Homology",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006847"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c835f9c98248c74c73b020571c2774ab6b17580b9f6caca9b310e75293c75b2e",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "3a46fd6eb3dbaf37c9ddec060cee916fd3c012df4264db53188b46344f6cf70d",
+    "extracted_at": "2026-09-12T23:58:44.450399+00:00",
+    "session_id": "01a0980e-d570-7413-bf62-362662e511c8",
+    "usage": {
+      "input_tokens": 12716,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 791,
+      "reasoning_output_tokens": 81
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "fd9edd7b7b94e2d30de566e05b24081e39df5284c4e5b09e6426b8c6421af8e2"
+    },
+    {
+      "id": "S2",
+      "sha256": "cb435f77d01f17bad5da1a535800183d5861c005d7af31c9a27c3fb3e98e1f42"
+    },
+    {
+      "id": "S3",
+      "sha256": "bcb629364f993129d8e847273b83f2f23145324e810f71d5ac54e94297e34b14"
+    },
+    {
+      "id": "S4",
+      "sha256": "33d0146a37db484a09cbeae745c4e74022a8a016dba4beb6662002d58bd54b0a"
+    },
+    {
+      "id": "S5",
+      "sha256": "05576dc99540eee4337442ad8218967111c6cc91a21b20a655971626bcbcd23e"
+    },
+    {
+      "id": "S6",
+      "sha256": "9f3889b8155159a25ed07e63bbcb455eedc38ee0ad999d757e649a4420ca710d"
+    },
+    {
+      "id": "S7",
+      "sha256": "03bbd60de1c58bc0257b0219dc2f79b127c41c31d692ab97b536943f461b67de"
+    },
+    {
+      "id": "S8",
+      "sha256": "b9edd8d2d24ee46eaf733eea8d1e4a4a1aee83ff349652fca63a32a6642fdd48"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006847",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Characterize how adversarial inputs reshape the geometry and topology of LLM internal representation spaces.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing interpretability methods mainly capture linear directions or isolated features, overlooking high-dimensional, relational, nonlinear geometry; cross-attack topological effects remain poorly understood.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Applies persistent homology to activation point clouds and neuron-level information flow to characterize adversarial representational change.",
+        "source_ids": [
+          "S3",
+          "S8"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports a consistent topological signature across six models spanning 3.8B–70B parameters and two attack modes: indirect prompt injection and backdoor fine-tuning.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "characterization",
+        "claim": "Defines adversarial topological compression as a shift from varied, compact, small-scale features toward fewer dominant, large-scale features.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The framework reveals geometric invariants of representational change that complement existing linear interpretability methods.",
+      "source_ids": [
+        "S8"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that a consistent topological signature persists across six models and both evaluated attack modes.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Authors report that the signature is architecture-agnostic, emerges early in the network, and is highly discriminative across layers.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "Authors report that adversarial inputs induce topological compression in latent spaces.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background limitation",
+        "summary": "Existing interpretability captures primarily linear directions or isolated features, missing nonlinear relational geometry.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "research gap",
+        "summary": "Topological effects across operationally different attack modes are described as poorly understood.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The paper applies persistent homology to internal representations and analyzes activation geometry and neuron-level information flow.",
+        "source_ids": [
+          "S3",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported findings",
+        "summary": "Across six models and two attacks, the authors report persistent topological compression with an architecture-agnostic, early-emerging, layer-discriminative signature.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper combines persistent homology with activation point-cloud and neuron-level analyses to complement linear interpretability.",
+          "source_ids": [
+            "S8"
+          ]
+        },
+        "interpretation": "A representation-change claim can become more informative when the analysis tool matches the claimed geometric structure.",
+        "application": "For a nonlinear or relational representation hypothesis, pair linear probes with a topology- or geometry-sensitive analysis and state what each reveals.",
+        "exception": "This pairing may be unsuitable when the research question concerns only a defined linear direction or when the data do not support meaningful geometric structure."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative effect sizes, statistical tests, or operational definitions for topological compression, persistence, or discriminativeness.",
+      "Details of model architectures, attack implementations, layers analyzed, and baselines are not provided.",
+      "The abstract does not establish independent verification, reproducibility, or priority of the stated novelty."
+    ]
+  }
+}

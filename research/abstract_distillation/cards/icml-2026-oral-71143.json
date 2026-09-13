@@ -1,0 +1,167 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71143",
+    "title": "Mind Your Margin and Boundary: Are Your Distilled Datasets Truly Robust?",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71143"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1c658e446940dbf8a018c31caf67bde811537a22f83b5de42b5d83e1a97d64ca",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "da4a66203cb641d437aecf19386f6ae723d2b913d5416a039ea44203e0e63293",
+    "extracted_at": "2026-09-13T00:15:48.166772+00:00",
+    "session_id": "01a0981e-7dac-7371-b0bd-6081a781caf3",
+    "usage": {
+      "input_tokens": 12726,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 749,
+      "reasoning_output_tokens": 68
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "03c6ea9de63b27162f53441276ffc5d5739149e9d53eb8642efd03cbecc1783d"
+    },
+    {
+      "id": "S2",
+      "sha256": "9f25656089d3cdbaef7c0c846be38285e7c13b584200931ae1ddcbcc7d0699c4"
+    },
+    {
+      "id": "S3",
+      "sha256": "2c6f636cd9d51dbef5a455471863f30a2966e6763f414ca3a7d44e04f6ae8b91"
+    },
+    {
+      "id": "S4",
+      "sha256": "1c8dbd8b483d503b00d951dbab58343332c0cf60721779d78de332e57514521e"
+    },
+    {
+      "id": "S5",
+      "sha256": "72a26197070d5fdcd994942e52c0e182fdfa825d7af9c18f3d1c7f292684c50d"
+    },
+    {
+      "id": "S6",
+      "sha256": "78437729bf812fa863cc96d8ed2181c4a27212c42a6804609f7287cf6fd37c4f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71143",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Dataset distillation seeks compact synthetic training sets that retain accuracy while providing robustness to adversarial attacks.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods either leave robustness uncontrolled or incur an accuracy–robustness trade-off by treating adversaries uniformly and not widening inter-class boundary separation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces C²R, combining an attack-aware curriculum with a contrastive robustness objective.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Derives a perturbation score approximating each sample’s robust hinge to prioritize smallest-margin adversaries, alongside a class-balanced contrastive loss that promotes adversarial invariance and wider cross-class boundary separation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish C²R by coupling robust-margin-driven curriculum selection with explicit contrastive boundary separation in dataset distillation.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that experiments across CIFAR-10/100, Tiny-ImageNet, and multiple ImageNet-1K subsets under six attacks achieve the best robust accuracy among the compared methods.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report a 2.8% average robust-accuracy improvement over prior robust dataset distillation methods.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Dataset distillation compresses training data, but conventional methods optimize clean accuracy without controlling robustness.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Prior robust approaches improve robustness but often weaken the accuracy–robustness trade-off because they overlook near-zero-margin adversaries and boundary separation.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "C²R addresses these issues with an attack-aware curriculum based on perturbation scores and a class-balanced contrastive robustness loss.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_result",
+        "summary": "Across several datasets and six attacks, the authors report leading robust accuracy and a 2.8% average gain over prior robust DD.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects the proposed curriculum directly to near-zero robust margins and connects the contrastive loss to attack-concentrated decision boundaries.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "A method claim is more informative when each component is tied to a specific failure mechanism.",
+        "application": "For a robustness paper, map each design component to a measurable risk factor such as margin concentration or class-boundary separation.",
+        "exception": "This framing is unsuitable when the method has no clearly identified mechanism or when the target task is not margin- or boundary-based."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the six attacks, model architectures, training settings, clean-accuracy results, or statistical variability.",
+      "The reported “best” robust accuracy and 2.8% gain cannot be independently assessed from the abstract alone."
+    ]
+  }
+}

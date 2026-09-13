@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-98000",
+    "title": "Stylus: Automatic Adapter Selection for Diffusion Models",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/98000"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "de2a5105ad21b619f621258206b70d832063534f96ba683e432c4f5bbd18c1e8",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "6cd55b08c2cde3d8f021da1012090ddde45db2b65d18096af687c7fce400682f",
+    "extracted_at": "2026-09-13T00:19:54.124086+00:00",
+    "session_id": "01a09822-4071-7fd2-9ac2-fe6ca221911a",
+    "usage": {
+      "input_tokens": 12708,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 758,
+      "reasoning_output_tokens": 98
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "cf08de9a74632058c3fd5ac11aedd5878dd0fc683b57056a09cefa63c2c339a0"
+    },
+    {
+      "id": "S2",
+      "sha256": "8580ba3efe894ca2f936603c52d3f80460c1fbbeb9f1afc387ddda3d463d7ce5"
+    },
+    {
+      "id": "S3",
+      "sha256": "09c07404fb1a38384505cfe5b5ff39ac95cec676465de01149705b2c051725e2"
+    },
+    {
+      "id": "S4",
+      "sha256": "1b0b684b28867fd68ec6fc20f011bb04488029133c4403fc411eb5df5a935806"
+    },
+    {
+      "id": "S5",
+      "sha256": "dc72733dd6632d4fc3423fa56ac992cf42154144718dbec60b8520da87f96055"
+    },
+    {
+      "id": "S6",
+      "sha256": "4b765556519854d747efe11780d19f2741ad7753d7be86446631008d535cc50b"
+    },
+    {
+      "id": "S7",
+      "sha256": "e540abfb4631dd840e70a29c790f4bbb927752956777b3b2d7da2100d20d8e2b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-98000",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Match image prompts to relevant adapters and compose them for high-quality generation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The adapter ecosystem exceeds 100K items, most highly customized and insufficiently described, complicating selection.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Stylus automatically selects and composes task-specific adapters from prompt keywords.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "system pipeline",
+        "claim": "A three-stage pipeline improves adapter descriptions and embeddings, retrieves candidates, then assembles adapters by checking prompt fit.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "StylusDocs is a curated dataset of 75K adapters with pre-computed embeddings.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce an efficient, prompt-keyword-based system for automatic adapter selection and composition.",
+      "source_ids": [
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report greater CLIP/FID Pareto efficiency than the base model on popular Stable Diffusion checkpoints.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report that Stylus was preferred twice as often as the base model, using humans and multimodal models as evaluators.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Fine-tuned adapters offer lower-cost customization, and their open-source ecosystem has grown beyond 100K items with often inadequate descriptions.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "The paper frames prompt-to-adapter matching and adapter composition as the route to higher-quality image generation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "Stylus selects and composes task-specific adapters through description and embedding improvement, retrieval, and prompt-fit-based assembly.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "evaluation",
+        "summary": "StylusDocs supports evaluation, where Stylus reportedly improves CLIP/FID Pareto efficiency and user/model preference over the base model.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The paper aligns its system stages with the data problem: inadequate adapter descriptions motivate improved descriptions and embeddings before retrieval and composition.",
+          "source_ids": [
+            "S2",
+            "S5"
+          ]
+        },
+        "interpretation": "A pipeline can make a selection claim more intelligible when each stage addresses a concrete bottleneck named in the problem framing.",
+        "application": "When presenting a retrieval or selection system, map each processing stage explicitly to a stated source-data limitation, then evaluate the end-to-end outcome.",
+        "exception": "This framing is less suitable when the abstract does not identify stage-specific bottlenecks or when the pipeline is not the main contribution."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact CLIP/FID values, preference protocol, baselines beyond the base model, or statistical uncertainty.",
+      "It does not detail how adapter descriptions, embeddings, prompt fit, or composition are implemented, nor the coverage of the Stable Diffusion checkpoints."
+    ]
+  }
+}

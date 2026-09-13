@@ -1,0 +1,207 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31798",
+    "title": "On the Role of Attention Heads in Large Language Model Safety",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31798"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "92d707e4d7a57889ba2aa6b1a0df14274c5f452b9143c1fa613dfbb8f5d9dc14",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "571a3b95aaeb92f70c8e44992705d6e7344275c824fec60e390056a06d7115cd",
+    "extracted_at": "2026-09-12T23:52:29.500135+00:00",
+    "session_id": "01a09809-1da3-7051-b631-307f07e04509",
+    "usage": {
+      "input_tokens": 12860,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 807,
+      "reasoning_output_tokens": 62
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "61d9b788aaa3fb54d5ca4ebf21cdba9ae09b785043b19910d427363ada9cabb5"
+    },
+    {
+      "id": "S2",
+      "sha256": "68794b67ac7ca403e8e565f81745b7ae32234cd00386d58b2a837c5e00266166"
+    },
+    {
+      "id": "S3",
+      "sha256": "3372ee19396126b0acc1fc05a2cfbf43747362c01b8654dbd999a49efbdb2fd3"
+    },
+    {
+      "id": "S4",
+      "sha256": "99f69d609a9dfd46e7542c735bab7600a011b5e41c5de83c1fec2b08ae21aa38"
+    },
+    {
+      "id": "S5",
+      "sha256": "203af5d75562a97a54b2c8b5c7b7b705d1fc6a5c69449f2c3bf27da013d284f6"
+    },
+    {
+      "id": "S6",
+      "sha256": "ec6b0e4e66ce52b5e4b3dccf78299ee23921372304d2126e82fb4353f838391a"
+    },
+    {
+      "id": "S7",
+      "sha256": "047f35c3bcc4ed894f624af1fffcd43fad38fa2a72ca30f438c2954295dbe21b"
+    },
+    {
+      "id": "S8",
+      "sha256": "1cfc51f55911ec6c13133d7f709d855199a9a798f5a385a75a4739469d0093fa"
+    },
+    {
+      "id": "S9",
+      "sha256": "57b153d29a4ab7922909ea2e856ade77ff85e55b90b4baa2fda716fc6c0bc2c0"
+    },
+    {
+      "id": "S10",
+      "sha256": "c499120eaa970ef71e49722bbe6c2fa624181f0dab9b480c109fed9419ed0e55"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31798",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper investigates how standard multi-head attention mechanisms relate to LLM safety capability.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing safety-mechanism research tends to overlook the safety impact of multi-head attention in mechanistic interpretability.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "metric",
+        "claim": "Introduces Safety Head ImPortant Score (Ships) to assess individual attention heads’ contributions to model safety.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Generalizes Ships to the dataset level and introduces Sahara to attribute critical safety attention heads inside a model.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "finding",
+        "claim": "Reports that specific attention heads substantially affect safety and primarily function as safety feature extractors.",
+        "source_ids": [
+          "S7",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present their attribution approach and findings as a novel perspective for unpacking safety mechanisms in large models.",
+      "source_ids": [
+        "S10"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that ablating one safety head in an aligned model such as Llama-2-7b-chat enabled responses to 16× more harmful queries while modifying 0.006% of parameters, compared with approximately 5% in previous studies.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report comprehensive experiments indicating that models fine-tuned from the same base model exhibit overlapping safety heads.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that special attention heads have a significant impact on safety.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LLM safety guardrails can be circumvented, and suppressing safety representations or components compromises safety capability.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "The paper identifies insufficient attention to multi-head attention’s safety impact.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "It proposes Ships and extends it into dataset-level attribution through Sahara.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "Reported findings link specific heads to safety, including strong single-head ablation effects and overlap across models sharing a base model.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The approach and findings are framed as a perspective for interpreting black-box safety mechanisms.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a component-level metric with a dataset-level attribution algorithm, then reports both localized ablation effects and cross-model head overlap.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S8",
+            "S9"
+          ]
+        },
+        "interpretation": "Aligning an attribution method with targeted intervention and transfer-pattern analysis can make a mechanistic claim more concrete.",
+        "application": "For a component-analysis paper, pair importance scoring with a localized intervention and a comparison across related model variants.",
+        "exception": "This move may be unsuitable when interventions are unsafe, prohibitively costly, or the component decomposition is not stable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify Ships or Sahara’s computation, datasets, baselines, or evaluation protocol.",
+      "The reported 16× effect is tied to an example aligned model; broader model and task scope is unspecified.",
+      "The abstract does not provide details needed to assess the reported experiments or the meaning of “primarily” as feature extractors."
+    ]
+  }
+}

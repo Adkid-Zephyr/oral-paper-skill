@@ -1,0 +1,182 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71164",
+    "title": "Agent0-VL: Exploring Self-Evolving Agent for Tool-Integrated Vision-Language Reasoning",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71164"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5b2aef88d91bdcb79f6b3e434879f3df104cd68b48279dc6d5937f082b664230",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "d392600aab0d75b15a1e1cc31b936ec4bd35ff242b688c3ceb6d0840efe5e7cc",
+    "extracted_at": "2026-09-13T00:16:40.833508+00:00",
+    "session_id": "01a0981f-46c6-7422-9a06-de1ec4b84ee4",
+    "usage": {
+      "input_tokens": 12822,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 727,
+      "reasoning_output_tokens": 54
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "930f37209ea00f1fa1a9213d69fae3dece4c5832941117a6d6151335dd265be8"
+    },
+    {
+      "id": "S2",
+      "sha256": "03cbb046e5f9447e3a9004eb754052ef5145c1dfbe76052c7dbc4eba97778ea5"
+    },
+    {
+      "id": "S3",
+      "sha256": "fc2df3d97100a4d4284ab860db157e3c64c8f4ef26cbc6916244609c75f14794"
+    },
+    {
+      "id": "S4",
+      "sha256": "0f48733c1cdfd8e633b3bfe28e8bd0b61745b3432164607a40f40774f166f7dc"
+    },
+    {
+      "id": "S5",
+      "sha256": "7dbd5af1dc5f442428914fbf8a40d931eb14cb9747f091e095aa6d0e69658581"
+    },
+    {
+      "id": "S6",
+      "sha256": "1ce68a9a7771bbc6cf1a8c70c50d9bb913233ddd89e33afb8e2e6365b697acc9"
+    },
+    {
+      "id": "S7",
+      "sha256": "790cf24ce0f0ec92a6613b96434a12e908d2d02a58a9b342364e7525fc6137fb"
+    },
+    {
+      "id": "S8",
+      "sha256": "d41ddfd379d0f6afd8f9587d38a337d5edcd31a36993589c467a2ea13f3a00af"
+    },
+    {
+      "id": "S9",
+      "sha256": "dfef1f43497f82c769149cd0d560ae1927eb946f69ea4e4718809ca594d849c0"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71164",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve vision-language reasoning through continual self-evolution with integrated tools.",
+        "source_ids": [
+          "S4",
+          "S8"
+        ]
+      },
+      "gap": {
+        "claim": "Text-only self-evaluation struggles to verify complex visual reasoning and can produce evaluation hallucinations.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Agent0-VL integrates tool use into reasoning, self-evaluation, and self-repair for evidence-grounded refinement.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "framework",
+        "claim": "It combines Solver and Verifier roles in a Self-Evolving Reasoning Cycle that couples tool-grounded critique with reinforcement learning.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "training approach",
+        "claim": "It performs zero-external-reward evolution without human annotations or external reward models.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed agent unifies tool-integrated reasoning, verification, and self-repair within a self-evolving vision-language system.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report a 12.5% improvement over the Qwen-VL base model on chart reasoning, geometric problem solving, and visual scientific analysis.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "LVLM learning is constrained by human-annotated supervision, motivating self-rewarding approaches.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Text-based self-evaluation is described as unreliable for complex visual reasoning because of verification difficulty and evaluation hallucinations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "Agent0-VL uses tools across reasoning, self-evaluation, and self-repair, with Solver and Verifier roles interacting in a self-evolving cycle.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report zero-external-reward continual self-improvement and a 12.5% gain over Qwen-VL across three task areas.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns the claimed failure mode—unreliable text-only visual evaluation—with a method that introduces tools specifically for verification and self-repair.",
+          "source_ids": [
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "A method is easier to assess when each architectural component is explicitly tied to a named limitation.",
+        "application": "When presenting a reasoning system, map each proposed mechanism to the concrete failure mode it is intended to address, then report results on tasks exposing that failure mode.",
+        "exception": "This framing is less suitable when the target limitation cannot be isolated or the proposed mechanism addresses several interacting causes without component-level evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the tools, reinforcement-learning procedure, dataset sizes, evaluation protocol, statistical uncertainty, or whether the 12.5% improvement is relative or absolute.",
+      "It does not provide separate results for reasoning, verification, or self-repair components."
+    ]
+  }
+}

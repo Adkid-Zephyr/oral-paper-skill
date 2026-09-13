@@ -1,0 +1,181 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31817",
+    "title": "The Geometry of Categorical and Hierarchical Concepts in Large Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31817"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "ff9619a534f988084b6fe5f74f7ab4d483ce2bee2270b198b94dc11b65fb3240",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "e241a837de24a183cac4258934b08ae10cca253d6e267db168f7c03182cefba8",
+    "extracted_at": "2026-09-12T23:53:08.811790+00:00",
+    "session_id": "01a09809-bd9d-7c51-97a5-6b7bca17276b",
+    "usage": {
+      "input_tokens": 12681,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 742,
+      "reasoning_output_tokens": 74
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "94ba1694e6612dc0d46a85c7be11b62588e6aab21cdb794961768c1458d63e85"
+    },
+    {
+      "id": "S2",
+      "sha256": "c065b81a40c6231eb523c56817b544daab5b9a069de926b3c0f44c44c7d49864"
+    },
+    {
+      "id": "S3",
+      "sha256": "2299b48b8ad24d808ca4a20d2ac326d49beeaca773876c7e475eb637b476aafd"
+    },
+    {
+      "id": "S4",
+      "sha256": "2c76ab40d72307c6ecebb32e13d802b25a3f29e7343fc6cae16532b9edbc0e9e"
+    },
+    {
+      "id": "S5",
+      "sha256": "dadc83a9aa2ef57db168fc1a976af53febd80779d6d7bae9484fc2727e9769cb"
+    },
+    {
+      "id": "S6",
+      "sha256": "9c556894bf8fa60b727cf8636d315ff66f5f7a0a0e6fbab968e8592e256e63a6"
+    },
+    {
+      "id": "S7",
+      "sha256": "c33053f33c0451854d8435fd24e1744c2f6014a26d3f9e87a1785097c2ce342f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31817",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Formalize how categorical and hierarchical concepts are represented geometrically in LLM representation spaces.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Prior formalization addressed binary concepts with natural contrasts, leaving features without natural contrasts and broader categorical or hierarchical structure less formalized.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Extends the linear representation hypothesis by representing features such as is_animal as vectors.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Formalizes categorical concepts as polytopes and proves a relationship between conceptual hierarchy and representation geometry.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical validation",
+        "claim": "Applies the formalization to hierarchically related concepts in Gemma and LLaMA-3 using WordNet data.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state an extension from linear directions for contrasted binary concepts to vector representations for features, enabling a polytope-based treatment of categorical concepts.",
+      "source_ids": [
+        "S2",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report validating their theoretical results on Gemma and LLaMA-3.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report estimating representations for more than 900 hierarchically related concepts using WordNet data.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "The paper situates its work in the linear representation hypothesis, where semantic concepts are encoded as linear directions.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior_scope",
+        "summary": "Existing formalization is described for binary concepts with natural contrasts.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "extension",
+        "summary": "The authors extend the formalization to vectors for features lacking natural contrasts and represent categorical concepts as polytopes.",
+        "source_ids": [
+          "S3",
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "theory_and_validation",
+        "summary": "They state a hierarchy–geometry relationship and report validation on Gemma and LLaMA-3 across 900+ WordNet-linked concepts.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract introduces a representational extension, derives a geometric consequence, and then reports model-level validation over a large hierarchy of concepts.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A compact abstract can align a formal generalization with its structural implication and an explicitly scoped validation target.",
+        "application": "When presenting a representation proposal, state the limitation it addresses, the mathematical object it enables, the structural claim derived from it, and the models or data used to assess that claim.",
+        "exception": "This framing is unsuitable when the work has no formal extension, structural consequence, or concrete validation scope."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the proved hierarchy–geometry relationship, validation procedure, or quantitative validation results.",
+      "It does not identify which 900+ concepts or how their representations were estimated."
+    ]
+  }
+}

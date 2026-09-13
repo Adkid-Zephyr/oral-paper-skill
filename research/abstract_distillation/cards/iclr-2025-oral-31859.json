@@ -1,0 +1,199 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31859",
+    "title": "Differential Transformer",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31859"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d9f7ff0a92eb8ed79a850aa5e97f8e448ff70828060e288de82161a74c34ff12",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "526c457714c4403fa5121a398b9c4dbbfbbde3d2e24c602f673e8d94e973a7fb",
+    "extracted_at": "2026-09-12T23:54:46.254443+00:00",
+    "session_id": "01a0980b-3c75-7e71-a3cb-d5a6f7f96fec",
+    "usage": {
+      "input_tokens": 12692,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 728,
+      "reasoning_output_tokens": 76
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "3e1f3f9f64f8387012d62ae68f93983ad407c74ea918934bcd8a307bc03113fb"
+    },
+    {
+      "id": "S2",
+      "sha256": "04a0b66682888586fd6e472b2412414431eae02b7ab1a1988d26a45ce7c6fcd6"
+    },
+    {
+      "id": "S3",
+      "sha256": "55c9ec9557c2de87c2bb6e01eae458bde0dd4c0870a23c1ed7c7c911e60c9415"
+    },
+    {
+      "id": "S4",
+      "sha256": "f1482ddc17428613d7a9be0e9be90eb059664651d8adabe4a5780b6698c4c589"
+    },
+    {
+      "id": "S5",
+      "sha256": "2260dc4657156f299e93bde4ddb2964d18c07e2e09550b8b131bfe529bbbb198"
+    },
+    {
+      "id": "S6",
+      "sha256": "8701a52dc3087a7a8ceb66e68bb592cb51a192c72c7e8d09cdfb2c158758f53f"
+    },
+    {
+      "id": "S7",
+      "sha256": "cac348d0a5498cbcf27f9f1451965e6cb34482d2961d5ce3a13cf22776e29d66"
+    },
+    {
+      "id": "S8",
+      "sha256": "8be0f28c23bdc5c5278fb9e6c59d9246d12b70eb6b4c5ac8adbfa27ca3b214e8"
+    },
+    {
+      "id": "S9",
+      "sha256": "41fdf0b15947f3e37089c8fe0c604ddccf88434afe27d0c48dbdfe46846fc9d2"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31859",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Transformers may allocate excessive attention to irrelevant context.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies irrelevant-context distraction as a limitation motivating improved attention allocation.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Diff Transformer, whose differential attention subtracts two separate softmax attention maps to amplify relevant context and cancel noise.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "mechanistic account",
+        "claim": "Attributes the emergence of sparse attention patterns to noise cancellation through subtraction.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports advantages across language modeling and practical applications including long-context modeling, retrieval, hallucination mitigation, in-context learning, and activation-outlier reduction.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present differential attention—computing attention as the difference between two softmax attention maps—as the distinguishing contribution of Diff Transformer.",
+      "source_ids": [
+        "S2",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "Authors report that Diff Transformer outperforms Transformer in language modeling across various model-size and training-token scaling settings.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "Authors report that it mitigates hallucination in question answering and summarization by reducing distraction from irrelevant context.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "claim": "Authors report improved in-context-learning accuracy and greater robustness to order permutation.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The abstract frames excessive attention to irrelevant context as a Transformer limitation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Diff Transformer is introduced to amplify relevant context and cancel noise using differential attention.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "The subtraction is described as promoting sparse attention patterns through noise cancellation.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "results",
+        "summary": "Authors report stronger language-modeling results across scaling settings and benefits in several practical applications.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "application detail",
+        "summary": "The abstract highlights hallucination mitigation and improved, permutation-robust in-context learning.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a concrete mechanism—subtracting two attention maps—to a specific behavioral effect: noise cancellation and sparse attention.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "Mechanism-to-effect links can make an architecture claim more explanatory than a feature description alone.",
+        "application": "When introducing a model component, state its computation and the intended intermediate behavior it is expected to induce.",
+        "exception": "This framing is unsuitable when the abstract lacks evidence or rationale connecting the computation to the claimed effect."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not provide quantitative results, datasets, baselines beyond Transformer, or statistical details.",
+      "The scope and conditions of the reported practical advantages are not specified."
+    ]
+  }
+}

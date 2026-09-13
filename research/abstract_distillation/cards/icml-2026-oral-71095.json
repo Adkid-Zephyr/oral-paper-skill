@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71095",
+    "title": "Bad Seeing or Bad Thinking? Rewarding Perception for Multimodal Reasoning",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71095"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2fcf65b0eccf25e841b787656c3896bf696ea1e9ddc045e42490bfb06a4436dd",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "9ff8e4cbf00b44ae14bf134b10e2e7825b12eefe9460a73dc66cc447cbc01e98",
+    "extracted_at": "2026-09-13T00:13:55.107359+00:00",
+    "session_id": "01a0981c-bfdf-7561-a801-b2265b91d931",
+    "usage": {
+      "input_tokens": 12857,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 793,
+      "reasoning_output_tokens": 88
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9024651970f1afbf5c752c687e07b98195aba9670b1058285bd0faafdc808625"
+    },
+    {
+      "id": "S2",
+      "sha256": "5ca341c91ecd92b9b7679d9944cfc4bbe4ed3a3abb888fd6c032e054f8990cb5"
+    },
+    {
+      "id": "S3",
+      "sha256": "52c339bd3c9a8c229cee5b576f41d32f2628aeac65174040e171a9cbd459231c"
+    },
+    {
+      "id": "S4",
+      "sha256": "470d260477e135fc3506eab22ac3de8bb2479889cbeb90bea907d4f198714488"
+    },
+    {
+      "id": "S5",
+      "sha256": "5b0e58608bc205a9094a106c7b8f7fbe2b31bd25b62a33e11cda746ef81840e3"
+    },
+    {
+      "id": "S6",
+      "sha256": "82aa87bff9c665c5be5b45ad71eda8baac84d92f29398100348f27d273d88c69"
+    },
+    {
+      "id": "S7",
+      "sha256": "265970e36538c6d3e5eafabc070d792241c71fac689d304e6bafa0a995161b9a"
+    },
+    {
+      "id": "S8",
+      "sha256": "0fcae637fad5f1d53497c679e6e37d18e7b2155b1c4b9adcb7e3202ad312da15"
+    },
+    {
+      "id": "S9",
+      "sha256": "404bbbd131454a9e421e5c5e06506d37fc9ad61b53ea456d2560d021337224df"
+    },
+    {
+      "id": "S10",
+      "sha256": "fb83d6b7c0b7d9ec106ec3c81c1092ae4ee9bde6a162c6a3270543604522c70c"
+    },
+    {
+      "id": "S11",
+      "sha256": "56aceabe28b6a8b6e127dd0b30356fdc88a884a49c95bc7b4006a57c2f26dd19"
+    },
+    {
+      "id": "S12",
+      "sha256": "269ab8db84ad59278f05bf6e65d02125b5e06501c9d5dae789065b1ecde7cb49"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71095",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve robust perception–reasoning synergy in vision-language models by identifying whether failures arise from perception or logic.",
+        "source_ids": [
+          "S1",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Existing architectural and agentic approaches can rely on static reasoning or impose substantial compute and engineering costs, while producing a perception–reasoning seesaw effect; the authors attribute this to ambiguous modality credit assignment.",
+        "source_ids": [
+          "S2",
+          "S3",
+          "S4",
+          "S6"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A reinforcement-learning framework that decomposes generation into interleaved perception and reasoning steps, enabling targeted supervision of perception.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Perception Verification uses a blindfolded-reasoning proxy to reward perceptual fidelity independently of reasoning outcomes.",
+        "source_ids": [
+          "S10"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Structured Verbal Verification and the Modality-Aware Credit Assignment mechanism use structured execution and error-source routing to scale verification and distinguish bad seeing from bad thinking.",
+        "source_ids": [
+          "S11",
+          "S12"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that their framework resolves modality-credit ambiguity by independently verifying perception and routing rewards to the relevant modality-specific error.",
+      "source_ids": [
+        "S6",
+        "S10",
+        "S12"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that integrating these techniques enables a single VLM to achieve simultaneous performance gains across a wide task spectrum.",
+        "source_ids": [
+          "S12"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Robust perception–reasoning synergy is presented as a central VLM goal, pursued through architectural designs and agentic workflows.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "The abstract reports static reasoning, high compute and engineering burden, and a seesaw effect despite substantial investment.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "The authors frame the bottleneck as ambiguous modality credit assignment: distinguishing bad seeing from bad thinking.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "They introduce interleaved-step decomposition, Perception Verification, Structured Verbal Verification, and MoCA to supervise perception and route rewards by error source.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates perception verification from reasoning outcomes and then routes rewards to the specific source of error.",
+          "source_ids": [
+            "S10",
+            "S12"
+          ]
+        },
+        "interpretation": "Separating error diagnosis from end-task success can make multimodal training signals more targeted.",
+        "application": "For a multimodal method, define an intermediate modality-specific verification signal and an explicit mechanism assigning credit to perception versus reasoning.",
+        "exception": "This move may be unsuitable when modality-specific correctness cannot be operationalized independently or when intermediate verification is unreliable."
+      }
+    ],
+    "unknowns": [
+      "No task list, baseline results, metrics, sample sizes, or training conditions are provided for the reported simultaneous gains.",
+      "The abstract does not specify how blindfolded reasoning or structured verbal verification is implemented, nor how MoCA resolves ambiguous cases.",
+      "The claimed scope of the “wide task spectrum” is unspecified."
+    ]
+  }
+}

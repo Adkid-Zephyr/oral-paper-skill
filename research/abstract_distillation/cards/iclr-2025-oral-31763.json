@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31763",
+    "title": "Rethinking Reward Modeling in Preference-based Large Language Model Alignment",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31763"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "7af436093798223fc0169a98ecf97989b554608561405ea95bef100c3ae6d814",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "fcb59359560f641d5bb7fc17a92891d240e37bddbadfbf21991e8b5e95a1ada0",
+    "extracted_at": "2026-09-12T23:51:07.562041+00:00",
+    "session_id": "01a09807-def3-7c41-a080-c0e0a929c4e5",
+    "usage": {
+      "input_tokens": 12740,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 813,
+      "reasoning_output_tokens": 110
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "2e4b1910282814800fa6ae6d66be360da55b90554527cbb84ab42b1b381d9407"
+    },
+    {
+      "id": "S2",
+      "sha256": "024a1f877997b82a091e9718489c08c40df76bffadd697836dd43e981d80aa61"
+    },
+    {
+      "id": "S3",
+      "sha256": "053826cc093d4502309f5aba8f09b5d5f503a08ebb6328d5cac2133d2b327c3b"
+    },
+    {
+      "id": "S4",
+      "sha256": "2d4a71aace925372eaa7936262aaf1f171b1dfa0b140018749e876c81a108e59"
+    },
+    {
+      "id": "S5",
+      "sha256": "aa590b1a6bf6930be2299c9cb87a7daad4c7a5b5b2de4482ac0d4ede9ff734f0"
+    },
+    {
+      "id": "S6",
+      "sha256": "ade34a7c9de18a8fde54b970c43dc6508a54ae9bf5fa3bccf58efba828fa13e3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31763",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain and improve reward modeling from sparsely compared pairwise LLM preference data, especially the use of Bradley–Terry models.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Why Bradley–Terry models can convert pairwise comparisons into reward values and predictions remains unclear under sparse comparisons.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Establishes a convergence rate for Bradley–Terry reward models using deep neural networks and embeddings.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "conceptual framework",
+        "claim": "Identifies order consistency as the property needed for downstream optimization and argues that Bradley–Terry modeling is not necessary for this purpose.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes an upper-bound reward-modeling algorithm compatible with off-the-shelf binary classifiers as an alternative order-consistent objective.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper introduces order consistency as a critical reward-modeling concept and proposes a simple classifier-compatible upper-bound alternative to the Bradley–Terry objective.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report establishing a convergence rate for embedding-based deep-neural-network Bradley–Terry reward models.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report demonstrating that the Bradley–Terry model has order consistency.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report evaluating multiple reward-modeling approaches across more than 12,000 setups involving 6 base LLMs, 2 datasets, and annotation designs varying in quantity, quality, and pairing choices.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Bradley–Terry modeling is described as common and successful in LLM alignment reward modeling.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "The paper highlights uncertainty about why Bradley–Terry modeling works for pairwise preferences, particularly with sparse comparisons.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "theory_and_reframing",
+        "summary": "It provides a convergence-rate result, then reframes the downstream requirement as preserving correct rankings under monotonic transformations.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "alternative_and_evaluation",
+        "summary": "It defines order consistency, proposes a classifier-compatible upper-bound objective, and evaluates approaches across varied large-scale experimental setups.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract separates theoretical justification of Bradley–Terry modeling from the downstream requirement of preserving rankings under monotonic transformation.",
+          "source_ids": [
+            "S4"
+          ]
+        },
+        "interpretation": "This separation can make a paper’s core criterion more precise than defending a conventional objective wholesale.",
+        "application": "State the downstream invariance or property the model must preserve, then assess candidate objectives against that property.",
+        "exception": "This framing is unsuitable when downstream decisions depend on calibrated reward magnitudes rather than rankings alone."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report the empirical outcomes or comparative winners from the 12,000-plus setups.",
+      "The exact convergence-rate assumptions, rate, upper-bound formulation, and definition of order consistency are not provided."
+    ]
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71135",
+    "title": "ConFlux: Multivariate Time Series in Flux, One Unified Forecast in Confluence",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71135"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c41430b7690b1d401ddfe2f0e9a97f10dcb259cdd2abc8a2dccdbec1863fc615",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "a32ba6b5428e68f25105dd55cfd1234f15d380a33cece8d9d224744b6fc556ce",
+    "extracted_at": "2026-09-13T00:15:30.193666+00:00",
+    "session_id": "01a0981e-2e11-7fe0-b0fe-3ded3ea961dd",
+    "usage": {
+      "input_tokens": 12710,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 804,
+      "reasoning_output_tokens": 83
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a2765df0504104e2884fa59107aa3757c2f010d8e6b00505f248dd37ad12f1da"
+    },
+    {
+      "id": "S2",
+      "sha256": "349ab06030d8caf6c3ddd890c2914c422126003933b5edae50e8406254b40c64"
+    },
+    {
+      "id": "S3",
+      "sha256": "6ea73ec63788daac73ea888ed255bbd11ebe7d1b7520fece65ef0d3248431dc3"
+    },
+    {
+      "id": "S4",
+      "sha256": "0e0787d60378a6a9c5231c7e5eab2d72e1f498028909e8aef60782ca2073a6ab"
+    },
+    {
+      "id": "S5",
+      "sha256": "865757532c78f125ab6724248ab1f2d3a7d688afbb15887e865ecc4816596784"
+    },
+    {
+      "id": "S6",
+      "sha256": "c243f7a1555d215e45b6e1461de6f8825e5f7ea5a4fd608ca4992bec42d4834f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71135",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Forecast multivariate time series whose variables evolve asynchronously and interact dynamically into one unified prediction.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The mismatch between heterogeneous, time-varying inputs and a unified objective challenges general-purpose forecasting, particularly in zero-shot and large-scale settings.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes ConFlux, a general-purpose foundation model that adaptively integrates cross-channel information under a unified forecasting objective.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "architecture",
+        "claim": "Introduces variable reordering and adjacent-variable patch aggregation before processing with a Vision Transformer-style architecture, yielding unified tokens for pre-training and downstream tasks.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish ConFlux through adaptive cross-channel integration combined with variable reordering and patch-based processing for unified multivariate forecasting.",
+      "source_ids": [
+        "S3",
+        "S4",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report state-of-the-art performance across 25 public datasets in zero-shot, fine-tuning, and from-scratch settings.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report faster inference and lower memory usage than the compared approaches, though the abstract gives no quantitative margins or baseline details.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "challenge",
+        "summary": "Multivariate signals are dispersed, asynchronous, and dynamically interacting, yet forecasting requires convergence to one prediction.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "This input–objective mismatch is identified as a fundamental obstacle for general-purpose models in zero-shot and large-scale settings.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "proposal",
+        "summary": "ConFlux is proposed as a foundation model that adaptively integrates cross-channel information under a unified objective.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "mechanism",
+        "summary": "The model reorders variables, patches adjacent variables, and processes the resulting representation with a Vision Transformer-style architecture.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported_results",
+        "summary": "Across 25 public datasets, the authors report strong performance across three training regimes together with faster inference and lower memory use.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a structural mismatch in the forecasting problem to specific representation operations—variable reordering, patching, and unified tokens—before reporting results across multiple training regimes.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A useful paper pattern is to align architectural choices explicitly with the stated data–objective mismatch, then test the idea under distinct deployment or training settings.",
+        "application": "For a heterogeneous sequential-learning paper, map each representation operation to a named structural difficulty and report results separately for zero-shot, adaptation, and training-from-scratch use.",
+        "exception": "This framing is less suitable when the task has no meaningful unified objective or when the proposed operations cannot be tied to a concrete input structure."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify datasets, baselines, quantitative gains, statistical variability, or the conditions behind the reported state-of-the-art and efficiency claims.",
+      "It does not provide pre-training data, model scale, ablations, or details showing how variable reordering is learned or selected."
+    ]
+  }
+}

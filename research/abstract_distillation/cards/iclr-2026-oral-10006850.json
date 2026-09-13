@@ -1,0 +1,201 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10006850",
+    "title": "MotionStream: Real-Time Video Generation with Interactive Motion Controls",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10006850"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6f1c62afc6179eb3b5169fe590b9d239b9bd16b72f3d18ba530d435973fe3102",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "be8d566e89d3392ac027f21940c2e70cbf317adfe9294987eb4977337a7a59f4",
+    "extracted_at": "2026-09-12T23:58:45.950736+00:00",
+    "session_id": "01a0980e-d969-7603-91e4-925a1290919a",
+    "usage": {
+      "input_tokens": 12810,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 867,
+      "reasoning_output_tokens": 122
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "63b28d5cca5f5750db2e5bb9346a417641eb33e24127de04918f2dbbbfaf6882"
+    },
+    {
+      "id": "S2",
+      "sha256": "31990217e155e4730e276b1109caf25881af99d71cdfcca64137d707646ac7a4"
+    },
+    {
+      "id": "S3",
+      "sha256": "23d7a538f59c390d708688bfe4f8ea3a5f74b0cb7d63c3c174c1e75b9345b10f"
+    },
+    {
+      "id": "S4",
+      "sha256": "36c89bac82d8c2ee811359031e75a6c0d068e9933aa441bfc0986bd74176587c"
+    },
+    {
+      "id": "S5",
+      "sha256": "ed79b585409d0823f7160a64e5657713d3babf3dcb1f4e4095c6309332fa8d5e"
+    },
+    {
+      "id": "S6",
+      "sha256": "18f083370a5f97a1d56428186f3a2897293bcbf848ddc9e55170d889a3f2da85"
+    },
+    {
+      "id": "S7",
+      "sha256": "ab1c559172207e21066516f06bc4bff5104d7a017ac13e0bfaf8750af445fe89"
+    },
+    {
+      "id": "S8",
+      "sha256": "2c3300e99e639052fe734168e9ccb2578b0b37879111bb1a923ce8724912106f"
+    },
+    {
+      "id": "S9",
+      "sha256": "fadac2479958019ec61852d057ddd7566cec5e3b8b89d6ca7ac4176d0531f5ad"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10006850",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Real-time, interactively controlled video generation is hindered by minute-scale latency and non-causal processing.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "Existing motion-conditioned methods do not support on-the-fly real-time interaction because of these latency and causality limitations.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "MotionStream distills a bidirectional motion-controlled text-to-video teacher into a causal student using Self Forcing with Distribution Matching Distillation.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It combines sliding-window causal attention, attention sinks, self-rollout, and KV-cache rolling to support fixed-context streaming over arbitrarily long videos.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "It provides interactive controls including painted trajectories, camera control, and motion transfer during streaming generation.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish MotionStream as enabling infinite-length streaming with constant-speed generation and interactive motion controls.",
+      "source_ids": [
+        "S7",
+        "S8",
+        "S9"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report sub-second latency and up to 29 FPS streaming generation on a single GPU.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report state-of-the-art motion following and video quality, alongside a two-orders-of-magnitude speed improvement.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report real-time unfolding of results for trajectory painting, camera control, and motion transfer.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "The paper identifies latency and non-causality as barriers to interactive motion-conditioned video generation.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "starting point",
+        "summary": "A motion-augmented text-to-video model follows global text and local motion guidance but remains unsuitable for on-the-fly inference.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "causalization",
+        "summary": "The bidirectional teacher is distilled into a causal student for streaming inference.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "long-horizon design",
+        "summary": "Sliding-window attention, attention sinks, self-rollout, and KV-cache rolling address extrapolation, error accumulation, and fixed-cost inference.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report fast, high-quality motion following with interactive controls and infinite-length streaming.",
+        "source_ids": [
+          "S2",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract explicitly separates finite-horizon training from infinite-horizon deployment and names extrapolation, error accumulation, and context-cost growth as distinct challenges.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "A strong technical narrative can map each deployment constraint to a named design response.",
+        "application": "When presenting a long-horizon generation method, enumerate deployment failure modes and link each to a specific mechanism or training procedure.",
+        "exception": "This structure is less suitable when the system has no meaningful horizon, latency, or accumulation constraints."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no benchmark names, metric values, baselines, or experimental conditions supporting the state-of-the-art and speed comparisons.",
+      "The meaning and operational evaluation of “infinite-length” streaming are unspecified.",
+      "The abstract does not quantify interaction latency or assess control quality separately for trajectories, cameras, and motion transfer."
+    ]
+  }
+}

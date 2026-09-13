@@ -1,0 +1,178 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31815",
+    "title": "Subgraph Federated Learning for Local Generalization",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31815"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a92da62206b4493f5849106de37dcfbb77e774679209a480b510debb8f63051a",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "d54d702bcbf1508f2b37b692207d06e1dbed9104f64fee85837652498fb51e54",
+    "extracted_at": "2026-09-12T23:53:07.226182+00:00",
+    "session_id": "01a09809-b804-7d20-8bf3-b06c0feb370c",
+    "usage": {
+      "input_tokens": 12739,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 676,
+      "reasoning_output_tokens": 70
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "96319b9687f8d305d87bb5ec6177ae2f24b2e9092f233bbd99ce2e0b28d9cad6"
+    },
+    {
+      "id": "S2",
+      "sha256": "757bd23a42af0f4aeace505d3f202296b202eb050f53ac45f25518025165d2c5"
+    },
+    {
+      "id": "S3",
+      "sha256": "39a4e5bb0308267dfe5b99af2e1f408a11a2cad71035621e0983ec64782120d6"
+    },
+    {
+      "id": "S4",
+      "sha256": "c21c2ad11df38786d1bbfe1de9e6d7b1e519514f787d4b67ba0c78c312da6913"
+    },
+    {
+      "id": "S5",
+      "sha256": "ad47e6b8cdbacf2f68ffbf1776a48cb0b4899af2884341b77c57ee0a73b3fede"
+    },
+    {
+      "id": "S6",
+      "sha256": "1a1afc3bcf53b1c940b16139b9d5467365784c4698bb7834b34b1d3d531d3c49"
+    },
+    {
+      "id": "S7",
+      "sha256": "17257de3d409251a32c8b0d1f064943b4d5bb968ea3c10cdeb12bcb10e16a63f"
+    },
+    {
+      "id": "S8",
+      "sha256": "dc744a5910f19585515369fc0d7c02cecc099b098b339e610fa538623dd8fb9a"
+    },
+    {
+      "id": "S9",
+      "sha256": "d988da933af9eecd396b36bbc0fbe428f1bf1e6062d39759c406d2df3d9c343f"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31815",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Graph federated learning must generalize local models to unseen data with diverse label distributions under evolving graph data.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing methods often overlook new-node and label-distribution shifts and focus on local data, making them prone to local overfitting.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "FedLoG generates global synthetic data by condensing reliable class-representation and structural information across clients.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It uses the synthetic data to adaptively generalize knowledge absent from each local dataset, targeting local overfitting.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish FedLoG by addressing local overfitting through cross-client global synthetic data and adaptive knowledge generalization.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that FedLoG outperforms baselines in experimental settings designed to measure generalization to unseen data in practical scenarios.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Graph federated learning supports collaborative training while preserving client privacy.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "limitation",
+        "summary": "Evolving graphs and shifting label distributions expose a local-overfitting problem that harms generalization.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "FedLoG condenses cross-client class and structural information into global synthetic data for adaptive local training.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The authors report stronger performance than baselines under unseen-data generalization settings.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links changing graph conditions and local label distributions to local overfitting, then aligns the proposed synthetic-data mechanism with the missing local knowledge.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact problem–mechanism pairing can make the rationale for a method traceable.",
+        "application": "Describe each proposed component together with the specific distributional failure or missing information it is intended to address.",
+        "exception": "This framing is unsuitable when the component’s purpose depends on evidence or mechanisms not established in the available description."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, dataset or baseline details, or ablations.",
+      "It does not specify how synthetic data are constructed, how adaptive generalization operates, or which graph and label shifts are tested.",
+      "The claimed enhancement of generalization is author-reported and not independently verified here."
+    ]
+  }
+}

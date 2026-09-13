@@ -1,0 +1,183 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31773",
+    "title": "ChartMoE: Mixture of Diversely Aligned Expert Connector for Chart Understanding",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31773"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4bfa4d5d130571537e2bafea549a4a59fd524746730dded8c8474a68766a2f00",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "5185bd5ba946499c67eb98ce7800e1107ba74dc49c0d9104010110f41effa091",
+    "extracted_at": "2026-09-12T23:51:28.244818+00:00",
+    "session_id": "01a09808-3599-7f11-bfbe-436d5e86a0ac",
+    "usage": {
+      "input_tokens": 12730,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 774,
+      "reasoning_output_tokens": 98
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "aa8067efc08e89c0e4d3713b55e133132792c98a7ecd1a0eea642b03b10298ad"
+    },
+    {
+      "id": "S2",
+      "sha256": "5f58913dfe9f7f7ddc659352a63edcce5667feb3034bb0854bc54710c6b45c27"
+    },
+    {
+      "id": "S3",
+      "sha256": "2b7ad1b77c6f4c0ae56dec225e4f1fb559ebdeacbd94e4cfa8d700d810d88abb"
+    },
+    {
+      "id": "S4",
+      "sha256": "935f83b448dab9f8f7469d9bee51e79524affea52f5ce9a7fa81366adeed14af"
+    },
+    {
+      "id": "S5",
+      "sha256": "ee5d86369a28cb11593f45fa304f827fe88bbf9cb81b5a5815facce4caeb2558"
+    },
+    {
+      "id": "S6",
+      "sha256": "4185a689328742e4849acf5f4b28dba6f5723a955982d5236fb9ae45d1332c17"
+    },
+    {
+      "id": "S7",
+      "sha256": "e2ee4370538afd48f1e48d2215e1022de16a2dcf61e889ad405ee8c2fdfd6adb"
+    },
+    {
+      "id": "S8",
+      "sha256": "9dd46e554ecf7d4e7169be0df83f13e03502a54fe1b31d8ddb22507ee7582efe"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31773",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Improve automatic chart understanding for faithful data extraction and reliable chart-based analysis.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing multimodal large language models still struggle to provide faithful data and reliable analysis from charts alone.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "ChartMoE replaces the traditional linear projector with a mixture-of-experts connector to bridge the modality gap.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "It initializes different experts using linear connectors trained on distinct alignment tasks, then refines the connector and LLM parameters through high-quality knowledge learning.",
+        "source_ids": [
+          "S5",
+          "S7"
+        ]
+      },
+      {
+        "type": "resource",
+        "claim": "ChartMoE-Align provides nearly 1 million chart-table-JSON-code quadruples for chart-table, chart-JSON, and chart-code alignment tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The proposed distinction is a diversely initialized MoE connector built from connectors aligned to different chart-related tasks.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S7"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that ChartMoE improves the previous state-of-the-art accuracy on ChartQA from 80.48% to 84.64%.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report experiments demonstrating the effectiveness of the MoE connector and its initialization strategy.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Chart understanding is presented as important for comprehension and document parsing.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "context_and_gap",
+        "summary": "Although domain alignment and fine-tuning have enabled strong MLLM chart capabilities, faithful chart-only data and analysis remain difficult.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "ChartMoE uses an MoE connector whose experts are diversely initialized from connectors trained on distinct alignment tasks.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S7"
+        ]
+      },
+      {
+        "role": "resource_and_result",
+        "summary": "The method is paired with a nearly million-example alignment dataset; the authors report a ChartQA increase from 80.48% to 84.64%.",
+        "source_ids": [
+          "S6",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links each expert's initialization to a distinct alignment task and separately identifies the corresponding chart-table-JSON-code dataset.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A modular method claim can be made more concrete by mapping architectural components to the supervision or data structure that initializes them.",
+        "application": "When introducing specialized modules, explicitly pair each module with its training signal and name the data representation supporting that signal.",
+        "exception": "This framing is unsuitable when modules share identical supervision or when the data-to-component mapping is not meaningful."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify ChartQA evaluation conditions, baselines beyond the cited accuracy, statistical variation, or task-level breakdowns.",
+      "Details of the three alignment tasks and the reported knowledge-learning procedure are not provided."
+    ]
+  }
+}

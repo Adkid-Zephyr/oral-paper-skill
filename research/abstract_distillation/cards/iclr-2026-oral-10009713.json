@@ -1,0 +1,176 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009713",
+    "title": "Hyperparameter Trajectory Inference with Conditional Lagrangian Optimal Transport",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009713"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "d373f0b395b9a9254bf6f582d62a12d24c218577ace5e06440f89b373d27bc3b",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "d2d980325c20619a18ac02d0cf9f167a86d2156db02e5c51d5abbcb3bd5cee5c",
+    "extracted_at": "2026-09-13T00:03:18.798290+00:00",
+    "session_id": "01a09813-0eee-79a3-aae9-f4119b58af8e",
+    "usage": {
+      "input_tokens": 12717,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 683,
+      "reasoning_output_tokens": 0
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "9ce6920ddb197ff1cd6fa8cc462d80c6987d6a7ce6722b8489bad5caaf6a945f"
+    },
+    {
+      "id": "S2",
+      "sha256": "4812ae44f14d902c0c0c8a03af55af0ba74229f42a8f28f12dfaf584d6fb283f"
+    },
+    {
+      "id": "S3",
+      "sha256": "47432e7cbfce375e2bb113268d1be38886672e543b5483ed6a31fc752b23c4c6"
+    },
+    {
+      "id": "S4",
+      "sha256": "d8d8320a4f898d56f5222dafde3c431d39f91f430565bb368dbdace25047edad"
+    },
+    {
+      "id": "S5",
+      "sha256": "9e79bfac8949790a2628c380ad97b6d3027cdaf0d4cc2e857684c9cfd79340df"
+    },
+    {
+      "id": "S6",
+      "sha256": "7ed1050e560c2d202ae87d44292059826ca8d05425c4f45f09092d99af9a8a75"
+    },
+    {
+      "id": "S7",
+      "sha256": "e6425b55bf5b3144d238038b90762d4040493d781f883a56cef766a40714b30b"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009713",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses learning how a neural network’s conditional output distribution changes with hyperparameters, enabling approximation at unobserved settings and adaptation to evolving post-deployment preferences without retraining.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Existing trajectory-inference approaches need extension to handle conditioning, which makes ensuring feasible inferred paths more difficult.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "A conditional Lagrangian optimal-transport approach jointly learns hyperparameter-induced dynamics, transport maps, and geodesics between observed marginals to build a surrogate model.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The learned Lagrangian incorporates inductive biases from the manifold hypothesis and least-action principles to improve surrogate feasibility.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "The authors report better reconstruction of neural-network outputs across various hyperparameter spectra than alternative methods.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce Hyperparameter Trajectory Inference as a task and propose conditional Lagrangian optimal transport for constructing surrogates at unobserved hyperparameter settings.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their approach reconstructs neural-network outputs better than other alternatives across various hyperparameter spectra.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Hyperparameters set important neural-network behavioural trade-offs, while user preferences may change after deployment and make retraining costly.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "task definition",
+        "summary": "The paper defines HTI to infer conditional output-distribution changes with hyperparameters and approximate outputs at unobserved settings.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "challenge",
+        "summary": "Conditioning extends trajectory inference and complicates feasibility of the inferred paths.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "method",
+        "summary": "Conditional Lagrangian optimal transport learns dynamics, transport maps, and geodesics, with manifold and least-action biases added to the Lagrangian.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "reported result",
+        "summary": "The authors report superior output reconstruction across varied hyperparameter spectra relative to alternatives.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract names the target task, identifies feasibility as the central challenge, and links specific inductive biases to that challenge.",
+          "source_ids": [
+            "S3",
+            "S4",
+            "S6"
+          ]
+        },
+        "interpretation": "A compact problem–obstacle–design-rationale chain can make a technical proposal’s motivation easier to evaluate.",
+        "application": "When presenting a new surrogate method, explicitly map each architectural or objective bias to the failure mode it is intended to address.",
+        "exception": "This framing is less suitable when the method has no clearly articulated target failure mode or design rationale."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the datasets, output metrics, hyperparameter spectra, baselines, or numerical improvement behind the reported reconstruction comparison.",
+      "It does not provide formal conditions or quantitative evidence establishing when the inferred paths are feasible."
+    ]
+  }
+}

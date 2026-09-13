@@ -1,0 +1,200 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31785",
+    "title": "Copyright-Protected Language Generation via Adaptive Model Fusion",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31785"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "5d7cf5993ba258f33b280a0b0f70cd631973e74422b672c3fba5361ed72c936b",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "dca87f7b6b99f6c63c69773041d04f890c85523cafee2979a1abef2b5c3c92c7",
+    "extracted_at": "2026-09-12T23:51:55.812209+00:00",
+    "session_id": "01a09808-9184-7451-b4b0-2ce917dd4e4e",
+    "usage": {
+      "input_tokens": 12688,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 843,
+      "reasoning_output_tokens": 93
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d7b4a342bf9427ceeab31790e426f4ef7b6e471719d0a88d045fe8675692e8e2"
+    },
+    {
+      "id": "S2",
+      "sha256": "d3a94aad1517f1dd1d8547ea2993a675ba8facf5e7e308d3f9870cdcbc87b773"
+    },
+    {
+      "id": "S3",
+      "sha256": "ab7c6c5662bf7e5cf6b6dc8858aa90433d30d19ae98abbddc95eb217425a1e68"
+    },
+    {
+      "id": "S4",
+      "sha256": "0f3337a1c7434c522bb6ce9126d6556d60c77910f1210ffcdf402cd2bc22d3a4"
+    },
+    {
+      "id": "S5",
+      "sha256": "92b9038fba3a2ffe0c99294d18f6eeee78662c2a430667419b69f4cf99ca5395"
+    },
+    {
+      "id": "S6",
+      "sha256": "9e9ce2133e094c4452227748da5ee2aff45931070c33bd58d85e40ce81773b1a"
+    },
+    {
+      "id": "S7",
+      "sha256": "5ab5362d944e4485bcee0bb9903af543165361bb5c0844dd43b710aa0d231db4"
+    },
+    {
+      "id": "S8",
+      "sha256": "aeb7fb71beab774f3b8a87fc4e72db4ca0e9537e96fcbc08cd1d4064b91374dc"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31785",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reduce language models’ reproduction of copyrighted training material while preserving generation quality.",
+        "source_ids": [
+          "S1",
+          "S5",
+          "S6"
+        ]
+      },
+      "gap": {
+        "claim": "Existing inference-time post-processing protections may be computationally prohibitive or involve performance trade-offs.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces CP-Fuse, which combines models trained on disjoint copyrighted-material sets during inference and adaptively aggregates their outputs.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "method property",
+        "claim": "Defines a balancing property intended to prevent regurgitation of memorized data while minimizing copyrighted-content reproduction.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "integration",
+        "claim": "Positions CP-Fuse as post-hoc and compatible with other protective measures.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe CP-Fuse as a novel inference-time model-fusion approach for copyright protection.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that extensive experiments significantly reduce reproduction of protected material without compromising text and code generation quality.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that CP-Fuse is robust against common training-data extraction techniques.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that its post-hoc design enables integration with other protective measures, further enhancing safeguards.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Copyright risk arises when language models reproduce material from training data.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior approaches and limitation",
+        "summary": "Inference-time post-processing constraints appear promising but can be costly or create performance trade-offs.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed approach",
+        "summary": "CP-Fuse fuses outputs from models trained on disjoint copyrighted-material sets and adaptively aggregates them under a balancing property.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "reported results and integration",
+        "summary": "The authors report reduced protected-material reproduction with maintained text and code quality, compatibility with other safeguards, and robustness to common extraction techniques.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links the proposed mechanism to a specific balancing property and separately reports both protection and generation-quality outcomes.",
+          "source_ids": [
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A method claim is easier to assess when its governing property and the key success criteria are stated together.",
+        "application": "Define the central constraint or invariant, then report its effect on both the target risk and the capability users need to retain.",
+        "exception": "This framing is less suitable when the work has no explicit mechanism-level property or meaningful capability trade-off."
+      },
+      {
+        "source_observation": {
+          "claim": "The abstract highlights post-hoc integration with other protective measures as a distinct benefit.",
+          "source_ids": [
+            "S7"
+          ]
+        },
+        "interpretation": "Deployment compatibility can be a concrete contribution when a method is intended to complement existing safeguards.",
+        "application": "State where a proposed component fits in an existing pipeline and what additional safeguard it can combine with.",
+        "exception": "Do not foreground integration unless compatibility is actually supported by the reported design or evidence."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the balancing property, datasets, baselines, evaluation metrics, or experimental conditions.",
+      "The magnitude of the reported reduction and any quality trade-offs are not quantified.",
+      "The extraction techniques covered by the robustness claim are not identified."
+    ]
+  }
+}

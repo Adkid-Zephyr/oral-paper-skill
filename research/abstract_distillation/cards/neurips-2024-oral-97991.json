@@ -1,0 +1,221 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97991",
+    "title": "Weisfeiler and Leman Go Loopy: A New Hierarchy for Graph Representational Learning",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97991"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "43a0e8ea0cf526b1a3ad07c89a6b0eae05e1ecfadae584417695a20b23382531",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "07066609241ecb7cc32d8b1e5882456d43b03eb28ecb2c88d60ab2e6f3e1a9ed",
+    "extracted_at": "2026-09-13T00:19:32.424718+00:00",
+    "session_id": "01a09821-e53b-7880-b662-048811addb2e",
+    "usage": {
+      "input_tokens": 12618,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 839,
+      "reasoning_output_tokens": 139
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "5db6cc7ebb321049b558e7e805c8b3da7d23896ff10bb58cb4823e62b30717a5"
+    },
+    {
+      "id": "S2",
+      "sha256": "2606eb810041f85e270937b0b38e3622f4a55a67c35277b3473b1946568e7d80"
+    },
+    {
+      "id": "S3",
+      "sha256": "e9299ef16919ec9a608ddff9404ba3795f520efa4aa6db90160467fb17fc62d1"
+    },
+    {
+      "id": "S4",
+      "sha256": "3c3afda3f99d1ec3204907378d13621cfaaf2b318d73f89103072faf7e5bea70"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97991",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop graph isomorphism tests and a corresponding GNN framework with stronger graph-structure counting capabilities.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": "The abstract identifies that 1-WL can count homomorphisms of trees, while the proposed extension counts cactus-graph homomorphisms.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces r-loopy Weisfeiler–Leman (r-ℓWL), a hierarchy of graph isomorphism tests, and the corresponding r-ℓMPNN framework.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "theoretical finding",
+        "claim": "Reports that r-ℓWL can count cycles up to length r+2 and homomorphisms of cactus graphs.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports validation of r-ℓMPNN’s expressive and counting power, scalability, and performance across synthetic and real-world datasets, particularly sparse graphs.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe r-ℓWL as a novel hierarchy and position it as extending 1-WL.",
+      "source_ids": [
+        "S1",
+        "S3"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that r-ℓWL can count homomorphisms of cactus graphs.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report empirical validation on several synthetic datasets and strong performance on various real-world datasets, especially sparse graphs.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "proposal",
+        "summary": "Introduces the r-ℓWL hierarchy and r-ℓMPNN framework, claiming cycle counting up to length r+2.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "theoretical result",
+        "summary": "Reports that r-ℓWL counts homomorphisms of cactus graphs.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "relation to prior baseline",
+        "summary": "Frames the cactus-homomorphism result as extending 1-WL, which is described as limited to tree homomorphisms.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "empirical evaluation",
+        "summary": "Reports synthetic validation and real-world scalability and performance, with particular emphasis on sparse graphs.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns each structural claim with a concrete counting target—cycles up to a stated length and cactus-graph homomorphisms—before describing empirical tests.",
+          "source_ids": [
+            "S1",
+            "S2"
+          ]
+        },
+        "interpretation": "Specific counted structures make an expressivity claim more interpretable than an undifferentiated claim of greater power.",
+        "application": "State the exact graph patterns, size limits, or structural family a proposed representation can count, then separate those claims from benchmark results.",
+        "exception": "This framing is less suitable when the work concerns qualitative behavior or tasks without a meaningful structural counting interpretation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the formal definitions, parameter ranges, dataset identities, metrics, baselines, or experimental conditions.",
+      "The reported real-world performance is not quantified, and the basis of the comparison to prior methods is unspecified.",
+      "S3's wording is ambiguous about the subject of incomparability to fixed-order k-WL; the exact hierarchy comparison requires clarification from the full paper."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "problem_and_gap.gap.claim",
+      "before": "The abstract identifies that 1-WL counts only tree homomorphisms and is incomparable to fixed-order k-WL.",
+      "after": "The abstract identifies that 1-WL can count homomorphisms of trees, while the proposed extension counts cactus-graph homomorphisms.",
+      "review_file": "reviews/flagged-batch-13.json",
+      "review_sha256": "3abcd28c7d9cb76d6ddb30e86464f912a2fe3b250e3563cbc8d8841465a8664d",
+      "applied_at": "2026-09-13T00:42:27.393193+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "problem_and_gap.gap.source_ids",
+      "before": [
+        "S3"
+      ],
+      "after": [
+        "S2",
+        "S3"
+      ],
+      "review_file": "reviews/flagged-batch-13.json",
+      "review_sha256": "3abcd28c7d9cb76d6ddb30e86464f912a2fe3b250e3563cbc8d8841465a8664d",
+      "applied_at": "2026-09-13T00:42:27.394279+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "stated_novelty.claim",
+      "before": "The authors describe r-ℓWL as a novel hierarchy and position it as extending 1-WL while being incomparable to fixed-order k-WL.",
+      "after": "The authors describe r-ℓWL as a novel hierarchy and position it as extending 1-WL.",
+      "review_file": "reviews/flagged-batch-13.json",
+      "review_sha256": "3abcd28c7d9cb76d6ddb30e86464f912a2fe3b250e3563cbc8d8841465a8664d",
+      "applied_at": "2026-09-13T00:42:27.394720+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "narrative_sequence[2].summary",
+      "before": "Frames this as extending 1-WL, which is described as limited to tree homomorphisms and incomparable to any fixed k-WL.",
+      "after": "Frames the cactus-homomorphism result as extending 1-WL, which is described as limited to tree homomorphisms.",
+      "review_file": "reviews/flagged-batch-13.json",
+      "review_sha256": "3abcd28c7d9cb76d6ddb30e86464f912a2fe3b250e3563cbc8d8841465a8664d",
+      "applied_at": "2026-09-13T00:42:27.395165+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "unknowns",
+      "before": [
+        "The abstract does not specify the formal definitions, parameter ranges, dataset identities, metrics, baselines, or experimental conditions.",
+        "The reported real-world performance is not quantified, and the basis of the comparison to prior methods is unspecified."
+      ],
+      "after": [
+        "The abstract does not specify the formal definitions, parameter ranges, dataset identities, metrics, baselines, or experimental conditions.",
+        "The reported real-world performance is not quantified, and the basis of the comparison to prior methods is unspecified.",
+        "S3's wording is ambiguous about the subject of incomparability to fixed-order k-WL; the exact hierarchy comparison requires clarification from the full paper."
+      ],
+      "review_file": "reviews/flagged-batch-13.json",
+      "review_sha256": "3abcd28c7d9cb76d6ddb30e86464f912a2fe3b250e3563cbc8d8841465a8664d",
+      "applied_at": "2026-09-13T00:42:27.395562+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10010680",
+    "title": "Shoot First, Ask Questions Later? Building Rational Agents that Explore and Act Like People",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10010680"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "cf56250ebd6f3771a5c4310c17e6c670f4dd9db964669b0171f5a663b21b74e9",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "9af0da2c4cac7156e46984977a8492557b9fc4e4a6c744b4c7adfa9dff242e95",
+    "extracted_at": "2026-09-13T00:04:52.466818+00:00",
+    "session_id": "01a09814-6fe7-7692-9b28-5a9e32648136",
+    "usage": {
+      "input_tokens": 12864,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 890,
+      "reasoning_output_tokens": 64
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6fff8378c9010b59c83f83685c78081af1884cd671f790448ec7f07fa56b2f6c"
+    },
+    {
+      "id": "S2",
+      "sha256": "2d08c2c39575d46e9896e9d56eb33bc8aa6584d6b87573c8e02d668438e0093b"
+    },
+    {
+      "id": "S3",
+      "sha256": "a64b318a5e30a65d3f5cf16c02799270e5251cea404dce8274b2d512da133b62"
+    },
+    {
+      "id": "S4",
+      "sha256": "2581b24f28cd31f3d43c88e9a87607f972c38a0cc2aec2982e77312a3f6dc0f1"
+    },
+    {
+      "id": "S5",
+      "sha256": "3e95d935d8fa5361a725a29500696449116fea5697d5036804285c746725a78d"
+    },
+    {
+      "id": "S6",
+      "sha256": "8ef20310430a11d86060c32e14f153974bf5c631219aa110bfc081c9b8611089"
+    },
+    {
+      "id": "S7",
+      "sha256": "36dfffce7bf079ebe6c0ee049b2c6234728a1bbc1692f8e13a319a103ea4a3cc"
+    },
+    {
+      "id": "S8",
+      "sha256": "1601e7cd2ef2efe6bdece2b34d49d62c7d5e4f0cdc2e168dbdc755e304210f0b"
+    },
+    {
+      "id": "S9",
+      "sha256": "123cc6624df37f53b5bb5e8d72d7ae623c1069f04b803832fd81eed27b6cc035"
+    },
+    {
+      "id": "S10",
+      "sha256": "2314432918a5490718e786bf7e9ecd0fdfd55035caa668e4902f862d01ab172d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10010680",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper asks whether language models behave like rational agents when strategically seeking information and acting under uncertainty in high-stakes, resource-limited settings.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The authors report that many language-model agents struggle with informative questioning, accurate answering, and identifying high-utility actions compared with human players.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "task",
+        "claim": "Introduces Collaborative Battleship, a decision-oriented dialogue task requiring a Captain to balance questions and shots and a Spotter to provide accurate, context-grounded answers.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Develops Monte Carlo inference strategies for language models inspired by Bayesian Experimental Design to improve agentic information-seeking.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "generalization",
+        "claim": "Reports applying the methods beyond Collaborative Battleship to Guess Who?.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe their Monte Carlo inference strategies for language models, inspired by Bayesian Experimental Design, as novel.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, relative to LM-only baselines, their approach improves Spotter accuracy by up to 14.7 percentage points and Captain expected information gain by up to 0.227 bits, reaching 94.2% of the achievable noise ceiling.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report sharper targeting, with gains of +0.303–0.374 F1, and large win-rate increases for Llama-4-Scout against humans and GPT-5 at approximately 1% of GPT-5’s cost.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "claim": "On Guess Who?, the authors report accuracy improvements of +28.3–42.4 percentage points and characterize this as evidence of general applicability.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Frames strategic information-seeking and tests whether language models act rationally under uncertainty and resource constraints.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "evaluation_setup",
+        "summary": "Introduces human-cognition-inspired evaluation and the Collaborative Battleship task, separating questioning, answering, and action decisions.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "diagnosis",
+        "summary": "Reports that many language-model agents underperform human players on informative questions, answer accuracy, and action utility.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "method_and_results",
+        "summary": "Presents BED-inspired Monte Carlo inference and reports improvements in answering, information gain, targeting, and competitive win rates.",
+        "source_ids": [
+          "S6",
+          "S7",
+          "S8",
+          "S9"
+        ]
+      },
+      {
+        "role": "transfer",
+        "summary": "Reports replication on Guess Who? with substantial accuracy gains.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract decomposes information-seeking into distinct roles and measurable behaviors—asking questions, supplying answers, selecting actions, and targeting—and reports component-level gains before combined performance.",
+          "source_ids": [
+            "S4",
+            "S5",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "This decomposition can make it easier to connect an intervention to the behavior it is intended to improve.",
+        "application": "For an agent paper, define separate roles or metrics for information acquisition, belief-relevant answering, action choice, and end-task performance, then report both component and combined results.",
+        "exception": "This structure may be unsuitable when the task cannot meaningfully separate information gathering from acting or when role separation changes the task itself."
+      }
+    ],
+    "unknowns": [
+      "S8–S9 jointly report win-rate increases for weaker LMs such as Llama-4-Scout from 8% to 82% against humans and from 0% to 67% against GPT-5, at approximately 1% of GPT-5's cost; detailed comparison protocols and the cost calculation are not specified in the abstract.",
+      "The abstract does not provide experimental protocols, uncertainty estimates, statistical tests, model configurations, or definitions of the achievable noise ceiling and cost calculation."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "unknowns[0]",
+      "before": "S8 is truncated and does not fully specify the comparison or conditions for all reported win rates.",
+      "after": "S8–S9 jointly report win-rate increases for weaker LMs such as Llama-4-Scout from 8% to 82% against humans and from 0% to 67% against GPT-5, at approximately 1% of GPT-5's cost; detailed comparison protocols and the cost calculation are not specified in the abstract.",
+      "review_file": "reviews/flagged-batch-07.json",
+      "review_sha256": "da8130c13e152fce85f706ec0ec78e55cbb147ff44895d96357f9c6af2b9eea4",
+      "applied_at": "2026-09-13T00:35:16.272207+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

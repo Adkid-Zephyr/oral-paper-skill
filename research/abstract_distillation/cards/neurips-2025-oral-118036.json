@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "neurips-2025-oral-118036",
+    "title": "On Linear Mode Connectivity of Mixture-of-Experts Architectures",
+    "venue": "NeurIPS",
+    "year": 2025,
+    "source_url": "https://neurips.cc/virtual/2025/oral/118036"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "a0d4e077b0523f1c73b12f4b27ec46e9dfc01c8b888f3dbd35f7c5788641c669",
+    "source_sha256": "0876408b74341c23f269b7f2acc2fdb9c24f1babc098bac78968ee5f84d7d566",
+    "input_sha256": "b53498a5a38ef7612e8fe9f5bbe46e85e7dc9328781cb4b648aebdf8a1d59bea",
+    "extracted_at": "2026-09-13T00:22:17.799218+00:00",
+    "session_id": "01a09824-6650-75a0-8d6a-b3713daf06ca",
+    "usage": {
+      "input_tokens": 12765,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 839,
+      "reasoning_output_tokens": 164
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "367c382bd4b58fa61983dd798095df8c42d44ac7bb8ec9f24318b051edc0c602"
+    },
+    {
+      "id": "S2",
+      "sha256": "06648ab2fc21bc6cd8bcecc02dd9c3325481890e51f1b6f7d2b7c235357924b2"
+    },
+    {
+      "id": "S3",
+      "sha256": "a3b3e953d3420fbda20fe771b121ce7746a8324a98d487291e7a74153ddc8839"
+    },
+    {
+      "id": "S4",
+      "sha256": "30cf222e31fafda3867a4affdab5d6eedbc13d41094a10323e32e9ff5594e97f"
+    },
+    {
+      "id": "S5",
+      "sha256": "aaeb60c85e1f7413e23263469e8efedb71c01c3baf0eafd8fab9953d0c540b6f"
+    },
+    {
+      "id": "S6",
+      "sha256": "9d428d370c1ef28c94eb4537557ade5ba06fce924a34058a0d524d59526de356"
+    },
+    {
+      "id": "S7",
+      "sha256": "938a48fe877fcb5d536fb621592f8384edc08934b8704878b9c44ae5ba69efa3"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2025-oral-118036",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Investigate whether and how Linear Mode Connectivity (LMC) occurs in Mixture-of-Experts architectures.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Prior LMC studies focused on standard neural networks, leaving its behavior in MoE architectures to be systematically examined.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Characterizes MoE symmetries as permutations acting on both expert components and the gating function, covering dense and sparse gating.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Proposes a matching algorithm to align independently trained MoEs and facilitate discovery of LMC.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports LMC across dense, sparse, and shared-expert MoE variants under varied model settings and datasets.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": null,
+      "source_ids": []
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that MoE symmetries are fully characterized by permutations of experts and the gating function.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report empirical LMC across diverse MoE configurations, including dense, sparse, and shared-expert variants.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that these results provide insights into the functional landscape and optimization dynamics of deep learning models.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Defines LMC as low-loss linear connectivity between independently trained models up to permutation symmetries.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "scope",
+        "summary": "Extends the investigation from standard neural networks to scalable, computationally efficient MoE architectures.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "structural analysis",
+        "summary": "Analyzes dense and sparse gating and identifies the relevant expert and gating-function permutation symmetries.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "method and evaluation",
+        "summary": "Uses a proposed alignment algorithm to investigate LMC and reports it across MoE variants, settings, and datasets.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "Frames the findings as insights into neural-network loss geometry and optimization dynamics.",
+        "source_ids": [
+          "S2",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract first identifies the architecture's permutation symmetries, then uses them to design a matching algorithm for independently trained models.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Explicitly resolving symmetry can turn an abstract connectivity question into a concrete model-alignment procedure.",
+        "application": "For another architecture with parameter symmetries, characterize those transformations before defining a matching or connectivity test.",
+        "exception": "This move is unsuitable when the architecture has no relevant symmetry or when the claimed phenomenon is invariant to alignment."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative loss values, path details, or comparison baselines for the reported LMC.",
+      "The matching algorithm, model settings, datasets, and meaning of “fully characterized” are not specified in enough detail to assess scope or reproducibility."
+    ]
+  }
+}

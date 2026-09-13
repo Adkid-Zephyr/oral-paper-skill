@@ -1,0 +1,189 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007724",
+    "title": "Vid-LLM: A Compact Video-based 3D Multimodal LLM with Reconstruction–Reasoning Synergy",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007724"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "c45af5d59d11010397279ef2e245cd5330f39f162a280c9a355d02d1a965c2ae",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "9c997a1db4b437faf8b36b074d951d63b8e9940cb2a2c8ef90099b48c58d88fb",
+    "extracted_at": "2026-09-13T00:00:09.772107+00:00",
+    "session_id": "01a09810-24e9-77c2-b911-458be4be1273",
+    "usage": {
+      "input_tokens": 12790,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 893,
+      "reasoning_output_tokens": 115
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f60aef8eb2b8bbde4d09951f894f1df5aeb5d8e0fcf9d47ac9ece1beaa26d99e"
+    },
+    {
+      "id": "S2",
+      "sha256": "78b2c6cd885227dd4ca3a3e63d7b932f4c436626c2668ddad9068971865dacce"
+    },
+    {
+      "id": "S3",
+      "sha256": "ba90162afc5f25471a96149e3e34b1d28ea4d05c495da4cd35cf46e53afb67c6"
+    },
+    {
+      "id": "S4",
+      "sha256": "c5625d992e9c328476c19931bf378b1e2e8e8341da8298389da3a5084173d348"
+    },
+    {
+      "id": "S5",
+      "sha256": "48dbfcddd48ec7def1de0b039ffd8f00ffd312675d1163aebddd7a579009da10"
+    },
+    {
+      "id": "S6",
+      "sha256": "8dcadb5ff9e95f477a9d89b0d47156e71d15d304f1fd740883212d5aa5480e90"
+    },
+    {
+      "id": "S7",
+      "sha256": "5d4840cd36a7e01b22532a7c6c0113d6a422486bce8153bb2f5e302187cd6e9b"
+    },
+    {
+      "id": "S8",
+      "sha256": "f5d0060fbc53703124fa70d0cde6b79f16f6b3bc48435966d8361a517cf750f3"
+    },
+    {
+      "id": "S9",
+      "sha256": "69c531f237e2dfee35beb9242893a8b85eab0a58cde110bdb50c6a0dc795192c"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007724",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses 3D scene understanding and related 3D multimodal tasks from video inputs.",
+        "source_ids": [
+          "S2",
+          "S4",
+          "S9"
+        ]
+      },
+      "gap": {
+        "claim": "Existing 3D-MLLMs often rely on 3D data inputs, which the authors say limits scalability and generalization.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Vid-LLM is a video-based 3D-MLLM that directly processes video without external 3D data.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "The Cross-Task Adapter aligns 3D geometric priors with vision-language representations, while a Metric Depth Model recovers real-scale geometry from reconstruction outputs.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "optimization",
+        "claim": "The method uses two-stage distillation fine-tuning to promote fast convergence and stabilize training, as described by the authors.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish Vid-LLM through direct video-based 3D-MLLM processing without external 3D data and compact integration of geometric cues via the Cross-Task Adapter.",
+      "source_ids": [
+        "S4",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report experiments across diverse benchmarks covering 3D Question Answering, 3D Dense Captioning, and 3D Visual Grounding, and report superior multi-task capabilities.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that their two-stage distillation optimization realizes fast convergence and stabilizes training.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context_and_challenge",
+        "summary": "2D vision-language reasoning has advanced, but extending it to 3D scene understanding remains challenging; reliance on 3D inputs is presented as a scalability and generalization limitation.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed_system",
+        "summary": "Vid-LLM directly processes video without external 3D data for practical 3D-MLLM deployment.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "geometric_integration",
+        "summary": "Geometric priors are aligned with vision-language representations through the Cross-Task Adapter, with metric-depth recovery intended to preserve real-scale geometric consistency.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "optimization_and_evaluation",
+        "summary": "Two-stage distillation is used for fine-tuning, followed by reported evaluation across three 3D multimodal tasks.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects each architectural component to a specific constraint: compact geometric alignment, real-scale geometric consistency, or training convergence.",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "This component-to-constraint mapping makes the method's design rationale easier to assess from a compact description.",
+        "application": "When presenting a new architecture, pair each major module with the concrete failure mode or requirement it is intended to address.",
+        "exception": "This framing is less suitable when the abstract has no meaningful module-level design rationale or when components serve many inseparable purposes."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no quantitative results, benchmark names, baselines, or task-specific comparisons for the claimed effectiveness or superiority.",
+      "It does not specify how geometric priors are produced, the Metric Depth Model architecture, or the two-stage distillation objectives.",
+      "The wording of S5 is ambiguous about how geometric priors improve scene perception; the abstract does not provide a mechanism or ablation."
+    ]
+  }
+}

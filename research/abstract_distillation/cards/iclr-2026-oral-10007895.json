@@ -1,0 +1,202 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10007895",
+    "title": "MedAgentGym: A Scalable Agentic Training Environment for Code-Centric Reasoning in Biomedical Data Science",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10007895"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2368b0819eaba0012b811b656f4eda1444becbd9797348fc71b86be2313746c2",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "26afe11af2f7ec9706146d9e65c6cfd13c2366244654770dc88f11fa36897fc3",
+    "extracted_at": "2026-09-13T00:00:31.136938+00:00",
+    "session_id": "01a09810-7be3-7581-920e-2e040e1f26d4",
+    "usage": {
+      "input_tokens": 12706,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 785,
+      "reasoning_output_tokens": 37
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "f02b77dc8efd45b9d9b3c6483ab8faf2069bb8aa566456a4ee0869ee26a267d4"
+    },
+    {
+      "id": "S2",
+      "sha256": "9f8d4d3d579d2826dd920aaa4db3af4dcdfb120776d0ef862e354d5040ae5438"
+    },
+    {
+      "id": "S3",
+      "sha256": "7522f2d8944d1495bac8a1d22497a983fe5f9cfddd2150490e0902b9d3fad941"
+    },
+    {
+      "id": "S4",
+      "sha256": "6a05cbea119a2faa2ab477923f2f696e4a2acf1143b3f5f8021642fdc8d2b61d"
+    },
+    {
+      "id": "S5",
+      "sha256": "08583c75a0361afea45cc06dcdacc31d16e96c6690b594ac2534c65e62b6cdb9"
+    },
+    {
+      "id": "S6",
+      "sha256": "5e3d6651837a173ab1be1de4139cb58cfbe038ab7370322d11d329917ad776dc"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10007895",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses training LLM agents to perform coding-based reasoning for biomedical data science.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "system/resource",
+        "claim": "Introduces MedAgentGym, an interactive, scalable training environment containing 72,413 task instances across 129 categories from 12 real-world biomedical scenarios.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "environment",
+        "claim": "Provides executable sandboxes with task specifications, interactive feedback, verifiable ground-truth annotations, and scalable trajectory generation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "benchmark and training platform",
+        "claim": "Offers benchmarking and training resources intended to support development of LLM-based coding assistants for biomedical data science.",
+        "source_ids": [
+          "S4",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present MedAgentGym as an integrated platform with a unified execution environment, a comprehensive benchmark, and accessible, extensible training resources for biomedical coding assistants.",
+      "source_ids": [
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report substantial biomedical data-science performance disparities between commercial and open-source LLMs in benchmarking 29 LLMs.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that Med-Copilot gains 43.02% with offline reinforcement learning and 45.28% with online reinforcement learning using multi-threaded, multi-turn trajectory sampling.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors position Med-Copilot, trained using MedAgentGym, as a cost-effective, privacy-preserving alternative competitive with gpt-4o.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation and proposal",
+        "summary": "The paper introduces an interactive environment for improving code-based biomedical reasoning in LLM agents.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "resource scale",
+        "summary": "MedAgentGym covers 72,413 instances in 129 categories derived from 12 authentic biomedical scenarios.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "task design",
+        "summary": "Tasks run in executable sandboxes with feedback, verifiable annotations, and scalable trajectory generation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "benchmarking",
+        "summary": "Benchmarking 29 LLMs reveals substantial performance differences between commercial and open-source systems.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "training results and positioning",
+        "summary": "Multi-threaded, multi-turn sampling supports reported reinforcement-learning gains for Med-Copilot, alongside claims of competitiveness, cost efficiency, and privacy preservation.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a quantified resource description with concrete environment affordances and downstream training gains.",
+          "source_ids": [
+            "S2",
+            "S3",
+            "S5"
+          ]
+        },
+        "interpretation": "This links what the resource contains to how it is used and what outcomes the authors report.",
+        "application": "When presenting a benchmark or training environment, specify its scale, executable interaction mechanism, and a measurable downstream result in the same narrative.",
+        "exception": "This framing is unsuitable when the work is primarily conceptual or lacks a downstream evaluated use."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify benchmark datasets, evaluation metrics, baselines, statistical procedures, or whether the reported percentage gains are relative or absolute.",
+      "Details supporting the cost, privacy, and gpt-4o comparison claims are not provided.",
+      "The abstract does not state an explicit limitation of existing approaches or a formally delimited novelty claim."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "stated_novelty.claim",
+      "before": "The authors present MedAgentGym as an integrated, accessible, extensible, cost-effective, and privacy-preserving alternative training ground that is competitive with proprietary LLMs.",
+      "after": "The authors present MedAgentGym as an integrated platform with a unified execution environment, a comprehensive benchmark, and accessible, extensible training resources for biomedical coding assistants.",
+      "review_file": "reviews/flagged-batch-05.json",
+      "review_sha256": "ce6ded1327d007ae02b4e8e948c93ddc73988661db83790e555daa98362d78e9",
+      "applied_at": "2026-09-13T00:32:13.717881+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "author_reported_evidence[2].claim",
+      "before": "The authors report that the resulting system is competitive with gpt-4o while being positioned as cost-effective and privacy-preserving.",
+      "after": "The authors position Med-Copilot, trained using MedAgentGym, as a cost-effective, privacy-preserving alternative competitive with gpt-4o.",
+      "review_file": "reviews/flagged-batch-05.json",
+      "review_sha256": "ce6ded1327d007ae02b4e8e948c93ddc73988661db83790e555daa98362d78e9",
+      "applied_at": "2026-09-13T00:32:13.718855+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

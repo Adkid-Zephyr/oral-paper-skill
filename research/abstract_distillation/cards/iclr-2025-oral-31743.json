@@ -1,0 +1,193 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31743",
+    "title": "When is Task Vector Provably Effective for Model Editing? A Generalization Analysis of Nonlinear Transformers",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31743"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f3de3a4bcc8d9a9d46e910ceb7fdd8e517843ea4453eb377243d58817265dc0e",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "b5cd7609ac67a9ba596aa2e1a0053feea9668cd9714f2ef2e8eea3f0eaeaa10b",
+    "extracted_at": "2026-09-12T23:50:13.277933+00:00",
+    "session_id": "01a09807-08a8-72c3-a1a3-cb1434230a37",
+    "usage": {
+      "input_tokens": 12781,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 839,
+      "reasoning_output_tokens": 82
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "8fe9045c8792eaf897e1419fc7db7cfc87c5afbc049e09ae419598fe7687b476"
+    },
+    {
+      "id": "S2",
+      "sha256": "5d8eca77719343208e0d147ce80fbe94f17d27b1dd5e88abbcbec17cd2d46de8"
+    },
+    {
+      "id": "S3",
+      "sha256": "0e8344aff75933d2c74c3277b17a82b0a5a0254c982ca4f47661e3dbda07a134"
+    },
+    {
+      "id": "S4",
+      "sha256": "a8eac07e43d5f0ee7a0335f418073cf423e8698eea5e22b8e8759e1cc57165f2"
+    },
+    {
+      "id": "S5",
+      "sha256": "353e1206f023512aa6bd89024d804ba944e4d1c9a75820c11b09770246335778"
+    },
+    {
+      "id": "S6",
+      "sha256": "beeef4a63207008c15163661b5782406b77fe9599a9835772d157dccc8ee1cfb"
+    },
+    {
+      "id": "S7",
+      "sha256": "32eec58377daaea4dca8f5a49de8c834f2a9e3b9ca397f233713112eb5b3202d"
+    },
+    {
+      "id": "S8",
+      "sha256": "a7a10f6212ea106a057bafc9bdcf25f10e312dfedfaa1260ce5e498601672bf5"
+    },
+    {
+      "id": "S9",
+      "sha256": "fcdee8029c6353af5275ef2ee278bbcd05e93273bd954497db9cc45e0ccc7104"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31743",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies when task-vector arithmetic can generalize and perform operations such as task addition, negation, and out-of-domain transfer in nonlinear Transformers.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Theoretical understanding of why task vectors support these conceptual operations is limited because Transformer training is highly non-convex.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "A theoretical characterization of task-vector generalization guarantees for nonlinear Transformers.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theoretical findings",
+        "claim": "Proofs that task addition can simultaneously learn irrelevant or aligned tasks, while task negation can unlearn one task amid irrelevant or contradictory tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "type": "theoretical and empirical validation",
+        "claim": "A coefficient-selection result for guaranteed out-of-domain generalization, applying to both dense and low-rank parameters, with validation on Phi-1.5 unlearning.",
+        "source_ids": [
+          "S7",
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that, to their knowledge, this is the first theoretical characterization of generalization guarantees for task-vector methods on nonlinear Transformers.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report theoretical proofs for task addition across irrelevant or aligned tasks and task negation across irrelevant or contradictory tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "claim": "The authors report that suitable linear coefficients guarantee generalization to out-of-domain tasks.",
+        "source_ids": [
+          "S7"
+        ]
+      },
+      {
+        "claim": "The authors report validation of their theoretical findings on a practical unlearning task using Phi-1.5 (1.3B).",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "context",
+        "summary": "Task arithmetic edits a pretrained model by adding weighted task vectors and has been used for efficient model editing.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "motivation",
+        "summary": "The abstract identifies limited theory for these operations, linked to the non-convexity of Transformer training.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "theoretical results",
+        "summary": "In a binary discriminative-pattern setting, the paper analyzes addition, negation, and coefficient selection for out-of-domain generalization.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "scope and validation",
+        "summary": "The results are stated to cover dense and low-rank parameters and are reported as validated on Phi-1.5 unlearning.",
+        "source_ids": [
+          "S8",
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract couples each conceptual operation with a specified task relation—irrelevant, aligned, or contradictory—and separately states the coefficient condition for out-of-domain generalization.",
+          "source_ids": [
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "This is a useful pattern for aligning claims with the structural conditions under which they are intended to hold.",
+        "application": "When presenting a new model-editing theory, define the task relationships and parameter choices alongside each claimed guarantee.",
+        "exception": "This framing may be unsuitable when the method is intended to operate without identifiable task relations or analytically specified coefficients."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the exact assumptions, coefficient-selection rule, or form of the stated guarantees.",
+      "The theoretical setting is conceptual, and the Phi-1.5 validation details, baselines, metrics, and scope are not provided.",
+      "The abstract does not establish the claimed priority beyond reporting the authors' first-to-knowledge statement."
+    ]
+  }
+}

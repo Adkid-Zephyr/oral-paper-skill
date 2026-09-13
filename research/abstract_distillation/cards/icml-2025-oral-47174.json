@@ -1,0 +1,192 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47174",
+    "title": "Mixture of Lookup Experts",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47174"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "1cd9f06657a57f881e1b7a6f9cb1ec48c6882837c92a9ad52818222567678880",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "3e9fad679107461f2f5458f79e83c6cd622aff9b9bd4f47190260d4932671fd0",
+    "extracted_at": "2026-09-13T00:07:26.204861+00:00",
+    "session_id": "01a09816-cea3-7571-aa58-156fd4b6ac88",
+    "usage": {
+      "input_tokens": 12789,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 764,
+      "reasoning_output_tokens": 56
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "36911e34bf9064035608b255d62a778ad79db81e66a6835de56704ee945f1603"
+    },
+    {
+      "id": "S2",
+      "sha256": "f44bb4665189940e88e51702ec2d02738794243a6d9392e1086fd60a00613f79"
+    },
+    {
+      "id": "S3",
+      "sha256": "68aa307859e03e7a41457045736c6f1474d1bfda3d777e68b70e596be7c8ca8c"
+    },
+    {
+      "id": "S4",
+      "sha256": "8441afdb24404da10cabad4254fa469d5b4ab2dd46386645e215e3c8367b9e09"
+    },
+    {
+      "id": "S5",
+      "sha256": "fd354d7feb618c8e230db92658761dba80b0d1600ed29d23d4a04043e604738c"
+    },
+    {
+      "id": "S6",
+      "sha256": "c3a1e633d8b492e07fcfb88e7fcbdf4028e7515ee2807c66517870b2a31b2289"
+    },
+    {
+      "id": "S7",
+      "sha256": "dd9d0863840500e94178183672b8e726e2d0a027d2f71f6bed9ec21868e6f03d"
+    },
+    {
+      "id": "S8",
+      "sha256": "41cede78e64335b643d8995c8039aef55e7d71ab8623f8885b2a3f0a86ffb7fe"
+    },
+    {
+      "id": "S9",
+      "sha256": "f4b20500057e48baa84caea737961efc4d636dc73848f3164481c105aa1422c6"
+    },
+    {
+      "id": "S10",
+      "sha256": "8575eac48358b22fe6f6fd734018c3a76b48bb0738cfa053fecfa52c9467b000"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47174",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Reduce MoE inference communication, VRAM demands, and latency while retaining its performance benefits.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Existing MoE deployment requires all experts in VRAM, while expert offloading increases inference latency because experts are loaded only when needed.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Proposes Mixture of Lookup Experts (MoLE), an MoE architecture designed to reduce communication and VRAM usage.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "architecture",
+        "claim": "Uses FFN experts during training and re-parameterizes them into input-id-indexed lookup tables for inference, allowing expert outputs to be retrieved from storage rather than recomputed.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present MoLE as a new MoE architecture that converts trained FFN experts into lookup tables before inference.",
+      "source_ids": [
+        "S4",
+        "S5",
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, at matched FLOPs and VRAM usage, MoLE reaches inference speeds comparable to dense models.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that MoLE is significantly faster than MoE with expert offloading while maintaining performance on par with MoE.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "MoE scales parameter count while activating only a subset of experts, preserving low inference FLOPs and latency.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "deployment constraint",
+        "summary": "Dynamic expert selection still requires all experts in VRAM; offloading reduces this requirement but substantially raises latency.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "proposed mechanism",
+        "summary": "MoLE trains FFN experts, then converts them into lookup tables whose outputs are retrieved by input id and loaded from storage during inference.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "Under matched FLOPs and VRAM usage, the authors report dense-model-comparable speed, faster inference than offloaded MoE, and MoE-level performance.",
+        "source_ids": [
+          "S9"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a deployment bottleneck with a concrete representation change: trained FFN experts become lookup tables, eliminating inference-time expert computation and making communication overhead negligible.",
+          "source_ids": [
+            "S3",
+            "S6",
+            "S7",
+            "S8"
+          ]
+        },
+        "interpretation": "Separating training-time computation from inference-time retrieval can directly target systems constraints.",
+        "application": "When deployment cost is dominated by repeated computation or transfer, consider whether a trained component can be compiled into an indexed representation and evaluate it under matched resource budgets.",
+        "exception": "This approach may be unsuitable when inputs are too numerous or continuous for feasible lookup-table storage, or when exact input-id retrieval is unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract gives no latency values, hardware or workload details, statistical variation, or definition of the performance metric.",
+      "The storage size and construction cost of the lookup tables are not reported.",
+      "The conditions and scope behind the claim of negligible communication overhead are unspecified."
+    ]
+  }
+}

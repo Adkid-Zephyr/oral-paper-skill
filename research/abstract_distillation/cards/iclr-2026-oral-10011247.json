@@ -1,0 +1,187 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011247",
+    "title": "OpenThoughts: Data Recipes for Reasoning Models",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011247"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "2e1183aae834e5ce988de0b68f135c9d760ba318235f78df59b7ace66380c84b",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "1ef3f5dd189c32c9f002e28bcef3938d0886ad256fc4794ca20ab00a646a95d3",
+    "extracted_at": "2026-09-13T00:05:57.788702+00:00",
+    "session_id": "01a09815-6c4a-7c12-90e6-bef04723287e",
+    "usage": {
+      "input_tokens": 12770,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 959,
+      "reasoning_output_tokens": 93
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "210a03e7aecb827ed95d720ac430dbe96e9fdbd837e325773ecf4f7fcaad6c26"
+    },
+    {
+      "id": "S2",
+      "sha256": "872f4a9be2a40a8f9973206c052353b55834956ec6aa95a45c54d4c9798d4830"
+    },
+    {
+      "id": "S3",
+      "sha256": "21267a3ed127b9ba16d2a29c6182ad454dc675a4b0302a33b20e4222dbac505f"
+    },
+    {
+      "id": "S4",
+      "sha256": "1ac78da0c78c989c78de577d5ab6876274d4456d441c64cee76051c05f1d596f"
+    },
+    {
+      "id": "S5",
+      "sha256": "54131599a198915ab50288da63f5a72fa2d63583fa05b27e797f3f75d9ecf616"
+    },
+    {
+      "id": "S6",
+      "sha256": "20f2dd6220df221b515f89a8ef48176fd8184cec4266b08beb4436880aa61dee"
+    },
+    {
+      "id": "S7",
+      "sha256": "61182c5867cfcc56466f4a39f69052c40d29f84a5c49e91d376497af8a6556c7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011247",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The project seeks to create open-source datasets for training reasoning models.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The best training recipes remain uncertain because leading reasoning models often depend on proprietary datasets with little public information.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "Introduces the OpenThoughts2-1M and OpenThoughts3 open reasoning-data datasets, with datasets and models made available publicly.",
+        "source_ids": [
+          "S3",
+          "S5",
+          "S7"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Reports OpenThinker2-32B, trained on public reasoning data, matching DeepSeek-R1-Distill-32B on standard reasoning benchmarks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Develops OpenThinker3-7B using a scaled 1.2M-example pipeline and QwQ-32B as teacher, reporting state-of-the-art benchmark results relative to a specified 7B baseline.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors describe OpenThinker2-32B as the first model trained on public reasoning data to match DeepSeek-R1-Distill-32B on benchmarks such as AIME and LiveCodeBench.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that OpenThinker2-32B matches DeepSeek-R1-Distill-32B on AIME and LiveCodeBench.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that 1,000+ controlled experiments investigating each data-generation step led to OpenThoughts3.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report OpenThinker3-7B scores of 53% on AIME 2025, 51% on LiveCodeBench 06/24–01/25, and 54% on GPQA Diamond—15.3, 17.2, and 20.5 percentage points above DeepSeek-R1-Distill-Qwen-7B, respectively.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Reasoning models are progressing rapidly, but proprietary training data leaves the best recipes unclear.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "project goal",
+        "summary": "OpenThoughts aims to provide open-source datasets for training reasoning models.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "initial result",
+        "summary": "OpenThoughts2-1M is reported to support OpenThinker2-32B, matching a named 32B baseline on standard reasoning benchmarks.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "pipeline investigation",
+        "summary": "The project reports 1,000+ controlled experiments across data-generation steps, producing OpenThoughts3.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "scaled result and release",
+        "summary": "A 1.2M-example pipeline with QwQ-32B as teacher yields reported benchmark gains for OpenThinker3-7B; datasets and models are publicly available.",
+        "source_ids": [
+          "S6",
+          "S7"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects a large set of controlled experiments targeting individual data-generation steps to a subsequent dataset iteration.",
+          "source_ids": [
+            "S5"
+          ]
+        },
+        "interpretation": "This suggests a data-recipe paper can make pipeline choices more interpretable by isolating and testing components before scaling.",
+        "application": "Describe the data pipeline as separable decisions, test each decision with controlled comparisons, and use the results to motivate the next recipe revision.",
+        "exception": "This approach may be unsuitable when interventions cannot be isolated or when the evaluation budget is too limited for controlled experimentation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the controlled-experiment designs, datasets, model-training details, or statistical uncertainty.",
+      "The reported benchmark comparisons do not state evaluation protocols, contamination controls, or whether all models used equivalent settings.",
+      "The abstract alone cannot independently establish the claims of firstness, state-of-the-art status, or benchmark validity."
+    ]
+  }
+}

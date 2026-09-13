@@ -1,0 +1,165 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97961",
+    "title": "Achieving Optimal Clustering in Gaussian Mixture Models with Anisotropic Covariance Structures",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97961"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "b37688616564fcb38cb125a582f360af96ef3d303de80b38628e68aade917e97",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "bf939fbeb6a566a90b21b4edb77de8a02abc79c18fe15a9827a7c984573ea9e1",
+    "extracted_at": "2026-09-13T00:18:25.462988+00:00",
+    "session_id": "01a09820-da43-7f02-9f49-3dfb127f8086",
+    "usage": {
+      "input_tokens": 12600,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 748,
+      "reasoning_output_tokens": 153
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "c98ca206d9d1c35c9d35703554cc97ce997c0ee22e7abef1e8e07d046fc5d6b1"
+    },
+    {
+      "id": "S2",
+      "sha256": "5e7bef24340f87df59cd6f71c7f8861e1b1265d5b68f2b6e232f53e391a0df2f"
+    },
+    {
+      "id": "S3",
+      "sha256": "218ad985afea954e8e858fa167eb0dd20c498ccdee5d126d8f2da361d4a38833"
+    },
+    {
+      "id": "S4",
+      "sha256": "9d0bd3b38c27440cfe59df3faf9da75858bde7db00f7f5d59986ec407c1ca867"
+    },
+    {
+      "id": "S5",
+      "sha256": "0e4783910903e8de54f1fb76e11ac048bcd2fed5af9986e1c6789aae842771f7"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97961",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies clustering for anisotropic GMMs with unknown, non-identity cluster covariances, including homogeneous and heterogeneous covariance settings.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "It targets the gap between theoretical clustering guarantees and practical iteration efficiency.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Derives minimax lower bounds showing that covariance structure critically affects clustering accuracy.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "method",
+        "claim": "Introduces a covariance-aware variant of Lloyd’s algorithm that estimates and uses covariance information iteratively.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory and algorithmic result",
+        "claim": "Proves minimax optimality and logarithmic-iteration convergence for the adjusted algorithm.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The adjusted Lloyd-style algorithm is presented as simultaneously achieving minimax optimality and logarithmic convergence in the anisotropic settings considered.",
+      "source_ids": [
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report minimax lower bounds linking clustering accuracy to covariance structure.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that their adjusted algorithm achieves minimax optimality and converges within a logarithmic number of iterations.",
+        "source_ids": [
+          "S5"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task definition",
+        "summary": "Frames clustering with unknown anisotropic covariances in Gaussian mixture models.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem decomposition",
+        "summary": "Separates homogeneous covariance models from heterogeneous models with cluster-specific matrices.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "theoretical analysis",
+        "summary": "Establishes minimax lower bounds for the effect of covariance structure on accuracy.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "algorithm and result",
+        "summary": "Adapts Lloyd’s algorithm to iteratively estimate and exploit covariance information, with reported minimax optimality and logarithmic convergence.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract analyzes homogeneous and heterogeneous covariance structures separately before presenting a covariance-aware algorithm and its guarantees.",
+          "source_ids": [
+            "S2",
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Separating structural regimes can make assumptions and guarantees more precise.",
+        "application": "Organize a new clustering paper by covariance regime, then state which algorithmic guarantee applies to each regime.",
+        "exception": "This separation may be unsuitable when the method and guarantee genuinely treat all regimes uniformly."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the parameter regimes, distance or loss defining clustering accuracy, or the constants in the lower and upper bounds.",
+      "The claimed convergence and optimality conditions, initialization requirements, and any empirical validation are not provided."
+    ]
+  }
+}

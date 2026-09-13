@@ -1,0 +1,184 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47208",
+    "title": "Transformative or Conservative? Conservation laws for ResNets and Transformers",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47208"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f07309dfb595ddab98619ad4560c4803ff5de142cab651480af58aa7955366e6",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "17253cffb6007661408fad1f4e4e9e40a27d31b869bf304be7ce9a235415f1b1",
+    "extracted_at": "2026-09-13T00:08:44.635021+00:00",
+    "session_id": "01a09818-03cd-7a03-858d-680861dce578",
+    "usage": {
+      "input_tokens": 12684,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 780,
+      "reasoning_output_tokens": 56
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "820b8b76523681fd7ff39067f75e502b61bad7f6a0b8eab9e54b7e393de9dba7"
+    },
+    {
+      "id": "S2",
+      "sha256": "b58bac3a7bdbd3f432a18367e11d70b212bf74d8b09bba3025f83d92413e1336"
+    },
+    {
+      "id": "S3",
+      "sha256": "1d9ea3f1d98910973f2e9ff271b8c5395b8c831f7a6a837b087718a6c204f324"
+    },
+    {
+      "id": "S4",
+      "sha256": "9a966df3c6d2c43a003dce2bb2bfa248be03a1397b624bb186799f70f3d3e9a9"
+    },
+    {
+      "id": "S5",
+      "sha256": "2e2096e588703035aed30b84627659320fe9fcf79c2ce2e513836ce06306fa6f"
+    },
+    {
+      "id": "S6",
+      "sha256": "a51fb4ea7a928d45d1e2925fe88e57e77c5d1699fcb05c5acc41a892c463e63a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47208",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper studies conservation laws in gradient-flow training dynamics for practical architectures, including ResNets and Transformers.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Conservation laws were well understood mainly for shallow ReLU and linear networks, but remained largely unexplored for more practical architectures.",
+        "source_ids": [
+          "S1"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Characterizes conservation laws for basic shallow ReLU and linear networks, with or without convolution, and for a single attention layer.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Introduces subset-parameter conservation laws and reduces their characterization to analyzing the corresponding building block in isolation.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "type": "dynamics",
+        "claim": "Examines whether the identified conservation principles persist under discrete optimization, especially SGD, after being established in continuous gradient flow.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors introduce conservation laws depending only on a subset of parameters, such as consecutive layers, residual blocks, or attention layers.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that basic shallow ReLU and linear networks have easily expressed conservation laws and no more than the previously known ones.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "claim": "The authors report a complete description of all conservation laws for a single attention layer, and that residual blocks have the same conservation laws as their nonskip counterparts.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report examining persistence of these principles under discrete dynamics, particularly SGD; the abstract does not state the resulting conditions or findings.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Identifies the limited understanding of conservation laws beyond mostly shallow ReLU and linear networks.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "baseline characterization",
+        "summary": "Characterizes laws for shallow ReLU and linear building blocks, including convolutional variants.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "architecture-specific results",
+        "summary": "Describes all laws for a single attention layer and relates residual-block laws to blocks without skip connections.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "new framework",
+        "summary": "Defines subset-parameter conservation laws and reduces their study to isolated building blocks.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "discrete-dynamics extension",
+        "summary": "Investigates persistence under discrete optimization, especially SGD.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract moves from whole architectures to conservation laws localized to parameter subsets, then reduces their analysis to isolated building blocks.",
+          "source_ids": [
+            "S4",
+            "S5"
+          ]
+        },
+        "interpretation": "Localizing a structural claim can make complex-architecture analysis tractable while preserving a clear link to components.",
+        "application": "For a modular architecture, formulate invariants over one block or parameter subset first, and state the reduction connecting that local analysis to the full model.",
+        "exception": "This move is unsuitable when the property fundamentally depends on cross-block interactions that cannot be isolated."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the mathematical form of the conservation laws or the assumptions under which the characterizations hold.",
+      "The reported SGD persistence analysis lacks its concrete conditions and conclusions.",
+      "The abstract does not quantify the scope of the architectures or optimization settings examined."
+    ]
+  }
+}

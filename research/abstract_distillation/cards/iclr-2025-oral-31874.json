@@ -1,0 +1,174 @@
+{
+  "identity": {
+    "paper_id": "iclr-2025-oral-31874",
+    "title": "Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models",
+    "venue": "ICLR",
+    "year": 2025,
+    "source_url": "https://iclr.cc/virtual/2025/oral/31874"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f0a93a57cccc35d74322d0331794f0802e6f227a656b1403d4a181195ed72b1e",
+    "source_sha256": "b7b72929373609b054a212eb4dd851a012d3c15e4176012a25591a157182098d",
+    "input_sha256": "824f855d9079dc6f4ed6c197cead4c7a99d2f3de8f17464a3a228d0326fa73e9",
+    "extracted_at": "2026-09-12T23:55:22.609114+00:00",
+    "session_id": "01a0980b-cb2b-75d0-b3bf-0609e3db0ec5",
+    "usage": {
+      "input_tokens": 12629,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 742,
+      "reasoning_output_tokens": 93
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "df66fbc42a13c483425dc00a943d3811455877cc4a15c8743cd9e7a8f8802fb5"
+    },
+    {
+      "id": "S2",
+      "sha256": "a5ea0b64e8f06e53dda0e80e16e8505de36c070425127fee2794b5b63129823c"
+    },
+    {
+      "id": "S3",
+      "sha256": "57ad6736131d4d27d1ad2d0df228f6e0d1d30514cf1d62a4f3550181519203c3"
+    },
+    {
+      "id": "S4",
+      "sha256": "dc1d024f1fd3c581ab118a71b443842da92b23ccf3776ae62d71e2b2ce0fa367"
+    },
+    {
+      "id": "S5",
+      "sha256": "cb1ead97731e3e6d4fffe70836efa10da275095951f660387a5ac1addc445d72"
+    },
+    {
+      "id": "S6",
+      "sha256": "31cf26e2305279cf8fcf1f9bdcd198eaa8149748897d4bacb5ec7f96cf34db86"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2025-oral-31874",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Discover and apply sparse, interpretable causal subnetworks to explain and edit language-model behaviors.",
+        "source_ids": [
+          "S1",
+          "S2",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Prior circuits use polysemantic, difficult-to-interpret units such as attention heads and neurons, limiting their suitability for many downstream applications.",
+        "source_ids": [
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces sparse feature circuits: causally implicated subnetworks composed of human-interpretable features.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "type": "application",
+        "claim": "Introduces SHIFT, which ablates features judged by humans to be task-irrelevant to improve classifier generalization.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "system",
+        "claim": "Demonstrates an unsupervised, scalable pipeline that discovers thousands of sparse feature circuits for automatically discovered model behaviors.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors distinguish sparse feature circuits from prior circuits by using fine-grained, interpretable features and present methods for discovering and applying them.",
+      "source_ids": [
+        "S1",
+        "S2",
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that SHIFT improves classifier generalization after ablating features judged task-irrelevant by a human.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "claim": "The authors report discovering thousands of sparse feature circuits through an entirely unsupervised and scalable pipeline.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "proposal",
+        "summary": "Introduces methods for discovering and applying sparse feature circuits.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "motivation_and_contrast",
+        "summary": "Defines the circuits as causal subnetworks of interpretable features and contrasts them with prior polysemantic circuits.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "capabilities_and_applications",
+        "summary": "Claims detailed understanding of unanticipated mechanisms and presents SHIFT for classifier generalization.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      {
+        "role": "scaling_demonstration",
+        "summary": "Reports an unsupervised, scalable discovery pipeline yielding thousands of circuits for automatically discovered behaviors.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a causal, interpretable representation with a concrete editing operation based on human judgments of task relevance.",
+          "source_ids": [
+            "S2",
+            "S5"
+          ]
+        },
+        "interpretation": "Interpretability claims become more actionable when connected to a specific intervention and decision criterion.",
+        "application": "Frame an interpretability method together with an explicit edit, the human or automated relevance test, and the target behavior it is intended to change.",
+        "exception": "This framing is unsuitable when the work only characterizes representations and does not support interventions or relevance judgments."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the evaluation datasets, baselines, effect sizes, or statistical conditions for SHIFT's reported generalization improvement.",
+      "It does not detail how causal implication, feature interpretability, automatic behavior discovery, or scalability are operationalized."
+    ]
+  }
+}

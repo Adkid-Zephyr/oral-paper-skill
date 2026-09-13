@@ -1,0 +1,171 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-40135",
+    "title": "Position: Probabilistic Modelling is Sufficient for Causal Inference",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/40135"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "139985df2469ab8e0b98cad63314557a50f0c22a89fe1e858d18cbab674fcd5b",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "6f555ebb5d49056c56bdcfe4a0dc052bf0870e23199b0b2abbe67cfa006e7cf9",
+    "extracted_at": "2026-09-13T00:06:51.940830+00:00",
+    "session_id": "01a09816-42c1-7bc1-ab46-f749b814419f",
+    "usage": {
+      "input_tokens": 12617,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 703,
+      "reasoning_output_tokens": 115
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "6fca2e193ed856bd72682f3ca2213c6bdac2fde4f6eb08fe52bf09f73363a576"
+    },
+    {
+      "id": "S2",
+      "sha256": "739a2345e12c829e30b65f65ebdadf5838aac3f062b449852ca52948b63c69ed"
+    },
+    {
+      "id": "S3",
+      "sha256": "1d8b1ffd4269d5f0410d840a37b783888dc8984439a94d8dfdcb12ecaed6977a"
+    },
+    {
+      "id": "S4",
+      "sha256": "9d6f41931595df4e643968d28bf0580d77b362b8fa8d6852ff00b74aa472746f"
+    },
+    {
+      "id": "S5",
+      "sha256": "8907bae879525b3d3fde0f83b3030b0668173dcfe04b8053228361a1ad08ce23"
+    },
+    {
+      "id": "S6",
+      "sha256": "81d010b4ba04c39fe1b8393c4e18caac3450aaec8c05529383334dabe7b15d79"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-40135",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper addresses how causal inference questions should be answered within machine learning.",
+        "source_ids": [
+          "S1",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "The authors identify confusion and prevalent claims that bespoke causal frameworks or notation are required for causal questions.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "position",
+        "claim": "Argues that any causal inference question can be addressed using probabilistic modelling and inference without causal-specific tools or notation.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "demonstration",
+        "claim": "Uses concrete examples to show how causal questions can be formulated by writing down the probability of everything.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "reinterpretation",
+        "claim": "Reinterprets causal tools as emerging from standard probabilistic modelling and inference, discussing their necessity and utility.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a general probabilistic-modelling lens as an alternative to bespoke causal frameworks and causal-specific notation.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report demonstrations through concrete examples showing causal questions tackled by explicitly specifying joint probabilities.",
+        "source_ids": [
+          "S4"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Frames causal inference as important but surrounded by confusion about the tools required.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "targeted_claim",
+        "summary": "Identifies the widespread claim that causal-specific frameworks or notation are necessary.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "demonstration",
+        "summary": "Presents concrete examples based on writing down the probability of everything.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "comparison",
+        "summary": "Argues that probabilistic modelling offers greater generality than bespoke causal frameworks.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reinterpretation",
+        "summary": "Explains causal tools as outcomes of standard probabilistic modelling and inference, including their necessity and utility.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract connects its central position to concrete examples formulated through explicit probability statements.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A strong position paper can make a broad methodological claim more inspectable by tying it to explicit worked formulations.",
+        "application": "For a methodological thesis, include compact examples that translate the target questions into the proposed formalism.",
+        "exception": "This move may be unsuitable when examples would omit essential assumptions or when the claim depends primarily on empirical evaluation rather than formulation."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the causal questions, examples, assumptions, or comparisons used.",
+      "It does not report quantitative evaluations or detailed criteria for when causal tools are necessary or useful."
+    ]
+  }
+}

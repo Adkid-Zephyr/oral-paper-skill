@@ -1,0 +1,164 @@
+{
+  "identity": {
+    "paper_id": "icml-2026-oral-71141",
+    "title": "TokSuite: Measuring the Impact of Tokenizer Choice on Language Model Behavior",
+    "venue": "ICML",
+    "year": 2026,
+    "source_url": "https://icml.cc/virtual/2026/oral/71141"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "6692613293e87a03883b91268cc61b8fa56b65e78b16f165b32e812b34ec4147",
+    "source_sha256": "e6868f1abcbea7aafdfb71af4cf346751cc25ed979e5f8bcba4146155d996cde",
+    "input_sha256": "afbbd23457fecb594b7db612168d629a02c5e366f641a70b9e8815eea7703777",
+    "extracted_at": "2026-09-13T00:15:44.219211+00:00",
+    "session_id": "01a0981e-6b4a-72e2-bc0e-1aa93ee1188e",
+    "usage": {
+      "input_tokens": 12662,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 786,
+      "reasoning_output_tokens": 188
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "1795f0a9b44099dcf52d184ed6e3e01dc89f56df185d1796cde410f0053dec0a"
+    },
+    {
+      "id": "S2",
+      "sha256": "f62c2167354db4061055e48779b218c11cf26fb6cb456cb86bb2e762ddaeff75"
+    },
+    {
+      "id": "S3",
+      "sha256": "8f48cc94b5cec5c1b8fa3b429fa6b7d42a9133f9cfa96cbf69302908e12be1a5"
+    },
+    {
+      "id": "S4",
+      "sha256": "ab14f59f5751919400d45faf64ee5219b377d672d80d7fbc7eb9815d3403b06c"
+    },
+    {
+      "id": "S5",
+      "sha256": "3f0989dcd714d602aa6d396441e81bb5a48c5bf558921a82a574b3865e9f039e"
+    },
+    {
+      "id": "S6",
+      "sha256": "8f52b521a9ffd26df1192c03bb42968db2043fd6ac1b67fc71809caced337550"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2026-oral-71141",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "The paper examines how tokenizer choice influences language-model performance and behavior.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      "gap": {
+        "claim": "The influence of tokenization is poorly understood because it is difficult to measure in isolation.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "resource",
+        "claim": "TokSuite releases fourteen pre-trained models differing in off-the-shelf tokenizer while matching architecture, dataset, training budget, and initialization.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "benchmark",
+        "claim": "TokSuite includes a multilingual robustness benchmark covering real-world perturbations in English, Chinese, Farsi, Italian, and Turkish, curated by native annotators.",
+        "source_ids": [
+          "S3",
+          "S5"
+        ]
+      },
+      {
+        "type": "research support",
+        "claim": "The collection is intended to decouple tokenizer influence and support analysis of benefits and shortcomings across popular tokenizers.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors state that TokSuite supports novel findings about the respective benefits and shortcomings of a wide range of popular tokenizers.",
+      "source_ids": [
+        "S6"
+      ]
+    },
+    "author_reported_evidence": [],
+    "narrative_sequence": [
+      {
+        "role": "motivation",
+        "summary": "Tokenizers underlie text representation, yet their isolated effect on language-model performance and behavior remains poorly understood.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "resource introduction",
+        "summary": "The authors present TokSuite as models and a benchmark for studying tokenization’s influence.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "controlled model release",
+        "summary": "They release fourteen models that vary tokenizer choice while holding major training factors constant.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "role": "robustness evaluation resource",
+        "summary": "They release a native-annotator-curated multilingual benchmark for perturbation robustness across five languages.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "claimed research value",
+        "summary": "They characterize the combined resources as enabling tokenizer decoupling and novel comparative findings.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract addresses isolation difficulty with models that differ in tokenizer while sharing architecture, dataset, training budget, and initialization.",
+          "source_ids": [
+            "S2",
+            "S4"
+          ]
+        },
+        "interpretation": "Matched resource construction can make a causal factor easier to study by reducing confounding differences.",
+        "application": "When introducing a benchmark for one design choice, release matched variants that hold salient training and model factors fixed.",
+        "exception": "This approach is unsuitable when the design choice inherently requires changing those factors or when matched variants cannot represent deployment conditions."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not report the specific empirical findings, metrics, or tokenizer comparisons enabled by TokSuite.",
+      "It does not state how robustness scores are computed or how the fourteen tokenizers are distributed across languages."
+    ]
+  }
+}

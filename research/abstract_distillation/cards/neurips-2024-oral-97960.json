@@ -1,0 +1,186 @@
+{
+  "identity": {
+    "paper_id": "neurips-2024-oral-97960",
+    "title": "Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction",
+    "venue": "NeurIPS",
+    "year": 2024,
+    "source_url": "https://neurips.cc/virtual/2024/oral/97960"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "081b694f060a9179bb8dd0bec66e2c8e40afaca7ff6f8e5018e06b2720a620f9",
+    "source_sha256": "b734eb48c16db1cbf34d1e84f98cbb66f851b3215dd6fe2e0d753354c68578db",
+    "input_sha256": "b3f3c48c062c514dac51a06a76ed71edd02ab74ddb32f95cc1b5482f6fa9f0be",
+    "extracted_at": "2026-09-13T00:18:24.055297+00:00",
+    "session_id": "01a09820-d8b3-7993-bb2e-ee6b520b6932",
+    "usage": {
+      "input_tokens": 12791,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 887,
+      "reasoning_output_tokens": 158
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "717b6cd89bd3bd838f400561b6c4da06d0908805ca14372c12beb932f4420d3d"
+    },
+    {
+      "id": "S2",
+      "sha256": "27bb8c06311acc9b95db00f06e36dbb3f08eb7c1f28508087d8fee63b2070e98"
+    },
+    {
+      "id": "S3",
+      "sha256": "42d0b66ed0c9eec1b1ab53f1084939ea1fe85ea7d4db0e704561b328de2cc9dc"
+    },
+    {
+      "id": "S4",
+      "sha256": "2e49d64f1219fb7caebb8c40fe95614a24b4216152e86d776172dd40a71f58f7"
+    },
+    {
+      "id": "S5",
+      "sha256": "ecc22bdd3ad8687e24d8859630afcb326f7488f2ddb434c58f0175b9d0860b5b"
+    },
+    {
+      "id": "S6",
+      "sha256": "eed083d06ec9e6417b824b9210c9cf3fca6639e957778eda0f793537decd76cd"
+    },
+    {
+      "id": "S7",
+      "sha256": "323bc8973fbe9914f31c49fc831eae84c0994bb6b0523f5c928b78c345d5325c"
+    },
+    {
+      "id": "S8",
+      "sha256": "91219f2d4d3d264b3017be3dd07fbae733b2a236b8785a3eff405dadcacc672d"
+    }
+  ],
+  "extraction": {
+    "paper_id": "neurips-2024-oral-97960",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Develop an autoregressive paradigm for scalable visual generation and learning.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      "gap": {
+        "claim": null,
+        "source_ids": []
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Introduces Visual AutoRegressive modeling (VAR), reformulating image autoregression as coarse-to-fine next-scale prediction rather than raster-scan next-token prediction.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that VAR improves autoregressive image generation across quality, speed, data efficiency, and scalability dimensions.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "type": "system/resource",
+        "claim": "Releases VAR models and code for further exploration of autoregressive visual generation and unified learning.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present VAR as a new generation paradigm and report that it is the first GPT-style autoregressive approach to surpass diffusion transformers in image generation.",
+      "source_ids": [
+        "S1",
+        "S2"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "On ImageNet 256×256, the authors report FID improving from 18.65 to 1.73, IS from 80.4 to 350.2, and inference becoming approximately 20× faster than the AR baseline.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "claim": "The authors report that VAR outperforms DiT in image quality, inference speed, data efficiency, and scalability.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report near−0.998 linear correlation coefficients for VAR scaling laws and zero-shot results on in-painting, out-painting, and editing.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "reframing",
+        "summary": "The paper replaces raster-scan next-token prediction with coarse-to-fine next-scale prediction for image autoregression.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "benchmark results",
+        "summary": "The authors report large ImageNet gains in FID, IS, and inference speed over an AR baseline.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "broader characterization",
+        "summary": "They report advantages over DiT, power-law scaling, and zero-shot downstream image-editing capabilities.",
+        "source_ids": [
+          "S4",
+          "S5",
+          "S6"
+        ]
+      },
+      {
+        "role": "release",
+        "summary": "Models and code are released to support further VAR and AR research.",
+        "source_ids": [
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract pairs a specific architectural reframing—next-scale prediction—with benchmark metrics, cross-model comparisons, scaling-law analysis, and downstream-task demonstrations.",
+          "source_ids": [
+            "S1",
+            "S3",
+            "S4",
+            "S5",
+            "S6"
+          ]
+        },
+        "interpretation": "A method claim becomes more informative when evidence tests distinct promised properties rather than only one headline metric.",
+        "application": "For a new generative method, map each claimed property to a corresponding evaluation: core quality, efficiency, scaling behavior, and transfer or zero-shot use.",
+        "exception": "This mapping may be unsuitable when the method targets only one narrowly defined capability or when the relevant evaluations are unavailable."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify VAR and DiT configurations, datasets beyond ImageNet for the main benchmark, statistical variability, or detailed evaluation protocols.",
+      "The scaling-law setup and zero-shot task protocols are not described, so the reported correlations and generalization scope cannot be assessed from the abstract alone."
+    ]
+  }
+}

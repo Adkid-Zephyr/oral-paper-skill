@@ -1,0 +1,211 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10011189",
+    "title": "From movement to cognitive maps: recurrent neural networks reveal how locomotor development shapes hippocampal spatial coding",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10011189"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "699a67eb716554808a969967dd6927ec6a3e2c01a592188211e58f73b78a6a8c",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "8d11486b6a573ac7fed6069cd05e41a4b10f4895ffe9f3caba1347af006b76fd",
+    "extracted_at": "2026-09-13T00:05:44.834574+00:00",
+    "session_id": "01a09815-3ad5-7530-bf02-3df430dee55f",
+    "usage": {
+      "input_tokens": 12862,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 864,
+      "reasoning_output_tokens": 62
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "a74bdd4fc639aeafd47087a94fb97343d80c96c56ff94e94a943963375a107ec"
+    },
+    {
+      "id": "S2",
+      "sha256": "af03a1ad0ec1ad886719423790993ebcd395b372ec9e8ac4b5f9deb5f3db2920"
+    },
+    {
+      "id": "S3",
+      "sha256": "6c291615615eb42eff9749bfacd9451fa60f41e9bf697039cf0849c5ef80f5f5"
+    },
+    {
+      "id": "S4",
+      "sha256": "b3bf493c1a546eb34dae6380fafdea09fffa13e6e43b033f3e3d9e5734a43b58"
+    },
+    {
+      "id": "S5",
+      "sha256": "0ea8b5266a6c61abce72c805da49f53ed7486113206b58ca2d6b08559bf55642"
+    },
+    {
+      "id": "S6",
+      "sha256": "51e6155f8b26044e11d35d9d8f49ed27f8d90e81db22e0df79604a76aeed45c0"
+    },
+    {
+      "id": "S7",
+      "sha256": "a9d08a54583ab2800281cb2a65f64960a980898566e9774ffef3f5e16e785215"
+    },
+    {
+      "id": "S8",
+      "sha256": "f1c3a0d47c4137910c92b77d4b3306e87805cd5d0c5a7e845e577a24b6182c69"
+    },
+    {
+      "id": "S9",
+      "sha256": "663af8e6f23e997b6cf6ab42bd5d36479e52493597b6322979c00c4a8a871359"
+    },
+    {
+      "id": "S10",
+      "sha256": "1b636f3c31a5b4108c729ded79af791c8004b547f16b8fa540896f9a9c345703"
+    },
+    {
+      "id": "S11",
+      "sha256": "f8677444d343c614d725edbb0dbc90742301c144902c883e5bf23e4a54896aa8"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10011189",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Explain how locomotor development and associated sensory experience shape the emergence of hippocampal spatial representations.",
+        "source_ids": [
+          "S4",
+          "S5"
+        ]
+      },
+      "gap": {
+        "claim": "Existing work characterized developmental timelines, but lacked a unifying mechanistic model and a clear account of the processes driving spatial-representation emergence.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "method",
+        "claim": "Combines analysis of postnatal locomotor development with shallow RNNs trained to predict visual stimuli from visual and vestibular inputs along developmentally realistic trajectories.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "type": "empirical finding",
+        "claim": "Reports that changing movement statistics drive sequential emergence of spatially tuned units, paralleling the developmental timeline observed in rats.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "type": "mechanistic finding",
+        "claim": "Reports that reproducing specific developmental locomotion statistics, rather than simply accelerating sensory change, is essential for allocentric spatial representation.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors present a mechanistic link between embodied sensorimotor experience and the ontogeny of hippocampal spatial neurons.",
+      "source_ids": [
+        "S11"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The models sequentially develop spatially tuned units in a pattern reported to mirror rat developmental timing.",
+        "source_ids": [
+          "S8"
+        ]
+      },
+      {
+        "claim": "The authors report that model-generated predictions about maturation of spatial tuning properties are confirmed through analysis of hippocampal recordings.",
+        "source_ids": [
+          "S9"
+        ]
+      },
+      {
+        "claim": "The authors report that matching specific developmental locomotion statistics is necessary for allocentric spatial representation, beyond merely accelerating sensory change.",
+        "source_ids": [
+          "S10"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "Hippocampal spatially and orientation-tuned neurons are associated with cognitive maps supporting location recall and navigation.",
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "role": "gap",
+        "summary": "Developmental timelines are known, but a unifying mechanism for the emergence of spatial representations remains unclear.",
+        "source_ids": [
+          "S3",
+          "S4"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The study identifies stages of rat locomotor development and exposes shallow predictive RNNs to trajectories reflecting progressively mature movement patterns.",
+        "source_ids": [
+          "S5",
+          "S6",
+          "S7"
+        ]
+      },
+      {
+        "role": "findings",
+        "summary": "The reported model dynamics parallel rat spatial-neuron development, yield maturation predictions supported by hippocampal recordings, and require realistic locomotion statistics for allocentric coding.",
+        "source_ids": [
+          "S8",
+          "S9",
+          "S10"
+        ]
+      },
+      {
+        "role": "implication",
+        "summary": "The authors frame the results as linking embodied sensorimotor experience to hippocampal spatial-neuron ontogeny.",
+        "source_ids": [
+          "S11"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract aligns a developmental behavioral analysis, a model exposed to matching developmental trajectories, and recordings used to assess predicted tuning maturation.",
+          "source_ids": [
+            "S6",
+            "S7",
+            "S9"
+          ]
+        },
+        "interpretation": "A mechanistic narrative is more informative when model inputs correspond to the biological development being explained and predictions are explicitly connected to an external observation.",
+        "application": "For a developmental modeling paper, define stage-specific behavioral inputs, state the model's prospective predictions, and map each prediction to an independent biological measurement.",
+        "exception": "This structure may be unsuitable when developmental stages or independent measurements are unavailable or when the task is not mechanistic."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the locomotor statistics, developmental stages, RNN architecture or training details.",
+      "The recordings, confirmation criteria, and quantitative strength of the reported matches are not described.",
+      "The abstract does not establish whether the proposed mechanism generalizes beyond the rat locomotion and hippocampal setting."
+    ]
+  }
+}

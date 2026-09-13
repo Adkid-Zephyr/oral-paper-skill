@@ -1,0 +1,201 @@
+{
+  "identity": {
+    "paper_id": "iclr-2026-oral-10009321",
+    "title": "Quantitative Bounds for Length Generalization in Transformers",
+    "venue": "ICLR",
+    "year": 2026,
+    "source_url": "https://iclr.cc/virtual/2026/oral/10009321"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "4f391e3e0b215c0f47ede651957c2eab2f081eecc6b4f0518b5e364a60cf4112",
+    "source_sha256": "23d80d92ad7fac06aa4f06792a05c21e6e15a2b2e3c84b3a087b9aefc9725dbe",
+    "input_sha256": "743b549ed2f587175cd517f343cfe5b481b029efc5149aad6264344fdb211a69",
+    "extracted_at": "2026-09-13T00:02:39.364295+00:00",
+    "session_id": "01a09812-6fdd-7c31-88e1-250fd32d8e2a",
+    "usage": {
+      "input_tokens": 12760,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 746,
+      "reasoning_output_tokens": 67
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "d37b5d47db7e79739782a7d9bf3dd7f458c0a690b121599a0bd790e6cc7414c0"
+    },
+    {
+      "id": "S2",
+      "sha256": "900632342b45ad78611e2bc597d40494ce95e281004a4b495a221c296ec1ef78"
+    },
+    {
+      "id": "S3",
+      "sha256": "7309545c32e76793be340847f03b89852a9aacef77b43042e7a429c4e05d199e"
+    },
+    {
+      "id": "S4",
+      "sha256": "d811ada36e6d27a7fef81689d05ec26e2f891ddd48483eeb498d46386e364888"
+    },
+    {
+      "id": "S5",
+      "sha256": "614346068576a14de2e2cafe263308d1722f4a7256b4c0ce59cb8201ded65e77"
+    },
+    {
+      "id": "S6",
+      "sha256": "5fead456593fdd6c18fe1c97a3287c53da6d45f05f31e1383c80dcd87622d7d5"
+    },
+    {
+      "id": "S7",
+      "sha256": "7e41fd9593dbd6af11cbf0049bd9ee49ba44ee2f44d7b522d652cf7d7412254a"
+    },
+    {
+      "id": "S8",
+      "sha256": "8ee3e4f32aef3a578d63e3f94c89fbff0a40e6753315691e81d739970cdf3e4a"
+    }
+  ],
+  "extraction": {
+    "paper_id": "iclr-2026-oral-10009321",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine how transformers trained on shorter sequences can generalize to much longer, unseen inputs, and quantify the training length required.",
+        "source_ids": [
+          "S1",
+          "S4"
+        ]
+      },
+      "gap": {
+        "claim": "Prior work established eventual length generalization beyond a finite threshold but did not determine how large that threshold must be.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "theory",
+        "claim": "Provides quantitative bounds on the training sequence length required for length generalization.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "type": "theory",
+        "claim": "Analyzes length generalization across error criteria, attention precision, and one- or two-layer transformer settings.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "mechanistic account",
+        "claim": "Shows, across the analyzed scenarios, that length generalization occurs when longer-sequence behavior can be simulated by behavior on shorter training sequences.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The authors characterize their work as providing the first quantitative bounds on the required training length for length generalization.",
+      "source_ids": [
+        "S4"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that their bounds provide qualitative estimates of the training-data length required for generalization and that they verify these insights empirically.",
+        "source_ids": [
+          "S7"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "task",
+        "summary": "Defines length generalization as maintaining performance on much longer inputs after training on shorter sequences.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "prior limitation",
+        "summary": "Notes that prior work showed eventual generalization after a finite training-length threshold without quantifying its size.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "role": "analysis",
+        "summary": "Studies multiple combinations of error control, attention precision, and transformer depth.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "central result",
+        "summary": "Relates generalization in all analyzed settings to simulation of longer-sequence internal behavior by shorter-sequence behavior.",
+        "source_ids": [
+          "S6"
+        ]
+      },
+      {
+        "role": "implications and check",
+        "summary": "Reports qualitative estimates derived from the bounds, empirical verification of their insights, and a sharper account of extrapolation mechanisms.",
+        "source_ids": [
+          "S7",
+          "S8"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract states a common simulation condition spanning distinct error, precision, and depth settings, while separately reporting qualitative estimates derived from its bounds and empirical verification of the insights.",
+          "source_ids": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        "interpretation": "A shared mechanism can organize a theory paper across heterogeneous cases, provided its scope is explicitly bounded by the analyzed settings.",
+        "application": "Frame a multi-setting theoretical study around one invariant condition, then map each theorem or experiment to that condition and label estimates versus verified findings.",
+        "exception": "Avoid this framing when the proposed mechanism is only conjectured, applies to a narrow case, or lacks a clear correspondence to the reported results."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not state the explicit quantitative bound formulas, threshold dependence, or theorem assumptions.",
+      "Empirical verification details, datasets, metrics, numerical outcomes, and comparisons are not provided.",
+      "The scope of the simulation condition and the meaning of “all scenarios” are limited to the settings listed in the abstract."
+    ]
+  },
+  "editorial_revisions": [
+    {
+      "field": "narrative_sequence[4].summary",
+      "before": "Reports qualitative bounds, empirical verification of their insights, and a sharper account of extrapolation mechanisms.",
+      "after": "Reports qualitative estimates derived from the bounds, empirical verification of their insights, and a sharper account of extrapolation mechanisms.",
+      "review_file": "reviews/flagged-batch-06.json",
+      "review_sha256": "5848ca503403cccb672608419422439c08eda33210472a45340050926e95a017",
+      "applied_at": "2026-09-13T00:35:16.269798+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    },
+    {
+      "field": "lessons[0].source_observation.claim",
+      "before": "The abstract states a common simulation condition spanning distinct error, precision, and depth settings, while separately reporting qualitative bounds and empirical verification.",
+      "after": "The abstract states a common simulation condition spanning distinct error, precision, and depth settings, while separately reporting qualitative estimates derived from its bounds and empirical verification of the insights.",
+      "review_file": "reviews/flagged-batch-06.json",
+      "review_sha256": "5848ca503403cccb672608419422439c08eda33210472a45340050926e95a017",
+      "applied_at": "2026-09-13T00:35:16.270661+00:00",
+      "note": "Source-reviewed correction; initial generated response remains in local run logs."
+    }
+  ]
+}

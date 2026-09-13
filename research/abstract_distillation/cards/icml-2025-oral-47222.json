@@ -1,0 +1,177 @@
+{
+  "identity": {
+    "paper_id": "icml-2025-oral-47222",
+    "title": "Learning Smooth and Expressive Interatomic Potentials for Physical Property Prediction",
+    "venue": "ICML",
+    "year": 2025,
+    "source_url": "https://icml.cc/virtual/2025/oral/47222"
+  },
+  "provenance": {
+    "model": "gpt-5.6-luna",
+    "effort": "low",
+    "prompt_sha256": "65c76a744e3388b61db07d669957c3d79c34257f1f3fb5ab6a3689739580cec1",
+    "schema_sha256": "f13d7295c53bae6386a3fad799cc6e3cfda338fa9c2bf46984bd2c9e545afd3e",
+    "auth": "existing Codex ChatGPT login",
+    "one_paper_per_context": true,
+    "started_at": "2026-09-12T23:49:31.476144+00:00",
+    "abstract_sha256": "f847ff268b0820d14344e9c0cc74026bca20a6de8286d41323b2195673a8193a",
+    "source_sha256": "01ce31b1b07e3d613ee75968fb46837aeb7c140d757e6a52690c85fb5fb72096",
+    "input_sha256": "32b47dd973f85cbfa3118f834d225022b0b995aea4e932952f547d030da4dcb1",
+    "extracted_at": "2026-09-13T00:09:20.464265+00:00",
+    "session_id": "01a09818-92bc-7ca0-850e-a2c221c9c035",
+    "usage": {
+      "input_tokens": 12620,
+      "cached_input_tokens": 12032,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 731,
+      "reasoning_output_tokens": 103
+    },
+    "validation": "schema_and_locators_passed_not_semantic_review"
+  },
+  "source_units": [
+    {
+      "id": "S1",
+      "sha256": "164a700d2a0e901a46ac43fca6e87a3b251e5ec39b80125c6dd5af306e4f1824"
+    },
+    {
+      "id": "S2",
+      "sha256": "4e3e968867a08bec423c054e9804c723a10e0aae795e5c751c6c488b7bf48ade"
+    },
+    {
+      "id": "S3",
+      "sha256": "b9bc3c3e158537e6147915582ede1b78a113493617102706aac1e0c32b334d25"
+    },
+    {
+      "id": "S4",
+      "sha256": "8288076809ed6c363bd83b0a56096b2838863bb53105da6dc93bdad813a7c86b"
+    },
+    {
+      "id": "S5",
+      "sha256": "d65509470067e64c936d5baef2e9f6cf4eee973fe93bc97d2a4fce1c1163300a"
+    },
+    {
+      "id": "S6",
+      "sha256": "f5880263da5b2dae4233c127b5200cc36cb4528effba2446251d812e8d5492fb"
+    }
+  ],
+  "extraction": {
+    "paper_id": "icml-2025-oral-47222",
+    "reading_level": "abstract_only",
+    "problem_and_gap": {
+      "problem": {
+        "claim": "Determine whether MLIP test performance predicts downstream physical-property prediction performance.",
+        "source_ids": [
+          "S2",
+          "S3"
+        ]
+      },
+      "gap": {
+        "claim": "Lower held-out test errors do not consistently yield better downstream physical-property predictions.",
+        "source_ids": [
+          "S2"
+        ]
+      }
+    },
+    "contributions": [
+      {
+        "type": "evaluation criterion",
+        "claim": "Proposes testing MLIPs by their practical ability to conserve energy during molecular-dynamics simulations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "type": "model improvement",
+        "claim": "Identifies model choices associated with failing the energy-conservation test and uses these observations to improve expressive models.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "type": "model",
+        "claim": "Introduces eSEN for physical-property prediction.",
+        "source_ids": [
+          "S5",
+          "S6"
+        ]
+      }
+    ],
+    "stated_novelty": {
+      "claim": "The paper distinguishes MLIP quality through a molecular-dynamics energy-conservation test and uses its failure patterns to improve expressive models.",
+      "source_ids": [
+        "S3",
+        "S5"
+      ]
+    },
+    "author_reported_evidence": [
+      {
+        "claim": "The authors report that, when the proposed test is passed, correlations improve between test errors and downstream physical-property performance.",
+        "source_ids": [
+          "S4"
+        ]
+      },
+      {
+        "claim": "The authors report that eSEN achieves state-of-the-art results across materials stability, thermal conductivity, and phonon prediction tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "narrative_sequence": [
+      {
+        "role": "background",
+        "summary": "MLIPs approximate quantum-mechanical calculations at lower computational cost.",
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "role": "problem",
+        "summary": "Held-out test errors do not always predict downstream physical-property results.",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "role": "approach",
+        "summary": "The paper proposes evaluating practical energy conservation during molecular-dynamics simulations.",
+        "source_ids": [
+          "S3"
+        ]
+      },
+      {
+        "role": "model development",
+        "summary": "It examines choices linked to test failure and uses them to improve expressive models.",
+        "source_ids": [
+          "S5"
+        ]
+      },
+      {
+        "role": "reported outcome",
+        "summary": "The resulting eSEN model is reported to perform strongly across several physical-property tasks.",
+        "source_ids": [
+          "S6"
+        ]
+      }
+    ],
+    "lessons": [
+      {
+        "source_observation": {
+          "claim": "The abstract links a domain-relevant behavioral test—energy conservation in molecular dynamics—to stronger correlations between test errors and downstream performance.",
+          "source_ids": [
+            "S3",
+            "S4"
+          ]
+        },
+        "interpretation": "A task-aligned diagnostic may make benchmark metrics more informative for deployment outcomes.",
+        "application": "When introducing a predictive model, add a domain-behavior test and report whether passing it changes the relationship between benchmark error and target-task performance.",
+        "exception": "This move may be unsuitable when the deployment domain lacks a meaningful behavioral or mechanistic diagnostic."
+      }
+    ],
+    "unknowns": [
+      "The abstract does not specify the pass criteria or implementation of the energy-conservation test.",
+      "It gives no quantitative correlations, benchmark scores, datasets, baselines, or details of the model choices linked to failure.",
+      "The basis and scope of the state-of-the-art comparison are unspecified."
+    ]
+  }
+}
