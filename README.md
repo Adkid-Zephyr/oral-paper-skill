@@ -2,6 +2,8 @@
 
 **我“蒸馏”了 883 篇顶会 Oral 论文，提炼出其中的共性和值得学习的做法，帮助你应用到自己的 idea 和论文中。**
 
+Oral paper：指被学术会议选中作口头报告的论文，通常因研究贡献、创新性或影响力受到关注，是值得学习的优秀论文范例。
+
 [English README](README_EN.md) · [完整 Skill](skills/oral-paper-skill/SKILL.md) · [中文提示词](prompts/精简版提示词.txt) · [提炼过程](research/abstract_distillation/RESULTS.md)
 
 [![Oral papers: 883](https://img.shields.io/badge/Oral%20papers-883-blue)](skills/oral-paper-skill/references/oral-patterns.md)
