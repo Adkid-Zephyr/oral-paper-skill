@@ -1,10 +1,10 @@
 # Oral Paper Skill · Learn from Exemplary Papers
 
-**Starting from 884 top-conference Oral entries, extract lessons from 883 abstracts to compare, improve, and reflect on your own paper.**
+**I distilled lessons from 883 top-conference Oral papers, extracting shared practices and worthwhile ideas you can apply to your own research and writing.**
 
 [中文 README](README.md) · [Full Skill](skills/oral-paper-skill/SKILL.md) · [Quick prompt](prompts/quick-prompt-en.txt) · [Distillation process](research/abstract_distillation/RESULTS.md)
 
-[![Starting index: 884 entries](https://img.shields.io/badge/starting%20index-884%20entries-blue)](skills/oral-paper-skill/references/oral-patterns.md)
+[![Oral papers: 883](https://img.shields.io/badge/Oral%20papers-883-blue)](skills/oral-paper-skill/references/oral-patterns.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Adkid-Zephyr/oral-paper-skill/pulls)
 
 Abstract-level AI extraction, source checks, and cross-paper synthesis are complete, yielding **seven selectable practices and 14 examples checked against original abstracts**. “Distillation” means knowledge synthesis, not model training or full-text reading of all 883 papers.
@@ -75,18 +75,18 @@ Use $oral-paper-skill to explain what I can learn from these papers'
 storytelling and experimental design, then guide a retrospective on my draft.
 ```
 
-## What 884 means
+## Where the 883 papers come from
 
 The six official lists were rebuilt on September 13, 2026:
 
-| Conference cycles | Indexed entries | Eligible abstracts |
-|---|---:|---:|
-| ICLR 2025–2026 | 436 | 436 |
-| ICML 2025–2026 | 289 | 288 |
-| NeurIPS 2024–2025 | 159 | 159 |
-| Total | 884 | 883 |
+| Conference cycles | Oral papers |
+|---|---:|
+| ICLR 2025–2026 | 436 |
+| ICML 2025–2026 | 288 |
+| NeurIPS 2024–2025 | 159 |
+| Total | 883 |
 
-One entry points to [a workshop/session event](https://icml.cc/virtual/2026/workshop/54094), not a paper, and was excluded. All 883 eligible abstracts have per-paper semantic records and are covered by 21 batch syntheses, consolidated into seven practices.
+Non-paper entries, including [a workshop/session event](https://icml.cc/virtual/2026/workshop/54094), were excluded. The abstracts of all 883 papers have per-paper semantic records and are covered by 21 batch syntheses, consolidated into seven practices.
 
 Luna performed extraction, Astra medium handled source checking and selection, and Astra xhigh performed final synthesis. Checks include a 24-paper pilot, a separately fixed random sample of 36, and targeted reviews of flagged issues. This is not human full-corpus close reading or verification of every scientific claim.
 

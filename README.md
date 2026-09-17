@@ -1,10 +1,10 @@
 # Oral Paper Skill · 向优秀论文学习
 
-**从 884 条顶会 Oral 记录出发，逐篇提炼 883 份摘要，帮助你对照、改进和复盘自己的论文。**
+**我蒸馏了 883 篇顶会 Oral 论文，提炼出其中的共性和值得学习的做法，帮助你应用到自己的 idea 和论文中。**
 
 [English README](README_EN.md) · [完整 Skill](skills/oral-paper-skill/SKILL.md) · [中文提示词](prompts/精简版提示词.txt) · [提炼过程](research/abstract_distillation/RESULTS.md)
 
-[![Starting index: 884 entries](https://img.shields.io/badge/starting%20index-884%20entries-blue)](skills/oral-paper-skill/references/oral-patterns.md)
+[![Oral papers: 883](https://img.shields.io/badge/Oral%20papers-883-blue)](skills/oral-paper-skill/references/oral-patterns.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Adkid-Zephyr/oral-paper-skill/pulls)
 
 已完成摘要层 AI 提炼、来源核查和跨论文综合，整理出 **7 项可选择的做法与 14 个原文核实实例**。这里的“蒸馏”是知识提炼，不是模型训练，也不是 883 篇全文精读。
@@ -85,18 +85,18 @@ git clone https://github.com/Adkid-Zephyr/oral-paper-skill.git
 值得学习的做法，并帮助我用自己的论文做一次复盘。
 ```
 
-## 884 到底指什么
+## 这 883 篇论文来自哪里
 
 2026-09-13 重新核对六个官方名单：
 
-| 会议周期 | 索引条目 | 有效摘要 |
-|---|---:|---:|
-| ICLR 2025–2026 | 436 | 436 |
-| ICML 2025–2026 | 289 | 288 |
-| NeurIPS 2024–2025 | 159 | 159 |
-| 合计 | 884 | 883 |
+| 会议周期 | Oral 论文数 |
+|---|---:|
+| ICLR 2025–2026 | 436 |
+| ICML 2025–2026 | 288 |
+| NeurIPS 2024–2025 | 159 |
+| 合计 | 883 |
 
-其中一条实际指向 [workshop 活动](https://icml.cc/virtual/2026/workshop/54094)，已排除。883 份有效摘要均已形成逐篇语义记录，并完成 21 组综合，最终筛选出七项做法。
+统计已排除 [workshop 活动](https://icml.cc/virtual/2026/workshop/54094)等非论文条目。这 883 篇论文的摘要均已形成逐篇语义记录，并完成 21 组综合，最终筛选出七项做法。
 
 Luna 负责批量提取，Astra medium 负责来源核查与筛选，Astra xhigh 负责最终综合。原文检查包括 24 篇校准、36 篇固定随机抽查，以及发现疑点后的定向复核；不是人工精读全库，也不意味着全部科学结论已经验证。
 
