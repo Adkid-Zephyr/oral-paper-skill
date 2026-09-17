@@ -7,8 +7,6 @@
 [![Oral papers: 883](https://img.shields.io/badge/Oral%20papers-883-blue)](skills/oral-paper-skill/references/oral-patterns.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Adkid-Zephyr/oral-paper-skill/pulls)
 
-已完成摘要层 AI 提炼、来源核查和跨论文综合，整理出 **7 项可选择的做法与 14 个原文核实实例**。这里的“蒸馏”是知识提炼，不是模型训练，也不是 883 篇全文精读。
-
 ## 为什么做这个 Skill
 
 我认为，Oral paper 能成为 Oral paper，肯定有值得研究和学习的原因。如果想更快地理解怎样做出、写出一篇好论文，优秀论文就是很直接的学习材料。
