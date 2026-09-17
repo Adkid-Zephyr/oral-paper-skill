@@ -1,6 +1,6 @@
 # Oral Paper Skill · 向优秀论文学习
 
-**我蒸馏了 883 篇顶会 Oral 论文，提炼出其中的共性和值得学习的做法，帮助你应用到自己的 idea 和论文中。**
+**我“蒸馏”了 883 篇顶会 Oral 论文，提炼出其中的共性和值得学习的做法，帮助你应用到自己的 idea 和论文中。**
 
 [English README](README_EN.md) · [完整 Skill](skills/oral-paper-skill/SKILL.md) · [中文提示词](prompts/精简版提示词.txt) · [提炼过程](research/abstract_distillation/RESULTS.md)
 
